@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Farground
+    uniqueID: 3817331843
+    locked: 0
+  - name: Background
+    uniqueID: 2747163949
+    locked: 0
+  - name: Playground
+    uniqueID: 902459011
+    locked: 0
