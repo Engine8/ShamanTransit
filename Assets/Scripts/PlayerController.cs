@@ -5,18 +5,19 @@ using UnityEngine;
 public class PlayerController : Movable
 {
     public GameObject[] Lines;
-    //private int _curLineLayer;
+    private SpriteRenderer _spriteRenderer;
 
     // Start is called before the first frame update
     new void Start()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         base.Start();
+
     }
 
-    // Update is called once per frame
-    new void Update()
+    private void Update()
     {
-        if (Input.GetButtonDown("Up") )
+        if (Input.GetButtonDown("Up"))
         {
             gameObject.layer -= 1;
             if (gameObject.layer < 8)
@@ -28,6 +29,23 @@ public class PlayerController : Movable
             if (gameObject.layer > 10)
                 gameObject.layer = 10;
         }
+        if (gameObject.layer == 8)
+        {
+            _spriteRenderer.sortingLayerName = "Line1";
+        }
+        else if (gameObject.layer == 9)
+        {
+            _spriteRenderer.sortingLayerName = "Line2";
+        }
+        else
+        {
+            _spriteRenderer.sortingLayerName = "Line3";
+        }
+
+    }
+
+    new void FixedUpdate()
+    {
         //very bad things: need find method to get layer name
         int lineIndex;
         if (gameObject.layer == 8)
@@ -39,9 +57,9 @@ public class PlayerController : Movable
         //Debug.Log($"Current lineIndex = {lineIndex}");
         if (Lines[lineIndex] != null)
         {
-            Debug.Log($"Current lineIndex = {lineIndex}, y position = {Lines[lineIndex].transform.position.y}");
+            //Debug.Log($"Current lineIndex = {lineIndex}, y position = {Lines[lineIndex].transform.position.y}");
             _rb2d.position = new Vector2(_rb2d.position.x, Lines[lineIndex].transform.position.y);
         }
-        base.Update();
+        base.FixedUpdate();
     }
 }

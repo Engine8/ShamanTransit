@@ -17,14 +17,21 @@ public class Movable : MonoBehaviour
     public UnityEvent OnHit;
     public UnityEvent OnDie;
 
+    public float Speed
+    {
+        get { return _speed; }
+        set { _speed = value; }
+    }
+
     // Start is called before the first frame update
     protected void Start()
     {
-        _rb2d = GetComponent<Rigidbody2D>();    
+        _rb2d = GetComponent<Rigidbody2D>();
+        _speed = StartSpeed;
     }
 
     // Update is called once per frame
-    protected void Update()
+    protected void FixedUpdate()
     {
         if (_speed < MaxSpeed)
         {
