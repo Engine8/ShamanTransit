@@ -18,6 +18,8 @@ public class ParallaxBackground : MonoBehaviour
     private float _textureUnitSizeY;
     private Vector2 _movementOffset = new Vector2(0, 0);
 
+    public bool debug;
+
     public Vector2 Offset
     {
         get
@@ -40,6 +42,11 @@ public class ParallaxBackground : MonoBehaviour
             Sprite sprite = GetComponent<SpriteRenderer>().sprite;
             Texture2D texture = sprite.texture;
             _textureUnitSizeX = texture.width / sprite.pixelsPerUnit;
+            if (debug)
+            {
+                Debug.Log($"Texture width = {texture.width}");
+                Debug.Log($"Pixel per unit = {sprite.pixelsPerUnit}");
+            }
             _textureUnitSizeY = texture.height / sprite.pixelsPerUnit;
         }
         else
@@ -62,7 +69,7 @@ public class ParallaxBackground : MonoBehaviour
             {
                 //calculate offset to create sense of static picture
                 float offsetPositionX = (CameraTransform.position.x - transform.position.x) % _textureUnitSizeX;
-                transform.position = new Vector3(CameraTransform.position.x + offsetPositionX + _offset.x, transform.position.y);
+                transform.position = new Vector3(CameraTransform.position.x + offsetPositionX /*+ _offset.x*/, transform.position.y);
             }
         }
         if (_parallaxOnY)
