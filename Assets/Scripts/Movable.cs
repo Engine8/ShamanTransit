@@ -45,10 +45,11 @@ public class Movable : MonoBehaviour
     protected void OnTriggerEnter2D(Collider2D other)
     {
         Debug.Log("Collision entered");
-        if (other.gameObject.tag == "Obstacle")
+
+        Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
+        if (obstacle != null)
         {
             Debug.Log("Collision with obstacle");
-            Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
             if (OnHit != null)
             {
                 OnHit.Invoke();
