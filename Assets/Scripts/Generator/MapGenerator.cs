@@ -1,66 +1,93 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    public Tile tilePrefab;
-    public int lengthMap;
-    public GameObject[] blockPrefabs;
-    public TileBlock[] tileBlocks;
+    public Tile TilePrefab;
+    public int LengthMap;
+    public GameObject[] BlocksPrefabs;
+    public TileBlock[] TileBlocks;
 
+    public bool IsNeedRegenerateMap = false;
 
-    private List<Tile> spawnedTile = new List<Tile>();
+    private List<Tile> _spawnedTiles = new List<Tile>();
+
+    private string _holderName = "Generator Map";
 
     private void Start()
     {
-        tileBlocks = new TileBlock[lengthMap];
+        //tileBlocks = new TileBlock[lengthMap];
         //GanarateMap();
     }
-    public void GanarateMap()
-    {
-        string holderName = "Generator Map";
-        if (transform.Find(holderName))
-        {
-            DestroyImmediate(transform.Find(holderName).gameObject);
-            spawnedTile.Clear();
-        }
 
-        Transform mapHolder = new GameObject(holderName).transform;
+    public void TryGenerateMap()
+    {
+        if (IsNeedRegenerateMap)
+        {
+            SpawnMap();
+            IsNeedRegenerateMap = false;
+        }
+        else
+        {
+            GenerateMap();
+        }
+    }
+
+    //Delete previous generated map and creates new clear <LengthMap> tiles
+    public void SpawnMap()
+    {
+        if (transform.Find(_holderName))
+        {
+            DestroyImmediate(transform.Find(_holderName).gameObject);
+            _spawnedTiles.Clear();
+        }
+        TileBlock.LengthLand = TilePrefab.Lands.Length;
+        TileBlocks = new TileBlock[LengthMap];
+        
+        Transform mapHolder = new GameObject(_holderName).transform;
         mapHolder.parent = transform;
 
-        for (int x = 0; x < lengthMap; ++x)
+        for (int x = 0; x < LengthMap; ++x)
         {
             if (x == 0)
             {
-                spawnedTile.Add(Instantiate(tilePrefab, new Vector3(0, 0, 0), Quaternion.identity));
-                spawnedTile[0].gameObject.transform.parent = mapHolder;
+                _spawnedTiles.Add(Instantiate(TilePrefab, new Vector3(0, 0, 0), Quaternion.identity));
+                _spawnedTiles[0].gameObject.transform.parent = mapHolder;
             }
             else
             {
-                Tile newTile = Instantiate(tilePrefab);
-                newTile.transform.position = spawnedTile[spawnedTile.Count - 1].End.position - newTile.Begin.localPosition;
-                spawnedTile.Add(newTile);
+                Tile newTile = Instantiate(TilePrefab);
+                newTile.transform.position = _spawnedTiles[_spawnedTiles.Count - 1].End.position - newTile.Begin.localPosition;
+                _spawnedTiles.Add(newTile);
                 newTile.gameObject.transform.parent = mapHolder;
             }
-            for (int landIndex = 0; landIndex < tileBlocks[x].landsBlocks.Length; ++landIndex)
+        }
+    }
+
+    //handle the blocks editing in editor 
+    public void GenerateMap()
+    {
+        for (int tileIndex = 0; tileIndex < LengthMap; ++tileIndex)
+        {
+            Debug.Log($"TileIndex: {tileIndex}/{_spawnedTiles.Count}");
+            for (int landIndex = 0; landIndex < TileBlocks[tileIndex].LandsBlocks.Length; ++landIndex)
             {
-                for (int blockIndex = 0; blockIndex < tileBlocks[x].landsBlocks[landIndex].Blocks.Length; ++blockIndex)
+                for (int blockIndex = 0; blockIndex < TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks.Length; ++blockIndex)
                 {
-                    if (!tileBlocks[x].landsBlocks[landIndex].Blocks[blockIndex].activ && spawnedTile[x].Lands[landIndex].spawnBlock[blockIndex] != null)
+                    if (!TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].Active && _spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex] != null)
                     {
-                        spawnedTile[x].Lands[landIndex].spawnBlock[blockIndex].SetActive(tileBlocks[x].landsBlocks[landIndex].Blocks[blockIndex].activ);
+                        _spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex].SetActive(TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].Active);
                     }
                     else
                     {
-                        spawnedTile[x].Lands[landIndex].spawnBlock[blockIndex].SetActive(tileBlocks[x].landsBlocks[landIndex].Blocks[blockIndex].activ);
-                        switch (tileBlocks[x].landsBlocks[landIndex].Blocks[blockIndex].typeBlock)
+                        _spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex].SetActive(TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].Active);
+                        switch (TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].BlockType)
                         {
                             case 0:
-                                CreateBloc(spawnedTile[x].Lands[landIndex].spawnBlock[blockIndex], 0);
+                                CreateBlock(_spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex], 0);
                                 break;
                             case 1:
-                                CreateBloc(spawnedTile[x].Lands[landIndex].spawnBlock[blockIndex], 1);
+                                CreateBlock(_spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex], 1);
                                 break;
                         }
                     }
@@ -68,10 +95,12 @@ public class MapGenerator : MonoBehaviour
             }
         }
     }
-    private void CreateBloc(GameObject Block, int indexPrefabs)
+
+    //place/replace block by given prefab
+    private void CreateBlock(GameObject Block, int prefabIndex)
     {
         DestroyImmediate(Block.transform.GetChild(0).gameObject);
-        GameObject newBlock = Instantiate(blockPrefabs[indexPrefabs]);
+        GameObject newBlock = Instantiate(BlocksPrefabs[prefabIndex]);
         newBlock.transform.parent = Block.transform;
         newBlock.transform.localPosition = new Vector3(0, 1, -0.1f);
     }
@@ -79,20 +108,20 @@ public class MapGenerator : MonoBehaviour
     [System.Serializable]
     public class TileBlock
     {
-        public static int lengthLand;
+        public static int LengthLand;
 
-        public LandsBlock[] landsBlocks = new LandsBlock[lengthLand];
+        public LandsBlock[] LandsBlocks = new LandsBlock[LengthLand];
 
         [System.Serializable]
         public class LandsBlock
         {
-            public Block[] Blocks = new Block[lengthLand];
+            public Block[] Blocks = new Block[LengthLand];
             [System.Serializable]
             public class Block
             {
                 [Range(0, 1)]
-                public int typeBlock;
-                public bool activ;
+                public int BlockType;
+                public bool Active;
             }
         }
     }

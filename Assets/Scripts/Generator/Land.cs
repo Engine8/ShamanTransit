@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class Land : MonoBehaviour
 {
-    public GameObject[] spawnBlock;
+    public GameObject[] SpawnedBlocks;
   
 }
