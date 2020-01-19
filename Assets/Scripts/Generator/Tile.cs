@@ -6,5 +6,5 @@ public class Tile : MonoBehaviour
 {
     public Transform Begin;
     public Transform End;
-
+    public Land[] Lands;
 }

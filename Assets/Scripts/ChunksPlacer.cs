@@ -6,19 +6,20 @@ public class ChunksPlacer : MonoBehaviour
 {
     public Transform player;
     public Chunk[] chunkPrefabs;
-    public Chunk FirstChunk;
+    public Chunk[] FirstChunks;
 
     private List<Chunk> spawnedChunks = new List<Chunk>();
 
     void Start()
     {
-        spawnedChunks.Add(FirstChunk);
+        for (int i = 0; i < FirstChunks.Length; ++i)
+            spawnedChunks.Add(FirstChunks[i]);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.x > spawnedChunks[spawnedChunks.Count - 1].endChunk.position.x -8)
+        if (player.transform.position.x > spawnedChunks[(spawnedChunks.Count - 1) / 2 + 1].endChunk.position.x -8)
         {
             SpawnChunk();
         }
