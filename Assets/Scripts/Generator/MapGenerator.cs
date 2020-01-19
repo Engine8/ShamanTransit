@@ -11,7 +11,7 @@ public class MapGenerator : MonoBehaviour
     public bool IsNeedRegenerateMap = false;
 
     private List<Tile> _spawnedTiles = new List<Tile>();
-
+    private bool _needToFindTiles = true;
     private string _holderName = "Generator Map";
 
     private void Start()
@@ -27,9 +27,29 @@ public class MapGenerator : MonoBehaviour
             SpawnMap();
             IsNeedRegenerateMap = false;
         }
-        else
+        else 
         {
+            if (_needToFindTiles)
+            {
+                FindMap();
+            }
             GenerateMap();
+        }
+    }
+
+    //find all map tiles and get its characteristics
+    public void FindMap()
+    {
+        if (_spawnedTiles.Count != 0)
+            return;
+        Transform mapHolder = transform.Find(_holderName).gameObject.transform;
+        LengthMap = mapHolder.childCount;
+        for (int i = 0; i < LengthMap; ++i)
+        {
+            Tile tile = mapHolder.GetChild(i).gameObject.GetComponent<Tile>();
+            if (tile == null)
+                Debug.Log("Oops. Its error in FindMap");
+            _spawnedTiles.Add(tile);
         }
     }
 
@@ -69,7 +89,7 @@ public class MapGenerator : MonoBehaviour
     {
         for (int tileIndex = 0; tileIndex < LengthMap; ++tileIndex)
         {
-            Debug.Log($"TileIndex: {tileIndex}/{_spawnedTiles.Count}");
+            //Debug.Log($"TileIndex: {tileIndex}/{_spawnedTiles.Count}");
             for (int landIndex = 0; landIndex < TileBlocks[tileIndex].LandsBlocks.Length; ++landIndex)
             {
                 for (int blockIndex = 0; blockIndex < TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks.Length; ++blockIndex)
@@ -84,10 +104,10 @@ public class MapGenerator : MonoBehaviour
                         switch (TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].BlockType)
                         {
                             case 0:
-                                CreateBlock(_spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex], 0);
+                                CreateBlock(_spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex], 0, landIndex);
                                 break;
                             case 1:
-                                CreateBlock(_spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex], 1);
+                                CreateBlock(_spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex], 1, landIndex);
                                 break;
                         }
                     }
@@ -97,12 +117,32 @@ public class MapGenerator : MonoBehaviour
     }
 
     //place/replace block by given prefab
-    private void CreateBlock(GameObject Block, int prefabIndex)
+    private void CreateBlock(GameObject Block, int prefabIndex, int lineIndex)
     {
         DestroyImmediate(Block.transform.GetChild(0).gameObject);
         GameObject newBlock = Instantiate(BlocksPrefabs[prefabIndex]);
         newBlock.transform.parent = Block.transform;
         newBlock.transform.localPosition = new Vector3(0, 1, -0.1f);
+
+        //set physics and graphics layers
+        //Line 1 - 8 physcics layer - Line1 grapichs
+        //Line 2 - 9 physcics layer - Line2 grapichs
+        //Line 3 - 10 physcics layer - Line3 grapichs
+        if (lineIndex == 0)
+        {
+            newBlock.layer = 8;
+            newBlock.GetComponent<SpriteRenderer>().sortingLayerName = "Line1";
+        }
+        else if (lineIndex == 1)
+        {
+            newBlock.layer = 9;
+            newBlock.GetComponent<SpriteRenderer>().sortingLayerName = "Line2";
+        }
+        else if (lineIndex == 2)
+        {
+            newBlock.layer = 10;
+            newBlock.GetComponent<SpriteRenderer>().sortingLayerName = "Line3";
+        }
     }
 
     [System.Serializable]
