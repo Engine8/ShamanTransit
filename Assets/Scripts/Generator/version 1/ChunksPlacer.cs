@@ -7,12 +7,15 @@ public class ChunksPlacer : MonoBehaviour
     public Transform player;
     //public Chunk[] chunkPrefabs;
     public Chunk FirstChunk;
+    public Chunk ChunkPrefabs;
 
     private List<Chunk> spawnedChunks = new List<Chunk>();
-
+    private float positionYFirstChunk;
     void Start()
     {
         spawnedChunks.Add(FirstChunk);
+        positionYFirstChunk = FirstChunk.transform.position.y;
+        transform.gameObject.layer = 2;
     }
 
     // Update is called once per frame
@@ -27,8 +30,8 @@ public class ChunksPlacer : MonoBehaviour
     private void SpawnChunk()
     {
      // Chunk newChunk = Instantiate(chunkPrefabs[Random.Range(0, chunkPrefabs.Length)]);
-        Chunk newChunk = Instantiate(FirstChunk);
-        newChunk.transform.position = new Vector2(spawnedChunks[spawnedChunks.Count - 1].endChunk.position.x - newChunk.beginChunk.localPosition.x, FirstChunk.transform.position.y) ;
+        Chunk newChunk = Instantiate(ChunkPrefabs);
+        newChunk.transform.position = new Vector2(spawnedChunks[spawnedChunks.Count - 1].endChunk.position.x - newChunk.beginChunk.localPosition.x, positionYFirstChunk) ;
         spawnedChunks.Add(newChunk);
         if (spawnedChunks.Count >= 5)
         {
