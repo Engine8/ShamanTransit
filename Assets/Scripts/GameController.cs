@@ -83,7 +83,7 @@ public class GameController : MonoBehaviour
             //Note: needed to find better solution
             float cameraWidth = MainCamera.ViewportToWorldPoint(new Vector3(1f, 1f, MainCamera.transform.position.z)).x 
                               - MainCamera.ViewportToWorldPoint(new Vector3(0f, 1f, MainCamera.transform.position.z)).x;
-            Debug.Log($"CameraWidth = {cameraWidth}");
+            //Debug.Log($"CameraWidth = {cameraWidth}");
             Moon.Offset = new Vector2( cameraWidth * routeDoneInPercents / 100, 0);
         }
         else
