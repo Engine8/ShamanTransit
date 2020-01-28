@@ -21,8 +21,11 @@ public class PlayerController : Movable
 
         OnHit.AddListener(delegate ()
         {
-            _cargoParticle.Play();
-            Debug.Log("Particle play");
+            if (CurrentCargoCount > 0)
+            {
+                _cargoParticle.Play();
+                Debug.Log("Particle play");
+            }
         });
         base.Start();
 
