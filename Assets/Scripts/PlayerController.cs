@@ -5,12 +5,28 @@ using UnityEngine;
 public class PlayerController : Movable
 {
     public GameObject[] Lines;
+    
     private SpriteRenderer _spriteRenderer;
+    private ParticleSystem _cargoParticle;
+
+    public int MaxCargoCount;
+    public int CurrentCargoCount;
 
     // Start is called before the first frame update
     new void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _cargoParticle = transform.Find("CargoParticle").gameObject.GetComponent<ParticleSystem>();
+
+
+        OnHit.AddListener(delegate ()
+        {
+            if (CurrentCargoCount > 0)
+            {
+                _cargoParticle.Play();
+                Debug.Log("Particle play");
+            }
+        });
         base.Start();
 
     }
