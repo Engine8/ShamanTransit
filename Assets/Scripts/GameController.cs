@@ -2,13 +2,29 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public static GameController GameControllerInstance;
 
+
+    //UI
     public TextMeshProUGUI TextMeshCargo;
     public TextMeshProUGUI TextMeshRoute;
+
+    public GameObject IngameUI;
+    public GameObject EndgameUI;
+    private Text _endgameMainText;
+    private Text _endgameCargoText;
+    private Text _endgameMoneyText;
+
+    private AudioSource _uiAudioSource;
+
+    public AudioClip WinSound;
+    public AudioClip DefeatSound;
+    public AudioClip CoinSound;
+    
     public PlayerController PlayerCharacter;
 
     //Note: is needed to find better solution
@@ -18,6 +34,7 @@ public class GameController : MonoBehaviour
     //Amount of cargo that lost on hit
     //Maybe defined by level in scene manager
     public int CargoPerHit = 1;
+    public int MoneyPerCargo = 500;
 
     [SerializeField]
     private GameObject StartPoint;
@@ -27,12 +44,23 @@ public class GameController : MonoBehaviour
     private float _lastPlayerCharacterXPosition;
     private float _unitsPassed;
 
+    private bool _isGameEnded;
+
     private void Awake()
     {
         if (GameControllerInstance == null)
         {
             GameControllerInstance = new GameController();
         }
+
+        //Find UI elements
+        _endgameMainText = EndgameUI.transform.Find("MainText").gameObject.GetComponent<Text>();
+        _endgameCargoText = EndgameUI.transform.Find("CargoText").gameObject.GetComponent<Text>();
+        _endgameMoneyText = EndgameUI.transform.Find("MoneyText").gameObject.GetComponent<Text>();
+
+        _uiAudioSource = transform.Find("UIAudioSource").gameObject.GetComponent<AudioSource>();
+        _isGameEnded = false;
+        EndgameUI.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -68,6 +96,8 @@ public class GameController : MonoBehaviour
         {
             Debug.LogError("Start or End point reference in GameController not stated");
         }
+
+        PlayerCharacter.OnDie.AddListener(GameDefeated);
     }
 
     // Update is called once per frame
@@ -92,16 +122,24 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            PlayerCharacter.Acceleration = 0;
-            PlayerCharacter.Speed = 0;
+            if (!_isGameEnded)
+            {
+                PlayerCharacter.Acceleration = 0;
+                PlayerCharacter.Speed = 0;
+                ShowEndgameUI(true);
+                _isGameEnded = true;
+            }
         }
     }
 
     private void OnPlayerHit()
     {
         PlayerCharacter.CurrentCargoCount -= CargoPerHit;
-        if (PlayerCharacter.CurrentCargoCount < 0)
+        if (PlayerCharacter.CurrentCargoCount <= 0)
+        {
             PlayerCharacter.CurrentCargoCount = 0;
+            ShowEndgameUI(false);
+        }
         UpdateCargoUI();
     }
 
@@ -110,4 +148,50 @@ public class GameController : MonoBehaviour
         TextMeshCargo.SetText($"{PlayerCharacter.CurrentCargoCount}/{PlayerCharacter.MaxCargoCount}");
     }
 
+    private void ShowEndgameUI(bool isGameWin)
+    {
+        IngameUI.SetActive(false);
+        _endgameCargoText.text = $"{PlayerCharacter.CurrentCargoCount} / {PlayerCharacter.MaxCargoCount}";
+        if (isGameWin)
+        {
+            _endgameMainText.text = "You win!";
+        }
+        else
+        {
+            _endgameMainText.text = "You fail";
+        }
+        EndgameUI.SetActive(true);
+        if (isGameWin)
+        {
+            _uiAudioSource.clip = WinSound;
+            _uiAudioSource.PlayOneShot(WinSound);
+            StartCoroutine(MoneyAnimationStart());
+        }
+        else
+        {
+            _uiAudioSource.PlayOneShot(DefeatSound);
+        }   
+    }
+
+    private IEnumerator MoneyAnimationStart()
+    {
+        int moneySum = PlayerCharacter.CurrentCargoCount * MoneyPerCargo;
+        int curMoney = 0;
+        int i = 1;
+        while (curMoney < moneySum)
+        {
+            Debug.Log($"Step {i}");
+            curMoney += 100;
+            if (curMoney > moneySum)
+                curMoney = moneySum;
+            _endgameMoneyText.text = curMoney.ToString();
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    private void GameDefeated()
+    {
+        _isGameEnded = true;
+        ShowEndgameUI(false);
+    }
 }
