@@ -7,13 +7,17 @@ public class GameController : MonoBehaviour
 {
     public static GameController GameControllerInstance;
 
-    public TextMeshProUGUI TextMeshScore;
+    public TextMeshProUGUI TextMeshCargo;
     public TextMeshProUGUI TextMeshRoute;
     public PlayerController PlayerCharacter;
 
     //Note: is needed to find better solution
     public Camera MainCamera;
     public ParallaxBackground Moon;
+
+    //Amount of cargo that lost on hit
+    //Maybe defined by level in scene manager
+    public int CargoPerHit = 1;
 
     [SerializeField]
     private GameObject StartPoint;
@@ -34,9 +38,9 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (TextMeshScore != null)
+        if (TextMeshCargo != null)
         {
-            TextMeshScore.SetText("Score: 0");
+            UpdateCargoUI();
         }
         else
         {
@@ -73,7 +77,7 @@ public class GameController : MonoBehaviour
         {
             _unitsPassed += PlayerCharacter.transform.position.x - _lastPlayerCharacterXPosition;
             _lastPlayerCharacterXPosition = PlayerCharacter.transform.position.x;
-            AddScore(Mathf.FloorToInt(_unitsPassed / 4));
+            //AddScore(Mathf.FloorToInt(_unitsPassed / 4));
             _unitsPassed %= 4;
 
             float routeLength = EndPoint.transform.position.x - StartPoint.transform.position.x;
@@ -83,7 +87,7 @@ public class GameController : MonoBehaviour
             //Note: needed to find better solution
             float cameraWidth = MainCamera.ViewportToWorldPoint(new Vector3(1f, 1f, MainCamera.transform.position.z)).x 
                               - MainCamera.ViewportToWorldPoint(new Vector3(0f, 1f, MainCamera.transform.position.z)).x;
-            Debug.Log($"CameraWidth = {cameraWidth}");
+            //Debug.Log($"CameraWidth = {cameraWidth}");
             Moon.Offset = new Vector2( cameraWidth * routeDoneInPercents / 100, 0);
         }
         else
@@ -95,16 +99,15 @@ public class GameController : MonoBehaviour
 
     private void OnPlayerHit()
     {
-        AddScore(-50);
+        PlayerCharacter.CurrentCargoCount -= CargoPerHit;
+        if (PlayerCharacter.CurrentCargoCount < 0)
+            PlayerCharacter.CurrentCargoCount = 0;
+        UpdateCargoUI();
     }
 
-    private void AddScore(int value)
+    private void UpdateCargoUI()
     {
-        int score = int.Parse(TextMeshScore.text.Substring(6));
-        score += value;
-        if (score < 0)
-            score = 0;
-        TextMeshScore.SetText($"Score: {score}");
+        TextMeshCargo.SetText($"{PlayerCharacter.CurrentCargoCount}/{PlayerCharacter.MaxCargoCount}");
     }
 
 }

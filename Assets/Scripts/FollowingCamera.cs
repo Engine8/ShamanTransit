@@ -30,7 +30,7 @@ public class FollowingCamera : MonoBehaviour
         {
             //calculate new target position
             Vector3 targetFollowPosition = TargetObject.position + TargetViewOffset + new Vector3((MovableComponentTarget.Speed), 0, 0) * DistanceCoefficient;
-            Debug.Log($"Distance difference: {TargetObject.position - PrevTargetPositon}");
+            //Debug.Log($"Distance difference: {TargetObject.position - PrevTargetPositon}");
             PrevTargetPositon = TargetObject.position;
             Vector3 targetFollowDirection = (targetFollowPosition - transform.position).normalized;
             float distance = Vector3.Distance(targetFollowPosition, transform.position);
@@ -47,7 +47,7 @@ public class FollowingCamera : MonoBehaviour
                     //Debug.Log("Over move the camera");
                 }            
                 transform.position = cameraNewPosition;
-                Debug.Log($"Camera position: {transform.position}");
+                //Debug.Log($"Camera position: {transform.position}");
                 //Debug.Log($"Distance: {distance - newDistance}, Time: {Time.deltaTime}");
             }
         }
