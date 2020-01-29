@@ -2,13 +2,24 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public static GameController GameControllerInstance;
 
+
+    //UI
     public TextMeshProUGUI TextMeshCargo;
     public TextMeshProUGUI TextMeshRoute;
+
+    public GameObject IngameUI;
+    public GameObject EndgameUI;
+    private Text _endgameMainText;
+    private Text _endgameCargoText;
+    private Text _endgameMoneyText;
+
+   
     public PlayerController PlayerCharacter;
 
     //Note: is needed to find better solution
@@ -18,6 +29,7 @@ public class GameController : MonoBehaviour
     //Amount of cargo that lost on hit
     //Maybe defined by level in scene manager
     public int CargoPerHit = 1;
+    public int MoneyPerCargo = 500;
 
     [SerializeField]
     private GameObject StartPoint;
@@ -27,12 +39,21 @@ public class GameController : MonoBehaviour
     private float _lastPlayerCharacterXPosition;
     private float _unitsPassed;
 
+
+
     private void Awake()
     {
         if (GameControllerInstance == null)
         {
             GameControllerInstance = new GameController();
         }
+
+        //Find UI elements
+        _endgameMainText = EndgameUI.transform.Find("MainText").gameObject.GetComponent<Text>();
+        _endgameCargoText = EndgameUI.transform.Find("CargoText").gameObject.GetComponent<Text>();
+        _endgameMoneyText = EndgameUI.transform.Find("MoneyText").gameObject.GetComponent<Text>();
+
+        EndgameUI.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -68,6 +89,8 @@ public class GameController : MonoBehaviour
         {
             Debug.LogError("Start or End point reference in GameController not stated");
         }
+
+        PlayerCharacter.OnDie.AddListener(GameDefeated);
     }
 
     // Update is called once per frame
@@ -109,5 +132,39 @@ public class GameController : MonoBehaviour
     {
         TextMeshCargo.SetText($"{PlayerCharacter.CurrentCargoCount}/{PlayerCharacter.MaxCargoCount}");
     }
+
+    private void ShowEndgameUI(bool isGameWin)
+    {
+        IngameUI.SetActive(false);
+        if (isGameWin)
+        {
+            _endgameMainText.text = "You win!";
+        }
+        else
+        {
+            _endgameMainText.text = "You fail";
+        }
+        EndgameUI.SetActive(true);
+
+    }
+
+    private IEnumerator MoneyAnimationStart()
+    {
+        int moneySum = PlayerCharacter.CurrentCargoCount * MoneyPerCargo;
+        int curMoney = 0;
+
+        while (curMoney < moneySum)
+        {
+            cur
+        }
+
+    }
+
+    private void GameDefeated()
+    {
+
+    }
+
+
 
 }
