@@ -6,41 +6,16 @@ public class SightScale : MonoBehaviour
 {
     public Transform Arrow;
     public Transform HitArea;
-    public float SpeedRotate;
-    private bool victori;
+    public int SpeedRotate;
     void Start()
     {
         
     }
     public void BafSpeed()
     {
-        if (!victori)
-        {
-            SpeedRotate = (Mathf.Abs(SpeedRotate) + 1) * SpeedRotate / Mathf.Abs(SpeedRotate);
-
-            if (SpeedRotate > 4)
-                SpeedRotate = 2 * SpeedRotate / Mathf.Abs(SpeedRotate);
-            if (Random.Range(0, 100) == 46)
-                SpeedRotate = 1 * SpeedRotate / Mathf.Abs(SpeedRotate);
-        }
+        SpeedRotate = (int)Random.Range(1f, 4f) * (SpeedRotate / SpeedRotate);
     }
-    public void Stop()
-    {
-        victori = true;
-        StartCoroutine("Weate");
-    }
-    IEnumerator Weate()
-    {
-        while (true) {
-            yield return new WaitForSeconds(0.25f);
-            Debug.Log(SpeedRotate);
-            if (Mathf.Abs(SpeedRotate) <= 0)
-                break;
-            SpeedRotate = (Mathf.Abs(SpeedRotate) - 0.5f) * SpeedRotate / Mathf.Abs(SpeedRotate);
-        }
-        gameObject.SetActive(false);
-    }
-   
+    
     void Update()
     {
         if (Arrow.localEulerAngles.z >= 90f && SpeedRotate > 0)
