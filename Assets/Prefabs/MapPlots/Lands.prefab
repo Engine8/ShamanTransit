@@ -110,6 +110,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -210,6 +211,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -331,6 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1502205871581540599}
   - component: {fileID: 7268268118002810079}
+  - component: {fileID: 6300788932807607595}
   m_Layer: 0
   m_Name: Lands
   m_TagString: Untagged
@@ -375,6 +378,20 @@ MonoBehaviour:
   - {fileID: 3960454506177535979}
   - {fileID: 8622319178195720270}
   - {fileID: 6230531536583112585}
+--- !u!114 &6300788932807607595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3610414882156523343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc348c70f2d3c6640abceeb4a5bebabd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  beginChunk: {fileID: 2602506587525701993}
+  endChunk: {fileID: 8066977518983329117}
 --- !u!1 &4046574806938088254
 GameObject:
   m_ObjectHideFlags: 0
@@ -517,6 +534,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
