@@ -11,11 +11,16 @@ public class Movable : MonoBehaviour
     public float Acceleration = 2f;
     public float StartSpeed = 0f;
 
+    //debug
+    public float curSpeed;
+
     protected float _speed;
     protected Rigidbody2D _rb2d;
 
     public UnityEvent OnHit;
     public UnityEvent OnDie;
+
+    public AnimationCurve AccelerationCurve;
 
     public float Speed
     {
@@ -35,7 +40,10 @@ public class Movable : MonoBehaviour
     {
         if (_speed < MaxSpeed)
         {
-            _speed += Acceleration * Time.deltaTime;
+            float accelerationValue = AccelerationCurve.Evaluate(_speed / MaxSpeed) * Time.deltaTime;
+            Acceleration = accelerationValue; //debug
+            _speed += accelerationValue;
+            curSpeed = _speed; //debug
             if (_speed > MaxSpeed)
                 _speed = MaxSpeed;
         }
