@@ -77,9 +77,9 @@ public class WolfPosition : MonoBehaviour
         {
             this.gameObject.transform.localPosition = new Vector2(this.gameObject.transform.localPosition.x + speed * Time.deltaTime, this.gameObject.transform.localPosition.y);
             if (Time.time > nextAttackTime)
-             {
+            {
                 Attack();
-             }
+            }
         }
     }
     public void Attack()

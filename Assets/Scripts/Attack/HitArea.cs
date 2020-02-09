@@ -6,10 +6,10 @@ public class HitArea : MonoBehaviour
 {
     public Transform Arrow;
     public WolfPosition Wolfs;
+    public BearControler Bear;
     public SpriteRenderer MissAr;
 
     private SightScale sightScale;
-   
     void Start()
     {
         sightScale = FindObjectOfType<SightScale>();
@@ -23,20 +23,33 @@ public class HitArea : MonoBehaviour
                 if (Arrow.localEulerAngles.z >= transform.localEulerAngles.z && Arrow.localEulerAngles.z <= transform.localEulerAngles.z + 18)
                 {
                     transform.localEulerAngles = new Vector3(0, 0, Random.Range(0f, 68f));
-                    if (Wolfs.GetCountWolfs() >= 0)
+                    if (Wolfs.gameObject.activeSelf)
                     {
-                        Wolfs.DieWolf();
+                        if (Wolfs.GetCountWolfs() >= 0)
+                        {
+                            Wolfs.DieWolf();
+                        }
+                        if (Wolfs.GetCountWolfs() == 0)
+                        {
+                            sightScale.Stop();
+                        }
                     }
-                    if (Wolfs.GetCountWolfs() == 0)
+                    else
                     {
-                        sightScale.Stop();
+                        if (!Bear.GetLifeBear())
+                        {
+                            Bear.TakeDamage();
+                        if (Bear.GetLifeBear())
+                            sightScale.Stop();
+                        }
                     }
                     sightScale.BafSpeed();
                 }
                 else
                 {
-                     StartCoroutine("Miss");
-                     Wolfs.Attack();
+                    StartCoroutine("Miss");
+                    if (Wolfs.gameObject.activeSelf)
+                        Wolfs.Attack();
                 }
           }
     }

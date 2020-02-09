@@ -11,7 +11,7 @@ public class Enumy : MonoBehaviour
 
 
     private float health;
-    public bool dead;
+    private bool dead;
     private PlayerControl HealsPlayer;
 
     void Start()
@@ -71,8 +71,9 @@ public class Enumy : MonoBehaviour
     {
         
         dead = true;
-        gameObject.SetActive(false);
-        FindObjectOfType<WolfPosition>().ChendePosition();
+        //gameObject.SetActive(false);
+        if (FindObjectOfType<WolfPosition>())
+            FindObjectOfType<WolfPosition>().ChendePosition();
         // GameObject.Destroy(gameObject, 5f);
     }
 }
