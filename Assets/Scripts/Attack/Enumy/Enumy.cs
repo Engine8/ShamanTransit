@@ -71,9 +71,12 @@ public class Enumy : MonoBehaviour
     {
         
         dead = true;
-        //gameObject.SetActive(false);
+
         if (FindObjectOfType<WolfPosition>())
+        {
+            gameObject.SetActive(false);
             FindObjectOfType<WolfPosition>().ChendePosition();
+        }
         // GameObject.Destroy(gameObject, 5f);
     }
 }
