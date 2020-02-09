@@ -6,11 +6,22 @@ public class SightScale : MonoBehaviour
 {
     public Transform Arrow;
     public Transform HitArea;
+    public SpriteRenderer BagArea;
     public float SpeedRotate;
     private bool victori;
     void Start()
     {
-        
+        StartCoroutine("Wake");
+    }
+    IEnumerator Wake() //появление волков
+    {
+        BagArea.color = new Color(255, 255, 255, 0);
+        Arrow.gameObject.SetActive(false);
+        HitArea.gameObject.SetActive(false);
+        yield return new WaitForSeconds(1f);
+        HitArea.gameObject.SetActive(true);
+        Arrow.gameObject.SetActive(true);
+        BagArea.color = new Color(255, 255, 255, 255);
     }
     public void BafSpeed()
     {
@@ -33,7 +44,6 @@ public class SightScale : MonoBehaviour
     {
         while (true) {
             yield return new WaitForSeconds(0.25f);
-            Debug.Log(SpeedRotate);
             if (Mathf.Abs(SpeedRotate) <= 0)
                 break;
             SpeedRotate = (Mathf.Abs(SpeedRotate) - 0.5f) * SpeedRotate / Mathf.Abs(SpeedRotate);

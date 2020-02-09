@@ -5,40 +5,58 @@ using UnityEngine;
 public class HitArea : MonoBehaviour
 {
     public Transform Arrow;
-    public Transform[] Enumy;
-   
+    public WolfPosition Wolfs;
+    public BearControler Bear;
+    public SpriteRenderer MissAr;
 
-    private int countEnumy;
     private SightScale sightScale;
-   
     void Start()
     {
         sightScale = FindObjectOfType<SightScale>();
         transform.localEulerAngles = new Vector3(0, 0, 68);
-        countEnumy = Enumy.Length-1;
     }
 
     void Update()
     {
           if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
-            {
+          {
                 if (Arrow.localEulerAngles.z >= transform.localEulerAngles.z && Arrow.localEulerAngles.z <= transform.localEulerAngles.z + 18)
                 {
                     transform.localEulerAngles = new Vector3(0, 0, Random.Range(0f, 68f));
-                    if (countEnumy >= 0)
+                    if (Wolfs.gameObject.activeSelf)
                     {
-                        Enumy[countEnumy].gameObject.SetActive(false);
-                        --countEnumy;
+                        if (Wolfs.GetCountWolfs() >= 0)
+                        {
+                            Wolfs.DieWolf();
+                        }
+                        if (Wolfs.GetCountWolfs() == 0)
+                        {
+                            sightScale.Stop();
+                        }
                     }
-                    if (countEnumy == 0)
+                    else
                     {
-                    
-                        sightScale.Stop();
+                        if (!Bear.GetLifeBear())
+                        {
+                            Bear.TakeDamage();
+                        if (Bear.GetLifeBear())
+                            sightScale.Stop();
+                        }
                     }
-                Debug.Log(countEnumy);
-                sightScale.BafSpeed();
+                    sightScale.BafSpeed();
                 }
-            }
-        
+                else
+                {
+                    StartCoroutine("Miss");
+                    if (Wolfs.gameObject.activeSelf)
+                        Wolfs.Attack();
+                }
+          }
+    }
+    IEnumerator Miss()
+    {
+        MissAr.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        MissAr.color = Color.white;
     }
 }
