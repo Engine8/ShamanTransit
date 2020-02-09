@@ -272,16 +272,16 @@ SpriteRenderer:
   m_SortingLayerID: -1547803347
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4155694519643739027, guid: 7017ea42e5d5ef643bc01d319e03920b,
+  m_Sprite: {fileID: -4155694519643739027, guid: ea485d98cac4f15498fdd169938f36d7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.49, y: 2.5}
+  m_Size: {x: 0.12, y: 2.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &340884675
@@ -294,10 +294,9 @@ GameObject:
   m_Component:
   - component: {fileID: 340884677}
   - component: {fileID: 340884676}
-  - component: {fileID: 340884679}
   - component: {fileID: 340884678}
   m_Layer: 0
-  m_Name: Wolf 2
+  m_Name: Wolf 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -343,7 +342,7 @@ SpriteRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: dcbd89cdae130aa44ac7229db4dca3f9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 1, b: 0.0009315014, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -360,12 +359,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340884675}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.74, y: -3.96, z: -0.6}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1, y: -1.4, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_Father: {fileID: 825960923}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &340884678
 MonoBehaviour:
@@ -376,26 +375,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 340884675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c90bf874dacc34a9a6bb3b6f302d60, type: 3}
+  m_Script: {fileID: 11500000, guid: 916ebea756cdadc46b331db0146f7e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
---- !u!114 &340884679
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 340884675}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a9fd2a989ae17b43b769fb728f3d05d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPlayer: {fileID: 1559208331}
-  attackDistanceThreshold: 3.2
-  timeBetweenAttacks: 1
+  startingHealth: 1
+  attackDistanceThreshold: 3.8
   damage: 1
+  targetPlayer: {fileID: 1559208331}
+  dead: 0
 --- !u!1 &545757828
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,7 +462,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 545757828}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12250972, y: 0.05272484, z: -10}
+  m_LocalPosition: {x: 0.0076284707, y: 0.05272484, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1309856792}
@@ -558,7 +545,6 @@ GameObject:
   - component: {fileID: 709295965}
   - component: {fileID: 709295964}
   - component: {fileID: 709295966}
-  - component: {fileID: 709295967}
   m_Layer: 0
   m_Name: Wolf 1
   m_TagString: Untagged
@@ -606,7 +592,7 @@ SpriteRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: dcbd89cdae130aa44ac7229db4dca3f9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -623,12 +609,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 709295963}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.52, y: -2.42, z: -0.6}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.6, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 825960923}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &709295966
 MonoBehaviour:
@@ -639,26 +625,69 @@ MonoBehaviour:
   m_GameObject: {fileID: 709295963}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a9fd2a989ae17b43b769fb728f3d05d, type: 3}
+  m_Script: {fileID: 11500000, guid: 916ebea756cdadc46b331db0146f7e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetPlayer: {fileID: 1559208331}
-  attackDistanceThreshold: 3.2
-  timeBetweenAttacks: 1
+  startingHealth: 1
+  attackDistanceThreshold: 3.8
   damage: 1
---- !u!114 &709295967
+  targetPlayer: {fileID: 1559208331}
+  dead: 0
+--- !u!1 &825960922
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 825960923}
+  - component: {fileID: 825960924}
+  m_Layer: 0
+  m_Name: EnemyWolf
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &825960923
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 825960922}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -13.929999, y: -2.48, z: -0.6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 709295965}
+  - {fileID: 1158720316}
+  - {fileID: 340884677}
+  - {fileID: 1321231215}
+  m_Father: {fileID: 0}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &825960924
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 709295963}
+  m_GameObject: {fileID: 825960922}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c90bf874dacc34a9a6bb3b6f302d60, type: 3}
+  m_Script: {fileID: 11500000, guid: a2a72c80edc5c78449741e3039ba1643, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
+  Wolf:
+  - {fileID: 709295966}
+  - {fileID: 1158720317}
+  - {fileID: 340884678}
+  - {fileID: 1321231216}
+  HealsPlayer: {fileID: 1559208332}
+  timeBetweenAttacks: 5
+  speed: 10
 --- !u!1 &891856235
 GameObject:
   m_ObjectHideFlags: 0
@@ -795,7 +824,7 @@ PrefabInstance:
     - target: {fileID: 1502205871581540599, guid: 6cf6139b0f094f643b3b27f88fa03916,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 1502205871581540599, guid: 6cf6139b0f094f643b3b27f88fa03916,
         type: 3}
@@ -1015,7 +1044,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1032916615}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.12250972, y: 0.05272484, z: -10}
+  m_LocalPosition: {x: 0.0076284707, y: 0.05272484, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2089300271}
@@ -1094,16 +1123,16 @@ SpriteRenderer:
   m_SortingLayerID: -1547803347
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: 5415670602355527636, guid: 7017ea42e5d5ef643bc01d319e03920b,
+  m_Sprite: {fileID: 5415670602355527636, guid: ea485d98cac4f15498fdd169938f36d7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.45, y: 1.31}
+  m_Size: {x: 2.49, y: 2.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1158720314
@@ -1116,10 +1145,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1158720316}
   - component: {fileID: 1158720315}
-  - component: {fileID: 1158720318}
   - component: {fileID: 1158720317}
   m_Layer: 0
-  m_Name: Wolf 4
+  m_Name: Wolf 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1165,7 +1193,7 @@ SpriteRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: dcbd89cdae130aa44ac7229db4dca3f9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0.0377028, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1182,12 +1210,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158720314}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13.71, y: -1.17, z: -0.6}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 825960923}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1158720317
 MonoBehaviour:
@@ -1198,26 +1226,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1158720314}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c90bf874dacc34a9a6bb3b6f302d60, type: 3}
+  m_Script: {fileID: 11500000, guid: 916ebea756cdadc46b331db0146f7e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
---- !u!114 &1158720318
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1158720314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a9fd2a989ae17b43b769fb728f3d05d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPlayer: {fileID: 1559208331}
-  attackDistanceThreshold: 3.2
-  timeBetweenAttacks: 1
+  startingHealth: 1
+  attackDistanceThreshold: 3.8
   damage: 1
+  targetPlayer: {fileID: 1559208331}
+  dead: 0
 --- !u!1 &1296669482
 GameObject:
   m_ObjectHideFlags: 0
@@ -1382,10 +1398,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1321231215}
   - component: {fileID: 1321231214}
-  - component: {fileID: 1321231217}
   - component: {fileID: 1321231216}
   m_Layer: 0
-  m_Name: Wolf 3
+  m_Name: Wolf 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1431,7 +1446,7 @@ SpriteRenderer:
   m_SortingLayer: 6
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: dcbd89cdae130aa44ac7229db4dca3f9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.96362275, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1448,12 +1463,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1321231213}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -16.8, y: -2.48, z: -0.6}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_Father: {fileID: 825960923}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1321231216
 MonoBehaviour:
@@ -1464,26 +1479,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1321231213}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30c90bf874dacc34a9a6bb3b6f302d60, type: 3}
+  m_Script: {fileID: 11500000, guid: 916ebea756cdadc46b331db0146f7e42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 15
---- !u!114 &1321231217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1321231213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a9fd2a989ae17b43b769fb728f3d05d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  targetPlayer: {fileID: 1559208331}
-  attackDistanceThreshold: 3.2
-  timeBetweenAttacks: 1
+  startingHealth: 1
+  attackDistanceThreshold: 3.8
   damage: 1
+  targetPlayer: {fileID: 1559208331}
+  dead: 0
 --- !u!1 &1358935069
 GameObject:
   m_ObjectHideFlags: 3
@@ -1614,11 +1617,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Arrow: {fileID: 1005998407}
-  Enumy:
-  - {fileID: 1158720316}
-  - {fileID: 1321231215}
-  - {fileID: 340884677}
-  - {fileID: 709295965}
+  Wolfs: {fileID: 825960924}
+  MissAr: {fileID: 305125568}
 --- !u!114 &1552152178 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6300788932807607595, guid: 6cf6139b0f094f643b3b27f88fa03916,
@@ -1656,12 +1656,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1559208330}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.35, y: -2.42, z: 0}
+  m_LocalPosition: {x: 0.48, y: -2.42, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1296669484}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1559208332
 MonoBehaviour:
@@ -1675,7 +1675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e431e8fa4fff5e4da2b09851d07e5f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingHealth: 5
+  startingHealth: 120
   uiGame: {fileID: 2089300270}
   speed: 10
 --- !u!1 &1929903579
@@ -1723,7 +1723,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1945131860
 GameObject:
@@ -1826,7 +1826,7 @@ SpriteRenderer:
   m_SortingLayerID: -1547803347
   m_SortingLayer: 2
   m_SortingOrder: 2
-  m_Sprite: {fileID: -1149698027394909709, guid: 7017ea42e5d5ef643bc01d319e03920b,
+  m_Sprite: {fileID: -1149698027394909709, guid: ea485d98cac4f15498fdd169938f36d7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1835,7 +1835,7 @@ SpriteRenderer:
   m_Size: {x: 0.12, y: 2.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2089300270

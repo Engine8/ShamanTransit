@@ -8,16 +8,13 @@ public class PlayerControl : MonoBehaviour
     public GameObject uiGame;
     public int speed;
 
-    private SpriteRenderer _spriteRenderer;
+   
     private float health;
     private bool dead;
 
     void Start()
     {
         health = startingHealth;
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        //_spriteRenderer.sortingLayerName = "Line2";
-        //_spriteRenderer.sortingOrder = 2;
     }
     void FixedUpdate()
     {
@@ -32,9 +29,6 @@ public class PlayerControl : MonoBehaviour
     }
     public void TakeDamage(float damage)
     {
-        Debug.Log("damage = " + damage);
-        Debug.Log("health = " + health);
-
         health -= damage;
         if (health <= 0 && !dead)
         {
