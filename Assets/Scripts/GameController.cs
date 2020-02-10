@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
-    public static GameController GameControllerInstance;
+    public static GameController Instance;
 
 
     //UI
@@ -15,9 +15,9 @@ public class GameController : MonoBehaviour
 
     public GameObject IngameUI;
     public GameObject EndgameUI;
-    private Text _endgameMainText;
-    private Text _endgameCargoText;
-    private Text _endgameMoneyText;
+    public Text EndgameMainText;
+    public Text EndgameCargoText;
+    public Text EndgameMoneyText;
 
     private AudioSource _uiAudioSource;
 
@@ -36,30 +36,25 @@ public class GameController : MonoBehaviour
     public int CargoPerHit = 1;
     public int MoneyPerCargo = 500;
 
-    [SerializeField]
-    private GameObject StartPoint;
-    [SerializeField]
-    private GameObject EndPoint;
+    public GameObject StartPoint;
+    public GameObject EndPoint;
 
     private float _lastPlayerCharacterXPosition;
     private float _unitsPassed;
 
-    private bool _isGameEnded;
+    public bool IsGameEnded;
+
+    public LoadingComponent loadingComponent;
 
     private void Awake()
     {
-        if (GameControllerInstance == null)
+        if (Instance == null)
         {
-            GameControllerInstance = new GameController();
+            Instance = this;
         }
 
-        //Find UI elements
-        _endgameMainText = EndgameUI.transform.Find("MainText").gameObject.GetComponent<Text>();
-        _endgameCargoText = EndgameUI.transform.Find("CargoText").gameObject.GetComponent<Text>();
-        _endgameMoneyText = EndgameUI.transform.Find("MoneyText").gameObject.GetComponent<Text>();
-
         _uiAudioSource = transform.Find("UIAudioSource").gameObject.GetComponent<AudioSource>();
-        _isGameEnded = false;
+        IsGameEnded = false;
         EndgameUI.SetActive(false);
     }
 
@@ -105,6 +100,7 @@ public class GameController : MonoBehaviour
     {
         if (PlayerCharacter.transform.position.x < EndPoint.transform.position.x)
         {
+            //calculate moon or sun position
             _unitsPassed += PlayerCharacter.transform.position.x - _lastPlayerCharacterXPosition;
             _lastPlayerCharacterXPosition = PlayerCharacter.transform.position.x;
             //AddScore(Mathf.FloorToInt(_unitsPassed / 4));
@@ -122,12 +118,13 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            if (!_isGameEnded)
+            // if game has not already ended
+            if (!IsGameEnded) 
             {
                 PlayerCharacter.Acceleration = 0;
                 PlayerCharacter.Speed = 0;
                 ShowEndgameUI(true);
-                _isGameEnded = true;
+                IsGameEnded = true;
             }
         }
     }
@@ -138,6 +135,7 @@ public class GameController : MonoBehaviour
         if (PlayerCharacter.CurrentCargoCount <= 0)
         {
             PlayerCharacter.CurrentCargoCount = 0;
+            IsGameEnded = true;
             ShowEndgameUI(false);
         }
         UpdateCargoUI();
@@ -151,14 +149,14 @@ public class GameController : MonoBehaviour
     private void ShowEndgameUI(bool isGameWin)
     {
         IngameUI.SetActive(false);
-        _endgameCargoText.text = $"{PlayerCharacter.CurrentCargoCount} / {PlayerCharacter.MaxCargoCount}";
+        EndgameCargoText.text = $"{PlayerCharacter.CurrentCargoCount} / {PlayerCharacter.MaxCargoCount}";
         if (isGameWin)
         {
-            _endgameMainText.text = "You win!";
+            EndgameMainText.text = "You win!";
         }
         else
         {
-            _endgameMainText.text = "You fail";
+            EndgameMainText.text = "You fail";
         }
         EndgameUI.SetActive(true);
         if (isGameWin)
@@ -184,14 +182,24 @@ public class GameController : MonoBehaviour
             curMoney += 100;
             if (curMoney > moneySum)
                 curMoney = moneySum;
-            _endgameMoneyText.text = curMoney.ToString();
+            EndgameMoneyText.text = curMoney.ToString();
             yield return new WaitForSeconds(0.1f);
         }
     }
 
     private void GameDefeated()
     {
-        _isGameEnded = true;
+        IsGameEnded = true;
         ShowEndgameUI(false);
+    }
+
+    public void OnContinueButtonClick()
+    {
+        PlayerDataController.Instance.AddMoney(PlayerCharacter.CurrentCargoCount * MoneyPerCargo);
+        //consider that stage include only 5 levels
+        PlayerDataController.Instance.Data.CurrentLevel = ++PlayerDataController.Instance.Data.CurrentLevel % 5;
+        PlayerDataController.Instance.Data.CurrentStage = PlayerDataController.Instance.Data.CurrentLevel / 5 + 1;
+        PlayerDataController.Instance.WriteData();
+        loadingComponent.StartLoadLevel("Map");
     }
 }

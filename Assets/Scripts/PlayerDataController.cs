@@ -18,7 +18,10 @@ public class PlayerData
         Money = money;
         CurrentStage = curStage;
         CurrentLevel = curLevel;
-        PurchaseIndexes = purchaseIndexes;
+        if (purchaseIndexes == null)
+            PurchaseIndexes = new List<int>();
+        else
+            PurchaseIndexes = purchaseIndexes;
     }
 
 }
@@ -27,7 +30,7 @@ public class PlayerDataController
 {
     
     private static PlayerDataController _instance;
-    public PlayerDataController Instance
+    public static PlayerDataController Instance
     {
         get
         {
@@ -77,10 +80,19 @@ public class PlayerDataController
     public void LoadData()
     {
         BinaryFormatter formatter = new BinaryFormatter();
-        using (FileStream fs = new FileStream(_filePath, FileMode.Open))
+        if (File.Exists(_filePath))
         {
-            Data = (PlayerData)formatter.Deserialize(fs);
-            Debug.Log("Save was loaded");
+            using (FileStream fs = new FileStream(_filePath, FileMode.Open))
+            {
+                Data = (PlayerData)formatter.Deserialize(fs);
+                Debug.Log("Save was loaded");
+            }
+        }
+        else
+        {
+            Data = new PlayerData();
+            WriteData();
+            Debug.Log("New save file was created");
         }
     }
 }
