@@ -38,16 +38,19 @@ public class Movable : MonoBehaviour
     // Update is called once per frame
     protected void FixedUpdate()
     {
-        if (_speed < MaxSpeed)
+        if (!GameController.Instance.IsGameEnded)
         {
-            float accelerationValue = AccelerationCurve.Evaluate(_speed / MaxSpeed) * Time.deltaTime;
-            Acceleration = accelerationValue; //debug
-            _speed += accelerationValue;
-            curSpeed = _speed; //debug
-            if (_speed > MaxSpeed)
-                _speed = MaxSpeed;
+            if (_speed < MaxSpeed)
+            {
+                float accelerationValue = AccelerationCurve.Evaluate(_speed / MaxSpeed) * Time.deltaTime;
+                Acceleration = accelerationValue; //debug
+                _speed += accelerationValue;
+                curSpeed = _speed; //debug
+                if (_speed > MaxSpeed)
+                    _speed = MaxSpeed;
+            }
+            _rb2d.MovePosition(_rb2d.position + Vector2.right * _speed * Time.deltaTime);
         }
-        _rb2d.MovePosition(_rb2d.position + Vector2.right * _speed * Time.deltaTime);
     }
 
     protected void OnTriggerEnter2D(Collider2D other)

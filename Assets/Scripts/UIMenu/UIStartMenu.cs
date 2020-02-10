@@ -9,6 +9,14 @@ public class UIStartMenu : MonoBehaviour
     public GameObject StartMenu;
     public GameObject InfoMenu;
     public GameObject AudioOff;
+    public LoadingComponent loadingComponent;
+    private void Awake()
+    {
+        //load playerData or set default values
+        PlayerDataController.Initialize();
+        PlayerDataController.Instance.LoadData();
+    }
+
     private void Start()
     {
         if (PlayerPrefs.GetInt("Audio") == 1)
@@ -27,7 +35,8 @@ public class UIStartMenu : MonoBehaviour
     }
     public void Map()
     {
-        SceneManager.LoadScene("Map");
+        loadingComponent.StartLoadLevel("Map");
+        //SceneManager.LoadScene("Map");
     }
     public void OpenInfo()
     {
