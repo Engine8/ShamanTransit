@@ -28,11 +28,36 @@ public class Movable : MonoBehaviour
         set { _speed = value; }
     }
 
+    //variables for swapping lines
+    public Transform[] Lines;
+    public float LineSwapTime = 1f;
+    protected int _curLine;
+    protected int _targetLine;
+    protected float _lerpModif = 0f;
+    protected bool _isLineSwapBlocked = false;
+
+    //variables for scaling based on current line
+    public float[] LineScales;
+    public AnimationCurve SwapLineCurve;
     // Start is called before the first frame update
     protected void Start()
     {
         _rb2d = GetComponent<Rigidbody2D>();
         _speed = StartSpeed;
+
+        if (gameObject.layer == 8)
+        {
+            _curLine = 0;
+        }
+        else if (gameObject.layer == 9)
+        {
+            _curLine = 1;
+        }
+        else
+        {
+            _curLine = 2;
+        }
+        _targetLine = _curLine;
     }
 
     // Update is called once per frame
@@ -40,6 +65,7 @@ public class Movable : MonoBehaviour
     {
         if (!GameController.Instance.IsGameEnded)
         {
+            //delta x calculations
             if (_speed < MaxSpeed)
             {
                 float accelerationValue = AccelerationCurve.Evaluate(_speed / MaxSpeed) * Time.deltaTime;
@@ -49,7 +75,27 @@ public class Movable : MonoBehaviour
                 if (_speed > MaxSpeed)
                     _speed = MaxSpeed;
             }
-            _rb2d.MovePosition(_rb2d.position + Vector2.right * _speed * Time.deltaTime);
+            float dX = Vector2.right.x * _speed * Time.deltaTime;
+            //delta y calculations
+            float dY = Lines[_curLine].position.y;
+            if (_curLine != _targetLine)
+            {
+                _isLineSwapBlocked = true;
+                _lerpModif += Time.deltaTime;
+                if (_lerpModif > LineSwapTime)
+                {
+                    _lerpModif = 1;
+                    _curLine = _targetLine;
+                    _isLineSwapBlocked = false;
+                }
+                float curSwapCoef = SwapLineCurve.Evaluate(_lerpModif / LineSwapTime);
+                dY = Mathf.Lerp(Lines[_curLine].position.y, Lines[_targetLine].position.y, curSwapCoef);
+                float newXYScale = Mathf.Lerp(LineScales[_curLine], LineScales[_targetLine], curSwapCoef);
+                transform.localScale = new Vector3(newXYScale, newXYScale, 1);
+                if (!_isLineSwapBlocked)
+                    _lerpModif = 0f;
+            }
+            _rb2d.MovePosition(new Vector2(_rb2d.position.x + dX, dY));
         }
     }
 

@@ -39,7 +39,7 @@ public class FollowingCamera : MonoBehaviour
             if (distance > 0)
             {
                 Vector3 cameraNewPosition = transform.position + targetFollowDirection * distance * CameraSpeed * Time.deltaTime;
-                float newDistance = Vector3.Distance(targetFollowPosition, cameraNewPosition);
+                float newDistance = Vector3.Distance(targetFollowPosition, cameraNewPosition);   
                 if (newDistance > distance)
                 {
                     //over move the camera
