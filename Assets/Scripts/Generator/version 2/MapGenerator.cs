@@ -3,82 +3,54 @@ using UnityEngine;
 
 public class MapGenerator : MonoBehaviour
 {
-    public Tile TilePrefab;
-    public int LengthMap;
-    public GameObject[] BlocksPrefabs;
-    public TileBlock[] TileBlocks;
-
+    public Map[] map;
+    public int mapIndex;
     public bool IsNeedRegenerateMap = false;
+    public Tile TilePrefab;
 
-    private List<Tile> _spawnedTiles = new List<Tile>();
-    private bool _needToFindTiles = true;
-    private string _holderName = "Generator Map";
+    
+    public GameObject[] BlocksPrefabs;
+    public GameObject[] EnemyPrefabs;
+
+    string holderName = "Generated Map";
+    Map currentMap;
 
     private void Start()
     {
-        //tileBlocks = new TileBlock[lengthMap];
-        //GanarateMap();
-    }
 
+    }
     public void TryGenerateMap()
     {
-        if (IsNeedRegenerateMap)
-        {
-            SpawnMap();
-            IsNeedRegenerateMap = false;
-        }
-        else 
-        {
-            if (_needToFindTiles)
-            {
-                FindMap();
-            }
-            GenerateMap();
-        }
-    }
-
-    //find all map tiles and get its characteristics
-    public void FindMap()
-    {
-        if (_spawnedTiles.Count != 0)
-            return;
-        Transform mapHolder = transform.Find(_holderName).gameObject.transform;
-        LengthMap = mapHolder.childCount;
-        for (int i = 0; i < LengthMap; ++i)
-        {
-            Tile tile = mapHolder.GetChild(i).gameObject.GetComponent<Tile>();
-            if (tile == null)
-                Debug.Log("Oops. Its error in FindMap");
-            _spawnedTiles.Add(tile);
-        }
+        currentMap = map[mapIndex];
+        SpawnMap();
+        GenerateMap();
     }
 
     //Delete previous generated map and creates new clear <LengthMap> tiles
     public void SpawnMap()
     {
-        if (transform.Find(_holderName))
-        {
-            DestroyImmediate(transform.Find(_holderName).gameObject);
-            _spawnedTiles.Clear();
-        }
-        TileBlock.LengthLand = TilePrefab.Lands.Length;
-        TileBlocks = new TileBlock[LengthMap];
         
-        Transform mapHolder = new GameObject(_holderName).transform;
+        if (transform.Find(holderName))
+        {
+            DestroyImmediate(transform.Find(holderName).gameObject);
+            currentMap._spawnedTiles.Clear();
+        }
+  
+        Transform mapHolder = new GameObject(holderName).transform;
         mapHolder.parent = transform;
 
-        for (int x = 0; x < LengthMap; ++x)
+        for (int x = 0; x < currentMap.LengthMap; ++x)
         {
             if (x == 0)
             {
-                _spawnedTiles.Add(Instantiate(TilePrefab, new Vector3(0, 0, 0), Quaternion.identity));
-                _spawnedTiles[0].gameObject.transform.parent = mapHolder;
+                currentMap._spawnedTiles.Add(Instantiate(TilePrefab, new Vector3(0, 0, 0), Quaternion.identity));
+                currentMap._spawnedTiles[0].gameObject.transform.parent = mapHolder;
             }
             else
             {
                 Tile newTile = Instantiate(TilePrefab);
-                newTile.transform.position = _spawnedTiles[_spawnedTiles.Count - 1].End.position - newTile.Begin.localPosition;
-                _spawnedTiles.Add(newTile);
+                newTile.transform.position = currentMap._spawnedTiles[currentMap._spawnedTiles.Count - 1].End.position - newTile.Begin.localPosition;
+                currentMap._spawnedTiles.Add(newTile);
                 newTile.gameObject.transform.parent = mapHolder;
             }
         }
@@ -87,31 +59,34 @@ public class MapGenerator : MonoBehaviour
     //handle the blocks editing in editor 
     public void GenerateMap()
     {
-        for (int tileIndex = 0; tileIndex < LengthMap; ++tileIndex)
+        for (int tileIndex = 0; tileIndex < currentMap.LengthMap; ++tileIndex)
         {
-            //Debug.Log($"TileIndex: {tileIndex}/{_spawnedTiles.Count}");
-            for (int landIndex = 0; landIndex < TileBlocks[tileIndex].LandsBlocks.Length; ++landIndex)
+            if (!currentMap.TileBlocks[tileIndex].cliff && !currentMap.TileBlocks[tileIndex].TrigerEnemy)
             {
-                for (int blockIndex = 0; blockIndex < TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks.Length; ++blockIndex)
+                currentMap._spawnedTiles[tileIndex].SpriteTile.SetActive(true);
+                currentMap._spawnedTiles[tileIndex].SpriteCliff.SetActive(false);
+
+                for (int landIndex = 0; landIndex < currentMap.TileBlocks[tileIndex].LandsBlocks.Length; ++landIndex)
                 {
-                    if (!TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].Active && _spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex] != null)
+
+                    for (int blockIndex = 0; blockIndex < currentMap.TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks.Length; ++blockIndex)
                     {
-                        _spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex].SetActive(TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].Active);
-                    }
-                    else
-                    {
-                        _spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex].SetActive(TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].Active);
-                        switch (TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].BlockType)
+                        if (!currentMap.TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].Active && currentMap._spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex] != null)
                         {
-                            case 0:
-                                CreateBlock(_spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex], 0, landIndex);
-                                break;
-                            case 1:
-                                CreateBlock(_spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex], 1, landIndex);
-                                break;
+                            currentMap._spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex].SetActive(currentMap.TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].Active);
+                        }
+                        else
+                        {
+                            currentMap._spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex].SetActive(currentMap.TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].Active);
+                            CreateBlock(currentMap._spawnedTiles[tileIndex].Lands[landIndex].SpawnedBlocks[blockIndex], currentMap.TileBlocks[tileIndex].LandsBlocks[landIndex].Blocks[blockIndex].BlockType, landIndex);
                         }
                     }
                 }
+            }
+            else if(currentMap.TileBlocks[tileIndex].cliff && !currentMap.TileBlocks[tileIndex].TrigerEnemy)
+            {
+                currentMap._spawnedTiles[tileIndex].SpriteTile.SetActive(false);
+                currentMap._spawnedTiles[tileIndex].SpriteCliff.SetActive(true);
             }
         }
     }
@@ -144,26 +119,42 @@ public class MapGenerator : MonoBehaviour
             newBlock.GetComponent<SpriteRenderer>().sortingLayerName = "Line3";
         }
     }
-
     [System.Serializable]
-    public class TileBlock
+    public class Map
     {
-        public static int LengthLand;
+        public int LengthMap;
+        public TileBlock[] TileBlocks;
 
-        public LandsBlock[] LandsBlocks = new LandsBlock[LengthLand];
+
+        [HideInInspector]
+        public List<Tile> _spawnedTiles = new List<Tile>();
+        [HideInInspector]
+        public bool _needToFindTiles = true;
+  
 
         [System.Serializable]
-        public class LandsBlock
+        public class TileBlock
         {
-            public Block[] Blocks = new Block[LengthLand];
+            public static int LengthLand;
+            public bool cliff;//обрыв
+            public bool TrigerEnemy;
+            [Range(0, 1)]
+            public int EnemyType;
+            public LandsBlock[] LandsBlocks = new LandsBlock[LengthLand];
+
+
             [System.Serializable]
-            public class Block
+            public class LandsBlock
             {
-                [Range(0, 1)]
-                public int BlockType;
-                public bool Active;
+                public Block[] Blocks = new Block[LengthLand];
+                [System.Serializable]
+                public class Block
+                {
+                    [Range(0, 4)]
+                    public int BlockType;
+                    public bool Active;
+                }
             }
         }
     }
-
 }
