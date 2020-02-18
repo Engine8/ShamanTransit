@@ -10,6 +10,10 @@ public class PlayerController : Movable
     public int MaxCargoCount;
     public int CurrentCargoCount;
 
+    //Camera scales
+    public float[] CameraLineScales;
+    public Cinemachine.CinemachineVirtualCamera Camera;
+
     // Start is called before the first frame update
     new void Start()
     {
@@ -78,6 +82,19 @@ public class PlayerController : Movable
             }
         }
     }
+
+    new private void FixedUpdate()
+    {
+        bool pastIsLineSwapBlocked = _isLineSwapBlocked;
+        base.FixedUpdate();
+        if (_isLineSwapBlocked || pastIsLineSwapBlocked)
+        {
+            float newCameraScale = Mathf.Lerp(CameraLineScales[_curLine], CameraLineScales[_targetLine], _curveModif);
+            Camera.m_Lens.OrthographicSize = newCameraScale;
+        }
+    }
+
+
     /*
     new void FixedUpdate()
     {
