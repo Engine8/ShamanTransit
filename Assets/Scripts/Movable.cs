@@ -33,12 +33,14 @@ public class Movable : MonoBehaviour
     public float LineSwapTime = 1f;
     protected int _curLine;
     protected int _targetLine;
+    //time lerp coefficient
     protected float _lerpModif = 0f;
+    //curve lerp coefficient
+    protected float _curveModif;
     protected bool _isLineSwapBlocked = false;
-
-    //variables for scaling based on current line
     public float[] LineScales;
     public AnimationCurve SwapLineCurve;
+
     // Start is called before the first frame update
     protected void Start()
     {
@@ -88,9 +90,9 @@ public class Movable : MonoBehaviour
                     _curLine = _targetLine;
                     _isLineSwapBlocked = false;
                 }
-                float curSwapCoef = SwapLineCurve.Evaluate(_lerpModif / LineSwapTime);
-                dY = Mathf.Lerp(Lines[_curLine].position.y, Lines[_targetLine].position.y, curSwapCoef);
-                float newXYScale = Mathf.Lerp(LineScales[_curLine], LineScales[_targetLine], curSwapCoef);
+                _curveModif = SwapLineCurve.Evaluate(_lerpModif / LineSwapTime);
+                dY = Mathf.Lerp(Lines[_curLine].position.y, Lines[_targetLine].position.y, _curveModif);
+                float newXYScale = Mathf.Lerp(LineScales[_curLine], LineScales[_targetLine], _curveModif);
                 transform.localScale = new Vector3(newXYScale, newXYScale, 1);
                 if (!_isLineSwapBlocked)
                     _lerpModif = 0f;
