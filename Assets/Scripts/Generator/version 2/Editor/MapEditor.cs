@@ -8,13 +8,11 @@ public class MapEditor : Editor
 {
     public override void OnInspectorGUI()
     {
-        base.OnInspectorGUI();
-
         MapGenerator map = target as MapGenerator;
-        //if (DrawDefaultInspector())
-        //{
-        //    map.TryGenerateMap();
-        //}
+        if (DrawDefaultInspector())
+        {
+            map.TryGenerateMap();
+        }
         if (GUILayout.Button("Generate Map"))
         {
             map.TryGenerateMap();

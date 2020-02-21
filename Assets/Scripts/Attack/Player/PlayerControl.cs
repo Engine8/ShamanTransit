@@ -41,5 +41,5 @@ public class PlayerControl : MonoBehaviour
         dead = true;
        // GameObject.Destroy(gameObject);
     }
-
+ 
 }

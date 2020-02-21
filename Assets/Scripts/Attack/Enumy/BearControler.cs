@@ -59,8 +59,17 @@ public class BearControler : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         speed = oldSpeed;
     }
+    public int GetCount()
+    {   
+        if(Bear.GetDead())
+            return 0;
+        else
+            return 1;
+    }
     public bool GetLifeBear()
     {
        return Bear.GetDead();
     }
-}
+    public void Attack()
+    { }
+ }

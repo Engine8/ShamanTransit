@@ -5,20 +5,15 @@ public class MapGenerator : MonoBehaviour
 {
     public Map[] map;
     public int mapIndex;
-    public bool IsNeedRegenerateMap = false;
     public Tile TilePrefab;
 
-    
+
     public GameObject[] BlocksPrefabs;
     public GameObject[] EnemyPrefabs;
 
     string holderName = "Generated Map";
     Map currentMap;
 
-    private void Start()
-    {
-
-    }
     public void TryGenerateMap()
     {
         currentMap = map[mapIndex];
@@ -29,13 +24,13 @@ public class MapGenerator : MonoBehaviour
     //Delete previous generated map and creates new clear <LengthMap> tiles
     public void SpawnMap()
     {
-        
+
         if (transform.Find(holderName))
         {
             DestroyImmediate(transform.Find(holderName).gameObject);
             currentMap._spawnedTiles.Clear();
         }
-  
+
         Transform mapHolder = new GameObject(holderName).transform;
         mapHolder.parent = transform;
 
@@ -83,10 +78,14 @@ public class MapGenerator : MonoBehaviour
                     }
                 }
             }
-            else if(currentMap.TileBlocks[tileIndex].cliff && !currentMap.TileBlocks[tileIndex].TrigerEnemy)
+            else if (currentMap.TileBlocks[tileIndex].cliff && !currentMap.TileBlocks[tileIndex].TrigerEnemy)
             {
                 currentMap._spawnedTiles[tileIndex].SpriteTile.SetActive(false);
                 currentMap._spawnedTiles[tileIndex].SpriteCliff.SetActive(true);
+            }
+            else
+            {
+                currentMap._spawnedTiles[tileIndex].EnemyPrefabs = EnemyPrefabs[currentMap.TileBlocks[tileIndex].EnemyType];
             }
         }
     }
@@ -130,7 +129,7 @@ public class MapGenerator : MonoBehaviour
         public List<Tile> _spawnedTiles = new List<Tile>();
         [HideInInspector]
         public bool _needToFindTiles = true;
-  
+
 
         [System.Serializable]
         public class TileBlock
