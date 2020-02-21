@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Rendering;
 
 public class GameController : MonoBehaviour
 {
@@ -10,8 +11,8 @@ public class GameController : MonoBehaviour
 
 
     //UI
-    public TextMeshProUGUI TextMeshCargo;
-    public TextMeshProUGUI TextMeshRoute;
+    //public TextMeshProUGUI TextMeshCargo;
+    //public TextMeshProUGUI TextMeshRoute;
 
     public GameObject IngameUI;
     public GameObject EndgameUI;
@@ -29,12 +30,14 @@ public class GameController : MonoBehaviour
 
     //Note: is needed to find better solution
     public Camera MainCamera;
+    public Volume MainCameraVolume;
+    public VolumeProfile volumeProfile;
     public ParallaxBackground Moon;
 
     //Amount of cargo that lost on hit
     //Maybe defined by level in scene manager
-    public int CargoPerHit = 1;
-    public int MoneyPerCargo = 500;
+    //public int CargoPerHit = 1;
+    public int MoneyPerLevel = 500;
 
     public GameObject StartPoint;
     public GameObject EndPoint;
@@ -61,22 +64,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (TextMeshCargo != null)
-        {
-            UpdateCargoUI();
-        }
-        else
-        {
-            Debug.LogError("TextMeshScore reference in GameController not stated");
-        }
-        if (TextMeshRoute != null)
-        {
-            TextMeshRoute.SetText("0 %");
-        }
-        else
-        {
-            Debug.LogError("TextMeshRoute reference in GameController not stated");
-        }
         if (PlayerCharacter != null)
         {
             PlayerCharacter.OnHit.AddListener(OnPlayerHit);
@@ -92,7 +79,10 @@ public class GameController : MonoBehaviour
             Debug.LogError("Start or End point reference in GameController not stated");
         }
 
+        volumeProfile = MainCameraVolume.profile;
+
         PlayerCharacter.OnDie.AddListener(GameDefeated);
+        PlayerCharacter.OnHit.AddListener(OnPlayerHit);
     }
 
     // Update is called once per frame
@@ -108,7 +98,7 @@ public class GameController : MonoBehaviour
 
             float routeLength = EndPoint.transform.position.x - StartPoint.transform.position.x;
             float routeDoneInPercents = (PlayerCharacter.transform.position.x - StartPoint.transform.position.x) / routeLength * 100;
-            TextMeshRoute.SetText($"{routeDoneInPercents} %");
+            //TextMeshRoute.SetText($"{routeDoneInPercents} %");
 
             //Note: needed to find better solution
             float cameraWidth = MainCamera.ViewportToWorldPoint(new Vector3(1f, 1f, MainCamera.transform.position.z)).x 
@@ -131,6 +121,14 @@ public class GameController : MonoBehaviour
 
     private void OnPlayerHit()
     {
+        if (!IsGameEnded)
+        {
+            UnityEngine.Rendering.Universal.Vignette vignette;
+            volumeProfile.TryGet(out vignette);
+
+            vignette.intensity.Override(0.25f + 0.30f / PlayerCharacter.MaxHP * (PlayerCharacter.MaxHP - PlayerCharacter.CurrentHP));
+        }
+        /*
         PlayerCharacter.CurrentCargoCount -= CargoPerHit;
         if (PlayerCharacter.CurrentCargoCount <= 0)
         {
@@ -138,18 +136,20 @@ public class GameController : MonoBehaviour
             IsGameEnded = true;
             ShowEndgameUI(false);
         }
-        UpdateCargoUI();
+        //UpdateCargoUI();
+        */
     }
 
+    /*
     private void UpdateCargoUI()
     {
         TextMeshCargo.SetText($"{PlayerCharacter.CurrentCargoCount}/{PlayerCharacter.MaxCargoCount}");
     }
-
+    */
     private void ShowEndgameUI(bool isGameWin)
     {
         IngameUI.SetActive(false);
-        EndgameCargoText.text = $"{PlayerCharacter.CurrentCargoCount} / {PlayerCharacter.MaxCargoCount}";
+        //EndgameCargoText.text = $"{PlayerCharacter.CurrentCargoCount} / {PlayerCharacter.MaxCargoCount}";
         if (isGameWin)
         {
             EndgameMainText.text = "You win!";
@@ -173,7 +173,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator MoneyAnimationStart()
     {
-        int moneySum = PlayerCharacter.CurrentCargoCount * MoneyPerCargo;
+        int moneySum = MoneyPerLevel;
         int curMoney = 0;
         int i = 1;
         while (curMoney < moneySum)
@@ -195,7 +195,7 @@ public class GameController : MonoBehaviour
 
     public void OnContinueButtonClick()
     {
-        PlayerDataController.Instance.AddMoney(PlayerCharacter.CurrentCargoCount * MoneyPerCargo);
+        PlayerDataController.Instance.AddMoney(MoneyPerLevel);
         //consider that stage include only 5 levels
         PlayerDataController.Instance.Data.CurrentLevel = ++PlayerDataController.Instance.Data.CurrentLevel % 5;
         PlayerDataController.Instance.Data.CurrentStage = PlayerDataController.Instance.Data.CurrentLevel / 5 + 1;

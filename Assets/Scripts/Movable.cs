@@ -11,6 +11,9 @@ public class Movable : MonoBehaviour
     public float Acceleration = 2f;
     public float StartSpeed = 0f;
 
+    public int MaxHP;
+    public int CurrentHP;
+
     //debug
     public float curSpeed;
 
@@ -109,23 +112,31 @@ public class Movable : MonoBehaviour
         if (obstacle != null)
         {
             Debug.Log("Collision with obstacle");
+
+            CurrentHP -= obstacle.Damage;
+            if (CurrentHP < 0)
+            {
+                CurrentHP = 0;
+            }
+
             if (OnHit != null)
             {
                 OnHit.Invoke();
             }
-            if (obstacle.Type == Obstacle.ObstacleType.Slower)
+
+            if (CurrentHP == 0 || obstacle.Type == Obstacle.ObstacleType.Deadly)
+            {
+                if (OnDie != null)
+                {
+                    OnDie.Invoke();
+                }
+            }
+            else if (obstacle.Type == Obstacle.ObstacleType.Slower)
             {
                 _speed -= obstacle.SpeedReduce;
                 if (_speed < 0)
                 {
                     _speed = 0;
-                }
-            }
-            else if (obstacle.Type == Obstacle.ObstacleType.Deadly)
-            {
-                if (OnDie != null)
-                {
-                    OnDie.Invoke();
                 }
             }
         }

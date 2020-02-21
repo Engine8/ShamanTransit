@@ -5,10 +5,6 @@ using UnityEngine;
 public class PlayerController : Movable
 {    
     private SpriteRenderer _spriteRenderer;
-    private ParticleSystem _cargoParticle;
-
-    public int MaxCargoCount;
-    public int CurrentCargoCount;
 
     //Camera scales
     public float[] CameraLineScales;
@@ -18,17 +14,7 @@ public class PlayerController : Movable
     new void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _cargoParticle = transform.Find("CargoParticle").gameObject.GetComponent<ParticleSystem>();
 
-
-        OnHit.AddListener(delegate ()
-        {
-            if (CurrentCargoCount > 0)
-            {
-                _cargoParticle.Play();
-                Debug.Log("Particle play");
-            }
-        });
         base.Start();
     }
 
@@ -93,26 +79,4 @@ public class PlayerController : Movable
             Camera.m_Lens.OrthographicSize = newCameraScale;
         }
     }
-
-
-    /*
-    new void FixedUpdate()
-    {
-        //very bad things: need find method to get layer name
-        int lineIndex;
-        if (gameObject.layer == 8)
-            lineIndex = 0;
-        else if (gameObject.layer == 9)
-            lineIndex = 1;
-        else
-            lineIndex = 2;
-        //Debug.Log($"Current lineIndex = {lineIndex}");
-        if (Lines[lineIndex] != null)
-        {
-            //Debug.Log($"Current lineIndex = {lineIndex}, y position = {Lines[lineIndex].transform.position.y}");
-            _rb2d.position = new Vector2(_rb2d.position.x, Lines[lineIndex].transform.position.y);
-        }
-        base.FixedUpdate();
-    }
-    */
 }
