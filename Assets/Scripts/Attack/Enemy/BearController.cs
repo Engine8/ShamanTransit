@@ -2,26 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BearControler : MonoBehaviour
+public class BearController : EnemyController
 {
     public int speed;
-    public PlayerControl HealsPlayer;
-    //public float timeBetweenAttacks;//скорость атаки
-
-    private Enumy Bear;
+   
+    private PlayerControl HealsPlayer;
+    private Enemy Bear;
     private float nextAttackTime;
     void Start()
     {
-        // StartCoroutine("Sprint");
-        Bear = gameObject.GetComponent<Enumy>();
+        HealsPlayer = FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>();
+        Bear = gameObject.GetComponent<Enemy>();
     }
-    IEnumerator Sprint() //появление волков
-    {
-        speed = 16;
-        yield return new WaitForSeconds(1.3f);
-        speed = 10;
-    }
-
     void FixedUpdate()
     {
         if (!HealsPlayer.GetDead())
@@ -46,11 +38,11 @@ public class BearControler : MonoBehaviour
             }
         }
     }
-    public void TakeDamage()
+    public override void TakeDamage()
     {
         StartCoroutine("Slowdown");
     }
-    IEnumerator Slowdown() 
+    IEnumerator Slowdown()
     {
         Debug.Log(speed);
         int oldSpeed = speed;
@@ -59,17 +51,20 @@ public class BearControler : MonoBehaviour
         yield return new WaitForSeconds(0.6f);
         speed = oldSpeed;
     }
-    public int GetCount()
-    {   
-        if(Bear.GetDead())
+    public override int GetCount()
+    {
+        if (Bear.GetDead())
             return 0;
         else
             return 1;
     }
     public bool GetLifeBear()
     {
-       return Bear.GetDead();
+        return Bear.GetDead();
     }
-    public void Attack()
-    { }
- }
+    public override void Attack() { }
+    public override bool GetActiv()
+    {
+        return gameObject.activeSelf;
+    }
+}

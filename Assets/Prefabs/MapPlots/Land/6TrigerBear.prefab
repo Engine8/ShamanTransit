@@ -292,6 +292,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5010703598671251691}
   - component: {fileID: 3526217302567764099}
+  - component: {fileID: 3689355216577980205}
   m_Layer: 0
   m_Name: TrigerEnemy
   m_TagString: Untagged
@@ -339,6 +340,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 7}
   m_EdgeRadius: 0
+--- !u!114 &3689355216577980205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762092744098458011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 645c898cc45b573458c73ab83c876769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1774507853408024367
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +425,7 @@ GameObject:
   - component: {fileID: 6581053277576116797}
   - component: {fileID: 8768126590312050550}
   m_Layer: 0
-  m_Name: TrigerBear
+  m_Name: 6TrigerBear
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -9,6 +9,7 @@ public class ChunksPlacer : MonoBehaviour
     public Map[] map;
     public int mapIndex;
     public Tile[] chunkPrefabs;
+    public GameObject UIAttack;
     public Tile chunkPrefabsAttack;
 
     private bool stateAttack;
@@ -37,11 +38,17 @@ public class ChunksPlacer : MonoBehaviour
     }
     public void OnAttack(GameObject enemy)
     {
-        Debug.Log(enemy.name);
         stateAttack = true;
+        UIAttack.SetActive(true);
         GameObject newChunk = Instantiate(enemy);
-        newChunk.transform.position = new Vector2(player.position.x-10, 0);
-        currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].gameObject.transform.parent = mapHolder;
+
+        FindObjectOfType<HitArea>().SetEnnemy(newChunk.GetComponent<EnemyController>());
+        Debug.Log(newChunk.GetComponent<EnemyController>().GetCount());
+        newChunk.transform.position = new Vector2(player.position.x - 15, -1.27f);
+    }
+    public void Victiry()
+    {
+        stateAttack = false;
     }
     private void SpawnChunk()
     {

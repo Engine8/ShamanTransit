@@ -2,20 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enumy : MonoBehaviour
+public class Enemy : MonoBehaviour
 {
     public float startingHealth;
     public float attackDistanceThreshold;//дистанция атаки
     public float damage; //урон
-    public Transform targetPlayer;
-
-
+   
+    
+    private Transform targetPlayer;
     private float health;
-    private bool dead;
+    private bool dead=false;
     private PlayerControl HealsPlayer;
 
     void Start()
     {
+        targetPlayer = FindObjectOfType<PlayerControl>().transform;
         HealsPlayer = targetPlayer.GetComponent<PlayerControl>();
         health = startingHealth;
     }
@@ -32,7 +33,7 @@ public class Enumy : MonoBehaviour
     {
         Vector3 originalPosition = transform.localPosition;
         Vector3 dirToTarget = (targetPlayer.position - transform.position).normalized;
-        Vector3 attackPosition = transform.localPosition + dirToTarget*4;
+        Vector3 attackPosition = transform.localPosition + dirToTarget * 4;
 
         float attackSpeed = 3;
         float percent = 0;
@@ -62,14 +63,13 @@ public class Enumy : MonoBehaviour
             Die();
         }
     }
-    public void Die()
+    void Die()
     {
         dead = true;
-
-        if (FindObjectOfType<WolfPosition>())
+        if (FindObjectOfType<WolfController>())
         {
             gameObject.SetActive(false);
-            FindObjectOfType<WolfPosition>().ChendePosition();
+            FindObjectOfType<WolfController>().ChendePosition();
         }
         // GameObject.Destroy(gameObject, 5f);
     }

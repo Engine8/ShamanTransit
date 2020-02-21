@@ -7,7 +7,7 @@ public class HitArea : MonoBehaviour
 {
     public Transform Arrow;
 
-    private BearControler Enemy;
+    private EnemyController _enumy;
     private Image MissAr;
     private SightScale sightScale;
     void Start()
@@ -16,18 +16,22 @@ public class HitArea : MonoBehaviour
         sightScale = FindObjectOfType<SightScale>();
         transform.localEulerAngles = new Vector3(0, 0, 60);
     }
+    public void SetEnnemy(EnemyController vavue)
+    {
+        _enumy = vavue;
+    }
     public void Tach()
     {
         if (Arrow.localEulerAngles.z <= transform.localEulerAngles.z && Arrow.localEulerAngles.z >= transform.localEulerAngles.z - 18)
         {
             transform.localEulerAngles = new Vector3(0, 0, Random.Range(20f, 90f));
-            if (Enemy.gameObject.activeSelf)
+            if (_enumy.GetActiv())
             {
-                if (Enemy.GetCount() >= 0)
+                if (_enumy.GetCount() >= 0)
                 {
-                    Enemy.TakeDamage();
+                    _enumy.TakeDamage();
                 }
-                if (Enemy.GetCount() == 0)
+                if (_enumy.GetCount() == 0)
                 {
                     sightScale.Stop();
                 }
@@ -37,8 +41,8 @@ public class HitArea : MonoBehaviour
         else
         {
             StartCoroutine("Miss");
-            if (Enemy.gameObject.activeSelf)
-                Enemy.Attack();
+            if (_enumy.GetActiv())
+                _enumy.Attack();
         }
     }
     IEnumerator Miss()

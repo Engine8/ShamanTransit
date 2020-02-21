@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -284,18 +284,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &493506251 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6648551672482228333, guid: dde1c323f5b1d714587c07c851c190b9,
-    type: 3}
-  m_PrefabInstance: {fileID: 6648551672803731110}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 510dae0db7a58b848911db3a5e0b11b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &545757828
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,18 +522,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682022469}
   m_CullTransparentMesh: 0
---- !u!114 &825960924 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7040827107207418428, guid: 5196aeee774466343a8c1acc41dba702,
-    type: 3}
-  m_PrefabInstance: {fileID: 7040827106421455840}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2a72c80edc5c78449741e3039ba1643, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &891856235
 GameObject:
   m_ObjectHideFlags: 0
@@ -1278,9 +1254,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Arrow: {fileID: 1005998407}
-  Wolfs: {fileID: 825960924}
-  Bear: {fileID: 493506251}
-  MissAr: {fileID: 305125568}
 --- !u!1 &1454987379
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,18 +1353,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
---- !u!114 &1552152178 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6300788932807607595, guid: 6cf6139b0f094f643b3b27f88fa03916,
-    type: 3}
-  m_PrefabInstance: {fileID: 1002436383}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc348c70f2d3c6640abceeb4a5bebabd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1559208330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,9 +1430,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1296669484}
-  FirstChunk: {fileID: 1552152178}
-  ChunkPrefabs: {fileID: 6300788932807607595, guid: 6cf6139b0f094f643b3b27f88fa03916,
-    type: 3}
+  map: []
+  mapIndex: 0
+  chunkPrefabs: []
+  chunkPrefabsAttack: {fileID: 0}
 --- !u!4 &1929903581
 Transform:
   m_ObjectHideFlags: 0
@@ -1647,7 +1609,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Arrow: {fileID: 1005998407}
   HitArea: {fileID: 1432139853}
-  BagArea: {fileID: 305125568}
   SpeedRotate: 2
 --- !u!1 &2127778629
 GameObject:

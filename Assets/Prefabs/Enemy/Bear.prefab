@@ -92,12 +92,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 6648551672482228321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 916ebea756cdadc46b331db0146f7e42, type: 3}
+  m_Script: {fileID: 11500000, guid: 4446c83478802c74a9d6f7cdf28f8a22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startingHealth: 5
-  attackDistanceThreshold: 3.5
-  damage: 10
+  attackDistanceThreshold: 3.8
+  damage: 5
   targetPlayer: {fileID: 0}
 --- !u!114 &6648551672482228333
 MonoBehaviour:
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6648551672482228321}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 510dae0db7a58b848911db3a5e0b11b1, type: 3}
+  m_Script: {fileID: 11500000, guid: 35640dd80d4810e4f93e9e8ac443d470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 12

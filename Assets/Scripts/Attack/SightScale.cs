@@ -24,6 +24,7 @@ public class SightScale : MonoBehaviour
     }
     public void Stop()
     {
+        FindObjectOfType<ChunksPlacer>().Victiry();
         victori = true;
         StartCoroutine("Weate");
     }
