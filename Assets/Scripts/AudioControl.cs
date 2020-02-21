@@ -15,7 +15,6 @@ public class AudioControl : MonoBehaviour
         }
         else
         {
-            Debug.Log("FFFF");
             audio.Stop();
         }
     }
