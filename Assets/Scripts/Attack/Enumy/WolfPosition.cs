@@ -93,11 +93,11 @@ public class WolfPosition : MonoBehaviour
             nextAttackTime = Time.time + timeBetweenAttacks;
         }
     }
-    public void DieWolf()
+    public void TakeDamage()
     {
         Wolf[4 - countWolf].Die();
     }
-    public int GetCountWolfs()
+    public int GetCount()
     {
         return countWolf;
     }

@@ -20,10 +20,6 @@ public class Enumy : MonoBehaviour
         health = startingHealth;
     }
 
-    void Update()
-    {
-      
-    }
     public bool GetDead()
     {
         return dead;
@@ -37,7 +33,6 @@ public class Enumy : MonoBehaviour
         Vector3 originalPosition = transform.localPosition;
         Vector3 dirToTarget = (targetPlayer.position - transform.position).normalized;
         Vector3 attackPosition = transform.localPosition + dirToTarget*4;
-
 
         float attackSpeed = 3;
         float percent = 0;
@@ -69,7 +64,6 @@ public class Enumy : MonoBehaviour
     }
     public void Die()
     {
-        
         dead = true;
 
         if (FindObjectOfType<WolfPosition>())

@@ -6,5 +6,8 @@ public class Tile : MonoBehaviour
 {
     public Transform Begin;
     public Transform End;
+    public GameObject SpriteTile;
+    public GameObject SpriteCliff;
+    public GameObject EnemyPrefabs;
     public Land[] Lands;
 }

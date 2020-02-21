@@ -5,38 +5,78 @@ using UnityEngine;
 public class ChunksPlacer : MonoBehaviour
 {
     public Transform player;
-    //public Chunk[] chunkPrefabs;
-    public Chunk FirstChunk;
-    public Chunk ChunkPrefabs;
 
-    private List<Chunk> spawnedChunks = new List<Chunk>();
-    private float positionYFirstChunk;
+    public Map[] map;
+    public int mapIndex;
+    public Tile[] chunkPrefabs;
+    public Tile chunkPrefabsAttack;
+
+    private bool stateAttack;
+    private int indexChunk = 0;
+    string holderName = "Generated Map";
+    Transform mapHolder;
+
+    Map currentMap;
     void Start()
     {
-        spawnedChunks.Add(FirstChunk);
-        positionYFirstChunk = FirstChunk.transform.position.y;
-        transform.gameObject.layer = 2;
+        mapHolder = new GameObject(holderName).transform;
+        mapHolder.parent = transform;
+        currentMap = map[mapIndex];
+        currentMap.spawnedChunks.Add(Instantiate(currentMap.TilePrefabsTurn[indexChunk], new Vector3(0, 0, 0), Quaternion.identity));
+        currentMap.spawnedChunks[0].gameObject.transform.parent = mapHolder;
+        ++indexChunk;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.x > spawnedChunks[spawnedChunks.Count - 1].endChunk.position.x -8)
+        if (player.transform.position.x > currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x -8)
         {
             SpawnChunk();
         }
     }
-
+    public void OnAttack(GameObject enemy)
+    {
+        Debug.Log(enemy.name);
+        stateAttack = true;
+        GameObject newChunk = Instantiate(enemy);
+        newChunk.transform.position = new Vector2(player.position.x-10, 0);
+        currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].gameObject.transform.parent = mapHolder;
+    }
     private void SpawnChunk()
     {
-     // Chunk newChunk = Instantiate(chunkPrefabs[Random.Range(0, chunkPrefabs.Length)]);
-        Chunk newChunk = Instantiate(ChunkPrefabs);
-        newChunk.transform.position = new Vector2(spawnedChunks[spawnedChunks.Count - 1].endChunk.position.x - newChunk.beginChunk.localPosition.x, positionYFirstChunk) ;
-        spawnedChunks.Add(newChunk);
-        if (spawnedChunks.Count >= 5)
+        if (!stateAttack) 
         {
-            Destroy(spawnedChunks[0].gameObject);
-            spawnedChunks.RemoveAt(0);
+
+            Tile newChunk = Instantiate(currentMap.TilePrefabsTurn[indexChunk]);
+            newChunk.transform.position = new Vector2(currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x - newChunk.Begin.localPosition.x, 0);
+            currentMap.spawnedChunks.Add(newChunk);
+            currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].gameObject.transform.parent = mapHolder;
+            if (currentMap.spawnedChunks.Count >= 5)
+            {
+                Destroy(currentMap.spawnedChunks[0].gameObject);
+                currentMap.spawnedChunks.RemoveAt(0);
+            }
+            ++indexChunk;
+        }
+        else
+        {
+            Tile newChunk = Instantiate(chunkPrefabsAttack);
+            newChunk.transform.position = new Vector2(currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x - newChunk.Begin.localPosition.x, 0);
+            currentMap.spawnedChunks.Add(newChunk);
+            currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].gameObject.transform.parent = mapHolder;
+            if (currentMap.spawnedChunks.Count >= 5)
+            {
+                Destroy(currentMap.spawnedChunks[0].gameObject);
+                currentMap.spawnedChunks.RemoveAt(0);
+            }
         }
     }
-}
+    [System.Serializable]
+    public class Map
+    {
+        public Tile[] TilePrefabsTurn;
+        [HideInInspector]
+        public List<Tile> spawnedChunks = new List<Tile>();
+    }
+ }
