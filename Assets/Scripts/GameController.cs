@@ -17,7 +17,7 @@ public class GameController : MonoBehaviour
     public GameObject IngameUI;
     public GameObject EndgameUI;
     public Text EndgameMainText;
-    public Text EndgameCargoText;
+    //public Text EndgameCargoText;
     public Text EndgameMoneyText;
 
     private AudioSource _uiAudioSource;
@@ -128,24 +128,8 @@ public class GameController : MonoBehaviour
 
             vignette.intensity.Override(0.25f + 0.30f / PlayerCharacter.MaxHP * (PlayerCharacter.MaxHP - PlayerCharacter.CurrentHP));
         }
-        /*
-        PlayerCharacter.CurrentCargoCount -= CargoPerHit;
-        if (PlayerCharacter.CurrentCargoCount <= 0)
-        {
-            PlayerCharacter.CurrentCargoCount = 0;
-            IsGameEnded = true;
-            ShowEndgameUI(false);
-        }
-        //UpdateCargoUI();
-        */
     }
 
-    /*
-    private void UpdateCargoUI()
-    {
-        TextMeshCargo.SetText($"{PlayerCharacter.CurrentCargoCount}/{PlayerCharacter.MaxCargoCount}");
-    }
-    */
     private void ShowEndgameUI(bool isGameWin)
     {
         IngameUI.SetActive(false);

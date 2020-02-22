@@ -147,11 +147,16 @@ MonoBehaviour:
   MaxSpeed: 10
   Acceleration: 2
   StartSpeed: 0
+  MaxHP: 0
+  CurrentHP: 0
   curSpeed: 0
   OnHit:
     m_PersistentCalls:
       m_Calls: []
   OnDie:
+    m_PersistentCalls:
+      m_Calls: []
+  OnChangeLineEnd:
     m_PersistentCalls:
       m_Calls: []
   AccelerationCurve:
@@ -169,8 +174,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  MaxCargoCount: 0
-  CurrentCargoCount: 0
+  PhysicsLayerChangeTime1: 0.3
+  PhysicsLayerChangeTime2: 0.7
   CameraLineScales: []
   Camera: {fileID: 0}
 --- !u!82 &1389840021

@@ -22,6 +22,7 @@ public class Movable : MonoBehaviour
 
     public UnityEvent OnHit;
     public UnityEvent OnDie;
+    public UnityEvent OnChangeLineEnd;
 
     public AnimationCurve AccelerationCurve;
 
@@ -54,11 +55,11 @@ public class Movable : MonoBehaviour
         {
             _curLine = 0;
         }
-        else if (gameObject.layer == 9)
+        else if (gameObject.layer == 10)
         {
             _curLine = 1;
         }
-        else
+        else if (gameObject.layer == 12)
         {
             _curLine = 2;
         }
@@ -90,6 +91,7 @@ public class Movable : MonoBehaviour
                 if (_lerpModif > LineSwapTime)
                 {
                     _lerpModif = 1;
+                    OnChangeLineEnd.Invoke();
                     _curLine = _targetLine;
                     _isLineSwapBlocked = false;
                 }
@@ -98,7 +100,10 @@ public class Movable : MonoBehaviour
                 float newXYScale = Mathf.Lerp(LineScales[_curLine], LineScales[_targetLine], _curveModif);
                 transform.localScale = new Vector3(newXYScale, newXYScale, 1);
                 if (!_isLineSwapBlocked)
+                {
                     _lerpModif = 0f;
+                    _curveModif = 0f;
+                }
             }
             _rb2d.MovePosition(new Vector2(_rb2d.position.x + dX, dY));
         }
