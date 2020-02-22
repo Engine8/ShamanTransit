@@ -11,6 +11,9 @@ public class Movable : MonoBehaviour
     public float Acceleration = 2f;
     public float StartSpeed = 0f;
 
+    public int MaxHP;
+    public int CurrentHP;
+
     //debug
     public float curSpeed;
 
@@ -19,6 +22,7 @@ public class Movable : MonoBehaviour
 
     public UnityEvent OnHit;
     public UnityEvent OnDie;
+    public UnityEvent OnChangeLineEnd;
 
     public AnimationCurve AccelerationCurve;
 
@@ -33,12 +37,14 @@ public class Movable : MonoBehaviour
     public float LineSwapTime = 1f;
     protected int _curLine;
     protected int _targetLine;
+    //time lerp coefficient
     protected float _lerpModif = 0f;
+    //curve lerp coefficient
+    protected float _curveModif;
     protected bool _isLineSwapBlocked = false;
-
-    //variables for scaling based on current line
     public float[] LineScales;
     public AnimationCurve SwapLineCurve;
+
     // Start is called before the first frame update
     protected void Start()
     {
@@ -49,11 +55,11 @@ public class Movable : MonoBehaviour
         {
             _curLine = 0;
         }
-        else if (gameObject.layer == 9)
+        else if (gameObject.layer == 10)
         {
             _curLine = 1;
         }
-        else
+        else if (gameObject.layer == 12)
         {
             _curLine = 2;
         }
@@ -85,15 +91,19 @@ public class Movable : MonoBehaviour
                 if (_lerpModif > LineSwapTime)
                 {
                     _lerpModif = 1;
+                    OnChangeLineEnd.Invoke();
                     _curLine = _targetLine;
                     _isLineSwapBlocked = false;
                 }
-                float curSwapCoef = SwapLineCurve.Evaluate(_lerpModif / LineSwapTime);
-                dY = Mathf.Lerp(Lines[_curLine].position.y, Lines[_targetLine].position.y, curSwapCoef);
-                float newXYScale = Mathf.Lerp(LineScales[_curLine], LineScales[_targetLine], curSwapCoef);
+                _curveModif = SwapLineCurve.Evaluate(_lerpModif / LineSwapTime);
+                dY = Mathf.Lerp(Lines[_curLine].position.y, Lines[_targetLine].position.y, _curveModif);
+                float newXYScale = Mathf.Lerp(LineScales[_curLine], LineScales[_targetLine], _curveModif);
                 transform.localScale = new Vector3(newXYScale, newXYScale, 1);
                 if (!_isLineSwapBlocked)
+                {
                     _lerpModif = 0f;
+                    _curveModif = 0f;
+                }
             }
             _rb2d.MovePosition(new Vector2(_rb2d.position.x + dX, dY));
         }
@@ -107,23 +117,31 @@ public class Movable : MonoBehaviour
         if (obstacle != null)
         {
             Debug.Log("Collision with obstacle");
+
+            CurrentHP -= obstacle.Damage;
+            if (CurrentHP < 0)
+            {
+                CurrentHP = 0;
+            }
+
             if (OnHit != null)
             {
                 OnHit.Invoke();
             }
-            if (obstacle.Type == Obstacle.ObstacleType.Slower)
+
+            if (CurrentHP == 0 || obstacle.Type == Obstacle.ObstacleType.Deadly)
+            {
+                if (OnDie != null)
+                {
+                    OnDie.Invoke();
+                }
+            }
+            else if (obstacle.Type == Obstacle.ObstacleType.Slower)
             {
                 _speed -= obstacle.SpeedReduce;
                 if (_speed < 0)
                 {
                     _speed = 0;
-                }
-            }
-            else if (obstacle.Type == Obstacle.ObstacleType.Deadly)
-            {
-                if (OnDie != null)
-                {
-                    OnDie.Invoke();
                 }
             }
         }
