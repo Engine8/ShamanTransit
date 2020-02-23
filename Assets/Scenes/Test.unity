@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -560,6 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &94700074
 Rigidbody2D:
   serializedVersion: 4
@@ -1073,6 +1074,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &129923837
 Rigidbody2D:
   serializedVersion: 4
@@ -1370,6 +1372,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &151751423
 Rigidbody2D:
   serializedVersion: 4
@@ -2766,6 +2769,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &300499849
 Rigidbody2D:
   serializedVersion: 4
@@ -3030,7 +3034,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 335155857}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.35, y: 1.9300001, z: 0}
+  m_LocalPosition: {x: 6.87, y: 1.9300001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -5479,6 +5483,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &766376032
 Rigidbody2D:
   serializedVersion: 4
@@ -8858,6 +8863,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &1199915942
 Rigidbody2D:
   serializedVersion: 4
@@ -9304,7 +9310,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 5
   uiGame: {fileID: 468560258}
-  speed: 10
 --- !u!212 &1279710348
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10681,6 +10686,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &1371855353
 Rigidbody2D:
   serializedVersion: 4
@@ -11212,6 +11218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &1454946917
 Rigidbody2D:
   serializedVersion: 4
@@ -11502,6 +11509,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &1482610772
 Rigidbody2D:
   serializedVersion: 4
@@ -11675,7 +11683,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1484026885}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.56, y: 0.6, z: 0}
+  m_LocalPosition: {x: 10.79, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -11932,6 +11940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &1548790777
 Rigidbody2D:
   serializedVersion: 4
@@ -12831,7 +12840,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1643590655}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 14.26, y: -1.75, z: 0}
+  m_LocalPosition: {x: 11.05, y: -1.75, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -13307,6 +13316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &1699053804
 Rigidbody2D:
   serializedVersion: 4
@@ -13554,6 +13564,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &1734587228
 Rigidbody2D:
   serializedVersion: 4
@@ -15123,7 +15134,7 @@ MonoBehaviour:
   - TilePrefabsTurn:
     - {fileID: 7197463323871929414, guid: 36320ee6328c9a540b559db0b57204c0, type: 3}
     - {fileID: 7790266007765694786, guid: f17cacb89bbed1c4eb2f87f96a54015e, type: 3}
-    - {fileID: 6581053277576116797, guid: fd513ebcd43f9d4498f5f2f5be59e006, type: 3}
+    - {fileID: 6732543394565603975, guid: 6dca0911ef38dea4f8e401ebce16ece0, type: 3}
     - {fileID: 6986321411085782552, guid: b9217eaaeae292c4c9ee83b1223bdc43, type: 3}
     - {fileID: 7790266007765694786, guid: f17cacb89bbed1c4eb2f87f96a54015e, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
@@ -15337,6 +15348,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &2040690901
 Rigidbody2D:
   serializedVersion: 4
