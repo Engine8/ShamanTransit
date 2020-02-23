@@ -12,12 +12,12 @@ public class Enemy : MonoBehaviour
     private Transform targetPlayer;
     private float health;
     private bool dead=false;
-    private PlayerControl HealsPlayer;
+    private PlayerController HealsPlayer;
 
     void Start()
     {
-        targetPlayer = FindObjectOfType<PlayerControl>().transform;
-        HealsPlayer = targetPlayer.GetComponent<PlayerControl>();
+        targetPlayer = FindObjectOfType<PlayerController>().transform;
+        HealsPlayer = targetPlayer.GetComponent<PlayerController>();
         health = startingHealth;
     }
 

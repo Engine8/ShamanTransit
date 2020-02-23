@@ -11,10 +11,10 @@ public class WolfController :  EnemyController
     private Vector3[][] _positionWolf = new Vector3[4][];
     private float nextAttackTime;
     private int countWolf = 4;
-    private PlayerControl HealsPlayer;
+    private PlayerController HealsPlayer;
     void Start()
     {
-        HealsPlayer = FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>();
+        HealsPlayer = FindObjectOfType<PlayerController>().GetComponent<PlayerController>();
         nextAttackTime = timeBetweenAttacks;
         for (int i = 0; i < 4; ++i)
         {

@@ -3,9 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : Movable
-{    
+{   
+    // Attack
+    public float startingHealth;
+    public GameObject uiGame;
+
+    private float _health;
+    private bool _dead;
+
+
     private SpriteRenderer _spriteRenderer;
 
+   
     //Properties for changing lines
     [Range(0, 1)]
     public float PhysicsLayerChangeTime1 = 0.3f; //moment of change from current line layer to middle layer
@@ -21,9 +30,28 @@ public class PlayerController : Movable
     // Start is called before the first frame update
     new void Start()
     {
+        _health = startingHealth;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         OnChangeLineEnd.AddListener(ChangeSortingLayer);
         base.Start();
+    }
+    public bool GetDead()
+    {
+        return _dead;
+    }
+    public void TakeDamage(float damage)
+    {
+        _health -= damage;
+        if (_health <= 0 && !_dead)
+        {
+            Die();
+        }
+    }
+    void Die()
+    {
+        uiGame.SetActive(false);
+        _dead = true;
+        // GameObject.Destroy(gameObject);
     }
 
     private void Update()

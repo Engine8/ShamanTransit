@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Cinemachine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,7 +7,7 @@ public class PlayerControl : MonoBehaviour
 {
     public float startingHealth;
     public GameObject uiGame;
-    //public int speed;
+    public int speed;
 
    
     private float health;
@@ -16,13 +17,13 @@ public class PlayerControl : MonoBehaviour
     {
         health = startingHealth;
     }
-    //void FixedUpdate()
-    //{
-    //    if (!dead)
-    //    {
-    //        this.gameObject.transform.localPosition = new Vector2(this.gameObject.transform.localPosition.x + speed * Time.deltaTime, this.gameObject.transform.localPosition.y);
-    //    }
-    //}
+    void FixedUpdate()
+    {
+        if (!dead)
+        {
+            this.gameObject.transform.localPosition = new Vector2(this.gameObject.transform.localPosition.x + speed * Time.deltaTime, this.gameObject.transform.localPosition.y);
+        }
+    }
     public bool GetDead() 
     {
         return dead;

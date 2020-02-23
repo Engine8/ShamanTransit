@@ -26,13 +26,15 @@ public class ChunksPlacer : MonoBehaviour
         currentMap.spawnedChunks.Add(Instantiate(currentMap.TilePrefabsTurn[indexChunk], new Vector3(0, 0, 0), Quaternion.identity));
         currentMap.spawnedChunks[0].gameObject.transform.parent = mapHolder;
         ++indexChunk;
+        SpawnChunk();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.x > currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x -8)
+        if (player.transform.position.x > currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x - 14)
         {
+            SpawnChunk();
             SpawnChunk();
         }
     }
@@ -44,7 +46,7 @@ public class ChunksPlacer : MonoBehaviour
 
         FindObjectOfType<HitArea>().SetEnnemy(newChunk.GetComponent<EnemyController>());
         Debug.Log(newChunk.GetComponent<EnemyController>().GetCount());
-        newChunk.transform.position = new Vector2(player.position.x - 15, -1.27f);
+        newChunk.transform.position = new Vector2(player.position.x - 20, -1.27f);
     }
     public void Victiry()
     {
@@ -54,17 +56,18 @@ public class ChunksPlacer : MonoBehaviour
     {
         if (!stateAttack) 
         {
-
-            Tile newChunk = Instantiate(currentMap.TilePrefabsTurn[indexChunk]);
-            newChunk.transform.position = new Vector2(currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x - newChunk.Begin.localPosition.x, 0);
-            currentMap.spawnedChunks.Add(newChunk);
-            currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].gameObject.transform.parent = mapHolder;
-            if (currentMap.spawnedChunks.Count >= 5)
-            {
-                Destroy(currentMap.spawnedChunks[0].gameObject);
-                currentMap.spawnedChunks.RemoveAt(0);
+            if (indexChunk< currentMap.TilePrefabsTurn.Length) {
+                Tile newChunk = Instantiate(currentMap.TilePrefabsTurn[indexChunk]);
+                newChunk.transform.position = new Vector2(currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x - newChunk.Begin.localPosition.x, 0);
+                currentMap.spawnedChunks.Add(newChunk);
+                currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].gameObject.transform.parent = mapHolder;
+                if (currentMap.spawnedChunks.Count >= 5)
+                {
+                    Destroy(currentMap.spawnedChunks[0].gameObject);
+                    currentMap.spawnedChunks.RemoveAt(0);
+                }
+                ++indexChunk; 
             }
-            ++indexChunk;
         }
         else
         {
