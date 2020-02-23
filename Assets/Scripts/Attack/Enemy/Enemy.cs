@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float startingHealth;
+    public int startingHealth;
     public float attackDistanceThreshold;//дистанция атаки
-    public float damage; //урон
+    public int Damage; //урон
    
     
     private Transform targetPlayer;
-    private float health;
+    private int Health;
     private bool dead=false;
     private PlayerController HealsPlayer;
 
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     {
         targetPlayer = FindObjectOfType<PlayerController>().transform;
         HealsPlayer = targetPlayer.GetComponent<PlayerController>();
-        health = startingHealth;
+        Health = startingHealth;
     }
 
     public bool GetDead()
@@ -46,7 +46,7 @@ public class Enemy : MonoBehaviour
             {
                 hasAppLiedDamage = true;
 
-                HealsPlayer.TakeDamage(damage);
+                HealsPlayer.TakeDamage(Damage);
             }
             percent += Time.deltaTime * attackSpeed;
             float interpolation = (-Mathf.Pow(percent, 2) + percent) * 4;
@@ -55,10 +55,10 @@ public class Enemy : MonoBehaviour
             yield return null;
         }
     }
-    public void TakeDamage(float damage)
+    public void TakeDamage(int damage)
     {
-        health -= damage;
-        if (health <= 0 && !dead)
+        Health -= damage;
+        if (Health <= 0 && !dead)
         {
             Die();
         }

@@ -6,6 +6,7 @@ public class ChunksPlacer : MonoBehaviour
 {
     public Transform player;
 
+    public HitArea HitAreaRef;
     public Map[] map;
     public int mapIndex;
     public Tile[] chunkPrefabs;
@@ -18,6 +19,7 @@ public class ChunksPlacer : MonoBehaviour
     Transform mapHolder;
 
     Map currentMap;
+
     void Start()
     {
         mapHolder = new GameObject(holderName).transform;
@@ -38,23 +40,20 @@ public class ChunksPlacer : MonoBehaviour
             SpawnChunk();
         }
     }
+
     public void OnAttack(GameObject enemy)
     {
-        stateAttack = true;
-        UIAttack.SetActive(true);
+        GameController.Instance.SetGameMode(1);
         GameObject newChunk = Instantiate(enemy);
 
-        FindObjectOfType<HitArea>().SetEnnemy(newChunk.GetComponent<EnemyController>());
+        HitAreaRef.SetEnnemy(newChunk.GetComponent<EnemyController>());
         Debug.Log(newChunk.GetComponent<EnemyController>().GetCount());
         newChunk.transform.position = new Vector2(player.position.x - 20, -1.27f);
     }
-    public void Victiry()
-    {
-        stateAttack = false;
-    }
+
     private void SpawnChunk()
     {
-        if (!stateAttack) 
+        if (!GameController.Instance.IsAttackMode) 
         {
             if (indexChunk< currentMap.TilePrefabsTurn.Length) {
                 Tile newChunk = Instantiate(currentMap.TilePrefabsTurn[indexChunk]);
@@ -82,6 +81,7 @@ public class ChunksPlacer : MonoBehaviour
             }
         }
     }
+
     [System.Serializable]
     public class Map
     {

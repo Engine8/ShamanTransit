@@ -34,6 +34,7 @@ public class WolfController :  EnemyController
         }
         StartCoroutine("Sprint");
     }
+
     IEnumerator Sprint() //появление волков
     {
         speed = 16;

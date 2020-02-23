@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
+using Cinemachine;
 
 public class GameController : MonoBehaviour
 {
@@ -16,8 +17,8 @@ public class GameController : MonoBehaviour
 
     public GameObject IngameUI;
     public GameObject EndgameUI;
+    public GameObject AttackUI;
     public Text EndgameMainText;
-    //public Text EndgameCargoText;
     public Text EndgameMoneyText;
 
     private AudioSource _uiAudioSource;
@@ -30,6 +31,7 @@ public class GameController : MonoBehaviour
 
     //Note: is needed to find better solution
     public Camera MainCamera;
+    public CinemachineVirtualCamera VirtCamera;
     public Volume MainCameraVolume;
     public VolumeProfile volumeProfile;
     public ParallaxBackground Moon;
@@ -45,6 +47,7 @@ public class GameController : MonoBehaviour
     private float _lastPlayerCharacterXPosition;
     private float _unitsPassed;
 
+    public bool IsAttackMode;
     public bool IsGameEnded;
 
     public LoadingComponent loadingComponent;
@@ -185,5 +188,20 @@ public class GameController : MonoBehaviour
         PlayerDataController.Instance.Data.CurrentStage = PlayerDataController.Instance.Data.CurrentLevel / 5 + 1;
         PlayerDataController.Instance.WriteData();
         loadingComponent.StartLoadLevel("Map");
+    }
+
+    public void SetGameMode(int gameMode)
+    {
+        if (gameMode == 1)
+        {
+            IsAttackMode = true;
+            AttackUI.SetActive(true);
+            VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 1f;
+        }
+        else if (gameMode == 0)
+        {
+            IsAttackMode = false;
+            VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
+        }
     }
 }

@@ -253,6 +253,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1900739573}
+  HitAreaRef: {fileID: 516410303}
   map:
   - TilePrefabsTurn:
     - {fileID: 7197463323871929414, guid: 36320ee6328c9a540b559db0b57204c0, type: 3}
@@ -1208,7 +1209,6 @@ GameObject:
   - component: {fileID: 1208487114}
   - component: {fileID: 1208487112}
   - component: {fileID: 1208487115}
-  - component: {fileID: 1208487113}
   m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1306,23 +1306,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &1208487113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208487109}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isGlobal: 1
-  priority: 0
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: d3357ecbe4ed707449626e862cb2208f, type: 2}
 --- !u!81 &1208487114
 AudioListener:
   m_ObjectHideFlags: 0
@@ -6469,6 +6452,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IngameUI: {fileID: 1436279831}
   EndgameUI: {fileID: 1985691254}
+  AttackUI: {fileID: 885743593}
   EndgameMainText: {fileID: 2102672328}
   EndgameMoneyText: {fileID: 1448413467}
   WinSound: {fileID: 8300000, guid: 83c42568cd77d3b429a3e37e718ba491, type: 3}
@@ -6476,12 +6460,14 @@ MonoBehaviour:
   CoinSound: {fileID: 8300000, guid: 83c42568cd77d3b429a3e37e718ba491, type: 3}
   PlayerCharacter: {fileID: 1900739571}
   MainCamera: {fileID: 1208487111}
+  VirtCamera: {fileID: 2109791148}
   MainCameraVolume: {fileID: 2109791150}
   volumeProfile: {fileID: 0}
   Moon: {fileID: 928938403}
   MoneyPerLevel: 500
   StartPoint: {fileID: 11449643}
   EndPoint: {fileID: 1784547516}
+  IsAttackMode: 0
   IsGameEnded: 0
   loadingComponent: {fileID: 1981370313}
 --- !u!4 &1414940576
@@ -7218,8 +7204,8 @@ MonoBehaviour:
   m_XDamping: 0.4
   m_YDamping: 2.4
   m_ZDamping: 1
-  m_ScreenX: 1
-  m_ScreenY: 0.6999999
+  m_ScreenX: 0.5
+  m_ScreenY: 0.5
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
@@ -8754,7 +8740,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109791147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.551111, y: 1.9239993, z: -10.82}
+  m_LocalPosition: {x: 0, y: 0, z: -10.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1690271514}

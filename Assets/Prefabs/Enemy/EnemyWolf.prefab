@@ -96,7 +96,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 1
   attackDistanceThreshold: 3.5
-  damage: 1
+  Damage: 1
 --- !u!1 &7040827106795177147
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 1
   attackDistanceThreshold: 3.5
-  damage: 1
+  Damage: 1
 --- !u!1 &7040827107207418426
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,7 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 1
   attackDistanceThreshold: 3.5
-  damage: 1
+  Damage: 1
 --- !u!1 &7040827107544502490
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,4 +441,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 1
   attackDistanceThreshold: 3.5
-  damage: 1
+  Damage: 1

@@ -8,11 +8,10 @@ public class SightScale : MonoBehaviour
     public Transform HitArea;
  
     public float SpeedRotate;
-    private bool victori;
 
     public void BafSpeed()
     {
-        if (!victori)
+        if (!GameController.Instance.IsAttackMode)
         {
             SpeedRotate = (Mathf.Abs(SpeedRotate) + 1) * SpeedRotate / Mathf.Abs(SpeedRotate);
 
@@ -22,12 +21,13 @@ public class SightScale : MonoBehaviour
                 SpeedRotate = 1 * SpeedRotate / Mathf.Abs(SpeedRotate);
         }
     }
+
     public void Stop()
     {
-        FindObjectOfType<ChunksPlacer>().Victiry();
-        victori = true;
+        GameController.Instance.SetGameMode(0);
         StartCoroutine("Weate");
     }
+
     IEnumerator Weate()
     {
         while (true) {

@@ -11,19 +11,19 @@ public class HitArea : MonoBehaviour
     private EnemyController _enumy;
     private Image MissAr;
     private SightScale sightScale;
-    private CinemachineVirtualCamera vcam;
+
     void Start()
     {
-        vcam = FindObjectOfType<CinemachineVirtualCamera>();
-        vcam.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 1f;
+        sightScale = transform.parent.GetComponent<SightScale>();
         MissAr = transform.parent.gameObject.GetComponent<Image>();
-        sightScale = FindObjectOfType<SightScale>();
         transform.localEulerAngles = new Vector3(0, 0, 60);
     }
-    public void SetEnnemy(EnemyController vavue)
+
+    public void SetEnnemy(EnemyController value)
     {
-        _enumy = vavue;
+        _enumy = value;
     }
+
     public void Tach()
     {
         if (Arrow.localEulerAngles.z <= transform.localEulerAngles.z && Arrow.localEulerAngles.z >= transform.localEulerAngles.z - 18)
@@ -38,7 +38,6 @@ public class HitArea : MonoBehaviour
                 if (_enumy.GetCount() == 0)
                 {
                     sightScale.Stop();
-                    vcam.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.6f;
                 }
             }
             sightScale.BafSpeed();

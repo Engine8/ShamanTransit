@@ -13,6 +13,7 @@ public class Movable : MonoBehaviour
 
     public int MaxHP;
     public int CurrentHP;
+    protected bool _isDead;
 
     //debug
     public float curSpeed;
@@ -146,7 +147,23 @@ public class Movable : MonoBehaviour
             }
         }
     }
-   
+
+    public void TakeDamage(int damage)
+    {
+        CurrentHP -= damage;
+        OnHit.Invoke();
+        if (CurrentHP <= 0 && !_isDead)
+        {
+            _isDead = true;
+            OnDie.Invoke();
+        }
+    }
+
+    public bool GetDead()
+    {
+        return _isDead;
+    }
+
     public void OnHitLog()
     {
         Debug.Log("Main character hit");
