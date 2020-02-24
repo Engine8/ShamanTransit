@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class ChunksPlacer : MonoBehaviour
 {
-    public Transform player;
+    public static ChunksPlacer Instance;
+
+    public PlayerController player;
 
     public HitArea HitAreaRef;
     public Map[] map;
     public int mapIndex;
-    public Tile[] chunkPrefabs;
+    //public Tile[] chunkPrefabs;
     public GameObject UIAttack;
     public Tile chunkPrefabsAttack;
 
@@ -19,6 +21,14 @@ public class ChunksPlacer : MonoBehaviour
     Transform mapHolder;
 
     Map currentMap;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+    }
 
     void Start()
     {
@@ -48,7 +58,7 @@ public class ChunksPlacer : MonoBehaviour
 
         HitAreaRef.SetEnnemy(newChunk.GetComponent<EnemyController>());
         Debug.Log(newChunk.GetComponent<EnemyController>().GetCount());
-        newChunk.transform.position = new Vector2(player.position.x - 20, -1.27f);
+        newChunk.transform.position = new Vector2(player.transform.position.x - 20, -1.27f);
     }
 
     private void SpawnChunk()
@@ -65,7 +75,9 @@ public class ChunksPlacer : MonoBehaviour
                     Destroy(currentMap.spawnedChunks[0].gameObject);
                     currentMap.spawnedChunks.RemoveAt(0);
                 }
-                ++indexChunk; 
+                ++indexChunk;
+
+                player.SoulCount += 1;
             }
         }
         else
@@ -82,9 +94,15 @@ public class ChunksPlacer : MonoBehaviour
         }
     }
 
+    public int GetMoneyMultiplier()
+    {
+        return currentMap.MoneyMultiplier;
+    }
+
     [System.Serializable]
     public class Map
     {
+        public int MoneyMultiplier;
         public Tile[] TilePrefabsTurn;
         [HideInInspector]
         public List<Tile> spawnedChunks = new List<Tile>();

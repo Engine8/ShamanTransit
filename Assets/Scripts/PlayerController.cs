@@ -14,9 +14,11 @@ public class PlayerController : Movable
     [Range(0, 1)]
     public float PhysicsLayerChangeTime2 = 0.7f; //moment of change from middle layer to target line layer
 
-    private int ChangeLineStatus = 0;
+    private int _changeLineStatus = 0;
 
     public UnityEvent OnLevelEnd;
+
+    public int SoulCount = 0;
 
     //Camera scales
     public float[] CameraLineScales;
@@ -27,10 +29,6 @@ public class PlayerController : Movable
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         OnChangeLineEnd.AddListener(ChangeSortingLayer);
-        if (GameController.Instance != null)
-        {
-            int x = 1 + 1;
-        }
         GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
     }
@@ -58,9 +56,9 @@ public class PlayerController : Movable
         }
 
         //"enter" in middle layer
-        if (_curveModif > PhysicsLayerChangeTime1 && _curveModif < PhysicsLayerChangeTime2 && ChangeLineStatus == 0)
+        if (_curveModif > PhysicsLayerChangeTime1 && _curveModif < PhysicsLayerChangeTime2 && _changeLineStatus == 0)
         {
-            ChangeLineStatus = 1;
+            _changeLineStatus = 1;
 
             if (_targetLine < _curLine)
             {
@@ -72,10 +70,11 @@ public class PlayerController : Movable
                 ChangeSortingLayer();
                 gameObject.layer += 1;
             }
+            Debug.Log($"New layer: {gameObject.layer}");
         }
-        else if (_curveModif > PhysicsLayerChangeTime2 && ChangeLineStatus == 1)
+        else if (_curveModif > PhysicsLayerChangeTime2 && _changeLineStatus == 1)
         {
-            ChangeLineStatus = 2;
+            _changeLineStatus = 2;
             if (_targetLine < _curLine)
             {
                 ChangeSortingLayer();
@@ -85,9 +84,10 @@ public class PlayerController : Movable
             {
                 gameObject.layer += 1;
             }
+            Debug.Log($"New layer: {gameObject.layer}");
         }
         if (_curLine == _targetLine)
-            ChangeLineStatus = 0;
+            _changeLineStatus = 0;
 
 
     }
@@ -95,7 +95,13 @@ public class PlayerController : Movable
     new protected void OnTriggerEnter2D(Collider2D other)
     {
         base.OnTriggerEnter2D(other);
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            SoulCount -= 1;
+            if (SoulCount < 0)
+                SoulCount = 0;
 
+        }
         if (other.gameObject.CompareTag("TriggerEnd"))
         {
             Acceleration = 0;

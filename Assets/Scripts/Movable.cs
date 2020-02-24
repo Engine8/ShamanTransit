@@ -112,8 +112,6 @@ public class Movable : MonoBehaviour
 
     protected void OnTriggerEnter2D(Collider2D other)
     {
-       
-
         Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
         Debug.Log(other.name + " = " + (obstacle != null));
         if (obstacle != null)

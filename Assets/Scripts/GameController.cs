@@ -188,7 +188,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator MoneyAnimationStart()
     {
-        int moneySum = MoneyPerLevel;
+        int moneySum = ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount;
         int curMoney = 0;
         int i = 1;
         while (curMoney < moneySum)
