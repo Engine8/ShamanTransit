@@ -72,6 +72,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
         if (PlayerCharacter != null)
         {
             PlayerCharacter.OnHit.AddListener(OnPlayerHit);
@@ -147,13 +148,18 @@ public class GameController : MonoBehaviour
     {
         if (!IsGameEnded)
         {
-            UnityEngine.Rendering.Universal.Vignette vignette;
-            volumeProfile.TryGet(out vignette);
-
-            vignette.intensity.Override(0.25f + 0.30f / PlayerCharacter.MaxHP * (PlayerCharacter.MaxHP - PlayerCharacter.CurrentHP));
+            StartCoroutine("Damage");
         }
     }
+    IEnumerator Damage()
+    {
+        UnityEngine.Rendering.Universal.Vignette vignette;
+        volumeProfile.TryGet(out vignette);
 
+        vignette.intensity.Override(0.35f);
+        yield return new WaitForSeconds(0.5f);
+        vignette.intensity.Override(0f);
+    }
     private void ShowEndgameUI(bool isGameWin)
     {
         IngameUI.SetActive(false);

@@ -258,7 +258,7 @@ MonoBehaviour:
   - TilePrefabsTurn:
     - {fileID: 7197463323871929414, guid: 36320ee6328c9a540b559db0b57204c0, type: 3}
     - {fileID: 7790266007765694786, guid: f17cacb89bbed1c4eb2f87f96a54015e, type: 3}
-    - {fileID: 6732543394565603975, guid: 6dca0911ef38dea4f8e401ebce16ece0, type: 3}
+    - {fileID: 6986321411085782552, guid: b9217eaaeae292c4c9ee83b1223bdc43, type: 3}
     - {fileID: 6986321411085782552, guid: b9217eaaeae292c4c9ee83b1223bdc43, type: 3}
     - {fileID: 7790266007765694786, guid: f17cacb89bbed1c4eb2f87f96a54015e, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
@@ -7404,7 +7404,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1389840021, guid: a63c9639cfa74ff4790736be51718aa3, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1389840021, guid: a63c9639cfa74ff4790736be51718aa3, type: 3}
       propertyPath: MinDistance
@@ -7423,27 +7423,37 @@ PrefabInstance:
     - target: {fileID: 6316404828414724296, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_Offset.x
-      value: 0.39607048
+      value: 0.08309984
       objectReference: {fileID: 0}
     - target: {fileID: 6316404828414724296, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_Size.x
-      value: 18.152187
+      value: 2.9215422
       objectReference: {fileID: 0}
     - target: {fileID: 6316404828414724296, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.14939404
+      value: -0.05924368
       objectReference: {fileID: 0}
     - target: {fileID: 6316404828414724296, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_Size.y
-      value: 6.2627554
+      value: 3.341816
       objectReference: {fileID: 0}
     - target: {fileID: 6316404828414724296, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316404828414724296, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 4.1916666
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316404828414724296, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 3.825
       objectReference: {fileID: 0}
     - target: {fileID: 6316404828414724297, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}

@@ -112,9 +112,10 @@ public class Movable : MonoBehaviour
 
     protected void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collision entered");
+       
 
         Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
+        Debug.Log(other.name + " = " + (obstacle != null));
         if (obstacle != null)
         {
             Debug.Log("Collision with obstacle");
@@ -151,11 +152,11 @@ public class Movable : MonoBehaviour
     public void TakeDamage(int damage)
     {
         CurrentHP -= damage;
-        OnHit.Invoke();
+        //OnHit.Invoke();
         if (CurrentHP <= 0 && !_isDead)
         {
             _isDead = true;
-            OnDie.Invoke();
+           // OnDie.Invoke();
         }
     }
 

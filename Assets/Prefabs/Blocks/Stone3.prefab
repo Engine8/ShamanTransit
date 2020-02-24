@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 4740600631752430311}
   - component: {fileID: 4740600631752430308}
   m_Layer: 8
-  m_Name: Stone(Clone)
-  m_TagString: Untagged
+  m_Name: Stone3
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
