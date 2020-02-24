@@ -33,7 +33,7 @@ public class PlayerController : Movable
         base.Start();
     }
 
-    private void Update()
+    new private void FixedUpdate()
     {
         //change line
         if (Input.GetButtonDown("Up") && !_isLineSwapBlocked)
@@ -54,6 +54,8 @@ public class PlayerController : Movable
             if (_targetLine > 2)
                 _targetLine = 2;
         }
+
+        base.FixedUpdate();
 
         //"enter" in middle layer
         if (_curveModif > PhysicsLayerChangeTime1 && _curveModif < PhysicsLayerChangeTime2 && _changeLineStatus == 0)
