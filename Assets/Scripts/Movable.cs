@@ -15,6 +15,8 @@ public class Movable : MonoBehaviour
     public int CurrentHP;
     protected bool _isDead;
 
+    public int MaxHPBattle;
+    public int CurrentHPBattle;
     //debug
     public float curSpeed;
 
@@ -23,6 +25,7 @@ public class Movable : MonoBehaviour
 
     public UnityEvent OnHit;
     public UnityEvent OnDie;
+    public UnityEvent OnAttackHit;
     public UnityEvent OnChangeLineEnd;
 
     public AnimationCurve AccelerationCurve;
@@ -149,12 +152,13 @@ public class Movable : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        CurrentHP -= damage;
-        //OnHit.Invoke();
-        if (CurrentHP <= 0 && !_isDead)
+        Debug.Log("TakeDamage");
+        CurrentHPBattle -= damage;
+        OnAttackHit.Invoke();
+        if (CurrentHPBattle <= 0 && !_isDead)
         {
             _isDead = true;
-           // OnDie.Invoke();
+             OnDie.Invoke();
         }
     }
 

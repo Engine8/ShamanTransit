@@ -15,7 +15,7 @@ public class WolfController :  EnemyController
     void Start()
     {
         HealsPlayer = FindObjectOfType<PlayerController>().GetComponent<PlayerController>();
-        nextAttackTime = timeBetweenAttacks;
+        nextAttackTime = Time.time + timeBetweenAttacks;
         for (int i = 0; i < 4; ++i)
         {
             _positionWolf[i] = new Vector3[4 - i];

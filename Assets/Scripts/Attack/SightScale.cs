@@ -8,20 +8,19 @@ public class SightScale : MonoBehaviour
     public Transform HitArea;
  
     public float SpeedRotate;
-
     public void BafSpeed()
     {
-        if (!GameController.Instance.IsAttackMode)
+        if (GameController.Instance.IsAttackMode)
         {
+           
             SpeedRotate = (Mathf.Abs(SpeedRotate) + 1) * SpeedRotate / Mathf.Abs(SpeedRotate);
 
-            if (SpeedRotate > 4)
-                SpeedRotate = 2 * SpeedRotate / Mathf.Abs(SpeedRotate);
+            if (Mathf.Abs(SpeedRotate) > 4)
+                SpeedRotate = 3 * SpeedRotate / Mathf.Abs(SpeedRotate);
             if (Random.Range(0, 100) == 46)
                 SpeedRotate = 1 * SpeedRotate / Mathf.Abs(SpeedRotate);
         }
     }
-
     public void Stop()
     {
         GameController.Instance.SetGameMode(0);

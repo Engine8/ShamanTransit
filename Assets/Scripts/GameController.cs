@@ -92,6 +92,7 @@ public class GameController : MonoBehaviour
 
         PlayerCharacter.OnDie.AddListener(GameDefeated);
         PlayerCharacter.OnHit.AddListener(OnPlayerHit);
+        PlayerCharacter.OnAttackHit.AddListener(OnAttackPlayerHit);
         PlayerCharacter.OnLevelEnd.AddListener(GameWin);
     }
 
@@ -142,8 +143,7 @@ public class GameController : MonoBehaviour
                 }
             }
         }
-    }
-
+    } 
     private void OnPlayerHit()
     {
         if (!IsGameEnded)
@@ -159,6 +159,20 @@ public class GameController : MonoBehaviour
         vignette.intensity.Override(0.35f);
         yield return new WaitForSeconds(0.5f);
         vignette.intensity.Override(0f);
+    }
+    private void BattleGameWin()
+    {
+        UnityEngine.Rendering.Universal.Vignette vignette;
+        volumeProfile.TryGet(out vignette);
+        vignette.intensity.Override(0f);
+        PlayerCharacter.CurrentHPBattle = PlayerCharacter.MaxHPBattle;
+    }
+    private void OnAttackPlayerHit()
+    {
+        UnityEngine.Rendering.Universal.Vignette vignette;
+        volumeProfile.TryGet(out vignette);
+
+        vignette.intensity.Override(0.25f + 0.30f / PlayerCharacter.MaxHPBattle * (PlayerCharacter.MaxHPBattle - PlayerCharacter.CurrentHPBattle));
     }
     private void ShowEndgameUI(bool isGameWin)
     {
@@ -230,10 +244,12 @@ public class GameController : MonoBehaviour
         {
             IsAttackMode = true;
             AttackUI.SetActive(true);
+            AttackUI.GetComponent<SightScale>().SpeedRotate = 2f;
             _isNeedToRefreshCamera = true;
         }
         else if (gameMode == 0)
         {
+            BattleGameWin();
             IsAttackMode = false;
             _isNeedToRefreshCamera = true;
         }
