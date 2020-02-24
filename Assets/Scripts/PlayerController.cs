@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : Movable
 {   
@@ -15,6 +16,8 @@ public class PlayerController : Movable
 
     private int ChangeLineStatus = 0;
 
+    public UnityEvent OnLevelEnd;
+
     //Camera scales
     public float[] CameraLineScales;
     public Cinemachine.CinemachineVirtualCamera Camera;
@@ -24,6 +27,11 @@ public class PlayerController : Movable
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         OnChangeLineEnd.AddListener(ChangeSortingLayer);
+        if (GameController.Instance != null)
+        {
+            int x = 1 + 1;
+        }
+        GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
     }
 
@@ -84,17 +92,24 @@ public class PlayerController : Movable
 
     }
 
-    new private void FixedUpdate()
+    new protected void OnTriggerEnter2D(Collider2D other)
     {
-        bool pastIsLineSwapBlocked = _isLineSwapBlocked;
-        base.FixedUpdate();
-        /*
-        if (_isLineSwapBlocked || pastIsLineSwapBlocked)
+        base.OnTriggerEnter2D(other);
+
+        if (other.gameObject.CompareTag("TriggerEnd"))
         {
-            float newCameraScale = Mathf.Lerp(CameraLineScales[_curLine], CameraLineScales[_targetLine], _curveModif);
-            Camera.m_Lens.OrthographicSize = newCameraScale;
+            Acceleration = 0;
+            Speed = 0;
+            OnLevelEnd.Invoke();
         }
-        */
+    }
+
+    void OnGameModeChanged()
+    {
+        if (GameController.Instance.IsAttackMode)
+            _isLineSwapBlocked = true;
+        else
+            _isLineSwapBlocked = false;
     }
 
     private void ChangeSortingLayer()

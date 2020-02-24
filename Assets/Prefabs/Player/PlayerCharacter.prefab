@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 6316404828414724299}
   - component: {fileID: 6316404828414724298}
   - component: {fileID: 1389840021}
-  - component: {fileID: 1171627450459638349}
   m_Layer: 0
   m_Name: PlayerCharacter
   m_TagString: Untagged
@@ -177,6 +176,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   PhysicsLayerChangeTime1: 0.3
   PhysicsLayerChangeTime2: 0.7
+  OnLevelEnd:
+    m_PersistentCalls:
+      m_Calls: []
   CameraLineScales: []
   Camera: {fileID: 0}
 --- !u!82 &1389840021
@@ -275,18 +277,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &1171627450459638349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6316404828414724308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e431e8fa4fff5e4da2b09851d07e5f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startingHealth: 5
-  uiGame: {fileID: 0}
-  speed: 0

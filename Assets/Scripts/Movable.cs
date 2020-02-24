@@ -91,7 +91,7 @@ public class Movable : MonoBehaviour
                 _lerpModif += Time.deltaTime;
                 if (_lerpModif > LineSwapTime)
                 {
-                    _lerpModif = 1;
+                    _lerpModif = LineSwapTime;
                     OnChangeLineEnd.Invoke();
                     _curLine = _targetLine;
                     _isLineSwapBlocked = false;

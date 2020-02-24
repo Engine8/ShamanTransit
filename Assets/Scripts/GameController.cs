@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
+using UnityEngine.Events;
 using Cinemachine;
 
 public class GameController : MonoBehaviour
@@ -35,7 +36,9 @@ public class GameController : MonoBehaviour
     public Volume MainCameraVolume;
     public VolumeProfile volumeProfile;
     public ParallaxBackground Moon;
-
+    public float RefreshCameraTime = 0.8f;
+    private float _currentRefreshCameraTime = 0f;
+    private bool _isNeedToRefreshCamera = false;
     //Amount of cargo that lost on hit
     //Maybe defined by level in scene manager
     //public int CargoPerHit = 1;
@@ -49,6 +52,8 @@ public class GameController : MonoBehaviour
 
     public bool IsAttackMode;
     public bool IsGameEnded;
+
+    public UnityEvent OnGameModeChanged;
 
     public LoadingComponent loadingComponent;
 
@@ -86,12 +91,13 @@ public class GameController : MonoBehaviour
 
         PlayerCharacter.OnDie.AddListener(GameDefeated);
         PlayerCharacter.OnHit.AddListener(OnPlayerHit);
+        PlayerCharacter.OnLevelEnd.AddListener(GameWin);
     }
 
     // Update is called once per frame
     void LateUpdate()
     {
-        if (PlayerCharacter.transform.position.x < EndPoint.transform.position.x)
+        if (!IsGameEnded)
         {
             //calculate moon or sun position
             _unitsPassed += PlayerCharacter.transform.position.x - _lastPlayerCharacterXPosition;
@@ -103,21 +109,36 @@ public class GameController : MonoBehaviour
             float routeDoneInPercents = (PlayerCharacter.transform.position.x - StartPoint.transform.position.x) / routeLength * 100;
             //TextMeshRoute.SetText($"{routeDoneInPercents} %");
 
-            //Note: needed to find better solution
+            //Note: find better solution
             float cameraWidth = MainCamera.ViewportToWorldPoint(new Vector3(1f, 1f, MainCamera.transform.position.z)).x 
                               - MainCamera.ViewportToWorldPoint(new Vector3(0f, 1f, MainCamera.transform.position.z)).x;
             //Debug.Log($"CameraWidth = {cameraWidth}");
             Moon.Offset = new Vector2( cameraWidth * routeDoneInPercents / 100, 0);
-        }
-        else
-        {
-            // if game has not already ended
-            if (!IsGameEnded) 
+
+            if (_isNeedToRefreshCamera)
             {
-                PlayerCharacter.Acceleration = 0;
-                PlayerCharacter.Speed = 0;
-                ShowEndgameUI(true);
-                IsGameEnded = true;
+                _currentRefreshCameraTime += Time.deltaTime;
+                bool isEnded = false;
+                if (_currentRefreshCameraTime >= RefreshCameraTime)
+                {
+                    _currentRefreshCameraTime = RefreshCameraTime;
+                    isEnded = true;
+                }
+                if (IsAttackMode)
+                {
+                    VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = Mathf.Lerp(VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX, 
+                                                                                                              1, _currentRefreshCameraTime / RefreshCameraTime);
+                }
+                else
+                {
+                    VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = Mathf.Lerp(VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX, 
+                                                                                                              0.5f, _currentRefreshCameraTime / RefreshCameraTime);
+                }
+                if (isEnded)
+                {
+                    _currentRefreshCameraTime = 0f;
+                    _isNeedToRefreshCamera = false;
+                }
             }
         }
     }
@@ -136,6 +157,7 @@ public class GameController : MonoBehaviour
     private void ShowEndgameUI(bool isGameWin)
     {
         IngameUI.SetActive(false);
+        AttackUI.SetActive(false);
         //EndgameCargoText.text = $"{PlayerCharacter.CurrentCargoCount} / {PlayerCharacter.MaxCargoCount}";
         if (isGameWin)
         {
@@ -180,6 +202,12 @@ public class GameController : MonoBehaviour
         ShowEndgameUI(false);
     }
 
+    private void GameWin()
+    {
+        IsGameEnded = true;
+        ShowEndgameUI(true);
+    }
+
     public void OnContinueButtonClick()
     {
         PlayerDataController.Instance.AddMoney(MoneyPerLevel);
@@ -196,12 +224,14 @@ public class GameController : MonoBehaviour
         {
             IsAttackMode = true;
             AttackUI.SetActive(true);
-            VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 1f;
+            _isNeedToRefreshCamera = true;
         }
         else if (gameMode == 0)
         {
             IsAttackMode = false;
-            VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
+            _isNeedToRefreshCamera = true;
         }
+
+        OnGameModeChanged.Invoke();
     }
 }
