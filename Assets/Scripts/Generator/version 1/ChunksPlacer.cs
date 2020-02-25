@@ -28,13 +28,22 @@ public class ChunksPlacer : MonoBehaviour
         {
             Instance = this;
         }
+
+        if (GameData.Instance != null)
+        {
+            mapIndex = GameData.Instance.CurrentLevelIndex;
+        }
+        else
+            mapIndex = 0;
+        
+        currentMap = map[mapIndex];
     }
 
     void Start()
     {
         mapHolder = new GameObject(holderName).transform;
         mapHolder.parent = transform;
-        currentMap = map[mapIndex];
+        //currentMap = map[mapIndex];
         currentMap.spawnedChunks.Add(Instantiate(currentMap.TilePrefabsTurn[indexChunk], new Vector3(0, 0, 0), Quaternion.identity));
         currentMap.spawnedChunks[0].gameObject.transform.parent = mapHolder;
         ++indexChunk;

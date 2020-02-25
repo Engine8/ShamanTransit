@@ -15,6 +15,8 @@ public class UIStartMenu : MonoBehaviour
         //load playerData or set default values
         PlayerDataController.Initialize();
         PlayerDataController.Instance.LoadData();
+
+        GameData.Initialize();
     }
 
     private void Start()

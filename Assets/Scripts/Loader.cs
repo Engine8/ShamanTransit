@@ -54,8 +54,6 @@ public static class Loader
 
     private static IEnumerator LoadSceneAsync(string sceneName, float exitAnimationTime)
     {
-        
-
         loadingOperation = SceneManager.LoadSceneAsync(sceneName);
         loadingOperation.allowSceneActivation = false;
         yield return new WaitForSeconds(exitAnimationTime);
