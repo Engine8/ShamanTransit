@@ -7410,6 +7410,22 @@ PrefabInstance:
       propertyPath: m_SortingLayer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 5832798928230983044, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5832798928230983045, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5832798928230983046, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: SoulPrefab
+      value: 
+      objectReference: {fileID: 6015776038607554149, guid: 50c8725c5d126104eae26baf1265b5d6,
+        type: 3}
     - target: {fileID: 6316404828414724296, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_Offset.x
@@ -7444,6 +7460,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.y
       value: 3.825
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316404828414724296, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.pivot.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6316404828414724297, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
@@ -7930,6 +7951,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6316404828414724308, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7140311562827009841, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}

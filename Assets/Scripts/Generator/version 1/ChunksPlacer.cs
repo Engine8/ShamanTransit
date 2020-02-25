@@ -77,7 +77,7 @@ public class ChunksPlacer : MonoBehaviour
                 }
                 ++indexChunk;
 
-                player.SoulCount += 1;
+                player.AddSoul();
             }
         }
         else

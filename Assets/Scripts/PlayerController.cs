@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class PlayerController : Movable
 {   
     private SpriteRenderer _spriteRenderer;
-
+    private SoulKeeper soulKeeper;
    
     //Properties for changing lines
     [Range(0, 1)]
@@ -18,22 +18,35 @@ public class PlayerController : Movable
 
     public UnityEvent OnLevelEnd;
 
-    public int SoulCount = 0;
+    public int SoulCount
+    {
+        get
+        {
+            return soulKeeper.GetSoulCount();
+        }
+    }
 
     //Camera scales
     public float[] CameraLineScales;
     public Cinemachine.CinemachineVirtualCamera Camera;
 
+    private void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
+
+    }
+
     // Start is called before the first frame update
     new void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
+
         OnChangeLineEnd.AddListener(ChangeSortingLayer);
         GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
     }
 
-    new private void FixedUpdate()
+    private void Update()
     {
         //change line
         if (Input.GetButtonDown("Up") && !_isLineSwapBlocked)
@@ -55,7 +68,7 @@ public class PlayerController : Movable
                 _targetLine = 2;
         }
 
-        base.FixedUpdate();
+        //base.FixedUpdate();
 
         //"enter" in middle layer
         if (_curveModif > PhysicsLayerChangeTime1 && _curveModif < PhysicsLayerChangeTime2 && _changeLineStatus == 0)
@@ -99,10 +112,7 @@ public class PlayerController : Movable
         base.OnTriggerEnter2D(other);
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            SoulCount -= 1;
-            if (SoulCount < 0)
-                SoulCount = 0;
-
+            DeleteSoul();
         }
         if (other.gameObject.CompareTag("TriggerEnd"))
         {
@@ -148,5 +158,15 @@ public class PlayerController : Movable
                 _spriteRenderer.sortingLayerName = "Line3";
             }
         }
+    }
+
+    public void AddSoul()
+    {
+        soulKeeper.AddSoul();
+    }
+
+    public void DeleteSoul()
+    {
+        soulKeeper.DeleteSoul();
     }
 }

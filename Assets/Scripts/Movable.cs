@@ -78,20 +78,20 @@ public class Movable : MonoBehaviour
             //delta x calculations
             if (_speed < MaxSpeed)
             {
-                float accelerationValue = AccelerationCurve.Evaluate(_speed / MaxSpeed) * Time.deltaTime;
+                float accelerationValue = AccelerationCurve.Evaluate(_speed / MaxSpeed) * Time.fixedDeltaTime;
                 Acceleration = accelerationValue; //debug
                 _speed += accelerationValue;
                 curSpeed = _speed; //debug
                 if (_speed > MaxSpeed)
                     _speed = MaxSpeed;
             }
-            float dX = Vector2.right.x * _speed * Time.deltaTime;
+            float dX = Vector2.right.x * _speed * Time.fixedDeltaTime;
             //delta y calculations
             float dY = Lines[_curLine].position.y;
             if (_curLine != _targetLine)
             {
                 _isLineSwapBlocked = true;
-                _lerpModif += Time.deltaTime;
+                _lerpModif += Time.fixedDeltaTime;
                 if (_lerpModif > LineSwapTime)
                 {
                     _lerpModif = LineSwapTime;

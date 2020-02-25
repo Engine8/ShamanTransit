@@ -144,6 +144,7 @@ public class GameController : MonoBehaviour
             }
         }
     } 
+
     private void OnPlayerHit()
     {
         if (!IsGameEnded)
@@ -151,6 +152,7 @@ public class GameController : MonoBehaviour
             StartCoroutine("Damage");
         }
     }
+
     IEnumerator Damage()
     {
         UnityEngine.Rendering.Universal.Vignette vignette;
@@ -160,6 +162,7 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
         vignette.intensity.Override(0f);
     }
+
     private void BattleGameWin()
     {
         UnityEngine.Rendering.Universal.Vignette vignette;
@@ -167,6 +170,7 @@ public class GameController : MonoBehaviour
         vignette.intensity.Override(0f);
         PlayerCharacter.CurrentHPBattle = PlayerCharacter.MaxHPBattle;
     }
+
     private void OnAttackPlayerHit()
     {
         UnityEngine.Rendering.Universal.Vignette vignette;
@@ -174,6 +178,7 @@ public class GameController : MonoBehaviour
 
         vignette.intensity.Override(0.25f + 0.30f / PlayerCharacter.MaxHPBattle * (PlayerCharacter.MaxHPBattle - PlayerCharacter.CurrentHPBattle));
     }
+
     private void ShowEndgameUI(bool isGameWin)
     {
         IngameUI.SetActive(false);

@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class AudioControl : MonoBehaviour
 {
-    AudioSource audio;
+    AudioSource audioSource;
     void Start()
     {
-        audio = gameObject.GetComponent<AudioSource>();
+        audioSource = gameObject.GetComponent<AudioSource>();
         if(PlayerPrefs.GetInt("Audio") == 1)
         {
             Debug.Log("true");
-            audio.Play();
+            audioSource.Play();
         }
         else
         {
-            audio.Stop();
+            audioSource.Stop();
         }
     }
 

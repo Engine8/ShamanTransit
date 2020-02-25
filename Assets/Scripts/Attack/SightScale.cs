@@ -38,7 +38,7 @@ public class SightScale : MonoBehaviour
         gameObject.SetActive(false);
     }
    
-    void Update()
+    void FixedUpdate()
     {
         if (Arrow.localEulerAngles.z >= 90f && SpeedRotate > 0)
         {

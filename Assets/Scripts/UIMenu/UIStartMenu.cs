@@ -60,7 +60,7 @@ public class UIStartMenu : MonoBehaviour
     }
     public void AudioOffON()
     {
-        if (!AudioOff.active)
+        if (!AudioOff.activeSelf)
         {
             AudioOff.SetActive(true);
             PlayerPrefs.SetInt("Audio", 0);
