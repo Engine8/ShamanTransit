@@ -42,14 +42,14 @@ public class PlayerController : Movable
     {
 
         OnChangeLineEnd.AddListener(ChangeSortingLayer);
-        GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
+        //GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
     }
 
     private void Update()
     {
         //change line
-        if (Input.GetButtonDown("Up") && !_isLineSwapBlocked)
+        if (Input.GetButtonDown("Up") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
         {
             //gameObject.layer -= 1;
             _targetLine -= 1;
@@ -58,7 +58,7 @@ public class PlayerController : Movable
             if (_targetLine < 0)
                 _targetLine = 0;
         }
-        else if (Input.GetButtonDown("Down") && !_isLineSwapBlocked)
+        else if (Input.GetButtonDown("Down") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
         {
             //gameObject.layer += 1;
             _targetLine += 1;
