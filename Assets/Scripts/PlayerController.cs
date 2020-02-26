@@ -137,10 +137,12 @@ public class PlayerController : Movable
             if (_targetLine == 1)
             {
                 _spriteRenderer.sortingLayerName = "Line2";
+                soulKeeper.SetSoulsSortingLayer("Line2");
             }
             else
             {
                 _spriteRenderer.sortingLayerName = "Line3";
+                soulKeeper.SetSoulsSortingLayer("Line3");
             }
         }
         else
@@ -148,14 +150,17 @@ public class PlayerController : Movable
             if (_targetLine == 0)
             {
                 _spriteRenderer.sortingLayerName = "Line1";
+                soulKeeper.SetSoulsSortingLayer("Line1");
             }
             else if (_targetLine == 1)
             {
                 _spriteRenderer.sortingLayerName = "Line2";
+                soulKeeper.SetSoulsSortingLayer("Line2");
             }
             else
             {
                 _spriteRenderer.sortingLayerName = "Line3";
+                soulKeeper.SetSoulsSortingLayer("Line3");
             }
         }
     }

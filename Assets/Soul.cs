@@ -6,14 +6,15 @@ public class Soul : MonoBehaviour
 {
     public float Speed = 1f;
 
+    public SpriteRenderer spriteRenderer;
     CircleCollider2D parCollider;
-    // Start is called before the first frame update
-    void Start()
+
+    private void Awake()
     {
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         parCollider = transform.parent.GetComponent<CircleCollider2D>();
     }
 
-    
     // Update is called once per frame
     void LateUpdate()
     {

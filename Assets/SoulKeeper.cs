@@ -7,7 +7,7 @@ public class SoulKeeper : MonoBehaviour
     public List<Soul> SoulList;
 
     private CircleCollider2D _keeperCollider;
-
+    private string _sortingLayerName = "Line2";
     public GameObject SoulPrefab;
     // Start is called before the first frame update
     void Start()
@@ -26,6 +26,7 @@ public class SoulKeeper : MonoBehaviour
     {
         GameObject newSoul = Instantiate(SoulPrefab, transform.position, transform.rotation, transform);
         SoulList.Add(newSoul.GetComponent<Soul>());
+        SoulList[SoulList.Count - 1].spriteRenderer.sortingLayerName = _sortingLayerName;
     }
 
     public void DeleteSoul()
@@ -41,5 +42,14 @@ public class SoulKeeper : MonoBehaviour
     public int GetSoulCount()
     {
         return SoulList.Count;
+    }
+
+    public void SetSoulsSortingLayer(string layerName)
+    {
+        _sortingLayerName = layerName;
+        foreach (var soul in SoulList)
+        {
+            soul.spriteRenderer.sortingLayerName = _sortingLayerName;
+        }
     }
 }
