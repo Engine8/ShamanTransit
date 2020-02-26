@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7242653376498373421}
   - component: {fileID: 6633408180293990017}
   - component: {fileID: 1780797070961804966}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stone2
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1242372491
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 514858fa46315e6468fd6bc5dc9d1771, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

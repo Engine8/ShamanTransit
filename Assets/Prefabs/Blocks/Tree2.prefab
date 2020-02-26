@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2217321723701374455}
   - component: {fileID: 5203084227214611467}
   - component: {fileID: 10339204084411031}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Tree2
   m_TagString: Block
   m_Icon: {fileID: 0}
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1242372491
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b8cf4c162a538a243897978b52af589f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
