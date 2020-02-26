@@ -30,7 +30,7 @@ public class MapScript : MonoBehaviour
     public void LoadLevel(string levelName)
     {
         string[] data = levelName.Split('-');
-     //   GameData.Instance.SetCurrentLevel(Convert.ToInt32(data[0]), Convert.ToInt32(data[1]));
+        GameData.Instance.SetCurrentLevel(Convert.ToInt32(data[0]), Convert.ToInt32(data[1]));
         loadingComponent.StartLoadLevel("LevelScene");
     }
     public void StartMenu()
