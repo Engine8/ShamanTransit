@@ -259,7 +259,7 @@ MonoBehaviour:
     TilePrefabsTurn:
     - {fileID: 7197463323871929414, guid: 36320ee6328c9a540b559db0b57204c0, type: 3}
     - {fileID: 7790266007765694786, guid: f17cacb89bbed1c4eb2f87f96a54015e, type: 3}
-    - {fileID: 6732543394565603975, guid: 6dca0911ef38dea4f8e401ebce16ece0, type: 3}
+    - {fileID: 6581053277576116797, guid: fd513ebcd43f9d4498f5f2f5be59e006, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 7790266007765694786, guid: f17cacb89bbed1c4eb2f87f96a54015e, type: 3}
     - {fileID: 8732839563696732334, guid: 883f5e783582f0a47a003dcfd85b2a84, type: 3}
@@ -7217,7 +7217,7 @@ MonoBehaviour:
   m_YDamping: 2.4
   m_ZDamping: 1
   m_ScreenX: 0.5
-  m_ScreenY: 0.64
+  m_ScreenY: 0.73
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
   m_DeadZoneHeight: 0
@@ -8821,7 +8821,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109791147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.75320005, z: -10.82}
+  m_LocalPosition: {x: 0, y: 0.11260033, z: -10.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1690271514}

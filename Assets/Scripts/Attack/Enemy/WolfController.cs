@@ -6,14 +6,15 @@ public class WolfController :  EnemyController
 {
     public Enemy[] Wolf;
     public float timeBetweenAttacks;//скорость атаки
-    public int speed;
-
+    public float speed;
+    private float _facktSpeed;
     private Vector3[][] _positionWolf = new Vector3[4][];
     private float nextAttackTime;
     private int countWolf = 4;
     private PlayerController HealsPlayer;
     void Start()
     {
+        _facktSpeed = speed;
         HealsPlayer = FindObjectOfType<PlayerController>().GetComponent<PlayerController>();
         nextAttackTime = Time.time + timeBetweenAttacks;
         for (int i = 0; i < 4; ++i)
@@ -37,9 +38,9 @@ public class WolfController :  EnemyController
 
     IEnumerator Sprint() //появление волков
     {
-        speed = 16;
+        _facktSpeed = 16;
         yield return new WaitForSeconds(1.3f);
-        speed = 10;
+        _facktSpeed = speed;
     }
     public void ChendePosition()
     {
@@ -80,7 +81,7 @@ public class WolfController :  EnemyController
     {
         if (!HealsPlayer.GetDead())
         {
-            this.gameObject.transform.localPosition = new Vector2(this.gameObject.transform.localPosition.x + speed * Time.deltaTime, this.gameObject.transform.localPosition.y);
+            this.gameObject.transform.localPosition = new Vector2(this.gameObject.transform.localPosition.x + _facktSpeed * Time.deltaTime, this.gameObject.transform.localPosition.y);
             if (Time.time > nextAttackTime)
             {
                 Attack();

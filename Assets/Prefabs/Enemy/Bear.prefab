@@ -97,8 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 5
   attackDistanceThreshold: 3.8
-  damage: 5
-  targetPlayer: {fileID: 0}
+  Damage: 5
 --- !u!114 &6648551672482228333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -111,5 +110,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35640dd80d4810e4f93e9e8ac443d470, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 12
-  HealsPlayer: {fileID: 0}
+  speed: 11

@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: 7657980355020301945, guid: 83408c7cde308574382bdc3438db970c,
     type: 3}
-  m_Color: {r: 0, g: 1, b: 0.0009315014, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -192,7 +192,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: 7444046612802208997, guid: 83408c7cde308574382bdc3438db970c,
     type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -289,7 +289,7 @@ MonoBehaviour:
   - {fileID: 7040827106760083238}
   - {fileID: 7040827107407124624}
   timeBetweenAttacks: 10
-  speed: 10
+  speed: 9.93
 --- !u!1 &7040827107407124621
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +364,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: 8869458652111653792, guid: 83408c7cde308574382bdc3438db970c,
     type: 3}
-  m_Color: {r: 1, g: 0.96362275, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -482,7 +482,7 @@ SpriteRenderer:
   m_SortingOrder: 3
   m_Sprite: {fileID: -2078714079113573684, guid: 83408c7cde308574382bdc3438db970c,
     type: 3}
-  m_Color: {r: 0, g: 0.0377028, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

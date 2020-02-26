@@ -11,6 +11,7 @@ public class HitArea : MonoBehaviour
     private EnemyController _enumy;
     private Image MissAr;
     private SightScale sightScale;
+   
 
     void Start()
     {
@@ -26,27 +27,30 @@ public class HitArea : MonoBehaviour
 
     public void Tach()
     {
-        if (Arrow.localEulerAngles.z <= transform.localEulerAngles.z && Arrow.localEulerAngles.z >= transform.localEulerAngles.z - 18)
-        {
-            transform.localEulerAngles = new Vector3(0, 0, Random.Range(20f, 90f));
-            if (_enumy.GetActiv())
+        if (!sightScale.GetVictory()) 
+        { 
+            if (Arrow.localEulerAngles.z <= transform.localEulerAngles.z && Arrow.localEulerAngles.z >= transform.localEulerAngles.z - 18)
             {
-                if (_enumy.GetCount() >= 0)
+                transform.localEulerAngles = new Vector3(0, 0, Random.Range(20f, 90f));
+                if (_enumy.GetActiv())
                 {
-                    _enumy.TakeDamage();
+                    if (_enumy.GetCount() >= 0)
+                    {
+                        _enumy.TakeDamage();
+                    }
+                    if (_enumy.GetCount() == 0)
+                    {
+                        sightScale.Stop();
+                    }
                 }
-                if (_enumy.GetCount() == 0)
-                {
-                    sightScale.Stop();
-                }
+                sightScale.BafSpeed();
             }
-            sightScale.BafSpeed();
-        }
-        else
-        {
-            StartCoroutine("Miss");
-            if (_enumy.GetActiv())
-                _enumy.Attack();
+            else
+            {
+                StartCoroutine("Miss");
+                if (_enumy.GetActiv())
+                    _enumy.Attack();
+            } 
         }
     }
     IEnumerator Miss()

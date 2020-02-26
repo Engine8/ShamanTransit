@@ -32,8 +32,8 @@ public class UIStartMenu : MonoBehaviour
     }
     public void StartGame()
     {
-        Debug.Log("LoadScene('play')");
-        SceneManager.LoadScene("play");
+        Debug.Log("LoadScene('LevelScene')");
+        SceneManager.LoadScene("LevelScene");
     }
     public void Map()
     {
@@ -72,5 +72,7 @@ public class UIStartMenu : MonoBehaviour
             AudioOff.SetActive(false);
             PlayerPrefs.SetInt("Audio", 1);
         }
+        FindObjectOfType<AudioControl>().AudioOnOff();
+      //  AudioControl.audioControl.AudioOnOff();
     }
 }

@@ -9,6 +9,7 @@ public class ShopScript : MonoBehaviour
     public GameObject ItemsHolder;
 
 
+
     //-------------debug -----------
     private struct Item
     {
@@ -25,13 +26,13 @@ public class ShopScript : MonoBehaviour
     private void Start()
     {
         //------------debug----------
-        Items = new Item[5];
-        for (int i = 0; i < 5; ++i)
+        Items = new Item[ItemsHolder.transform.childCount];
+        for (int i = 0; i < ItemsHolder.transform.childCount; ++i)
         {
             Items[i].index = i;
             Items[i].money = i * 100 + 100;
-
-            Transform itemUiTransform = ItemsHolder.transform.Find($"Item {i}").transform;
+           
+            Transform itemUiTransform = ItemsHolder.transform.GetChild(i).transform;
             //set name
             itemUiTransform.Find("Name").GetComponent<Text>().text = $"Item {i}";
             //set price
@@ -74,7 +75,7 @@ public class ShopScript : MonoBehaviour
         //set new money text
         MoneyText.text = PlayerDataController.Instance.Data.Money.ToString();
         //also maybe need to update purchases
-        
     }
+
 
 }

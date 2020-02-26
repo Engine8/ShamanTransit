@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class BearController : EnemyController
 {
-    public int speed;
-   
-    private PlayerControl HealsPlayer;
+    public float speed;
+    private float _facktSpeed;
+
+    private PlayerController HealsPlayer;
     private Enemy Bear;
     private float nextAttackTime;
     void Start()
     {
-        HealsPlayer = FindObjectOfType<PlayerControl>().GetComponent<PlayerControl>();
+        HealsPlayer = FindObjectOfType<PlayerController>().GetComponent<PlayerController>();
+        Debug.Log(gameObject.GetComponent<Enemy>());
         Bear = gameObject.GetComponent<Enemy>();
+        StartCoroutine("Sprint");
+    }
+    IEnumerator Sprint() //появление волков
+    {
+        _facktSpeed = 16;
+        yield return new WaitForSeconds(1f);
+        _facktSpeed = speed;
     }
     void FixedUpdate()
     {
@@ -20,7 +29,7 @@ public class BearController : EnemyController
         {
             if (!Bear.GetDead())
             {
-                this.gameObject.transform.localPosition = new Vector2(this.gameObject.transform.localPosition.x + speed * Time.deltaTime, this.gameObject.transform.localPosition.y);
+                this.gameObject.transform.localPosition = new Vector2(this.gameObject.transform.localPosition.x + _facktSpeed * Time.deltaTime, this.gameObject.transform.localPosition.y);
                 float sqrDstToTarget = (HealsPlayer.transform.position - transform.position).sqrMagnitude;
 
                 if (sqrDstToTarget < Mathf.Pow(Bear.attackDistanceThreshold, 2))
@@ -44,12 +53,12 @@ public class BearController : EnemyController
     }
     IEnumerator Slowdown()
     {
-        Debug.Log(speed);
-        int oldSpeed = speed;
-        speed = 9;
+        Debug.Log(_facktSpeed);
+        float oldSpeed = _facktSpeed;
+        _facktSpeed = 9;
         Bear.TakeDamage(1);
         yield return new WaitForSeconds(0.6f);
-        speed = oldSpeed;
+        _facktSpeed = oldSpeed;
     }
     public override int GetCount()
     {

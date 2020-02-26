@@ -6,7 +6,8 @@ public class SightScale : MonoBehaviour
 {
     public Transform Arrow;
     public Transform HitArea;
- 
+
+    private bool _Victory;
     public float SpeedRotate;
     public void BafSpeed()
     {
@@ -16,13 +17,14 @@ public class SightScale : MonoBehaviour
             SpeedRotate = (Mathf.Abs(SpeedRotate) + 1) * SpeedRotate / Mathf.Abs(SpeedRotate);
 
             if (Mathf.Abs(SpeedRotate) > 4)
-                SpeedRotate = 3 * SpeedRotate / Mathf.Abs(SpeedRotate);
+                SpeedRotate =2 * SpeedRotate / Mathf.Abs(SpeedRotate);
             if (Random.Range(0, 100) == 46)
                 SpeedRotate = 1 * SpeedRotate / Mathf.Abs(SpeedRotate);
         }
     }
     public void Stop()
     {
+        _Victory = true;
         GameController.Instance.SetGameMode(0);
         StartCoroutine("Weate");
     }
@@ -35,6 +37,7 @@ public class SightScale : MonoBehaviour
                 break;
             SpeedRotate = (Mathf.Abs(SpeedRotate) - 0.5f) * SpeedRotate / Mathf.Abs(SpeedRotate);
         }
+        _Victory = false;
         gameObject.SetActive(false);
     }
    
@@ -50,5 +53,9 @@ public class SightScale : MonoBehaviour
         }
         float rotationZ = Arrow.localEulerAngles.z + SpeedRotate;
         Arrow.localEulerAngles = new Vector3(0, 0, rotationZ);
+    }
+    public bool GetVictory()
+    {
+        return _Victory;
     }
 }
