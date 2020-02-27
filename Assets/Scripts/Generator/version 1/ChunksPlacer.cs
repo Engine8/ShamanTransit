@@ -67,7 +67,7 @@ public class ChunksPlacer : MonoBehaviour
 
         HitAreaRef.SetEnnemy(newChunk.GetComponent<EnemyController>());
         //Debug.Log(newChunk.GetComponent<EnemyController>().GetCount());
-        newChunk.transform.position = new Vector2(player.transform.position.x - 18, -1.27f);
+        newChunk.transform.position = new Vector2(player.transform.position.x - 19, -1.81f);
     }
 
     private void SpawnChunk()

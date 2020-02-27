@@ -74,7 +74,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
+        VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.58f;
         if (PlayerCharacter != null)
         {
             PlayerCharacter.OnHit.AddListener(OnPlayerHit);
@@ -139,6 +139,7 @@ public class GameController : MonoBehaviour
                     framTransposer.m_ScreenX = Mathf.Lerp(1, 0.5f, _currentRefreshCameraTime / RefreshCameraTime);
                     framTransposer.m_LookaheadTime = Mathf.Lerp(LookaheadTimeAttack, LookaheadTimeNormal, _currentRefreshCameraTime / RefreshCameraTime);
                 }
+
                 if (isEnded)
                 {
                     _currentRefreshCameraTime = 0f;
