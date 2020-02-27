@@ -72,7 +72,7 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.5f;
+        VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.58f;
         if (PlayerCharacter != null)
         {
             PlayerCharacter.OnHit.AddListener(OnPlayerHit);
@@ -128,13 +128,13 @@ public class GameController : MonoBehaviour
                 }
                 if (IsAttackMode)
                 {
-                    VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = Mathf.Lerp(VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX, 
-                                                                                                              1, _currentRefreshCameraTime / RefreshCameraTime);
+                    VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = Mathf.Lerp(VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX,
+                                                                                                              1.12f, _currentRefreshCameraTime / RefreshCameraTime);
                 }
                 else
                 {
-                    VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = Mathf.Lerp(VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX, 
-                                                                                                              0.5f, _currentRefreshCameraTime / RefreshCameraTime);
+                    VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = Mathf.Lerp(VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX,
+                                                                                                              0.58f, _currentRefreshCameraTime / RefreshCameraTime);
                 }
                 if (isEnded)
                 {
