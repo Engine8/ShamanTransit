@@ -38,6 +38,8 @@ public class GameController : MonoBehaviour
     public ParallaxBackground Moon;
     public float RefreshCameraTime = 0.8f;
     private float _currentRefreshCameraTime = 0f;
+    public float LookaheadTimeNormal = 0.55f;
+    public float LookaheadTimeAttack = 0.2f;
     private bool _isNeedToRefreshCamera = false;
     //Amount of cargo that lost on hit
     //Maybe defined by level in scene manager
@@ -126,15 +128,16 @@ public class GameController : MonoBehaviour
                     _currentRefreshCameraTime = RefreshCameraTime;
                     isEnded = true;
                 }
+                CinemachineFramingTransposer framTransposer = VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
                 if (IsAttackMode)
                 {
-                    VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = Mathf.Lerp(VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX, 
-                                                                                                              1, _currentRefreshCameraTime / RefreshCameraTime);
+                    framTransposer.m_ScreenX = Mathf.Lerp(0.5f, 1, _currentRefreshCameraTime / RefreshCameraTime);
+                    framTransposer.m_LookaheadTime = Mathf.Lerp(LookaheadTimeNormal, LookaheadTimeAttack, _currentRefreshCameraTime / RefreshCameraTime);
                 }
                 else
                 {
-                    VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = Mathf.Lerp(VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX, 
-                                                                                                              0.5f, _currentRefreshCameraTime / RefreshCameraTime);
+                    framTransposer.m_ScreenX = Mathf.Lerp(1, 0.5f, _currentRefreshCameraTime / RefreshCameraTime);
+                    framTransposer.m_LookaheadTime = Mathf.Lerp(LookaheadTimeAttack, LookaheadTimeNormal, _currentRefreshCameraTime / RefreshCameraTime);
                 }
                 if (isEnded)
                 {

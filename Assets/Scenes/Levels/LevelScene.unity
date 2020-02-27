@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -275,7 +275,7 @@ MonoBehaviour:
     - {fileID: 7790266007765694786, guid: f17cacb89bbed1c4eb2f87f96a54015e, type: 3}
     - {fileID: 6986321411085782552, guid: b9217eaaeae292c4c9ee83b1223bdc43, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 7790266007765694786, guid: f17cacb89bbed1c4eb2f87f96a54015e, type: 3}
+    - {fileID: 6732543394565603975, guid: 6dca0911ef38dea4f8e401ebce16ece0, type: 3}
     - {fileID: 8732839563696732334, guid: 883f5e783582f0a47a003dcfd85b2a84, type: 3}
     - {fileID: 6986321411085782552, guid: b9217eaaeae292c4c9ee83b1223bdc43, type: 3}
     - {fileID: 6986321411085782552, guid: b9217eaaeae292c4c9ee83b1223bdc43, type: 3}
@@ -7954,12 +7954,12 @@ PrefabInstance:
     - target: {fileID: 6316404828414724302, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6316404828414724302, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.9
       objectReference: {fileID: 0}
     - target: {fileID: 6316404828414724308, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
