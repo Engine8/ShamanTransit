@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -280,17 +280,17 @@ MonoBehaviour:
     - {fileID: 7197463323871929414, guid: 36320ee6328c9a540b559db0b57204c0, type: 3}
     - {fileID: 7790266007765694786, guid: f17cacb89bbed1c4eb2f87f96a54015e, type: 3}
     - {fileID: 6986321411085782552, guid: b9217eaaeae292c4c9ee83b1223bdc43, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6732543394565603975, guid: 6dca0911ef38dea4f8e401ebce16ece0, type: 3}
+    - {fileID: 3385730277920550093, guid: 260909588736730499cccf7437d62801, type: 3}
+    - {fileID: 7790266007765694786, guid: f17cacb89bbed1c4eb2f87f96a54015e, type: 3}
     - {fileID: 8732839563696732334, guid: 883f5e783582f0a47a003dcfd85b2a84, type: 3}
     - {fileID: 6986321411085782552, guid: b9217eaaeae292c4c9ee83b1223bdc43, type: 3}
     - {fileID: 6986321411085782552, guid: b9217eaaeae292c4c9ee83b1223bdc43, type: 3}
     - {fileID: 8732839563696732334, guid: 883f5e783582f0a47a003dcfd85b2a84, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 3385730277920550093, guid: 260909588736730499cccf7437d62801, type: 3}
     - {fileID: 6986321411085782552, guid: b9217eaaeae292c4c9ee83b1223bdc43, type: 3}
-    - {fileID: 809362121560900752, guid: b5f152c448444b5489959067d366b9d9, type: 3}
-    - {fileID: 789416237862598747, guid: 62048cfac25f09c45a612035e1a918c3, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 7790266007765694786, guid: f17cacb89bbed1c4eb2f87f96a54015e, type: 3}
+    - {fileID: 3385730277920550093, guid: 260909588736730499cccf7437d62801, type: 3}
+    - {fileID: 6986321411085782552, guid: b9217eaaeae292c4c9ee83b1223bdc43, type: 3}
     - {fileID: 1573161873939503286, guid: 97bc4b89c1896ff49909852a0e3bb333, type: 3}
     spawnedChunks: []
   mapIndex: 0
@@ -404,7 +404,6 @@ RectTransform:
   - {fileID: 885743594}
   - {fileID: 1436279832}
   - {fileID: 1985691255}
-  - {fileID: 1840030357}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -437,7 +436,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 403951874}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.9, y: 19.2, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 931238056}
@@ -704,6 +703,7 @@ RectTransform:
   m_Children:
   - {fileID: 516410302}
   - {fileID: 1450683287}
+  - {fileID: 1840030357}
   m_Father: {fileID: 370010436}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -912,7 +912,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &931238056
 Transform:
   m_ObjectHideFlags: 0
@@ -921,8 +921,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931238055}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15.9, y: -17.1, z: 0}
-  m_LocalScale: {x: 0.42178935, y: 0.46450573, z: 0.46}
+  m_LocalPosition: {x: 1.976, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403951875}
   m_RootOrder: 0
@@ -940,7 +940,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CameraTransform: {fileID: 1208487110}
-  ParallaxMultiplier: {x: 0.8, y: 0.5}
+  ParallaxMultiplier: {x: 0.9, y: 0.5}
   _offset: {x: 0, y: 0}
   _parallaxOnX: 1
   _parallaxOnY: 0
@@ -952,7 +952,7 @@ SortingGroup:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 931238055}
-  m_Enabled: 1
+  m_Enabled: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
@@ -992,18 +992,18 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1547803347
-  m_SortingLayer: 2
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: a0a057f40a661b545b540a983fb65b7a, type: 3}
+  m_SortingLayerID: -477635453
+  m_SortingLayer: 1
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: a63ede27199da194c80e245759a3e500, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 0
-  m_Size: {x: 42.564045, y: 30.578407}
+  m_DrawMode: 2
+  m_Size: {x: 70.09879, y: 6.145294}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &980119562
@@ -1123,7 +1123,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1103316433
 Transform:
   m_ObjectHideFlags: 0
@@ -1132,8 +1132,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1103316432}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.31, y: -19.9, z: 0}
-  m_LocalScale: {x: 1, y: 0.5, z: 1}
+  m_LocalPosition: {x: 0.88, y: 0.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 403951875}
   m_RootOrder: 2
@@ -1155,7 +1155,7 @@ MonoBehaviour:
   _offset: {x: 0, y: 0}
   _parallaxOnX: 1
   _parallaxOnY: 0
-  debug: 0
+  debug: 1
 --- !u!212 &1103316435
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1194,16 +1194,16 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1547803347
   m_SortingLayer: 2
-  m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: e24db53fe0c611c4fa230fb45c3a5750, type: 3}
-  m_Color: {r: 0.122641504, g: 0, b: 0, a: 1}
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 183ac711fe2a28a4e8c12a8fb1c7eb5a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
-  m_Size: {x: 89.35767, y: 12}
+  m_Size: {x: 62.589966, y: 6.145}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1208487109
@@ -6476,6 +6476,8 @@ MonoBehaviour:
   volumeProfile: {fileID: 0}
   Moon: {fileID: 928938403}
   RefreshCameraTime: 1
+  LookaheadTimeNormal: 0.55
+  LookaheadTimeAttack: 0.3
   MoneyPerLevel: 500
   StartPoint: {fileID: 11449643}
   EndPoint: {fileID: 1784547516}
@@ -7420,15 +7422,15 @@ RectTransform:
   m_GameObject: {fileID: 1840030356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
-  m_Father: {fileID: 370010436}
-  m_RootOrder: 3
+  m_Father: {fileID: 885743594}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -184, y: -119}
+  m_SizeDelta: {x: 1180, y: 620}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1840030358
 MonoBehaviour:
@@ -7520,12 +7522,12 @@ PrefabInstance:
     - target: {fileID: 5832798928230983044, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.34
+      value: 1.2
       objectReference: {fileID: 0}
     - target: {fileID: 5832798928230983044, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.09
+      value: 2.16
       objectReference: {fileID: 0}
     - target: {fileID: 5832798928230983045, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
@@ -7639,6 +7641,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -4398183398628465896, guid: 401c4ae756aeb0243bb45bba73711521,
         type: 3}
+    - target: {fileID: 6316404828414724297, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6316404828414724298, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: OnHit.m_PersistentCalls.m_Calls.Array.size

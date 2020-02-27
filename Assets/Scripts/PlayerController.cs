@@ -100,9 +100,10 @@ public class PlayerController : Movable
                 gameObject.layer += 1;
             }
             Debug.Log($"New layer: {gameObject.layer}");
-        }
-        if (_curLine == _targetLine)
             _changeLineStatus = 0;
+        }
+        //if (_curLine == _targetLine)
+        //   _changeLineStatus = 0;
 
 
     }

@@ -201,11 +201,14 @@ public class GameController : MonoBehaviour
         {
             _uiAudioSource.clip = WinSound;
             _uiAudioSource.PlayOneShot(WinSound);
+            EndgameMoneyText.transform.parent.gameObject.SetActive(true);
             StartCoroutine(MoneyAnimationStart());
+
         }
         else
         {
             _uiAudioSource.PlayOneShot(DefeatSound);
+            EndgameMoneyText.transform.parent.gameObject.SetActive(false);
         }   
     }
 
@@ -214,6 +217,10 @@ public class GameController : MonoBehaviour
         int moneySum = ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount;
         int curMoney = 0;
         int i = 1;
+        if (moneySum == 0)
+        {
+            EndgameMoneyText.text = curMoney.ToString();
+        }
         while (curMoney < moneySum)
         {
             Debug.Log($"Step {i}");
@@ -242,9 +249,10 @@ public class GameController : MonoBehaviour
         PlayerDataController.Instance.AddMoney(MoneyPerLevel);
         //consider that stage include only 5 levels
         PlayerDataController.Instance.Data.CurrentLevel = ++PlayerDataController.Instance.Data.CurrentLevel % 5;
-        PlayerDataController.Instance.Data.CurrentStage = PlayerDataController.Instance.Data.CurrentLevel / 5 + 1;
+        PlayerDataController.Instance.Data.CurrentStage = PlayerDataController.Instance.Data.CurrentLevel / 5;
         PlayerDataController.Instance.WriteData();
         loadingComponent.StartLoadLevel("Map");
+        Debug.Log("OnContinueButtonClick ended");
     }
 
     public void SetGameMode(int gameMode)
