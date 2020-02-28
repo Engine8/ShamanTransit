@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 7242653376498373421}
   - component: {fileID: 6633408180293990017}
   - component: {fileID: 1780797070961804966}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Stone2
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,16 +70,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1242372491
+  m_SortingLayer: 5
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9187242211370392559, guid: d8fc4ac3fb5561c41851eac52caadb6c,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 514858fa46315e6468fd6bc5dc9d1771, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.33, y: 2.4}
+  m_Size: {x: 1.85, y: 1.315}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -98,18 +97,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.011212975, y: -0.41334796}
+  m_Offset: {x: -0.0011931658, y: -0.007891417}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5170905, y: 0.83241147}
-    oldSize: {x: 1.8200002, y: 1.3101138}
-    newSize: {x: 2.33, y: 2.4}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.85, y: 1.315}
+    newSize: {x: 1.85, y: 1.315}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.66423887, y: 0.69032884}
+  m_Size: {x: 0.96198606, y: 0.9301183}
   m_EdgeRadius: 0
 --- !u!50 &6633408180293990017
 Rigidbody2D:
@@ -146,3 +145,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0

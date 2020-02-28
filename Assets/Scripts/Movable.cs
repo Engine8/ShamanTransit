@@ -11,6 +11,12 @@ public class Movable : MonoBehaviour
     public float Acceleration = 2f;
     public float StartSpeed = 0f;
 
+    public int MaxHP;
+    public int CurrentHP;
+    protected bool _isDead;
+
+    public int MaxHPBattle;
+    public int CurrentHPBattle;
     //debug
     public float curSpeed;
 
@@ -19,6 +25,8 @@ public class Movable : MonoBehaviour
 
     public UnityEvent OnHit;
     public UnityEvent OnDie;
+    public UnityEvent OnAttackHit;
+    public UnityEvent OnChangeLineEnd;
 
     public AnimationCurve AccelerationCurve;
 
@@ -51,11 +59,11 @@ public class Movable : MonoBehaviour
         {
             _curLine = 0;
         }
-        else if (gameObject.layer == 9)
+        else if (gameObject.layer == 10)
         {
             _curLine = 1;
         }
-        else
+        else if (gameObject.layer == 12)
         {
             _curLine = 2;
         }
@@ -70,23 +78,24 @@ public class Movable : MonoBehaviour
             //delta x calculations
             if (_speed < MaxSpeed)
             {
-                float accelerationValue = AccelerationCurve.Evaluate(_speed / MaxSpeed) * Time.deltaTime;
+                float accelerationValue = AccelerationCurve.Evaluate(_speed / MaxSpeed) * Time.fixedDeltaTime;
                 Acceleration = accelerationValue; //debug
                 _speed += accelerationValue;
                 curSpeed = _speed; //debug
                 if (_speed > MaxSpeed)
                     _speed = MaxSpeed;
             }
-            float dX = Vector2.right.x * _speed * Time.deltaTime;
+            float dX = Vector2.right.x * _speed * Time.fixedDeltaTime;
             //delta y calculations
             float dY = Lines[_curLine].position.y;
             if (_curLine != _targetLine)
             {
                 _isLineSwapBlocked = true;
-                _lerpModif += Time.deltaTime;
+                _lerpModif += Time.fixedDeltaTime;
                 if (_lerpModif > LineSwapTime)
                 {
-                    _lerpModif = 1;
+                    _lerpModif = LineSwapTime;
+                    OnChangeLineEnd.Invoke();
                     _curLine = _targetLine;
                     _isLineSwapBlocked = false;
                 }
@@ -95,7 +104,10 @@ public class Movable : MonoBehaviour
                 float newXYScale = Mathf.Lerp(LineScales[_curLine], LineScales[_targetLine], _curveModif);
                 transform.localScale = new Vector3(newXYScale, newXYScale, 1);
                 if (!_isLineSwapBlocked)
+                {
                     _lerpModif = 0f;
+                    _curveModif = 0f;
+                }
             }
             _rb2d.MovePosition(new Vector2(_rb2d.position.x + dX, dY));
         }
@@ -103,17 +115,31 @@ public class Movable : MonoBehaviour
 
     protected void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Collision entered");
-
         Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
+        Debug.Log(other.name + " = " + (obstacle != null));
         if (obstacle != null)
         {
             Debug.Log("Collision with obstacle");
+
+            CurrentHP -= obstacle.Damage;
+            if (CurrentHP < 0)
+            {
+                CurrentHP = 0;
+            }
+
             if (OnHit != null)
             {
                 OnHit.Invoke();
             }
-            if (obstacle.Type == Obstacle.ObstacleType.Slower)
+
+            if (CurrentHP == 0 || obstacle.Type == Obstacle.ObstacleType.Deadly)
+            {
+                if (OnDie != null)
+                {
+                    OnDie.Invoke();
+                }
+            }
+            else if (obstacle.Type == Obstacle.ObstacleType.Slower)
             {
                 _speed -= obstacle.SpeedReduce;
                 if (_speed < 0)
@@ -121,16 +147,26 @@ public class Movable : MonoBehaviour
                     _speed = 0;
                 }
             }
-            else if (obstacle.Type == Obstacle.ObstacleType.Deadly)
-            {
-                if (OnDie != null)
-                {
-                    OnDie.Invoke();
-                }
-            }
         }
     }
-   
+
+    public void TakeDamage(int damage)
+    {
+        Debug.Log("TakeDamage");
+        CurrentHPBattle -= damage;
+        OnAttackHit.Invoke();
+        if (CurrentHPBattle <= 0 && !_isDead)
+        {
+            _isDead = true;
+             OnDie.Invoke();
+        }
+    }
+
+    public bool GetDead()
+    {
+        return _isDead;
+    }
+
     public void OnHitLog()
     {
         Debug.Log("Main character hit");

@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Obstacle
   - TriggerAttack
+  - TriggerEnd
+  - Block
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,9 @@ TagManager:
   - 
   - 
   - Line1
+  - Line12
   - Line2
+  - Line23
   - Line3
   - 
   - 
@@ -25,9 +29,7 @@ TagManager:
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - NotCollider
   - 
   - 
   - 

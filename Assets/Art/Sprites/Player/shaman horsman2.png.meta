@@ -1,0 +1,1111 @@
+fileFormatVersion: 2
+guid: 5efaf4105ee4a064b933a14c42b13e1a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6294725153404920413
+    second: shaman horsman2_0
+  - first:
+      213: 4120842764055326371
+    second: shaman horsman2_1
+  - first:
+      213: -2171347979253349159
+    second: shaman horsman2_2
+  - first:
+      213: 6435031552734063163
+    second: shaman horsman2_3
+  - first:
+      213: -2959962154648190841
+    second: shaman horsman2_4
+  - first:
+      213: -2227332078880960810
+    second: shaman horsman2_5
+  - first:
+      213: 57240351177972563
+    second: shaman horsman2_6
+  - first:
+      213: 3129099626316136071
+    second: shaman horsman2_7
+  - first:
+      213: -2951546940027487864
+    second: shaman horsman2_8
+  - first:
+      213: 2076680367016176065
+    second: shaman horsman2_9
+  - first:
+      213: 3891442920786470706
+    second: shaman horsman2_10
+  - first:
+      213: 7094053538642638785
+    second: shaman horsman2_11
+  - first:
+      213: -538142876285254904
+    second: shaman horsman2_12
+  - first:
+      213: -3594296501745829403
+    second: shaman horsman2_13
+  - first:
+      213: -4743167942779067294
+    second: shaman horsman2_14
+  - first:
+      213: -5191272693643529249
+    second: shaman horsman2_15
+  - first:
+      213: 4011658423982195050
+    second: shaman horsman2_16
+  - first:
+      213: -2341554660321469718
+    second: shaman horsman2_17
+  - first:
+      213: 3003579290920836972
+    second: shaman horsman2_18
+  - first:
+      213: -2470724035019983016
+    second: shaman horsman2_19
+  - first:
+      213: -5833608655158643605
+    second: shaman horsman2_20
+  - first:
+      213: 4284040851199674791
+    second: shaman horsman2_21
+  - first:
+      213: 6005868200806039345
+    second: shaman horsman2_22
+  - first:
+      213: 9068580593272214855
+    second: shaman horsman2_23
+  - first:
+      213: -2227860217166456325
+    second: shaman horsman2_24
+  - first:
+      213: -3199790572810432620
+    second: shaman horsman2_25
+  - first:
+      213: 182561166704559825
+    second: shaman horsman2_26
+  - first:
+      213: 220936309461956020
+    second: shaman horsman2_27
+  - first:
+      213: 7669156236028115800
+    second: shaman horsman2_28
+  - first:
+      213: 2385900908415249045
+    second: shaman horsman2_29
+  - first:
+      213: -231165883550389747
+    second: shaman horsman2_30
+  - first:
+      213: 5171874664410225337
+    second: shaman horsman2_31
+  - first:
+      213: 911776758414474139
+    second: shaman horsman2_32
+  - first:
+      213: 6375109478320201870
+    second: shaman horsman2_33
+  - first:
+      213: 4883078577697505646
+    second: shaman horsman2_34
+  - first:
+      213: 6674832345353284101
+    second: shaman horsman2_35
+  - first:
+      213: 6671878282143414117
+    second: shaman horsman2_36
+  - first:
+      213: 6189231031994007498
+    second: shaman horsman2_37
+  - first:
+      213: 6958805958079487926
+    second: shaman horsman2_38
+  - first:
+      213: -3451213601619613341
+    second: shaman horsman2_39
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shaman horsman2_0
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 1538
+        width: 252
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52aa671d2b5b5750800000000000000
+      internalID: 6294725153404920413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_1
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 1538
+        width: 265
+        height: 235
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3aea1c629ac203930800000000000000
+      internalID: 4120842764055326371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_2
+      rect:
+        serializedVersion: 2
+        x: 970
+        y: 1530
+        width: 265
+        height: 239
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d487d46482ddd1e0800000000000000
+      internalID: -2171347979253349159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_3
+      rect:
+        serializedVersion: 2
+        x: 1387
+        y: 1528
+        width: 262
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3ae42b5a13dd4950800000000000000
+      internalID: 6435031552734063163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_4
+      rect:
+        serializedVersion: 2
+        x: 1794
+        y: 1528
+        width: 251
+        height: 230
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78048975a1a1ce6d0800000000000000
+      internalID: -2959962154648190841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_5
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 1525
+        width: 244
+        height: 227
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dec771764de611e0800000000000000
+      internalID: -2227332078880960810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_6
+      rect:
+        serializedVersion: 2
+        x: 2555
+        y: 1525
+        width: 234
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b18cecbcb5bc000800000000000000
+      internalID: 57240351177972563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_7
+      rect:
+        serializedVersion: 2
+        x: 2812
+        y: 1668
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e716d088bcc6b20800000000000000
+      internalID: 3129099626316136071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_8
+      rect:
+        serializedVersion: 2
+        x: 2948
+        y: 1525
+        width: 241
+        height: 237
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88935cd22bff907d0800000000000000
+      internalID: -2951546940027487864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_9
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1197
+        width: 256
+        height: 234
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9e6048ac9d1dc10800000000000000
+      internalID: 2076680367016176065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_10
+      rect:
+        serializedVersion: 2
+        x: 533
+        y: 1197
+        width: 267
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 237af2df7be210630800000000000000
+      internalID: 3891442920786470706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_11
+      rect:
+        serializedVersion: 2
+        x: 943
+        y: 1185
+        width: 265
+        height: 260
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c7b5648b14237260800000000000000
+      internalID: 7094053538642638785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_12
+      rect:
+        serializedVersion: 2
+        x: 1305
+        y: 1376
+        width: 106
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8034c9cb7e12888f0800000000000000
+      internalID: -538142876285254904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_13
+      rect:
+        serializedVersion: 2
+        x: 1397
+        y: 1197
+        width: 241
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e9b204006e7e1ec0800000000000000
+      internalID: -3594296501745829403
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_14
+      rect:
+        serializedVersion: 2
+        x: 1801
+        y: 1211
+        width: 213
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26422ace2e1ec2eb0800000000000000
+      internalID: -4743167942779067294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_15
+      rect:
+        serializedVersion: 2
+        x: 2219
+        y: 1214
+        width: 211
+        height: 231
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd3313b5df4e4f7b0800000000000000
+      internalID: -5191272693643529249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_16
+      rect:
+        serializedVersion: 2
+        x: 2576
+        y: 1197
+        width: 200
+        height: 238
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6189a9f4164ca730800000000000000
+      internalID: 4011658423982195050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_17
+      rect:
+        serializedVersion: 2
+        x: 2952
+        y: 1194
+        width: 230
+        height: 241
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aead0694170218fd0800000000000000
+      internalID: -2341554660321469718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_18
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 675
+        width: 492
+        height: 464
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6f5e02937bdea920800000000000000
+      internalID: 3003579290920836972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_19
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 674
+        width: 441
+        height: 482
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8573d92a49936bdd0800000000000000
+      internalID: -2470724035019983016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_20
+      rect:
+        serializedVersion: 2
+        x: 1386
+        y: 650
+        width: 434
+        height: 485
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b64ff9ef5dbda0fa0800000000000000
+      internalID: -5833608655158643605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_21
+      rect:
+        serializedVersion: 2
+        x: 1911
+        y: 646
+        width: 594
+        height: 458
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a9c403d478f37b30800000000000000
+      internalID: 4284040851199674791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_22
+      rect:
+        serializedVersion: 2
+        x: 2710
+        y: 636
+        width: 431
+        height: 457
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13fbbd4ee41295350800000000000000
+      internalID: 6005868200806039345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_23
+      rect:
+        serializedVersion: 2
+        x: 3308
+        y: 634
+        width: 417
+        height: 470
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 745ddfe80021add70800000000000000
+      internalID: 9068580593272214855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_24
+      rect:
+        serializedVersion: 2
+        x: 3944
+        y: 636
+        width: 416
+        height: 458
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf9919aafec0511e0800000000000000
+      internalID: -2227860217166456325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_25
+      rect:
+        serializedVersion: 2
+        x: 4533
+        y: 626
+        width: 478
+        height: 475
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49f8dff5d6f0893d0800000000000000
+      internalID: -3199790572810432620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_26
+      rect:
+        serializedVersion: 2
+        x: 5205
+        y: 646
+        width: 448
+        height: 462
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d6c433f966988200800000000000000
+      internalID: 182561166704559825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_27
+      rect:
+        serializedVersion: 2
+        x: 5791
+        y: 602
+        width: 589
+        height: 468
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b53773276ce01300800000000000000
+      internalID: 220936309461956020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_28
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 551
+        width: 7
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85b7d67b6f05e6a60800000000000000
+      internalID: 7669156236028115800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_29
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 150
+        width: 423
+        height: 433
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a6f533c3c6c1120800000000000000
+      internalID: 2385900908415249045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_30
+      rect:
+        serializedVersion: 2
+        x: 801
+        y: 133
+        width: 417
+        height: 430
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0a2aca8adbbaccf0800000000000000
+      internalID: -231165883550389747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_31
+      rect:
+        serializedVersion: 2
+        x: 1394
+        y: 136
+        width: 420
+        height: 427
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ba93030b9036c740800000000000000
+      internalID: 5171874664410225337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_32
+      rect:
+        serializedVersion: 2
+        x: 2669
+        y: 133
+        width: 447
+        height: 423
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9b70c7812847ac00800000000000000
+      internalID: 911776758414474139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_33
+      rect:
+        serializedVersion: 2
+        x: 3296
+        y: 129
+        width: 437
+        height: 448
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8060833b40f87850800000000000000
+      internalID: 6375109478320201870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_34
+      rect:
+        serializedVersion: 2
+        x: 3896
+        y: 133
+        width: 461
+        height: 440
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e61caf1481e24c340800000000000000
+      internalID: 4883078577697505646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_35
+      rect:
+        serializedVersion: 2
+        x: 5153
+        y: 115
+        width: 486
+        height: 465
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50ae11047a4c1ac50800000000000000
+      internalID: 6674832345353284101
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_36
+      rect:
+        serializedVersion: 2
+        x: 5918
+        y: 109
+        width: 465
+        height: 451
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5673dcfc2f5479c50800000000000000
+      internalID: 6671878282143414117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_37
+      rect:
+        serializedVersion: 2
+        x: 86
+        y: 512
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acfb3d6e4d094e550800000000000000
+      internalID: 6189231031994007498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_38
+      rect:
+        serializedVersion: 2
+        x: 2004
+        y: 136
+        width: 451
+        height: 415
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf13384625a29060800000000000000
+      internalID: 6958805958079487926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shaman horsman2_39
+      rect:
+        serializedVersion: 2
+        x: 4498
+        y: 103
+        width: 470
+        height: 460
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 369677fb383da10d0800000000000000
+      internalID: -3451213601619613341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

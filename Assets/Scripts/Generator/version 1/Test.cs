@@ -6,8 +6,8 @@ public class Test : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("OnTriggerEnter on Enter");
-        GameObject.FindObjectOfType<ChunksPlacer>().OnAttack(transform.parent.gameObject.GetComponent<Tile>().EnemyPrefabs);
+        if (collision.gameObject.CompareTag("Player"))
+            ChunksPlacer.Instance.OnAttack(transform.parent.gameObject.GetComponent<Tile>().EnemyPrefabs);
     }
 
 }

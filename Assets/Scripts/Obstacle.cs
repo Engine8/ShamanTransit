@@ -16,6 +16,8 @@ public class Obstacle : MonoBehaviour
     [Tooltip("The value by which the speed of the colliding object will be reduced")]
     public float SpeedReduce = 2f;
 
+    public int Damage = 0;
+
     // Start is called before the first frame update
     void Start()
     {

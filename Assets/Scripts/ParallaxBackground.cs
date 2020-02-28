@@ -46,6 +46,7 @@ public class ParallaxBackground : MonoBehaviour
             {
                 Debug.Log($"Texture width = {texture.width}");
                 Debug.Log($"Pixel per unit = {sprite.pixelsPerUnit}");
+                Debug.Log($"_textureUnitSizeX = {_textureUnitSizeX}");
             }
             _textureUnitSizeY = texture.height / sprite.pixelsPerUnit;
         }
@@ -68,8 +69,8 @@ public class ParallaxBackground : MonoBehaviour
             if (Mathf.Abs(CameraTransform.position.x - transform.position.x) >= _textureUnitSizeX)
             {
                 //calculate offset to create sense of static picture
-                //float offsetPositionX = (CameraTransform.position.x - transform.position.x) % _textureUnitSizeX;
-                transform.position = new Vector3(CameraTransform.position.x /*+ offsetPositionX + _offset.x*/, transform.position.y);
+                float offsetPositionX = (CameraTransform.position.x - transform.position.x) % _textureUnitSizeX;
+                transform.position = new Vector3(CameraTransform.position.x + offsetPositionX /*+ _offset.x*/, transform.position.y);
             }
         }
         if (_parallaxOnY)

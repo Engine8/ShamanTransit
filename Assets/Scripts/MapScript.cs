@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 using UnityEngine.UI;
 
 public class MapScript : MonoBehaviour
@@ -26,8 +27,14 @@ public class MapScript : MonoBehaviour
         
     }
 
-    public void LoadLevel(string sceneName)
+    public void LoadLevel(string levelName)
     {
-        loadingComponent.StartLoadLevel(sceneName);
+        string[] data = levelName.Split('-');
+        GameData.Instance.SetCurrentLevel(Convert.ToInt32(data[0]), Convert.ToInt32(data[1]));
+        loadingComponent.StartLoadLevel("LevelScene");
+    }
+    public void StartMenu()
+    {
+        loadingComponent.StartLoadLevel("Menu");
     }
 }

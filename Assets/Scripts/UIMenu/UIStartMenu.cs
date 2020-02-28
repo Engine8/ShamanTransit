@@ -15,6 +15,8 @@ public class UIStartMenu : MonoBehaviour
         //load playerData or set default values
         PlayerDataController.Initialize();
         PlayerDataController.Instance.LoadData();
+
+        GameData.Initialize();
     }
 
     private void Start()
@@ -30,8 +32,8 @@ public class UIStartMenu : MonoBehaviour
     }
     public void StartGame()
     {
-        Debug.Log("LoadScene('play')");
-        SceneManager.LoadScene("play");
+        Debug.Log("LoadScene('LevelScene')");
+        SceneManager.LoadScene("LevelScene");
     }
     public void Map()
     {
@@ -60,7 +62,7 @@ public class UIStartMenu : MonoBehaviour
     }
     public void AudioOffON()
     {
-        if (!AudioOff.active)
+        if (!AudioOff.activeSelf)
         {
             AudioOff.SetActive(true);
             PlayerPrefs.SetInt("Audio", 0);
@@ -70,5 +72,7 @@ public class UIStartMenu : MonoBehaviour
             AudioOff.SetActive(false);
             PlayerPrefs.SetInt("Audio", 1);
         }
+        FindObjectOfType<AudioControl>().AudioOnOff();
+      //  AudioControl.audioControl.AudioOnOff();
     }
 }

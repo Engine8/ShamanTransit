@@ -9,7 +9,8 @@ public class Tach : MonoBehaviour, IPointerDownHandler
     public HitArea hit;
     public virtual void OnPointerDown(PointerEventData ped)
     {
-        hit.Tach();
+        if(FindObjectOfType<HitArea>())
+             hit.Tach();
     }
 
 }

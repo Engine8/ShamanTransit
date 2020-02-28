@@ -1,118 +1,178 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerController : Movable
-{    
+{   
     private SpriteRenderer _spriteRenderer;
-    private ParticleSystem _cargoParticle;
+    private SoulKeeper soulKeeper;
+   
+    //Properties for changing lines
+    [Range(0, 1)]
+    public float PhysicsLayerChangeTime1 = 0.3f; //moment of change from current line layer to middle layer
+    [Range(0, 1)]
+    public float PhysicsLayerChangeTime2 = 0.7f; //moment of change from middle layer to target line layer
 
-    public int MaxCargoCount;
-    public int CurrentCargoCount;
+    private int _changeLineStatus = 0;
+
+    public UnityEvent OnLevelEnd;
+
+    public int SoulCount
+    {
+        get
+        {
+            return soulKeeper.GetSoulCount();
+        }
+    }
 
     //Camera scales
     public float[] CameraLineScales;
     public Cinemachine.CinemachineVirtualCamera Camera;
 
+    private void Awake()
+    {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
+        soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
+
+    }
+
     // Start is called before the first frame update
     new void Start()
     {
-        _spriteRenderer = GetComponent<SpriteRenderer>();
-        _cargoParticle = transform.Find("CargoParticle").gameObject.GetComponent<ParticleSystem>();
 
-
-        OnHit.AddListener(delegate ()
-        {
-            if (CurrentCargoCount > 0)
-            {
-                _cargoParticle.Play();
-                Debug.Log("Particle play");
-            }
-        });
+        OnChangeLineEnd.AddListener(ChangeSortingLayer);
+        //GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
     }
 
     private void Update()
     {
         //change line
-        if (Input.GetButtonDown("Up") && !_isLineSwapBlocked)
+        if (Input.GetButtonDown("Up") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
         {
-            gameObject.layer -= 1;
+            //gameObject.layer -= 1;
             _targetLine -= 1;
-            if (gameObject.layer < 8)
-                gameObject.layer = 8;
+            //if (gameObject.layer < 8)
+            //    gameObject.layer = 8;
             if (_targetLine < 0)
                 _targetLine = 0;
         }
-        else if (Input.GetButtonDown("Down") && !_isLineSwapBlocked)
+        else if (Input.GetButtonDown("Down") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
         {
-            gameObject.layer += 1;
+            //gameObject.layer += 1;
             _targetLine += 1;
-            if (gameObject.layer > 10)
-                gameObject.layer = 10;
+            //if (gameObject.layer > 10)
+            //    gameObject.layer = 10;
             if (_targetLine > 2)
                 _targetLine = 2;
         }
 
-        //define sorting layer
+        //base.FixedUpdate();
+
+        //"enter" in middle layer
+        if (_curveModif > PhysicsLayerChangeTime1 && _curveModif < PhysicsLayerChangeTime2 && _changeLineStatus == 0)
+        {
+            _changeLineStatus = 1;
+
+            if (_targetLine < _curLine)
+            {
+                gameObject.layer -= 1;
+            }
+
+            if (_targetLine > _curLine)
+            {
+                ChangeSortingLayer();
+                gameObject.layer += 1;
+            }
+            Debug.Log($"New layer: {gameObject.layer}");
+        }
+        else if (_curveModif > PhysicsLayerChangeTime2 && _changeLineStatus == 1)
+        {
+            _changeLineStatus = 2;
+            if (_targetLine < _curLine)
+            {
+                ChangeSortingLayer();
+                gameObject.layer -= 1;
+            }
+            if (_targetLine > _curLine)
+            {
+                gameObject.layer += 1;
+            }
+            Debug.Log($"New layer: {gameObject.layer}");
+            _changeLineStatus = 0;
+        }
+        //if (_curLine == _targetLine)
+        //   _changeLineStatus = 0;
+
+
+    }
+
+    new protected void OnTriggerEnter2D(Collider2D other)
+    {
+        base.OnTriggerEnter2D(other);
+        if (other.gameObject.CompareTag("Obstacle"))
+        {
+            DeleteSoul();
+        }
+        if (other.gameObject.CompareTag("TriggerEnd"))
+        {
+            Acceleration = 0;
+            Speed = 0;
+            OnLevelEnd.Invoke();
+        }
+    }
+
+    void OnGameModeChanged()
+    {
+        if (GameController.Instance.IsAttackMode)
+            _isLineSwapBlocked = true;
+        else
+            _isLineSwapBlocked = false;
+    }
+
+    private void ChangeSortingLayer()
+    {
         if (_targetLine > _curLine)
         {
             if (_targetLine == 1)
             {
                 _spriteRenderer.sortingLayerName = "Line2";
+                soulKeeper.SetSoulsSortingLayer("Line2");
             }
             else
             {
                 _spriteRenderer.sortingLayerName = "Line3";
+                soulKeeper.SetSoulsSortingLayer("Line3");
             }
         }
         else
         {
-            if (_curLine == 0)
+            if (_targetLine == 0)
             {
                 _spriteRenderer.sortingLayerName = "Line1";
+                soulKeeper.SetSoulsSortingLayer("Line1");
             }
-            else if (_curLine == 1)
+            else if (_targetLine == 1)
             {
                 _spriteRenderer.sortingLayerName = "Line2";
+                soulKeeper.SetSoulsSortingLayer("Line2");
             }
             else
             {
                 _spriteRenderer.sortingLayerName = "Line3";
+                soulKeeper.SetSoulsSortingLayer("Line3");
             }
         }
     }
 
-    new private void FixedUpdate()
+    public void AddSoul()
     {
-        bool pastIsLineSwapBlocked = _isLineSwapBlocked;
-        base.FixedUpdate();
-        if (_isLineSwapBlocked || pastIsLineSwapBlocked)
-        {
-            float newCameraScale = Mathf.Lerp(CameraLineScales[_curLine], CameraLineScales[_targetLine], _curveModif);
-            Camera.m_Lens.OrthographicSize = newCameraScale;
-        }
+        soulKeeper.AddSoul();
     }
 
-
-    /*
-    new void FixedUpdate()
+    public void DeleteSoul()
     {
-        //very bad things: need find method to get layer name
-        int lineIndex;
-        if (gameObject.layer == 8)
-            lineIndex = 0;
-        else if (gameObject.layer == 9)
-            lineIndex = 1;
-        else
-            lineIndex = 2;
-        //Debug.Log($"Current lineIndex = {lineIndex}");
-        if (Lines[lineIndex] != null)
-        {
-            //Debug.Log($"Current lineIndex = {lineIndex}, y position = {Lines[lineIndex].transform.position.y}");
-            _rb2d.position = new Vector2(_rb2d.position.x, Lines[lineIndex].transform.position.y);
-        }
-        base.FixedUpdate();
+        soulKeeper.DeleteSoul();
     }
-    */
 }

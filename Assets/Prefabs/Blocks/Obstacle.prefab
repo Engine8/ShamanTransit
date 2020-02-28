@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 1904183185}
   m_Layer: 0
   m_Name: Obstacle
-  m_TagString: Obstacle
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -124,6 +124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   SpeedReduce: 2
+  Damage: 0
 --- !u!50 &1904183185
 Rigidbody2D:
   serializedVersion: 4
