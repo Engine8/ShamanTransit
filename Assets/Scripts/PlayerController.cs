@@ -68,6 +68,31 @@ public class PlayerController : Movable
                 _targetLine = 2;
         }
 
+        if (Input.touchCount > 0 && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
+        {
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Moved)
+            {
+                // if swipe is vertical
+                if (Mathf.Abs(touch.deltaPosition.y) > Mathf.Abs(touch.deltaPosition.x))
+                {
+                    if (touch.deltaPosition.y > 0)
+                    {
+                        _targetLine -= 1;
+                        if (_targetLine < 0)
+                            _targetLine = 0;
+                    }
+                    else
+                    {
+                        _targetLine += 1;
+                        if (_targetLine > 2)
+                            _targetLine = 2;
+                    }
+                }
+            }
+        }
+
+
         //base.FixedUpdate();
 
         //"enter" in middle layer
