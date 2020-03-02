@@ -13,14 +13,16 @@ public class GameController : MonoBehaviour
 
 
     //UI
-    //public TextMeshProUGUI TextMeshCargo;
-    //public TextMeshProUGUI TextMeshRoute;
-
     public GameObject IngameUI;
-    public GameObject EndgameUI;
+
+    public GameObject WinScreen;
+    public Text WinMainText;
+    public Text WinMoneyText;
+    
+
+    public GameObject LoseScreen;
+    public Text LoseMainText;
     public GameObject AttackUI;
-    public Text EndgameMainText;
-    public Text EndgameMoneyText;
 
     private AudioSource _uiAudioSource;
 
@@ -68,7 +70,8 @@ public class GameController : MonoBehaviour
 
         _uiAudioSource = transform.Find("UIAudioSource").gameObject.GetComponent<AudioSource>();
         IsGameEnded = false;
-        EndgameUI.SetActive(false);
+        WinScreen.SetActive(false);
+        LoseScreen.SetActive(false);
     }
 
     // Start is called before the first frame update
@@ -190,26 +193,16 @@ public class GameController : MonoBehaviour
         //EndgameCargoText.text = $"{PlayerCharacter.CurrentCargoCount} / {PlayerCharacter.MaxCargoCount}";
         if (isGameWin)
         {
-            EndgameMainText.text = "You win!";
-        }
-        else
-        {
-            EndgameMainText.text = "You fail";
-        }
-        EndgameUI.SetActive(true);
-        if (isGameWin)
-        {
+            WinScreen.SetActive(true);
             _uiAudioSource.clip = WinSound;
             _uiAudioSource.PlayOneShot(WinSound);
-            EndgameMoneyText.transform.parent.gameObject.SetActive(true);
             StartCoroutine(MoneyAnimationStart());
-
         }
         else
         {
+            LoseScreen.SetActive(true);
             _uiAudioSource.PlayOneShot(DefeatSound);
-            EndgameMoneyText.transform.parent.gameObject.SetActive(false);
-        }   
+        }
     }
 
     private IEnumerator MoneyAnimationStart()
@@ -219,7 +212,7 @@ public class GameController : MonoBehaviour
         int i = 1;
         if (moneySum == 0)
         {
-            EndgameMoneyText.text = curMoney.ToString();
+            WinMoneyText.text = curMoney.ToString();
         }
         while (curMoney < moneySum)
         {
@@ -227,7 +220,7 @@ public class GameController : MonoBehaviour
             curMoney += 100;
             if (curMoney > moneySum)
                 curMoney = moneySum;
-            EndgameMoneyText.text = curMoney.ToString();
+            WinMoneyText.text = curMoney.ToString();
             yield return new WaitForSeconds(0.1f);
         }
     }
@@ -246,13 +239,17 @@ public class GameController : MonoBehaviour
 
     public void OnContinueButtonClick()
     {
-        PlayerDataController.Instance.AddMoney(MoneyPerLevel);
+        PlayerDataController.Instance.AddMoney(ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount);
         //consider that stage include only 5 levels
         PlayerDataController.Instance.Data.CurrentLevel = ++PlayerDataController.Instance.Data.CurrentLevel % 5;
         PlayerDataController.Instance.Data.CurrentStage = PlayerDataController.Instance.Data.CurrentLevel / 5;
         PlayerDataController.Instance.WriteData();
         loadingComponent.StartLoadLevel("Map");
-        Debug.Log("OnContinueButtonClick ended");
+    }
+
+    public void OnReloadButtonClick()
+    {
+        loadingComponent.StartLoadLevel("LevelScene");
     }
 
     public void SetGameMode(int gameMode)
