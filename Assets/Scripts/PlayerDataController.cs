@@ -46,6 +46,7 @@ public class PlayerDataController
     {
         if (_instance == null)
             _instance = new PlayerDataController();
+        Debug.Log(Application.persistentDataPath + "/data.dat");
     }
 
     private PlayerDataController()
