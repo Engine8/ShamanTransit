@@ -33,8 +33,7 @@ public class ChunksPlacer : MonoBehaviour
         {
             mapIndex = GameData.Instance.CurrentLevelIndex;
         }
-        else
-            mapIndex = 0;
+
         
         currentMap = map[mapIndex];
     }
