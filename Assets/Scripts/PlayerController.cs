@@ -7,11 +7,6 @@ public class PlayerController : Movable
 {   
     private SpriteRenderer _spriteRenderer;
     private SoulKeeper soulKeeper;
-   
-
-
-    public UnityEvent OnLevelEnd;
-
     public int SoulCount
     {
         get
@@ -20,22 +15,20 @@ public class PlayerController : Movable
         }
     }
 
-    //Camera scales
-    public float[] CameraLineScales;
+    public UnityEvent OnLevelEnd;
+
     public Cinemachine.CinemachineVirtualCamera Camera;
 
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
         soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
-
     }
 
     // Start is called before the first frame update
     new void Start()
     {
-
-        OnChangeLineEnd.AddListener(ChangeSortingLayer);
+        //OnChangeLineEnd.AddListener(ChangeSortingLayer);
         OnAttackHit.AddListener(() => { Handheld.Vibrate(); });
         //GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
@@ -115,8 +108,24 @@ public class PlayerController : Movable
             _isLineSwapBlocked = false;
     }
 
-    new private void ChangeSortingLayer()
+    override public void ChangeSortingLayer()
     {
+        if (_targetLine == 0)
+        {
+            _spriteRenderer.sortingLayerName = "Line1";
+            soulKeeper.SetSoulsSortingLayer("Line1");
+        }
+        else if (_targetLine == 1)
+        {
+            _spriteRenderer.sortingLayerName = "Line2";
+            soulKeeper.SetSoulsSortingLayer("Line2");
+        }
+        else
+        {
+            _spriteRenderer.sortingLayerName = "Line3";
+            soulKeeper.SetSoulsSortingLayer("Line3");
+        }
+        /*
         if (_targetLine > _curLine)
         {
             if (_targetLine == 1)
@@ -148,6 +157,7 @@ public class PlayerController : Movable
                 soulKeeper.SetSoulsSortingLayer("Line3");
             }
         }
+        */
     }
 
     public void AddSoul()

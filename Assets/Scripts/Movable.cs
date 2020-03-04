@@ -7,66 +7,65 @@ using UnityEngine.Events;
 //      Movable is the class which represent all movable objects in the game 
 public class Movable : MonoBehaviour
 {
-    public float MaxSpeed = 10f;
-    public float Acceleration = 2f;
-    public float StartSpeed = 0f;
-
     public int MaxHP;
     public int CurrentHP;
     protected bool _isDead;
 
     public int MaxHPBattle;
     public int CurrentHPBattle;
-    //debug
-    public float curSpeed;
-
-    protected float _speed;
-    protected Rigidbody2D _rb2d;
 
     public UnityEvent OnHit;
     public UnityEvent OnDie;
     public UnityEvent OnAttackHit;
     public UnityEvent OnChangeLineEnd;
 
+    protected Rigidbody2D _rb2d;
     public AnimationCurve AccelerationCurve;
-
+    protected float _speed;
     public float Speed
     {
         get { return _speed; }
         set { _speed = value; }
     }
+    public float MaxSpeed = 10f;
+    public float Acceleration = 2f;
+    public float StartSpeed = 0f;
+
+    //debug
+    public float curSpeed; //shows current speed in editor
+    //
+    protected float _timeCounter = 0f;
+    protected float _curveModif;
 
     //jump variables
     /*
-     * Jumo status values: 
+     * Jump status values: 
      * 0 - not jump
-     * 1 - jump phase 1
-     * 2 - jump phase 2
+     * 1 - jump
     */
     protected int _jumpStatus;
-    private float _currentJumpYOffset;
     public AnimationCurve JumpCurve;
-    public float JumpTime = 1f;
     public float[] JumpOffsets;
+    public float JumpTime = 1f;
 
     //variables for swapping lines
-    public Transform[] Lines;
-    public float LineSwapTime = 1f;
-    protected int _curLine;
-    protected int _targetLine;
-
-    protected float _timeCounter = 0f;
-    //curve lerp coefficient
-    protected float _curveModif;
-    protected bool _isLineSwapBlocked = false;
-    public float[] LineScales;
     public AnimationCurve SwapLineCurve;
-
+    public Transform[] Lines;
+    public float[] LineScales;
+    public float LineSwapTime = 1f;
     [Range(0, 1)]
     public float PhysicsLayerChangeTime1 = 0.3f; //moment of change from current line layer to middle layer
     [Range(0, 1)]
     public float PhysicsLayerChangeTime2 = 0.7f; //moment of change from middle layer to target line layer
-
+    protected int _curLine;
+    protected int _targetLine;
+    protected bool _isLineSwapBlocked = false;
+    /*
+     * Change line status values: 
+     * 0 - on start line
+     * 1 - between start and target line
+     * 2 - on target line
+    */
     private int _changeLineStatus = 0;
 
     // Start is called before the first frame update
@@ -96,7 +95,7 @@ public class Movable : MonoBehaviour
     {
         if (!GameController.Instance.IsGameEnded)
         {
-            //speed with acceleration on earth calculation
+            //calculate acceleration on earth (x coordinate)
             if (_speed < MaxSpeed && _jumpStatus == 0)
             {
                 float accelerationValue = AccelerationCurve.Evaluate(_speed / MaxSpeed) * Time.fixedDeltaTime;
@@ -112,66 +111,17 @@ public class Movable : MonoBehaviour
             float dY = Lines[_curLine].position.y;
             bool isLineChangeEnded = false;
             bool isJumpEnded = false;
+            _timeCounter += Time.fixedDeltaTime;
             if (_curLine != _targetLine && _jumpStatus == 0)
             {
-                _isLineSwapBlocked = true; //block all input
-                _timeCounter += Time.fixedDeltaTime;
-                if (_timeCounter > LineSwapTime)
-                {
-                    _timeCounter = LineSwapTime;
-                    isLineChangeEnded = true;
-                }
-                //transofrm time-based value _lerpModif in abstract swap status value _curveModif
-                //value varies from 0 to 1, where 0 - object on current line, 1 - object on target line
-                _curveModif = SwapLineCurve.Evaluate(_timeCounter / LineSwapTime);
-                dY = Mathf.Lerp(Lines[_curLine].position.y, Lines[_targetLine].position.y, _curveModif);
-                float newXYScale = Mathf.Lerp(LineScales[_curLine], LineScales[_targetLine], _curveModif);
+                float newXYScale;
+                isLineChangeEnded = CalculateSwitchLine(out dY, out newXYScale);
                 transform.localScale = new Vector3(newXYScale, newXYScale, 1);
-
-                //based on swap status value define physics layer
-                if (_curveModif > PhysicsLayerChangeTime1 && _curveModif < PhysicsLayerChangeTime2 && _changeLineStatus == 0)
-                {
-                    _changeLineStatus = 1;
-
-                    if (_targetLine < _curLine)
-                    {
-                        gameObject.layer -= 1;
-                    }
-
-                    if (_targetLine > _curLine)
-                    {
-                        ChangeSortingLayer();
-                        gameObject.layer += 1;
-                    }
-                    Debug.Log($"New layer: {gameObject.layer}");
-                }
-                else if (_curveModif > PhysicsLayerChangeTime2 && _changeLineStatus == 1)
-                {
-                    _changeLineStatus = 2;
-                    if (_targetLine < _curLine)
-                    {
-                        ChangeSortingLayer();
-                        gameObject.layer -= 1;
-                    }
-                    if (_targetLine > _curLine)
-                    {
-                        gameObject.layer += 1;
-                    }
-                    Debug.Log($"New layer: {gameObject.layer}");
-                    _changeLineStatus = 0;
-                }
+                DefineSwapLinePhysicsLayer();
             }
             else if (_jumpStatus == 1)
             {
-                _isLineSwapBlocked = true;
-                _timeCounter += Time.fixedDeltaTime;
-                if (_timeCounter > JumpTime)
-                {
-                    _timeCounter = JumpTime;
-                    isJumpEnded = true;
-                }
-                _curveModif = JumpCurve.Evaluate(_timeCounter / JumpTime);
-                dY = Mathf.Lerp(Lines[_curLine].position.y, JumpOffsets[_curLine], _curveModif);
+                isJumpEnded = CalculateJump(out dY);
             }
 
             _rb2d.MovePosition(new Vector2(_rb2d.position.x + dX, dY));
@@ -182,7 +132,7 @@ public class Movable : MonoBehaviour
                 _isLineSwapBlocked = false;
                 OnChangeLineEnd.Invoke();
             }
-            if (isJumpEnded)
+            else if (isJumpEnded)
             {
                 _isLineSwapBlocked = false;
                 _jumpStatus = 0;
@@ -193,6 +143,78 @@ public class Movable : MonoBehaviour
                 _curveModif = 0f;
             }
         }
+    }
+    
+    private bool CalculateSwitchLine(out float dY, out float newXYScale)
+    {
+        bool isLineChangeEnded = false;
+        _isLineSwapBlocked = true; //block all input
+        if (_timeCounter > LineSwapTime)
+        {
+            _timeCounter = LineSwapTime;
+            isLineChangeEnded = true;
+        }
+        //transofrm time-based value _timeCounter in abstract swap status value _curveModif
+        //_curveModif varies from 0 to 1, where 0 - object on current line, 1 - object on target line
+        _curveModif = SwapLineCurve.Evaluate(_timeCounter / LineSwapTime);
+        dY = Mathf.Lerp(Lines[_curLine].position.y, Lines[_targetLine].position.y, _curveModif);
+        newXYScale = Mathf.Lerp(LineScales[_curLine], LineScales[_targetLine], _curveModif);
+        return isLineChangeEnded;
+    }
+
+    private void DefineSwapLinePhysicsLayer()
+    {
+        //based on swap status value define physics layer
+        //enter in "middle" layer (1-2 or 2-3)
+        if (_curveModif > PhysicsLayerChangeTime1 && _curveModif < PhysicsLayerChangeTime2 && _changeLineStatus == 0)
+        {
+            _changeLineStatus = 1;
+
+            //when object moves "up", it should hide behind obstacles fast
+            if (_targetLine < _curLine)
+            {
+                ChangeSortingLayer();
+                gameObject.layer -= 1;
+            }
+            else if (_targetLine > _curLine)
+            {
+                gameObject.layer += 1;
+            }
+            //Debug.Log($"New layer: {gameObject.layer}");
+        }
+        //enter in target line
+        else if (_curveModif > PhysicsLayerChangeTime2 && _changeLineStatus == 1)
+        {
+            _changeLineStatus = 2;
+            if (_targetLine < _curLine)
+            {
+                gameObject.layer -= 1;
+            }
+            //when object moves "down", it should get out from behind obstacles on target line in last part of swap
+            else if (_targetLine > _curLine)
+            {
+                ChangeSortingLayer();
+                gameObject.layer += 1;
+            }
+            //Debug.Log($"New layer: {gameObject.layer}");
+            _changeLineStatus = 0;
+        }
+    }
+
+    private bool CalculateJump(out float dY)
+    {
+        bool isJumpEnded = false;
+        _isLineSwapBlocked = true;
+        if (_timeCounter > JumpTime)
+        {
+            _timeCounter = JumpTime;
+            isJumpEnded = true;
+        }
+        //transofrm time-based value _timeCounter in abstract value _curveModif
+        //_curveModif define the Y position between current line level and JumpOffset (should be set in editor)
+        _curveModif = JumpCurve.Evaluate(_timeCounter / JumpTime);
+        dY = Mathf.Lerp(Lines[_curLine].position.y, JumpOffsets[_curLine], _curveModif);
+        return isJumpEnded;
     }
 
     protected void OnTriggerEnter2D(Collider2D other)
@@ -254,7 +276,7 @@ public class Movable : MonoBehaviour
         Debug.Log("Main character hit");
     }
 
-    public void ChangeSortingLayer()
+    virtual public void ChangeSortingLayer()
     {
 
     }
