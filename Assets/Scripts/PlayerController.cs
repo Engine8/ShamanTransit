@@ -56,6 +56,10 @@ public class PlayerController : Movable
             if (_targetLine > 2)
                 _targetLine = 2;
         }
+        else if (Input.GetButtonDown("Jump") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode && _jumpStatus == 0)
+        {
+            _jumpStatus = 1;
+        }
 
         if (Input.touchCount > 0 && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
         {

@@ -36,13 +36,26 @@ public class Movable : MonoBehaviour
         set { _speed = value; }
     }
 
+    //jump variables
+    /*
+     * Jumo status values: 
+     * 0 - not jump
+     * 1 - jump phase 1
+     * 2 - jump phase 2
+    */
+    protected int _jumpStatus;
+    private float _currentJumpYOffset;
+    public AnimationCurve JumpCurve;
+    public float JumpTime = 1f;
+    public float[] JumpOffsets;
+
     //variables for swapping lines
     public Transform[] Lines;
     public float LineSwapTime = 1f;
     protected int _curLine;
     protected int _targetLine;
-    //time lerp coefficient
-    protected float _lerpModif = 0f;
+
+    protected float _timeCounter = 0f;
     //curve lerp coefficient
     protected float _curveModif;
     protected bool _isLineSwapBlocked = false;
@@ -61,6 +74,7 @@ public class Movable : MonoBehaviour
     {
         _rb2d = GetComponent<Rigidbody2D>();
         _speed = StartSpeed;
+        _jumpStatus = 0;
 
         if (gameObject.layer == 8)
         {
@@ -82,8 +96,8 @@ public class Movable : MonoBehaviour
     {
         if (!GameController.Instance.IsGameEnded)
         {
-            //delta x calculations
-            if (_speed < MaxSpeed)
+            //speed with acceleration on earth calculation
+            if (_speed < MaxSpeed && _jumpStatus == 0)
             {
                 float accelerationValue = AccelerationCurve.Evaluate(_speed / MaxSpeed) * Time.fixedDeltaTime;
                 Acceleration = accelerationValue; //debug
@@ -94,21 +108,22 @@ public class Movable : MonoBehaviour
             }
             float dX = Vector2.right.x * _speed * Time.fixedDeltaTime;
 
-            //delta y calculations
+            //delta y calculations on earth
             float dY = Lines[_curLine].position.y;
             bool isLineChangeEnded = false;
-            if (_curLine != _targetLine)
+            bool isJumpEnded = false;
+            if (_curLine != _targetLine && _jumpStatus == 0)
             {
                 _isLineSwapBlocked = true; //block all input
-                _lerpModif += Time.fixedDeltaTime;
-                if (_lerpModif > LineSwapTime)
+                _timeCounter += Time.fixedDeltaTime;
+                if (_timeCounter > LineSwapTime)
                 {
-                    _lerpModif = LineSwapTime;
+                    _timeCounter = LineSwapTime;
                     isLineChangeEnded = true;
                 }
-                //transofrm time-based value _lerpModif in abstract swap status value
+                //transofrm time-based value _lerpModif in abstract swap status value _curveModif
                 //value varies from 0 to 1, where 0 - object on current line, 1 - object on target line
-                _curveModif = SwapLineCurve.Evaluate(_lerpModif / LineSwapTime);
+                _curveModif = SwapLineCurve.Evaluate(_timeCounter / LineSwapTime);
                 dY = Mathf.Lerp(Lines[_curLine].position.y, Lines[_targetLine].position.y, _curveModif);
                 float newXYScale = Mathf.Lerp(LineScales[_curLine], LineScales[_targetLine], _curveModif);
                 transform.localScale = new Vector3(newXYScale, newXYScale, 1);
@@ -145,14 +160,20 @@ public class Movable : MonoBehaviour
                     Debug.Log($"New layer: {gameObject.layer}");
                     _changeLineStatus = 0;
                 }
-                /*
-                if (gameObject.layer < 8)
-                    gameObject.layer = 8;
-                else if (gameObject.layer > 12)
-                    gameObject.layer = 12;
-                    */
-
             }
+            else if (_jumpStatus == 1)
+            {
+                _isLineSwapBlocked = true;
+                _timeCounter += Time.fixedDeltaTime;
+                if (_timeCounter > JumpTime)
+                {
+                    _timeCounter = JumpTime;
+                    isJumpEnded = true;
+                }
+                _curveModif = JumpCurve.Evaluate(_timeCounter / JumpTime);
+                dY = Mathf.Lerp(Lines[_curLine].position.y, JumpOffsets[_curLine], _curveModif);
+            }
+
             _rb2d.MovePosition(new Vector2(_rb2d.position.x + dX, dY));
 
             if (isLineChangeEnded)
@@ -161,9 +182,14 @@ public class Movable : MonoBehaviour
                 _isLineSwapBlocked = false;
                 OnChangeLineEnd.Invoke();
             }
+            if (isJumpEnded)
+            {
+                _isLineSwapBlocked = false;
+                _jumpStatus = 0;
+            }
             if (!_isLineSwapBlocked)
             {
-                _lerpModif = 0f;
+                _timeCounter = 0f;
                 _curveModif = 0f;
             }
         }
