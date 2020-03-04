@@ -85,7 +85,7 @@ public class ChunksPlacer : MonoBehaviour
                 }
                 ++indexChunk;
 
-                player.AddSoul();
+                //player.AddSoul();
             }
         }
         else

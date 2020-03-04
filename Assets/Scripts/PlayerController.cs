@@ -42,6 +42,7 @@ public class PlayerController : Movable
     {
 
         OnChangeLineEnd.AddListener(ChangeSortingLayer);
+        OnAttackHit.AddListener(() => { Handheld.Vibrate(); });
         //GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
     }
@@ -139,12 +140,18 @@ public class PlayerController : Movable
         if (other.gameObject.CompareTag("Obstacle"))
         {
             DeleteSoul();
+            Handheld.Vibrate();
         }
-        if (other.gameObject.CompareTag("TriggerEnd"))
+        else if (other.gameObject.CompareTag("TriggerEnd"))
         {
             Acceleration = 0;
             Speed = 0;
             OnLevelEnd.Invoke();
+        }
+        else if (other.gameObject.CompareTag("Soul"))
+        {
+            AddSoul();
+            other.gameObject.SetActive(false);
         }
     }
 
