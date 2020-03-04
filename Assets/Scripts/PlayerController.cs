@@ -8,13 +8,7 @@ public class PlayerController : Movable
     private SpriteRenderer _spriteRenderer;
     private SoulKeeper soulKeeper;
    
-    //Properties for changing lines
-    [Range(0, 1)]
-    public float PhysicsLayerChangeTime1 = 0.3f; //moment of change from current line layer to middle layer
-    [Range(0, 1)]
-    public float PhysicsLayerChangeTime2 = 0.7f; //moment of change from middle layer to target line layer
 
-    private int _changeLineStatus = 0;
 
     public UnityEvent OnLevelEnd;
 
@@ -52,19 +46,13 @@ public class PlayerController : Movable
         //change line
         if (Input.GetButtonDown("Up") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
         {
-            //gameObject.layer -= 1;
             _targetLine -= 1;
-            //if (gameObject.layer < 8)
-            //    gameObject.layer = 8;
             if (_targetLine < 0)
                 _targetLine = 0;
         }
         else if (Input.GetButtonDown("Down") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
         {
-            //gameObject.layer += 1;
             _targetLine += 1;
-            //if (gameObject.layer > 10)
-            //    gameObject.layer = 10;
             if (_targetLine > 2)
                 _targetLine = 2;
         }
@@ -92,46 +80,6 @@ public class PlayerController : Movable
                 }
             }
         }
-
-
-        //base.FixedUpdate();
-
-        //"enter" in middle layer
-        if (_curveModif > PhysicsLayerChangeTime1 && _curveModif < PhysicsLayerChangeTime2 && _changeLineStatus == 0)
-        {
-            _changeLineStatus = 1;
-
-            if (_targetLine < _curLine)
-            {
-                gameObject.layer -= 1;
-            }
-
-            if (_targetLine > _curLine)
-            {
-                ChangeSortingLayer();
-                gameObject.layer += 1;
-            }
-            Debug.Log($"New layer: {gameObject.layer}");
-        }
-        else if (_curveModif > PhysicsLayerChangeTime2 && _changeLineStatus == 1)
-        {
-            _changeLineStatus = 2;
-            if (_targetLine < _curLine)
-            {
-                ChangeSortingLayer();
-                gameObject.layer -= 1;
-            }
-            if (_targetLine > _curLine)
-            {
-                gameObject.layer += 1;
-            }
-            Debug.Log($"New layer: {gameObject.layer}");
-            _changeLineStatus = 0;
-        }
-        //if (_curLine == _targetLine)
-        //   _changeLineStatus = 0;
-
-
     }
 
     new protected void OnTriggerEnter2D(Collider2D other)
@@ -163,7 +111,7 @@ public class PlayerController : Movable
             _isLineSwapBlocked = false;
     }
 
-    private void ChangeSortingLayer()
+    new private void ChangeSortingLayer()
     {
         if (_targetLine > _curLine)
         {
