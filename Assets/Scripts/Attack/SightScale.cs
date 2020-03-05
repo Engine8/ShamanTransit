@@ -17,14 +17,14 @@ public class SightScale : MonoBehaviour
             SpeedRotate = (Mathf.Abs(SpeedRotate) + 1) * SpeedRotate / Mathf.Abs(SpeedRotate);
 
             if (Mathf.Abs(SpeedRotate) > 4)
-                SpeedRotate =2 * SpeedRotate / Mathf.Abs(SpeedRotate);
+                SpeedRotate = 2 * SpeedRotate / Mathf.Abs(SpeedRotate);
             if (Random.Range(0, 100) == 46)
                 SpeedRotate = 1 * SpeedRotate / Mathf.Abs(SpeedRotate);
         }
     }
     public void Stop()
     {
-        _Victory = true;
+         _Victory = true;
         GameController.Instance.SetGameMode(0);
         StartCoroutine("Weate");
     }

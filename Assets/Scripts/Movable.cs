@@ -152,7 +152,6 @@ public class Movable : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("TakeDamage");
         CurrentHPBattle -= damage;
         OnAttackHit.Invoke();
         if (CurrentHPBattle <= 0 && !_isDead)

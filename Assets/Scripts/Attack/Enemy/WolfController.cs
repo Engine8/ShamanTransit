@@ -10,6 +10,7 @@ public class WolfController :  EnemyController
     private float _facktSpeed;
     private Vector3[][] _positionWolf = new Vector3[4][];
     private float nextAttackTime;
+
     private int countWolf = 4;
     private PlayerController HealsPlayer;
     void Start()
@@ -39,7 +40,7 @@ public class WolfController :  EnemyController
     IEnumerator Sprint() //появление волков
     {
         _facktSpeed = 16;
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(1.4f);
         _facktSpeed = speed;
     }
     public void ChendePosition()
@@ -74,7 +75,7 @@ public class WolfController :  EnemyController
 
             wolfA.localPosition = new Vector3((float)System.Math.Round((double)wolfA.localPosition.x, 1), (float)System.Math.Round((double)wolfA.localPosition.y, 1), wolfA.localPosition.z);
 
-            yield return new WaitForSeconds(0.01f);
+            yield return new WaitForSeconds(0.001f);
         }
     }
     void FixedUpdate()
@@ -90,14 +91,15 @@ public class WolfController :  EnemyController
     }
     public override void Attack()
     {
-        if (countWolf > 0)
-        {
-            if ((4 - countWolf) == 2)
-                Wolf[Random.Range(2, 4)].StartAttack();
-            else
-                Wolf[4 - countWolf].StartAttack();
-            nextAttackTime = Time.time + timeBetweenAttacks;
-        }
+     
+            if (countWolf > 0)
+            {
+                if ((4 - countWolf) == 2)
+                    Wolf[Random.Range(2, 4)].StartAttack();
+                else
+                    Wolf[4 - countWolf].StartAttack();
+                nextAttackTime = Time.time + timeBetweenAttacks;
+            } 
     }
     public override void TakeDamage()
     {

@@ -100,7 +100,7 @@ public class GameController : MonoBehaviour
         PlayerCharacter.OnAttackHit.AddListener(OnAttackPlayerHit);
         PlayerCharacter.OnLevelEnd.AddListener(GameWin);
     }
-
+   
     // Update is called once per frame
     void LateUpdate()
     {
@@ -180,6 +180,7 @@ public class GameController : MonoBehaviour
 
     private void OnAttackPlayerHit()
     {
+
         UnityEngine.Rendering.Universal.Vignette vignette;
         volumeProfile.TryGet(out vignette);
 
@@ -258,7 +259,7 @@ public class GameController : MonoBehaviour
         {
             IsAttackMode = true;
             AttackUI.SetActive(true);
-            AttackUI.GetComponent<SightScale>().SpeedRotate = 2f;
+            AttackUI.GetComponentInChildren<SightScale>().SpeedRotate = 2.7f;
             _isNeedToRefreshCamera = true;
         }
         else if (gameMode == 0)
