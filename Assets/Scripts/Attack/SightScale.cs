@@ -32,10 +32,10 @@ public class SightScale : MonoBehaviour
     IEnumerator Weate()
     {
         while (true) {
-            yield return new WaitForSeconds(0.25f);
+            yield return new WaitForSeconds(0.1f);
             if (Mathf.Abs(SpeedRotate) <= 0)
                 break;
-            SpeedRotate = (Mathf.Abs(SpeedRotate) - 0.5f) * SpeedRotate / Mathf.Abs(SpeedRotate);
+            SpeedRotate = (Mathf.Abs(SpeedRotate) - 0.25f) * SpeedRotate / Mathf.Abs(SpeedRotate);
         }
         _Victory = false;
         gameObject.SetActive(false);

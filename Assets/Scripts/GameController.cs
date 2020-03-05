@@ -259,7 +259,7 @@ public class GameController : MonoBehaviour
         {
             IsAttackMode = true;
             AttackUI.SetActive(true);
-            AttackUI.GetComponentInChildren<SightScale>().SpeedRotate = 2.7f;
+            AttackUI.GetComponentInChildren<SightScale>().SpeedRotate = 2.5f;
             _isNeedToRefreshCamera = true;
         }
         else if (gameMode == 0)
