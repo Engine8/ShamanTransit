@@ -19,6 +19,12 @@ public class PlayerController : Movable
 
     public Cinemachine.CinemachineVirtualCamera Camera;
 
+
+    private float _startYPosition = -1f;
+    //private float _endYposition = 0f;
+    private float _sumDeltaPositionOnY = 0f;
+    private bool _isSwipe = false;
+
     private void Awake()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -36,7 +42,7 @@ public class PlayerController : Movable
 
     private void Update()
     {
-        //change line
+        //PC controls
         if (Input.GetButtonDown("Up") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
         {
             _targetLine -= 1;
@@ -54,27 +60,75 @@ public class PlayerController : Movable
             _jumpStatus = 1;
         }
 
+        //mobile controls
         if (Input.touchCount > 0 && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
         {
             Touch touch = Input.GetTouch(0);
+
+            //Version 1 - deadzone with discrete swipes
+            /*
+            if (touch.phase == TouchPhase.Began)
+            {
+                _startYPosition = touch.position.y;
+            }
+            else if (touch.phase == TouchPhase.Ended && _startYPosition > -0.1f)
+            {
+                float deltaPositionY = touch.position.y - _startYPosition;
+                if (deltaPositionY > Screen.height * 0.05)
+                {
+                    _targetLine -= 1;
+                    if (_targetLine < 0)
+                        _targetLine = 0;
+                }
+                else if (deltaPositionY < Screen.height * -0.05)
+                {
+                    _targetLine += 1;
+                    if (_targetLine > 2)
+                        _targetLine = 2;
+                }
+                else
+                {
+                    _jumpStatus = 1;
+                }
+                //reset status
+                //-1 to ignore End touch phase after exit attack mode
+                _startYPosition = -1f;
+            }
+            */
+
+            //Version 2 - deadzone with continious swipes
             if (touch.phase == TouchPhase.Moved)
             {
                 // if swipe is vertical
                 if (Mathf.Abs(touch.deltaPosition.y) > Mathf.Abs(touch.deltaPosition.x))
                 {
-                    if (touch.deltaPosition.y > 0)
+                    _sumDeltaPositionOnY += touch.deltaPosition.y;
+                    if (_sumDeltaPositionOnY > Screen.height * 0.05)
                     {
                         _targetLine -= 1;
                         if (_targetLine < 0)
                             _targetLine = 0;
+                        _sumDeltaPositionOnY = 0;
+                        _isSwipe = true;
                     }
-                    else
+                    else if (_sumDeltaPositionOnY < Screen.height * -0.05)
                     {
                         _targetLine += 1;
                         if (_targetLine > 2)
                             _targetLine = 2;
+                        _sumDeltaPositionOnY = 0;
+                        _isSwipe = true;
                     }
                 }
+            }
+            else if (touch.phase == TouchPhase.Ended)
+            {
+                _sumDeltaPositionOnY = 0;
+                if (!_isSwipe)
+                {
+                    _jumpStatus = 1;
+                }
+                _isSwipe = false;
             }
         }
     }
@@ -98,7 +152,7 @@ public class PlayerController : Movable
             AddSoul();
             other.gameObject.SetActive(false);
         }
-    }
+}
 
     void OnGameModeChanged()
     {
@@ -125,39 +179,6 @@ public class PlayerController : Movable
             _spriteRenderer.sortingLayerName = "Line3";
             soulKeeper.SetSoulsSortingLayer("Line3");
         }
-        /*
-        if (_targetLine > _curLine)
-        {
-            if (_targetLine == 1)
-            {
-                _spriteRenderer.sortingLayerName = "Line2";
-                soulKeeper.SetSoulsSortingLayer("Line2");
-            }
-            else
-            {
-                _spriteRenderer.sortingLayerName = "Line3";
-                soulKeeper.SetSoulsSortingLayer("Line3");
-            }
-        }
-        else
-        {
-            if (_targetLine == 0)
-            {
-                _spriteRenderer.sortingLayerName = "Line1";
-                soulKeeper.SetSoulsSortingLayer("Line1");
-            }
-            else if (_targetLine == 1)
-            {
-                _spriteRenderer.sortingLayerName = "Line2";
-                soulKeeper.SetSoulsSortingLayer("Line2");
-            }
-            else
-            {
-                _spriteRenderer.sortingLayerName = "Line3";
-                soulKeeper.SetSoulsSortingLayer("Line3");
-            }
-        }
-        */
     }
 
     public void AddSoul()
