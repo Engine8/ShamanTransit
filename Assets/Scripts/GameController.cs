@@ -11,7 +11,6 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance;
 
-
     //UI
     public GameObject IngameUI;
 
@@ -19,16 +18,12 @@ public class GameController : MonoBehaviour
     public Text WinMainText;
     public Text WinMoneyText;
     
-
     public GameObject LoseScreen;
     public Text LoseMainText;
     public GameObject AttackUI;
 
-    private AudioSource _uiAudioSource;
-
     public AudioClip WinSound;
     public AudioClip DefeatSound;
-    public AudioClip CoinSound;
     
     public PlayerController PlayerCharacter;
 
@@ -43,10 +38,6 @@ public class GameController : MonoBehaviour
     public float LookaheadTimeNormal = 0.55f;
     public float LookaheadTimeAttack = 0.2f;
     private bool _isNeedToRefreshCamera = false;
-    //Amount of cargo that lost on hit
-    //Maybe defined by level in scene manager
-    //public int CargoPerHit = 1;
-    public int MoneyPerLevel = 500;
 
     public GameObject StartPoint;
     public GameObject EndPoint;
@@ -67,11 +58,13 @@ public class GameController : MonoBehaviour
         {
             Instance = this;
         }
-
-        _uiAudioSource = transform.Find("UIAudioSource").gameObject.GetComponent<AudioSource>();
         IsGameEnded = false;
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
+
+#if UNITY_EDITOR
+        SoundManager.Initialize();
+#endif
     }
 
     // Start is called before the first frame update
@@ -194,14 +187,13 @@ public class GameController : MonoBehaviour
         if (isGameWin)
         {
             WinScreen.SetActive(true);
-            _uiAudioSource.clip = WinSound;
-            _uiAudioSource.PlayOneShot(WinSound);
+            SoundManager.Instance.PlaySoundClip(WinSound);
             StartCoroutine(MoneyAnimationStart());
         }
         else
         {
             LoseScreen.SetActive(true);
-            _uiAudioSource.PlayOneShot(DefeatSound);
+            SoundManager.Instance.PlaySoundClip(DefeatSound);
         }
     }
 
@@ -209,14 +201,12 @@ public class GameController : MonoBehaviour
     {
         int moneySum = ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount;
         int curMoney = 0;
-        int i = 1;
         if (moneySum == 0)
         {
             WinMoneyText.text = curMoney.ToString();
         }
         while (curMoney < moneySum)
         {
-            Debug.Log($"Step {i}");
             curMoney += 100;
             if (curMoney > moneySum)
                 curMoney = moneySum;
