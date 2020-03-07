@@ -14,6 +14,7 @@ public class Movable : MonoBehaviour
     public int MaxHPBattle;
     public int CurrentHPBattle;
 
+    public AudioClip OnHitSound;
     public UnityEvent OnHit;
     public UnityEvent OnDie;
     public UnityEvent OnAttackHit;
@@ -88,6 +89,8 @@ public class Movable : MonoBehaviour
             _curLine = 2;
         }
         _targetLine = _curLine;
+
+        OnHit.AddListener(OnHitSoundPlay);
     }
 
     // Update is called once per frame
@@ -271,9 +274,10 @@ public class Movable : MonoBehaviour
         return _isDead;
     }
 
-    public void OnHitLog()
+    public void OnHitSoundPlay()
     {
-        Debug.Log("Main character hit");
+        if (OnHitSound != null)
+            SoundManager.Instance.PlaySoundClip(OnHitSound, true);
     }
 
     virtual public void ChangeSortingLayer()
