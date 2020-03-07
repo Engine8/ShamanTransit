@@ -61,6 +61,7 @@ public class GameController : MonoBehaviour
 
     public LoadingComponent loadingComponent;
 
+    private Animator _animPlayer;
     private void Awake()
     {
         if (Instance == null)
@@ -99,6 +100,7 @@ public class GameController : MonoBehaviour
         PlayerCharacter.OnHit.AddListener(OnPlayerHit);
         PlayerCharacter.OnAttackHit.AddListener(OnAttackPlayerHit);
         PlayerCharacter.OnLevelEnd.AddListener(GameWin);
+        _animPlayer = PlayerCharacter.gameObject.GetComponent<Animator>();
     }
    
     // Update is called once per frame
@@ -252,14 +254,23 @@ public class GameController : MonoBehaviour
     {
         loadingComponent.StartLoadLevel("LevelScene");
     }
-
+    public void SetAnimAttack()
+    {
+        StartCoroutine("AttackAnimation");
+    }
+    private IEnumerator AttackAnimation()
+    {
+        _animPlayer.SetBool("Attack", true);
+        yield return new WaitForSeconds(0.44f);
+        _animPlayer.SetBool("Attack", false);
+    }
     public void SetGameMode(int gameMode)
     {
         if (gameMode == 1)
         {
             IsAttackMode = true;
             AttackUI.SetActive(true);
-            AttackUI.GetComponentInChildren<SightScale>().SpeedRotate = 2.5f;
+            AttackUI.GetComponentInChildren<SightScale>().SpeedRotate = 2f;
             _isNeedToRefreshCamera = true;
         }
         else if (gameMode == 0)
