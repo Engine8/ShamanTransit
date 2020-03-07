@@ -54,11 +54,10 @@ public class BearController : EnemyController
     IEnumerator Slowdown()
     {
         Debug.Log(_facktSpeed);
-        float oldSpeed = _facktSpeed;
         _facktSpeed = 9;
         Bear.TakeDamage(1);
         yield return new WaitForSeconds(0.6f);
-        _facktSpeed = oldSpeed;
+        _facktSpeed = speed;
     }
     public override int GetCount()
     {
