@@ -29,7 +29,7 @@ public class UIStartMenu : MonoBehaviour
     {
         MusicOff.SetActive(SoundManager.Instance.GetMusicMuted());
         SoundOff.SetActive(SoundManager.Instance.GetSoundMuted());
-        VibrationOff.SetActive(GameData.Instance.VibrationStatus);
+        VibrationOff.SetActive(!GameData.Instance.VibrationStatus);
 
         SoundManager.Instance.PlayMusicClip(Music);
     }
@@ -85,6 +85,6 @@ public class UIStartMenu : MonoBehaviour
     public void VibrationOffOn()
     {
         VibrationOff.SetActive(!VibrationOff.activeSelf);
-        GameData.Instance.SetVibtationStatus(VibrationOff.activeSelf);
+        GameData.Instance.SetVibtationStatus(!VibrationOff.activeSelf);
     }
 }

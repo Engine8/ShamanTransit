@@ -5,6 +5,9 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SoundSettings", menuName = "SoundSettings", order = 51)]
 public class SoundSettings : ScriptableObject
 {
+    public bool AutoPause = true;
+
+    public float MusicFadeTime = 2f;
     public List<AudioClip> PreloadedClips;
 
     private float _musicVolume;

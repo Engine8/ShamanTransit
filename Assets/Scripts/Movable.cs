@@ -277,7 +277,7 @@ public class Movable : MonoBehaviour
     public void OnHitSoundPlay()
     {
         if (OnHitSound != null)
-            SoundManager.Instance.PlaySoundClip(OnHitSound);
+            SoundManager.Instance.PlaySoundClip(OnHitSound, true);
     }
 
     virtual public void ChangeSortingLayer()

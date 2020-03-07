@@ -6,13 +6,15 @@ public class SoundManager : MonoBehaviour
 {
     //private SoundSettings _settings;
 
-    private AudioSource _musicSource;
+    private Music _currentMusic;
     public int MaxSoundsCount = 8;
-    private List<AudioSource> _soundSources;
+    private List<Sound> _sounds;
 
     private List<AudioClip> _loadedClips;
     private bool _loadingInProgress = false;
-    
+
+    List<MusicFadingOut> _musicFadingsOut = new List<MusicFadingOut>();
+
     private static SoundManager _instance;
     public static SoundManager Instance
     {
@@ -20,6 +22,40 @@ public class SoundManager : MonoBehaviour
         {
             return _instance;
         }
+    }
+
+    public class Music
+    {
+        public string Name;
+        public AudioSource Source;
+
+        public float Timer;
+        public float FadingTime;
+        public float TargetVolume;
+        public bool FadingIn;
+    }
+
+    public class MusicFadingOut
+    {
+        private string _name;
+        public AudioSource Source;
+
+        public float Timer;
+        public float FadingTime;
+        public float StartVolume;
+    }
+
+    public class Sound
+    {
+        public string Name;
+        public AudioSource Source;
+        public bool IsLoading;
+        public IEnumerator LoadingCoroutine;
+        public bool IsPossessedLoading;
+        public float SelfVolume;
+        public bool IsAttachedToTransform;
+        public Transform Attach;
+        public bool IsValid;
     }
 
     public static void Initialize()
@@ -40,7 +76,7 @@ public class SoundManager : MonoBehaviour
             _loadedClips.Add(clip);
         }
 
-        _soundSources = new List<AudioSource>();
+        _sounds = new List<Sound>();
         _loadedClips = new List<AudioClip>();
 
         ApplySoundVolume();
@@ -53,70 +89,178 @@ public class SoundManager : MonoBehaviour
     void Update()
     {
         // Destory only one sound per frame
-        AudioSource soundSource = null;
+        Sound soundToDelete = null;
 
-        foreach (AudioSource sound in _soundSources)
+        foreach (Sound sound in _sounds)
         {
             if (IsSoundFinished(sound))
             {
-                soundSource = sound;
+                soundToDelete = sound;
                 break;
             }
         }
 
-        if (soundSource != null)
+        if (soundToDelete != null)
         {
-            _soundSources.Remove(soundSource);
-            Destroy(soundSource);
+            _sounds.Remove(soundToDelete);
+            Destroy(soundToDelete.Source);
+        }
+
+        if (GameData.Instance.GameSoundSettings.AutoPause)
+        {
+            bool curPause = Time.timeScale < 0.1f;
+            if (curPause != AudioListener.pause)
+            {
+                AudioListener.pause = curPause;
+            }
+        }
+
+        for (int i = 0; i < _musicFadingsOut.Count; i++)
+        {
+            MusicFadingOut music = _musicFadingsOut[i];
+            if (music.Source == null)
+            {
+                _musicFadingsOut.RemoveAt(i);
+                i--;
+            }
+            else
+            {
+                music.Timer += Time.unscaledDeltaTime;
+                _musicFadingsOut[i] = music;
+                if (music.Timer >= music.FadingTime)
+                {
+                    Destroy(music.Source);
+                    _musicFadingsOut.RemoveAt(i);
+                    i--;
+                }
+                else
+                {
+                    float k = Mathf.Clamp01(music.Timer / music.FadingTime);
+                    music.Source.volume = Mathf.Lerp(music.StartVolume, 0, k);
+                }
+            }
+        }
+
+        if (_currentMusic != null && _currentMusic.FadingIn)
+        {
+            _currentMusic.Timer += Time.unscaledDeltaTime;
+            if (_currentMusic.Timer >= _currentMusic.FadingTime)
+            {
+                _currentMusic.Source.volume = _currentMusic.TargetVolume;
+                _currentMusic.FadingIn = false;
+            }
+            else
+            {
+                float k = Mathf.Clamp01(_currentMusic.Timer / _currentMusic.FadingTime);
+                _currentMusic.Source.volume = Mathf.Lerp(0, _currentMusic.TargetVolume, k);
+            }
         }
     }
+
+    public static void Pause()
+    {
+        if (GameData.Instance.GameSoundSettings.AutoPause)
+            return;
+
+        AudioListener.pause = true;
+    }
+
+    public static void UnPause()
+    {
+        if (GameData.Instance.GameSoundSettings.AutoPause)
+            return;
+
+        AudioListener.pause = false;
+    }
+
+
 
     public void PlayMusicClip(AudioClip musicClip)
     {
-        if (_musicSource == null)
-        {    
-            _musicSource = gameObject.AddComponent<AudioSource>();
-            _musicSource.loop = true;
-            _musicSource.priority = 0;
-            _musicSource.playOnAwake = false;
-            _musicSource.mute = GameData.Instance.GameSoundSettings.GetMusicMuted();
-            _musicSource.ignoreListenerPause = true;
+        if (_currentMusic != null && _currentMusic.Name == musicClip.name)
+        {
+            return;
         }
 
-        //dont't restart curent playing music
-        if (_musicSource.clip != null && musicClip.name == _musicSource.clip.name)
-            return;
+        StopMusic();
 
-        _musicSource.Stop();
+        AudioSource musicSource = gameObject.AddComponent<AudioSource>();
+        musicSource.loop = true;
+        musicSource.priority = 0;
+        musicSource.playOnAwake = false;
+        musicSource.mute = GameData.Instance.GameSoundSettings.GetMusicMuted();
+        musicSource.ignoreListenerPause = true;
+        musicSource.clip = musicClip;
+        musicSource.Play();
 
-        _musicSource.clip = musicClip;
-        _musicSource.Play();
+        musicSource.volume = 0;
+
+        _currentMusic = new Music();
+        _currentMusic.Source = musicSource;
+        _currentMusic.FadingIn = true;
+        _currentMusic.TargetVolume = GameData.Instance.GameSoundSettings.GetMusicVolume();
+        _currentMusic.Timer = 0;
+        _currentMusic.FadingTime = GameData.Instance.GameSoundSettings.MusicFadeTime;
     }
 
-    public void PlaySoundClip(AudioClip soundClip)
+    void StopMusic()
     {
-        if (_soundSources.Count > MaxSoundsCount)
+        if (_currentMusic != null)
+        {
+            StartFadingOutMusic();
+            _currentMusic = null;
+        }
+    }
+
+    void StartFadingOutMusic()
+    {
+        if (_currentMusic != null)
+        {
+            MusicFadingOut fader = new MusicFadingOut();
+            fader.Source = _currentMusic.Source;
+            fader.FadingTime = GameData.Instance.GameSoundSettings.MusicFadeTime;
+            fader.Timer = 0;
+            fader.StartVolume = _currentMusic.Source.volume;
+            _musicFadingsOut.Add(fader);
+        }
+    }
+
+
+
+    public void PlaySoundClip(AudioClip soundClip, bool pausable)
+    {
+        if (_sounds.Count > MaxSoundsCount)
             return;
 
+        Sound sound = new Sound();
+        sound.Name = soundClip.name;
+        sound.SelfVolume = 1;
+
         AudioSource soundSource = gameObject.AddComponent<AudioSource>();
+
+        sound.Source = soundSource;
 
         soundSource.clip = soundClip;
         soundSource.priority = 0;
         soundSource.playOnAwake = false;
         soundSource.mute = GameData.Instance.GameSoundSettings.GetSoundMuted();
         soundSource.volume = GameData.Instance.GameSoundSettings.GetSoundVolume();
-        soundSource.ignoreListenerPause = false;
+        soundSource.ignoreListenerPause = !pausable;
         soundSource.Play();
 
-        _soundSources.Add(soundSource);
+        _sounds.Add(sound);
     }
 
-    public void PlaySound(string soundName)
+    public void PlaySound(string soundName, bool pausable)
     {
-        if (_soundSources.Count > MaxSoundsCount)
+        if (_sounds.Count > MaxSoundsCount)
         {
             return;
         }
+
+        Sound sound = new Sound();
+        sound.Name = soundName;
+        sound.SelfVolume = 1f;
 
         AudioSource soundSource = gameObject.AddComponent<AudioSource>();
 
@@ -124,9 +268,11 @@ public class SoundManager : MonoBehaviour
         soundSource.playOnAwake = false;
         soundSource.mute = GameData.Instance.GameSoundSettings.GetSoundMuted();
         soundSource.volume = GameData.Instance.GameSoundSettings.GetSoundVolume();
-        soundSource.ignoreListenerPause = false;
+        soundSource.ignoreListenerPause = !pausable;
 
-        _soundSources.Add(soundSource);
+        sound.Source = soundSource;
+
+        _sounds.Add(sound);
 
         AudioClip loadedClip = TryFindSoundClipPreloaded(soundName);
 
@@ -137,36 +283,80 @@ public class SoundManager : MonoBehaviour
         }
         else
         {
-            StartCoroutine(PlaySoundAfterLoad(soundSource, soundName));
+            sound.LoadingCoroutine = PlaySoundAfterLoad(sound);
+            StartCoroutine(sound.LoadingCoroutine);
         }
     }
 
-    IEnumerator PlaySoundAfterLoad(AudioSource soundSource, string soundName)
+    IEnumerator PlaySoundAfterLoad(Sound sound)
     {
+        sound.IsLoading = true;
+
         while (_loadingInProgress)
         {
             yield return null;
         }
         _loadingInProgress = true;
 
+        sound.IsPossessedLoading = true;
         AudioClip soundClip = null;
-        ResourceRequest request = LoadClipAsync(soundName);
+        ResourceRequest request = LoadClipAsync(sound.Name);
         while (!request.isDone)
             yield return null;
         soundClip = (AudioClip)request.asset;
 
+        sound.IsPossessedLoading = false;
         _loadingInProgress = false;
 
-        soundSource.clip = soundClip;
-        soundSource.Play();
+        sound.IsLoading = false;
+        sound.Source.clip = soundClip;
+        sound.Source.Play();
     }
 
-    public void PausePausibleSounds(bool isPaused = true)
+    void StopSound(Sound sound)
     {
-        AudioListener.pause = isPaused;
+        if (sound.IsLoading)
+        {
+            StopCoroutine(sound.LoadingCoroutine);
+            if (sound.IsPossessedLoading)
+                _loadingInProgress = false;
+
+            sound.IsLoading = false;
+        }
+        else
+            sound.Source.Stop();
     }
 
-    private void LoadSound(string soundName)
+    void StopAllPausableSounds()
+    {
+        foreach (Sound sound in _sounds)
+        {
+            if (!sound.Source.ignoreListenerPause)
+            {
+                StopSound(sound);
+            }
+        }
+    }
+
+    bool IsSoundFinished(Sound sound)
+    {
+        if (sound.IsLoading)
+            return false;
+
+        if (sound.Source.isPlaying)
+            return false;
+
+        if (sound.Source.clip.loadState == AudioDataLoadState.Loading)
+            return false;
+
+        if (!sound.Source.ignoreListenerPause && AudioListener.pause)
+            return false;
+
+        return true;
+    }
+
+
+    private void LoadSoundClip(string soundName)
     {
         AudioClip clip = TryFindSoundClipPreloaded(soundName);
         if (clip != null)
@@ -182,7 +372,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    private void UnloadSound(string soundName)
+    private void UnloadSoundClip(string soundName)
     {
         AudioClip clipToUnload = TryFindSoundClipPreloaded(soundName);
         if (clipToUnload != null)
@@ -208,31 +398,16 @@ public class SoundManager : MonoBehaviour
 
     AudioClip TryFindSoundClipPreloaded(string soundName)
     {
-        AudioClip loadedClip = null;
-        foreach (AudioSource source in _soundSources)
+        foreach (AudioClip loadedClip  in _loadedClips)
         {
-            if (source.clip.name == soundName)
+            if (loadedClip.name == soundName)
             {
-                loadedClip = source.clip;
                 return loadedClip;
             }
         }
         return null;
     }
 
-    bool IsSoundFinished(AudioSource soundSource)
-    {
-        if (soundSource.isPlaying)
-            return false;
-
-        if (soundSource.clip.loadState == AudioDataLoadState.Loading)
-            return false;
-
-        if (!soundSource.ignoreListenerPause && AudioListener.pause)
-            return false;
-
-        return true;
-    }
 
     public void SetMusicVolume(float volume)
     {
@@ -280,33 +455,37 @@ public class SoundManager : MonoBehaviour
 
     void ApplySoundVolume()
     {
-        foreach (AudioSource soundSource in _soundSources)
+        foreach (Sound sound in _sounds)
         {
-            soundSource.volume = GameData.Instance.GameSoundSettings.GetSoundVolume();
+            sound.Source.volume = GameData.Instance.GameSoundSettings.GetSoundVolume();
         }
     }
 
     void ApplyMusicVolume()
     {
-        if (_musicSource != null)
+        if (_currentMusic != null)
         {
-            _musicSource.volume = GameData.Instance.GameSoundSettings.GetMusicVolume();
+            _currentMusic.Source.volume = GameData.Instance.GameSoundSettings.GetMusicVolume();
         }
     }
 
     void ApplySoundMuted()
     {
-        foreach (AudioSource soundSource in _soundSources)
+        foreach (Sound sound in _sounds)
         {
-            soundSource.mute = GameData.Instance.GameSoundSettings.GetSoundMuted();
+            sound.Source.mute = GameData.Instance.GameSoundSettings.GetSoundMuted();
         }
     }
 
     void ApplyMusicMuted()
     {
-        if (_musicSource != null)
+        if (_currentMusic != null)
         {
-            _musicSource.mute = GameData.Instance.GameSoundSettings.GetMusicMuted();
+            _currentMusic.Source.mute = GameData.Instance.GameSoundSettings.GetMusicMuted();
         }
     }
 }
+  
+
+
+

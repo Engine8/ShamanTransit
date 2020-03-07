@@ -7,7 +7,7 @@ public class SightScale : MonoBehaviour
     public Transform Arrow;
     public Transform HitArea;
 
-    private bool _Victory;
+    //private bool _Victory;
     public float SpeedRotate;
     public void BafSpeed()
     {
@@ -24,7 +24,7 @@ public class SightScale : MonoBehaviour
     }
     public void Stop()
     {
-        _Victory = true;
+        //_Victory = true;
         GameController.Instance.SetGameMode(0);
         StartCoroutine("Weate");
     }
@@ -37,7 +37,7 @@ public class SightScale : MonoBehaviour
                 break;
             SpeedRotate = (Mathf.Abs(SpeedRotate) - 0.5f) * SpeedRotate / Mathf.Abs(SpeedRotate);
         }
-        _Victory = false;
+        //_Victory = false;
         gameObject.SetActive(false);
     }
    
@@ -56,6 +56,7 @@ public class SightScale : MonoBehaviour
     }
     public bool GetVictory()
     {
-        return _Victory;
+        return true;
+        //return _Victory;
     }
 }

@@ -27,7 +27,7 @@ public class HitArea : MonoBehaviour
 
     public void Tach()
     {
-        if (!sightScale.GetVictory()) 
+        if (GameController.Instance.IsAttackMode/*!sightScale.GetVictory()*/) 
         { 
             if (Arrow.localEulerAngles.z <= transform.localEulerAngles.z && Arrow.localEulerAngles.z >= transform.localEulerAngles.z - 18)
             {

@@ -35,13 +35,13 @@ public class PlayerController : Movable
     new void Start()
     {
         //OnChangeLineEnd.AddListener(ChangeSortingLayer);
-#if UNITY_ANDROID
+//#if UNITY_ANDROID
         OnAttackHit.AddListener(() => 
         {
             if (GameData.Instance.VibrationStatus)
                 Handheld.Vibrate();
         });
-#endif
+//#endif
         //GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
     }
@@ -145,7 +145,8 @@ public class PlayerController : Movable
         if (other.gameObject.CompareTag("Obstacle"))
         {
             DeleteSoul();
-            Handheld.Vibrate();
+            if (GameData.Instance.VibrationStatus)
+                Handheld.Vibrate();
         }
         else if (other.gameObject.CompareTag("TriggerEnd"))
         {

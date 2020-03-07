@@ -187,13 +187,13 @@ public class GameController : MonoBehaviour
         if (isGameWin)
         {
             WinScreen.SetActive(true);
-            SoundManager.Instance.PlaySoundClip(WinSound);
+            SoundManager.Instance.PlaySoundClip(WinSound, false);
             StartCoroutine(MoneyAnimationStart());
         }
         else
         {
             LoseScreen.SetActive(true);
-            SoundManager.Instance.PlaySoundClip(DefeatSound);
+            SoundManager.Instance.PlaySoundClip(DefeatSound, false);
         }
     }
 
