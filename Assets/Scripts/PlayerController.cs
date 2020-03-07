@@ -35,7 +35,13 @@ public class PlayerController : Movable
     new void Start()
     {
         //OnChangeLineEnd.AddListener(ChangeSortingLayer);
-        OnAttackHit.AddListener(() => { Handheld.Vibrate(); });
+#if UNITY_ANDROID
+        OnAttackHit.AddListener(() => 
+        {
+            if (GameData.Instance.VibrationStatus)
+                Handheld.Vibrate();
+        });
+#endif
         //GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
     }
