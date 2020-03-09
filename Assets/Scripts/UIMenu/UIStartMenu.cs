@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class UIStartMenu : MonoBehaviour
 {
     public GameObject ShopMenu;
+    public GameObject SettingsMenu;
+    public GameObject SettingsMenuButton;
     public GameObject StartMenu;
     public GameObject InfoMenu;
     public GameObject MusicOff;
@@ -69,7 +71,11 @@ public class UIStartMenu : MonoBehaviour
         StartMenu.SetActive(false);
         ShopMenu.SetActive(true);
     }
-
+    public void OpenSettings()
+    {
+        SettingsMenuButton.transform.rotation = new Quaternion(0,0,(180 - SettingsMenuButton.transform.rotation.eulerAngles.z), 0);
+        SettingsMenu.SetActive(!SettingsMenu.activeSelf);
+    }
     public void MusicOffOn()
     {
         MusicOff.SetActive(!MusicOff.activeSelf);
