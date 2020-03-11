@@ -183,7 +183,6 @@ public class GameController : MonoBehaviour
     {
         IngameUI.SetActive(false);
         AttackUI.SetActive(false);
-        //EndgameCargoText.text = $"{PlayerCharacter.CurrentCargoCount} / {PlayerCharacter.MaxCargoCount}";
         if (isGameWin)
         {
             WinScreen.SetActive(true);
