@@ -9,6 +9,9 @@ public class SnowController : MonoBehaviour
 
     public bool IsSnowy = false;
 
+    public AnimationCurve SlowdownCurve;
+    public float SpeedReduce;
+    public float WindForce;
     // Start is called before the first frame update
     void Start()
     {
