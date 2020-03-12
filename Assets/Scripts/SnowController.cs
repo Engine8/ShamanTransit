@@ -9,6 +9,7 @@ public class SnowController : MonoBehaviour
 
     //current particle system status
     public bool IsSnowy = true;
+    public WindStatus WindStatusVar;
 
     [Tooltip("Define the wind time behaviour (strenght, visualization")]
     public AnimationCurve WindCurve;
@@ -24,7 +25,7 @@ public class SnowController : MonoBehaviour
     //Current wind burst time (defined when calling methods)
     private float _currentAllWindTime;
     //time from wind burst start
-    private float _currentWindTime;
+    private float _currentWindTime = 0;
     //current wind status
     private bool _isWindy = true;
     //time for next wind burst (if it is random)
@@ -34,6 +35,7 @@ public class SnowController : MonoBehaviour
     {
         _windZone = transform.GetChild(0).GetComponent<WindZone>();
         _particleSystem = GetComponent<ParticleSystem>();
+        _currentAllWindTime = WindTime;
     }
 
     // Start is called before the first frame update
@@ -48,17 +50,40 @@ public class SnowController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (IsSnowy && _isWindy)
+        if (!IsSnowy)
+            return;
+        if (_isWindy)
         {
+            bool ended = false;
             _currentWindTime += Time.deltaTime;
             if (_currentWindTime > _currentAllWindTime)
+            {
                 _currentWindTime = _currentAllWindTime;
+                ended = true;
+            }
 
             float _curveValue = WindCurve.Evaluate(_currentWindTime / _currentAllWindTime);
             float windForceValue = Mathf.Lerp(0, WindForce, _curveValue);
 
             _windZone.windMain = windForceValue;
+            if (ended)
+            {
+                _isWindy = false;
+                _currentAllWindTime = WindTime;
+                _currentWindTime = 0;
+            }
         }
+        //calculate time to next random burst only when wind doesn't blow
+        else if (WindStatusVar == WindStatus.Random) 
+        {
+            _timeToWind -= Time.deltaTime;
+            if (_timeToWind < 0)
+            {
+                _timeToWind = CalculateRandomTime();
+                CreateWindBurst();
+            }
+        }
+
     }
 
     /* Requests request burst of wind
@@ -79,5 +104,13 @@ public class SnowController : MonoBehaviour
         _isWindy = true;
         return true;
     }
+
+    private float CalculateRandomTime()
+    {
+        float time = Random.Range(10f, 20f);
+        return time;
+    }
+
+
 
 }

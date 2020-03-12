@@ -107,12 +107,27 @@ public class ChunksPlacer : MonoBehaviour
         return currentMap.MoneyMultiplier;
     }
 
+    public void GetSnowInfo(out bool isSnowy, out WindStatus windStatus)
+    {
+        isSnowy = currentMap.IsSnowy;
+        windStatus = currentMap.WindStatusVar;
+    }
+
     [System.Serializable]
     public class Map
     {
         public int MoneyMultiplier;
+        public bool IsSnowy;
+        public WindStatus WindStatusVar;
         public Tile[] TilePrefabsTurn;
         [HideInInspector]
         public List<Tile> spawnedChunks = new List<Tile>();
     }
  }
+
+public enum WindStatus
+{
+    Not = 0,
+    TriggerOnly = 1,
+    Random = 2
+}

@@ -5,6 +5,16 @@ using UnityEngine.Events;
 
 public class PlayerController : Movable
 {   
+    private static PlayerController _instance;
+    public static PlayerController Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+
+
     private SpriteRenderer _spriteRenderer;
     private SoulKeeper soulKeeper;
     public int SoulCount
@@ -27,6 +37,13 @@ public class PlayerController : Movable
 
     private void Awake()
     {
+        if (_instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+
+        _instance = this;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
     }

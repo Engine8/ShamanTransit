@@ -95,7 +95,10 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+    }
 
+    private void Start()
+    {
         foreach (AudioClip clip in GameData.Instance.GameSoundSettings.PreloadedClips)
         {
             _loadedClips.Add(clip);
@@ -110,6 +113,8 @@ public class SoundManager : MonoBehaviour
         ApplySoundMuted();
         ApplyMusicMuted();
     }
+
+
 
     void Update()
     {

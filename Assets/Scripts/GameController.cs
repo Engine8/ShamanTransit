@@ -51,6 +51,7 @@ public class GameController : MonoBehaviour
     public UnityEvent OnGameModeChanged;
 
     public LoadingComponent loadingComponent;
+    public GameObject SnowPrefab;
 
     private void Awake()
     {
@@ -64,6 +65,7 @@ public class GameController : MonoBehaviour
 
 #if UNITY_EDITOR
         SoundManager.Initialize();
+        GameData.Initialize();
 #endif
     }
 
@@ -71,6 +73,18 @@ public class GameController : MonoBehaviour
     void Start()
     {
         VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.58f;
+
+        bool isSnowy = false;
+        WindStatus windStatus;
+        ChunksPlacer.Instance.GetSnowInfo(out isSnowy, out windStatus);
+        if (isSnowy)
+        {
+            GameObject newSnowObject = Instantiate(SnowPrefab, VirtCamera.transform);
+            SnowController snowController = newSnowObject.GetComponent<SnowController>();
+            snowController.IsSnowy = true;
+            snowController.WindStatusVar = windStatus;
+        }
+
         if (PlayerCharacter != null)
         {
             PlayerCharacter.OnHit.AddListener(OnPlayerHit);
