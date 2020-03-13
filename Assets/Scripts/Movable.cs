@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using UnityEngine;
 using UnityEngine.Events;
 //
@@ -28,8 +29,14 @@ public class Movable : MonoBehaviour
         get { return _speed; }
         set { _speed = value; }
     }
+
+    public float BasicMaxSpeed { get; private set;}
     public float MaxSpeed = 10f;
-    public float Acceleration = 2f;
+    public float BasicAccelerationModif { get; private set; } = 1;
+    public float AccelerationModif = 2f;
+    //debug variable;
+    public float CurrentAcceleration;
+
     public float StartSpeed = 0f;
 
     //debug
@@ -91,6 +98,8 @@ public class Movable : MonoBehaviour
         _targetLine = _curLine;
 
         OnHit.AddListener(OnHitSoundPlay);
+
+        BasicMaxSpeed = MaxSpeed;
     }
 
     // Update is called once per frame
@@ -99,14 +108,17 @@ public class Movable : MonoBehaviour
         if (!GameController.Instance.IsGameEnded)
         {
             //calculate acceleration on earth (x coordinate)
-            if (_speed < MaxSpeed && _jumpStatus == 0)
+            if (_jumpStatus == 0)
             {
-                float accelerationValue = AccelerationCurve.Evaluate(_speed / MaxSpeed) * Time.fixedDeltaTime;
-                Acceleration = accelerationValue; //debug
-                _speed += accelerationValue;
-                curSpeed = _speed; //debug
-                if (_speed > MaxSpeed)
-                    _speed = MaxSpeed;
+                if (_speed <= MaxSpeed)
+                {
+                    float accelerationValue = AccelerationCurve.Evaluate(_speed / MaxSpeed) * AccelerationModif *  Time.fixedDeltaTime;
+                    CurrentAcceleration = accelerationValue; //debug
+                    _speed += accelerationValue;
+                    curSpeed = _speed; //debug
+                    if (_speed > MaxSpeed)
+                        _speed = MaxSpeed;
+                }
             }
             float dX = Vector2.right.x * _speed * Time.fixedDeltaTime;
 
@@ -283,5 +295,22 @@ public class Movable : MonoBehaviour
     virtual public void ChangeSortingLayer()
     {
 
+    }
+
+    public void SetMaxSpeed(float value)
+    {
+        if (_speed > value)
+        {
+            _speed = value;
+        }
+        MaxSpeed = value;
+    }
+
+    public void SetAccelerationModif(float value)
+    {
+        if (value > 0)
+        {
+            AccelerationModif = value;
+        }
     }
 }

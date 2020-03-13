@@ -15,6 +15,7 @@ public class SnowController : MonoBehaviour
     public AnimationCurve WindCurve;
     //
     public float SpeedReduce;
+    public float AccelerationReduce;
     //Wind main force acting on particle system
     public float WindForce;
     //Standart wind burst time
@@ -64,8 +65,11 @@ public class SnowController : MonoBehaviour
 
             float _curveValue = WindCurve.Evaluate(_currentWindTime / _currentAllWindTime);
             float windForceValue = Mathf.Lerp(0, WindForce, _curveValue);
-
+            float characterSpeed = Mathf.Lerp(PlayerController.Instance.BasicMaxSpeed, PlayerController.Instance.BasicMaxSpeed - SpeedReduce, _curveValue);
+            float characterAcceleration = Mathf.Lerp(PlayerController.Instance.BasicAccelerationModif, PlayerController.Instance.BasicAccelerationModif - AccelerationReduce, _curveValue);
             _windZone.windMain = windForceValue;
+            PlayerController.Instance.SetMaxSpeed(characterSpeed);
+            PlayerController.Instance.SetAccelerationModif(characterAcceleration);
             if (ended)
             {
                 _isWindy = false;

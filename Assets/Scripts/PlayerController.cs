@@ -167,7 +167,7 @@ public class PlayerController : Movable
         }
         else if (other.gameObject.CompareTag("TriggerEnd"))
         {
-            Acceleration = 0;
+            AccelerationModif = 0;
             Speed = 0;
             OnLevelEnd.Invoke();
         }

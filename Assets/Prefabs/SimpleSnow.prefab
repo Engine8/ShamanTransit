@@ -4830,7 +4830,8 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  SpeedReduce: 0
+  SpeedReduce: 4
+  AccelerationReduce: 0.4
   WindForce: 2
   WindTime: 10
 --- !u!1 &5752463480812453524
