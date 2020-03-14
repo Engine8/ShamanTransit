@@ -32,6 +32,11 @@ public class SnowController : MonoBehaviour
     //time for next wind burst (if it is random)
     private float _timeToWind;
 
+    public AudioClip WindSound;
+    public float WindSoundFadingTime;
+    private bool _soundMarkedToStop = false;
+
+
     private void Awake()
     {
         _windZone = transform.GetChild(0).GetComponent<WindZone>();
@@ -46,6 +51,9 @@ public class SnowController : MonoBehaviour
             _particleSystem.Play();
         else
             _particleSystem.Stop();
+
+        if (WindStatusVar == WindStatus.Random)
+            _timeToWind = CalculateRandomTime();
     }
 
     // Update is called once per frame
@@ -61,6 +69,10 @@ public class SnowController : MonoBehaviour
             {
                 _currentWindTime = _currentAllWindTime;
                 ended = true;
+            }
+            else if (_currentWindTime > (_currentAllWindTime - WindSoundFadingTime) && !_soundMarkedToStop)
+            {
+                SoundManager.Instance.StopLongSound("wind");
             }
 
             float _curveValue = WindCurve.Evaluate(_currentWindTime / _currentAllWindTime);
@@ -105,7 +117,10 @@ public class SnowController : MonoBehaviour
         else
             _currentAllWindTime = time;
         
+
         _isWindy = true;
+        SoundManager.Instance.PlayLongSoundClip("wind", WindSound, true, WindSoundFadingTime);
+        _soundMarkedToStop = false;
         return true;
     }
 

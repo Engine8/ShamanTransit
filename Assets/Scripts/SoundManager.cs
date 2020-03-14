@@ -31,14 +31,20 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    private Music _currentMusic;
+    //variable for main music
+    private LongSound _currentMusic;
+
+    //variables for short, discrete sounds (buttons, hits and so on)
     public int MaxSoundsCount = 8;
     private List<Sound> _sounds;
+
+    //variable for long, continious sounds (ambient, wind blows and so on) 
+    private Dictionary<string, LongSound> _longSounds;
 
     private List<AudioClip> _loadedClips;
     private bool _loadingInProgress = false;
 
-    List<MusicFadingOut> _musicFadingsOut = new List<MusicFadingOut>();
+    List<LongSoundFadingOut> _longSoundFadingsOut = new List<LongSoundFadingOut>();
 
     private static SoundManager _instance;
     public static SoundManager Instance
@@ -49,7 +55,7 @@ public class SoundManager : MonoBehaviour
         }
     }
 
-    public class Music
+    public class LongSound
     {
         public string Name;
         public AudioSource Source;
@@ -60,7 +66,7 @@ public class SoundManager : MonoBehaviour
         public bool FadingIn;
     }
 
-    public class MusicFadingOut
+    public class LongSoundFadingOut
     {
         private string _name;
         public AudioSource Source;
@@ -105,6 +111,7 @@ public class SoundManager : MonoBehaviour
         }
 
         _sounds = new List<Sound>();
+        _longSounds = new Dictionary<string, LongSound>();
         _loadedClips = new List<AudioClip>();
 
         ApplySoundVolume();
@@ -145,28 +152,28 @@ public class SoundManager : MonoBehaviour
             }
         }
 
-        for (int i = 0; i < _musicFadingsOut.Count; i++)
+        for (int i = 0; i < _longSoundFadingsOut.Count; i++)
         {
-            MusicFadingOut music = _musicFadingsOut[i];
-            if (music.Source == null)
+            LongSoundFadingOut longSound = _longSoundFadingsOut[i];
+            if (longSound.Source == null)
             {
-                _musicFadingsOut.RemoveAt(i);
+                _longSoundFadingsOut.RemoveAt(i);
                 i--;
             }
             else
             {
-                music.Timer += Time.unscaledDeltaTime;
-                _musicFadingsOut[i] = music;
-                if (music.Timer >= music.FadingTime)
+                longSound.Timer += Time.unscaledDeltaTime;
+                _longSoundFadingsOut[i] = longSound;
+                if (longSound.Timer >= longSound.FadingTime)
                 {
-                    Destroy(music.Source);
-                    _musicFadingsOut.RemoveAt(i);
+                    Destroy(longSound.Source);
+                    _longSoundFadingsOut.RemoveAt(i);
                     i--;
                 }
                 else
                 {
-                    float k = Mathf.Clamp01(music.Timer / music.FadingTime);
-                    music.Source.volume = Mathf.Lerp(music.StartVolume, 0, k);
+                    float k = Mathf.Clamp01(longSound.Timer / longSound.FadingTime);
+                    longSound.Source.volume = Mathf.Lerp(longSound.StartVolume, 0, k);
                 }
             }
         }
@@ -183,6 +190,24 @@ public class SoundManager : MonoBehaviour
             {
                 float k = Mathf.Clamp01(_currentMusic.Timer / _currentMusic.FadingTime);
                 _currentMusic.Source.volume = Mathf.Lerp(0, _currentMusic.TargetVolume, k);
+            }
+        }
+
+        foreach (var longSound in _longSounds)
+        { 
+            if (longSound.Value.FadingIn)
+            {
+                longSound.Value.Timer += Time.deltaTime;
+                if (longSound.Value.Timer >= longSound.Value.FadingTime)
+                {
+                    longSound.Value.Source.volume = longSound.Value.TargetVolume;
+                    longSound.Value.FadingIn = false;
+                }
+                else
+                {
+                    float k = Mathf.Clamp01(longSound.Value.Timer / longSound.Value.FadingTime);
+                    longSound.Value.Source.volume = Mathf.Lerp(0, longSound.Value.TargetVolume, k);
+                }
             }
         }
     }
@@ -225,7 +250,7 @@ public class SoundManager : MonoBehaviour
 
         musicSource.volume = 0;
 
-        _currentMusic = new Music();
+        _currentMusic = new LongSound();
         _currentMusic.Source = musicSource;
         _currentMusic.FadingIn = true;
         _currentMusic.TargetVolume = GameData.Instance.GameSoundSettings.GetMusicVolume();
@@ -246,16 +271,62 @@ public class SoundManager : MonoBehaviour
     {
         if (_currentMusic != null)
         {
-            MusicFadingOut fader = new MusicFadingOut();
+            LongSoundFadingOut fader = new LongSoundFadingOut();
             fader.Source = _currentMusic.Source;
             fader.FadingTime = GameData.Instance.GameSoundSettings.MusicFadeTime;
             fader.Timer = 0;
             fader.StartVolume = _currentMusic.Source.volume;
-            _musicFadingsOut.Add(fader);
+            _longSoundFadingsOut.Add(fader);
         }
     }
 
+    public void PlayLongSoundClip(string name, AudioClip clip, bool pausable, float fadeTime)
+    {
+        if (_longSounds.ContainsKey(name))
+        {
+            StopLongSound(name);
+        }
 
+        AudioSource longSoundSource = gameObject.AddComponent<AudioSource>();
+        longSoundSource.loop = true;
+        longSoundSource.priority = 0;
+        longSoundSource.playOnAwake = false;
+        longSoundSource.mute = GameData.Instance.GameSoundSettings.GetSoundMuted();
+        longSoundSource.ignoreListenerPause = !pausable;
+        longSoundSource.clip = clip;
+        longSoundSource.Play();
+
+        longSoundSource.volume = 0;
+
+        LongSound longSound = new LongSound();
+        longSound.Source = longSoundSource;
+        longSound.FadingIn = true;
+        longSound.TargetVolume = GameData.Instance.GameSoundSettings.GetSoundVolume();
+        longSound.Timer = 0;
+        longSound.FadingTime = fadeTime;
+
+        _longSounds.Add(name, longSound);
+    }
+
+    public void StopLongSound(string name)
+    {
+        if (_longSounds.ContainsKey(name))
+        {
+            StartFadingOutLongSound(name);
+            _longSounds.Remove(name);
+        }
+    }
+
+    void StartFadingOutLongSound(string name)
+    {
+        LongSoundFadingOut fader = new LongSoundFadingOut();
+        LongSound sound = _longSounds[name];
+        fader.Source = sound.Source;
+        fader.FadingTime = sound.FadingTime;
+        fader.Timer = 0;
+        fader.StartVolume = sound.Source.volume;
+        _longSoundFadingsOut.Add(fader);
+    }
 
     public void PlaySoundClip(AudioClip soundClip, bool pausable)
     {
