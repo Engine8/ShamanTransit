@@ -35,6 +35,8 @@ public class PlayerController : Movable
     private float _sumDeltaPositionOnY = 0f;
     private bool _isSwipe = false;
 
+    private ParticleSystemRenderer _stepParticleRenderer;
+
     private void Awake()
     {
         if (_instance != null)
@@ -51,8 +53,9 @@ public class PlayerController : Movable
     // Start is called before the first frame update
     new void Start()
     {
+        _stepParticleRenderer = StepSnow.gameObject.GetComponent<ParticleSystemRenderer>();
         //OnChangeLineEnd.AddListener(ChangeSortingLayer);
-//#if UNITY_ANDROID
+        //#if UNITY_ANDROID
         OnAttackHit.AddListener(() => 
         {
             if (GameData.Instance.VibrationStatus)
@@ -192,16 +195,19 @@ public class PlayerController : Movable
         {
             _spriteRenderer.sortingLayerName = "Line1";
             soulKeeper.SetSoulsSortingLayer("Line1");
+            _stepParticleRenderer.sortingLayerName = "Line1";
         }
         else if (_targetLine == 1)
         {
             _spriteRenderer.sortingLayerName = "Line2";
             soulKeeper.SetSoulsSortingLayer("Line2");
+            _stepParticleRenderer.sortingLayerName = "Line1";
         }
         else
         {
             _spriteRenderer.sortingLayerName = "Line3";
             soulKeeper.SetSoulsSortingLayer("Line3");
+            _stepParticleRenderer.sortingLayerName = "Line1";
         }
     }
 

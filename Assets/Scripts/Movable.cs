@@ -77,6 +77,7 @@ public class Movable : MonoBehaviour
     private int _changeLineStatus = 0;
 
     public AudioClip StepSound;
+    public ParticleSystem StepSnow;
 
     // Start is called before the first frame update
     protected void Start()
@@ -314,5 +315,12 @@ public class Movable : MonoBehaviour
         {
             AccelerationModif = value;
         }
+    }
+
+    public void OnStep(int soundPlayStatus)
+    {
+        if (soundPlayStatus == 1)
+            SoundManager.Instance.PlaySoundClip(StepSound, true);
+        StepSnow.Play();
     }
 }
