@@ -76,6 +76,8 @@ public class Movable : MonoBehaviour
     */
     private int _changeLineStatus = 0;
 
+    public AudioClip StepSound;
+
     // Start is called before the first frame update
     protected void Start()
     {

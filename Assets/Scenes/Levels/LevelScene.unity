@@ -3347,6 +3347,10 @@ PrefabInstance:
       propertyPath: MinDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1389840021, guid: a63c9639cfa74ff4790736be51718aa3, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5234547891750715084, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_SortingLayerID
