@@ -38,7 +38,7 @@ public class SightScale : MonoBehaviour
             SpeedRotate = (Mathf.Abs(SpeedRotate) - 0.25f) * SpeedRotate / Mathf.Abs(SpeedRotate);
         }
         _Victory = false;
-        gameObject.SetActive(false);
+        gameObject.transform.parent.gameObject.SetActive(false);
     }
    
     void FixedUpdate()
