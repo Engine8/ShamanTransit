@@ -39,7 +39,7 @@ public class WolfController :  EnemyController
     IEnumerator Sprint() //появление волков
     {
         _facktSpeed = 16;
-        yield return new WaitForSeconds(1.3f);
+        yield return new WaitForSeconds(1.4f);
         _facktSpeed = speed;
     }
     public void ChendePosition()

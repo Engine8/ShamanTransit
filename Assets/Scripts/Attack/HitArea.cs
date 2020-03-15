@@ -11,7 +11,8 @@ public class HitArea : MonoBehaviour
     private EnemyController _enumy;
     private Image MissAr;
     private SightScale sightScale;
-   
+    private float _pauseAttacksMiss = 0;
+    private float _pauseAttacksHit = 0;
 
     void Start()
     {
@@ -27,30 +28,39 @@ public class HitArea : MonoBehaviour
 
     public void Tach()
     {
-        if (GameController.Instance.IsAttackMode/*!sightScale.GetVictory()*/) 
-        { 
-            if (Arrow.localEulerAngles.z <= transform.localEulerAngles.z && Arrow.localEulerAngles.z >= transform.localEulerAngles.z - 18)
+        if (!sightScale.GetVictory())
+        {
+            GameController.Instance.SetAnimAttack();
+            if (Arrow.localEulerAngles.z <= (transform.localEulerAngles.z + 3) && Arrow.localEulerAngles.z >= (sightScale.SpeedRotate > 0 ? transform.localEulerAngles.z - 16 : transform.localEulerAngles.z - 16))
             {
-                transform.localEulerAngles = new Vector3(0, 0, Random.Range(20f, 90f));
-                if (_enumy.GetActiv())
+                if (Time.time > _pauseAttacksHit)
                 {
-                    if (_enumy.GetCount() >= 0)
+                    transform.localEulerAngles = new Vector3(0, 0, Random.Range(20f, 90f));
+                    if (_enumy.GetActiv())
                     {
-                        _enumy.TakeDamage();
+                        if (_enumy.GetCount() >= 0)
+                        {
+                            _enumy.TakeDamage();
+                        }
+                        if (_enumy.GetCount() == 0)
+                        {
+                            sightScale.Stop();
+                        }
                     }
-                    if (_enumy.GetCount() == 0)
-                    {
-                        sightScale.Stop();
-                    }
+                    //sightScale.BafSpeed();
+                    _pauseAttacksHit = Time.time + 0.5f;
                 }
-                sightScale.BafSpeed();
             }
             else
             {
                 StartCoroutine("Miss");
-                if (_enumy.GetActiv())
-                    _enumy.Attack();
-            } 
+                if (Time.time > _pauseAttacksMiss)
+                {
+                    if (_enumy.GetActiv())
+                        _enumy.Attack();
+                    _pauseAttacksMiss = Time.time + 0.5f;
+                }
+            }
         }
     }
     IEnumerator Miss()
