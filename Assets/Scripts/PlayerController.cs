@@ -31,11 +31,11 @@ public class PlayerController : Movable
 
 
     private float _startYPosition = -1f;
-    //private float _endYposition = 0f;
     private float _sumDeltaPositionOnY = 0f;
     private bool _isSwipe = false;
 
     private ParticleSystemRenderer _stepParticleRenderer;
+    private Animator _animator;
 
     private void Awake()
     {
@@ -47,6 +47,7 @@ public class PlayerController : Movable
 
         _instance = this;
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _animator = GetComponent<Animator>();
         soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
     }
 
@@ -61,7 +62,7 @@ public class PlayerController : Movable
             if (GameData.Instance.VibrationStatus)
                 Handheld.Vibrate();
         });
-//#endif
+        //#endif
         //GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
     }
@@ -220,4 +221,19 @@ public class PlayerController : Movable
     {
         soulKeeper.DeleteSoul();
     }
+
+    public void SetAnimAttack()
+    {
+        //StartCoroutine("AttackAnimation");
+        _animator.Play("Player_Attack");
+    }
+    /*
+    private IEnumerator AttackAnimation()
+    {
+
+        _animator.SetBool("Attack", true);
+        yield return new WaitForSeconds(0.44f);
+        _animator.SetBool("Attack", false);
+    }
+    */
 }

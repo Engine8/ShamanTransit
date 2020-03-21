@@ -30,7 +30,7 @@ public class HitArea : MonoBehaviour
     {
         if (!sightScale.GetVictory())
         {
-            GameController.Instance.SetAnimAttack();
+            PlayerController.Instance.SetAnimAttack();
             if (Arrow.localEulerAngles.z <= (transform.localEulerAngles.z + 3) && Arrow.localEulerAngles.z >= (sightScale.SpeedRotate > 0 ? transform.localEulerAngles.z - 16 : transform.localEulerAngles.z - 16))
             {
                 if (Time.time > _pauseAttacksHit)
