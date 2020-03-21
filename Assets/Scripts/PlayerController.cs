@@ -5,6 +5,16 @@ using UnityEngine.Events;
 
 public class PlayerController : Movable
 {   
+    private static PlayerController _instance;
+    public static PlayerController Instance
+    {
+        get
+        {
+            return _instance;
+        }
+    }
+
+
     private SpriteRenderer _spriteRenderer;
     private SoulKeeper soulKeeper;
     public int SoulCount
@@ -25,8 +35,17 @@ public class PlayerController : Movable
     private float _sumDeltaPositionOnY = 0f;
     private bool _isSwipe = false;
 
+    private ParticleSystemRenderer _stepParticleRenderer;
+
     private void Awake()
     {
+        if (_instance != null)
+        {
+            Destroy(this);
+            return;
+        }
+
+        _instance = this;
         _spriteRenderer = GetComponent<SpriteRenderer>();
         soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
     }
@@ -34,8 +53,9 @@ public class PlayerController : Movable
     // Start is called before the first frame update
     new void Start()
     {
+        _stepParticleRenderer = StepSnow.gameObject.GetComponent<ParticleSystemRenderer>();
         //OnChangeLineEnd.AddListener(ChangeSortingLayer);
-//#if UNITY_ANDROID
+        //#if UNITY_ANDROID
         OnAttackHit.AddListener(() => 
         {
             if (GameData.Instance.VibrationStatus)
@@ -150,7 +170,7 @@ public class PlayerController : Movable
         }
         else if (other.gameObject.CompareTag("TriggerEnd"))
         {
-            Acceleration = 0;
+            AccelerationModif = 0;
             Speed = 0;
             OnLevelEnd.Invoke();
         }
@@ -175,16 +195,19 @@ public class PlayerController : Movable
         {
             _spriteRenderer.sortingLayerName = "Line1";
             soulKeeper.SetSoulsSortingLayer("Line1");
+            _stepParticleRenderer.sortingLayerName = "Line1";
         }
         else if (_targetLine == 1)
         {
             _spriteRenderer.sortingLayerName = "Line2";
             soulKeeper.SetSoulsSortingLayer("Line2");
+            _stepParticleRenderer.sortingLayerName = "Line1";
         }
         else
         {
             _spriteRenderer.sortingLayerName = "Line3";
             soulKeeper.SetSoulsSortingLayer("Line3");
+            _stepParticleRenderer.sortingLayerName = "Line1";
         }
     }
 
