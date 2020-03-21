@@ -73,8 +73,13 @@ public class UIStartMenu : MonoBehaviour
     }
     public void OpenSettings()
     {
-        SettingsMenuButton.transform.rotation = new Quaternion(0,0,(180 - SettingsMenuButton.transform.rotation.eulerAngles.z), 0);
-        SettingsMenu.SetActive(!SettingsMenu.activeSelf);
+        StartMenu.SetActive(false);
+        SettingsMenu.SetActive(true);
+    }
+    public void SettingsOff()
+    {
+        StartMenu.SetActive(true);
+        SettingsMenu.SetActive(false);
     }
     public void MusicOffOn()
     {
