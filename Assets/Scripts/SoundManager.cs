@@ -428,6 +428,18 @@ public class SoundManager : MonoBehaviour
             sound.Source.Stop();
     }
 
+    public void StopAllSounds()
+    {
+        foreach (Sound sound in _sounds)
+        {
+            StopSound(sound);
+        }
+        foreach(string sound in _longSounds.Keys)
+        {
+            StopLongSound(sound);
+        }
+    }
+
     void StopAllPausableSounds()
     {
         foreach (Sound sound in _sounds)

@@ -198,6 +198,7 @@ public class GameController : MonoBehaviour
     {
         IngameUI.SetActive(false);
         AttackUI.SetActive(false);
+        //SoundManager.Instance.StopAllSounds();
         if (isGameWin)
         {
             WinScreen.SetActive(true);
