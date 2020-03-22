@@ -274,4 +274,23 @@ public class GameController : MonoBehaviour
 
         OnGameModeChanged.Invoke();
     }
+
+    public void ShakeCamera(float time)
+    {
+        if (!IsGameEnded)
+        {
+            StartCoroutine(CameraShaking(time));
+        }
+    }
+
+    private IEnumerator CameraShaking(float time)
+    {
+        CinemachineBasicMultiChannelPerlin shakeSettings = VirtCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+
+        shakeSettings.m_FrequencyGain = 2f;
+        shakeSettings.m_AmplitudeGain = 1f;
+        yield return new WaitForSeconds(time);
+        shakeSettings.m_FrequencyGain = 0;
+        shakeSettings.m_AmplitudeGain = 0;
+    }
 }
