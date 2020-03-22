@@ -13,7 +13,7 @@ public class PlayerData
     public int CurrentLevel;
     public List<int> PurchaseIndexes;
 
-    public PlayerData(int money = 500, int curStage = 1, int curLevel = 1, List<int> purchaseIndexes = null)
+    public PlayerData(int money = 500, int curStage = 0, int curLevel = 0, List<int> purchaseIndexes = null)
     {
         Money = money;
         CurrentStage = curStage;
