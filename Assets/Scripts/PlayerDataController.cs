@@ -11,15 +11,16 @@ public class PlayerData
     public int Money;
     public int CurrentStage;
     public int CurrentLevel;
-    public List<int> PurchaseIndexes;
+    //list of bought items, string - item name, int - count
+    public Dictionary<string, int> PurchaseIndexes;
 
-    public PlayerData(int money = 500, int curStage = 0, int curLevel = 0, List<int> purchaseIndexes = null)
+    public PlayerData(int money = 500, int curStage = 0, int curLevel = 0, Dictionary<string, int> purchaseIndexes = null)
     {
         Money = money;
         CurrentStage = curStage;
         CurrentLevel = curLevel;
         if (purchaseIndexes == null)
-            PurchaseIndexes = new List<int>();
+            PurchaseIndexes = new Dictionary<string, int>();
         else
             PurchaseIndexes = purchaseIndexes;
     }
@@ -62,9 +63,29 @@ public class PlayerDataController
         Data.Money += value;
     }
 
-    public void ItemPurchased(int itemIndex)
+    public void ItemPurchased(string itemIndex)
     {
-        Data.PurchaseIndexes.Add(itemIndex);
+        if (Data.PurchaseIndexes.ContainsKey(itemIndex))
+        {
+            ++Data.PurchaseIndexes[itemIndex];
+        }
+        else
+        {
+            Data.PurchaseIndexes.Add(itemIndex, 1);
+        }
+    }
+
+    public int HasItem(string itemIndex)
+    {
+        if (Data.PurchaseIndexes.ContainsKey(itemIndex) && Data.PurchaseIndexes[itemIndex] > 0)
+            return Data.PurchaseIndexes[itemIndex];
+        return 0;
+    }
+
+    public void UseItem(string itemIndex)
+    {
+        if (Data.PurchaseIndexes.ContainsKey(itemIndex) && Data.PurchaseIndexes[itemIndex] > 0)
+            --Data.PurchaseIndexes[itemIndex];
     }
 
     public void WriteData()

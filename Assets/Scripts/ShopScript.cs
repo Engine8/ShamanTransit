@@ -8,74 +8,37 @@ public class ShopScript : MonoBehaviour
     public Text MoneyText;
     public GameObject ItemsHolder;
 
-
-
-    //-------------debug -----------
-    private struct Item
-    {
-        public int index;
-        public int money;
-    }
-
-    private Item[] Items;
-
-    //------------------------------
+    public List<ShopItem> ShopItems;
 
     public Animator manyMoneyAnimation;
 
     private void Start()
     {
-        //------------debug----------
-        Items = new Item[ItemsHolder.transform.childCount];
-        for (int i = 0; i < ItemsHolder.transform.childCount; ++i)
+        foreach (var item in ShopItems)
         {
-            Items[i].index = i;
-            Items[i].money = i * 100 + 100;
-           
-            Transform itemUiTransform = ItemsHolder.transform.GetChild(i).transform;
-            //set name
-            itemUiTransform.Find("Name").GetComponent<Text>().text = $"Item {i}";
-            //set price
-            Button buyButton = itemUiTransform.Find("Buy").GetComponent<Button>();
-            buyButton.transform.Find("Text").GetComponent<Text>().text = Items[i].money.ToString();
-
-            //check if player already ought this item, then disable button
-            if (PlayerDataController.Instance.Data.PurchaseIndexes.IndexOf(i) != -1)
-                buyButton.interactable = false;
+            item.OnBuyClick.AddListener(PurchaseItem);
         }
-        //---------------------------
-
         MoneyText.text = PlayerDataController.Instance.Data.Money.ToString();
     }
 
-    public void PurchaseItem(int index)
+    public void PurchaseItem(ShopItem item)
     {
-        Debug.Log($"Purchase items. Input index: {index}");
-        if (Items[index].money <= PlayerDataController.Instance.Data.Money)
+        string itemName = item.GetName();
+        int cost = item.GetCost();
+
+        if (cost <= PlayerDataController.Instance.Data.Money)
         {
-            Debug.Log($"Purchase item { Items[index].index}");
             //change and write data
-            PlayerDataController.Instance.AddMoney(-Items[index].money);
-            PlayerDataController.Instance.ItemPurchased(Items[index].index);
+            PlayerDataController.Instance.AddMoney(-cost);
+            PlayerDataController.Instance.ItemPurchased(itemName);
             PlayerDataController.Instance.WriteData();
-            //disable button
-            ItemsHolder.transform.Find($"Item {Items[index].index}").Find("Buy").GetComponent<Button>().interactable = false;
             //set new money text
             MoneyText.text = PlayerDataController.Instance.Data.Money.ToString();
+            //play animation and other do other processing
+            item.BuyItem();
         }
         else
-        {
-            Debug.Log($"Play animation: Item { Items[index].index}");
-            manyMoneyAnimation.SetTrigger($"Item {Items[index].index}");
-        }
+            item.AnimateError();
     }
-
-    public void Update()
-    {
-        //set new money text
-        MoneyText.text = PlayerDataController.Instance.Data.Money.ToString();
-        //also maybe need to update purchases
-    }
-
-
 }
+
