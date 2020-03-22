@@ -59,14 +59,20 @@ public class ChunksPlacer : MonoBehaviour
         }
     }
 
-    public void OnAttack(GameObject enemy)
+    public void OnAttack(GameObject enemyPrefab)
     {
         GameController.Instance.SetGameMode(1);
-        GameObject newChunk = Instantiate(enemy);
+        GameObject newEnemy = Instantiate(enemyPrefab);
 
-        HitAreaRef.SetEnnemy(newChunk.GetComponent<EnemyController>());
+        EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
+        HitAreaRef.SetEnnemy(enemyController);
         //Debug.Log(newChunk.GetComponent<EnemyController>().GetCount());
-        newChunk.transform.position = new Vector2(player.transform.position.x - 19, -1.81f);
+        newEnemy.transform.position = new Vector2(player.transform.position.x - 19, -1.81f);
+
+        SoundManager.Instance.PlaySoundClip(enemyController.EnterSound, true);
+        if (enemyController.IsCameraShaking)
+            GameController.Instance.ShakeCamera(enemyController.EnterSound.length);
+
     }
 
     private void SpawnChunk()

@@ -283,6 +283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 270ca060b89f8564381aaa1785d70e4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  EnterSound: {fileID: 8300000, guid: 14379b99f4456e4459e46675f9a73c8b, type: 3}
+  AttackSound: {fileID: 0}
+  DieSound: {fileID: 0}
   Wolf:
   - {fileID: 7040827106795177150}
   - {fileID: 7040827107544502493}

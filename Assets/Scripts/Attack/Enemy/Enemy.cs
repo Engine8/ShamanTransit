@@ -7,7 +7,6 @@ public class Enemy : MonoBehaviour
     public int startingHealth;
     public float attackDistanceThreshold;//дистанция атаки
     public int Damage; //урон
-   
     
     private Transform targetPlayer;
     private int Health;
