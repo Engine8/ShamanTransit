@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -293,7 +293,7 @@ MonoBehaviour:
   map:
   - MoneyMultiplier: 100
     IsSnowy: 1
-    WindStatusVar: 2
+    WindStatusVar: 0
     TilePrefabsTurn:
     - {fileID: 4860197548757332440, guid: 5e3e6ba11f5c92945a6e1bcf5e9a387b, type: 3}
     - {fileID: 6986321411085782552, guid: 919f3f99f3e477947b86a4df6905db60, type: 3}
@@ -503,12 +503,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 157602627}
   m_CullTransparentMesh: 0
---- !u!4 &185993230 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-    type: 3}
-  m_PrefabInstance: {fileID: 525730800}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &216815427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1004,85 +998,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc72928b008797840a57abafd9297a16, type: 3}
---- !u!1001 &525730800
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 2109791149}
-    m_Modifications:
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 14.856667
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.3899999
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 15.119999
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0.7066027
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.026696421
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.026696427
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.7066027
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 94.326996
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 89.99999
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 89.99999
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.90000004
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041553, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.9
-      objectReference: {fileID: 0}
-    - target: {fileID: 5752463479927041554, guid: 6b55612d2968f9d4baab7d30588644c6,
-        type: 3}
-      propertyPath: m_Name
-      value: SimpleSnow
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 6b55612d2968f9d4baab7d30588644c6, type: 3}
 --- !u!1 &531170100
 GameObject:
   m_ObjectHideFlags: 0
@@ -2675,10 +2590,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IngameUI: {fileID: 1436279831}
   WinScreen: {fileID: 1985691254}
-  WinMainText: {fileID: 2102672328}
+  WinText: {fileID: 1514433638}
   WinMoneyText: {fileID: 1448413467}
   LoseScreen: {fileID: 463390468}
-  LoseMainText: {fileID: 216815429}
+  LoseText: {fileID: 1031278815}
   AttackUI: {fileID: 1175818795}
   WinSound: {fileID: 8300000, guid: 83c42568cd77d3b429a3e37e718ba491, type: 3}
   DefeatSound: {fileID: 0}
@@ -5163,7 +5078,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1690271514}
-  - {fileID: 185993230}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

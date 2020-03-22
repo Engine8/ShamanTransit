@@ -72,6 +72,7 @@ public class SnowController : MonoBehaviour
             }
             else if (_currentWindTime > (_currentAllWindTime - WindSoundFadingTime) && !_soundMarkedToStop)
             {
+                _soundMarkedToStop = true;
                 SoundManager.Instance.StopLongSound("wind");
             }
 
@@ -130,6 +131,8 @@ public class SnowController : MonoBehaviour
         return time;
     }
 
-
-
+    private void OnDestroy()
+    {
+        SoundManager.Instance.StopLongSound("wind");
+    }
 }

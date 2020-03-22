@@ -15,11 +15,11 @@ public class GameController : MonoBehaviour
     public GameObject IngameUI;
 
     public GameObject WinScreen;
-    public Text WinMainText;
+    public Text WinText;
     public Text WinMoneyText;
     
     public GameObject LoseScreen;
-    public Text LoseMainText;
+    public Text LoseText;
     public GameObject AttackUI;
 
     public AudioClip WinSound;
@@ -106,7 +106,7 @@ public class GameController : MonoBehaviour
         PlayerCharacter.OnDie.AddListener(GameDefeated);
         PlayerCharacter.OnHit.AddListener(OnPlayerHit);
         PlayerCharacter.OnAttackHit.AddListener(OnAttackPlayerHit);
-        PlayerCharacter.OnLevelEnd.AddListener(GameWin);
+        PlayerCharacter.OnLevelEnd.AddListener(LevelEnded);
     }
 
     // Update is called once per frame
@@ -194,18 +194,22 @@ public class GameController : MonoBehaviour
         vignette.intensity.Override(0.25f + 0.30f / PlayerCharacter.MaxHPBattle * (PlayerCharacter.MaxHPBattle - PlayerCharacter.CurrentHPBattle));
     }
 
-    private void ShowEndgameUI(bool isGameWin)
+    private void ShowEndgameUI(bool isGameWin, string addText)
     {
         IngameUI.SetActive(false);
         AttackUI.SetActive(false);
+        //SoundManager.Instance.StopAllSounds();
         if (isGameWin)
         {
             WinScreen.SetActive(true);
+            WinText.text = addText;
             SoundManager.Instance.PlaySoundClip(WinSound, false);
             StartCoroutine(MoneyAnimationStart());
+            LevelPassed();
         }
         else
         {
+            LoseText.text = addText;
             LoseScreen.SetActive(true);
             SoundManager.Instance.PlaySoundClip(DefeatSound, false);
         }
@@ -232,22 +236,36 @@ public class GameController : MonoBehaviour
     private void GameDefeated()
     {
         IsGameEnded = true;
-        ShowEndgameUI(false);
+        ShowEndgameUI(false, "You was eaten");
     }
 
-    private void GameWin()
+    private void LevelEnded()
     {
         IsGameEnded = true;
-        ShowEndgameUI(true);
+        if (PlayerCharacter.SoulCount > 0)
+            ShowEndgameUI(true, "You done it!");
+        else
+            ShowEndgameUI(false, "No souls was collected");
+    }
+
+    private void LevelPassed()
+    {
+        PlayerDataController.Instance.AddMoney(ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount);
+        //consider that stage include only 5 levels
+        if (PlayerDataController.Instance.Data.CurrentLevel == 4)
+        {
+            //++PlayerDataController.Instance.Data.CurrentStage;
+            int x = 1 + 1;
+        }
+        else
+        {
+            ++PlayerDataController.Instance.Data.CurrentLevel;
+        }
+        PlayerDataController.Instance.WriteData();
     }
 
     public void OnContinueButtonClick()
     {
-        PlayerDataController.Instance.AddMoney(ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount);
-        //consider that stage include only 5 levels
-        PlayerDataController.Instance.Data.CurrentLevel = ++PlayerDataController.Instance.Data.CurrentLevel % 5;
-        PlayerDataController.Instance.Data.CurrentStage = PlayerDataController.Instance.Data.CurrentLevel / 5;
-        PlayerDataController.Instance.WriteData();
         loadingComponent.StartLoadLevel("Map");
     }
 
