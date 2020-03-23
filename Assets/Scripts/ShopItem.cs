@@ -17,10 +17,12 @@ public class ShopItem : MonoBehaviour
     private Animator _animator;
     private int _cost;
 
-    public UnityEvent<ShopItem> OnBuyClick;
+    public class BuyEvent : UnityEvent<ShopItem> { }
+    public BuyEvent OnBuyClick;
 
     private void Awake()
     {
+        OnBuyClick = new BuyEvent();
         _animator = GetComponent<Animator>();
         Button button = transform.Find("Buy").GetComponent<Button>();
         button.onClick.AddListener(OnClickResender);
@@ -28,6 +30,15 @@ public class ShopItem : MonoBehaviour
 
         //check if player already have max count of item or max count not restricted
         int PurchasedCount = PlayerDataController.Instance.HasItem(GetName());
+        string countText;
+        if (PurchaseCountAvailable == -1)
+            countText = $"{PurchasedCount}";
+        else if (PurchaseCountAvailable == 0)
+            countText = "";
+        else
+            countText = $"{PurchasedCount} / {PurchaseCountAvailable}";
+
+        transform.Find("Count").GetComponent<Text>().text = countText;
         if (PurchasedCount == PurchaseCountAvailable)
         {
             button.interactable = false;
@@ -43,6 +54,12 @@ public class ShopItem : MonoBehaviour
     public void BuyItem()
     {
         ++PurchasedCount;
+        string countText;
+        if (PurchaseCountAvailable == -1)
+            countText = $"{PurchasedCount}";
+        else
+            countText = $"{PurchasedCount} / {PurchaseCountAvailable}";
+        transform.Find("Count").GetComponent<Text>().text = countText;
         if (PurchasedCount == PurchaseCountAvailable)
         {
             transform.Find("Buy").GetComponent<Button>().interactable = false;

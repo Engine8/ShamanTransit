@@ -14,7 +14,7 @@ public class PlayerData
     //list of bought items, string - item name, int - count
     public Dictionary<string, int> PurchaseIndexes;
 
-    public PlayerData(int money = 500, int curStage = 0, int curLevel = 0, Dictionary<string, int> purchaseIndexes = null)
+    public PlayerData(int money = 100000, int curStage = 0, int curLevel = 0, Dictionary<string, int> purchaseIndexes = null)
     {
         Money = money;
         CurrentStage = curStage;
