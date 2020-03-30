@@ -15,6 +15,7 @@ public class TriggerHelp : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        message.Invoke(MessageUI);
+        if (message != null)
+            message.Invoke(MessageUI);
     }
 }
