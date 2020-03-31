@@ -12,9 +12,9 @@ public class AnimationMovingAct : MonoBehaviour
     void Start()
     {
         text = transform.GetChild(0).GetComponent<Text>();
-        StartCoroutine("ScaleIncrease");
+        StartCoroutine("DecreaseColorAlpha");
     }
-    IEnumerator ScaleIncrease()
+    IEnumerator DecreaseColorAlpha()
     {
         
         while (text.color.a > 0)
@@ -23,9 +23,9 @@ public class AnimationMovingAct : MonoBehaviour
             text.color = new Vector4(0, 0, 0, ( t));
             t -= 0.05f;
         }
-       StartCoroutine("ScaleDecrease");
+       StartCoroutine("IncreaseColorAlpha");
     }
-    IEnumerator ScaleDecrease()
+    IEnumerator IncreaseColorAlpha()
     {
 
         while  (text.color.a < 1)
