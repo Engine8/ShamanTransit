@@ -6,6 +6,10 @@ using UnityEngine.Events;
 public class PlayerController : Movable
 {   
     private static PlayerController _instance;
+
+    public delegate void FinalHelpMessage();
+    public event FinalHelpMessage FinishHelp;
+
     public static PlayerController Instance
     {
         get
@@ -65,13 +69,19 @@ public class PlayerController : Movable
         //#endif
         //GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
+        if (HelpControl.helpControl != null)
+            FinishHelp += HelpControl.helpControl.Move;
     }
 
     private void Update()
     {
+       
         //PC controls
         if (Input.GetButtonDown("Up") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
         {
+            if (FinishHelp != null)
+                FinishHelp.Invoke();
+
             _targetLine -= 1;
             if (_targetLine < 0)
                 _targetLine = 0;
@@ -90,6 +100,11 @@ public class PlayerController : Movable
         //mobile controls
         if (Input.touchCount > 0 && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
         {
+
+            Debug.Log("Смена слоя перед помощу");
+            if (FinishHelp != null)
+                FinishHelp.Invoke();
+
             Touch touch = Input.GetTouch(0);
 
             //Version 1 - deadzone with discrete swipes
@@ -125,7 +140,7 @@ public class PlayerController : Movable
 
             //Version 2 - deadzone with continious swipes
             if (touch.phase == TouchPhase.Moved)
-            {
+            { 
                 // if swipe is vertical
                 if (Mathf.Abs(touch.deltaPosition.y) > Mathf.Abs(touch.deltaPosition.x))
                 {

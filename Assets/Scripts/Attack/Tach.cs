@@ -14,7 +14,7 @@ public class Tach : MonoBehaviour, IPointerDownHandler
     }
     public virtual void OnPointerDown(PointerEventData ped)
     {
-        if(FindObjectOfType<HitArea>())
+        if (FindObjectOfType<HitArea>()) 
              hit.Tach();
     }
 

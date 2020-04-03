@@ -24,6 +24,9 @@ public class Movable : MonoBehaviour
     protected Rigidbody2D _rb2d;
     public AnimationCurve AccelerationCurve;
     protected float _speed;
+
+
+
     public float Speed
     {
         get { return _speed; }
@@ -103,6 +106,8 @@ public class Movable : MonoBehaviour
         OnHit.AddListener(OnHitSoundPlay);
 
         BasicMaxSpeed = MaxSpeed;
+
+  
     }
 
     // Update is called once per frame
@@ -238,7 +243,6 @@ public class Movable : MonoBehaviour
     protected void OnTriggerEnter2D(Collider2D other)
     {
         Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
-        Debug.Log(other.name + " = " + (obstacle != null));
         if (obstacle != null)
         {
             Debug.Log("Collision with obstacle");
