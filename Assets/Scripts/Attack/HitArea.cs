@@ -38,13 +38,14 @@ public class HitArea : MonoBehaviour
                     transform.localEulerAngles = new Vector3(0, 0, Random.Range(20f, 90f));
                     if (_enumy.GetActiv())
                     {
-                        if (_enumy.GetCount() >= 0)
+                        if (_enumy.GetCount() > 0)
                         {
                             _enumy.TakeDamage();
                         }
                         if (_enumy.GetCount() == 0)
                         {
                             sightScale.Stop();
+                            Destroy(_enumy.gameObject, 5f);
                         }
                     }
                     //sightScale.BafSpeed();
