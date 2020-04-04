@@ -12,11 +12,12 @@ public class Enemy : MonoBehaviour
     private int Health;
     private bool dead=false;
     private PlayerController HealsPlayer;
-
+    private Animator _animator;
     void Start()
     {
         targetPlayer = FindObjectOfType<PlayerController>().transform;
         HealsPlayer = targetPlayer.GetComponent<PlayerController>();
+        _animator = GetComponent<Animator>();
         Health = startingHealth;
     }
 
@@ -65,11 +66,17 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         dead = true;
+        _animator.SetBool("IsDead", true);
         if (FindObjectOfType<WolfController>())
         {
-            gameObject.SetActive(false);
+            //gameObject.SetActive(false);
             FindObjectOfType<WolfController>().ChendePosition();
         }
         // GameObject.Destroy(gameObject, 5f);
+    }
+
+    public void OnDeadAnimationEnd()
+    {
+        gameObject.SetActive(false);
     }
 }
