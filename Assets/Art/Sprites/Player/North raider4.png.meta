@@ -1,12 +1,258 @@
 fileFormatVersion: 2
 guid: 1349324f33592344bb70887e31f74302
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -1036014832395936677
+    second: North raider4_0
+  - first:
+      213: -774342837393009803
+    second: North raider4_1
+  - first:
+      213: -381352602526755742
+    second: North raider4_2
+  - first:
+      213: 871538141299810120
+    second: North raider4_3
+  - first:
+      213: -8696618769370792105
+    second: North raider4_4
+  - first:
+      213: -9130712742902057583
+    second: North raider4_5
+  - first:
+      213: -4193732992919155539
+    second: North raider4_6
+  - first:
+      213: -2015391939767426802
+    second: North raider4_7
+  - first:
+      213: -193079375543114291
+    second: North raider4_8
+  - first:
+      213: -3554477266823903993
+    second: North raider4_9
+  - first:
+      213: 2402400564700925135
+    second: North raider4_10
+  - first:
+      213: -7521408072350549973
+    second: North raider4_11
+  - first:
+      213: -3365108826183880146
+    second: North raider4_12
+  - first:
+      213: 6571906800881250150
+    second: North raider4_13
+  - first:
+      213: 9159486992813847543
+    second: North raider4_14
+  - first:
+      213: -3301590599267082139
+    second: North raider4_15
+  - first:
+      213: -7322068415471606824
+    second: North raider4_16
+  - first:
+      213: -1422235626980050680
+    second: North raider4_17
+  - first:
+      213: 4099808612143417826
+    second: North raider4_18
+  - first:
+      213: -2104443823145920083
+    second: North raider4_19
+  - first:
+      213: 1765461372105440599
+    second: North raider4_20
+  - first:
+      213: -4386877505330858052
+    second: North raider4_21
+  - first:
+      213: -8542309048527306843
+    second: North raider4_22
+  - first:
+      213: 1527847156295716144
+    second: North raider4_23
+  - first:
+      213: 1103664413192911517
+    second: North raider4_24
+  - first:
+      213: -6705656777941356202
+    second: North raider4_25
+  - first:
+      213: -2517812337188782507
+    second: North raider4_26
+  - first:
+      213: -5801479202232504358
+    second: North raider4_27
+  - first:
+      213: -2354249023710827267
+    second: North raider4_28
+  - first:
+      213: -2355519531257084515
+    second: North raider4_29
+  - first:
+      213: 883175794495712227
+    second: North raider4_30
+  - first:
+      213: 3817314127555786274
+    second: North raider4_31
+  - first:
+      213: -6939331424761320601
+    second: North raider4_32
+  - first:
+      213: 6866802996086574595
+    second: North raider4_33
+  - first:
+      213: 1600225124849035542
+    second: North raider4_34
+  - first:
+      213: -3960340360766945185
+    second: North raider4_35
+  - first:
+      213: 1801706394081956323
+    second: North raider4_36
+  - first:
+      213: -2374557107504410449
+    second: North raider4_37
+  - first:
+      213: 5151108806589281266
+    second: North raider4_38
+  - first:
+      213: -3112164172484953344
+    second: North raider4_39
+  - first:
+      213: 2575864303375947845
+    second: North raider4_40
+  - first:
+      213: 9128798952870709443
+    second: North raider4_0
+  - first:
+      213: 3598300061661690742
+    second: North raider4_1
+  - first:
+      213: -8384751825651613943
+    second: North raider4_2
+  - first:
+      213: 8208587213440313920
+    second: North raider4_3
+  - first:
+      213: -8368207892123869102
+    second: North raider4_4
+  - first:
+      213: 7979985434552610375
+    second: North raider4_5
+  - first:
+      213: -4925703017097954596
+    second: North raider4_6
+  - first:
+      213: 5091821812088256342
+    second: North raider4_7
+  - first:
+      213: -7224635258851675516
+    second: North raider4_8
+  - first:
+      213: -1073754764090390414
+    second: North raider4_9
+  - first:
+      213: 7427248832648080016
+    second: North raider4_10
+  - first:
+      213: -7401677070380499436
+    second: North raider4_11
+  - first:
+      213: 6725575082264380550
+    second: North raider4_12
+  - first:
+      213: -4063069014430773706
+    second: North raider4_13
+  - first:
+      213: 7770209776151653263
+    second: North raider4_14
+  - first:
+      213: 6569110354883447127
+    second: North raider4_15
+  - first:
+      213: 2174389327819969661
+    second: North raider4_16
+  - first:
+      213: 7548778048870743236
+    second: North raider4_17
+  - first:
+      213: 763524100284021479
+    second: North raider4_18
+  - first:
+      213: -3647858395917211492
+    second: North raider4_19
+  - first:
+      213: 88598910212055924
+    second: North raider4_20
+  - first:
+      213: 4332223152642479672
+    second: North raider4_21
+  - first:
+      213: 8211113195314475290
+    second: North raider4_22
+  - first:
+      213: 6293355397641489699
+    second: North raider4_23
+  - first:
+      213: -227039720682030525
+    second: North raider4_24
+  - first:
+      213: -1510559272362034043
+    second: North raider4_25
+  - first:
+      213: -4587178437431229842
+    second: North raider4_26
+  - first:
+      213: -1616580429957678942
+    second: North raider4_27
+  - first:
+      213: 1398631068506579955
+    second: North raider4_28
+  - first:
+      213: 9187087385485200968
+    second: North raider4_29
+  - first:
+      213: -2513444686733664704
+    second: North raider4_30
+  - first:
+      213: 4472268031072821266
+    second: North raider4_31
+  - first:
+      213: -2178221672761500935
+    second: North raider4_32
+  - first:
+      213: 2568322658025920714
+    second: North raider4_33
+  - first:
+      213: 2265039123201931482
+    second: North raider4_34
+  - first:
+      213: 4056102959453889287
+    second: North raider4_35
+  - first:
+      213: -1823574427900251815
+    second: North raider4_36
+  - first:
+      213: -1180812396070228514
+    second: North raider4_37
+  - first:
+      213: 4480326166356696540
+    second: North raider4_38
+  - first:
+      213: 2459276726167779657
+    second: North raider4_39
+  - first:
+      213: 5026373142559909022
+    second: North raider4_40
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -34,24 +280,24 @@ TextureImporter:
     filterMode: -1
     aniso: -1
     mipBias: -100
-    wrapU: -1
-    wrapV: -1
+    wrapU: 1
+    wrapV: 1
     wrapW: -1
-  nPOTScale: 1
+  nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 0
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 140
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
-  alphaIsTransparency: 0
+  alphaIsTransparency: 1
   spriteTessellationDetail: -1
-  textureType: 0
+  textureType: 8
   textureShape: 1
   singleChannelComponent: 0
   maxTextureSizeSet: 0
@@ -60,7 +306,43 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -72,11 +354,872 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: North raider4_0
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 2936
+        width: 503
+        height: 438
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c801dbf74200be70800000000000000
+      internalID: 9128798952870709443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_1
+      rect:
+        serializedVersion: 2
+        x: 1195
+        y: 2930
+        width: 529
+        height: 440
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b7c9a67dabfe130800000000000000
+      internalID: 3598300061661690742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_2
+      rect:
+        serializedVersion: 2
+        x: 2050
+        y: 2913
+        width: 523
+        height: 438
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f3a3e83a063ab80800000000000000
+      internalID: -8384751825651613943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_3
+      rect:
+        serializedVersion: 2
+        x: 2880
+        y: 2885
+        width: 481
+        height: 439
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a6ce46492cae170800000000000000
+      internalID: 8208587213440313920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_4
+      rect:
+        serializedVersion: 2
+        x: 3744
+        y: 2879
+        width: 445
+        height: 428
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 250265f32472edb80800000000000000
+      internalID: -8368207892123869102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_5
+      rect:
+        serializedVersion: 2
+        x: 4521
+        y: 2889
+        width: 437
+        height: 418
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74eac43197a9ebe60800000000000000
+      internalID: 7979985434552610375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_6
+      rect:
+        serializedVersion: 2
+        x: 5289
+        y: 2904
+        width: 411
+        height: 449
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda7ec4143364abb0800000000000000
+      internalID: -4925703017097954596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_7
+      rect:
+        serializedVersion: 2
+        x: 6081
+        y: 2910
+        width: 426
+        height: 435
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6573b11e5f8c9a640800000000000000
+      internalID: 5091821812088256342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_8
+      rect:
+        serializedVersion: 2
+        x: 407
+        y: 2244
+        width: 504
+        height: 465
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48232648280fcbb90800000000000000
+      internalID: -7224635258851675516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_9
+      rect:
+        serializedVersion: 2
+        x: 1157
+        y: 2193
+        width: 525
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27842862bb14911f0800000000000000
+      internalID: -1073754764090390414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_10
+      rect:
+        serializedVersion: 2
+        x: 1980
+        y: 2220
+        width: 521
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09a6c684673e21760800000000000000
+      internalID: 7427248832648080016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_11
+      rect:
+        serializedVersion: 2
+        x: 2783
+        y: 2216
+        width: 521
+        height: 468
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ef0d59be5f74990800000000000000
+      internalID: -7401677070380499436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_12
+      rect:
+        serializedVersion: 2
+        x: 3663
+        y: 2225
+        width: 492
+        height: 453
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684469857ea065d50800000000000000
+      internalID: 6725575082264380550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_13
+      rect:
+        serializedVersion: 2
+        x: 4464
+        y: 2258
+        width: 485
+        height: 443
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63e05f822441d97c0800000000000000
+      internalID: -4063069014430773706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_14
+      rect:
+        serializedVersion: 2
+        x: 5264
+        y: 2275
+        width: 463
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8b69c18f9455db60800000000000000
+      internalID: 7770209776151653263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_15
+      rect:
+        serializedVersion: 2
+        x: 6013
+        y: 2237
+        width: 475
+        height: 464
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7590b29201b2a2b50800000000000000
+      internalID: 6569110354883447127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_16
+      rect:
+        serializedVersion: 2
+        x: 374
+        y: 1519
+        width: 504
+        height: 466
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d741c10c29bfc2e10800000000000000
+      internalID: 2174389327819969661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_17
+      rect:
+        serializedVersion: 2
+        x: 1121
+        y: 1507
+        width: 525
+        height: 497
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ccf43be3a5a2c860800000000000000
+      internalID: 7548778048870743236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_18
+      rect:
+        serializedVersion: 2
+        x: 1930
+        y: 1526
+        width: 525
+        height: 497
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eaf0e6bf15989a00800000000000000
+      internalID: 763524100284021479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_19
+      rect:
+        serializedVersion: 2
+        x: 2819
+        y: 1507
+        width: 478
+        height: 477
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c98ad68bd14306dc0800000000000000
+      internalID: -3647858395917211492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_20
+      rect:
+        serializedVersion: 2
+        x: 3701
+        y: 1500
+        width: 432
+        height: 458
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4732daa4d34ca3100800000000000000
+      internalID: 88598910212055924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_21
+      rect:
+        serializedVersion: 2
+        x: 4533
+        y: 1509
+        width: 422
+        height: 447
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8365af411062f1c30800000000000000
+      internalID: 4332223152642479672
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_22
+      rect:
+        serializedVersion: 2
+        x: 5319
+        y: 1481
+        width: 409
+        height: 462
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a11fd3162fbb3f170800000000000000
+      internalID: 8211113195314475290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_23
+      rect:
+        serializedVersion: 2
+        x: 6070
+        y: 1466
+        width: 449
+        height: 473
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32d45b9f36d765750800000000000000
+      internalID: 6293355397641489699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_24
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 857
+        width: 503
+        height: 438
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34af7d2b39469dcf0800000000000000
+      internalID: -227039720682030525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_25
+      rect:
+        serializedVersion: 2
+        x: 1106
+        y: 852
+        width: 504
+        height: 435
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58c30b6585a690be0800000000000000
+      internalID: -1510559272362034043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_26
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 859
+        width: 526
+        height: 428
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e62849bd3811750c0800000000000000
+      internalID: -4587178437431229842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_27
+      rect:
+        serializedVersion: 2
+        x: 2751
+        y: 861
+        width: 495
+        height: 419
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a83689f9a0c099e0800000000000000
+      internalID: -1616580429957678942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_28
+      rect:
+        serializedVersion: 2
+        x: 3640
+        y: 867
+        width: 455
+        height: 426
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f3e82aeb8fe86310800000000000000
+      internalID: 1398631068506579955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_29
+      rect:
+        serializedVersion: 2
+        x: 4468
+        y: 882
+        width: 470
+        height: 415
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84e41544d471f7f70800000000000000
+      internalID: 9187087385485200968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_30
+      rect:
+        serializedVersion: 2
+        x: 5281
+        y: 864
+        width: 447
+        height: 452
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04e95accf537e1dd0800000000000000
+      internalID: -2513444686733664704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_31
+      rect:
+        serializedVersion: 2
+        x: 5998
+        y: 876
+        width: 500
+        height: 470
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2106e644410b01e30800000000000000
+      internalID: 4472268031072821266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_32
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 194
+        width: 521
+        height: 478
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa5ef8ede665c1e0800000000000000
+      internalID: -2178221672761500935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_33
+      rect:
+        serializedVersion: 2
+        x: 4556
+        y: 660
+        width: 8
+        height: 7
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac8d83499d384a320800000000000000
+      internalID: 2568322658025920714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_34
+      rect:
+        serializedVersion: 2
+        x: 1083
+        y: 194
+        width: 504
+        height: 417
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad830d4f4190f6f10800000000000000
+      internalID: 2265039123201931482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_35
+      rect:
+        serializedVersion: 2
+        x: 1824
+        y: 192
+        width: 537
+        height: 432
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 703e8a6c62c2a4830800000000000000
+      internalID: 4056102959453889287
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_36
+      rect:
+        serializedVersion: 2
+        x: 2715
+        y: 211
+        width: 478
+        height: 438
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 951f48338bc51b6e0800000000000000
+      internalID: -1823574427900251815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_37
+      rect:
+        serializedVersion: 2
+        x: 3614
+        y: 215
+        width: 458
+        height: 413
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd2bd9c169ec9fe0800000000000000
+      internalID: -1180812396070228514
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_38
+      rect:
+        serializedVersion: 2
+        x: 4461
+        y: 208
+        width: 446
+        height: 414
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdd149719e05d2e30800000000000000
+      internalID: 4480326166356696540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_39
+      rect:
+        serializedVersion: 2
+        x: 5272
+        y: 194
+        width: 411
+        height: 455
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 949bd93172b112220800000000000000
+      internalID: 2459276726167779657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: North raider4_40
+      rect:
+        serializedVersion: 2
+        x: 6022
+        y: 206
+        width: 413
+        height: 432
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e94e8d60eb341c540800000000000000
+      internalID: 5026373142559909022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 

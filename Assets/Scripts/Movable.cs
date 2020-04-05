@@ -22,6 +22,7 @@ public class Movable : MonoBehaviour
     public UnityEvent OnChangeLineEnd;
 
     protected Rigidbody2D _rb2d;
+    protected Animator _animator;
     public AnimationCurve AccelerationCurve;
     protected float _speed;
 
@@ -86,6 +87,7 @@ public class Movable : MonoBehaviour
     protected void Start()
     {
         _rb2d = GetComponent<Rigidbody2D>();
+        _animator = GetComponent<Animator>();
         _speed = StartSpeed;
         _jumpStatus = 0;
 
@@ -113,7 +115,7 @@ public class Movable : MonoBehaviour
     // Update is called once per frame
     protected void FixedUpdate()
     {
-        if (!GameController.Instance.IsGameEnded)
+        if (!_isDead && !GameController.Instance.IsGameEnded)
         {
             //calculate acceleration on earth (x coordinate)
             if (_jumpStatus == 0)
@@ -262,7 +264,7 @@ public class Movable : MonoBehaviour
             {
                 if (OnDie != null)
                 {
-                    OnDie.Invoke();
+                    DieStart();
                 }
             }
             else if (obstacle.Type == Obstacle.ObstacleType.Slower)
@@ -283,8 +285,7 @@ public class Movable : MonoBehaviour
         OnAttackHit.Invoke();
         if (CurrentHPBattle <= 0 && !_isDead)
         {
-            _isDead = true;
-             OnDie.Invoke();
+            DieStart();
         }
     }
 
@@ -326,5 +327,14 @@ public class Movable : MonoBehaviour
         if (soundPlayStatus == 1)
             SoundManager.Instance.PlaySoundClip(StepSound, true);
         StepSnow.Play();
+    }
+
+    public void DieStart()
+    {
+        _isDead = true;
+
+        _animator.SetBool("IsDead", true);
+
+        OnDie.Invoke();
     }
 }

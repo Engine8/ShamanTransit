@@ -39,7 +39,6 @@ public class PlayerController : Movable
     private bool _isSwipe = false;
 
     private ParticleSystemRenderer _stepParticleRenderer;
-    private Animator _animator;
 
     private void Awake()
     {
@@ -51,7 +50,6 @@ public class PlayerController : Movable
 
         _instance = this;
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _animator = GetComponent<Animator>();
         soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
     }
 
@@ -67,7 +65,7 @@ public class PlayerController : Movable
                 Handheld.Vibrate();
         });
         //#endif
-        //GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
+        GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
         if (HelpControl.helpControl != null)
             FinishHelp += HelpControl.helpControl.Move;
@@ -77,7 +75,7 @@ public class PlayerController : Movable
     {
        
         //PC controls
-        if (Input.GetButtonDown("Up") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
+        if (Input.GetButtonDown("Up") && !_isLineSwapBlocked /*&& !GameController.Instance.IsAttackMode*/)
         {
             if (FinishHelp != null)
                 FinishHelp.Invoke();
@@ -86,13 +84,13 @@ public class PlayerController : Movable
             if (_targetLine < 0)
                 _targetLine = 0;
         }
-        else if (Input.GetButtonDown("Down") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
+        else if (Input.GetButtonDown("Down") && !_isLineSwapBlocked /*&& !GameController.Instance.IsAttackMode*/)
         {
             _targetLine += 1;
             if (_targetLine > 2)
                 _targetLine = 2;
         }
-        else if (Input.GetButtonDown("Jump") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode && _jumpStatus == 0)
+        else if (Input.GetButtonDown("Jump") && !_isLineSwapBlocked /*&& !GameController.Instance.IsAttackMode*/ && _jumpStatus == 0)
         {
             _jumpStatus = 1;
         }
@@ -200,9 +198,15 @@ public class PlayerController : Movable
     void OnGameModeChanged()
     {
         if (GameController.Instance.IsAttackMode)
+        {
+            _animator.SetBool("Battle", true);
             _isLineSwapBlocked = true;
+        }
         else
+        {
+            _animator.SetBool("Battle", false);
             _isLineSwapBlocked = false;
+        }
     }
 
     override public void ChangeSortingLayer()
@@ -237,18 +241,9 @@ public class PlayerController : Movable
         soulKeeper.DeleteSoul();
     }
 
-    public void SetAnimAttack()
+    public void PlayAnimAttack()
     {
         //StartCoroutine("AttackAnimation");
         _animator.Play("Player_Attack");
     }
-    /*
-    private IEnumerator AttackAnimation()
-    {
-
-        _animator.SetBool("Attack", true);
-        yield return new WaitForSeconds(0.44f);
-        _animator.SetBool("Attack", false);
-    }
-    */
 }

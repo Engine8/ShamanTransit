@@ -32,9 +32,9 @@ public class Enemy : MonoBehaviour
 
         if (Type == EnemyType.Bear && PlayerDataController.Instance.HasItem("Something strange") != 0)
         {
+            _animator.SetBool("IsSpecial", true);
             SpriteRenderer renderer = GetComponent<SpriteRenderer>();
             renderer.sprite = SpecialSprite;
-           
         }
     }
 
