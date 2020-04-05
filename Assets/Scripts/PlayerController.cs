@@ -58,13 +58,13 @@ public class PlayerController : Movable
     {
         _stepParticleRenderer = StepSnow.gameObject.GetComponent<ParticleSystemRenderer>();
         //OnChangeLineEnd.AddListener(ChangeSortingLayer);
-        //#if UNITY_ANDROID
+        #if UNITY_ANDROID
         OnAttackHit.AddListener(() => 
         {
             if (GameData.Instance.VibrationStatus)
                 Handheld.Vibrate();
         });
-        //#endif
+        #endif
         GameController.Instance.OnGameModeChanged.AddListener(OnGameModeChanged);
         base.Start();
         if (HelpControl.helpControl != null)
@@ -179,8 +179,10 @@ public class PlayerController : Movable
         if (other.gameObject.CompareTag("Obstacle"))
         {
             DeleteSoul();
+#if UNITY_ANDROID
             if (GameData.Instance.VibrationStatus)
                 Handheld.Vibrate();
+#endif
         }
         else if (other.gameObject.CompareTag("TriggerEnd"))
         {
