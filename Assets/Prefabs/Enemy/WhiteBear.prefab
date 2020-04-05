@@ -117,7 +117,7 @@ MonoBehaviour:
   AttackSound: {fileID: 0}
   DieSound: {fileID: 0}
   IsCameraShaking: 1
-  speed: 13
+  speed: 8
 --- !u!95 &3786425029537678825
 Animator:
   serializedVersion: 3
