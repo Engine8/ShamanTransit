@@ -455,6 +455,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6316404828414724302}
     m_Modifications:
+    - target: {fileID: 2564287118517443156, guid: cc72928b008797840a57abafd9297a16,
+        type: 3}
+      propertyPath: RotationModule.enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564287118517443156, guid: cc72928b008797840a57abafd9297a16,
+        type: 3}
+      propertyPath: RotationModule.curve.scalar
+      value: -0.43633232
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564287118517443156, guid: cc72928b008797840a57abafd9297a16,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 2.3561945
+      objectReference: {fileID: 0}
+    - target: {fileID: 3591812865308104191, guid: cc72928b008797840a57abafd9297a16,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ec301a058d5ac28409d5d8410c351bf6, type: 2}
+    - target: {fileID: 3591812865308104191, guid: cc72928b008797840a57abafd9297a16,
+        type: 3}
+      propertyPath: m_RenderAlignment
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6517424867006369962, guid: cc72928b008797840a57abafd9297a16,
         type: 3}
       propertyPath: m_Name

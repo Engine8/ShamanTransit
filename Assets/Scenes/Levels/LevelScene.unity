@@ -3507,6 +3507,31 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 2058194129}
+    - target: {fileID: 2564287118154477605, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564287118154477605, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: InitialModule.gravityModifier.scalar
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564287118154477605, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564287118154477605, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: RotationModule.curve.scalar
+      value: -0.61086524
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564287118154477605, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 5832798928230983044, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3596,6 +3621,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: PlayerCharacter
+      objectReference: {fileID: 0}
+    - target: {fileID: 6944552730057980090, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.64
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a63c9639cfa74ff4790736be51718aa3, type: 3}
