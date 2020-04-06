@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+
 
 public class WolfController :  EnemyController
 {
@@ -12,6 +14,15 @@ public class WolfController :  EnemyController
     private float nextAttackTime;
     private int countWolf = 4;
     private PlayerController HealsPlayer;
+
+    //Destroyed in HitArea class
+    private void OnDestroy()
+    {
+        //Destroy all wolfes released from controller's transform
+        foreach (var wolf in Wolf)
+            Destroy(wolf.gameObject);
+    }
+
     void Start()
     {
         _facktSpeed = speed;

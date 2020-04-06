@@ -30,7 +30,7 @@ public class HitArea : MonoBehaviour
     {
         if (!sightScale.GetVictory())
         {
-            PlayerController.Instance.SetAnimAttack();
+            PlayerController.Instance.PlayAnimAttack();
             if (Arrow.localEulerAngles.z <= (transform.localEulerAngles.z + 3) && Arrow.localEulerAngles.z >= (sightScale.SpeedRotate > 0 ? transform.localEulerAngles.z - 16 : transform.localEulerAngles.z - 16))
             {
                 if (Time.time > _pauseAttacksHit)
@@ -38,13 +38,14 @@ public class HitArea : MonoBehaviour
                     transform.localEulerAngles = new Vector3(0, 0, Random.Range(20f, 90f));
                     if (_enumy.GetActiv())
                     {
-                        if (_enumy.GetCount() >= 0)
+                        if (_enumy.GetCount() > 0)
                         {
                             _enumy.TakeDamage();
                         }
                         if (_enumy.GetCount() == 0)
                         {
                             sightScale.Stop();
+                            Destroy(_enumy.gameObject, 5f);
                         }
                     }
                     //sightScale.BafSpeed();

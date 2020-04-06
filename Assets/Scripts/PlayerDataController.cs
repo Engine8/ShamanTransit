@@ -48,6 +48,7 @@ public class PlayerDataController
         if (_instance == null)
             _instance = new PlayerDataController();
         Debug.Log(Application.persistentDataPath + "/data.dat");
+        _instance.LoadData();
     }
 
     private PlayerDataController()
@@ -77,7 +78,10 @@ public class PlayerDataController
 
     public int HasItem(string itemIndex)
     {
-        if (Data.PurchaseIndexes.ContainsKey(itemIndex) && Data.PurchaseIndexes[itemIndex] > 0)
+        Dictionary<string, int> dict = Data.PurchaseIndexes;
+
+        bool ok = Data.PurchaseIndexes.ContainsKey(itemIndex);
+        if (ok && Data.PurchaseIndexes[itemIndex] > 0)
             return Data.PurchaseIndexes[itemIndex];
         return 0;
     }

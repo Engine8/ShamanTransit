@@ -67,6 +67,8 @@ public class GameController : MonoBehaviour
 #if UNITY_EDITOR
         SoundManager.Initialize();
         GameData.Initialize();
+        if (PlayerDataController.Instance == null)
+            PlayerDataController.Initialize();
 #endif
     }
 

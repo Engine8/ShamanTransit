@@ -10,6 +10,9 @@ public class BearController : EnemyController
     private PlayerController HealsPlayer;
     private Enemy Bear;
     private float nextAttackTime;
+
+    //Destoyed in HitArea class
+
     void Start()
     {
         HealsPlayer = FindObjectOfType<PlayerController>().GetComponent<PlayerController>();
@@ -43,7 +46,7 @@ public class BearController : EnemyController
             }
             else
             {
-                Bear.gameObject.GetComponent<SpriteRenderer>().color = Color.black;
+                //Bear.gameObject.GetComponent<SpriteRenderer>().color = Color.black;
             }
         }
     }
