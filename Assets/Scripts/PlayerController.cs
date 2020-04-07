@@ -20,12 +20,12 @@ public class PlayerController : Movable
 
 
     private SpriteRenderer _spriteRenderer;
-    private SoulKeeper soulKeeper;
+    private SoulKeeper _soulKeeper;
     public int SoulCount
     {
         get
         {
-            return soulKeeper.GetSoulCount();
+            return _soulKeeper.GetSoulCount();
         }
     }
 
@@ -39,6 +39,8 @@ public class PlayerController : Movable
     private bool _isSwipe = false;
 
     private ParticleSystemRenderer _stepParticleRenderer;
+    private TouchObject _secondChanceClickArea;
+    public UnityEvent OnSecondChanceClick;
 
     private void Awake()
     {
@@ -50,7 +52,9 @@ public class PlayerController : Movable
 
         _instance = this;
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
+        _soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
+        _secondChanceClickArea = GetComponent<TouchObject>();
+        _secondChanceClickArea.IsActive = false;
     }
 
     // Start is called before the first frame update
@@ -216,31 +220,31 @@ public class PlayerController : Movable
         if (_targetLine == 0)
         {
             _spriteRenderer.sortingLayerName = "Line1";
-            soulKeeper.SetSoulsSortingLayer("Line1");
+            _soulKeeper.SetSoulsSortingLayer("Line1");
             _stepParticleRenderer.sortingLayerName = "Line1";
         }
         else if (_targetLine == 1)
         {
             _spriteRenderer.sortingLayerName = "Line2";
-            soulKeeper.SetSoulsSortingLayer("Line2");
+            _soulKeeper.SetSoulsSortingLayer("Line2");
             _stepParticleRenderer.sortingLayerName = "Line1";
         }
         else
         {
             _spriteRenderer.sortingLayerName = "Line3";
-            soulKeeper.SetSoulsSortingLayer("Line3");
+            _soulKeeper.SetSoulsSortingLayer("Line3");
             _stepParticleRenderer.sortingLayerName = "Line1";
         }
     }
 
     public void AddSoul()
     {
-        soulKeeper.AddSoul();
+        _soulKeeper.AddSoul();
     }
 
     public void DeleteSoul()
     {
-        soulKeeper.DeleteSoul();
+        _soulKeeper.DeleteSoul();
     }
 
     public void PlayAnimAttack()
@@ -248,4 +252,17 @@ public class PlayerController : Movable
         //StartCoroutine("AttackAnimation");
         _animator.Play("Player_Attack");
     }
+
+    public override void OnDieAnimationEnd()
+    {
+        _secondChanceClickArea.IsActive = true;
+        OnDie.Invoke();
+    }
+
+    private void OnSecondChanceAreaClick()
+    {
+        if (OnSecondChanceClick != null)
+            OnSecondChanceClick.Invoke();
+    }
+
 }

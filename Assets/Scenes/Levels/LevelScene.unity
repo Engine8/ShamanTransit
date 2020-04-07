@@ -2107,7 +2107,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1175818796
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2584,6 +2584,9 @@ MonoBehaviour:
   loadingComponent: {fileID: 1981370313}
   SnowPrefab: {fileID: 5752463479927041554, guid: 6b55612d2968f9d4baab7d30588644c6,
     type: 3}
+  GlobalLight: {fileID: 1277333766}
+  PlayerDeadColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
+  DieTime: 2
 --- !u!4 &1414940576
 Transform:
   m_ObjectHideFlags: 0
@@ -3229,7 +3232,7 @@ MonoBehaviour:
   m_XDamping: 0.4
   m_YDamping: 1
   m_ZDamping: 1
-  m_ScreenX: 1
+  m_ScreenX: 0.5
   m_ScreenY: 0.72
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
@@ -4391,7 +4394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109791147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.6666665, y: -0.4499998, z: -10.82}
+  m_LocalPosition: {x: 0, y: -0.4499998, z: -10.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1690271514}

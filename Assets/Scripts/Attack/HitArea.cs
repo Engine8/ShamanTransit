@@ -19,6 +19,8 @@ public class HitArea : MonoBehaviour
         sightScale = transform.parent.GetComponent<SightScale>();
         MissAr = transform.parent.gameObject.GetComponent<Image>();
         transform.localEulerAngles = new Vector3(0, 0, 60);
+
+        PlayerController.Instance.OnDie.AddListener(OnPlayerCharacterDie);
     }
 
     public void SetEnnemy(EnemyController value)
@@ -70,4 +72,12 @@ public class HitArea : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         MissAr.color = Color.white;
     }
+
+    //Delete enemies objects when player character dies
+    public void OnPlayerCharacterDie()
+    {
+        sightScale.Stop();
+        Destroy(_enumy.gameObject);
+    }
+
 }

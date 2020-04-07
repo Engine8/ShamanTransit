@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
 using UnityEngine.Events;
+using UnityEngine.Experimental.Rendering.Universal;
 using Cinemachine;
 
 public class GameController : MonoBehaviour
@@ -54,6 +55,16 @@ public class GameController : MonoBehaviour
 
     public GameObject SnowPrefab;
 
+    /*
+     * Player die variables
+     */
+    public Light2D GlobalLight;
+    private Color _defaultColor;
+    public Color PlayerDeadColor;
+    //Time for player to enable second life
+    public float DieTime = 2f;
+    private bool _secondChance = false;
+
     private void Awake()
     {
         if (Instance == null)
@@ -75,8 +86,6 @@ public class GameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>().m_ScreenX = 0.58f;
-
         bool isSnowy = false;
         WindStatus windStatus;
         ChunksPlacer.Instance.GetSnowInfo(out isSnowy, out windStatus);
@@ -105,10 +114,12 @@ public class GameController : MonoBehaviour
 
         volumeProfile = MainCameraVolume.profile;
 
-        PlayerCharacter.OnDie.AddListener(GameDefeated);
+        PlayerCharacter.OnDie.AddListener(OnPlayerDie);
         PlayerCharacter.OnHit.AddListener(OnPlayerHit);
         PlayerCharacter.OnAttackHit.AddListener(OnAttackPlayerHit);
         PlayerCharacter.OnLevelEnd.AddListener(LevelEnded);
+
+        _defaultColor = GlobalLight.color;
     }
 
     // Update is called once per frame
@@ -116,6 +127,8 @@ public class GameController : MonoBehaviour
     {
         if (!IsGameEnded)
         {
+            //Moon and sun movement
+            /*
             //calculate moon or sun position
             _unitsPassed += PlayerCharacter.transform.position.x - _lastPlayerCharacterXPosition;
             _lastPlayerCharacterXPosition = PlayerCharacter.transform.position.x;
@@ -131,7 +144,7 @@ public class GameController : MonoBehaviour
                               - MainCamera.ViewportToWorldPoint(new Vector3(0f, 1f, MainCamera.transform.position.z)).x;
             //Debug.Log($"CameraWidth = {cameraWidth}");
             Moon.Offset = new Vector2( cameraWidth * routeDoneInPercents / 100, 0);
-
+            */
             if (_isNeedToRefreshCamera)
             {
                 _currentRefreshCameraTime += Time.deltaTime;
@@ -234,6 +247,47 @@ public class GameController : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
     }
+
+    private void OnPlayerDie()
+    {
+        //check if the second life item purchased
+        if (PlayerDataController.Instance.HasItem("Second life") != 0)
+        {
+            StartCoroutine(SecondChanceAnimate());
+            //PlayerDataController.Instance.UseItem("Second life");
+            //graphics
+            Debug.Log("Player died");
+            //PlayerCharacter;
+        }
+        else
+            GameDefeated();
+    }
+
+    //Update global light each frame for DieTime seconds or until player's click
+    IEnumerator SecondChanceAnimate()
+    {
+        _secondChance = true;
+        float curTime = 0f;
+        bool end = false;
+        while (!end)
+        {
+            curTime += Time.deltaTime;
+            if (curTime > DieTime)
+            {
+                curTime = DieTime;
+                end = true;
+            }
+
+            float t = curTime / DieTime;
+            Color curGlobalLightColor = Color.Lerp(_defaultColor, PlayerDeadColor, t);
+            GlobalLight.color = curGlobalLightColor;
+            yield return null;
+        }
+        //if coroutine has not been break this means player didn't use second life and game is defeated
+        GameDefeated();
+    }
+
+
 
     private void GameDefeated()
     {
