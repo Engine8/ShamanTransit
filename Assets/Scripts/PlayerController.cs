@@ -55,6 +55,7 @@ public class PlayerController : Movable
         _soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
         _secondChanceClickArea = GetComponent<TouchObject>();
         _secondChanceClickArea.IsActive = false;
+        _secondChanceClickArea.OnClick.AddListener(OnSecondChanceAreaClick);
     }
 
     // Start is called before the first frame update
@@ -261,8 +262,12 @@ public class PlayerController : Movable
 
     private void OnSecondChanceAreaClick()
     {
+        Debug.Log("On second chance clicked!");
         if (OnSecondChanceClick != null)
+        {
             OnSecondChanceClick.Invoke();
+        }
+        _secondChanceClickArea.IsActive = false;
     }
 
 }

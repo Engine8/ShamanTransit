@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.Events;
 
-public class TouchObject : MonoBehaviour, IPointerDownHandler
+public class TouchObject : MonoBehaviour
 {
     public UnityEvent OnClick;
     public bool IsActive;
 
-    public virtual void OnPointerDown(PointerEventData ped)
+    public void OnMouseDown()
     {
         if (IsActive && OnClick != null)
+        {
+            Debug.Log("Click mouse!");
             OnClick.Invoke();
+        }
     }
 }

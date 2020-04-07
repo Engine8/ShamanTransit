@@ -64,6 +64,7 @@ public class GameController : MonoBehaviour
     //Time for player to enable second life
     public float DieTime = 2f;
     private bool _secondChance = false;
+    private Coroutine _secondChanceCoroutine = null;
 
     private void Awake()
     {
@@ -118,6 +119,7 @@ public class GameController : MonoBehaviour
         PlayerCharacter.OnHit.AddListener(OnPlayerHit);
         PlayerCharacter.OnAttackHit.AddListener(OnAttackPlayerHit);
         PlayerCharacter.OnLevelEnd.AddListener(LevelEnded);
+        PlayerCharacter.OnSecondChanceClick.AddListener(RevivePlayerCharacter);
 
         _defaultColor = GlobalLight.color;
     }
@@ -253,7 +255,7 @@ public class GameController : MonoBehaviour
         //check if the second life item purchased
         if (PlayerDataController.Instance.HasItem("Second life") != 0)
         {
-            StartCoroutine(SecondChanceAnimate());
+            _secondChanceCoroutine = StartCoroutine(SecondChanceAnimate());
             //PlayerDataController.Instance.UseItem("Second life");
             //graphics
             Debug.Log("Player died");
@@ -287,6 +289,16 @@ public class GameController : MonoBehaviour
         GameDefeated();
     }
 
+    private void RevivePlayerCharacter()
+    {
+        //Stop SecondChanceAnimation coroutine
+        if (_secondChanceCoroutine != null)
+        {
+            StopCoroutine(_secondChanceCoroutine);
+            _secondChanceCoroutine = null;
+            Debug.Log("Second chance activated");
+        }
+    }
 
 
     private void GameDefeated()
