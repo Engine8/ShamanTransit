@@ -256,7 +256,7 @@ public class GameController : MonoBehaviour
         if (PlayerDataController.Instance.HasItem("Second life") != 0)
         {
             _secondChanceCoroutine = StartCoroutine(SecondChanceAnimate());
-            //PlayerDataController.Instance.UseItem("Second life");
+            PlayerDataController.Instance.UseItem("Second life");
             //graphics
             Debug.Log("Player died");
             //PlayerCharacter;
@@ -285,8 +285,31 @@ public class GameController : MonoBehaviour
             GlobalLight.color = curGlobalLightColor;
             yield return null;
         }
+        _secondChance = false;
         //if coroutine has not been break this means player didn't use second life and game is defeated
         GameDefeated();
+    }
+
+    //Update global light each frame for DieTime seconds or until player's click
+    IEnumerator RestoreColors()
+    {
+        Color startColor = GlobalLight.color;
+        float curTime = 0f;
+        bool end = false;
+        while (!end)
+        {
+            curTime += Time.deltaTime;
+            if (curTime > 1f)
+            {
+                curTime = 1f;
+                end = true;
+            }
+
+            float t = curTime;
+            Color curGlobalLightColor = Color.Lerp(startColor, _defaultColor, t);
+            GlobalLight.color = curGlobalLightColor;
+            yield return null;
+        }
     }
 
     private void RevivePlayerCharacter()
@@ -298,8 +321,8 @@ public class GameController : MonoBehaviour
             _secondChanceCoroutine = null;
             Debug.Log("Second chance activated");
         }
+        StartCoroutine(RestoreColors());
     }
-
 
     private void GameDefeated()
     {

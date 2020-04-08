@@ -29,6 +29,11 @@ public class PlayerController : Movable
         }
     }
 
+    public ParticleSystem ReviveMarketParticle;
+    public Material DefaultMaterial;
+    public Material ReviveMaterial;
+    public float ReviveTime = 1f;
+
     public UnityEvent OnLevelEnd;
 
     public Cinemachine.CinemachineVirtualCamera Camera;
@@ -256,6 +261,9 @@ public class PlayerController : Movable
 
     public override void OnDieAnimationEnd()
     {
+        ParticleSystemRenderer psRenderer = ReviveMarketParticle.GetComponent<ParticleSystemRenderer>();
+        psRenderer.sortingLayerName = _spriteRenderer.sortingLayerName;
+        ReviveMarketParticle.Play();
         _secondChanceClickArea.IsActive = true;
         OnDie.Invoke();
     }
@@ -268,6 +276,42 @@ public class PlayerController : Movable
             OnSecondChanceClick.Invoke();
         }
         _secondChanceClickArea.IsActive = false;
+        _animator.SetBool("IsDead", false);
+        _animator.SetBool("IsRevived", true);
+
+        //change material?
+        StartCoroutine(ReviveAnimate());
+
+        ReviveMarketParticle.Stop();
+    }
+
+    //Called on end of revive animation and restores status of character
+    public void EndRevive()
+    {
+        _animator.SetBool("IsRevived", false);
+        _speed = 0;
+        _isDead = false;
+    }
+
+    IEnumerator ReviveAnimate()
+    {
+        _spriteRenderer.material = ReviveMaterial;
+        float curTime = 0;
+        bool end = false;
+        while (!end)
+        {
+            curTime += Time.deltaTime;
+            if (curTime >= ReviveTime)
+            {
+                curTime = ReviveTime;
+                end = true;
+            }
+
+            float power = Mathf.Sin(Mathf.PI * curTime);
+            ReviveMaterial.SetFloat("_Power", power);
+            yield return null;
+        }
+        _spriteRenderer.material = DefaultMaterial;
     }
 
 }

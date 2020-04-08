@@ -2603,7 +2603,7 @@ MonoBehaviour:
     type: 3}
   GlobalLight: {fileID: 1277333766}
   PlayerDeadColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
-  DieTime: 2
+  DieTime: 10
 --- !u!4 &1414940576
 Transform:
   m_ObjectHideFlags: 0
@@ -3582,6 +3582,21 @@ PrefabInstance:
       propertyPath: Camera
       value: 
       objectReference: {fileID: 2109791148}
+    - target: {fileID: 6316404828414724298, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: ReviveMarketParticle
+      value: 
+      objectReference: {fileID: 1933361172}
+    - target: {fileID: 6316404828414724298, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: ReviveMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: 4fb07a59149cf9b4b8bac8833b8f90a0, type: 2}
+    - target: {fileID: 6316404828414724298, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: DefaultMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
     - target: {fileID: 6316404828414724302, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3664,6 +3679,12 @@ MonoBehaviour:
 --- !u!4 &1900739573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6316404828414724302, guid: a63c9639cfa74ff4790736be51718aa3,
+    type: 3}
+  m_PrefabInstance: {fileID: 1900739570}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &1933361172 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5191225153518991743, guid: a63c9639cfa74ff4790736be51718aa3,
     type: 3}
   m_PrefabInstance: {fileID: 1900739570}
   m_PrefabAsset: {fileID: 0}
