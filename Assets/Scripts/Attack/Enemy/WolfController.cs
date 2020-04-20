@@ -15,6 +15,8 @@ public class WolfController :  EnemyController
     private int countWolf = 4;
     private PlayerController HealsPlayer;
 
+    bool isAttack = false;
+    bool CR_running = false;
     //Destroyed in HitArea class
     private void OnDestroy()
     {
@@ -52,11 +54,15 @@ public class WolfController :  EnemyController
         _facktSpeed = 16;
         yield return new WaitForSeconds(1.4f);
         _facktSpeed = speed;
+
     }
     public void ChendePosition()
     {
         --countWolf;
+       
         int indexPosition = 0;
+        if (!CR_running)
+            StopCoroutine("ChangePosition");
         for (int i = 0; i < 4; ++i)
         {
             if (!Wolf[i].GetDead())
@@ -72,9 +78,9 @@ public class WolfController :  EnemyController
 
     IEnumerator ChangePosition(Transform wolfA, Vector3 wolfB)
     {
-      
-        Vector3 newPositionA = new Vector3((float)System.Math.Round((double)wolfB.x, 1), (float)System.Math.Round((double)wolfB.y, 1), wolfB.z);
+        CR_running = true;
 
+        Vector3 newPositionA = new Vector3((float)System.Math.Round((double)wolfB.x, 1), (float)System.Math.Round((double)wolfB.y, 1), wolfB.z);
 
         while (wolfA.localPosition != newPositionA)
         {
@@ -87,32 +93,53 @@ public class WolfController :  EnemyController
 
             yield return new WaitForSeconds(0.01f);
         }
+        CR_running = false;
     }
     void FixedUpdate()
     {
-        if (!HealsPlayer.GetDead())
+        if(!HealsPlayer.GetDead())
         {
             this.gameObject.transform.localPosition = new Vector2(this.gameObject.transform.localPosition.x + _facktSpeed * Time.deltaTime, this.gameObject.transform.localPosition.y);
-            if (Time.time > nextAttackTime)
+            if (!isAttack)
             {
-                Attack();
+                if (Time.time > nextAttackTime)
+                    Attack();
+
+                if ((countWolf > 0) && ((4 - countWolf) != 2))
+                    Wolf[4 - countWolf].transform.localPosition += new Vector3(0.2f * Time.deltaTime, 0f, 0f);
             }
         }
     }
+ 
     public override void Attack()
     {
+        StartCoroutine("PauseForAttack");
         if (countWolf > 0)
         {
             if ((4 - countWolf) == 2)
-                Wolf[Random.Range(2, 4)].StartAttack();
+            {
+                int rand = Random.Range(2, 4);
+                Wolf[rand].StartAttack(Wolf[rand].transform.localPosition);
+            }
             else
-                Wolf[4 - countWolf].StartAttack();
+                Wolf[4 - countWolf].StartAttack(_positionWolf[4 - countWolf][0]);
             nextAttackTime = Time.time + timeBetweenAttacks;
         }
     }
+    IEnumerator PauseForAttack()
+    {
+        isAttack = true;
+        yield return new WaitForSeconds(3f);
+        isAttack = false;
+    }
+
     public override void TakeDamage()
     {
+
+        StartCoroutine("PauseForAttack");
+        nextAttackTime = Time.time + timeBetweenAttacks;
         Wolf[(4 - countWolf)].TakeDamage(1);
+        ChendePosition();
     }
     public override  int GetCount()
     {
