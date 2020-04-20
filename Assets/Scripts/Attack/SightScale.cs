@@ -9,11 +9,15 @@ public class SightScale : MonoBehaviour
 
     private bool _Victory;
     public float SpeedRotate;
+    private float _startAngle;
+    private void Start()
+    {
+        _startAngle = Arrow.localEulerAngles.z;
+    }
     public void BafSpeed()
     {
         if (GameController.Instance.IsAttackMode)
         {
-
             SpeedRotate = (Mathf.Abs(SpeedRotate) + 1) * SpeedRotate / Mathf.Abs(SpeedRotate);
 
             if (Mathf.Abs(SpeedRotate) > 4)
@@ -44,11 +48,11 @@ public class SightScale : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Arrow.localEulerAngles.z >= 90f && SpeedRotate > 0)
-        {
+        if (Arrow.localEulerAngles.z < +_startAngle)
+        {            
             SpeedRotate *= -1;
         }
-        else if (Arrow.localEulerAngles.z <= 1f || Arrow.localEulerAngles.z >= 350f && SpeedRotate < 0)
+        else if (Arrow.localEulerAngles.z >= (_startAngle + 90f)) 
         {
             SpeedRotate *= -1;
         }
