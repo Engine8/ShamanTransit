@@ -329,12 +329,15 @@ public class Movable : MonoBehaviour
         StepSnow.Play();
     }
 
-    public void DieStart()
+    public virtual void DieStart()
     {
         _isDead = true;
 
         _animator.SetBool("IsDead", true);
+    }
 
+    public virtual void OnDieAnimationEnd()
+    {
         OnDie.Invoke();
     }
 }
