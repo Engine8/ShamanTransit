@@ -52,7 +52,7 @@ public class SightScale : MonoBehaviour
         {            
             SpeedRotate *= -1;
         }
-        else if (Arrow.localEulerAngles.z >= (_startAngle + 90f)) 
+        else if (Arrow.localEulerAngles.z >= (_startAngle + 88f)) 
         {
             SpeedRotate *= -1;
         }
