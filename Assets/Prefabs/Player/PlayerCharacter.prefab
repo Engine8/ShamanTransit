@@ -291,6 +291,10 @@ MonoBehaviour:
   PhysicsLayerChangeTime2: 0.7
   StepSound: {fileID: 8300000, guid: 0f628cc64303f02438b5b6a9e10b226b, type: 3}
   StepSnow: {fileID: 2564287118154477605}
+  ReviveMarketParticle: {fileID: 5191225153518991743}
+  DefaultMaterial: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  ReviveMaterial: {fileID: 2100000, guid: 4fb07a59149cf9b4b8bac8833b8f90a0, type: 2}
+  ReviveTime: 1
   OnLevelEnd:
     m_PersistentCalls:
       m_Calls: []
@@ -526,18 +530,33 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2564287118517443156, guid: cc72928b008797840a57abafd9297a16,
         type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564287118517443156, guid: cc72928b008797840a57abafd9297a16,
+        type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564287118517443156, guid: cc72928b008797840a57abafd9297a16,
+        type: 3}
+      propertyPath: InitialModule.startRotation.scalar
+      value: 2.3561945
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564287118517443156, guid: cc72928b008797840a57abafd9297a16,
+        type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 2564287118517443156, guid: cc72928b008797840a57abafd9297a16,
+        type: 3}
       propertyPath: RotationModule.enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2564287118517443156, guid: cc72928b008797840a57abafd9297a16,
         type: 3}
       propertyPath: RotationModule.curve.scalar
-      value: -0.43633232
-      objectReference: {fileID: 0}
-    - target: {fileID: 2564287118517443156, guid: cc72928b008797840a57abafd9297a16,
-        type: 3}
-      propertyPath: InitialModule.startRotation.scalar
-      value: 2.3561945
+      value: -0.61086524
       objectReference: {fileID: 0}
     - target: {fileID: 3591812865308104191, guid: cc72928b008797840a57abafd9297a16,
         type: 3}
@@ -557,7 +576,7 @@ PrefabInstance:
     - target: {fileID: 6944552731783828171, guid: cc72928b008797840a57abafd9297a16,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.63
+      value: -0.64
       objectReference: {fileID: 0}
     - target: {fileID: 6944552731783828171, guid: cc72928b008797840a57abafd9297a16,
         type: 3}
@@ -781,6 +800,12 @@ PrefabInstance:
 --- !u!4 &5191225153518991742 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1141367608499692418, guid: b452b4c0385fab045bf7d429f7b77573,
+    type: 3}
+  m_PrefabInstance: {fileID: 5178044523230567164}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &5191225153518991743 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1141367608499692419, guid: b452b4c0385fab045bf7d429f7b77573,
     type: 3}
   m_PrefabInstance: {fileID: 5178044523230567164}
   m_PrefabAsset: {fileID: 0}
