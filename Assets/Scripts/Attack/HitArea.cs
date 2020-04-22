@@ -48,7 +48,7 @@ public class HitArea : MonoBehaviour
                         if (_enumy.GetCount() == 0)
                         {
                             sightScale.Stop();
-                           Destroy(_enumy.gameObject, 5f);
+                           Destroy(_enumy.gameObject, 9f);
                         }
                     }
                     //sightScale.BafSpeed();

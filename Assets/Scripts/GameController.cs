@@ -63,7 +63,7 @@ public class GameController : MonoBehaviour
         IsGameEnded = false;
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
-
+        StartCoroutine(CameraShaking(0));
 #if UNITY_EDITOR
         SoundManager.Initialize();
         GameData.Initialize();
@@ -294,9 +294,13 @@ public class GameController : MonoBehaviour
 
         OnGameModeChanged.Invoke();
     }
-
-    public void ShakeCamera(float time)
+    public void NextScene()
     {
+        GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel <= 5 ? GameData.Instance.CurrentLevel + 1:0) ;
+        loadingComponent.StartLoadLevel("LevelScene");
+    }
+    public void ShakeCamera(float time)
+    {        
         if (!IsGameEnded)
         {
             StartCoroutine(CameraShaking(time));
