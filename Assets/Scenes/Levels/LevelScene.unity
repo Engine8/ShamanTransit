@@ -3581,13 +3581,10 @@ PrefabInstance:
       propertyPath: DefaultMaterial
       value: 
       objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
-      propertyPath: CurrentHPBattle
-      value: 999
-      objectReference: {fileID: 0}
     - target: {fileID: 6316404828414724298, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: MaxHPBattle
-      value: 999
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6316404828414724302, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
