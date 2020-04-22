@@ -20,19 +20,14 @@ public class PlayerController : Movable
 
 
     private SpriteRenderer _spriteRenderer;
-    private SoulKeeper _soulKeeper;
+    private SoulKeeper soulKeeper;
     public int SoulCount
     {
         get
         {
-            return _soulKeeper.GetSoulCount();
+            return soulKeeper.GetSoulCount();
         }
     }
-
-    public ParticleSystem ReviveMarketParticle;
-    public Material DefaultMaterial;
-    public Material ReviveMaterial;
-    public float ReviveTime = 1f;
 
     public UnityEvent OnLevelEnd;
 
@@ -44,8 +39,6 @@ public class PlayerController : Movable
     private bool _isSwipe = false;
 
     private ParticleSystemRenderer _stepParticleRenderer;
-    private TouchObject _secondChanceClickArea;
-    public UnityEvent OnSecondChanceClick;
 
     private void Awake()
     {
@@ -57,10 +50,7 @@ public class PlayerController : Movable
 
         _instance = this;
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
-        _secondChanceClickArea = GetComponent<TouchObject>();
-        _secondChanceClickArea.IsActive = false;
-        _secondChanceClickArea.OnClick.AddListener(OnSecondChanceAreaClick);
+        soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
     }
 
     // Start is called before the first frame update
@@ -226,31 +216,31 @@ public class PlayerController : Movable
         if (_targetLine == 0)
         {
             _spriteRenderer.sortingLayerName = "Line1";
-            _soulKeeper.SetSoulsSortingLayer("Line1");
+            soulKeeper.SetSoulsSortingLayer("Line1");
             _stepParticleRenderer.sortingLayerName = "Line1";
         }
         else if (_targetLine == 1)
         {
             _spriteRenderer.sortingLayerName = "Line2";
-            _soulKeeper.SetSoulsSortingLayer("Line2");
+            soulKeeper.SetSoulsSortingLayer("Line2");
             _stepParticleRenderer.sortingLayerName = "Line1";
         }
         else
         {
             _spriteRenderer.sortingLayerName = "Line3";
-            _soulKeeper.SetSoulsSortingLayer("Line3");
+            soulKeeper.SetSoulsSortingLayer("Line3");
             _stepParticleRenderer.sortingLayerName = "Line1";
         }
     }
 
     public void AddSoul()
     {
-        _soulKeeper.AddSoul();
+        soulKeeper.AddSoul();
     }
 
     public void DeleteSoul()
     {
-        _soulKeeper.DeleteSoul();
+        soulKeeper.DeleteSoul();
     }
 
     public void PlayAnimAttack()
@@ -258,60 +248,4 @@ public class PlayerController : Movable
         //StartCoroutine("AttackAnimation");
         _animator.Play("Player_Attack");
     }
-
-    public override void OnDieAnimationEnd()
-    {
-        ParticleSystemRenderer psRenderer = ReviveMarketParticle.GetComponent<ParticleSystemRenderer>();
-        psRenderer.sortingLayerName = _spriteRenderer.sortingLayerName;
-        ReviveMarketParticle.Play();
-        _secondChanceClickArea.IsActive = true;
-        OnDie.Invoke();
-    }
-
-    private void OnSecondChanceAreaClick()
-    {
-        Debug.Log("On second chance clicked!");
-        if (OnSecondChanceClick != null)
-        {
-            OnSecondChanceClick.Invoke();
-        }
-        _secondChanceClickArea.IsActive = false;
-        _animator.SetBool("IsDead", false);
-        _animator.SetBool("IsRevived", true);
-
-        //change material?
-        StartCoroutine(ReviveAnimate());
-
-        ReviveMarketParticle.Stop();
-    }
-
-    //Called on end of revive animation and restores status of character
-    public void EndRevive()
-    {
-        _animator.SetBool("IsRevived", false);
-        _speed = 0;
-        _isDead = false;
-    }
-
-    IEnumerator ReviveAnimate()
-    {
-        _spriteRenderer.material = ReviveMaterial;
-        float curTime = 0;
-        bool end = false;
-        while (!end)
-        {
-            curTime += Time.deltaTime;
-            if (curTime >= ReviveTime)
-            {
-                curTime = ReviveTime;
-                end = true;
-            }
-
-            float power = Mathf.Sin(Mathf.PI * curTime);
-            ReviveMaterial.SetFloat("_Power", power);
-            yield return null;
-        }
-        _spriteRenderer.material = DefaultMaterial;
-    }
-
 }

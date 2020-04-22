@@ -382,7 +382,7 @@ MonoBehaviour:
     - {fileID: -5517131477564077679, guid: 3d0c6cd3017e76744b7779b0938f6704, type: 3}
     - {fileID: 6986321411085782552, guid: 919f3f99f3e477947b86a4df6905db60, type: 3}
     - {fileID: 8621921015806925681, guid: a5eb45ceed99d9c45aad87640aba5c01, type: 3}
-    - {fileID: 6732543394565603975, guid: 6dca0911ef38dea4f8e401ebce16ece0, type: 3}
+    - {fileID: 6581053277576116797, guid: fd513ebcd43f9d4498f5f2f5be59e006, type: 3}
     - {fileID: 8065324253729329736, guid: abb4f9c9d1f775f4f9542fb348aaf55d, type: 3}
     - {fileID: 7334647115942283197, guid: 79d66dcf964197c4b84f5a42f3a29e53, type: 3}
     - {fileID: 5300754900179048595, guid: 1d723cd9baac56e4190447ae9db35222, type: 3}
@@ -2200,7 +2200,6 @@ GameObject:
   - component: {fileID: 1208487114}
   - component: {fileID: 1208487112}
   - component: {fileID: 1208487115}
-  - component: {fileID: 1208487113}
   m_Layer: 9
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2299,22 +2298,6 @@ MonoBehaviour:
   m_RequiresDepthTexture: 0
   m_RequiresColorTexture: 0
   m_Version: 2
---- !u!114 &1208487113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1208487109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c49b4cc203aa6414fae5c798d1d0e7d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_EventMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_MaxRayIntersections: 0
 --- !u!81 &1208487114
 AudioListener:
   m_ObjectHideFlags: 0
@@ -2659,9 +2642,6 @@ MonoBehaviour:
   loadingComponent: {fileID: 1981370313}
   SnowPrefab: {fileID: 5752463479927041554, guid: 6b55612d2968f9d4baab7d30588644c6,
     type: 3}
-  GlobalLight: {fileID: 1277333766}
-  PlayerDeadColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
-  DieTime: 10
 --- !u!4 &1414940576
 Transform:
   m_ObjectHideFlags: 0
@@ -3568,19 +3548,6 @@ PrefabInstance:
       objectReference: {fileID: 2109791148}
     - target: {fileID: 6316404828414724298, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
-      propertyPath: ReviveMarketParticle
-      value: 
-      objectReference: {fileID: 1933361172}
-    - target: {fileID: 6316404828414724298, guid: a63c9639cfa74ff4790736be51718aa3,
-        type: 3}
-      propertyPath: ReviveMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: 4fb07a59149cf9b4b8bac8833b8f90a0, type: 2}
-    - target: {fileID: 6316404828414724298, guid: a63c9639cfa74ff4790736be51718aa3,
-        type: 3}
-      propertyPath: DefaultMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
       propertyPath: CurrentHPBattle
       value: 999
       objectReference: {fileID: 0}
@@ -3671,12 +3638,6 @@ MonoBehaviour:
 --- !u!4 &1900739573 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6316404828414724302, guid: a63c9639cfa74ff4790736be51718aa3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1900739570}
-  m_PrefabAsset: {fileID: 0}
---- !u!198 &1933361172 stripped
-ParticleSystem:
-  m_CorrespondingSourceObject: {fileID: 5191225153518991743, guid: a63c9639cfa74ff4790736be51718aa3,
     type: 3}
   m_PrefabInstance: {fileID: 1900739570}
   m_PrefabAsset: {fileID: 0}
