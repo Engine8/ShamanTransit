@@ -23,6 +23,12 @@ public class Enemy : MonoBehaviour
     private bool dead=false;
     private PlayerController HealsPlayer;
     private Animator _animator;
+
+    float timeBetweenAttacks = 1; //скорость атаки
+    float nextAttackTime;
+    Vector3 _oldPosition;
+
+
     void Start()
     {
         targetPlayer = FindObjectOfType<PlayerController>().transform;
@@ -42,15 +48,16 @@ public class Enemy : MonoBehaviour
     {
         return dead;
     }
-    public void StartAttack()
+    public void StartAttack(Vector3 oldPosition)
     {
+        _oldPosition = oldPosition;
         StartCoroutine(Attack());
     }
     IEnumerator Attack() //интерфейс перебора колекций
     {
-        Vector3 originalPosition = transform.localPosition;
-        Vector3 dirToTarget = (targetPlayer.position - transform.position).normalized;
-        Vector3 attackPosition = transform.localPosition + dirToTarget * 4;
+        Vector3 originalPosition = _oldPosition!=Vector3.zero? _oldPosition : transform.localPosition;
+        Vector3 dirToTarget = (new Vector3(targetPlayer.position.x-0.5f, targetPlayer.position.y+0.5f, targetPlayer.position.z) - transform.position).normalized;
+        Vector3 attackPosition = transform.localPosition + dirToTarget * 3;
 
         float attackSpeed = 3;
         float percent = 0;
@@ -66,7 +73,7 @@ public class Enemy : MonoBehaviour
                 HealsPlayer.TakeDamage(Damage);
             }
             percent += Time.deltaTime * attackSpeed;
-            float interpolation = (-Mathf.Pow(percent, 2) + percent) * 4;
+            float interpolation = (-Mathf.Pow(percent, 2) + percent) * 3.5f;
             transform.localPosition = Vector3.Lerp(originalPosition, attackPosition, interpolation);
 
             yield return null;
@@ -92,7 +99,7 @@ public class Enemy : MonoBehaviour
              */
             transform.SetParent(null, true);
             //gameObject.SetActive(false);
-            FindObjectOfType<WolfController>().ChendePosition();
+           // FindObjectOfType<WolfController>().ChendePosition();
         }
         // GameObject.Destroy(gameObject, 5f);
     }
@@ -100,6 +107,5 @@ public class Enemy : MonoBehaviour
     public void OnDeadAnimationEnd()
     {
         gameObject.SetActive(false);
-        
     }
 }

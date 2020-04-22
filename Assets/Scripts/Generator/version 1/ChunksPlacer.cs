@@ -67,7 +67,7 @@ public class ChunksPlacer : MonoBehaviour
         EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
         HitAreaRef.SetEnnemy(enemyController);
         //Debug.Log(newChunk.GetComponent<EnemyController>().GetCount());
-        newEnemy.transform.position = new Vector2(player.transform.position.x - 19, -1.81f);
+        newEnemy.transform.position = new Vector2(player.transform.position.x - 18, -1.81f);
 
         SoundManager.Instance.PlaySoundClip(enemyController.EnterSound, true);
         if (enemyController.IsCameraShaking)

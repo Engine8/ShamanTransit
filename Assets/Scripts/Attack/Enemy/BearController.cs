@@ -39,7 +39,7 @@ public class BearController : EnemyController
                 {
                     if (Time.time > nextAttackTime)
                     {
-                        Bear.StartAttack();
+                        Bear.StartAttack(Vector3.zero);
                         nextAttackTime = Time.time + 20;
                     }
                 }
