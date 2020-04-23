@@ -154,15 +154,19 @@ public class Movable : MonoBehaviour
             if (isLineChangeEnded)
             {
                 _curLine = _targetLine;
-                _isLineSwapBlocked = false;
+                //this helps to stay on middle line in attack start
+                if (!GameController.Instance.IsAttackMode)
+                    _isLineSwapBlocked = false;
                 OnChangeLineEnd.Invoke();
             }
             else if (isJumpEnded)
             {
+                //if (!GameController.Instance.IsAttackMode)
+                //in battle after jump character must be able to move (see MoveToMiddleLine function)
                 _isLineSwapBlocked = false;
                 _jumpStatus = 0;
             }
-            if (!_isLineSwapBlocked)
+            if (isLineChangeEnded || !_isLineSwapBlocked)
             {
                 _timeCounter = 0f;
                 _curveModif = 0f;
@@ -339,5 +343,35 @@ public class Movable : MonoBehaviour
     public virtual void OnDieAnimationEnd()
     {
         OnDie.Invoke();
+    }
+
+    public IEnumerator MoveToMiddleLine()
+    {
+        //wait until jump ends
+        while (_jumpStatus == 1)
+            yield return null;
+
+        //character moves on line (after jump character CAN change line in any case)
+        if (!_isLineSwapBlocked)
+        {
+            _isLineSwapBlocked = true;
+            if (_curLine == 1)
+                yield break;
+
+            _targetLine = 1;
+        }
+        //character moves between lines
+        else if (_isLineSwapBlocked && _jumpStatus == 0)
+        {
+            //if character moves to middle line, nothing needs to be done
+            if (_targetLine == 1)
+                yield break;
+
+            //else character moves from middle line to line with _targetLine index
+            //inverse movement
+            _timeCounter = LineSwapTime - _timeCounter;
+            _curLine = _targetLine;
+            _targetLine = 1;
+        }
     }
 }

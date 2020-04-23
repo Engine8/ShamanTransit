@@ -212,6 +212,7 @@ public class PlayerController : Movable
         if (GameController.Instance.IsAttackMode)
         {
             _animator.SetBool("Battle", true);
+            StartCoroutine(MoveToMiddleLine());
             _isLineSwapBlocked = true;
         }
         else
