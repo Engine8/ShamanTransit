@@ -1108,7 +1108,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -59.08}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -2.3999786, y: 0}
+  m_AnchoredPosition: {x: -2.3999634, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.9999999, y: 0.000000074505806}
 --- !u!114 &537787946
@@ -1124,6 +1124,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Arrow: {fileID: 283770746}
+  GoodShot: {fileID: 8300000, guid: 3aadd2b9dac84d54a9f86438b849608a, type: 3}
+  BadShot: {fileID: 8300000, guid: 544944982a320094bb4895a7328c316b, type: 3}
 --- !u!1 &708102605
 GameObject:
   m_ObjectHideFlags: 0
@@ -4145,8 +4147,6 @@ MonoBehaviour:
   Arrow: {fileID: 283770746}
   HitArea: {fileID: 537787945}
   SpeedRotate: 2
-  speedText: {fileID: 0}
-  angleText: {fileID: 0}
 --- !u!1 &2010842711
 GameObject:
   m_ObjectHideFlags: 0
