@@ -14,6 +14,9 @@ public class HitArea : MonoBehaviour
     private float _pauseAttacksMiss = 0;
     private float _pauseAttacksHit = 0;
 
+    public AudioClip GoodShot;
+    public AudioClip BadShot;
+
     void Start()
     {
         sightScale = transform.parent.GetComponent<SightScale>();
@@ -43,7 +46,8 @@ public class HitArea : MonoBehaviour
                     {
                         if (_enumy.GetCount() > 0)
                         {
-                           _enumy.TakeDamage();
+                            _enumy.TakeDamage();
+                            SoundManager.Instance.PlaySoundClip(GoodShot, true);
                         }
                         if (_enumy.GetCount() == 0)
                         {
@@ -51,12 +55,13 @@ public class HitArea : MonoBehaviour
                            Destroy(_enumy.gameObject, 9f);
                         }
                     }
-                    //sightScale.BafSpeed();
+                    sightScale.CalculateSpeed();
                     _pauseAttacksHit = Time.time + 0.5f;
                 }
             }
             else
             {
+                SoundManager.Instance.PlaySoundClip(BadShot, true);
                 StartCoroutine("Miss");
                 if (Time.time > _pauseAttacksMiss)
                 {
@@ -70,6 +75,7 @@ public class HitArea : MonoBehaviour
     IEnumerator Miss()
     {
         MissAr.color = Color.red;
+
         yield return new WaitForSeconds(0.1f);
         MissAr.color = Color.white;
     }

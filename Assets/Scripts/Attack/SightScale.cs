@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SightScale : MonoBehaviour
 {
@@ -10,22 +11,35 @@ public class SightScale : MonoBehaviour
     private bool _Victory;
     public float SpeedRotate;
     private float _startAngle;
+
     private void Start()
     {
         _startAngle = Arrow.localEulerAngles.z;
-    }
-    public void BafSpeed()
-    {
-        if (GameController.Instance.IsAttackMode)
-        {
-            SpeedRotate = (Mathf.Abs(SpeedRotate) + 1) * SpeedRotate / Mathf.Abs(SpeedRotate);
 
+    }
+    public void CalculateSpeed()
+    {
+        //if (GameController.Instance.IsAttackMode)
+        //{
+            //full random
+        int res = Random.Range(0, 100);
+        if (res < 5)
+            SpeedRotate = 1 * Mathf.Sign(SpeedRotate);
+        else if (res < 35)
+            SpeedRotate = 2 * Mathf.Sign(SpeedRotate);
+        else
+            SpeedRotate = 3 * Mathf.Sign(SpeedRotate);
+
+        /*
+            SpeedRotate = (Mathf.Abs(SpeedRotate) + 1) * SpeedRotate / Mathf.Abs(SpeedRotate);
             if (Mathf.Abs(SpeedRotate) > 4)
                 SpeedRotate = 2 * SpeedRotate / Mathf.Abs(SpeedRotate);
             if (Random.Range(0, 100) == 46)
                 SpeedRotate = 1 * SpeedRotate / Mathf.Abs(SpeedRotate);
         }
+        */
     }
+   
     public void Stop()
     {
         _Victory = true;
@@ -44,11 +58,12 @@ public class SightScale : MonoBehaviour
         }
         _Victory = false;
         gameObject.transform.parent.gameObject.SetActive(false);
+        CalculateSpeed();
     }
 
     void FixedUpdate()
     {
-        if (Arrow.localEulerAngles.z < +_startAngle)
+        if (Arrow.localEulerAngles.z < _startAngle)
         {            
             SpeedRotate *= -1;
         }
