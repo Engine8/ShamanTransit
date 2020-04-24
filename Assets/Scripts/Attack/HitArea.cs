@@ -22,7 +22,7 @@ public class HitArea : MonoBehaviour
         sightScale = transform.parent.GetComponent<SightScale>();
         MissAr = transform.parent.gameObject.GetComponentInChildren<Image>();
         transform.localEulerAngles = new Vector3(0, 0, -60);
-        PlayerController.Instance.OnDie.AddListener(OnPlayerCharacterDie);
+        PlayerController.Instance.OnDieStart.AddListener(OnPlayerCharacterDie);
     }
 
     public void SetEnnemy(EnemyController value)
