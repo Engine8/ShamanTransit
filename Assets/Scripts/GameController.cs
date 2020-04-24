@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -18,14 +19,14 @@ public class GameController : MonoBehaviour
     public GameObject WinScreen;
     public Text WinText;
     public Text WinMoneyText;
-    
+
     public GameObject LoseScreen;
     public Text LoseText;
     public GameObject AttackUI;
 
     public AudioClip WinSound;
     public AudioClip DefeatSound;
-    
+
     public PlayerController PlayerCharacter;
 
     //Note: is needed to find better solution
@@ -34,11 +35,54 @@ public class GameController : MonoBehaviour
     public Volume MainCameraVolume;
     public VolumeProfile volumeProfile;
     public ParallaxBackground Moon;
-    public float RefreshCameraTime = 0.8f;
-    private float _currentRefreshCameraTime = 0f;
-    public float LookaheadTimeNormal = 0.55f;
-    public float LookaheadTimeAttack = 0.2f;
+
+    //-----------Camera status------------
+    [Serializable]
+    public struct CameraStatusSettings
+    {
+        //Run status
+        [Header("Run status")]
+        public float RefreshTimeRun;
+        public float LookaheadTimeRun;
+        [Range(0, 1)]
+        public float ScreenXPosRun;
+        //Attack status
+        [Header("Attack status")]
+        public float RefreshTimeAttack;
+        public float LookaheadTimeAttack;
+        [Range(0, 1)]
+        public float ScreenXPosAttack;
+        //death status
+        [Header("Death status")]
+        public float RefreshTimeDeath;
+        public float LookaheadTimeDeath;
+        [Range(0, 1)]
+        public float ScreenXPosDeath;
+    }
+    public enum CameraStatusE
+    {
+        Run = 0,
+        Attack = 1,
+        Death = 2,
+    }
+
+    //This variable stores settings
+    public CameraStatusSettings CameraSettings;
+    //These variables stores settings that should be set up
+    private float _targetRefreshCameraTime;
+    private float _targetLookaheadTime;
+    private float _targetScreenXPos;
+    //These variable stores settings that was set up in current status
+    private float _currentRefreshCameraTime;
+    private float _currentLookaheadTime;
+    private float _currentScreenXPos;
+
+    private CameraStatusE _currentCameraStatus;
+    private CameraStatusE _targetCameraStatus;
     private bool _isNeedToRefreshCamera = false;
+    private float _currentRefreshTime = 0f;
+
+    //----------- End Camera status------------
 
     public GameObject StartPoint;
     public GameObject EndPoint;
@@ -115,13 +159,19 @@ public class GameController : MonoBehaviour
 
         volumeProfile = MainCameraVolume.profile;
 
-        PlayerCharacter.OnDie.AddListener(OnPlayerDie);
+        PlayerCharacter.OnDieEnd.AddListener(OnPlayerDie);
         PlayerCharacter.OnHit.AddListener(OnPlayerHit);
         PlayerCharacter.OnAttackHit.AddListener(OnAttackPlayerHit);
         PlayerCharacter.OnLevelEnd.AddListener(LevelEnded);
         PlayerCharacter.OnSecondChanceClick.AddListener(RevivePlayerCharacter);
 
         _defaultColor = GlobalLight.color;
+
+        //set initial camera settings
+        _currentCameraStatus = CameraStatusE.Run;
+        _currentLookaheadTime = CameraSettings.LookaheadTimeRun;
+        _currentRefreshCameraTime = CameraSettings.RefreshTimeRun;
+        _currentScreenXPos = CameraSettings.ScreenXPosRun;
     }
 
     // Update is called once per frame
@@ -149,13 +199,31 @@ public class GameController : MonoBehaviour
             */
             if (_isNeedToRefreshCamera)
             {
-                _currentRefreshCameraTime += Time.deltaTime;
+                _currentRefreshTime += Time.deltaTime;
                 bool isEnded = false;
-                if (_currentRefreshCameraTime >= RefreshCameraTime)
+                if (_currentRefreshTime >= _targetRefreshCameraTime)
                 {
-                    _currentRefreshCameraTime = RefreshCameraTime;
+                    _currentRefreshTime = _targetRefreshCameraTime;
                     isEnded = true;
                 }
+                float refreshValue = _currentRefreshTime / _targetRefreshCameraTime;
+                CinemachineFramingTransposer framTransposer = VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+                framTransposer.m_ScreenX = Mathf.Lerp(_currentScreenXPos, _targetScreenXPos, refreshValue);
+                framTransposer.m_LookaheadTime = Mathf.Lerp(_currentLookaheadTime, _targetLookaheadTime, refreshValue);
+
+                if (isEnded)
+                {
+                    _currentCameraStatus = _targetCameraStatus;
+
+                    _currentLookaheadTime = _targetLookaheadTime;
+                    _currentRefreshCameraTime = _targetRefreshCameraTime;
+                    _currentScreenXPos = _targetScreenXPos;
+
+                    _currentRefreshTime = 0f;
+                    _isNeedToRefreshCamera = false;
+                }
+
+                /* 
                 CinemachineFramingTransposer framTransposer = VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
                 if (IsAttackMode)
                 {
@@ -173,6 +241,7 @@ public class GameController : MonoBehaviour
                     _currentRefreshCameraTime = 0f;
                     _isNeedToRefreshCamera = false;
                 }
+                */
             }
         }
     } 
@@ -252,6 +321,8 @@ public class GameController : MonoBehaviour
 
     private void OnPlayerDie()
     {
+        //set camera target settings
+        SetTargetCameraSettings(CameraStatusE.Death);
         //check if the second life item purchased
         if (PlayerDataController.Instance.HasItem("Second life") != 0)
         {
@@ -314,6 +385,8 @@ public class GameController : MonoBehaviour
 
     private void RevivePlayerCharacter()
     {
+        SetTargetCameraSettings(CameraStatusE.Run);
+
         //Stop SecondChanceAnimation coroutine
         if (_secondChanceCoroutine != null)
         {
@@ -365,29 +438,39 @@ public class GameController : MonoBehaviour
         loadingComponent.StartLoadLevel("LevelScene");
     }
 
-    public void SetGameMode(int gameMode)
+    public void SetGameMode(int gameMode, bool isNeedToChangeCamera)
     {
         if (gameMode == 1)
         {
             IsAttackMode = true;
             AttackUI.SetActive(true);
-            AttackUI.GetComponentInChildren<SightScale>().SpeedRotate = 2f;
-            _isNeedToRefreshCamera = true;
+            //AttackUI.GetComponentInChildren<SightScale>().SpeedRotate = 2f;
+
+            if (isNeedToChangeCamera)
+            {
+                SetTargetCameraSettings(CameraStatusE.Attack);
+            }
         }
         else if (gameMode == 0)
         {
             BattleGameWin();
             IsAttackMode = false;
-            _isNeedToRefreshCamera = true;
+
+            if (isNeedToChangeCamera)
+            {
+                SetTargetCameraSettings(CameraStatusE.Run);
+            }
         }
 
         OnGameModeChanged.Invoke();
     }
+
     public void NextScene()
     {
         GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel <= 5 ? GameData.Instance.CurrentLevel + 1:0) ;
         loadingComponent.StartLoadLevel("LevelScene");
     }
+
     public void ShakeCamera(float time)
     {        
         if (!IsGameEnded)
@@ -405,5 +488,30 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(time);
         shakeSettings.m_FrequencyGain = 0;
         shakeSettings.m_AmplitudeGain = 0;
+    }
+
+    public void SetTargetCameraSettings(CameraStatusE targetStatus)
+    {
+        //set camera run status settings
+        _targetCameraStatus = targetStatus;
+        if (_targetCameraStatus == CameraStatusE.Run)
+        {
+            _targetLookaheadTime = CameraSettings.LookaheadTimeRun;
+            _targetRefreshCameraTime = CameraSettings.RefreshTimeRun;
+            _targetScreenXPos = CameraSettings.ScreenXPosRun;
+        }
+        else if (_targetCameraStatus == CameraStatusE.Attack)
+        {
+            _targetLookaheadTime = CameraSettings.LookaheadTimeAttack;
+            _targetRefreshCameraTime = CameraSettings.RefreshTimeAttack;
+            _targetScreenXPos = CameraSettings.ScreenXPosAttack;
+        }
+        else if (_targetCameraStatus == CameraStatusE.Death)
+        {
+            _targetLookaheadTime = CameraSettings.LookaheadTimeDeath;
+            _targetRefreshCameraTime = CameraSettings.RefreshTimeDeath;
+            _targetScreenXPos = CameraSettings.ScreenXPosDeath;
+        }
+        _isNeedToRefreshCamera = true;
     }
 }
