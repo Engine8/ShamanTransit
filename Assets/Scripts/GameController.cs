@@ -327,16 +327,16 @@ public class GameController : MonoBehaviour
     private void GameDefeated()
     {
         IsGameEnded = true;
-        ShowEndgameUI(false, "You was eaten");
+        ShowEndgameUI(false, "Тебя съели");
     }
 
     private void LevelEnded()
     {
         IsGameEnded = true;
         if (PlayerCharacter.SoulCount > 0)
-            ShowEndgameUI(true, "You done it!");
+            ShowEndgameUI(true, "Ты сделал это!");
         else
-            ShowEndgameUI(false, "No souls was collected");
+            ShowEndgameUI(false, "Не было собрано ни одной души");
     }
 
     private void LevelPassed()

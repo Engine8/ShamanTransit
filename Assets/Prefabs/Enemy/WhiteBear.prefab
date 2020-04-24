@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
-  startingHealth: 1
+  startingHealth: 5
   attackDistanceThreshold: 3.8
   Damage: 5
   SpecialSprite: {fileID: 21300000, guid: c4fb584c9af95ec40b933c892f87d0bc, type: 3}
@@ -117,7 +117,7 @@ MonoBehaviour:
   AttackSound: {fileID: 0}
   DieSound: {fileID: 0}
   IsCameraShaking: 1
-  speed: 8
+  speed: 11
 --- !u!95 &3786425029537678825
 Animator:
   serializedVersion: 3
