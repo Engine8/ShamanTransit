@@ -2648,9 +2648,16 @@ MonoBehaviour:
   MainCameraVolume: {fileID: 2109791150}
   volumeProfile: {fileID: 0}
   Moon: {fileID: 928938403}
-  RefreshCameraTime: 1
-  LookaheadTimeNormal: 0.55
-  LookaheadTimeAttack: 0.3
+  CameraSettings:
+    RefreshTimeRun: 0
+    LookaheadTimeRun: 0
+    ScreenXPosRun: 0
+    RefreshTimeAttack: 0
+    LookaheadTimeAttack: 0
+    ScreenXPosAttack: 0
+    RefreshTimeDeath: 0
+    LookaheadTimeDeath: 0
+    ScreenXPosDeath: 0
   StartPoint: {fileID: 11449643}
   EndPoint: {fileID: 1784547516}
   IsAttackMode: 0

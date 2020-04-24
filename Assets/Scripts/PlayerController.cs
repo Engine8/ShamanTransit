@@ -266,7 +266,7 @@ public class PlayerController : Movable
         psRenderer.sortingLayerName = _spriteRenderer.sortingLayerName;
         ReviveMarketParticle.Play();
         _secondChanceClickArea.IsActive = true;
-        OnDie.Invoke();
+        OnDieEnd.Invoke();
     }
 
     private void OnSecondChanceAreaClick()

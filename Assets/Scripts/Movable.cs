@@ -17,7 +17,8 @@ public class Movable : MonoBehaviour
 
     public AudioClip OnHitSound;
     public UnityEvent OnHit;
-    public UnityEvent OnDie;
+    public UnityEvent OnDieStart;
+    public UnityEvent OnDieEnd;
     public UnityEvent OnAttackHit;
     public UnityEvent OnChangeLineEnd;
 
@@ -266,7 +267,7 @@ public class Movable : MonoBehaviour
 
             if (CurrentHP == 0 || obstacle.Type == Obstacle.ObstacleType.Deadly)
             {
-                if (OnDie != null)
+                if (OnDieEnd != null)
                 {
                     DieStart();
                 }
@@ -338,11 +339,12 @@ public class Movable : MonoBehaviour
         _isDead = true;
 
         _animator.SetBool("IsDead", true);
+        OnDieStart.Invoke();
     }
 
     public virtual void OnDieAnimationEnd()
     {
-        OnDie.Invoke();
+        OnDieEnd.Invoke();
     }
 
     public IEnumerator MoveToMiddleLine()
