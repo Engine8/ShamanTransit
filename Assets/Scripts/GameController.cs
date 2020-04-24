@@ -467,7 +467,7 @@ public class GameController : MonoBehaviour
 
     public void NextScene()
     {
-        GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel <= 5 ? GameData.Instance.CurrentLevel + 1:0) ;
+        GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel < 5 ? GameData.Instance.CurrentLevel + 1:0) ;
         loadingComponent.StartLoadLevel("LevelScene");
     }
 
