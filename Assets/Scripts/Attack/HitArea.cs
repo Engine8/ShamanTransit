@@ -51,7 +51,7 @@ public class HitArea : MonoBehaviour
                         }
                         if (_enumy.GetCount() == 0)
                         {
-                            sightScale.Stop();
+                            sightScale.Stop(true);
                            Destroy(_enumy.gameObject, 9f);
                         }
                     }
@@ -83,7 +83,7 @@ public class HitArea : MonoBehaviour
     //Delete enemies objects when player character dies
     public void OnPlayerCharacterDie()
     {
-        sightScale.Stop();
+        sightScale.Stop(false);
         Destroy(_enumy.gameObject);
     }
 
