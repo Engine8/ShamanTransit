@@ -39,7 +39,11 @@ public class UIStartMenu : MonoBehaviour
     public void StartGame()
     {
         Debug.Log("LoadScene('LevelScene')");
-        SceneManager.LoadScene("LevelScene");
+        //SceneManager.LoadScene("LevelScene");
+
+        //set current level to next available level
+        GameData.Instance.SetCurrentLevel(PlayerDataController.Instance.Data.CurrentStage, PlayerDataController.Instance.Data.CurrentLevel);
+        loadingComponent.StartLoadLevel("LevelScene");
     }
 
     public void Map()

@@ -81,7 +81,6 @@ public class GameController : MonoBehaviour
     private CameraStatusE _targetCameraStatus;
     private bool _isNeedToRefreshCamera = false;
     private float _currentRefreshTime = 0f;
-
     //----------- End Camera status------------
 
     public GameObject StartPoint;
@@ -177,8 +176,6 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (!IsGameEnded)
-        {
             //Moon and sun movement
             /*
             //calculate moon or sun position
@@ -197,51 +194,33 @@ public class GameController : MonoBehaviour
             //Debug.Log($"CameraWidth = {cameraWidth}");
             Moon.Offset = new Vector2( cameraWidth * routeDoneInPercents / 100, 0);
             */
-            if (_isNeedToRefreshCamera)
+        if (_isNeedToRefreshCamera)
+        {
+            _currentRefreshTime += Time.deltaTime;
+            bool isEnded = false;
+            if (_currentRefreshTime >= _targetRefreshCameraTime)
             {
-                _currentRefreshTime += Time.deltaTime;
-                bool isEnded = false;
-                if (_currentRefreshTime >= _targetRefreshCameraTime)
-                {
-                    _currentRefreshTime = _targetRefreshCameraTime;
-                    isEnded = true;
-                }
-                float refreshValue = _currentRefreshTime / _targetRefreshCameraTime;
-                CinemachineFramingTransposer framTransposer = VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-                framTransposer.m_ScreenX = Mathf.Lerp(_currentScreenXPos, _targetScreenXPos, refreshValue);
-                framTransposer.m_LookaheadTime = Mathf.Lerp(_currentLookaheadTime, _targetLookaheadTime, refreshValue);
+                _currentRefreshTime = _targetRefreshCameraTime;
+                isEnded = true;
+            }
+            float refreshValue = _currentRefreshTime / _targetRefreshCameraTime;
+            CinemachineFramingTransposer framTransposer = VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+            framTransposer.m_ScreenX = Mathf.Lerp(_currentScreenXPos, _targetScreenXPos, refreshValue);
+            framTransposer.m_LookaheadTime = Mathf.Lerp(_currentLookaheadTime, _targetLookaheadTime, refreshValue);
 
-                if (isEnded)
-                {
-                    _currentCameraStatus = _targetCameraStatus;
+            if (isEnded)
+            {
+                _currentCameraStatus = _targetCameraStatus;
 
-                    _currentLookaheadTime = _targetLookaheadTime;
-                    _currentRefreshCameraTime = _targetRefreshCameraTime;
-                    _currentScreenXPos = _targetScreenXPos;
+                _currentLookaheadTime = _targetLookaheadTime;
+                _currentRefreshCameraTime = _targetRefreshCameraTime;
+                _currentScreenXPos = _targetScreenXPos;
 
-                    _currentRefreshTime = 0f;
-                    _isNeedToRefreshCamera = false;
-                }
+                _currentRefreshTime = 0f;
+                _isNeedToRefreshCamera = false;
 
-                /* 
-                CinemachineFramingTransposer framTransposer = VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-                if (IsAttackMode)
-                {
-                    framTransposer.m_ScreenX = Mathf.Lerp(0.5f, 1, _currentRefreshCameraTime / RefreshCameraTime);
-                    framTransposer.m_LookaheadTime = Mathf.Lerp(LookaheadTimeNormal, LookaheadTimeAttack, _currentRefreshCameraTime / RefreshCameraTime);
-                }
-                else
-                {
-                    framTransposer.m_ScreenX = Mathf.Lerp(1, 0.5f, _currentRefreshCameraTime / RefreshCameraTime);
-                    framTransposer.m_LookaheadTime = Mathf.Lerp(LookaheadTimeAttack, LookaheadTimeNormal, _currentRefreshCameraTime / RefreshCameraTime);
-                }
-
-                if (isEnded)
-                {
-                    _currentRefreshCameraTime = 0f;
-                    _isNeedToRefreshCamera = false;
-                }
-                */
+                if (PlayerCharacter.GetDead())
+                    ActivateSecondChance();
             }
         }
     } 
@@ -323,14 +302,16 @@ public class GameController : MonoBehaviour
     {
         //set camera target settings
         SetTargetCameraSettings(CameraStatusE.Death);
+    }
+
+    public void ActivateSecondChance()
+    {
         //check if the second life item purchased
         if (PlayerDataController.Instance.HasItem("Second life") != 0)
         {
+            PlayerCharacter.EnableSecondChance();
             _secondChanceCoroutine = StartCoroutine(SecondChanceAnimate());
             PlayerDataController.Instance.UseItem("Second life");
-            //graphics
-            Debug.Log("Player died");
-            //PlayerCharacter;
         }
         else
             GameDefeated();
@@ -356,8 +337,9 @@ public class GameController : MonoBehaviour
             GlobalLight.color = curGlobalLightColor;
             yield return null;
         }
-        _secondChance = false;
         //if coroutine has not been break this means player didn't use second life and game is defeated
+        _secondChance = false;
+        PlayerCharacter.DisableSecondChance();
         GameDefeated();
     }
 
@@ -467,7 +449,7 @@ public class GameController : MonoBehaviour
 
     public void NextScene()
     {
-        GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel <= 5 ? GameData.Instance.CurrentLevel + 1:0) ;
+        GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel < 5 ? GameData.Instance.CurrentLevel + 1:0) ;
         loadingComponent.StartLoadLevel("LevelScene");
     }
 
