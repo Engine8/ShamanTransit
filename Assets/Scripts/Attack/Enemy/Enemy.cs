@@ -97,9 +97,11 @@ public class Enemy : MonoBehaviour
             /*release wolf from controller gameobject
              * WolfController has reference to this object in Wolf array and will delete it in OnDestoy
              */
+           // Vector3 savePosirion = transform.localPosition;
             transform.SetParent(null, true);
+          //  transform.position = new Vector3(transform.position.x, savePosirion.y - 1.81f, savePosirion.z - 1.81f);
             //gameObject.SetActive(false);
-           // FindObjectOfType<WolfController>().ChendePosition();
+            // FindObjectOfType<WolfController>().ChendePosition();
         }
         // GameObject.Destroy(gameObject, 5f);
     }

@@ -135,7 +135,7 @@ public class WolfController :  EnemyController
 
     public override void TakeDamage()
     {
-
+        StopAllCoroutines();
         StartCoroutine("PauseForAttack");
         nextAttackTime = Time.time + timeBetweenAttacks;
         Wolf[(4 - countWolf)].TakeDamage(1);
