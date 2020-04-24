@@ -18,7 +18,6 @@ public class PlayerController : Movable
         }
     }
 
-
     private SpriteRenderer _spriteRenderer;
     private SoulKeeper _soulKeeper;
     public int SoulCount
@@ -262,11 +261,21 @@ public class PlayerController : Movable
 
     public override void OnDieAnimationEnd()
     {
+        OnDieEnd.Invoke();
+    }
+
+    public void EnableSecondChance()
+    {
         ParticleSystemRenderer psRenderer = ReviveMarketParticle.GetComponent<ParticleSystemRenderer>();
         psRenderer.sortingLayerName = _spriteRenderer.sortingLayerName;
         ReviveMarketParticle.Play();
         _secondChanceClickArea.IsActive = true;
-        OnDieEnd.Invoke();
+    }
+
+    public void DisableSecondChance()
+    {
+        ReviveMarketParticle.Stop();
+        _secondChanceClickArea.IsActive = false;
     }
 
     private void OnSecondChanceAreaClick()
@@ -282,7 +291,6 @@ public class PlayerController : Movable
 
         //change material?
         StartCoroutine(ReviveAnimate());
-
         ReviveMarketParticle.Stop();
     }
 
@@ -314,5 +322,4 @@ public class PlayerController : Movable
         }
         _spriteRenderer.material = DefaultMaterial;
     }
-
 }
