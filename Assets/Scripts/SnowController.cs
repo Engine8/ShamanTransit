@@ -51,7 +51,8 @@ public class SnowController : MonoBehaviour
             _particleSystem.Play();
         else
             _particleSystem.Stop();
-
+        _windZone.windMain = 0;
+        _isWindy = false;
         if (WindStatusVar == WindStatus.Random)
             _timeToWind = CalculateRandomTime();
     }
