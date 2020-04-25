@@ -259,6 +259,15 @@ public class PlayerController : Movable
         _animator.Play("Player_Attack");
     }
 
+    public override void DieStart()
+    {
+        _isDead = true;
+
+        _animator.SetBool("IsDead", true);
+        _soulKeeper.ReleaseSouls();
+        OnDieStart.Invoke();
+    }
+
     public override void OnDieAnimationEnd()
     {
         OnDieEnd.Invoke();

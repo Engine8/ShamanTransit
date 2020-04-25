@@ -454,7 +454,7 @@ MonoBehaviour:
     - {fileID: 8882464760559498016, guid: 3ddb989dd4ca2f5428ece3684ccfaaea, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     spawnedChunks: []
-  mapIndex: 4
+  mapIndex: 2
   UIAttack: {fileID: 1997170574}
   chunkPrefabsAttack: {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35,
     type: 3}
@@ -3242,13 +3242,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LookaheadTime: 0.2
+  m_LookaheadTime: 0.5
   m_LookaheadSmoothing: 12.1
   m_LookaheadIgnoreY: 1
   m_XDamping: 0.4
   m_YDamping: 1
   m_ZDamping: 1
-  m_ScreenX: 1
+  m_ScreenX: 0.5
   m_ScreenY: 0.72
   m_CameraDistance: 10
   m_DeadZoneWidth: 0
