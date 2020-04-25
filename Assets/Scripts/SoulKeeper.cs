@@ -35,7 +35,9 @@ public class SoulKeeper : MonoBehaviour
         {
             Soul soulToDelete = SoulList[SoulList.Count - 1];
             SoulList.RemoveAt(SoulList.Count - 1);
-            Destroy(soulToDelete.gameObject);
+            ReleaseSoul(soulToDelete);
+            soulToDelete.transform.SetParent(null, true);
+            //Destroy(soulToDelete.gameObject);
         }
     }
 
@@ -51,5 +53,27 @@ public class SoulKeeper : MonoBehaviour
         {
             soul.spriteRenderer.sortingLayerName = _sortingLayerName;
         }
+    }
+
+    public void ReleaseSoul(Soul soul)
+    {
+        //define direction
+        float angle = Random.Range(60f, 120f);
+        float x = Mathf.Cos(angle * Mathf.PI / 180);
+        float y = Mathf.Sin(angle * Mathf.PI / 180);
+        //Vector3 pointB = 10 * (new Vector3(x, y, 0));
+        //Vector3 pointA = soul.transform.position;
+        Vector3 dir = new Vector3(x, y, 0).normalized;
+        soul.FlyAway(dir);
+    }
+
+
+    public void ReleaseSouls()
+    {
+        foreach(var soul in SoulList)
+        {
+            ReleaseSoul(soul);
+        }
+        SoulList.Clear();
     }
 }
