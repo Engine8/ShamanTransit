@@ -106,8 +106,11 @@ public class GameController : MonoBehaviour
     public Color PlayerDeadColor;
     //Time for player to enable second life
     public float DieTime = 2f;
+    public float EndgameTime = 2f;
     private bool _secondChance = false;
     private Coroutine _secondChanceCoroutine = null;
+
+    delegate void VoidFunc();
 
     private void Awake()
     {
@@ -302,6 +305,13 @@ public class GameController : MonoBehaviour
     {
         //set camera target settings
         SetTargetCameraSettings(CameraStatusE.Death);
+
+        //check second chance availability
+        if (PlayerDataController.Instance.HasItem("Second life") == 0)
+        {
+            StartCoroutine(ChangeGlobalLight(EndgameTime, _defaultColor, PlayerDeadColor, GameDefeated));
+        }
+
     }
 
     public void ActivateSecondChance()
@@ -310,17 +320,18 @@ public class GameController : MonoBehaviour
         if (PlayerDataController.Instance.HasItem("Second life") != 0)
         {
             PlayerCharacter.EnableSecondChance();
-            _secondChanceCoroutine = StartCoroutine(SecondChanceAnimate());
+            SecondChanceStartAnimate();
             PlayerDataController.Instance.UseItem("Second life");
         }
-        else
-            GameDefeated();
     }
 
     //Update global light each frame for DieTime seconds or until player's click
-    IEnumerator SecondChanceAnimate()
+    private void SecondChanceStartAnimate()
     {
         _secondChance = true;
+        _secondChanceCoroutine = StartCoroutine(ChangeGlobalLight(DieTime, _defaultColor, PlayerDeadColor, SecondChanceFailed));
+        /*
+         * backup
         float curTime = 0f;
         bool end = false;
         while (!end)
@@ -341,9 +352,16 @@ public class GameController : MonoBehaviour
         _secondChance = false;
         PlayerCharacter.DisableSecondChance();
         GameDefeated();
+        */
     }
 
-    //Update global light each frame for DieTime seconds or until player's click
+    private void SecondChanceFailed()
+    {
+        _secondChance = false;
+        PlayerCharacter.DisableSecondChance();
+        GameDefeated();
+    }
+
     IEnumerator RestoreColors()
     {
         Color startColor = GlobalLight.color;
@@ -377,6 +395,29 @@ public class GameController : MonoBehaviour
             Debug.Log("Second chance activated");
         }
         StartCoroutine(RestoreColors());
+    }
+
+    private IEnumerator ChangeGlobalLight(float time, Color startColor, Color endColor, VoidFunc func)
+    {
+        float curTime = 0f;
+        bool end = false;
+        while (!end)
+        {
+            curTime += Time.deltaTime;
+            if (curTime > time)
+            {
+                curTime = time;
+                end = true;
+            }
+
+            float t = curTime / time;
+            Color curGlobalLightColor = Color.Lerp(startColor, endColor, t);
+            GlobalLight.color = curGlobalLightColor;
+            yield return null;
+        }
+
+        if (func != null)
+            func();
     }
 
     private void GameDefeated()

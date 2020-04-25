@@ -2646,7 +2646,7 @@ MonoBehaviour:
   LoseText: {fileID: 1031278815}
   AttackUI: {fileID: 1175818795}
   WinSound: {fileID: 8300000, guid: 83c42568cd77d3b429a3e37e718ba491, type: 3}
-  DefeatSound: {fileID: 0}
+  DefeatSound: {fileID: 8300000, guid: 83c42568cd77d3b429a3e37e718ba491, type: 3}
   PlayerCharacter: {fileID: 1900739571}
   MainCamera: {fileID: 1208487111}
   VirtCamera: {fileID: 2109791148}
@@ -2676,6 +2676,7 @@ MonoBehaviour:
   GlobalLight: {fileID: 1277333766}
   PlayerDeadColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
   DieTime: 10
+  EndgameTime: 2
 --- !u!4 &1414940576
 Transform:
   m_ObjectHideFlags: 0
