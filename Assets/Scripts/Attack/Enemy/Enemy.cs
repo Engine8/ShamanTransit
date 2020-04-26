@@ -79,6 +79,7 @@ public class Enemy : MonoBehaviour
             yield return null;
         }
     }
+
     public void TakeDamage(int damage)
     {
         Health -= damage;
@@ -109,5 +110,10 @@ public class Enemy : MonoBehaviour
     public void OnDeadAnimationEnd()
     {
         gameObject.SetActive(false);
+    }
+
+    public void SetStatic()
+    {
+        _animator.SetBool("IsStatic", true);
     }
 }
