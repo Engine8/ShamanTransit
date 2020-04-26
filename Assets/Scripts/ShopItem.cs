@@ -12,7 +12,7 @@ public class ShopItem : MonoBehaviour
      * >0 - restricted count
      */
     public int PurchaseCountAvailable = -1;
-
+    public int ItemId;
     public int PurchasedCount;
     private Animator _animator;
     private int _cost;
@@ -29,7 +29,7 @@ public class ShopItem : MonoBehaviour
         _cost = int.Parse(button.transform.GetChild(0).GetComponent<Text>().text);
 
         //check if player already have max count of item or max count not restricted
-        int PurchasedCount = PlayerDataController.Instance.HasItem(GetName());
+        int PurchasedCount = PlayerDataController.Instance.HasItem(ItemId);
         string countText;
         if (PurchaseCountAvailable == -1)
             countText = $"{PurchasedCount}";
@@ -91,5 +91,10 @@ public class ShopItem : MonoBehaviour
     public int GetCost()
     {
         return _cost;
+    }
+
+    public int GetItemId()
+    {
+        return ItemId;
     }
 }

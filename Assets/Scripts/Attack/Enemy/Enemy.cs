@@ -36,7 +36,7 @@ public class Enemy : MonoBehaviour
         _animator = GetComponent<Animator>();
         Health = startingHealth;
 
-        if (Type == EnemyType.Bear && PlayerDataController.Instance.HasItem("Something strange") != 0)
+        if (Type == EnemyType.Bear && PlayerDataController.Instance.HasItem(3) != 0)
         {
             _animator.SetBool("IsSpecial", true);
             SpriteRenderer renderer = GetComponent<SpriteRenderer>();
@@ -90,7 +90,7 @@ public class Enemy : MonoBehaviour
     void Die()
     {
         dead = true;
-        if (Type != EnemyType.Bear || PlayerDataController.Instance.HasItem("Something strange") == 0)
+        if (Type != EnemyType.Bear || PlayerDataController.Instance.HasItem(3) == 0)
             _animator.SetBool("IsDead", true);
         if (FindObjectOfType<WolfController>())
         {

@@ -143,24 +143,10 @@ public class GameController : MonoBehaviour
             snowController.IsSnowy = true;
             snowController.WindStatusVar = windStatus;
         }
-
-        if (PlayerCharacter != null)
-        {
-            PlayerCharacter.OnHit.AddListener(OnPlayerHit);
-            _lastPlayerCharacterXPosition = PlayerCharacter.transform.position.x;
-        }
-        else
-        { 
-            Debug.LogError("PlayerCharacter reference in GameController not stated");
-        }
-
-        if (StartPoint == null || EndPoint == null)
-        {
-            Debug.LogError("Start or End point reference in GameController not stated");
-        }
-
+            
         volumeProfile = MainCameraVolume.profile;
 
+        _lastPlayerCharacterXPosition = PlayerCharacter.transform.position.x;
         PlayerCharacter.OnDieEnd.AddListener(OnPlayerDie);
         PlayerCharacter.OnHit.AddListener(OnPlayerHit);
         PlayerCharacter.OnAttackHit.AddListener(OnAttackPlayerHit);
@@ -222,7 +208,7 @@ public class GameController : MonoBehaviour
                 _currentRefreshTime = 0f;
                 _isNeedToRefreshCamera = false;
 
-                if (PlayerCharacter.GetDead())
+                if (_secondChance)
                     ActivateSecondChance();
             }
         }
@@ -307,28 +293,30 @@ public class GameController : MonoBehaviour
         SetTargetCameraSettings(CameraStatusE.Death);
 
         //check second chance availability
-        if (PlayerDataController.Instance.HasItem("Second life") == 0)
+        if (PlayerDataController.Instance.HasItem(1) == 0)
         {
             StartCoroutine(ChangeGlobalLight(EndgameTime, _defaultColor, PlayerDeadColor, GameDefeated));
         }
+        else
+            _secondChance = true;
 
     }
 
     public void ActivateSecondChance()
     {
         //check if the second life item purchased
-        if (PlayerDataController.Instance.HasItem("Second life") != 0)
+        if (PlayerDataController.Instance.HasItem(1) != 0)
         {
             PlayerCharacter.EnableSecondChance();
             SecondChanceStartAnimate();
-            PlayerDataController.Instance.UseItem("Second life");
+            PlayerDataController.Instance.UseItem(1);
         }
+        _secondChance = false;
     }
 
     //Update global light each frame for DieTime seconds or until player's click
     private void SecondChanceStartAnimate()
     {
-        _secondChance = true;
         _secondChanceCoroutine = StartCoroutine(ChangeGlobalLight(DieTime, _defaultColor, PlayerDeadColor, SecondChanceFailed));
         /*
          * backup
@@ -357,7 +345,6 @@ public class GameController : MonoBehaviour
 
     private void SecondChanceFailed()
     {
-        _secondChance = false;
         PlayerCharacter.DisableSecondChance();
         GameDefeated();
     }
@@ -394,6 +381,7 @@ public class GameController : MonoBehaviour
             _secondChanceCoroutine = null;
             Debug.Log("Second chance activated");
         }
+        //PlayerCharacter.DisableSecondChance();
         StartCoroutine(RestoreColors());
     }
 
@@ -438,17 +426,23 @@ public class GameController : MonoBehaviour
     private void LevelPassed()
     {
         PlayerDataController.Instance.AddMoney(ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount);
-        //consider that stage include only 5 levels
-        if (PlayerDataController.Instance.Data.CurrentLevel == 4)
+        
+        //check what passed last available level
+        if (GameData.Instance.CurrentLevel == PlayerDataController.Instance.Data.CurrentLevel)
         {
-            //++PlayerDataController.Instance.Data.CurrentStage;
-            int x = 1 + 1;
+            //we have only one stage and consider that stage include only 5 levels
+            if (PlayerDataController.Instance.Data.CurrentLevel == 4)
+            {
+                //++PlayerDataController.Instance.Data.CurrentStage;
+                int x = 1 + 1;
+            }
+            else
+            {
+                ++PlayerDataController.Instance.Data.CurrentLevel;
+            }
+            PlayerDataController.Instance.WriteData();
         }
-        else
-        {
-            ++PlayerDataController.Instance.Data.CurrentLevel;
-        }
-        PlayerDataController.Instance.WriteData();
+        
     }
 
     public void OnContinueButtonClick()
@@ -490,7 +484,7 @@ public class GameController : MonoBehaviour
 
     public void NextScene()
     {
-        GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel < 5 ? GameData.Instance.CurrentLevel + 1:0) ;
+        GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel < 4 ? GameData.Instance.CurrentLevel + 1:0) ;
         loadingComponent.StartLoadLevel("LevelScene");
     }
 
