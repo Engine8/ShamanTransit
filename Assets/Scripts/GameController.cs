@@ -438,17 +438,23 @@ public class GameController : MonoBehaviour
     private void LevelPassed()
     {
         PlayerDataController.Instance.AddMoney(ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount);
-        //consider that stage include only 5 levels
-        if (PlayerDataController.Instance.Data.CurrentLevel == 4)
+        
+        //check what passed last available level
+        if (GameData.Instance.CurrentLevel == PlayerDataController.Instance.Data.CurrentLevel)
         {
-            //++PlayerDataController.Instance.Data.CurrentStage;
-            int x = 1 + 1;
+            //we have only one stage and consider that stage include only 5 levels
+            if (PlayerDataController.Instance.Data.CurrentLevel == 4)
+            {
+                //++PlayerDataController.Instance.Data.CurrentStage;
+                int x = 1 + 1;
+            }
+            else
+            {
+                ++PlayerDataController.Instance.Data.CurrentLevel;
+            }
+            PlayerDataController.Instance.WriteData();
         }
-        else
-        {
-            ++PlayerDataController.Instance.Data.CurrentLevel;
-        }
-        PlayerDataController.Instance.WriteData();
+        
     }
 
     public void OnContinueButtonClick()
@@ -490,7 +496,7 @@ public class GameController : MonoBehaviour
 
     public void NextScene()
     {
-        GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel < 5 ? GameData.Instance.CurrentLevel + 1:0) ;
+        GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel < 4 ? GameData.Instance.CurrentLevel + 1:0) ;
         loadingComponent.StartLoadLevel("LevelScene");
     }
 
