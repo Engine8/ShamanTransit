@@ -11,21 +11,28 @@ public class PlayerData
     public int Money;
     public int CurrentStage;
     public int CurrentLevel;
-    //list of bought items, string - item name, int - count
-    public Dictionary<string, int> PurchaseIndexes;
+    //list of bought items, int1 - item id, int2 - count
+    public Dictionary<int, int> PurchaseIndexes;
 
-    public PlayerData(int money = 100000, int curStage = 0, int curLevel = 0, Dictionary<string, int> purchaseIndexes = null)
+    public PlayerData(int money = 100000, int curStage = 0, int curLevel = 0, Dictionary<int, int> purchaseIndexes = null)
     {
         Money = money;
         CurrentStage = curStage;
         CurrentLevel = curLevel;
         if (purchaseIndexes == null)
-            PurchaseIndexes = new Dictionary<string, int>();
+            PurchaseIndexes = new Dictionary<int, int>();
         else
             PurchaseIndexes = purchaseIndexes;
     }
 
 }
+
+/*
+ * 0 - soul magnet/ магнит душ
+ * 1 - second life/вторая жизнь
+ * 2 - beast skip/пропустить зверей
+ * 3 - bears are strange/что-то странное
+ */
 
 public class PlayerDataController
 {
@@ -64,7 +71,7 @@ public class PlayerDataController
         Data.Money += value;
     }
 
-    public void ItemPurchased(string itemIndex)
+    public void ItemPurchased(int itemIndex)
     {
         if (Data.PurchaseIndexes.ContainsKey(itemIndex))
         {
@@ -76,9 +83,9 @@ public class PlayerDataController
         }
     }
 
-    public int HasItem(string itemIndex)
+    public int HasItem(int itemIndex)
     {
-        Dictionary<string, int> dict = Data.PurchaseIndexes;
+        //Dictionary<int, int> dict = Data.PurchaseIndexes;
 
         bool ok = Data.PurchaseIndexes.ContainsKey(itemIndex);
         if (ok && Data.PurchaseIndexes[itemIndex] > 0)
@@ -86,7 +93,7 @@ public class PlayerDataController
         return 0;
     }
 
-    public void UseItem(string itemIndex)
+    public void UseItem(int itemIndex)
     {
         if (Data.PurchaseIndexes.ContainsKey(itemIndex) && Data.PurchaseIndexes[itemIndex] > 0)
             --Data.PurchaseIndexes[itemIndex];

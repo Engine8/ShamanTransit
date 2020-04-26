@@ -30,7 +30,7 @@ public class ShopScript : MonoBehaviour
         {
             //change and write data
             PlayerDataController.Instance.AddMoney(-cost);
-            PlayerDataController.Instance.ItemPurchased(itemName);
+            PlayerDataController.Instance.ItemPurchased(item.GetItemId());
             PlayerDataController.Instance.WriteData();
             //set new money text
             MoneyText.text = PlayerDataController.Instance.Data.Money.ToString();
