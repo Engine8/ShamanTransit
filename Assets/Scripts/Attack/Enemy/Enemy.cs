@@ -63,6 +63,7 @@ public class Enemy : MonoBehaviour
         float percent = 0;
 
         bool hasAppLiedDamage = false;
+        float JumpDistance = targetPlayer.position.x - transform.position.x;
 
         while (percent <= 1)
         {
@@ -73,7 +74,11 @@ public class Enemy : MonoBehaviour
                 HealsPlayer.TakeDamage(Damage);
             }
             percent += Time.deltaTime * attackSpeed;
-            float interpolation = (-Mathf.Pow(percent, 2) + percent) * 3.5f;
+            //float interpolation = (-Mathf.Pow(percent, 2) + percent) * 3.5f;
+          
+
+            float interpolation = (-Mathf.Pow(percent, 2) + percent) * Mathf.Abs(JumpDistance);
+           // transform.localPosition = Vector3.Lerp(originalPosition, attackPosition, interpolation);
             transform.localPosition = Vector3.Lerp(originalPosition, attackPosition, interpolation);
 
             yield return null;
