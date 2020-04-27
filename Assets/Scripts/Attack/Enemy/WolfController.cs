@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class WolfController :  EnemyController
 {
-    public Enemy[] Wolf;
+    public List<Enemy> Wolf;
     public float timeBetweenAttacks;//скорость атаки
     public float speed;
     private float _facktSpeed;
@@ -173,7 +173,7 @@ public class WolfController :  EnemyController
             _isInAnimation = true;
             //define positions
             _startAnimPosition = transform.position;
-            _targetAnimPosition = HealsPlayer.transform.position - new Vector3(2f, 0, 0);
+            _targetAnimPosition = HealsPlayer.transform.position - new Vector3(1f, 0, 0);
             _animDistance = (_targetAnimPosition - _startAnimPosition).magnitude;
             StartCoroutine(AnimatePlayerDeath());
         }
@@ -181,10 +181,20 @@ public class WolfController :  EnemyController
 
     public override void SetEnemyStatic()
     {
-        foreach(var wolf in Wolf)
+        bool isFirstNotDead = true;
+        for (int i = 0; i < Wolf.Count; ++i)
         {
-            if (!wolf.GetDead())
-                wolf.SetStatic();
+            if (!Wolf[i].GetDead())
+            {
+                if (isFirstNotDead)
+                {
+                    Wolf[i].SetAnimationBool("IsHowl", true);
+                    SoundManager.Instance.PlaySoundClip(EnterSound, true);
+                    isFirstNotDead = false;
+                }
+                else
+                    Wolf[i].SetStatic();
+            }
         }
     }
 }

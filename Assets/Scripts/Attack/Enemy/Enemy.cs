@@ -116,4 +116,9 @@ public class Enemy : MonoBehaviour
     {
         _animator.SetBool("IsStatic", true);
     }
+
+    public void SetAnimationBool(string boolName, bool value)
+    {
+        _animator.SetBool(boolName, value);
+    }
 }
