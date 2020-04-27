@@ -107,25 +107,8 @@ public class BearController : EnemyController
         }
     }
 
-    public IEnumerator AnimatePlayerDeath()
+    public override void SetEnemyStatic()
     {
-        float curTime = 0;
-        bool end = false;
-        while (!end)
-        {
-            curTime += Time.deltaTime;
-            if (curTime > RunTime)
-            {
-                curTime = RunTime;
-                end = true;
-            }
-
-            float tVal = curTime / RunTime;
-            //define x position
-            float x = Mathf.Lerp(_startAnimPosition.x, _targetAnimPosition.x, RunCurve.Evaluate(tVal));
-            gameObject.transform.position = new Vector3(x, _startAnimPosition.y, _startAnimPosition.z);
-            yield return null;
-        }
         Bear.SetStatic();
     }
 }
