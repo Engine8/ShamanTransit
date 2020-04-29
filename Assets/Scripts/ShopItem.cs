@@ -73,8 +73,8 @@ public class ShopItem : MonoBehaviour
 
     private void OnClickResender()
     {
-        Debug.Log($"Item is null: {this == null}");
-        Debug.Log($"OnBUyClick is null: {OnBuyClick == null}");
+        //Debug.Log($"Item is null: {this == null}");
+        //Debug.Log($"OnBUyClick is null: {OnBuyClick == null}");
         OnBuyClick.Invoke(this);
     }
 

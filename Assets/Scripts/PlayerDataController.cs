@@ -54,7 +54,7 @@ public class PlayerDataController
     {
         if (_instance == null)
             _instance = new PlayerDataController();
-        Debug.Log(Application.persistentDataPath + "/data.dat");
+       //Debug.Log(Application.persistentDataPath + "/data.dat");
         _instance.LoadData();
     }
 
@@ -106,7 +106,7 @@ public class PlayerDataController
         using (FileStream fs = new FileStream(_filePath, FileMode.OpenOrCreate))
         {
             formatter.Serialize(fs, Data);
-            Debug.Log("Save was written");
+            //Debug.Log("Save was written");
         }
     }
 
@@ -118,14 +118,14 @@ public class PlayerDataController
             using (FileStream fs = new FileStream(_filePath, FileMode.Open))
             {
                 Data = (PlayerData)formatter.Deserialize(fs);
-                Debug.Log("Save was loaded");
+                //Debug.Log("Save was loaded");
             }
         }
         else
         {
             Data = new PlayerData();
             WriteData();
-            Debug.Log("New save file was created");
+            //Debug.Log("New save file was created");
         }
     }
 }

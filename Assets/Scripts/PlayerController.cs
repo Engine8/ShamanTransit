@@ -108,7 +108,7 @@ public class PlayerController : Movable
         if (Input.touchCount > 0 && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
         {
 
-            Debug.Log("Смена слоя перед помощу");
+            //Debug.Log("Смена слоя перед помощу");
             if (FinishHelp != null)
                 FinishHelp.Invoke();
 
@@ -289,7 +289,7 @@ public class PlayerController : Movable
 
     private void OnSecondChanceAreaClick()
     {
-        Debug.Log("On second chance clicked!");
+        //Debug.Log("On second chance clicked!");
         if (OnSecondChanceClick != null)
         {
             OnSecondChanceClick.Invoke();

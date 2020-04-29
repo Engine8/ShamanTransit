@@ -259,7 +259,7 @@ public class GameController : MonoBehaviour
             WinText.text = addText;
             SoundManager.Instance.PlaySoundClip(WinSound, false);
             StartCoroutine(MoneyAnimationStart());
-            LevelPassed();
+            UpdatePlayerDataOnLevelPass();
         }
         else
         {
@@ -267,6 +267,7 @@ public class GameController : MonoBehaviour
             LoseScreen.SetActive(true);
             SoundManager.Instance.PlaySoundClip(DefeatSound, false);
         }
+        PlayerDataController.Instance.WriteData();
     }
 
     private IEnumerator MoneyAnimationStart()
@@ -295,9 +296,10 @@ public class GameController : MonoBehaviour
         //check second chance availability
         if (PlayerDataController.Instance.HasItem(1) == 0)
         {
-            StartCoroutine(ChangeGlobalLight(EndgameTime, _defaultColor, PlayerDeadColor, GameDefeated));
+            StartCoroutine(ChangeGlobalLight(EndgameTime, _defaultColor, PlayerDeadColor, LevelEnded));
         }
         else
+            //second chance will be activated on LateUpdate
             _secondChance = true;
 
     }
@@ -309,7 +311,6 @@ public class GameController : MonoBehaviour
         {
             PlayerCharacter.EnableSecondChance();
             SecondChanceStartAnimate();
-            PlayerDataController.Instance.UseItem(1);
         }
         _secondChance = false;
     }
@@ -318,35 +319,12 @@ public class GameController : MonoBehaviour
     private void SecondChanceStartAnimate()
     {
         _secondChanceCoroutine = StartCoroutine(ChangeGlobalLight(DieTime, _defaultColor, PlayerDeadColor, SecondChanceFailed));
-        /*
-         * backup
-        float curTime = 0f;
-        bool end = false;
-        while (!end)
-        {
-            curTime += Time.deltaTime;
-            if (curTime > DieTime)
-            {
-                curTime = DieTime;
-                end = true;
-            }
-
-            float t = curTime / DieTime;
-            Color curGlobalLightColor = Color.Lerp(_defaultColor, PlayerDeadColor, t);
-            GlobalLight.color = curGlobalLightColor;
-            yield return null;
-        }
-        //if coroutine has not been break this means player didn't use second life and game is defeated
-        _secondChance = false;
-        PlayerCharacter.DisableSecondChance();
-        GameDefeated();
-        */
     }
 
     private void SecondChanceFailed()
     {
         PlayerCharacter.DisableSecondChance();
-        GameDefeated();
+        LevelEnded();
     }
 
     IEnumerator RestoreColors()
@@ -379,9 +357,9 @@ public class GameController : MonoBehaviour
         {
             StopCoroutine(_secondChanceCoroutine);
             _secondChanceCoroutine = null;
-            Debug.Log("Second chance activated");
+            //Debug.Log("Second chance activated");
         }
-        //PlayerCharacter.DisableSecondChance();
+        PlayerDataController.Instance.UseItem(1);
         StartCoroutine(RestoreColors());
     }
 
@@ -408,22 +386,19 @@ public class GameController : MonoBehaviour
             func();
     }
 
-    private void GameDefeated()
-    {
-        IsGameEnded = true;
-        ShowEndgameUI(false, "Тебя съели");
-    }
-
     private void LevelEnded()
     {
         IsGameEnded = true;
-        if (PlayerCharacter.SoulCount > 0)
+        if (PlayerCharacter.GetDead())
+            ShowEndgameUI(false, "Тебя съели");
+        else if (PlayerCharacter.SoulCount > 0)
             ShowEndgameUI(true, "Ты сделал это!");
         else
             ShowEndgameUI(false, "Не было собрано ни одной души");
     }
-
-    private void LevelPassed()
+    
+    //updates player data (not write it)
+    private void UpdatePlayerDataOnLevelPass()
     {
         PlayerDataController.Instance.AddMoney(ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount);
         
@@ -440,9 +415,7 @@ public class GameController : MonoBehaviour
             {
                 ++PlayerDataController.Instance.Data.CurrentLevel;
             }
-            PlayerDataController.Instance.WriteData();
         }
-        
     }
 
     public void OnContinueButtonClick()

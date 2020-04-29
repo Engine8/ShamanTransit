@@ -16,7 +16,7 @@ public class BearController : EnemyController
     void Start()
     {
         HealsPlayer = FindObjectOfType<PlayerController>().GetComponent<PlayerController>();
-        Debug.Log(gameObject.GetComponent<Enemy>());
+        //Debug.Log(gameObject.GetComponent<Enemy>());
         Bear = gameObject.GetComponent<Enemy>();
         StartCoroutine("Sprint");
     }
@@ -55,7 +55,7 @@ public class BearController : EnemyController
 
     IEnumerator Slowdown()
     {
-        Debug.Log(_facktSpeed);
+        //Debug.Log(_facktSpeed);
         float oldSpeed = _facktSpeed;
         _facktSpeed = 9;
         Bear.TakeDamage(1);

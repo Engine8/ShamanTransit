@@ -252,7 +252,7 @@ public class Movable : MonoBehaviour
         Obstacle obstacle = other.gameObject.GetComponent<Obstacle>();
         if (obstacle != null)
         {
-            Debug.Log("Collision with obstacle");
+            //Debug.Log("Collision with obstacle");
 
             CurrentHP -= obstacle.Damage;
             if (CurrentHP < 0)
@@ -285,7 +285,7 @@ public class Movable : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("TakeDamage");
+        //Debug.Log("TakeDamage");
         CurrentHPBattle -= damage;
         OnAttackHit.Invoke();
         if (CurrentHPBattle <= 0 && !_isDead)

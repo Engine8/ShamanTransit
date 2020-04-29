@@ -32,7 +32,7 @@ public class HitArea : MonoBehaviour
 
     public void Tach()
     {
-        Debug.Log(sightScale);
+        //Debug.Log(sightScale);
         if (!sightScale.GetVictory())
         {
             PlayerController.Instance.PlayAnimAttack();
