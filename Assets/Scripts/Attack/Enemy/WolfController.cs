@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 public class WolfController :  EnemyController
 {
-    public Enemy[] Wolf;
+    public List<Enemy> Wolf;
     public float timeBetweenAttacks;//скорость атаки
     public float speed;
     private float _facktSpeed;
@@ -56,6 +56,7 @@ public class WolfController :  EnemyController
         _facktSpeed = speed;
 
     }
+
     public void ChendePosition()
     {
         --countWolf;
@@ -95,18 +96,23 @@ public class WolfController :  EnemyController
         }
         CR_running = false;
     }
+
     void FixedUpdate()
     {
-        if(!HealsPlayer.GetDead())
+        if (countWolf > 0 && !_isInAnimation)
         {
-            this.gameObject.transform.localPosition = new Vector2(this.gameObject.transform.localPosition.x + _facktSpeed * Time.deltaTime, this.gameObject.transform.localPosition.y);
-            if (!isAttack)
-            {
-                if (Time.time > nextAttackTime)
-                    Attack();
+            gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x + _facktSpeed * Time.deltaTime, gameObject.transform.localPosition.y);
 
-                if ((countWolf > 0) && ((4 - countWolf) != 2))
-                    Wolf[4 - countWolf].transform.localPosition += new Vector3(0.2f * Time.deltaTime, 0f, 0f);
+            if (!HealsPlayer.GetDead())
+            {
+                if (!isAttack)
+                {
+                    if (Time.time > nextAttackTime)
+                        Attack();
+
+                    if ((countWolf > 0) && ((4 - countWolf) != 2))
+                        Wolf[4 - countWolf].transform.localPosition += new Vector3(0.2f * Time.deltaTime, 0f, 0f);
+                }
             }
         }
     }
@@ -126,6 +132,7 @@ public class WolfController :  EnemyController
             nextAttackTime = Time.time + timeBetweenAttacks;
         }
     }
+
     IEnumerator PauseForAttack()
     {
         isAttack = true;
@@ -141,12 +148,53 @@ public class WolfController :  EnemyController
         Wolf[(4 - countWolf)].TakeDamage(1);
         ChendePosition();
     }
+
     public override  int GetCount()
     {
         return countWolf;
     }
+
     public override bool GetActiv()
     {
         return gameObject.activeSelf;
+    }
+
+    //perform actions on player death
+    public override void StartPlayerDieAnimation()
+    {
+        //if player has second life item 
+        if (PlayerDataController.Instance.HasItem(1) != 0)
+        {
+            Destroy(gameObject, 3f);
+        }
+        else
+        {
+            //slow down enemy to stop at X units in front of player character body
+            _isInAnimation = true;
+            //define positions
+            _startAnimPosition = transform.position;
+            _targetAnimPosition = HealsPlayer.transform.position - new Vector3(1f, 0, 0);
+            _animDistance = (_targetAnimPosition - _startAnimPosition).magnitude;
+            StartCoroutine(AnimatePlayerDeath());
+        }
+    }
+
+    public override void SetEnemyStatic()
+    {
+        bool isFirstNotDead = true;
+        for (int i = 0; i < Wolf.Count; ++i)
+        {
+            if (!Wolf[i].GetDead())
+            {
+                if (isFirstNotDead)
+                {
+                    Wolf[i].SetAnimationBool("IsHowl", true);
+                    SoundManager.Instance.PlaySoundClip(EnterSound, true);
+                    isFirstNotDead = false;
+                }
+                else
+                    Wolf[i].SetStatic();
+            }
+        }
     }
 }

@@ -8,7 +8,7 @@ public class HitArea : MonoBehaviour
 {
     public Transform Arrow;
 
-    private EnemyController _enumy;
+    private EnemyController _enemy;
     private Image MissAr;
     private SightScale sightScale;
     private float _pauseAttacksMiss = 0;
@@ -27,7 +27,7 @@ public class HitArea : MonoBehaviour
 
     public void SetEnnemy(EnemyController value)
     {
-        _enumy = value;
+        _enemy = value;
     }
 
     public void Tach()
@@ -42,17 +42,17 @@ public class HitArea : MonoBehaviour
                 if (Time.time > _pauseAttacksHit)
                 {
                     transform.localEulerAngles = new Vector3(0, 0, -Random.Range(0f, 75f));
-                    if (_enumy.GetActiv())
+                    if (_enemy.GetActiv())
                     {
-                        if (_enumy.GetCount() > 0)
+                        if (_enemy.GetCount() > 0)
                         {
-                            _enumy.TakeDamage();
+                            _enemy.TakeDamage();
                             SoundManager.Instance.PlaySoundClip(GoodShot, true);
                         }
-                        if (_enumy.GetCount() == 0)
+                        if (_enemy.GetCount() == 0)
                         {
                             sightScale.Stop(true);
-                           Destroy(_enumy.gameObject, 9f);
+                           Destroy(_enemy.gameObject, 9f);
                         }
                     }
                     sightScale.CalculateSpeed();
@@ -65,8 +65,8 @@ public class HitArea : MonoBehaviour
                 StartCoroutine("Miss");
                 if (Time.time > _pauseAttacksMiss)
                 {
-                    if (_enumy.GetActiv())
-                        _enumy.Attack();
+                    if (_enemy.GetActiv())
+                        _enemy.Attack();
                     _pauseAttacksMiss = Time.time + 0.5f;
                 }
             }
@@ -84,7 +84,7 @@ public class HitArea : MonoBehaviour
     public void OnPlayerCharacterDie()
     {
         sightScale.Stop(false);
-        Destroy(_enumy.gameObject);
+        _enemy.StartPlayerDieAnimation();
     }
 
 }

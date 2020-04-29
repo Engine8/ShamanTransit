@@ -117,6 +117,49 @@ MonoBehaviour:
   AttackSound: {fileID: 0}
   DieSound: {fileID: 0}
   IsCameraShaking: 1
+  RunTime: 1
+  RunCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.0023498535
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.43451715
+      value: 0.8106889
+      inSlope: 0.7545836
+      outSlope: 0.7545836
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.20308015
+    - serializedVersion: 3
+      time: 0.6804301
+      value: 0.93982893
+      inSlope: 0.35127428
+      outSlope: 0.35127428
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.21059626
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0.22049206
+      outSlope: 0.22049206
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.5526635
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
   speed: 11
 --- !u!95 &3786425029537678825
 Animator:

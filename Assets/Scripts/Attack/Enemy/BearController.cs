@@ -10,7 +10,7 @@ public class BearController : EnemyController
     private PlayerController HealsPlayer;
     private Enemy Bear;
     private float nextAttackTime;
-
+    private bool _canAttack = true;
     //Destoyed in HitArea class
 
     void Start()
@@ -20,21 +20,23 @@ public class BearController : EnemyController
         Bear = gameObject.GetComponent<Enemy>();
         StartCoroutine("Sprint");
     }
+
     IEnumerator Sprint() //появление волков
     {
         _facktSpeed = 16;
         yield return new WaitForSeconds(1f);
         _facktSpeed = speed;
     }
+
     void FixedUpdate()
     {
-        if (!HealsPlayer.GetDead())
+        if (!Bear.GetDead() && !_isInAnimation)
         {
-            if (!Bear.GetDead())
-            {
-                this.gameObject.transform.localPosition = new Vector2(this.gameObject.transform.localPosition.x + _facktSpeed * Time.deltaTime, this.gameObject.transform.localPosition.y);
-                float sqrDstToTarget = (HealsPlayer.transform.position - transform.position).sqrMagnitude;
+            gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x + _facktSpeed * Time.deltaTime, gameObject.transform.localPosition.y);
 
+            if (!HealsPlayer.GetDead() && _canAttack)
+            {
+                float sqrDstToTarget = (HealsPlayer.transform.position - transform.position).sqrMagnitude;
                 if (sqrDstToTarget < Mathf.Pow(Bear.attackDistanceThreshold, 2))
                 {
                     if (Time.time > nextAttackTime)
@@ -44,16 +46,13 @@ public class BearController : EnemyController
                     }
                 }
             }
-            else
-            {
-                //Bear.gameObject.GetComponent<SpriteRenderer>().color = Color.black;
-            }
         }
     }
     public override void TakeDamage()
     {
         StartCoroutine("Slowdown");
     }
+
     IEnumerator Slowdown()
     {
         Debug.Log(_facktSpeed);
@@ -63,6 +62,7 @@ public class BearController : EnemyController
         yield return new WaitForSeconds(0.6f);
         _facktSpeed = oldSpeed;
     }
+
     public override int GetCount()
     {
         if (Bear.GetDead())
@@ -70,13 +70,45 @@ public class BearController : EnemyController
         else
             return 1;
     }
+
     public bool GetLifeBear()
     {
         return Bear.GetDead();
     }
+
     public override void Attack() { }
+
     public override bool GetActiv()
     {
         return gameObject.activeSelf;
+    }
+
+    //perform actions on player death
+    public override void StartPlayerDieAnimation()
+    {
+        //if player has second life item 
+        if (PlayerDataController.Instance.HasItem(1) != 0)
+        {
+            //disable attack availability 
+            _canAttack = false;
+            Destroy(gameObject, 3f);
+            //destroy?
+        }
+        else
+        {
+            //slow down enemy to stop at X units in fromnt of player character body
+
+            _isInAnimation = true;
+            //define positions
+            _startAnimPosition = transform.position;
+            _targetAnimPosition = HealsPlayer.transform.position - new Vector3(2f, 0, 0);
+            _animDistance = (_targetAnimPosition - _startAnimPosition).magnitude;
+            StartCoroutine(AnimatePlayerDeath());
+        }
+    }
+
+    public override void SetEnemyStatic()
+    {
+        Bear.SetStatic();
     }
 }

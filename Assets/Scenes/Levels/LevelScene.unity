@@ -384,7 +384,7 @@ MonoBehaviour:
     - {fileID: -5517131477564077679, guid: 3d0c6cd3017e76744b7779b0938f6704, type: 3}
     - {fileID: 7334647115942283197, guid: 79d66dcf964197c4b84f5a42f3a29e53, type: 3}
     - {fileID: 8621921015806925681, guid: a5eb45ceed99d9c45aad87640aba5c01, type: 3}
-    - {fileID: 6732543394565603975, guid: 6dca0911ef38dea4f8e401ebce16ece0, type: 3}
+    - {fileID: 6581053277576116797, guid: fd513ebcd43f9d4498f5f2f5be59e006, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: -5517131477564077679, guid: 3d0c6cd3017e76744b7779b0938f6704, type: 3}
     - {fileID: 5655114978885734657, guid: bdd781c25248e49448ea4181dceb544e, type: 3}
@@ -454,7 +454,7 @@ MonoBehaviour:
     - {fileID: 8882464760559498016, guid: 3ddb989dd4ca2f5428ece3684ccfaaea, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     spawnedChunks: []
-  mapIndex: 2
+  mapIndex: 0
   UIAttack: {fileID: 1997170574}
   chunkPrefabsAttack: {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35,
     type: 3}
@@ -4625,7 +4625,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2109791147}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.6666665, y: -0.4499998, z: -10.82}
+  m_LocalPosition: {x: 0, y: -0.4499998, z: -10.82}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1690271514}
