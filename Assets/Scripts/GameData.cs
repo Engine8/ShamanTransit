@@ -16,7 +16,7 @@ public class GameData
     public int CurrentStage;
     public int CurrentLevel;
     public int CurrentLevelIndex;
-
+    public PlayMode CurrentPlayMode;
     private bool _vibrationStatus = true;
     public bool VibrationStatus
     {
@@ -40,6 +40,7 @@ public class GameData
         if (_instance == null)
             _instance = new GameData();
 
+        _instance.CurrentPlayMode = PlayMode.Standart;
         _instance._soundSettings = Resources.Load<SoundSettings>("SoundSettings");
         _instance._soundSettings.Load();
 

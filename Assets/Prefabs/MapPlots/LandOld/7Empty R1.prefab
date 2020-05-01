@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6344183484129523842}
   - component: {fileID: 265967626275930932}
   m_Layer: 0
-  m_Name: 7Empty
+  m_Name: 7Empty R1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -61,6 +61,8 @@ MonoBehaviour:
   - {fileID: 3311856273505783840}
   - {fileID: 128075219649636347}
   - {fileID: 3972832776255127169}
+  NextTiles:
+  - {fileID: 6344183484129523842, guid: d60d7882fef385e44bcb9e7e69b5e26c, type: 3}
 --- !u!114 &265967626275930932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -145,7 +147,7 @@ SpriteRenderer:
   m_SortingLayerID: 902459011
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 07ab37d0f67599648bd25fd7162bd552, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0329721911d540048be01acf54322521, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

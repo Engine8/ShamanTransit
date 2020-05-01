@@ -9,6 +9,12 @@ using UnityEngine.Events;
 using UnityEngine.Experimental.Rendering.Universal;
 using Cinemachine;
 
+public enum PlayMode
+{
+    Standart = 0,
+    Endless = 1,
+}
+
 public class GameController : MonoBehaviour
 {
     public static GameController Instance;
@@ -89,6 +95,7 @@ public class GameController : MonoBehaviour
     private float _lastPlayerCharacterXPosition;
     private float _unitsPassed;
 
+    public PlayMode CurrentPlayMode;
     public bool IsAttackMode;
     public bool IsGameEnded;
 
@@ -128,6 +135,7 @@ public class GameController : MonoBehaviour
         if (PlayerDataController.Instance == null)
             PlayerDataController.Initialize();
 #endif
+
     }
 
     // Start is called before the first frame update

@@ -49,7 +49,6 @@ public class UIStartMenu : MonoBehaviour
     public void Map()
     {
         loadingComponent.StartLoadLevel("Map");
-        //SceneManager.LoadScene("Map");
     }
 
     public void OpenInfo()
@@ -101,5 +100,13 @@ public class UIStartMenu : MonoBehaviour
     {
         VibrationOff.SetActive(!VibrationOff.activeSelf);
         GameData.Instance.SetVibtationStatus(!VibrationOff.activeSelf);
+    }
+
+
+    //debug 
+    public void StartEndlessMode()
+    {
+        GameData.Instance.CurrentPlayMode = PlayMode.Endless;
+        loadingComponent.StartLoadLevel("LevelScene");
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class Tile : MonoBehaviour
 {
     public Transform Begin;
@@ -10,4 +11,6 @@ public class Tile : MonoBehaviour
     public GameObject SpriteCliff;
     public GameObject EnemyPrefabs;
     public Land[] Lands;
+
+    public List<Tile> NextTiles;
 }
