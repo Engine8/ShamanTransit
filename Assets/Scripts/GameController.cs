@@ -441,6 +441,15 @@ public class GameController : MonoBehaviour
                 SetTargetCameraSettings(CameraStatusE.Attack);
             }
         }
+        else if (gameMode == 2)
+        {
+            IsAttackMode = true;
+
+            if (isNeedToChangeCamera)
+            {
+                SetTargetCameraSettings(CameraStatusE.Death);
+            }
+        }
         else if (gameMode == 0)
         {
             BattleGameWin();

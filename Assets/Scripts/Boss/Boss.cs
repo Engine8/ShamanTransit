@@ -20,14 +20,14 @@ public class Boss : EnemyController
     void Start()
     {
         Player = FindObjectOfType<PlayerController>().GetComponent<PlayerController>();
-        transform.position = new Vector2(Player.transform.position.x - 18, 0);
+        transform.position = new Vector2(Player.transform.position.x - 13, 0);
 
         StartCoroutine("Sprint");
     }
 
     IEnumerator Sprint() //появление волков
     {
-        _speedBuf = 7;
+        _speedBuf = 6;
         yield return new WaitForSeconds(1f);
         _speedBuf = 0;
     }

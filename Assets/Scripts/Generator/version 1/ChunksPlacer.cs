@@ -60,8 +60,11 @@ public class ChunksPlacer : MonoBehaviour
     }
 
     public void OnAttack(GameObject enemyPrefab)
-    {
-        GameController.Instance.SetGameMode(1, true);
+    {   
+        if(enemyPrefab.name=="Boss")
+            GameController.Instance.SetGameMode(2, true);
+        else
+            GameController.Instance.SetGameMode(1, true);
         GameObject newEnemy = Instantiate(enemyPrefab);
 
         EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
