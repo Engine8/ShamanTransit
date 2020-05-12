@@ -1,0 +1,1366 @@
+fileFormatVersion: 2
+guid: 9983905624be2774db5fe524c3272f82
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -957847835788641702
+    second: boss3 splin_0
+  - first:
+      213: -5902322854454641921
+    second: boss3 splin_1
+  - first:
+      213: 8209819991767575019
+    second: boss3 splin_2
+  - first:
+      213: -6658502312745138604
+    second: boss3 splin_3
+  - first:
+      213: -126464271780703375
+    second: boss3 splin_4
+  - first:
+      213: -8378015299195821829
+    second: boss3 splin_5
+  - first:
+      213: -4471996970206828491
+    second: boss3 splin_6
+  - first:
+      213: -7673013754706893676
+    second: boss3 splin_7
+  - first:
+      213: -4854653463369294692
+    second: boss3 splin_8
+  - first:
+      213: 4522674426609056729
+    second: boss3 splin_9
+  - first:
+      213: -7228481443327297492
+    second: boss3 splin_10
+  - first:
+      213: -3506094673863422668
+    second: boss3 splin_11
+  - first:
+      213: -2432806099015725068
+    second: boss3 splin_12
+  - first:
+      213: -746018771832915382
+    second: boss3 splin_13
+  - first:
+      213: 5525382666100762070
+    second: boss3 splin_14
+  - first:
+      213: 6113880180407414163
+    second: boss3 splin_15
+  - first:
+      213: -512671389765852490
+    second: boss3 splin_16
+  - first:
+      213: 1887359873617743750
+    second: boss3 splin_17
+  - first:
+      213: -6121401876751368905
+    second: boss3 splin_18
+  - first:
+      213: -5347322568129102205
+    second: boss3 splin_19
+  - first:
+      213: -2756999455362135867
+    second: boss3 splin_20
+  - first:
+      213: 6196290782310534686
+    second: boss3 splin_21
+  - first:
+      213: 8098304551361923997
+    second: boss3 splin_22
+  - first:
+      213: -4141699657071047438
+    second: boss3 splin_23
+  - first:
+      213: 3135520108880700135
+    second: boss3 splin_24
+  - first:
+      213: -418122126753450416
+    second: boss3 splin_25
+  - first:
+      213: -819626186362621775
+    second: boss3 splin_26
+  - first:
+      213: -7329467344782532056
+    second: boss3 splin_27
+  - first:
+      213: -21811613603023836
+    second: boss3 splin_28
+  - first:
+      213: 4460099132494055137
+    second: boss3 splin_29
+  - first:
+      213: -5938425094876983272
+    second: boss3 splin_30
+  - first:
+      213: 3329392033802566127
+    second: boss3 splin_31
+  - first:
+      213: -8143178408733445639
+    second: boss3 splin_32
+  - first:
+      213: 351542139646233943
+    second: boss3 splin_33
+  - first:
+      213: -3869068542384567575
+    second: boss3 splin_34
+  - first:
+      213: 9089624247533127010
+    second: boss3 splin_35
+  - first:
+      213: 3522805955555147855
+    second: boss3 splin_36
+  - first:
+      213: -5185270973082099844
+    second: boss3 splin_37
+  - first:
+      213: 4224056976456919383
+    second: boss3 splin_38
+  - first:
+      213: 3183676549403778724
+    second: boss3 splin_39
+  - first:
+      213: -2100237186678668576
+    second: boss3 splin_40
+  - first:
+      213: 6929100944473389813
+    second: boss3 splin_41
+  - first:
+      213: -8164947196561954525
+    second: boss3 splin_42
+  - first:
+      213: 5588900018699364075
+    second: boss3 splin_43
+  - first:
+      213: 4590961007606630430
+    second: boss3 splin_44
+  - first:
+      213: 2237965718047386595
+    second: boss3 splin_45
+  - first:
+      213: -5640375876908769902
+    second: boss3 splin_46
+  - first:
+      213: -6846422659061213951
+    second: boss3 splin_47
+  - first:
+      213: 3597394922459175139
+    second: boss3 splin_48
+  - first:
+      213: -8474064317285773487
+    second: boss3 splin_49
+  - first:
+      213: -6069729900276548736
+    second: boss3 splin_50
+  - first:
+      213: 7318176374426866150
+    second: boss3 splin_51
+  - first:
+      213: 4211770342033263713
+    second: boss3 splin_52
+  - first:
+      213: -1564768613892456039
+    second: boss3 splin_53
+  - first:
+      213: -6471628501239577270
+    second: boss3 splin_54
+  - first:
+      213: -6055896192032048742
+    second: boss3 splin_55
+  - first:
+      213: -8212945007163222673
+    second: boss3 splin_56
+  - first:
+      213: -6049281866544746931
+    second: boss3 splin_57
+  - first:
+      213: -4176992084505547472
+    second: boss3 splin_4
+  - first:
+      213: 5019866921282115748
+    second: boss3 splin_6
+  - first:
+      213: -9186933704133969161
+    second: boss3 splin_7
+  - first:
+      213: 1342108851434674241
+    second: boss3 splin_8
+  - first:
+      213: -6939101533057183618
+    second: boss3 splin_9
+  - first:
+      213: 7071914125909948298
+    second: boss3 splin_11
+  - first:
+      213: -7254991809376049420
+    second: boss3 splin_12
+  - first:
+      213: 2350615845071254685
+    second: boss3 splin_13
+  - first:
+      213: -982392052619443547
+    second: boss3 splin_14
+  - first:
+      213: -4398579633237585898
+    second: boss3 splin_22
+  - first:
+      213: 3436155102343683129
+    second: boss3 splin_23
+  - first:
+      213: -741808236682044859
+    second: boss3 splin_24
+  - first:
+      213: -1943425582860576800
+    second: boss3 splin_25
+  - first:
+      213: 6771269977637092537
+    second: boss3 splin_27
+  - first:
+      213: -91791500908886009
+    second: boss3 splin_28
+  - first:
+      213: -607449275727837368
+    second: boss3 splin_29
+  - first:
+      213: 7605430500713374626
+    second: boss3 splin_30
+  - first:
+      213: -810650895253136137
+    second: boss3 splin_34
+  - first:
+      213: -304358738524600941
+    second: boss3 splin_36
+  - first:
+      213: 3047431475528162288
+    second: boss3 splin_37
+  - first:
+      213: 8678239744992029395
+    second: boss3 splin_38
+  - first:
+      213: -1361378541771785186
+    second: boss3 splin_40
+  - first:
+      213: -587136059097818611
+    second: boss3 splin_41
+  - first:
+      213: 1166107901947632737
+    second: boss3 splin_42
+  - first:
+      213: -4831838560780274777
+    second: boss3 splin_44
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 160
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: boss3 splin_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 9910
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5af0fed77a05b2f0800000000000000
+      internalID: -957847835788641702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_1
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 9910
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffabf8eb2acb61ea0800000000000000
+      internalID: -5902322854454641921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_2
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 9910
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be9e437f8c32fe170800000000000000
+      internalID: 8209819991767575019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_3
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 9910
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45685b0cc6f3893a0800000000000000
+      internalID: -6658502312745138604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 8810
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf025a8597f4bbb80800000000000000
+      internalID: -8378015299195821829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 7710
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2839f8ec664fab90800000000000000
+      internalID: -7228481443327297492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_16
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 6610
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b220865610a2e8f0800000000000000
+      internalID: -512671389765852490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_26
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 4410
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b07f39735a10a4f0800000000000000
+      internalID: -819626186362621775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_31
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 3310
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe931d43a60643e20800000000000000
+      internalID: 3329392033802566127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_39
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 2210
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ae14fe24f0be2c20800000000000000
+      internalID: 3183676549403778724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_45
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 10
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eb67bb96f9de0f10800000000000000
+      internalID: 2237965718047386595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_4
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 9910
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1739bb33a65be3ef0800000000000000
+      internalID: -126464271780703375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_6
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 8810
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a811c65e562aa540800000000000000
+      internalID: 5019866921282115748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_7
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 8810
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7faf7067874718080800000000000000
+      internalID: -9186933704133969161
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_8
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 8810
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148dbabb3e020a210800000000000000
+      internalID: 1342108851434674241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_9
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 8810
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7012cdabeb53bf90800000000000000
+      internalID: -6939101533057183618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_11
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 7710
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a87fdeccd6c742260800000000000000
+      internalID: 7071914125909948298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_12
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 7710
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f6a5c15367115b90800000000000000
+      internalID: -7254991809376049420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_13
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 7710
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9470e038a01f9020800000000000000
+      internalID: 2350615845071254685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_14
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 7710
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a2837112a7dd52f0800000000000000
+      internalID: -982392052619443547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 6610
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39d2c70a1add8d450800000000000000
+      internalID: 6113880180407414163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_17
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 6610
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68fcf4e2ecf313a10800000000000000
+      internalID: 1887359873617743750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_18
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 6610
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d33d8fc696c0ba0800000000000000
+      internalID: -6121401876751368905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_19
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 6610
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38e3c33a47e7ac5b0800000000000000
+      internalID: -5347322568129102205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 5510
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c8c1314a9b2db9d0800000000000000
+      internalID: -2756999455362135867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_21
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 5510
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1e85ac13a5adf550800000000000000
+      internalID: 6196290782310534686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_22
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 5510
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6101b94d02b15f2c0800000000000000
+      internalID: -4398579633237585898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_23
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 5510
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93c575c2cdcafaf20800000000000000
+      internalID: 3436155102343683129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_24
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 5510
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54a9b19c65194b5f0800000000000000
+      internalID: -741808236682044859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4410
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e75036aab09705e0800000000000000
+      internalID: -1943425582860576800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_27
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 4410
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc735f3b2268fd50800000000000000
+      internalID: 6771269977637092537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_28
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 4410
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7080de2cd14e9bef0800000000000000
+      internalID: -91791500908886009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_29
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 4410
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8478c252a18e197f0800000000000000
+      internalID: -607449275727837368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3310
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a321febebaeb8960800000000000000
+      internalID: 7605430500713374626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_32
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 3310
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1ffc4b16e9dfe80800000000000000
+      internalID: -8143178408733445639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_33
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 3310
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75dc135a6bde0e400800000000000000
+      internalID: 351542139646233943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_34
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 3310
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc95974e4dffb4f0800000000000000
+      internalID: -810650895253136137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2210
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2654dff1815d42e70800000000000000
+      internalID: 9089624247533127010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_36
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 2210
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39584f10753b6cbf0800000000000000
+      internalID: -304358738524600941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_37
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 2210
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fb5330f7c6aa4a20800000000000000
+      internalID: 3047431475528162288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_38
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 2210
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3da2deb911d4f6870800000000000000
+      internalID: 8678239744992029395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_40
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1110
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1c7adcdd696b1de0800000000000000
+      internalID: -1361378541771785186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_41
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 1110
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0ad6a27dd21ad7f0800000000000000
+      internalID: -587136059097818611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_42
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 1110
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16c5d5165f8de2010800000000000000
+      internalID: 1166107901947632737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_43
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 1110
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be6efbba4f2cf8d40800000000000000
+      internalID: 5588900018699364075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: boss3 splin_44
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 1110
+        width: 1000
+        height: 1100
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a338acdd6cd1fcb0800000000000000
+      internalID: -4831838560780274777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0ea9fb6f610c4f84e9410972d673182c
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
