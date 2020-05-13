@@ -128,8 +128,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  helf: 5
-  timeBetweenAttacks: 5
+  LineAttack:
+  - -1.8
+  - -2.52
+  - -3.62
+  AttackPrefab:
+  - {fileID: 1285838981386952625, guid: 69e5ef13228ec574ca66a056ccfeea87, type: 3}
+  - {fileID: 1285838981386952625, guid: 81080b8080471c443ac5143a8db6a368, type: 3}
+  Health: 5
+  TimeBetweenAttacks: 5
 --- !u!1001 &3918604570972598879
 PrefabInstance:
   m_ObjectHideFlags: 0

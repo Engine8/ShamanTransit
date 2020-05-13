@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class Boss : EnemyController
 {
-    public List<float> LineAttack = new List<float>(new float[3]{-1.8f, -2.52f, -3.62f});
+    public List<float> LineAttack = new List<float>(new float[3]{-1.62f, -2.52f, -3.62f});
     public float[,]  LineSize = { {4f, 1.5f }, {4.5f,2f},{ 5f,2.2f} };
     private string[] _layerName = { "Line1", "Line2", "Line3" };
     private GameObject[] _attackWarning;
+    public GameObject[] AttackPrefab;
 
     public int Health;
 
@@ -31,6 +32,7 @@ public class Boss : EnemyController
         transform.position = new Vector2(_player.transform.position.x - 13, 0);
 
         StartCoroutine("Sprint");
+ 
     }
 
     IEnumerator Sprint() //появление волков
@@ -39,10 +41,9 @@ public class Boss : EnemyController
         yield return new WaitForSeconds(1f);
         _speedBuf = 0;
     }
-
     void FixedUpdate()
     {
-        if (!_dead && !_isInAnimation)
+        if (!_dead && !_isInAnimation&& !_player.GetDead())
         {
             gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x +( _player.Speed+_speedBuf) * Time.deltaTime, gameObject.transform.localPosition.y);
 
@@ -71,7 +72,11 @@ public class Boss : EnemyController
         _attackWarning[value].transform.position = new Vector2(_attackWarning[value].transform.position.x, LineAttack[position]);
         _attackWarning[value].transform.localScale = new Vector2(_attackWarning[value].transform.localScale.x , LineSize[position, value]);
         _attackWarning[value].GetComponent<SpriteRenderer>().sortingLayerName = _layerName[position];
-        yield return new WaitForSeconds(2f);  
+        yield return new WaitForSeconds(2f);
+        GameObject atack =  Instantiate(AttackPrefab[value]);
+        atack.transform.position = new Vector3(_attackWarning[value].transform.position.x, _attackWarning[value].transform.position.y,0f);
+        atack.GetComponent<SpriteRenderer>().sortingLayerName = _layerName[position];
+        Destroy(atack,3f);
         _attackWarning[value].SetActive(false);
     }
 
