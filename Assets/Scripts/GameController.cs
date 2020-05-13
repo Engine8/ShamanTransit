@@ -83,6 +83,26 @@ public class GameController : MonoBehaviour
     private float _currentRefreshTime = 0f;
     //----------- End Camera status------------
 
+
+    //--------------Game status----------------
+    public enum GameStatus
+    {
+        Run = 0,
+        BossRun = 1,
+        Attack = 2,
+    }
+
+    public enum GameMode
+    {
+        Default = 0,
+        BossFight = 1,
+    }
+
+    public GameStatus CurrentGameStatus;
+    public GameMode CurrentGameMode;
+
+    //-----------End game status---------------
+
     public GameObject StartPoint;
     public GameObject EndPoint;
 
@@ -155,11 +175,18 @@ public class GameController : MonoBehaviour
 
         _defaultColor = GlobalLight.color;
 
-        //set initial camera settings
-        _currentCameraStatus = CameraStatusE.Run;
-        _currentLookaheadTime = CameraSettings.LookaheadTimeRun;
-        _currentRefreshCameraTime = CameraSettings.RefreshTimeRun;
-        _currentScreenXPos = CameraSettings.ScreenXPosRun;
+        //set default camera settings on level start
+        _targetLookaheadTime = CameraSettings.LookaheadTimeRun;
+        _targetScreenXPos = CameraSettings.ScreenXPosRun;
+        _targetRefreshCameraTime = CameraSettings.RefreshTimeRun;
+        _targetCameraStatus = CameraStatusE.Run;
+
+        CinemachineFramingTransposer framTransposer = VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        _currentLookaheadTime = framTransposer.m_LookaheadTime;
+        _currentScreenXPos = framTransposer.m_ScreenX;
+
+        _currentRefreshTime = 0f;
+        _isNeedToRefreshCamera = true;
     }
 
     // Update is called once per frame
@@ -428,39 +455,34 @@ public class GameController : MonoBehaviour
         loadingComponent.StartLoadLevel("LevelScene");
     }
 
-    public void SetGameMode(int gameMode, bool isNeedToChangeCamera)
+    public void SetGameStatus(GameStatus gameStatus, bool isNeedToChangeCamera)
     {
-        if (gameMode == 1)
+        if (gameStatus == GameStatus.Attack)
         {
-            IsAttackMode = true;
+            CurrentGameStatus = GameStatus.Attack;
             AttackUI.SetActive(true);
-            //AttackUI.GetComponentInChildren<SightScale>().SpeedRotate = 2f;
-
             if (isNeedToChangeCamera)
             {
                 SetTargetCameraSettings(CameraStatusE.Attack);
             }
         }
-        else if (gameMode == 2)
+        else if (gameStatus == GameStatus.BossRun)
         {
-            IsAttackMode = true;
-
+            CurrentGameStatus = GameStatus.BossRun;
             if (isNeedToChangeCamera)
             {
                 SetTargetCameraSettings(CameraStatusE.Death);
             }
         }
-        else if (gameMode == 0)
+        else if (gameStatus == GameStatus.Run)
         {
+            CurrentGameStatus = GameStatus.Run;
             BattleGameWin();
-            IsAttackMode = false;
-
             if (isNeedToChangeCamera)
             {
                 SetTargetCameraSettings(CameraStatusE.Run);
             }
         }
-
         OnGameModeChanged.Invoke();
     }
 

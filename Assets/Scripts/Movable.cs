@@ -156,7 +156,7 @@ public class Movable : MonoBehaviour
             {
                 _curLine = _targetLine;
                 //this helps to stay on middle line in attack start
-                if (!GameController.Instance.IsAttackMode)
+                if (GameController.Instance.CurrentGameStatus != GameController.GameStatus.Attack)
                     _isLineSwapBlocked = false;
                 OnChangeLineEnd.Invoke();
             }

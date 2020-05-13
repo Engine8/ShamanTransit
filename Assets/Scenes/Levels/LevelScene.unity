@@ -460,12 +460,26 @@ MonoBehaviour:
     TilePrefabsTurn:
     - {fileID: 4860197548757332440, guid: 5e3e6ba11f5c92945a6e1bcf5e9a387b, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6581053277576116797, guid: 6460ca53a63ec8b44a2332ba553f8b95, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 8882464760559498016, guid: 3ddb989dd4ca2f5428ece3684ccfaaea, type: 3}
     spawnedChunks: []
-  mapIndex: 5
+  mapIndex: 0
   UIAttack: {fileID: 1997170574}
   chunkPrefabsAttack: {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35,
     type: 3}
@@ -2674,6 +2688,8 @@ MonoBehaviour:
     RefreshTimeDeath: 0.8
     LookaheadTimeDeath: 0
     ScreenXPosDeath: 0.5
+  CurrentGameStatus: 0
+  CurrentGameMode: 0
   StartPoint: {fileID: 11449643}
   EndPoint: {fileID: 1784547516}
   IsAttackMode: 0

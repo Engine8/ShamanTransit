@@ -105,7 +105,7 @@ public class PlayerController : Movable
         }
 
         //mobile controls
-        if (Input.touchCount > 0 && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
+        if (Input.touchCount > 0 && !_isLineSwapBlocked && GameController.Instance.CurrentGameStatus != GameController.GameStatus.Attack)
         {
 
             //Debug.Log("Смена слоя перед помощу");
@@ -208,7 +208,7 @@ public class PlayerController : Movable
 
     void OnGameModeChanged()
     {
-        if (GameController.Instance.IsAttackMode)
+        if (GameController.Instance.CurrentGameStatus == GameController.GameStatus.Attack)
         {
             _animator.SetBool("Battle", true);
             StartCoroutine(MoveToMiddleLine());

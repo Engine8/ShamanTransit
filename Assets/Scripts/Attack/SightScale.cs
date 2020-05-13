@@ -43,7 +43,7 @@ public class SightScale : MonoBehaviour
     public void Stop(bool isBattleWin)
     {
         _Victory = true;
-        GameController.Instance.SetGameMode(0, isBattleWin);
+        GameController.Instance.SetGameStatus(0, isBattleWin);
         StartCoroutine("Weate");
     }
 

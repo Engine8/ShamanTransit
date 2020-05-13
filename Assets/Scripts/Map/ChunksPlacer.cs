@@ -55,32 +55,34 @@ public class ChunksPlacer : MonoBehaviour
         if (player.transform.position.x > currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x - 14)
         {
             SpawnChunk();
-            SpawnChunk();
         }
     }
 
-    public void OnAttack(GameObject enemyPrefab)
+    public void EnterTrigger(MapTrigger mapTrigger)
     {   
-        if(enemyPrefab.name=="Boss")
-            GameController.Instance.SetGameMode(2, true);
-        else
-            GameController.Instance.SetGameMode(1, true);
-        GameObject newEnemy = Instantiate(enemyPrefab);
+        if (mapTrigger.Type == MapTrigger.TriggerType.Enemy || mapTrigger.Type == MapTrigger.TriggerType.BossStart)
+        {
+            GameObject newEnemy = Instantiate(mapTrigger.EnemyPrefab);
+            newEnemy.transform.position = new Vector2(player.transform.position.x - 18, -1.81f);
 
-        EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
-        HitAreaRef.SetEnnemy(enemyController);
-        //Debug.Log(newChunk.GetComponent<EnemyController>().GetCount());
-        newEnemy.transform.position = new Vector2(player.transform.position.x - 18, -1.81f);
+            EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
+            SoundManager.Instance.PlaySoundClip(enemyController.EnterSound, true);
+            if (enemyController.IsCameraShaking)
+                GameController.Instance.ShakeCamera(enemyController.EnterSound.length);
 
-        SoundManager.Instance.PlaySoundClip(enemyController.EnterSound, true);
-        if (enemyController.IsCameraShaking)
-            GameController.Instance.ShakeCamera(enemyController.EnterSound.length);
-
+            if (mapTrigger.Type == MapTrigger.TriggerType.Enemy)
+            {
+                HitAreaRef.SetEnnemy(enemyController);
+                GameController.Instance.SetGameStatus(GameController.GameStatus.Attack, true);
+            }
+            else
+                GameController.Instance.SetGameStatus(GameController.GameStatus.BossRun, true);
+        }
     }
 
     private void SpawnChunk()
     {
-        if (!GameController.Instance.IsAttackMode) 
+        if (GameController.Instance.CurrentGameStatus != GameController.GameStatus.Attack) 
         {
             if (indexChunk< currentMap.TilePrefabsTurn.Length) {
                 Tile newChunk = Instantiate(currentMap.TilePrefabsTurn[indexChunk]);

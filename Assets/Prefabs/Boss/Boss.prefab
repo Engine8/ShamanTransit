@@ -117,7 +117,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f369c411372b2344bef232046b7c076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnterSound: {fileID: 0}
+  EnterSound: {fileID: 8300000, guid: 704e62abb7037bb4dbbe0c9de8e30341, type: 3}
   AttackSound: {fileID: 0}
   DieSound: {fileID: 0}
   IsCameraShaking: 1
