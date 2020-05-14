@@ -18,10 +18,14 @@ public class HitArea : MonoBehaviour
     public AudioClip GoodShot;
     public AudioClip BadShot;
 
-    void Start()
+    void Awake()
     {
         _sightScale = transform.parent.GetComponent<SightScale>();
         _missAr = transform.parent.gameObject.GetComponentInChildren<Image>();
+    }
+
+    void Start()
+    {
         transform.localEulerAngles = new Vector3(0, 0, -60);
         PlayerController.Instance.OnDieStart.AddListener(OnPlayerCharacterDie);
     }

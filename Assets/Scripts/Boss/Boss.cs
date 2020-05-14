@@ -24,14 +24,17 @@ public class Boss : EnemyController
 
     public UnityEvent OnAttackPhaseEnded;
 
+    void Awake()
+    {
+        _controlledEnemy = gameObject.GetComponent<Enemy>();
+        _attackWarning = new GameObject[transform.childCount];
+        for (int i = 0; i < transform.childCount; i++)
+            _attackWarning[i] = transform.GetChild(i).gameObject;
+    }
+
     void Start()
     {
         //OnBattleEnd = new UnityEvent();
-        _controlledEnemy = gameObject.GetComponent<Enemy>();
-        _attackWarning = new GameObject[transform.childCount];
-        for (int i=0;i< transform.childCount; i++)
-            _attackWarning[i] = transform.GetChild(i).gameObject;
-
         _targetCharacter = GameController.Instance.PlayerCharacter;
         transform.position = new Vector2(_targetCharacter.transform.position.x - 13, 0);
         OnAttackPhaseEnded = new UnityEvent();

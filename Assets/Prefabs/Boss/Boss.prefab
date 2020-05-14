@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 7723751788368862452}
   - component: {fileID: 7723751788368862443}
   - component: {fileID: 7723751788368862442}
-  - component: {fileID: 7723751788368862453}
   - component: {fileID: -7627252959481424363}
+  - component: {fileID: 7723751788368862453}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -106,6 +106,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &-7627252959481424363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723751788368862441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4446c83478802c74a9d6f7cdf28f8a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
+  AttackDistanceThreshold: 0
+  Damage: 1
+  Health: 10
+  SpecialSprite: {fileID: 0}
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &7723751788368862453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,26 +163,6 @@ MonoBehaviour:
   CurrentAttackPhase: 0
   TimeBetweenAttacks: 5
   OnAttackPhaseEnded:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &-7627252959481424363
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7723751788368862441}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4446c83478802c74a9d6f7cdf28f8a22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Type: 2
-  AttackDistanceThreshold: 0
-  Damage: 1
-  Health: 10
-  SpecialSprite: {fileID: 0}
-  OnDie:
     m_PersistentCalls:
       m_Calls: []
 --- !u!1001 &3918604570972598879
