@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 public class EnemyController : MonoBehaviour
 {
@@ -15,6 +16,12 @@ public class EnemyController : MonoBehaviour
     protected Vector3 _targetAnimPosition;
     protected float _animDistance;
 
+    protected PlayerController _targetCharacter;
+    protected Enemy _controlledEnemy;
+
+    //invokes then battle should be ended: when enemy dies or boss attack phase ends
+    public UnityEvent OnBattleEnd;
+    public virtual void ProcessEnemyDeath() { }
 
     public virtual int GetCount() { return 404; }
     public virtual void TakeDamage() { }
@@ -45,4 +52,6 @@ public class EnemyController : MonoBehaviour
     }
 
     public virtual void SetEnemyStatic() { }
+    public virtual EnemyType GetEnemyType() { return EnemyType.Wolf; }
+
 }

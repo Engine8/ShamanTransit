@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Unity.UIWidgets.ui;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Boss : EnemyController
 {
@@ -11,25 +12,29 @@ public class Boss : EnemyController
     private GameObject[] _attackWarning;
     public GameObject[] AttackPrefab;
 
-    public int Health;
+    public List<int> Phases = new List<int>();
+    public int CurrentAttackPhase = 0;
 
     private float _speedBuf;
     public float TimeBetweenAttacks;//скорость атаки
 
-    private PlayerController _player;
     private float _nextAttackTime=10;
     private bool _canAttack = true;
     private bool _dead = false;
-    //Destoyed in HitArea class
+
+    public UnityEvent OnAttackPhaseEnded;
 
     void Start()
     {
+        //OnBattleEnd = new UnityEvent();
+        _controlledEnemy = gameObject.GetComponent<Enemy>();
         _attackWarning = new GameObject[transform.childCount];
         for (int i=0;i< transform.childCount; i++)
             _attackWarning[i] = transform.GetChild(i).gameObject;
 
-        _player = GameController.Instance.PlayerCharacter;
-        transform.position = new Vector2(_player.transform.position.x - 13, 0);
+        _targetCharacter = GameController.Instance.PlayerCharacter;
+        transform.position = new Vector2(_targetCharacter.transform.position.x - 13, 0);
+        OnAttackPhaseEnded = new UnityEvent();
 
         StartCoroutine("Sprint");
  
@@ -41,14 +46,15 @@ public class Boss : EnemyController
         yield return new WaitForSeconds(1f);
         _speedBuf = 0;
     }
+
     void FixedUpdate()
     {
-        if (!_dead && !_isInAnimation&& !_player.GetDead())
+        if (!_dead && !_isInAnimation && !_targetCharacter.GetDead())
         {
-            gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x +( _player.Speed+_speedBuf) * Time.deltaTime, gameObject.transform.localPosition.y);
+            gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x +(_targetCharacter.Speed+_speedBuf) * Time.deltaTime, gameObject.transform.localPosition.y);
 
             //run phase
-            if (GameController.Instance.CurrentGameStatus == GameController.GameStatus.BossRun && !_player.GetDead())
+            if (GameController.Instance.CurrentGameStatus == GameController.GameStatus.BossRun && !_targetCharacter.GetDead())
             {
                 if (Time.time > _nextAttackTime)
                 {
@@ -57,14 +63,16 @@ public class Boss : EnemyController
                 }
             }
             //attack phase
-            else if (GameController.Instance.CurrentGameStatus == GameController.GameStatus.Attack && !_player.GetDead())
+            else if (GameController.Instance.CurrentGameStatus == GameController.GameStatus.Attack && 
+                     !_targetCharacter.GetDead() &&
+                     _canAttack)
             {
-
+                StartCoroutine(LineAttackAnimation());
             }
         }
     }
 
-    IEnumerator Warning() //появление волков
+    IEnumerator Warning()
     {
         int value = Random.Range(0, 2);
         int position = Random.Range(0, 3);
@@ -73,19 +81,22 @@ public class Boss : EnemyController
         _attackWarning[value].transform.localScale = new Vector2(_attackWarning[value].transform.localScale.x , LineSize[position, value]);
         _attackWarning[value].GetComponent<SpriteRenderer>().sortingLayerName = _layerName[position];
         yield return new WaitForSeconds(2f);
-        GameObject atack =  Instantiate(AttackPrefab[value]);
-        atack.transform.position = new Vector3(_attackWarning[value].transform.position.x, _attackWarning[value].transform.position.y,0f);
-        atack.GetComponent<SpriteRenderer>().sortingLayerName = _layerName[position];
-        Destroy(atack,3f);
+        GameObject attack =  Instantiate(AttackPrefab[value]);
+        attack.transform.position = new Vector3(_attackWarning[value].transform.position.x, _attackWarning[value].transform.position.y,0f);
+        attack.GetComponent<SpriteRenderer>().sortingLayerName = _layerName[position];
+        attack.layer = GameController.Instance.DefinePhysicsLayerByString(_layerName[position]);
+        Destroy(attack,3f);
         _attackWarning[value].SetActive(false);
     }
 
     public override void TakeDamage()
     {
-        if (Health <= 0)
-            _dead = true;
-        else
-            Health--;
+        _controlledEnemy.TakeDamage(1);
+        if (!_controlledEnemy.GetDead() && Phases[CurrentAttackPhase] >= _controlledEnemy.Health)
+        {
+            ++CurrentAttackPhase;
+            OnBattleEnd.Invoke();
+        }
     }
 
     public override int GetCount()
@@ -98,10 +109,23 @@ public class Boss : EnemyController
 
     public override void Attack() { }
 
+    public IEnumerator LineAttackAnimation()
+    {
+        _canAttack = false;
+        Debug.Log("LineAttack");
+        yield return new WaitForSeconds(2f);
+        OnBattleEnd.Invoke();
+        _canAttack = true;
+    }
+
     public override bool GetActiv()
     {
         return gameObject.activeSelf;
     }
 
+    public override EnemyType GetEnemyType()
+    {
+        return _controlledEnemy.Type;
+    }
 
 }

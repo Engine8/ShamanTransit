@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
-  startingHealth: 1
-  attackDistanceThreshold: 3.8
+  AttackDistanceThreshold: 0
   Damage: 5
+  Health: 0
   SpecialSprite: {fileID: 21300000, guid: c4fb584c9af95ec40b933c892f87d0bc, type: 3}
 --- !u!114 &6648551672482228333
 MonoBehaviour:
@@ -117,7 +117,6 @@ MonoBehaviour:
   AttackSound: {fileID: 0}
   DieSound: {fileID: 0}
   IsCameraShaking: 1
-  speed: 13
   RunTime: 1
   RunCurve:
     serializedVersion: 2
@@ -134,6 +133,7 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  Speed: 10.1
 --- !u!95 &3786425029537678825
 Animator:
   serializedVersion: 3

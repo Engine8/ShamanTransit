@@ -7,16 +7,16 @@ using UnityEngine.Events;
 public class WolfController :  EnemyController
 {
     public List<Enemy> Wolf;
-    public float timeBetweenAttacks;//скорость атаки
-    public float speed;
+    public float TimeBetweenAttacks;//скорость атаки
+    public float Speed;
     private float _facktSpeed;
-    private Vector3[][] _positionWolf = new Vector3[4][];
-    private float nextAttackTime;
-    private int countWolf = 4;
-    private PlayerController HealsPlayer;
 
-    bool isAttack = false;
-    bool CR_running = false;
+    private Vector3[][] _positionWolf = new Vector3[4][];
+    private float _nextAttackTime;
+    private int _countWolf = 4;
+
+    private bool _isAttack = false;
+    private bool _CR_running = false;
     //Destroyed in HitArea class
     private void OnDestroy()
     {
@@ -27,11 +27,13 @@ public class WolfController :  EnemyController
 
     void Start()
     {
-        _facktSpeed = speed;
-        HealsPlayer = FindObjectOfType<PlayerController>().GetComponent<PlayerController>();
-        nextAttackTime = Time.time + timeBetweenAttacks;
+        OnBattleEnd = new UnityEvent();
+        _facktSpeed = Speed;
+        _targetCharacter = GameController.Instance.PlayerCharacter;
+        _nextAttackTime = Time.time + TimeBetweenAttacks;
         for (int i = 0; i < 4; ++i)
         {
+            Wolf[i].OnDie.AddListener(ProcessEnemyDeath);
             _positionWolf[i] = new Vector3[4 - i];
             for (int j = 0; j < 4 - i; ++j)
             {
@@ -53,25 +55,23 @@ public class WolfController :  EnemyController
     {
         _facktSpeed = 16;
         yield return new WaitForSeconds(1.4f);
-        _facktSpeed = speed;
-
+        _facktSpeed = Speed;
     }
 
     public void ChendePosition()
     {
-        --countWolf;
-       
+        --_countWolf;
         int indexPosition = 0;
-        if (!CR_running)
+        if (!_CR_running)
             StopCoroutine("ChangePosition");
         for (int i = 0; i < 4; ++i)
         {
             if (!Wolf[i].GetDead())
             {
-                if ((4 - countWolf) == 2)
-                    StartCoroutine(ChangePosition(Wolf[i].gameObject.transform, new Vector3(_positionWolf[4 - countWolf][indexPosition].x + 3, _positionWolf[4 - countWolf][indexPosition].y, 0)));
+                if ((4 - _countWolf) == 2)
+                    StartCoroutine(ChangePosition(Wolf[i].gameObject.transform, new Vector3(_positionWolf[4 - _countWolf][indexPosition].x + 3, _positionWolf[4 - _countWolf][indexPosition].y, 0)));
                 else
-                    StartCoroutine(ChangePosition(Wolf[i].gameObject.transform, _positionWolf[4 - countWolf][indexPosition]));
+                    StartCoroutine(ChangePosition(Wolf[i].gameObject.transform, _positionWolf[4 - _countWolf][indexPosition]));
                 ++indexPosition;
             }
         }
@@ -79,7 +79,7 @@ public class WolfController :  EnemyController
 
     IEnumerator ChangePosition(Transform wolfA, Vector3 wolfB)
     {
-        CR_running = true;
+        _CR_running = true;
 
         Vector3 newPositionA = new Vector3((float)System.Math.Round((double)wolfB.x, 1), (float)System.Math.Round((double)wolfB.y, 1), wolfB.z);
 
@@ -94,24 +94,24 @@ public class WolfController :  EnemyController
 
             yield return new WaitForSeconds(0.01f);
         }
-        CR_running = false;
+        _CR_running = false;
     }
 
     void FixedUpdate()
     {
-        if (countWolf > 0 && !_isInAnimation)
+        if (_countWolf > 0 && !_isInAnimation)
         {
             gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x + _facktSpeed * Time.deltaTime, gameObject.transform.localPosition.y);
 
-            if (!HealsPlayer.GetDead())
+            if (!_targetCharacter.GetDead())
             {
-                if (!isAttack)
+                if (!_isAttack)
                 {
-                    if (Time.time > nextAttackTime)
+                    if (Time.time > _nextAttackTime)
                         Attack();
 
-                    if ((countWolf > 0) && ((4 - countWolf) != 2))
-                        Wolf[4 - countWolf].transform.localPosition += new Vector3(0.2f * Time.deltaTime, 0f, 0f);
+                    if ((_countWolf > 0) && ((4 - _countWolf) != 2))
+                        Wolf[4 - _countWolf].transform.localPosition += new Vector3(0.2f * Time.deltaTime, 0f, 0f);
                 }
             }
         }
@@ -120,38 +120,38 @@ public class WolfController :  EnemyController
     public override void Attack()
     {
         StartCoroutine("PauseForAttack");
-        if (countWolf > 0)
+        if (_countWolf > 0)
         {
-            if ((4 - countWolf) == 2)
+            if ((4 - _countWolf) == 2)
             {
                 int rand = Random.Range(2, 4);
                 Wolf[rand].StartAttack(Wolf[rand].transform.localPosition);
             }
             else
-                Wolf[4 - countWolf].StartAttack(_positionWolf[4 - countWolf][0]);
-            nextAttackTime = Time.time + timeBetweenAttacks;
+                Wolf[4 - _countWolf].StartAttack(_positionWolf[4 - _countWolf][0]);
+            _nextAttackTime = Time.time + TimeBetweenAttacks;
         }
     }
 
     IEnumerator PauseForAttack()
     {
-        isAttack = true;
+        _isAttack = true;
         yield return new WaitForSeconds(3f);
-        isAttack = false;
+        _isAttack = false;
     }
 
     public override void TakeDamage()
     {
         StopAllCoroutines();
         StartCoroutine("PauseForAttack");
-        nextAttackTime = Time.time + timeBetweenAttacks;
-        Wolf[(4 - countWolf)].TakeDamage(1);
-        ChendePosition();
+        _nextAttackTime = Time.time + TimeBetweenAttacks;
+        Wolf[(4 - _countWolf)].TakeDamage(1);
+        
     }
 
     public override  int GetCount()
     {
-        return countWolf;
+        return _countWolf;
     }
 
     public override bool GetActiv()
@@ -173,7 +173,7 @@ public class WolfController :  EnemyController
             _isInAnimation = true;
             //define positions
             _startAnimPosition = transform.position;
-            _targetAnimPosition = HealsPlayer.transform.position - new Vector3(1f, 0, 0);
+            _targetAnimPosition = _targetCharacter.transform.position - new Vector3(1f, 0, 0);
             _animDistance = (_targetAnimPosition - _startAnimPosition).magnitude;
             StartCoroutine(AnimatePlayerDeath());
         }
@@ -196,5 +196,17 @@ public class WolfController :  EnemyController
                     Wolf[i].SetStatic();
             }
         }
+    }
+
+    public override EnemyType GetEnemyType()
+    {
+        return EnemyType.Wolf;
+    }
+
+    public override void ProcessEnemyDeath()
+    {
+        ChendePosition();
+        if (_countWolf == 0)
+            OnBattleEnd.Invoke();
     }
 }

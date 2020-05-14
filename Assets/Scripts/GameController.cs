@@ -176,11 +176,7 @@ public class GameController : MonoBehaviour
         _defaultColor = GlobalLight.color;
 
         //set default camera settings on level start
-        _targetLookaheadTime = CameraSettings.LookaheadTimeRun;
-        _targetScreenXPos = CameraSettings.ScreenXPosRun;
-        _targetRefreshCameraTime = CameraSettings.RefreshTimeRun;
-        _targetCameraStatus = CameraStatusE.Run;
-
+        SetTargetCameraSettings(CameraStatusE.Run);
         CinemachineFramingTransposer framTransposer = VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
         _currentLookaheadTime = framTransposer.m_LookaheadTime;
         _currentScreenXPos = framTransposer.m_ScreenX;
@@ -259,7 +255,7 @@ public class GameController : MonoBehaviour
         vignette.intensity.Override(0f);
     }
 
-    private void BattleGameWin()
+    private void EndBattle()
     {
         UnityEngine.Rendering.Universal.Vignette vignette;
         volumeProfile.TryGet(out vignette);
@@ -456,7 +452,7 @@ public class GameController : MonoBehaviour
     }
 
     public void SetGameStatus(GameStatus gameStatus, bool isNeedToChangeCamera)
-    {
+    { 
         if (gameStatus == GameStatus.Attack)
         {
             CurrentGameStatus = GameStatus.Attack;
@@ -469,6 +465,7 @@ public class GameController : MonoBehaviour
         else if (gameStatus == GameStatus.BossRun)
         {
             CurrentGameStatus = GameStatus.BossRun;
+            EndBattle();
             if (isNeedToChangeCamera)
             {
                 SetTargetCameraSettings(CameraStatusE.Death);
@@ -477,7 +474,7 @@ public class GameController : MonoBehaviour
         else if (gameStatus == GameStatus.Run)
         {
             CurrentGameStatus = GameStatus.Run;
-            BattleGameWin();
+            EndBattle();
             if (isNeedToChangeCamera)
             {
                 SetTargetCameraSettings(CameraStatusE.Run);
@@ -534,5 +531,20 @@ public class GameController : MonoBehaviour
             _targetScreenXPos = CameraSettings.ScreenXPosDeath;
         }
         _isNeedToRefreshCamera = true;
+    }
+
+    public int DefinePhysicsLayerByString(string layerName)
+    {
+        if (layerName == "Line1")
+            return 8;
+        else if (layerName == "Line12")
+            return 9;
+        else if (layerName == "Line2")
+            return 10;
+        else if (layerName == "Line23")
+            return 11;
+        else if (layerName == "Line3")
+            return 12;
+        return -1;
     }
 }

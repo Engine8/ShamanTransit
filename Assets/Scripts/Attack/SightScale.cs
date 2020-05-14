@@ -19,9 +19,6 @@ public class SightScale : MonoBehaviour
     }
     public void CalculateSpeed()
     {
-        //if (GameController.Instance.IsAttackMode)
-        //{
-            //full random
         int res = Random.Range(0, 100);
         if (res < 5)
             SpeedRotate = 1 * Mathf.Sign(SpeedRotate);
@@ -29,15 +26,6 @@ public class SightScale : MonoBehaviour
             SpeedRotate = 2 * Mathf.Sign(SpeedRotate);
         else
             SpeedRotate = 3 * Mathf.Sign(SpeedRotate);
-
-        /*
-            SpeedRotate = (Mathf.Abs(SpeedRotate) + 1) * SpeedRotate / Mathf.Abs(SpeedRotate);
-            if (Mathf.Abs(SpeedRotate) > 4)
-                SpeedRotate = 2 * SpeedRotate / Mathf.Abs(SpeedRotate);
-            if (Random.Range(0, 100) == 46)
-                SpeedRotate = 1 * SpeedRotate / Mathf.Abs(SpeedRotate);
-        }
-        */
     }
    
     public void Stop()

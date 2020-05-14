@@ -28,13 +28,10 @@ public class ChunksPlacer : MonoBehaviour
         {
             Instance = this;
         }
-
         if (GameData.Instance != null)
         {
             mapIndex = GameData.Instance.CurrentLevelIndex;
         }
-
-        
         currentMap = map[mapIndex];
     }
 
@@ -69,14 +66,20 @@ public class ChunksPlacer : MonoBehaviour
             SoundManager.Instance.PlaySoundClip(enemyController.EnterSound, true);
             if (enemyController.IsCameraShaking)
                 GameController.Instance.ShakeCamera(enemyController.EnterSound.length);
-
+            HitAreaRef.SetEnemy(enemyController);
             if (mapTrigger.Type == MapTrigger.TriggerType.Enemy)
             {
-                HitAreaRef.SetEnnemy(enemyController);
                 GameController.Instance.SetGameStatus(GameController.GameStatus.Attack, true);
             }
             else
+            {
                 GameController.Instance.SetGameStatus(GameController.GameStatus.BossRun, true);
+            }
+        }
+        else if (mapTrigger.Type == MapTrigger.TriggerType.BossEndSection) //start the attack phase
+        {
+            HitAreaRef.BossBattleSectionStart();
+            GameController.Instance.SetGameStatus(GameController.GameStatus.Attack, true);
         }
     }
 
@@ -95,8 +98,6 @@ public class ChunksPlacer : MonoBehaviour
                     currentMap.spawnedChunks.RemoveAt(0);
                 }
                 ++indexChunk;
-
-                //player.AddSoul();
             }
         }
         else

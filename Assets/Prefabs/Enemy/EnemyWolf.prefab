@@ -90,8 +90,8 @@ MonoBehaviour:
   - {fileID: 7040827107544502493}
   - {fileID: 6011352227188605391}
   - {fileID: 7040827107407124624}
-  timeBetweenAttacks: 10
-  speed: 9.95
+  TimeBetweenAttacks: 2
+  Speed: 10.2
 --- !u!1001 &4339099224912972970
 PrefabInstance:
   m_ObjectHideFlags: 0

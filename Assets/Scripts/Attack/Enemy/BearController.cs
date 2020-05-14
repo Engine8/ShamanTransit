@@ -4,20 +4,19 @@ using UnityEngine;
 
 public class BearController : EnemyController
 {
-    public float speed;
-    private float _facktSpeed;
+    public float Speed;
 
-    private PlayerController HealsPlayer;
-    private Enemy Bear;
-    private float nextAttackTime;
+    private float _facktSpeed;
+    private float _nextAttackTime;
     private bool _canAttack = true;
     //Destoyed in HitArea class
 
     void Start()
     {
-        HealsPlayer = FindObjectOfType<PlayerController>().GetComponent<PlayerController>();
-        //Debug.Log(gameObject.GetComponent<Enemy>());
-        Bear = gameObject.GetComponent<Enemy>();
+        OnBattleEnd = new UnityEngine.Events.UnityEvent();
+        _targetCharacter = GameController.Instance.PlayerCharacter;
+        _controlledEnemy = gameObject.GetComponent<Enemy>();
+        _controlledEnemy.OnDie.AddListener(ProcessEnemyDeath);
         StartCoroutine("Sprint");
     }
 
@@ -25,29 +24,30 @@ public class BearController : EnemyController
     {
         _facktSpeed = 16;
         yield return new WaitForSeconds(1f);
-        _facktSpeed = speed;
+        _facktSpeed = Speed;
     }
 
     void FixedUpdate()
     {
-        if (!Bear.GetDead() && !_isInAnimation)
+        if (!_controlledEnemy.GetDead() && !_isInAnimation)
         {
             gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x + _facktSpeed * Time.deltaTime, gameObject.transform.localPosition.y);
 
-            if (!HealsPlayer.GetDead() && _canAttack)
+            if (!_targetCharacter.GetDead() && _canAttack)
             {
-                float sqrDstToTarget = (HealsPlayer.transform.position - transform.position).sqrMagnitude;
-                if (sqrDstToTarget < Mathf.Pow(Bear.attackDistanceThreshold, 2))
+                float sqrDstToTarget = (_targetCharacter.transform.position - transform.position).sqrMagnitude;
+                if (sqrDstToTarget < Mathf.Pow(_controlledEnemy.AttackDistanceThreshold, 2))
                 {
-                    if (Time.time > nextAttackTime)
+                    if (Time.time > _nextAttackTime)
                     {
-                        Bear.StartAttack(Vector3.zero);
-                        nextAttackTime = Time.time + 20;
+                        Attack();
+                        _nextAttackTime = Time.time + 20;
                     }
                 }
             }
         }
     }
+
     public override void TakeDamage()
     {
         StartCoroutine("Slowdown");
@@ -56,14 +56,14 @@ public class BearController : EnemyController
     IEnumerator Slowdown()
     {
         _facktSpeed = 9;
-        Bear.TakeDamage(1);
+        _controlledEnemy.TakeDamage(1);
         yield return new WaitForSeconds(0.6f);
-        _facktSpeed = speed;
+        _facktSpeed = Speed;
     }
 
     public override int GetCount()
     {
-        if (Bear.GetDead())
+        if (_controlledEnemy.GetDead())
             return 0;
         else
             return 1;
@@ -71,10 +71,13 @@ public class BearController : EnemyController
 
     public bool GetLifeBear()
     {
-        return Bear.GetDead();
+        return _controlledEnemy.GetDead();
     }
 
-    public override void Attack() { }
+    public override void Attack()
+    {
+        _controlledEnemy.StartAttack(Vector3.zero);
+    }
 
     public override bool GetActiv()
     {
@@ -90,7 +93,6 @@ public class BearController : EnemyController
             //disable attack availability 
             _canAttack = false;
             Destroy(gameObject, 3f);
-            //destroy?
         }
         else
         {
@@ -99,7 +101,7 @@ public class BearController : EnemyController
             _isInAnimation = true;
             //define positions
             _startAnimPosition = transform.position;
-            _targetAnimPosition = HealsPlayer.transform.position - new Vector3(2f, 0, 0);
+            _targetAnimPosition = _targetCharacter.transform.position - new Vector3(2f, 0, 0);
             _animDistance = (_targetAnimPosition - _startAnimPosition).magnitude;
             StartCoroutine(AnimatePlayerDeath());
         }
@@ -107,6 +109,17 @@ public class BearController : EnemyController
 
     public override void SetEnemyStatic()
     {
-        Bear.SetStatic();
+        _controlledEnemy.SetStatic();
+    }
+
+    public override EnemyType GetEnemyType()
+    {
+        return _controlledEnemy.Type;
+    }
+
+    public override void ProcessEnemyDeath()
+    {
+        if (_controlledEnemy.GetDead())
+            OnBattleEnd.Invoke();
     }
 }

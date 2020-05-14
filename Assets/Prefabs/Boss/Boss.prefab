@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7723751788368862443}
   - component: {fileID: 7723751788368862442}
   - component: {fileID: 7723751788368862453}
+  - component: {fileID: -7627252959481424363}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Untagged
@@ -120,7 +121,7 @@ MonoBehaviour:
   EnterSound: {fileID: 8300000, guid: 704e62abb7037bb4dbbe0c9de8e30341, type: 3}
   AttackSound: {fileID: 0}
   DieSound: {fileID: 0}
-  IsCameraShaking: 1
+  IsCameraShaking: 0
   RunTime: 1
   RunCurve:
     serializedVersion: 2
@@ -128,6 +129,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  OnBattleEnd:
+    m_PersistentCalls:
+      m_Calls: []
   LineAttack:
   - -1.8
   - -2.52
@@ -135,8 +139,32 @@ MonoBehaviour:
   AttackPrefab:
   - {fileID: 1285838981386952625, guid: 69e5ef13228ec574ca66a056ccfeea87, type: 3}
   - {fileID: 1285838981386952625, guid: 81080b8080471c443ac5143a8db6a368, type: 3}
-  Health: 5
+  Phases: 0600000003000000
+  CurrentAttackPhase: 0
   TimeBetweenAttacks: 5
+  OnAttackPhaseEnded:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-7627252959481424363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7723751788368862441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4446c83478802c74a9d6f7cdf28f8a22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 2
+  AttackDistanceThreshold: 0
+  Damage: 1
+  Health: 10
+  SpecialSprite: {fileID: 0}
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &3918604570972598879
 PrefabInstance:
   m_ObjectHideFlags: 0
