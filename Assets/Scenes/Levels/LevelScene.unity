@@ -2686,7 +2686,7 @@ MonoBehaviour:
     LookaheadTimeAttack: 0.2
     ScreenXPosAttack: 1
     RefreshTimeDeath: 0.8
-    LookaheadTimeDeath: 0
+    LookaheadTimeDeath: 0.01
     ScreenXPosDeath: 0.5
   CurrentGameStatus: 0
   CurrentGameMode: 0
@@ -3269,8 +3269,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LookaheadTime: 0
-  m_LookaheadSmoothing: 12.1
+  m_LookaheadTime: 0.01
+  m_LookaheadSmoothing: 10
   m_LookaheadIgnoreY: 1
   m_XDamping: 0.4
   m_YDamping: 1
@@ -3284,7 +3284,7 @@ MonoBehaviour:
   m_UnlimitedSoftZone: 0
   m_SoftZoneWidth: 0.59
   m_SoftZoneHeight: 2
-  m_BiasX: -0.0000001010248
+  m_BiasX: 0.000000101024824
   m_BiasY: 0.0000007502682
   m_CenterOnActivate: 1
   m_GroupFramingMode: 2

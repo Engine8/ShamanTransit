@@ -520,7 +520,9 @@ public class GameController : MonoBehaviour
         }
         else if (_targetCameraStatus == CameraStatusE.Attack)
         {
+            Debug.Log(_targetLookaheadTime);
             _targetLookaheadTime = CameraSettings.LookaheadTimeAttack;
+            Debug.Log(_targetLookaheadTime);
             _targetRefreshCameraTime = CameraSettings.RefreshTimeAttack;
             _targetScreenXPos = CameraSettings.ScreenXPosAttack;
         }

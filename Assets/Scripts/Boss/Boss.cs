@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.UIWidgets.ui;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Rendering.Universal;
 
 public class Boss : EnemyController
 {
@@ -39,17 +40,23 @@ public class Boss : EnemyController
         transform.position = new Vector2(_targetCharacter.transform.position.x - 13, 0);
         OnAttackPhaseEnded = new UnityEvent();
 
-        StartCoroutine("Sprint");
+        StartCoroutine(Sprint(6));
  
     }
 
-    IEnumerator Sprint() //появление волков
+    IEnumerator Sprint(float speed) //появление волков
     {
-        _speedBuf = 6;
+        _speedBuf = speed;
         yield return new WaitForSeconds(1f);
         _speedBuf = 0;
     }
-
+    
+    IEnumerator Slowdown(float speed) //появление волков
+    {
+        _speedBuf = -speed;
+        yield return new WaitForSeconds(1f);
+        _speedBuf = 0;
+    }
     void FixedUpdate()
     {
         if (!_dead && !_isInAnimation && !_targetCharacter.GetDead())
@@ -88,7 +95,7 @@ public class Boss : EnemyController
         attack.transform.position = new Vector3(_attackWarning[value].transform.position.x, _attackWarning[value].transform.position.y,0f);
         attack.GetComponent<SpriteRenderer>().sortingLayerName = _layerName[position];
         attack.layer = GameController.Instance.DefinePhysicsLayerByString(_layerName[position]);
-        Destroy(attack,3f);
+        Destroy(attack,2f);
         _attackWarning[value].SetActive(false);
     }
 
@@ -114,9 +121,11 @@ public class Boss : EnemyController
 
     public IEnumerator LineAttackAnimation()
     {
+        StartCoroutine(Slowdown(4)); 
         _canAttack = false;
         Debug.Log("LineAttack");
-        yield return new WaitForSeconds(2f);
+       yield return new WaitForSeconds(2f);
+        StartCoroutine(Sprint(4));
         OnBattleEnd.Invoke();
         _canAttack = true;
     }
@@ -130,5 +139,11 @@ public class Boss : EnemyController
     {
         return _controlledEnemy.Type;
     }
-
+    class Fas
+    {
+        public float timeFas;
+        private GameObject[] _attackWarning;
+        public GameObject[] AttackPrefab;
+        public bool isspeeeed;
+    }
 }
