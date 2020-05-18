@@ -87,7 +87,10 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
-
+    public void Kill()
+    {
+        Die();
+    }
     void Die()
     {
         _dead = true;
@@ -103,7 +106,7 @@ public class Enemy : MonoBehaviour
         OnDie.Invoke();
 
         //debug
-        OnDeadAnimationEnd();
+        //OnDeadAnimationEnd();
     }
 
     public void OnDeadAnimationEnd()
