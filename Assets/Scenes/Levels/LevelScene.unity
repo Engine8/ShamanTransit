@@ -459,19 +459,19 @@ MonoBehaviour:
     WindStatusVar: 0
     TilePrefabsTurn:
     - {fileID: 4860197548757332440, guid: 5e3e6ba11f5c92945a6e1bcf5e9a387b, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 5655114978885734657, guid: bdd781c25248e49448ea4181dceb544e, type: 3}
+    - {fileID: 7334647115942283197, guid: 79d66dcf964197c4b84f5a42f3a29e53, type: 3}
     - {fileID: 6581053277576116797, guid: 6460ca53a63ec8b44a2332ba553f8b95, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 5655114978885734657, guid: bdd781c25248e49448ea4181dceb544e, type: 3}
+    - {fileID: 9000326502963422005, guid: f0bd41bd7d0d7ff4ea56b077e2efedc7, type: 3}
+    - {fileID: -5517131477564077679, guid: 3d0c6cd3017e76744b7779b0938f6704, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: d96d8a5c0af3d494793fc43793468c17, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: d96d8a5c0af3d494793fc43793468c17, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
@@ -1154,6 +1154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Arrow: {fileID: 283770746}
+  EnemyRef: {fileID: 0}
+  BossRef: {fileID: 0}
   GoodShot: {fileID: 8300000, guid: 3aadd2b9dac84d54a9f86438b849608a, type: 3}
   BadShot: {fileID: 8300000, guid: 544944982a320094bb4895a7328c316b, type: 3}
 --- !u!1 &708102605
@@ -2670,9 +2672,13 @@ MonoBehaviour:
   LoseScreen: {fileID: 463390468}
   LoseText: {fileID: 1031278815}
   AttackUI: {fileID: 1175818795}
+  HitAreaRef: {fileID: 537787946}
   WinSound: {fileID: 8300000, guid: 83c42568cd77d3b429a3e37e718ba491, type: 3}
   DefeatSound: {fileID: 8300000, guid: 83c42568cd77d3b429a3e37e718ba491, type: 3}
   PlayerCharacter: {fileID: 1900739571}
+  DieTime: 10
+  EndgameTime: 2
+  PlayerDeadColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
   MainCamera: {fileID: 1208487111}
   VirtCamera: {fileID: 2109791148}
   MainCameraVolume: {fileID: 2109791150}
@@ -2692,7 +2698,6 @@ MonoBehaviour:
   CurrentGameMode: 0
   StartPoint: {fileID: 11449643}
   EndPoint: {fileID: 1784547516}
-  IsAttackMode: 0
   IsGameEnded: 0
   OnGameModeChanged:
     m_PersistentCalls:
@@ -2701,9 +2706,6 @@ MonoBehaviour:
   SnowPrefab: {fileID: 5752463479927041554, guid: 6b55612d2968f9d4baab7d30588644c6,
     type: 3}
   GlobalLight: {fileID: 1277333766}
-  PlayerDeadColor: {r: 0.4433962, g: 0.4433962, b: 0.4433962, a: 1}
-  DieTime: 10
-  EndgameTime: 2
 --- !u!4 &1414940576
 Transform:
   m_ObjectHideFlags: 0

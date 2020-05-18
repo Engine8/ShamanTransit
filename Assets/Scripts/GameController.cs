@@ -1,13 +1,11 @@
-﻿using System.Collections;
+﻿using Cinemachine;
 using System;
-using System.Collections.Generic;
-using TMPro;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Rendering;
 using UnityEngine.Events;
 using UnityEngine.Experimental.Rendering.Universal;
-using Cinemachine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
@@ -23,11 +21,25 @@ public class GameController : MonoBehaviour
     public GameObject LoseScreen;
     public Text LoseText;
     public GameObject AttackUI;
+    public HitArea HitAreaRef;
 
     public AudioClip WinSound;
     public AudioClip DefeatSound;
 
+    //-------------Player--------------------
+    [Space(20, order = 0)]
+    [Header("Player", order = 1)]
     public PlayerController PlayerCharacter;
+
+    public float DieTime = 2f;
+    public float EndgameTime = 2f;
+    private bool _secondChanceRequested = false;
+    private bool _secondChanceUsed = false;
+    private Coroutine _secondChanceCoroutine = null;
+    public Color PlayerDeadColor;
+
+    //------------end player-----------------
+
 
     //Note: is needed to find better solution
     public Camera MainCamera;
@@ -35,6 +47,7 @@ public class GameController : MonoBehaviour
     public Volume MainCameraVolume;
     public VolumeProfile volumeProfile;
     public ParallaxBackground Moon;
+
 
     //-----------Camera status------------
     [Serializable]
@@ -66,6 +79,8 @@ public class GameController : MonoBehaviour
         Death = 2,
     }
 
+    [Space(20, order = 0)]
+    [Header("Camera", order = 1)]
     //This variable stores settings
     public CameraStatusSettings CameraSettings;
     //These variables stores settings that should be set up
@@ -109,7 +124,6 @@ public class GameController : MonoBehaviour
     private float _lastPlayerCharacterXPosition;
     private float _unitsPassed;
 
-    public bool IsAttackMode;
     public bool IsGameEnded;
 
     public UnityEvent OnGameModeChanged;
@@ -123,12 +137,7 @@ public class GameController : MonoBehaviour
      */
     public Light2D GlobalLight;
     private Color _defaultColor;
-    public Color PlayerDeadColor;
-    //Time for player to enable second life
-    public float DieTime = 2f;
-    public float EndgameTime = 2f;
-    private bool _secondChance = false;
-    private Coroutine _secondChanceCoroutine = null;
+
 
     delegate void VoidFunc();
 
@@ -231,7 +240,7 @@ public class GameController : MonoBehaviour
                 _currentRefreshTime = 0f;
                 _isNeedToRefreshCamera = false;
 
-                if (_secondChance)
+                if (_secondChanceRequested)
                     ActivateSecondChance();
             }
         }
@@ -317,13 +326,13 @@ public class GameController : MonoBehaviour
         SetTargetCameraSettings(CameraStatusE.Death);
 
         //check second chance availability
-        if (PlayerDataController.Instance.HasItem(1) == 0)
+        if (PlayerDataController.Instance.HasItem(1) == 0 || _secondChanceUsed)
         {
             StartCoroutine(ChangeGlobalLight(EndgameTime, _defaultColor, PlayerDeadColor, LevelEnded));
         }
         else
             //second chance will be activated on LateUpdate
-            _secondChance = true;
+            _secondChanceRequested = true;
 
     }
 
@@ -335,7 +344,7 @@ public class GameController : MonoBehaviour
             PlayerCharacter.EnableSecondChance();
             SecondChanceStartAnimate();
         }
-        _secondChance = false;
+        _secondChanceRequested = false;
     }
 
     //Update global light each frame for DieTime seconds or until player's click
@@ -373,7 +382,14 @@ public class GameController : MonoBehaviour
 
     private void RevivePlayerCharacter()
     {
-        SetTargetCameraSettings(CameraStatusE.Run);
+        if (CurrentGameStatus == GameStatus.Attack)
+        {
+            SetTargetCameraSettings(CameraStatusE.Attack);
+            ((Boss)HitAreaRef.BossRef).ContinueBattle();
+            AttackUI.SetActive(true);
+        }
+        else if (CurrentGameStatus == GameStatus.Run)
+            SetTargetCameraSettings(CameraStatusE.Run);
 
         //Stop SecondChanceAnimation coroutine
         if (_secondChanceCoroutine != null)
@@ -382,6 +398,7 @@ public class GameController : MonoBehaviour
             _secondChanceCoroutine = null;
             //Debug.Log("Second chance activated");
         }
+        _secondChanceUsed = true;
         PlayerDataController.Instance.UseItem(1);
         StartCoroutine(RestoreColors());
     }
