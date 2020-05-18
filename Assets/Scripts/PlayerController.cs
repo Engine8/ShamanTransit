@@ -298,6 +298,7 @@ public class PlayerController : Movable
         _animator.SetBool("IsDead", false);
         _animator.SetBool("IsRevived", true);
 
+        CurrentHPBattle = MaxHPBattle;
         //change material?
         StartCoroutine(ReviveAnimate());
         ReviveMarketParticle.Stop();

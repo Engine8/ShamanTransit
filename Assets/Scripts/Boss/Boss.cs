@@ -125,7 +125,7 @@ public class Boss : EnemyController
         _canAttack = false;
         Debug.Log("LineAttack");
         _targetCharacter.TakeDamage(1);
-        yield return new WaitForSeconds(10f);
+        yield return new WaitForSeconds(1f);
         //StartCoroutine(Sprint(4));
         //OnBattleEnd.Invoke();
         _canAttack = true;
@@ -153,4 +153,26 @@ public class Boss : EnemyController
         if (_controlledEnemy.GetDead())
             OnBattleEnd.Invoke();
     }
+
+    //perform actions on player death
+    public override void StartPlayerDieAnimation()
+    {
+        //stop boss
+        _isInAnimation = true;
+        _startAnimPosition = transform.position;
+        _targetAnimPosition = _targetCharacter.transform.position - new Vector3(1f, 0, 0);
+        _animDistance = (_targetAnimPosition - _startAnimPosition).magnitude;
+        StartCoroutine(AnimatePlayerDeath());
+    }
+
+    public override void SetEnemyStatic()
+    {
+
+    }
+
+    public void ContinueBattle()
+    {
+        _isInAnimation = false;
+    }
+
 }

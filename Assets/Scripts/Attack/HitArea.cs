@@ -8,8 +8,8 @@ public class HitArea : MonoBehaviour
 {
     public Transform Arrow;
 
-    private EnemyController _enemy;
-    private EnemyController _boss;
+    public EnemyController EnemyRef;
+    public EnemyController BossRef;
     private Image _missAr;
     private SightScale _sightScale;
     private float _pauseAttacksMiss = 0;
@@ -32,11 +32,11 @@ public class HitArea : MonoBehaviour
 
     public void SetEnemy(EnemyController value)
     {
-        _enemy = value;
-        _enemy.OnBattleEnd.AddListener(EndBattle);
-        if (_enemy.GetEnemyType() == EnemyType.Boss)
+        EnemyRef = value;
+        EnemyRef.OnBattleEnd.AddListener(EndBattle);
+        if (EnemyRef.GetEnemyType() == EnemyType.Boss)
         {
-            _boss = _enemy;
+            BossRef = EnemyRef;
             //((Boss)_enemy).OnAttackPhaseEnded.AddListener(BossAttackPhaseEnded);
         }
     }
@@ -44,14 +44,14 @@ public class HitArea : MonoBehaviour
     public void EndBattle()
     {
         _sightScale.Stop();
-        if (_enemy.GetEnemyType() == EnemyType.Boss)
+        if (EnemyRef.GetEnemyType() == EnemyType.Boss)
         {
             GameController.Instance.SetGameStatus(GameController.GameStatus.BossRun, true);
         }
-        else if (_enemy.GetCount() == 0)
+        else if (EnemyRef.GetCount() == 0)
         {
             GameController.Instance.SetGameStatus(GameController.GameStatus.Run, true);
-            Destroy(_enemy.gameObject, 9f);
+            Destroy(EnemyRef.gameObject, 9f);
         }
     }
 
@@ -63,7 +63,7 @@ public class HitArea : MonoBehaviour
 
     public void BossBattleSectionStart()
     {
-        _enemy = _boss;
+        EnemyRef = BossRef;
     }
 
     public void Tach()
@@ -78,11 +78,11 @@ public class HitArea : MonoBehaviour
                 if (Time.time > _pauseAttacksHit)
                 {
                     transform.localEulerAngles = new Vector3(0, 0, -Random.Range(0f, 75f));
-                    if (_enemy.GetActiv())
+                    if (EnemyRef.GetActiv())
                     {
-                        if (_enemy.GetCount() > 0)
+                        if (EnemyRef.GetCount() > 0)
                         {
-                            _enemy.TakeDamage();
+                            EnemyRef.TakeDamage();
                             SoundManager.Instance.PlaySoundClip(GoodShot, true);
                         }
                     }
@@ -96,8 +96,8 @@ public class HitArea : MonoBehaviour
                 StartCoroutine("Miss");
                 if (Time.time > _pauseAttacksMiss)
                 {
-                    if (_enemy.GetActiv())
-                        _enemy.Attack();
+                    if (EnemyRef.GetActiv())
+                        EnemyRef.Attack();
                     _pauseAttacksMiss = Time.time + 0.5f;
                 }
             }
@@ -116,7 +116,8 @@ public class HitArea : MonoBehaviour
     public void OnPlayerCharacterDie()
     {
         _sightScale.Stop();
-        GameController.Instance.SetGameStatus(0, false);
-        _enemy.StartPlayerDieAnimation();
+        if (BossRef == null)
+            GameController.Instance.SetGameStatus(GameController.GameStatus.Run, false);
+        EnemyRef.StartPlayerDieAnimation();
     }
 }

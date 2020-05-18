@@ -103,7 +103,8 @@ public class Enemy : MonoBehaviour
         OnDie.Invoke();
 
         //debug
-        OnDeadAnimationEnd();
+        if (Type == EnemyType.Boss)
+            OnDeadAnimationEnd();
     }
 
     public void OnDeadAnimationEnd()
