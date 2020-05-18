@@ -159,7 +159,7 @@ MonoBehaviour:
   AttackPrefab:
   - {fileID: 1285838981386952625, guid: 69e5ef13228ec574ca66a056ccfeea87, type: 3}
   - {fileID: 1285838981386952625, guid: 81080b8080471c443ac5143a8db6a368, type: 3}
-  Phases: 0600000003000000
+  Phases: 0600000000000000
   CurrentAttackPhase: 0
   TimeBetweenAttacks: 5
   OnAttackPhaseEnded:

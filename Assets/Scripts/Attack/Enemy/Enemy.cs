@@ -101,6 +101,9 @@ public class Enemy : MonoBehaviour
             transform.SetParent(null, true);
         }
         OnDie.Invoke();
+
+        //debug
+        OnDeadAnimationEnd();
     }
 
     public void OnDeadAnimationEnd()

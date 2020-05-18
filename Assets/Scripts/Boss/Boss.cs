@@ -39,7 +39,7 @@ public class Boss : EnemyController
         _targetCharacter = GameController.Instance.PlayerCharacter;
         transform.position = new Vector2(_targetCharacter.transform.position.x - 13, 0);
         OnAttackPhaseEnded = new UnityEvent();
-
+        _controlledEnemy.OnDie.AddListener(ProcessEnemyDeath);
         StartCoroutine(Sprint(6));
  
     }
@@ -121,12 +121,13 @@ public class Boss : EnemyController
 
     public IEnumerator LineAttackAnimation()
     {
-        StartCoroutine(Slowdown(4)); 
+        //StartCoroutine(Slowdown(4)); 
         _canAttack = false;
         Debug.Log("LineAttack");
-       yield return new WaitForSeconds(2f);
-        StartCoroutine(Sprint(4));
-        OnBattleEnd.Invoke();
+        _targetCharacter.TakeDamage(1);
+        yield return new WaitForSeconds(10f);
+        //StartCoroutine(Sprint(4));
+        //OnBattleEnd.Invoke();
         _canAttack = true;
     }
 
@@ -145,5 +146,11 @@ public class Boss : EnemyController
         private GameObject[] _attackWarning;
         public GameObject[] AttackPrefab;
         public bool isspeeeed;
+    }
+
+    public override void ProcessEnemyDeath()
+    {
+        if (_controlledEnemy.GetDead())
+            OnBattleEnd.Invoke();
     }
 }

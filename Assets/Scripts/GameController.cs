@@ -465,7 +465,7 @@ public class GameController : MonoBehaviour
         else if (gameStatus == GameStatus.BossRun)
         {
             CurrentGameStatus = GameStatus.BossRun;
-            EndBattle();
+            //EndBattle();
             if (isNeedToChangeCamera)
             {
                 SetTargetCameraSettings(CameraStatusE.Death);
