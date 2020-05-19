@@ -87,7 +87,10 @@ public class Enemy : MonoBehaviour
             Die();
         }
     }
-
+    public void Kill()
+    {
+        Die();
+    }
     void Die()
     {
         _dead = true;
@@ -103,8 +106,7 @@ public class Enemy : MonoBehaviour
         OnDie.Invoke();
 
         //debug
-        if (Type == EnemyType.Boss)
-            OnDeadAnimationEnd();
+        //OnDeadAnimationEnd();
     }
 
     public void OnDeadAnimationEnd()

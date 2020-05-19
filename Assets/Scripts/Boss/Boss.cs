@@ -12,7 +12,8 @@ public class Boss : EnemyController
     private string[] _layerName = { "Line1", "Line2", "Line3" };
     private GameObject[] _attackWarning;
     public GameObject[] AttackPrefab;
-
+    public GameObject WolfPrehab;
+    private BearController _wolf;
     public List<int> Phases = new List<int>();
     public int CurrentAttackPhase = 0;
 
@@ -77,7 +78,7 @@ public class Boss : EnemyController
                      !_targetCharacter.GetDead() &&
                      _canAttack)
             {
-                StartCoroutine(LineAttackAnimation());
+                Start_LineAttackAnimation();
             }
         }
     }
@@ -90,22 +91,26 @@ public class Boss : EnemyController
         _attackWarning[value].transform.position = new Vector2(_attackWarning[value].transform.position.x, LineAttack[position]);
         _attackWarning[value].transform.localScale = new Vector2(_attackWarning[value].transform.localScale.x , LineSize[position, value]);
         _attackWarning[value].GetComponent<SpriteRenderer>().sortingLayerName = _layerName[position];
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(1f);
         GameObject attack =  Instantiate(AttackPrefab[value]);
         attack.transform.position = new Vector3(_attackWarning[value].transform.position.x, _attackWarning[value].transform.position.y,0f);
         attack.GetComponent<SpriteRenderer>().sortingLayerName = _layerName[position];
         attack.layer = GameController.Instance.DefinePhysicsLayerByString(_layerName[position]);
-        Destroy(attack,2f);
+        Destroy(attack,0.7f);
         _attackWarning[value].SetActive(false);
     }
 
     public override void TakeDamage()
     {
         _controlledEnemy.TakeDamage(1);
+        if (_wolf != null)
+            _wolf.TakeDamage();
         if (!_controlledEnemy.GetDead() && Phases[CurrentAttackPhase] >= _controlledEnemy.Health)
         {
             ++CurrentAttackPhase;
+            _wolf.Kill();
             OnBattleEnd.Invoke();
+            END_LineAttackAnimation();
         }
     }
 
@@ -119,15 +124,18 @@ public class Boss : EnemyController
 
     public override void Attack() { }
 
-    public IEnumerator LineAttackAnimation()
+    public void Start_LineAttackAnimation()
     {
-        //StartCoroutine(Slowdown(4)); 
+        StartCoroutine(Slowdown(4)); 
         _canAttack = false;
-        Debug.Log("LineAttack");
-        _targetCharacter.TakeDamage(1);
-        yield return new WaitForSeconds(1f);
-        //StartCoroutine(Sprint(4));
-        //OnBattleEnd.Invoke();
+        _wolf =  Instantiate(WolfPrehab).GetComponent<BearController>();
+        _wolf.transform.position = new Vector3(transform.position.x, transform.position.y-2, 0f);
+    }
+    public void END_LineAttackAnimation()
+    {
+        Destroy(_wolf, 3f);
+        StartCoroutine(Sprint(4));
+        OnBattleEnd.Invoke();
         _canAttack = true;
     }
 
@@ -153,26 +161,4 @@ public class Boss : EnemyController
         if (_controlledEnemy.GetDead())
             OnBattleEnd.Invoke();
     }
-
-    //perform actions on player death
-    public override void StartPlayerDieAnimation()
-    {
-        //stop boss
-        _isInAnimation = true;
-        _startAnimPosition = transform.position;
-        _targetAnimPosition = _targetCharacter.transform.position - new Vector3(1f, 0, 0);
-        _animDistance = (_targetAnimPosition - _startAnimPosition).magnitude;
-        StartCoroutine(AnimatePlayerDeath());
-    }
-
-    public override void SetEnemyStatic()
-    {
-
-    }
-
-    public void ContinueBattle()
-    {
-        _isInAnimation = false;
-    }
-
 }

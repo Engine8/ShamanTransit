@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BearController : EnemyController
 {
+    public bool IsActiwateSprint;
     public float Speed;
 
     private float _facktSpeed;
@@ -17,7 +18,10 @@ public class BearController : EnemyController
         _targetCharacter = GameController.Instance.PlayerCharacter;
         _controlledEnemy = gameObject.GetComponent<Enemy>();
         _controlledEnemy.OnDie.AddListener(ProcessEnemyDeath);
+       if(IsActiwateSprint)
         StartCoroutine("Sprint");
+       else
+            _facktSpeed = Speed;
     }
 
     IEnumerator Sprint() //появление волков
@@ -35,19 +39,23 @@ public class BearController : EnemyController
 
             if (!_targetCharacter.GetDead() && _canAttack)
             {
+            
                 float sqrDstToTarget = (_targetCharacter.transform.position - transform.position).sqrMagnitude;
                 if (sqrDstToTarget < Mathf.Pow(_controlledEnemy.AttackDistanceThreshold, 2))
                 {
                     if (Time.time > _nextAttackTime)
                     {
                         Attack();
-                        _nextAttackTime = Time.time + 20;
+                        _nextAttackTime = Time.time + 4;
                     }
                 }
             }
         }
     }
-
+    public void Kill()
+    {
+        _controlledEnemy.Kill();
+    }
     public override void TakeDamage()
     {
         StartCoroutine("Slowdown");
