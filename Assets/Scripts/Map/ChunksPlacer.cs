@@ -79,7 +79,6 @@ public class ChunksPlacer : MonoBehaviour
         else if (mapTrigger.Type == MapTrigger.TriggerType.BossEndSection) //start the attack phase
         {
             HitAreaRef.BossBattleSectionStart();
-            GameController.Instance.SetGameStatus(GameController.GameStatus.Attack, true);
         }
     }
 

@@ -52,6 +52,8 @@ public class EnemyController : MonoBehaviour
     }
 
     public virtual void SetEnemyStatic() { }
+    public virtual void RunAway() { }
+
     public virtual EnemyType GetEnemyType() { return EnemyType.Wolf; }
 
 }

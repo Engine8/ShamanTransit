@@ -12,19 +12,24 @@ public class Boss : EnemyController
     private string[] _layerName = { "Line1", "Line2", "Line3" };
     private GameObject[] _attackWarning;
     public GameObject[] AttackPrefab;
-    public GameObject WolfPrehab;
+    public GameObject WolfPrefab;
     private BearController _wolf;
     public List<int> Phases = new List<int>();
     public int CurrentAttackPhase = 0;
 
     private float _speedBuf;
-    public float TimeBetweenAttacks;//скорость атаки
+    public float TimeBetweenLineAttacksMin;//скорость атаки на линии
+    public float TimeBetweenLineAttacksMax;
 
-    private float _nextAttackTime=10;
+    public float TimeBetweenAttacksMin;//скорость атаки во время боя
+    public float TimeBetweenAttacksMax;
+
+    private float _nextAttackTime;
+
     private bool _canAttack = true;
     private bool _dead = false;
 
-    public UnityEvent OnAttackPhaseEnded;
+    public UnityEvent OnPawnSpawn;
 
     void Awake()
     {
@@ -32,32 +37,42 @@ public class Boss : EnemyController
         _attackWarning = new GameObject[transform.childCount];
         for (int i = 0; i < transform.childCount; i++)
             _attackWarning[i] = transform.GetChild(i).gameObject;
+        OnPawnSpawn = new UnityEvent();
+        OnBattleEnd = new UnityEvent();
     }
 
     void Start()
     {
-        //OnBattleEnd = new UnityEvent();
         _targetCharacter = GameController.Instance.PlayerCharacter;
         transform.position = new Vector2(_targetCharacter.transform.position.x - 13, 0);
-        OnAttackPhaseEnded = new UnityEvent();
         _controlledEnemy.OnDie.AddListener(ProcessEnemyDeath);
+        GameController.Instance.OnGameModeChanged.AddListener(UpdateAttackTimeOnGameStatusChange);
         StartCoroutine(Sprint(6));
- 
+        UpdateAttackTimeOnGameStatusChange();
     }
 
-    IEnumerator Sprint(float speed) //появление волков
+    IEnumerator Sprint(float speed)
     {
         _speedBuf = speed;
         yield return new WaitForSeconds(1f);
         _speedBuf = 0;
     }
     
-    IEnumerator Slowdown(float speed) //появление волков
+    IEnumerator Slowdown(float speed)
     {
         _speedBuf = -speed;
         yield return new WaitForSeconds(1f);
         _speedBuf = 0;
     }
+
+    public void UpdateAttackTimeOnGameStatusChange()
+    {
+        if (GameController.Instance.CurrentGameStatus == GameController.GameStatus.BossRun)
+            _nextAttackTime = Time.time + Random.Range(TimeBetweenLineAttacksMin, TimeBetweenLineAttacksMax);
+        else if (GameController.Instance.CurrentGameStatus == GameController.GameStatus.Attack)
+            _nextAttackTime = Time.time + Random.Range(TimeBetweenAttacksMin, TimeBetweenAttacksMax);
+    }
+
     void FixedUpdate()
     {
         if (!_dead && !_isInAnimation && !_targetCharacter.GetDead())
@@ -69,21 +84,24 @@ public class Boss : EnemyController
             {
                 if (Time.time > _nextAttackTime)
                 {
-                    StartCoroutine("Warning");
-                    _nextAttackTime = Time.time + TimeBetweenAttacks;
+                    StartCoroutine(PerformLineAttack());
+                    _nextAttackTime = Time.time + Random.Range(TimeBetweenLineAttacksMin, TimeBetweenLineAttacksMax);
                 }
             }
             //attack phase
-            else if (GameController.Instance.CurrentGameStatus == GameController.GameStatus.Attack && 
+            else if (GameController.Instance.CurrentGameStatus == GameController.GameStatus.Attack &&
                      !_targetCharacter.GetDead() &&
                      _canAttack)
             {
-                Start_LineAttackAnimation();
+                if (Time.time > _nextAttackTime)
+                {
+                    StartAttackAnimation();
+                }
             }
         }
     }
 
-    IEnumerator Warning()
+    IEnumerator PerformLineAttack()
     {
         int value = Random.Range(0, 2);
         int position = Random.Range(0, 3);
@@ -103,14 +121,14 @@ public class Boss : EnemyController
     public override void TakeDamage()
     {
         _controlledEnemy.TakeDamage(1);
-        if (_wolf != null)
-            _wolf.TakeDamage();
+        //if (_wolf != null)
+        //    _wolf.TakeDamage();
         if (!_controlledEnemy.GetDead() && Phases[CurrentAttackPhase] >= _controlledEnemy.Health)
         {
             ++CurrentAttackPhase;
-            _wolf.Kill();
+            //_wolf.Kill();
             OnBattleEnd.Invoke();
-            END_LineAttackAnimation();
+            //EndAttackAnimation();
         }
     }
 
@@ -124,14 +142,17 @@ public class Boss : EnemyController
 
     public override void Attack() { }
 
-    public void Start_LineAttackAnimation()
+    public void StartAttackAnimation()
     {
         StartCoroutine(Slowdown(4)); 
         _canAttack = false;
-        _wolf =  Instantiate(WolfPrehab).GetComponent<BearController>();
+        _wolf =  Instantiate(WolfPrefab).GetComponent<BearController>();
+        _wolf.OnBattleEnd.AddListener(ProcessPawnDeath);
         _wolf.transform.position = new Vector3(transform.position.x, transform.position.y-2, 0f);
+        OnPawnSpawn.Invoke();
     }
-    public void END_LineAttackAnimation()
+
+    public void EndAttackAnimation()
     {
         Destroy(_wolf, 3f);
         StartCoroutine(Sprint(4));
@@ -148,6 +169,7 @@ public class Boss : EnemyController
     {
         return _controlledEnemy.Type;
     }
+
     class Fas
     {
         public float timeFas;
@@ -165,6 +187,14 @@ public class Boss : EnemyController
     //perform actions on player death
     public override void StartPlayerDieAnimation()
     {
+        //if pawn on scene then it should run away
+        if (_wolf != null)
+        {
+            _wolf.RunAway();
+            _wolf = null;
+            _canAttack = true;
+        }
+
         //stop boss
         _isInAnimation = true;
         _startAnimPosition = transform.position;
@@ -180,6 +210,19 @@ public class Boss : EnemyController
 
     public void ContinueBattle()
     {
+        UpdateAttackTimeOnGameStatusChange();
         _isInAnimation = false;
+    }
+
+    public EnemyController GetPawn()
+    {
+        return _wolf;
+    }
+
+    public void ProcessPawnDeath()
+    {
+        StartCoroutine(Sprint(4));
+        UpdateAttackTimeOnGameStatusChange();
+        _canAttack = true;
     }
 }

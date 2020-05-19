@@ -12,15 +12,19 @@ public class BearController : EnemyController
     private bool _canAttack = true;
     //Destoyed in HitArea class
 
-    void Start()
+    void Awake()
     {
         OnBattleEnd = new UnityEngine.Events.UnityEvent();
+    }
+
+    void Start()
+    {
         _targetCharacter = GameController.Instance.PlayerCharacter;
         _controlledEnemy = gameObject.GetComponent<Enemy>();
         _controlledEnemy.OnDie.AddListener(ProcessEnemyDeath);
-       if(IsActiwateSprint)
-        StartCoroutine("Sprint");
-       else
+        if(IsActiwateSprint)
+            StartCoroutine(Sprint());
+        else
             _facktSpeed = Speed;
     }
 
@@ -98,9 +102,7 @@ public class BearController : EnemyController
         //if player has second life item 
         if (PlayerDataController.Instance.HasItem(1) != 0)
         {
-            //disable attack availability 
-            _canAttack = false;
-            Destroy(gameObject, 3f);
+            RunAway();
         }
         else
         {
@@ -118,6 +120,13 @@ public class BearController : EnemyController
     public override void SetEnemyStatic()
     {
         _controlledEnemy.SetStatic();
+    }
+
+    public override void RunAway()
+    {
+        //disable attack availability 
+        _canAttack = false;
+        Destroy(gameObject, 3f);
     }
 
     public override EnemyType GetEnemyType()

@@ -37,33 +37,35 @@ public class HitArea : MonoBehaviour
         if (EnemyRef.GetEnemyType() == EnemyType.Boss)
         {
             BossRef = EnemyRef;
-            //((Boss)_enemy).OnAttackPhaseEnded.AddListener(BossAttackPhaseEnded);
+            ((Boss)BossRef).OnPawnSpawn.AddListener(AddBossPawn);
         }
     }
 
     public void EndBattle()
     {
-        _sightScale.Stop();
-        if (EnemyRef.GetEnemyType() == EnemyType.Boss)
+        if (EnemyRef.GetEnemyType() != EnemyType.Boss && BossRef != null) //player kill pawn
         {
-            GameController.Instance.SetGameStatus(GameController.GameStatus.BossRun, true);
+            EnemyRef = BossRef;
         }
-        else if (EnemyRef.GetCount() == 0)
+        else
         {
-            GameController.Instance.SetGameStatus(GameController.GameStatus.Run, true);
-            Destroy(EnemyRef.gameObject, 9f);
+            _sightScale.Stop();
+            if (EnemyRef.GetEnemyType() == EnemyType.Boss)
+            {
+                GameController.Instance.SetGameStatus(GameController.GameStatus.BossRun, true);
+            }
+            else if (EnemyRef.GetCount() == 0)
+            {
+                GameController.Instance.SetGameStatus(GameController.GameStatus.Run, true);
+                Destroy(EnemyRef.gameObject, 9f);
+            }
         }
-    }
-
-    public void BossAttackPhaseEnded()
-    {
-        _sightScale.Stop();
-        GameController.Instance.SetGameStatus(GameController.GameStatus.BossRun, true);
     }
 
     public void BossBattleSectionStart()
     {
         EnemyRef = BossRef;
+        GameController.Instance.SetGameStatus(GameController.GameStatus.Attack, true);
     }
 
     public void Tach()
@@ -118,6 +120,14 @@ public class HitArea : MonoBehaviour
         _sightScale.Stop();
         if (BossRef == null)
             GameController.Instance.SetGameStatus(GameController.GameStatus.Run, false);
+        else
+            EnemyRef = BossRef; //if player dies then pawn on scene, boss should take care of that
         EnemyRef.StartPlayerDieAnimation();
+    }
+
+    public void AddBossPawn()
+    {
+        EnemyRef = ((Boss)BossRef).GetPawn();
+        EnemyRef.OnBattleEnd.AddListener(EndBattle);
     }
 }
