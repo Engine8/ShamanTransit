@@ -399,6 +399,7 @@ public class GameController : MonoBehaviour
             //Debug.Log("Second chance activated");
         }
         _secondChanceUsed = true;
+
         PlayerDataController.Instance.UseItem(1);
         StartCoroutine(RestoreColors());
     }
