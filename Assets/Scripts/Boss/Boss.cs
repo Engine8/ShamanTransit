@@ -28,6 +28,8 @@ public class Boss : EnemyController
 
     private bool _canAttack = true;
     private bool _dead = false;
+    private bool _batl = false;
+
 
     public UnityEvent OnPawnSpawn;
 
@@ -93,9 +95,11 @@ public class Boss : EnemyController
                      !_targetCharacter.GetDead() &&
                      _canAttack)
             {
+                if(!_batl)
+                StartAttackAnimation();
                 if (Time.time > _nextAttackTime)
                 {
-                    StartAttackAnimation();
+                    AttackAnimation();
                 }
             }
         }
@@ -128,7 +132,7 @@ public class Boss : EnemyController
             ++CurrentAttackPhase;
             //_wolf.Kill();
             OnBattleEnd.Invoke();
-            //EndAttackAnimation();
+            EndAttackAnimation();
         }
     }
 
@@ -144,17 +148,23 @@ public class Boss : EnemyController
 
     public void StartAttackAnimation()
     {
-        StartCoroutine(Slowdown(4)); 
-        _canAttack = false;
-        _wolf =  Instantiate(WolfPrefab).GetComponent<BearController>();
-        _wolf.OnBattleEnd.AddListener(ProcessPawnDeath);
-        _wolf.transform.position = new Vector3(transform.position.x, transform.position.y-2, 0f);
+        _batl = true;
+        StartCoroutine(Slowdown(4));
+        AttackAnimation();
         OnPawnSpawn.Invoke();
     }
-
+    void AttackAnimation()
+    {
+        _canAttack = false;
+        _wolf = Instantiate(WolfPrefab).GetComponent<BearController>();
+        _wolf.OnBattleEnd.AddListener(ProcessPawnDeath);
+        _wolf.transform.position = new Vector3(transform.position.x+1, transform.position.y - 2, 0f);
+    }
     public void EndAttackAnimation()
     {
-        Destroy(_wolf, 3f);
+        _batl = false; 
+        _wolf.Kill();
+        Destroy(_wolf, 1f);
         StartCoroutine(Sprint(4));
         OnBattleEnd.Invoke();
         _canAttack = true;
@@ -168,14 +178,6 @@ public class Boss : EnemyController
     public override EnemyType GetEnemyType()
     {
         return _controlledEnemy.Type;
-    }
-
-    class Fas
-    {
-        public float timeFas;
-        private GameObject[] _attackWarning;
-        public GameObject[] AttackPrefab;
-        public bool isspeeeed;
     }
 
     public override void ProcessEnemyDeath()
@@ -221,7 +223,7 @@ public class Boss : EnemyController
 
     public void ProcessPawnDeath()
     {
-        StartCoroutine(Sprint(4));
+       // StartCoroutine(Sprint(4));
         UpdateAttackTimeOnGameStatusChange();
         _canAttack = true;
     }

@@ -99,8 +99,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   AttackDistanceThreshold: 4
-  Damage: 1
-  Health: 5
+  Damage: 0
+  Health: 1
   SpecialSprite: {fileID: 0}
   OnDie:
     m_PersistentCalls:
