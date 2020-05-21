@@ -95,11 +95,12 @@ public class Boss : EnemyController
                      !_targetCharacter.GetDead() &&
                      _canAttack)
             {
-                if(!_batl)
-                StartAttackAnimation();
+                //if(!_batl)
+                //StartAttackAnimation();
                 if (Time.time > _nextAttackTime)
                 {
-                    AttackAnimation();
+                    StartAttackAnimation();
+                    //AttackAnimation();
                 }
             }
         }
@@ -132,7 +133,7 @@ public class Boss : EnemyController
             ++CurrentAttackPhase;
             //_wolf.Kill();
             OnBattleEnd.Invoke();
-            EndAttackAnimation();
+            //EndAttackAnimation();
         }
     }
 
@@ -223,7 +224,8 @@ public class Boss : EnemyController
 
     public void ProcessPawnDeath()
     {
-       // StartCoroutine(Sprint(4));
+        StartCoroutine(Sprint(4));
+        _wolf = null;
         UpdateAttackTimeOnGameStatusChange();
         _canAttack = true;
     }

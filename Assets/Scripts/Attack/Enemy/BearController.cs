@@ -88,7 +88,7 @@ public class BearController : EnemyController
 
     public override void Attack()
     {
-      //  _controlledEnemy.StartAttack(Vector3.zero);
+        _controlledEnemy.StartAttack(Vector3.zero);
     }
 
     public override bool GetActiv()

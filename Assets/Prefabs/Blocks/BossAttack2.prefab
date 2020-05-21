@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1741992946955581879}
   - component: {fileID: 7289495099202366724}
   - component: {fileID: 1904183185}
+  - component: {fileID: 3298712247801474894}
   m_Layer: 0
   m_Name: BossAttack2
   m_TagString: Block
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 902459011
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 537103fbcc7a18647b7bafda1a63afb7, type: 3}
+  m_Sprite: {fileID: 545585459066812068, guid: 53ed1a446216a5c4d808c4bc4b7192b5, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -100,8 +101,8 @@ BoxCollider2D:
   m_Offset: {x: -1.9082122, y: 0.119420886}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.88978505, y: 0.43951604}
-    oldSize: {x: 10, y: 1.6666666}
+    pivot: {x: 0.5, y: 0.2}
+    oldSize: {x: 15.600735, y: 4.366667}
     newSize: {x: 1.55, y: 1.05}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -146,3 +147,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!95 &3298712247801474894
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285838981386952625}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8037b0372b78c02498df91cbab841b08, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -45,6 +45,7 @@ public class HitArea : MonoBehaviour
     {
         if (EnemyRef.GetEnemyType() != EnemyType.Boss && BossRef != null) //player kill pawn
         {
+            Destroy(EnemyRef.gameObject, 9f);
             EnemyRef = BossRef;
         }
         else
@@ -98,7 +99,7 @@ public class HitArea : MonoBehaviour
                 StartCoroutine("Miss");
                 if (Time.time > _pauseAttacksMiss)
                 {
-                    if (EnemyRef.GetActiv())
+                    if (EnemyRef.GetActiv() && BossRef == null)
                         EnemyRef.Attack();
                     _pauseAttacksMiss = Time.time + 0.5f;
                 }

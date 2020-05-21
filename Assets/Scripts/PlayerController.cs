@@ -78,6 +78,8 @@ public class PlayerController : Movable
         base.Start();
         if (HelpControl.helpControl != null)
             FinishHelp += HelpControl.helpControl.Move;
+
+        _animator.SetBool("IsIdle", false);
     }
 
     private void Update()
@@ -197,6 +199,7 @@ public class PlayerController : Movable
         {
             AccelerationModif = 0;
             Speed = 0;
+            _animator.SetBool("IsIdle", true);
             OnLevelEnd.Invoke();
         }
         else if (other.gameObject.CompareTag("Soul"))
