@@ -21,12 +21,12 @@ public class HitArea : MonoBehaviour
     void Awake()
     {
         _sightScale = transform.parent.GetComponent<SightScale>();
-        _missAr = transform.parent.gameObject.GetComponentInChildren<Image>();
+        _missAr = transform.parent.transform.GetChild(1).GetComponentInChildren<Image>();
     }
 
     void Start()
     {
-        transform.localEulerAngles = new Vector3(0, 0, -60);
+        transform.localEulerAngles = new Vector3(0, 0, -40);
         PlayerController.Instance.OnDieStart.AddListener(OnPlayerCharacterDie);
     }
 
@@ -76,11 +76,11 @@ public class HitArea : MonoBehaviour
         {
             PlayerController.Instance.PlayAnimAttack();
 
-            if (Arrow.localEulerAngles.z <= (transform.localEulerAngles.z + 3) && Arrow.localEulerAngles.z >= (_sightScale.SpeedRotate > 0? transform.localEulerAngles.z - 16 : transform.localEulerAngles.z - 18))
+            if (Arrow.localEulerAngles.z <= (transform.localEulerAngles.z + 3) && Arrow.localEulerAngles.z >= (_sightScale.SpeedRotate > 0? transform.localEulerAngles.z - 32 : transform.localEulerAngles.z - 34))
             {
                 if (Time.time > _pauseAttacksHit)
                 {
-                    transform.localEulerAngles = new Vector3(0, 0, -Random.Range(0f, 75f));
+                    transform.localEulerAngles = new Vector3(0, 0, -Random.Range(0f, 60f));
                     if (EnemyRef.GetActiv())
                     {
                         if (EnemyRef.GetCount() > 0)
@@ -89,7 +89,7 @@ public class HitArea : MonoBehaviour
                             SoundManager.Instance.PlaySoundClip(GoodShot, true);
                         }
                     }
-                    _sightScale.CalculateSpeed();
+                  //  _sightScale.CalculateSpeed();
                     _pauseAttacksHit = Time.time + 0.5f;
                 }
             }

@@ -50,11 +50,11 @@ public class SightScale : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (Arrow.localEulerAngles.z < _startAngle)
+        if (Arrow.localEulerAngles.z > _startAngle)
         {            
             SpeedRotate *= -1;
         }
-        else if (Arrow.localEulerAngles.z >= (_startAngle + 88f)) 
+        else if (Arrow.localEulerAngles.z <= (_startAngle - 88f)) 
         {
             SpeedRotate *= -1;
         }

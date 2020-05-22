@@ -27,7 +27,6 @@ public class Boss : EnemyController
     private float _nextAttackTime;
 
     private bool _canAttack = true;
-    private bool _dead = false;
     private bool _batl = false;
 
 
@@ -77,7 +76,7 @@ public class Boss : EnemyController
 
     void FixedUpdate()
     {
-        if (!_dead && !_isInAnimation && !_targetCharacter.GetDead())
+        if (!_controlledEnemy.GetDead() && !_isInAnimation && !_targetCharacter.GetDead())
         {
             gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x +(_targetCharacter.Speed+_speedBuf) * Time.deltaTime, gameObject.transform.localPosition.y);
 
@@ -95,12 +94,12 @@ public class Boss : EnemyController
                      !_targetCharacter.GetDead() &&
                      _canAttack)
             {
-                //if(!_batl)
-                //StartAttackAnimation();
+                if(!_batl)
+                StartAttackAnimation();
                 if (Time.time > _nextAttackTime)
                 {
-                    StartAttackAnimation();
-                    //AttackAnimation();
+                    //StartAttackAnimation();
+                    AttackAnimation();
                 }
             }
         }
@@ -128,18 +127,17 @@ public class Boss : EnemyController
         _controlledEnemy.TakeDamage(1);
         //if (_wolf != null)
         //    _wolf.TakeDamage();
+       
         if (!_controlledEnemy.GetDead() && Phases[CurrentAttackPhase] >= _controlledEnemy.Health)
         {
             ++CurrentAttackPhase;
-            //_wolf.Kill();
-            OnBattleEnd.Invoke();
-            //EndAttackAnimation();
+            EndAttackAnimation();
         }
     }
 
     public override int GetCount()
     {
-        if (_dead)
+        if (_controlledEnemy.GetDead())
             return 0;
         else
             return 1;
@@ -152,7 +150,7 @@ public class Boss : EnemyController
         _batl = true;
         StartCoroutine(Slowdown(4));
         AttackAnimation();
-        OnPawnSpawn.Invoke();
+ 
     }
     void AttackAnimation()
     {
@@ -160,12 +158,11 @@ public class Boss : EnemyController
         _wolf = Instantiate(WolfPrefab).GetComponent<BearController>();
         _wolf.OnBattleEnd.AddListener(ProcessPawnDeath);
         _wolf.transform.position = new Vector3(transform.position.x+1, transform.position.y - 2, 0f);
+        OnPawnSpawn.Invoke();
     }
     public void EndAttackAnimation()
     {
         _batl = false; 
-        _wolf.Kill();
-        Destroy(_wolf, 1f);
         StartCoroutine(Sprint(4));
         OnBattleEnd.Invoke();
         _canAttack = true;
@@ -224,7 +221,7 @@ public class Boss : EnemyController
 
     public void ProcessPawnDeath()
     {
-        StartCoroutine(Sprint(4));
+        //StartCoroutine(Sprint(4));
         _wolf = null;
         UpdateAttackTimeOnGameStatusChange();
         _canAttack = true;
