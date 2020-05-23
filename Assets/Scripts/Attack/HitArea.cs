@@ -100,7 +100,7 @@ public class HitArea : MonoBehaviour
                 if (Time.time > _pauseAttacksMiss)
                 {
                     if (EnemyRef.GetActiv() && BossRef == null)
-                        EnemyRef.Attack();
+                        EnemyRef.AttackOnMiss();
                     _pauseAttacksMiss = Time.time + 0.5f;
                 }
             }

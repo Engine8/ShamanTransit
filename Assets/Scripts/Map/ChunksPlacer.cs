@@ -49,7 +49,7 @@ public class ChunksPlacer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.x > currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x - 14)
+        if (player.transform.position.x > currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x - 12)
         {
             SpawnChunk();
         }

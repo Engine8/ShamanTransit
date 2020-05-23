@@ -25,9 +25,14 @@ public class WolfController :  EnemyController
             Destroy(wolf.gameObject);
     }
 
-    void Start()
+    private void Awake()
     {
         OnBattleEnd = new UnityEvent();
+    }
+
+    void Start()
+    {
+        
         _facktSpeed = Speed;
         _targetCharacter = GameController.Instance.PlayerCharacter;
         _nextAttackTime = Time.time + TimeBetweenAttacks;
@@ -131,6 +136,11 @@ public class WolfController :  EnemyController
                 Wolf[4 - _countWolf].StartAttack(_positionWolf[4 - _countWolf][0]);
             _nextAttackTime = Time.time + TimeBetweenAttacks;
         }
+    }
+
+    public override void AttackOnMiss()
+    {
+        Attack();
     }
 
     IEnumerator PauseForAttack()

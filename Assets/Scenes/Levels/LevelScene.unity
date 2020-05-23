@@ -333,29 +333,36 @@ MonoBehaviour:
   HitAreaRef: {fileID: 537787946}
   map:
   - MoneyMultiplier: 100
+    BasicReward: 0
     IsSnowy: 1
     WindStatusVar: 0
     TilePrefabsTurn:
-    - {fileID: 4860197548757332440, guid: cc3f76f6c4e5f5042a6d9d3fa42f495c, type: 3}
+    - {fileID: 8621921015806925681, guid: 6e7be082788cef648bbad4645f9bd4a7, type: 3}
     - {fileID: 6986321411085782552, guid: ab32f0c281cce4c4abca1490bf36b3b3, type: 3}
-    - {fileID: 7554725450288862447, guid: 755b5f875a0cab442838594925bf7d52, type: 3}
-    - {fileID: 8621921015806925681, guid: a5eb45ceed99d9c45aad87640aba5c01, type: 3}
+    - {fileID: -5517131477564077679, guid: 15c51a3af1589014a870633a350e912b, type: 3}
+    - {fileID: 5655114978885734657, guid: 881afd358a3ada74aba0b357db883320, type: 3}
+    - {fileID: 9000326502963422005, guid: b12fc76acbcb155479e8d9bfab1b578c, type: 3}
+    - {fileID: 8065324253729329736, guid: 3611df7359d954d48b1fbd1e4c2e1ea8, type: 3}
+    - {fileID: 7334647115942283197, guid: 8f9670a463cb12144b672382680d0d9c, type: 3}
+    - {fileID: 5300754900179048595, guid: e8661125e52bdb74e88600e7df95757b, type: 3}
     - {fileID: 6732543394565603975, guid: f245de2a47e02fe43b143d9999a87874, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 9000326502963422005, guid: f0bd41bd7d0d7ff4ea56b077e2efedc7, type: 3}
-    - {fileID: 8065324253729329736, guid: abb4f9c9d1f775f4f9542fb348aaf55d, type: 3}
-    - {fileID: 6581053277576116797, guid: fd513ebcd43f9d4498f5f2f5be59e006, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6986321411085782552, guid: 919f3f99f3e477947b86a4df6905db60, type: 3}
-    - {fileID: 7554725450288862447, guid: 755b5f875a0cab442838594925bf7d52, type: 3}
-    - {fileID: 8621921015806925681, guid: a5eb45ceed99d9c45aad87640aba5c01, type: 3}
-    - {fileID: -5517131477564077679, guid: 3d0c6cd3017e76744b7779b0938f6704, type: 3}
-    - {fileID: 5655114978885734657, guid: bdd781c25248e49448ea4181dceb544e, type: 3}
-    - {fileID: 5300754900179048595, guid: 1d723cd9baac56e4190447ae9db35222, type: 3}
-    - {fileID: 8882464760559498016, guid: 3ddb989dd4ca2f5428ece3684ccfaaea, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 5615175489910990298, guid: 61a9d1c1ab1472046bde2a611e3ec07c, type: 3}
+    - {fileID: 1381874136166493519, guid: a5f2f9f466ffdbb428f3f085b9675294, type: 3}
+    - {fileID: 6396405039443751045, guid: 51a76ca268309ee46b69aca88213892f, type: 3}
+    - {fileID: 2279507167249866127, guid: 0b5491ab5cce35a47b226e233433fe8c, type: 3}
+    - {fileID: 5444896575540332747, guid: 414ff6348199ecf419e2644ea168837e, type: 3}
+    - {fileID: 7357182714419317511, guid: 8d1a4ceec6d61e34b817a21eb2283eaf, type: 3}
+    - {fileID: 7511177131882961928, guid: dc8dc4df64fc13845ae2dace55242b09, type: 3}
+    - {fileID: 9129553544003861958, guid: 748955130cb4eae46a413f4e8b992a23, type: 3}
+    - {fileID: 6054648623469904669, guid: 605ef00c5ef59654191f0359b0d49489, type: 3}
+    - {fileID: 997141895880432445, guid: 4eb556a6816abac4f9292d3b0d93de32, type: 3}
+    - {fileID: 1855886363353913933, guid: 12a83eecf2ff1ab40a97433f431e72d0, type: 3}
+    - {fileID: 4167257031126098405, guid: d0cb3cc92a1ad6141a071f9e94180188, type: 3}
+    - {fileID: 8882464760559498016, guid: 91db3903ecc5f7d47bb34c7ace299d8f, type: 3}
     spawnedChunks: []
+    MapMode: 0
   - MoneyMultiplier: 100
+    BasicReward: 0
     IsSnowy: 1
     WindStatusVar: 2
     TilePrefabsTurn:
@@ -376,7 +383,9 @@ MonoBehaviour:
     - {fileID: 1573161873939503286, guid: 97bc4b89c1896ff49909852a0e3bb333, type: 3}
     - {fileID: 3385730277920550093, guid: 260909588736730499cccf7437d62801, type: 3}
     spawnedChunks: []
+    MapMode: 0
   - MoneyMultiplier: 100
+    BasicReward: 0
     IsSnowy: 0
     WindStatusVar: 0
     TilePrefabsTurn:
@@ -402,7 +411,9 @@ MonoBehaviour:
     - {fileID: 8882464760559498016, guid: 3ddb989dd4ca2f5428ece3684ccfaaea, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     spawnedChunks: []
+    MapMode: 0
   - MoneyMultiplier: 100
+    BasicReward: 0
     IsSnowy: 0
     WindStatusVar: 0
     TilePrefabsTurn:
@@ -433,7 +444,9 @@ MonoBehaviour:
     - {fileID: 8882464760559498016, guid: 3ddb989dd4ca2f5428ece3684ccfaaea, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     spawnedChunks: []
+    MapMode: 0
   - MoneyMultiplier: 100
+    BasicReward: 0
     IsSnowy: 0
     WindStatusVar: 0
     TilePrefabsTurn:
@@ -454,7 +467,9 @@ MonoBehaviour:
     - {fileID: 8882464760559498016, guid: 3ddb989dd4ca2f5428ece3684ccfaaea, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     spawnedChunks: []
-  - MoneyMultiplier: 100
+    MapMode: 0
+  - MoneyMultiplier: 0
+    BasicReward: 1000
     IsSnowy: 0
     WindStatusVar: 0
     TilePrefabsTurn:
@@ -479,7 +494,8 @@ MonoBehaviour:
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 8882464760559498016, guid: 3ddb989dd4ca2f5428ece3684ccfaaea, type: 3}
     spawnedChunks: []
-  mapIndex: 5
+    MapMode: 1
+  mapIndex: 0
   UIAttack: {fileID: 1997170574}
   chunkPrefabsAttack: {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35,
     type: 3}

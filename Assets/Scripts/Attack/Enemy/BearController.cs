@@ -15,12 +15,12 @@ public class BearController : EnemyController
     void Awake()
     {
         OnBattleEnd = new UnityEngine.Events.UnityEvent();
+        _targetCharacter = GameController.Instance.PlayerCharacter;
+        _controlledEnemy = gameObject.GetComponent<Enemy>();
     }
 
     void Start()
     {
-        _targetCharacter = GameController.Instance.PlayerCharacter;
-        _controlledEnemy = gameObject.GetComponent<Enemy>();
         _controlledEnemy.OnDie.AddListener(ProcessEnemyDeath);
         if(IsActiwateSprint)
             StartCoroutine(Sprint());

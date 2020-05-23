@@ -202,7 +202,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3688518459770502504}
   - component: {fileID: 6732543394565603975}
-  - component: {fileID: 5296608923860114853}
   m_Layer: 0
   m_Name: 5TrigerWolf
   m_TagString: Untagged
@@ -245,20 +244,6 @@ MonoBehaviour:
   End: {fileID: 6807095651270705468}
   SpriteTile: {fileID: 660886293643944091}
   SpriteCliff: {fileID: 2885353807569198313}
---- !u!114 &5296608923860114853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4413457993131897104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc348c70f2d3c6640abceeb4a5bebabd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beginChunk: {fileID: 517473859091496123}
-  endChunk: {fileID: 6807095651270705468}
 --- !u!1 &7966913489372469291
 GameObject:
   m_ObjectHideFlags: 0

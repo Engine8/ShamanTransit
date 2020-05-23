@@ -97,9 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
-  AttackDistanceThreshold: 0
+  AttackDistanceThreshold: 2
   Damage: 5
-  Health: 0
+  Health: 5
   SpecialSprite: {fileID: 21300000, guid: c4fb584c9af95ec40b933c892f87d0bc, type: 3}
   OnDie:
     m_PersistentCalls:
