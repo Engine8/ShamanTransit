@@ -85,13 +85,15 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  OnBattleEnd:
+    m_PersistentCalls:
+      m_Calls: []
   Wolf:
   - {fileID: 7040827106795177150}
   - {fileID: 7040827107544502493}
   - {fileID: 6011352227188605391}
   - {fileID: 7040827107407124624}
-  TimeBetweenAttacks: 2
-  Speed: 10.2
+  TimeBetweenAttacks: 4
 --- !u!1001 &4339099224912972970
 PrefabInstance:
   m_ObjectHideFlags: 0

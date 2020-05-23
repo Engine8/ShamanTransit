@@ -105,16 +105,19 @@ public class WolfController :  EnemyController
         {
             //gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x + _facktSpeed * Time.deltaTime, gameObject.transform.localPosition.y);
             gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x +(_targetCharacter.Speed + _speedBuf) * Time.deltaTime, gameObject.transform.localPosition.y);
-
+            
             if (!_targetCharacter.GetDead())
             {
                 if (!_isAttack)
                 {
-                    if (Time.time > _nextAttackTime)
+                     if (Time.time > _nextAttackTime)
                         Attack();
 
                     if ((_countWolf > 0) && ((4 - _countWolf) != 2))
-                        Wolf[4 - _countWolf].transform.localPosition += new Vector3(0.2f * Time.deltaTime, 0f, 0f);
+                    {
+                        Wolf[4 - _countWolf].transform.localPosition += new Vector3(0.6f * Time.deltaTime, 0f, 0f);
+                       
+                    }
                 }
             }
         }
@@ -144,7 +147,7 @@ public class WolfController :  EnemyController
     IEnumerator PauseForAttack()
     {
         _isAttack = true;
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1f);
         _isAttack = false;
     }
 
