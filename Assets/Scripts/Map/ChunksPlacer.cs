@@ -5,22 +5,17 @@ using UnityEngine;
 public class ChunksPlacer : MonoBehaviour
 {
     public static ChunksPlacer Instance;
-
     public PlayerController player;
-
     public HitArea HitAreaRef;
     public Map[] map;
     public int mapIndex;
-    //public Tile[] chunkPrefabs;
     public GameObject UIAttack;
-    public Tile chunkPrefabsAttack;
 
     private bool stateAttack;
     private int indexChunk = 0;
-    string holderName = "Generated Map";
-    Transform mapHolder;
-
-    Map currentMap;
+    private string holderName = "Generated Map";
+    private Transform _mapHolder;
+    private Map _currentMap;
 
     private void Awake()
     {
@@ -32,16 +27,16 @@ public class ChunksPlacer : MonoBehaviour
         {
             mapIndex = GameData.Instance.CurrentLevelIndex;
         }
-        currentMap = map[mapIndex];
+        _currentMap = map[mapIndex];
     }
 
     void Start()
     {
-        mapHolder = new GameObject(holderName).transform;
-        mapHolder.parent = transform;
+        _mapHolder = new GameObject(holderName).transform;
+        _mapHolder.parent = transform;
         //currentMap = map[mapIndex];
-        currentMap.spawnedChunks.Add(Instantiate(currentMap.TilePrefabsTurn[indexChunk], new Vector3(0, 0, 0), Quaternion.identity));
-        currentMap.spawnedChunks[0].gameObject.transform.parent = mapHolder;
+        _currentMap.spawnedChunks.Add(Instantiate(_currentMap.TilePrefabsTurn[indexChunk], new Vector3(0, 0, 0), Quaternion.identity));
+        _currentMap.spawnedChunks[0].gameObject.transform.parent = _mapHolder;
         ++indexChunk;
         SpawnChunk();
     }
@@ -49,7 +44,7 @@ public class ChunksPlacer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (player.transform.position.x > currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x - 12)
+        if (player.transform.position.x > _currentMap.spawnedChunks[_currentMap.spawnedChunks.Count - 1].End.position.x - 12)
         {
             SpawnChunk();
         }
@@ -86,52 +81,52 @@ public class ChunksPlacer : MonoBehaviour
     {
         if (GameController.Instance.CurrentGameStatus != GameController.GameStatus.Attack) 
         {
-            if (indexChunk< currentMap.TilePrefabsTurn.Length) {
-                Tile newChunk = Instantiate(currentMap.TilePrefabsTurn[indexChunk]);
-                newChunk.transform.position = new Vector2(currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x - newChunk.Begin.localPosition.x, 0);
-                currentMap.spawnedChunks.Add(newChunk);
-                currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].gameObject.transform.parent = mapHolder;
-                if (currentMap.spawnedChunks.Count >= 5)
+            if (indexChunk< _currentMap.TilePrefabsTurn.Length) {
+                Tile newChunk = Instantiate(_currentMap.TilePrefabsTurn[indexChunk]);
+                newChunk.transform.position = new Vector2(_currentMap.spawnedChunks[_currentMap.spawnedChunks.Count - 1].End.position.x - newChunk.Begin.localPosition.x, 0);
+                _currentMap.spawnedChunks.Add(newChunk);
+                _currentMap.spawnedChunks[_currentMap.spawnedChunks.Count - 1].gameObject.transform.parent = _mapHolder;
+                if (_currentMap.spawnedChunks.Count >= 5)
                 {
-                    Destroy(currentMap.spawnedChunks[0].gameObject);
-                    currentMap.spawnedChunks.RemoveAt(0);
+                    Destroy(_currentMap.spawnedChunks[0].gameObject);
+                    _currentMap.spawnedChunks.RemoveAt(0);
                 }
                 ++indexChunk;
             }
         }
         else
         {
-            Tile newChunk = Instantiate(chunkPrefabsAttack);
-            newChunk.transform.position = new Vector2(currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].End.position.x - newChunk.Begin.localPosition.x, 0);
-            currentMap.spawnedChunks.Add(newChunk);
-            currentMap.spawnedChunks[currentMap.spawnedChunks.Count - 1].gameObject.transform.parent = mapHolder;
-            if (currentMap.spawnedChunks.Count >= 5)
+            Tile newChunk = Instantiate(_currentMap.AttackTiles[Random.Range(0, _currentMap.AttackTiles.Count)]);
+            newChunk.transform.position = new Vector2(_currentMap.spawnedChunks[_currentMap.spawnedChunks.Count - 1].End.position.x - newChunk.Begin.localPosition.x, 0);
+            _currentMap.spawnedChunks.Add(newChunk);
+            _currentMap.spawnedChunks[_currentMap.spawnedChunks.Count - 1].gameObject.transform.parent = _mapHolder;
+            if (_currentMap.spawnedChunks.Count >= 5)
             {
-                Destroy(currentMap.spawnedChunks[0].gameObject);
-                currentMap.spawnedChunks.RemoveAt(0);
+                Destroy(_currentMap.spawnedChunks[0].gameObject);
+                _currentMap.spawnedChunks.RemoveAt(0);
             }
         }
     }
 
     public int GetMoneyMultiplier()
     {
-        return currentMap.MoneyMultiplier;
+        return _currentMap.MoneyMultiplier;
     }
 
     public int GetBasicReward()
     {
-        return currentMap.BasicReward;
+        return _currentMap.BasicReward;
     }
 
     public void GetSnowInfo(out bool isSnowy, out WindStatus windStatus)
     {
-        isSnowy = currentMap.IsSnowy;
-        windStatus = currentMap.WindStatusVar;
+        isSnowy = _currentMap.IsSnowy;
+        windStatus = _currentMap.WindStatusVar;
     }
 
     public GameMode GetMapGameMode()
     {
-        return currentMap.MapMode;
+        return _currentMap.MapMode;
     }
 
     [System.Serializable]
@@ -145,6 +140,7 @@ public class ChunksPlacer : MonoBehaviour
         [HideInInspector]
         public List<Tile> spawnedChunks = new List<Tile>();
         public GameMode MapMode;
+        public List<Tile> AttackTiles;
     }
  }
 

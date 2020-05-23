@@ -8,8 +8,7 @@ public class WolfController :  EnemyController
 {
     public List<Enemy> Wolf;
     public float TimeBetweenAttacks;//скорость атаки
-    public float Speed;
-    private float _facktSpeed;
+    private float _speedBuf;
 
     private Vector3[][] _positionWolf = new Vector3[4][];
     private float _nextAttackTime;
@@ -32,8 +31,6 @@ public class WolfController :  EnemyController
 
     void Start()
     {
-        
-        _facktSpeed = Speed;
         _targetCharacter = GameController.Instance.PlayerCharacter;
         _nextAttackTime = Time.time + TimeBetweenAttacks;
         for (int i = 0; i < 4; ++i)
@@ -58,9 +55,9 @@ public class WolfController :  EnemyController
 
     IEnumerator Sprint() //появление волков
     {
-        _facktSpeed = 16;
-        yield return new WaitForSeconds(1.4f);
-        _facktSpeed = Speed;
+        _speedBuf = _targetCharacter.Speed * 0.6f;
+        yield return new WaitForSeconds(1.6f);
+        _speedBuf = 0;
     }
 
     public void ChendePosition()
@@ -106,7 +103,8 @@ public class WolfController :  EnemyController
     {
         if (_countWolf > 0 && !_isInAnimation)
         {
-            gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x + _facktSpeed * Time.deltaTime, gameObject.transform.localPosition.y);
+            //gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x + _facktSpeed * Time.deltaTime, gameObject.transform.localPosition.y);
+            gameObject.transform.localPosition = new Vector2(gameObject.transform.localPosition.x +(_targetCharacter.Speed + _speedBuf) * Time.deltaTime, gameObject.transform.localPosition.y);
 
             if (!_targetCharacter.GetDead())
             {

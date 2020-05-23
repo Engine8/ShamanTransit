@@ -361,6 +361,10 @@ MonoBehaviour:
     - {fileID: 8882464760559498016, guid: 91db3903ecc5f7d47bb34c7ace299d8f, type: 3}
     spawnedChunks: []
     MapMode: 0
+    AttackTiles:
+    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
+    - {fileID: 6344183484129523842, guid: dbaeed40645086942a442ddd85ce4aac, type: 3}
+    - {fileID: 6344183484129523842, guid: 2fcbba58d697b5a4490f01c30ade603d, type: 3}
   - MoneyMultiplier: 100
     BasicReward: 0
     IsSnowy: 1
@@ -384,6 +388,7 @@ MonoBehaviour:
     - {fileID: 3385730277920550093, guid: 260909588736730499cccf7437d62801, type: 3}
     spawnedChunks: []
     MapMode: 0
+    AttackTiles: []
   - MoneyMultiplier: 100
     BasicReward: 0
     IsSnowy: 0
@@ -412,6 +417,7 @@ MonoBehaviour:
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     spawnedChunks: []
     MapMode: 0
+    AttackTiles: []
   - MoneyMultiplier: 100
     BasicReward: 0
     IsSnowy: 0
@@ -445,6 +451,7 @@ MonoBehaviour:
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     spawnedChunks: []
     MapMode: 0
+    AttackTiles: []
   - MoneyMultiplier: 100
     BasicReward: 0
     IsSnowy: 0
@@ -468,6 +475,7 @@ MonoBehaviour:
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     spawnedChunks: []
     MapMode: 0
+    AttackTiles: []
   - MoneyMultiplier: 0
     BasicReward: 1000
     IsSnowy: 0
@@ -495,10 +503,9 @@ MonoBehaviour:
     - {fileID: 8882464760559498016, guid: 3ddb989dd4ca2f5428ece3684ccfaaea, type: 3}
     spawnedChunks: []
     MapMode: 1
+    AttackTiles: []
   mapIndex: 0
   UIAttack: {fileID: 1997170574}
-  chunkPrefabsAttack: {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35,
-    type: 3}
 --- !u!4 &150042266
 Transform:
   m_ObjectHideFlags: 0
