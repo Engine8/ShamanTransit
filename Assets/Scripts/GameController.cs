@@ -7,6 +7,12 @@ using UnityEngine.Experimental.Rendering.Universal;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
+public enum GameMode
+{
+    Default = 0,
+    BossFight = 1,
+}
+
 public class GameController : MonoBehaviour
 {
     public static GameController Instance;
@@ -107,12 +113,6 @@ public class GameController : MonoBehaviour
         Attack = 2,
     }
 
-    public enum GameMode
-    {
-        Default = 0,
-        BossFight = 1,
-    }
-
     public GameStatus CurrentGameStatus;
     public GameMode CurrentGameMode;
 
@@ -165,6 +165,7 @@ public class GameController : MonoBehaviour
         bool isSnowy = false;
         WindStatus windStatus;
         ChunksPlacer.Instance.GetSnowInfo(out isSnowy, out windStatus);
+        CurrentGameMode = ChunksPlacer.Instance.GetMapGameMode();
         if (isSnowy)
         {
             GameObject newSnowObject = Instantiate(SnowPrefab, VirtCamera.transform);
@@ -304,7 +305,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator MoneyAnimationStart()
     {
-        int moneySum = ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount;
+        int moneySum = ChunksPlacer.Instance.GetBasicReward() + ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount;
         int curMoney = 0;
         if (moneySum == 0)
         {
@@ -432,7 +433,7 @@ public class GameController : MonoBehaviour
         IsGameEnded = true;
         if (PlayerCharacter.GetDead())
             ShowEndgameUI(false, "Тебя съели");
-        else if (PlayerCharacter.SoulCount > 0)
+        else if (PlayerCharacter.SoulCount > 0 || CurrentGameMode == GameMode.BossFight)
             ShowEndgameUI(true, "Ты сделал это!");
         else
             ShowEndgameUI(false, "Не было собрано ни одной души");

@@ -95,7 +95,7 @@ public class Boss : EnemyController
                      _canAttack)
             {
                 if(!_batl)
-                StartAttackAnimation();
+                    StartBattle();
                 if (Time.time > _nextAttackTime)
                 {
                     //StartAttackAnimation();
@@ -131,7 +131,7 @@ public class Boss : EnemyController
         if (!_controlledEnemy.GetDead() && Phases[CurrentAttackPhase] >= _controlledEnemy.Health)
         {
             ++CurrentAttackPhase;
-            EndAttackAnimation();
+            EndBattle();
         }
     }
 
@@ -145,13 +145,13 @@ public class Boss : EnemyController
 
     public override void Attack() { }
 
-    public void StartAttackAnimation()
+    public void StartBattle()
     {
         _batl = true;
         StartCoroutine(Slowdown(4));
-        AttackAnimation();
- 
+        //AttackAnimation();
     }
+
     void AttackAnimation()
     {
         _canAttack = false;
@@ -160,12 +160,12 @@ public class Boss : EnemyController
         _wolf.transform.position = new Vector3(transform.position.x+1, transform.position.y - 2, 0f);
         OnPawnSpawn.Invoke();
     }
-    public void EndAttackAnimation()
+
+    public void EndBattle()
     {
         _batl = false; 
         StartCoroutine(Sprint(4));
         OnBattleEnd.Invoke();
-        _canAttack = true;
     }
 
     public override bool GetActiv()
