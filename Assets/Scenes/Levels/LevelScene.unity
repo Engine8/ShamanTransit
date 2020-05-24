@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -506,7 +506,7 @@ MonoBehaviour:
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: dbaeed40645086942a442ddd85ce4aac, type: 3}
     - {fileID: 6344183484129523842, guid: 2fcbba58d697b5a4490f01c30ade603d, type: 3}
-  mapIndex: 2
+  mapIndex: 4
   UIAttack: {fileID: 1997170574}
 --- !u!4 &150042266
 Transform:
@@ -3294,7 +3294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_LookaheadTime: 0.01
+  m_LookaheadTime: 0.5
   m_LookaheadSmoothing: 10
   m_LookaheadIgnoreY: 1
   m_XDamping: 0.4
