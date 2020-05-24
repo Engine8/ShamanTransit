@@ -59,6 +59,4 @@ public class GameData
         CurrentLevelIndex = stage * 5 + level;
     }
 
-
-
 }

@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     public GameObject IngameUI;
 
     public GameObject WinScreen;
+    public Button ContinueButton;
     public Text WinText;
     public Text WinMoneyText;
 
@@ -291,6 +292,8 @@ public class GameController : MonoBehaviour
             WinScreen.SetActive(true);
             WinText.text = addText;
             SoundManager.Instance.PlaySoundClip(WinSound, false);
+            if (GameData.Instance.CurrentLevel == 4)
+                ContinueButton.gameObject.SetActive(false);
             StartCoroutine(MoneyAnimationStart());
             UpdatePlayerDataOnLevelPass();
         }
