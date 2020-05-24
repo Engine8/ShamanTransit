@@ -100,7 +100,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Type: 0
   AttackDistanceThreshold: 4
-  Damage: 0
+  Damage: 1
   Health: 4
   SpecialSprite: {fileID: 0}
   OnDie:
