@@ -8,6 +8,7 @@ public class EnemyController : MonoBehaviour
     public AudioClip AttackSound;
     public AudioClip DieSound;
     public bool IsCameraShaking;
+    public Cinemachine.CinemachineImpulseSource ImpulseSource;
 
     protected bool _isInAnimation = false;
     public float RunTime = 1f;

@@ -60,7 +60,10 @@ public class ChunksPlacer : MonoBehaviour
             EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
             SoundManager.Instance.PlaySoundClip(enemyController.EnterSound, true);
             if (enemyController.IsCameraShaking)
-                GameController.Instance.ShakeCamera(enemyController.EnterSound.length);
+            {
+                enemyController.ImpulseSource.GenerateImpulse();
+            }
+                
             HitAreaRef.SetEnemy(enemyController);
             if (mapTrigger.Type == MapTrigger.TriggerType.Enemy)
             {

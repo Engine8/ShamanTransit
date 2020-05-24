@@ -150,7 +150,7 @@ public class GameController : MonoBehaviour
         IsGameEnded = false;
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
-        StartCoroutine(CameraShaking(0));
+        //StartCoroutine(CameraShaking(0));
 #if UNITY_EDITOR
         SoundManager.Initialize();
         GameData.Initialize();
@@ -506,25 +506,6 @@ public class GameController : MonoBehaviour
     {
         GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel < 4 ? GameData.Instance.CurrentLevel + 1:0) ;
         loadingComponent.StartLoadLevel("LevelScene");
-    }
-
-    public void ShakeCamera(float time)
-    {        
-        if (!IsGameEnded)
-        {
-            StartCoroutine(CameraShaking(time));
-        }
-    }
-
-    private IEnumerator CameraShaking(float time)
-    {
-        CinemachineBasicMultiChannelPerlin shakeSettings = VirtCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
-        shakeSettings.m_FrequencyGain = 2f;
-        shakeSettings.m_AmplitudeGain = 1f;
-        yield return new WaitForSeconds(time);
-        shakeSettings.m_FrequencyGain = 0;
-        shakeSettings.m_AmplitudeGain = 0;
     }
 
     public void SetTargetCameraSettings(CameraStatusE targetStatus)

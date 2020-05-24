@@ -17,6 +17,8 @@ public class BearController : EnemyController
         OnBattleEnd = new UnityEngine.Events.UnityEvent();
         _targetCharacter = GameController.Instance.PlayerCharacter;
         _controlledEnemy = gameObject.GetComponent<Enemy>();
+        ImpulseSource.m_ImpulseDefinition.m_TimeEnvelope.m_SustainTime = EnterSound.length * 0.75f;
+        ImpulseSource.m_ImpulseDefinition.m_TimeEnvelope.m_DecayTime = EnterSound.length * 0.25f;
     }
 
     void Start()
