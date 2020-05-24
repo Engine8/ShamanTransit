@@ -937,7 +937,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 7d34c9443970bea43b0daadd2a60d2c4, type: 3}
     m_FontSize: 42
     m_FontStyle: 0
     m_BestFit: 0
@@ -949,9 +949,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Menu
-
-'
+  m_Text: "\u041C\u0435\u043D\u044E"
 --- !u!222 &1372713886
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1674,6 +1672,12 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 69439644}
     m_Modifications:
+    - target: {fileID: 3092904228794571170, guid: 0fb53ad2ef9f9ce43a45883d34ff9efd,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 7d34c9443970bea43b0daadd2a60d2c4,
+        type: 3}
     - target: {fileID: 3092904229109148359, guid: 0fb53ad2ef9f9ce43a45883d34ff9efd,
         type: 3}
       propertyPath: m_Name
