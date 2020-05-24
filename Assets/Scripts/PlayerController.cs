@@ -46,6 +46,8 @@ public class PlayerController : Movable
     private TouchObject _secondChanceClickArea;
     public UnityEvent OnSecondChanceClick;
 
+    public AudioClip SoulPickUp;
+
     private void Awake()
     {
         if (_instance != null)
@@ -205,6 +207,7 @@ public class PlayerController : Movable
         else if (other.gameObject.CompareTag("Soul"))
         {
             AddSoul();
+            SoundManager.Instance.PlaySoundClip(SoulPickUp, true);
             other.gameObject.SetActive(false);
         }
 }

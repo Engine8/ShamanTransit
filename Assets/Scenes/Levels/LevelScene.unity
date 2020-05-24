@@ -506,7 +506,7 @@ MonoBehaviour:
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: dbaeed40645086942a442ddd85ce4aac, type: 3}
     - {fileID: 6344183484129523842, guid: 2fcbba58d697b5a4490f01c30ade603d, type: 3}
-  mapIndex: 0
+  mapIndex: 4
   UIAttack: {fileID: 1997170574}
 --- !u!4 &150042266
 Transform:
@@ -3614,6 +3614,11 @@ PrefabInstance:
       propertyPath: CurrentHPBattle
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6316404828414724298, guid: a63c9639cfa74ff4790736be51718aa3,
+        type: 3}
+      propertyPath: SoulPickUp
+      value: 
+      objectReference: {fileID: 8300000, guid: c44b6f51084b99d4e885835ed38bd203, type: 3}
     - target: {fileID: 6316404828414724302, guid: a63c9639cfa74ff4790736be51718aa3,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3739,7 +3744,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1986154, y: 0}
   m_AnchorMax: {x: 0.8016026, y: 1}
-  m_AnchoredPosition: {x: -3.3999786, y: 0.025001526}
+  m_AnchoredPosition: {x: -3.399971, y: 0.025001526}
   m_SizeDelta: {x: 6.8, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1961760201

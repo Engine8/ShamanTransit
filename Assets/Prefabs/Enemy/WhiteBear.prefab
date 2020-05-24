@@ -121,7 +121,7 @@ MonoBehaviour:
   AttackSound: {fileID: 0}
   DieSound: {fileID: 0}
   IsCameraShaking: 1
-  ImpulseSource: {fileID: 0}
+  ImpulseSource: {fileID: 6482675900898589364}
   RunTime: 1
   RunCurve:
     serializedVersion: 2

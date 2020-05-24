@@ -17,6 +17,8 @@ public class Boss : EnemyController
     public List<int> Phases = new List<int>();
     public int CurrentAttackPhase = 0;
 
+    public AudioClip[] AttackSounds;
+
     private float _speedBuf;
     public float TimeBetweenLineAttacksMin;//скорость атаки на линии
     public float TimeBetweenLineAttacksMax;
@@ -118,6 +120,7 @@ public class Boss : EnemyController
         attack.transform.position = new Vector3(_attackWarning[value].transform.position.x, _attackWarning[value].transform.position.y,0f);
         attack.GetComponent<SpriteRenderer>().sortingLayerName = _layerName[position];
         attack.layer = GameController.Instance.DefinePhysicsLayerByString(_layerName[position]);
+        SoundManager.Instance.PlaySoundClip(AttackSounds[value], true);
         Destroy(attack,0.7f);
         _attackWarning[value].SetActive(false);
     }
@@ -127,7 +130,8 @@ public class Boss : EnemyController
         _controlledEnemy.TakeDamage(1);
         //if (_wolf != null)
         //    _wolf.TakeDamage();
-       
+        if (DamageSound != null)
+            SoundManager.Instance.PlaySoundClip(DamageSound, true);
         if (!_controlledEnemy.GetDead() && Phases[CurrentAttackPhase] >= _controlledEnemy.Health)
         {
             ++CurrentAttackPhase;

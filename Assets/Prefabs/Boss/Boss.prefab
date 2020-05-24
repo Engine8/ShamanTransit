@@ -139,9 +139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f369c411372b2344bef232046b7c076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  EnterSound: {fileID: 8300000, guid: 704e62abb7037bb4dbbe0c9de8e30341, type: 3}
+  EnterSound: {fileID: 8300000, guid: a006685814a1fe24688d4b6cd36c6a29, type: 3}
   AttackSound: {fileID: 0}
   DieSound: {fileID: 0}
+  DamageSound: {fileID: 8300000, guid: ccf88fb8942a9144ca174559b7a506e8, type: 3}
   IsCameraShaking: 0
   ImpulseSource: {fileID: 0}
   RunTime: 1
@@ -165,6 +166,9 @@ MonoBehaviour:
     type: 3}
   Phases: 0600000000000000
   CurrentAttackPhase: 0
+  AttackSounds:
+  - {fileID: 8300000, guid: 97f2786d099ecda449e06d8a15202d55, type: 3}
+  - {fileID: 8300000, guid: 60da2031b84b7314c89112fae2f6447f, type: 3}
   TimeBetweenLineAttacksMin: 2
   TimeBetweenLineAttacksMax: 3
   TimeBetweenAttacksMin: 2

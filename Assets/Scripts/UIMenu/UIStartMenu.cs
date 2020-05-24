@@ -33,6 +33,7 @@ public class UIStartMenu : MonoBehaviour
         SoundOff.SetActive(SoundManager.Instance.GetSoundMuted());
         VibrationOff.SetActive(!GameData.Instance.VibrationStatus);
 
+
         SoundManager.Instance.PlayMusicClip(Music);
     }
 

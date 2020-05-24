@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public AudioClip EnterSound;
     public AudioClip AttackSound;
     public AudioClip DieSound;
+    public AudioClip DamageSound;
     public bool IsCameraShaking;
     public Cinemachine.CinemachineImpulseSource ImpulseSource;
 

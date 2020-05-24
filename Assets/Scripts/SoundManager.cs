@@ -251,6 +251,7 @@ public class SoundManager : MonoBehaviour
         musicSource.volume = 0;
 
         _currentMusic = new LongSound();
+        _currentMusic.Name = musicClip.name;
         _currentMusic.Source = musicSource;
         _currentMusic.FadingIn = true;
         _currentMusic.TargetVolume = GameData.Instance.GameSoundSettings.GetMusicVolume();
