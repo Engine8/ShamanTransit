@@ -89,7 +89,7 @@ public class HitArea : MonoBehaviour
                             SoundManager.Instance.PlaySoundClip(GoodShot, true);
                         }
                     }
-                  //  _sightScale.CalculateSpeed();
+                    _sightScale.CalculateSpeed();
                     _pauseAttacksHit = Time.time + 0.5f;
                 }
             }
