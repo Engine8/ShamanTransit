@@ -337,8 +337,8 @@ MonoBehaviour:
     IsSnowy: 1
     WindStatusVar: 0
     TilePrefabsTurn:
-    - {fileID: 6986321411085782552, guid: ab32f0c281cce4c4abca1490bf36b3b3, type: 3}
     - {fileID: 8621921015806925681, guid: 6e7be082788cef648bbad4645f9bd4a7, type: 3}
+    - {fileID: 6986321411085782552, guid: ab32f0c281cce4c4abca1490bf36b3b3, type: 3}
     - {fileID: -5517131477564077679, guid: 15c51a3af1589014a870633a350e912b, type: 3}
     - {fileID: 5655114978885734657, guid: 881afd358a3ada74aba0b357db883320, type: 3}
     - {fileID: 9000326502963422005, guid: b12fc76acbcb155479e8d9bfab1b578c, type: 3}
@@ -506,7 +506,7 @@ MonoBehaviour:
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: dbaeed40645086942a442ddd85ce4aac, type: 3}
     - {fileID: 6344183484129523842, guid: 2fcbba58d697b5a4490f01c30ade603d, type: 3}
-  mapIndex: 4
+  mapIndex: 0
   UIAttack: {fileID: 1997170574}
 --- !u!4 &150042266
 Transform:
