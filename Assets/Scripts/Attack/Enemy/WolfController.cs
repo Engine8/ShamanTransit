@@ -16,6 +16,7 @@ public class WolfController :  EnemyController
 
     private bool _isAttack = false;
     private bool _CR_running = false;
+    private bool _Sprint = false;
     //Destroyed in HitArea class
     private void OnDestroy()
     {
@@ -55,9 +56,11 @@ public class WolfController :  EnemyController
 
     IEnumerator Sprint() //появление волков
     {
+        _Sprint = true;
         _speedBuf = _targetCharacter.Speed * 0.6f;
         yield return new WaitForSeconds(1.6f);
         _speedBuf = 0;
+        _Sprint = false;
     }
 
     public void ChendePosition()
@@ -125,7 +128,9 @@ public class WolfController :  EnemyController
  
     public override void Attack()
     {
-        StartCoroutine("PauseForAttack");
+        if (!_Sprint)
+        {
+            StartCoroutine("PauseForAttack");
         if (_countWolf > 0)
         {
             if ((4 - _countWolf) == 2)
@@ -136,6 +141,7 @@ public class WolfController :  EnemyController
             else
                 Wolf[4 - _countWolf].StartAttack(_positionWolf[4 - _countWolf][0]);
             _nextAttackTime = Time.time + TimeBetweenAttacks;
+            }
         }
     }
 
@@ -153,11 +159,13 @@ public class WolfController :  EnemyController
 
     public override void TakeDamage()
     {
-        StopAllCoroutines();
-        StartCoroutine("PauseForAttack");
-        _nextAttackTime = Time.time + TimeBetweenAttacks;
-        Wolf[(4 - _countWolf)].TakeDamage(1);
-        
+        if (!_Sprint)
+        {
+            StopAllCoroutines();
+            StartCoroutine("PauseForAttack");
+            _nextAttackTime = Time.time + TimeBetweenAttacks;
+            Wolf[(4 - _countWolf)].TakeDamage(1);
+        }
     }
 
     public override  int GetCount()
