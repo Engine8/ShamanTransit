@@ -52,7 +52,7 @@ public class BearController : EnemyController
                     if (Time.time > _nextAttackTime)
                     {
                         Attack();
-                        _nextAttackTime = Time.time + 4;
+                        _nextAttackTime = Time.time + 1;
                     }
                 }
             }
