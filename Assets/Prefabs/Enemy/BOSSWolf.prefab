@@ -161,7 +161,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   IsActiwateSprint: 0
-  Speed: 10.3
+  Speed: 13
 --- !u!95 &1986945777450964632
 Animator:
   serializedVersion: 3

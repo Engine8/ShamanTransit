@@ -157,7 +157,7 @@ public class Boss : EnemyController
         _canAttack = false;
         _wolf = Instantiate(WolfPrefab).GetComponent<BearController>();
         _wolf.OnBattleEnd.AddListener(ProcessPawnDeath);
-        _wolf.transform.position = new Vector3(transform.position.x+1, transform.position.y - 2, 0f);
+        _wolf.transform.position = new Vector3(transform.position.x+2, transform.position.y - 2, 0f);
         OnPawnSpawn.Invoke();
     }
 
