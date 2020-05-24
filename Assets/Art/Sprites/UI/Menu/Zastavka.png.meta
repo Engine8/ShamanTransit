@@ -257,6 +257,9 @@ TextureImporter:
   - first:
       213: -2967537981956198207
     second: Zastavka_84
+  - first:
+      213: 7089672187634586299
+    second: Zastavka_48
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -394,10 +397,10 @@ TextureImporter:
         serializedVersion: 2
         x: 348
         y: 7226
-        width: 1252
+        width: 1254
         height: 1057
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -410,36 +413,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_1
-      rect:
-        serializedVersion: 2
-        x: 1874
-        y: 7465
-        width: 7
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e523beedd51aabf0800000000000000
-      internalID: -312413181212154396
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_2
       rect:
         serializedVersion: 2
-        x: 1887
+        x: 1877
         y: 7226
-        width: 1241
+        width: 1254
         height: 1057
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -455,12 +437,12 @@ TextureImporter:
       name: Zastavka_3
       rect:
         serializedVersion: 2
-        x: 3306
+        x: 3303
         y: 7226
-        width: 1253
+        width: 1254
         height: 1057
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -473,36 +455,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_4
-      rect:
-        serializedVersion: 2
-        x: 4733
-        y: 7462
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 089feb0124f51e790800000000000000
-      internalID: -7502610766869104256
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_5
       rect:
         serializedVersion: 2
-        x: 4745
+        x: 4733
         y: 7226
-        width: 1241
+        width: 1254
         height: 1057
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -515,36 +476,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_6
-      rect:
-        serializedVersion: 2
-        x: 6065
-        y: 7462
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5408a22ab26246670800000000000000
-      internalID: 8530985562992705605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_7
       rect:
         serializedVersion: 2
-        x: 6078
+        x: 6063
         y: 7226
-        width: 1240
+        width: 1254
         height: 1057
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -557,36 +497,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_8
-      rect:
-        serializedVersion: 2
-        x: 7383
-        y: 7462
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 199e9dfb867e29750800000000000000
-      internalID: 6310360464980830609
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_9
       rect:
         serializedVersion: 2
-        x: 7395
+        x: 7383
         y: 7226
-        width: 1241
+        width: 1254
         height: 1057
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -599,27 +518,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_10
-      rect:
-        serializedVersion: 2
-        x: 8756
-        y: 7465
-        width: 6
-        height: 4
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d14e419f03897db60800000000000000
-      internalID: 7770847018155828253
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_11
       rect:
         serializedVersion: 2
@@ -627,8 +525,8 @@ TextureImporter:
         y: 7226
         width: 1241
         height: 1057
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -644,12 +542,12 @@ TextureImporter:
       name: Zastavka_12
       rect:
         serializedVersion: 2
-        x: 10106
-        y: 7226
+        x: 10101
+        y: 7224
         width: 1253
         height: 1057
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -665,12 +563,12 @@ TextureImporter:
       name: Zastavka_13
       rect:
         serializedVersion: 2
-        x: 11493
+        x: 11490
         y: 7226
         width: 1253
         height: 1057
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -690,8 +588,8 @@ TextureImporter:
         y: 7226
         width: 1249
         height: 1057
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -704,36 +602,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_15
-      rect:
-        serializedVersion: 2
-        x: 334
-        y: 6048
-        width: 7
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 221c6f86d0242a980800000000000000
-      internalID: -8529182118923288286
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_16
       rect:
         serializedVersion: 2
-        x: 346
+        x: 348
         y: 5810
         width: 1241
-        height: 1060
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -750,11 +627,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1717
-        y: 5809
+        y: 5810
         width: 1252
-        height: 1058
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -771,11 +648,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 3166
-        y: 5809
+        y: 5810
         width: 1250
-        height: 1043
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -792,11 +669,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 4594
-        y: 5809
+        y: 5810
         width: 1253
-        height: 1043
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -809,36 +686,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_20
-      rect:
-        serializedVersion: 2
-        x: 6028
-        y: 6048
-        width: 9
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa0756ce52df52fd0800000000000000
-      internalID: -2367207689791639377
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_21
       rect:
         serializedVersion: 2
         x: 6041
         y: 5810
         width: 1241
-        height: 1046
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -851,36 +707,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_22
-      rect:
-        serializedVersion: 2
-        x: 7363
-        y: 6046
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7211fee018f6c08f0800000000000000
-      internalID: -572960452490882777
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_23
       rect:
         serializedVersion: 2
-        x: 7374
-        y: 5809
+        x: 7373
+        y: 5810
         width: 1244
-        height: 1052
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -899,9 +734,9 @@ TextureImporter:
         x: 8689
         y: 5813
         width: 1254
-        height: 1050
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -918,11 +753,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 10066
-        y: 5810
+        y: 5813
         width: 1253
-        height: 1053
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -935,36 +770,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_26
-      rect:
-        serializedVersion: 2
-        x: 11460
-        y: 6049
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bf636e87558a5740800000000000000
-      internalID: 5141568535694372792
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_27
       rect:
         serializedVersion: 2
         x: 11473
         y: 5813
         width: 1241
-        height: 1025
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -977,36 +791,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_28
-      rect:
-        serializedVersion: 2
-        x: 12821
-        y: 6048
-        width: 7
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ba4770969e0e1c860800000000000000
-      internalID: 7548561743543760043
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_29
       rect:
         serializedVersion: 2
-        x: 12834
-        y: 5809
+        x: 12833
+        y: 5810
         width: 1241
-        height: 1025
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1025,9 +818,9 @@ TextureImporter:
         x: 348
         y: 4152
         width: 1250
-        height: 1032
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1046,9 +839,9 @@ TextureImporter:
         x: 1695
         y: 4159
         width: 1253
-        height: 1021
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1061,36 +854,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_32
-      rect:
-        serializedVersion: 2
-        x: 3163
-        y: 4395
-        width: 10
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8762d35d1c9d103a0800000000000000
-      internalID: -6700835344021117320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_33
       rect:
         serializedVersion: 2
         x: 3176
         y: 4159
         width: 1243
-        height: 1025
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1103,36 +875,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_34
-      rect:
-        serializedVersion: 2
-        x: 4590
-        y: 4395
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65250f1acb4a3a7f0800000000000000
-      internalID: -602456795059826090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_35
       rect:
         serializedVersion: 2
-        x: 4603
-        y: 4159
+        x: 4604
+        y: 4160
         width: 1242
-        height: 1017
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1145,36 +896,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_36
-      rect:
-        serializedVersion: 2
-        x: 6028
-        y: 4394
-        width: 9
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe36e871df1c50d60800000000000000
-      internalID: 7855898417783792623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_37
       rect:
         serializedVersion: 2
         x: 6041
         y: 4159
         width: 1241
-        height: 1021
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1187,36 +917,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_38
-      rect:
-        serializedVersion: 2
-        x: 7363
-        y: 4394
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9e790876c88ae7b10800000000000000
-      internalID: 1981206207074965481
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_39
       rect:
         serializedVersion: 2
-        x: 7377
-        y: 4159
+        x: 7376
+        y: 4160
         width: 1241
-        height: 1025
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1229,36 +938,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_40
-      rect:
-        serializedVersion: 2
-        x: 8689
-        y: 4394
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e23698d0870f2d320800000000000000
-      internalID: 2581389934850564910
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_41
       rect:
         serializedVersion: 2
         x: 8702
         y: 4159
         width: 1241
-        height: 1025
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1271,36 +959,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_42
-      rect:
-        serializedVersion: 2
-        x: 10065
-        y: 4394
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a48e820c9dae923c0800000000000000
-      internalID: -4383714541315758006
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_43
       rect:
         serializedVersion: 2
-        x: 10078
+        x: 10075
         y: 4159
         width: 1241
-        height: 1022
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1313,36 +980,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_44
-      rect:
-        serializedVersion: 2
-        x: 11459
-        y: 4395
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72272a83f7116cf80800000000000000
-      internalID: -8086756842788457945
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_45
       rect:
         serializedVersion: 2
         x: 11473
         y: 4159
         width: 1241
-        height: 1047
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1355,36 +1001,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_46
-      rect:
-        serializedVersion: 2
-        x: 12821
-        y: 4395
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7cde5a29ac26b3a0800000000000000
-      internalID: -6650078694694003585
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_47
       rect:
         serializedVersion: 2
         x: 12834
         y: 4159
         width: 1241
-        height: 1021
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1397,36 +1022,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_48
-      rect:
-        serializedVersion: 2
-        x: 446
-        y: 2733
-        width: 5
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f342857c59ef8de20800000000000000
-      internalID: 3375727839962211391
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_49
       rect:
         serializedVersion: 2
-        x: 459
+        x: 454
         y: 2498
         width: 1241
-        height: 1032
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1439,36 +1043,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_50
-      rect:
-        serializedVersion: 2
-        x: 1914
-        y: 2733
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 985a7a1f4f4371e50800000000000000
-      internalID: 6779945990660531593
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_51
       rect:
         serializedVersion: 2
-        x: 1927
+        x: 1922
         y: 2498
         width: 1241
-        height: 1032
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1481,36 +1064,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_52
-      rect:
-        serializedVersion: 2
-        x: 3341
-        y: 2734
-        width: 9
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7438846f4faf2fd40800000000000000
-      internalID: 5616827615295341383
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_53
       rect:
         serializedVersion: 2
-        x: 3355
+        x: 3354
         y: 2498
         width: 1240
-        height: 1033
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1523,36 +1085,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_54
-      rect:
-        serializedVersion: 2
-        x: 4779
-        y: 2734
-        width: 8
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9c6bfd056974d9d40800000000000000
-      internalID: 5592705023191529161
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_55
       rect:
         serializedVersion: 2
-        x: 4793
+        x: 4789
         y: 2498
         width: 1240
-        height: 1032
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1565,36 +1106,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_56
-      rect:
-        serializedVersion: 2
-        x: 6112
-        y: 2733
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d9dd2d7b4e7f1c830800000000000000
-      internalID: 4089822498337775005
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_57
       rect:
         serializedVersion: 2
-        x: 6125
+        x: 6120
         y: 2498
         width: 1241
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1607,36 +1127,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_58
-      rect:
-        serializedVersion: 2
-        x: 7438
-        y: 2733
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c6b1303d2a0600060800000000000000
-      internalID: 6917635280082246508
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_59
       rect:
         serializedVersion: 2
-        x: 7451
+        x: 7448
         y: 2498
         width: 1242
-        height: 1020
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1649,36 +1148,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_60
-      rect:
-        serializedVersion: 2
-        x: 8813
-        y: 2733
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 796161272d0c89920800000000000000
-      internalID: 2997357562104780439
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_61
       rect:
         serializedVersion: 2
-        x: 8826
+        x: 8825
         y: 2498
         width: 1241
-        height: 1021
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1691,36 +1169,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_62
-      rect:
-        serializedVersion: 2
-        x: 10209
-        y: 2734
-        width: 10
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f6caf8d8eafa3ec0800000000000000
-      internalID: -3586278275267508489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_63
       rect:
         serializedVersion: 2
-        x: 10222
+        x: 10221
         y: 2498
         width: 1243
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1733,36 +1190,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_64
-      rect:
-        serializedVersion: 2
-        x: 11570
-        y: 2734
-        width: 10
-        height: 8
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd169eff78fe6f060800000000000000
-      internalID: 6987035239305011679
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_65
       rect:
         serializedVersion: 2
         x: 11584
         y: 2498
         width: 1242
-        height: 1024
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1775,36 +1211,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_66
-      rect:
-        serializedVersion: 2
-        x: 13099
-        y: 2733
-        width: 8
-        height: 9
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e9cba7039344aaf40800000000000000
-      internalID: 5740475687454293150
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_67
       rect:
         serializedVersion: 2
-        x: 13113
+        x: 13112
         y: 2498
         width: 1240
-        height: 1017
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1817,36 +1232,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_68
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 1178
-        width: 8
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 322472d2b1b6b0100800000000000000
-      internalID: 75271583247581731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_69
       rect:
         serializedVersion: 2
         x: 357
-        y: 940
+        y: 943
         width: 1241
-        height: 1012
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1859,36 +1253,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_70
-      rect:
-        serializedVersion: 2
-        x: 1694
-        y: 1178
-        width: 8
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a284ac169dbe5f800800000000000000
-      internalID: 645681440478611498
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_71
       rect:
         serializedVersion: 2
         x: 1707
-        y: 939
+        y: 943
         width: 1241
-        height: 1013
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1901,36 +1274,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_72
-      rect:
-        serializedVersion: 2
-        x: 3163
-        y: 1178
-        width: 7
-        height: 7
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c7c5f629a508e92d0800000000000000
-      internalID: -3270035152932217732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_73
       rect:
         serializedVersion: 2
         x: 3176
-        y: 941
+        y: 943
         width: 1240
-        height: 1011
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1943,36 +1295,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_74
-      rect:
-        serializedVersion: 2
-        x: 4593
-        y: 1178
-        width: 7
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8a5669bf298726780800000000000000
-      internalID: -8691251758190139992
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_75
       rect:
         serializedVersion: 2
-        x: 4606
-        y: 939
+        x: 4605
+        y: 943
         width: 1241
-        height: 1013
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1985,36 +1316,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_76
-      rect:
-        serializedVersion: 2
-        x: 6031
-        y: 1178
-        width: 8
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2f21d74893597a4d0800000000000000
-      internalID: -3123363742289685774
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_77
       rect:
         serializedVersion: 2
         x: 6045
-        y: 939
+        y: 943
         width: 1240
-        height: 1013
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2031,11 +1341,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 7365
-        y: 940
+        y: 943
         width: 1253
-        height: 1007
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2052,11 +1362,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 8693
-        y: 942
+        y: 943
         width: 1253
-        height: 1008
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2069,36 +1379,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_80
-      rect:
-        serializedVersion: 2
-        x: 10066
-        y: 1179
-        width: 6
-        height: 6
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4963e66e234bb7210800000000000000
-      internalID: 1331856245525460628
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_81
       rect:
         serializedVersion: 2
         x: 10078
-        y: 942
+        y: 943
         width: 1241
-        height: 1040
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2115,11 +1404,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 11460
-        y: 940
+        y: 943
         width: 1254
-        height: 1060
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -2132,36 +1421,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Zastavka_83
-      rect:
-        serializedVersion: 2
-        x: 12824
-        y: 1178
-        width: 6
-        height: 5
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1669d559924a0ca80800000000000000
-      internalID: -8448572402440497567
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: Zastavka_84
       rect:
         serializedVersion: 2
         x: 12835
-        y: 939
+        y: 943
         width: 1240
         height: 1057
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 8
+      pivot: {x: 1, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

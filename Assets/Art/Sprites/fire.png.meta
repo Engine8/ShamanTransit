@@ -223,7 +223,7 @@ TextureImporter:
         width: 858
         height: 448
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -239,9 +239,9 @@ TextureImporter:
       name: fire_1
       rect:
         serializedVersion: 2
-        x: 1550
+        x: 1450
         y: 2780
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -260,9 +260,9 @@ TextureImporter:
       name: fire_2
       rect:
         serializedVersion: 2
-        x: 2982
+        x: 2910
         y: 2780
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -281,9 +281,9 @@ TextureImporter:
       name: fire_3
       rect:
         serializedVersion: 2
-        x: 4294
+        x: 4214
         y: 2780
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -302,9 +302,9 @@ TextureImporter:
       name: fire_4
       rect:
         serializedVersion: 2
-        x: 5516
+        x: 5460
         y: 2780
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -323,9 +323,9 @@ TextureImporter:
       name: fire_5
       rect:
         serializedVersion: 2
-        x: 7058
+        x: 6967
         y: 2780
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -344,9 +344,9 @@ TextureImporter:
       name: fire_6
       rect:
         serializedVersion: 2
-        x: 8440
+        x: 8388
         y: 2780
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -365,9 +365,9 @@ TextureImporter:
       name: fire_7
       rect:
         serializedVersion: 2
-        x: 9849
+        x: 9837
         y: 2780
-        width: 950
+        width: 1000
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -386,9 +386,9 @@ TextureImporter:
       name: fire_8
       rect:
         serializedVersion: 2
-        x: 11531
+        x: 11477
         y: 2780
-        width: 950
+        width: 1000
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -407,9 +407,9 @@ TextureImporter:
       name: fire_9
       rect:
         serializedVersion: 2
-        x: 12940
+        x: 12916
         y: 2780
-        width: 950
+        width: 1000
         height: 1680
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -428,9 +428,9 @@ TextureImporter:
       name: fire_10
       rect:
         serializedVersion: 2
-        x: 1357
+        x: 1282
         y: 650
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -449,9 +449,9 @@ TextureImporter:
       name: fire_11
       rect:
         serializedVersion: 2
-        x: 2694
+        x: 2611
         y: 650
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -470,9 +470,9 @@ TextureImporter:
       name: fire_12
       rect:
         serializedVersion: 2
-        x: 3865
+        x: 3789
         y: 650
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -491,9 +491,9 @@ TextureImporter:
       name: fire_13
       rect:
         serializedVersion: 2
-        x: 5433
+        x: 5340
         y: 650
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -512,9 +512,9 @@ TextureImporter:
       name: fire_14
       rect:
         serializedVersion: 2
-        x: 6865
+        x: 6791
         y: 650
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -533,9 +533,9 @@ TextureImporter:
       name: fire_15
       rect:
         serializedVersion: 2
-        x: 8377
+        x: 8273
         y: 650
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -554,9 +554,9 @@ TextureImporter:
       name: fire_16
       rect:
         serializedVersion: 2
-        x: 9842
+        x: 9755
         y: 650
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -575,9 +575,9 @@ TextureImporter:
       name: fire_17
       rect:
         serializedVersion: 2
-        x: 11487
+        x: 11382
         y: 650
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
@@ -596,9 +596,9 @@ TextureImporter:
       name: fire_18
       rect:
         serializedVersion: 2
-        x: 12900
+        x: 12810
         y: 650
-        width: 950
+        width: 1100
         height: 1650
       alignment: 9
       pivot: {x: 0.5, y: 0.2}
