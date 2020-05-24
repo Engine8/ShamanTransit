@@ -95,7 +95,7 @@ public class SnowController : MonoBehaviour
         else if (WindStatusVar == WindStatus.Random) 
         {
             _timeToWind -= Time.deltaTime;
-            if (_timeToWind < 0)
+            if (_timeToWind < 0 && GameController.Instance.CurrentGameStatus != GameController.GameStatus.Attack)
             {
                 _timeToWind = CalculateRandomTime();
                 CreateWindBurst();
