@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -337,8 +337,8 @@ MonoBehaviour:
     IsSnowy: 1
     WindStatusVar: 0
     TilePrefabsTurn:
-    - {fileID: 8621921015806925681, guid: 6e7be082788cef648bbad4645f9bd4a7, type: 3}
     - {fileID: 6986321411085782552, guid: ab32f0c281cce4c4abca1490bf36b3b3, type: 3}
+    - {fileID: 8621921015806925681, guid: 6e7be082788cef648bbad4645f9bd4a7, type: 3}
     - {fileID: -5517131477564077679, guid: 15c51a3af1589014a870633a350e912b, type: 3}
     - {fileID: 5655114978885734657, guid: 881afd358a3ada74aba0b357db883320, type: 3}
     - {fileID: 9000326502963422005, guid: b12fc76acbcb155479e8d9bfab1b578c, type: 3}
@@ -415,7 +415,7 @@ MonoBehaviour:
     - {fileID: -5517131477564077679, guid: 3d0c6cd3017e76744b7779b0938f6704, type: 3}
     - {fileID: 7334647115942283197, guid: 79d66dcf964197c4b84f5a42f3a29e53, type: 3}
     - {fileID: 8621921015806925681, guid: a5eb45ceed99d9c45aad87640aba5c01, type: 3}
-    - {fileID: 6581053277576116797, guid: fd513ebcd43f9d4498f5f2f5be59e006, type: 3}
+    - {fileID: 6581053277576116797, guid: 73c5ccfb9d461b947a95f2ad62dae1d0, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: -5517131477564077679, guid: 3d0c6cd3017e76744b7779b0938f6704, type: 3}
     - {fileID: 5655114978885734657, guid: bdd781c25248e49448ea4181dceb544e, type: 3}
@@ -425,7 +425,7 @@ MonoBehaviour:
     - {fileID: 7334647115942283197, guid: 79d66dcf964197c4b84f5a42f3a29e53, type: 3}
     - {fileID: 9000326502963422005, guid: f0bd41bd7d0d7ff4ea56b077e2efedc7, type: 3}
     - {fileID: 8065324253729329736, guid: abb4f9c9d1f775f4f9542fb348aaf55d, type: 3}
-    - {fileID: 6581053277576116797, guid: fd513ebcd43f9d4498f5f2f5be59e006, type: 3}
+    - {fileID: 6581053277576116797, guid: 73c5ccfb9d461b947a95f2ad62dae1d0, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 8065324253729329736, guid: abb4f9c9d1f775f4f9542fb348aaf55d, type: 3}
     - {fileID: 7334647115942283197, guid: 79d66dcf964197c4b84f5a42f3a29e53, type: 3}
