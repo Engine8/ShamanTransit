@@ -185,7 +185,10 @@ public class Boss : EnemyController
     public override void ProcessEnemyDeath()
     {
         if (_controlledEnemy.GetDead())
+        {
+            SoundManager.Instance.PlaySoundClip(DieSound, true);
             OnBattleEnd.Invoke();
+        }
     }
 
     //perform actions on player death

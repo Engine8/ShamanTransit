@@ -141,7 +141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   EnterSound: {fileID: 8300000, guid: a006685814a1fe24688d4b6cd36c6a29, type: 3}
   AttackSound: {fileID: 0}
-  DieSound: {fileID: 0}
+  DieSound: {fileID: 8300000, guid: 9f56ab2084183c642994724c9284441f, type: 3}
   DamageSound: {fileID: 8300000, guid: ccf88fb8942a9144ca174559b7a506e8, type: 3}
   IsCameraShaking: 0
   ImpulseSource: {fileID: 0}
