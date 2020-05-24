@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -372,7 +372,7 @@ MonoBehaviour:
     TilePrefabsTurn:
     - {fileID: 4860197548757332440, guid: 386bd7f9e072b15439ac5e0f4aaa7594, type: 3}
     - {fileID: 7315239809186348513, guid: 64f2c30741866fb44977d69e6aa2da39, type: 3}
-    - {fileID: 514101791106860206, guid: 1be0830190ba19340bfa3deb83696d25, type: 3}
+    - {fileID: 2459768206849177439, guid: bd6eefa132dd38a4c95f1d11b38ac1f9, type: 3}
     - {fileID: 5796022290342831026, guid: 1a734548808995643b7bd599e424e53b, type: 3}
     - {fileID: 4260424482515111727, guid: 3e2099b8b24cfa74990c5f2c8ae3afa7, type: 3}
     - {fileID: 882430964850791707, guid: 5bf7c88c39ec9fe4ca9f552207d8345f, type: 3}
@@ -394,10 +394,10 @@ MonoBehaviour:
     - {fileID: 3182279519986651940, guid: aaa79318bf63c534794c25bb64860470, type: 3}
     - {fileID: 1732956554300652597, guid: 666c126f25729d440a8bd929db317b5c, type: 3}
     - {fileID: 3336611919322668568, guid: 2fb4ed56be30cef48b0402a2fbc64b99, type: 3}
+    - {fileID: 514101791106860206, guid: 1be0830190ba19340bfa3deb83696d25, type: 3}
     - {fileID: 1358292189285246630, guid: df08467f2665416438acca357c19ce7b, type: 3}
     - {fileID: 635980679596404716, guid: 831fd89b06f628a428e04ec9b448b000, type: 3}
     - {fileID: 7114405872408890003, guid: 9fe9e7cc9f8572f419525aad93976c10, type: 3}
-    - {fileID: 514101791106860206, guid: 1be0830190ba19340bfa3deb83696d25, type: 3}
     - {fileID: 2222629165887122362, guid: a7b67293cc446be429a6bc1cee0eb639, type: 3}
     - {fileID: 8882464760559498016, guid: 7326cec8524ab9d4a9ef07555755adf6, type: 3}
     spawnedChunks: []
@@ -476,7 +476,7 @@ MonoBehaviour:
     - {fileID: 6344183484129523842, guid: dbaeed40645086942a442ddd85ce4aac, type: 3}
     - {fileID: 6344183484129523842, guid: 2fcbba58d697b5a4490f01c30ade603d, type: 3}
   - MoneyMultiplier: 100
-    BasicReward: 0
+    BasicReward: 3000
     IsSnowy: 0
     WindStatusVar: 0
     TilePrefabsTurn:
@@ -495,37 +495,6 @@ MonoBehaviour:
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: d96d8a5c0af3d494793fc43793468c17, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 8882464760559498016, guid: 3ddb989dd4ca2f5428ece3684ccfaaea, type: 3}
-    spawnedChunks: []
-    MapMode: 0
-    AttackTiles:
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: dbaeed40645086942a442ddd85ce4aac, type: 3}
-    - {fileID: 6344183484129523842, guid: 2fcbba58d697b5a4490f01c30ade603d, type: 3}
-  - MoneyMultiplier: 0
-    BasicReward: 1000
-    IsSnowy: 0
-    WindStatusVar: 0
-    TilePrefabsTurn:
-    - {fileID: 4860197548757332440, guid: 5e3e6ba11f5c92945a6e1bcf5e9a387b, type: 3}
-    - {fileID: 5655114978885734657, guid: bdd781c25248e49448ea4181dceb544e, type: 3}
-    - {fileID: 7334647115942283197, guid: 79d66dcf964197c4b84f5a42f3a29e53, type: 3}
-    - {fileID: 6581053277576116797, guid: 6460ca53a63ec8b44a2332ba553f8b95, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: d96d8a5c0af3d494793fc43793468c17, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
-    - {fileID: 6344183484129523842, guid: d96d8a5c0af3d494793fc43793468c17, type: 3}
-    - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
     - {fileID: 6344183484129523842, guid: 63e7c18fdd7b3b640b2c5d3e10039a35, type: 3}
