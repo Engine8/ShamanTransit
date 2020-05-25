@@ -46,6 +46,8 @@ public class PlayerController : Movable
     private TouchObject _secondChanceClickArea;
     public UnityEvent OnSecondChanceClick;
 
+    public AudioClip SoulPickUp;
+
     private void Awake()
     {
         if (_instance != null)
@@ -78,6 +80,8 @@ public class PlayerController : Movable
         base.Start();
         if (HelpControl.helpControl != null)
             FinishHelp += HelpControl.helpControl.Move;
+
+        _animator.SetBool("IsIdle", false);
     }
 
     private void Update()
@@ -105,7 +109,7 @@ public class PlayerController : Movable
         }
 
         //mobile controls
-        if (Input.touchCount > 0 && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode)
+        if (Input.touchCount > 0 && !_isLineSwapBlocked && GameController.Instance.CurrentGameStatus != GameController.GameStatus.Attack)
         {
 
             //Debug.Log("Смена слоя перед помощу");
@@ -197,18 +201,20 @@ public class PlayerController : Movable
         {
             AccelerationModif = 0;
             Speed = 0;
+            _animator.SetBool("IsIdle", true);
             OnLevelEnd.Invoke();
         }
         else if (other.gameObject.CompareTag("Soul"))
         {
             AddSoul();
+            SoundManager.Instance.PlaySoundClip(SoulPickUp, true);
             other.gameObject.SetActive(false);
         }
 }
 
     void OnGameModeChanged()
     {
-        if (GameController.Instance.IsAttackMode)
+        if (GameController.Instance.CurrentGameStatus == GameController.GameStatus.Attack)
         {
             _animator.SetBool("Battle", true);
             StartCoroutine(MoveToMiddleLine());
@@ -298,6 +304,7 @@ public class PlayerController : Movable
         _animator.SetBool("IsDead", false);
         _animator.SetBool("IsRevived", true);
 
+        CurrentHPBattle = MaxHPBattle;
         //change material?
         StartCoroutine(ReviveAnimate());
         ReviveMarketParticle.Stop();

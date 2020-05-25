@@ -127,7 +127,7 @@ SpriteRenderer:
   m_SortingLayerID: 902459011
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0329721911d540048be01acf54322521, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1274987a779b96f418450c4cf909ad3d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -162,7 +162,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3185910901036958006}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -8.446, y: -2.5, z: 1.4589844}
+  m_LocalPosition: {x: -7.863, y: -2.5, z: 1.4589844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5644179929378800381}
@@ -178,7 +178,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5644179929378800381}
   - component: {fileID: -5517131477564077679}
-  - component: {fileID: -939564990817187091}
   m_Layer: 0
   m_Name: 4BlockR1
   m_TagString: Untagged
@@ -225,25 +224,6 @@ MonoBehaviour:
   End: {fileID: 3147942635181404637}
   SpriteTile: {fileID: 2589144441535969917}
   SpriteCliff: {fileID: 0}
-  EnemyPrefabs: {fileID: 0}
-  Lands:
-  - {fileID: 202167519607107690}
-  - {fileID: 5055931678101589390}
-  - {fileID: 4486613190092974978}
---- !u!114 &-939564990817187091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3851092522424233372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc348c70f2d3c6640abceeb4a5bebabd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beginChunk: {fileID: 1550079525344380750}
-  endChunk: {fileID: 3147942635181404637}
 --- !u!1 &3946503138050285683
 GameObject:
   m_ObjectHideFlags: 0
@@ -254,7 +234,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5349543391952201448}
   - component: {fileID: 8002534744550454765}
-  - component: {fileID: 202167519607107690}
   m_Layer: 8
   m_Name: Land1
   m_TagString: Untagged
@@ -330,22 +309,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &202167519607107690
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3946503138050285683}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: debf59e478d89004eb263a85af78afb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnedBlocks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &4576181775256789387
 GameObject:
   m_ObjectHideFlags: 0
@@ -451,7 +414,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5493036914411422220}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.432, y: -2.5, z: 1.4589844}
+  m_LocalPosition: {x: 7.85, y: -2.5, z: 1.4589844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5644179929378800381}
@@ -467,7 +430,6 @@ GameObject:
   m_Component:
   - component: {fileID: 5289454798748686863}
   - component: {fileID: 8252457985486190601}
-  - component: {fileID: 5055931678101589390}
   m_Layer: 10
   m_Name: Land2
   m_TagString: Untagged
@@ -540,22 +502,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5055931678101589390
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7039194168097682302}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: debf59e478d89004eb263a85af78afb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnedBlocks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &7749485419442775314
 GameObject:
   m_ObjectHideFlags: 0
@@ -566,7 +512,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7578549351011124185}
   - component: {fileID: 2393050909143230634}
-  - component: {fileID: 4486613190092974978}
   m_Layer: 12
   m_Name: Land3
   m_TagString: Untagged
@@ -585,7 +530,7 @@ Transform:
   m_LocalPosition: {x: 0, y: -4.022525, z: 1.4589844}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 8380485391605019245}
+  - {fileID: 452579105795877977}
   m_Father: {fileID: 5644179929378800381}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -639,22 +584,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4486613190092974978
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7749485419442775314}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: debf59e478d89004eb263a85af78afb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnedBlocks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1001 &452579105795878143
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -724,7 +653,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 549ab68f07ee20b4a98262d488135949, type: 3}
---- !u!4 &8380485391605019245 stripped
+--- !u!4 &452579105795877977 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8217544586601275026, guid: 549ab68f07ee20b4a98262d488135949,
     type: 3}

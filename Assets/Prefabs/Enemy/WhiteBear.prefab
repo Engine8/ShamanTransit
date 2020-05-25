@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6648551672482228334}
   - component: {fileID: 6648551672482228333}
   - component: {fileID: 3786425029537678825}
+  - component: {fileID: 6482675900898589364}
   m_Layer: 0
   m_Name: WhiteBear
   m_TagString: Untagged
@@ -97,10 +98,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Type: 1
-  startingHealth: 5
-  attackDistanceThreshold: 3.8
+  AttackDistanceThreshold: 3
   Damage: 5
+  Health: 5
   SpecialSprite: {fileID: 21300000, guid: c4fb584c9af95ec40b933c892f87d0bc, type: 3}
+  OnDie:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6648551672482228333
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +121,7 @@ MonoBehaviour:
   AttackSound: {fileID: 0}
   DieSound: {fileID: 0}
   IsCameraShaking: 1
+  ImpulseSource: {fileID: 6482675900898589364}
   RunTime: 1
   RunCurve:
     serializedVersion: 2
@@ -160,7 +165,11 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
-  speed: 11
+  OnBattleEnd:
+    m_PersistentCalls:
+      m_Calls: []
+  IsActiwateSprint: 1
+  Speed: 10.7
 --- !u!95 &3786425029537678825
 Animator:
   serializedVersion: 3
@@ -180,3 +189,62 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &6482675900898589364
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6648551672482228321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 180ecf9b41d478f468eb3e9083753217, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ImpulseDefinition:
+    m_ImpulseChannel: 1
+    m_RawSignal: {fileID: 11400000, guid: f90a1ea4ca2987c4aaadd06f6775ac37, type: 2}
+    m_AmplitudeGain: 1.5
+    m_FrequencyGain: 1.5
+    m_RepeatMode: 0
+    m_Randomize: 1
+    m_TimeEnvelope:
+      m_AttackShape:
+        serializedVersion: 2
+        m_Curve: []
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_DecayShape:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
+          value: 1
+          inSlope: 0.004295642
+          outSlope: 0.004295642
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.08342016
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: -1.8817847
+          outSlope: -1.8817847
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.03376019
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+      m_AttackTime: 0
+      m_SustainTime: 0.5
+      m_DecayTime: 1
+      m_ScaleWithImpact: 1
+      m_HoldForever: 0
+    m_ImpactRadius: 100
+    m_DirectionMode: 0
+    m_DissipationMode: 2
+    m_DissipationDistance: 1000

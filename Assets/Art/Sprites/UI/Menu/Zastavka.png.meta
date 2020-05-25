@@ -1,0 +1,1459 @@
+fileFormatVersion: 2
+guid: d8e8ee263a3307841a540d9b83657510
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4778369351018771649
+    second: Zastavka_0
+  - first:
+      213: -312413181212154396
+    second: Zastavka_1
+  - first:
+      213: -204901569061619098
+    second: Zastavka_2
+  - first:
+      213: -1610640362060685039
+    second: Zastavka_3
+  - first:
+      213: -7502610766869104256
+    second: Zastavka_4
+  - first:
+      213: -4193120410094419500
+    second: Zastavka_5
+  - first:
+      213: 8530985562992705605
+    second: Zastavka_6
+  - first:
+      213: -7198959077628554190
+    second: Zastavka_7
+  - first:
+      213: 6310360464980830609
+    second: Zastavka_8
+  - first:
+      213: -209794992522014789
+    second: Zastavka_9
+  - first:
+      213: 7770847018155828253
+    second: Zastavka_10
+  - first:
+      213: -1199198111952786167
+    second: Zastavka_11
+  - first:
+      213: 4724206873347140022
+    second: Zastavka_12
+  - first:
+      213: -8390929244756764203
+    second: Zastavka_13
+  - first:
+      213: 4757817041511390899
+    second: Zastavka_14
+  - first:
+      213: -8529182118923288286
+    second: Zastavka_15
+  - first:
+      213: -5968159597776603136
+    second: Zastavka_16
+  - first:
+      213: -20346152380093140
+    second: Zastavka_17
+  - first:
+      213: -3151944253408748530
+    second: Zastavka_18
+  - first:
+      213: -4759414393509244153
+    second: Zastavka_19
+  - first:
+      213: -2367207689791639377
+    second: Zastavka_20
+  - first:
+      213: -7676194546380027849
+    second: Zastavka_21
+  - first:
+      213: -572960452490882777
+    second: Zastavka_22
+  - first:
+      213: 4070172619747404107
+    second: Zastavka_23
+  - first:
+      213: -1238465877255962681
+    second: Zastavka_24
+  - first:
+      213: -3144158445761842635
+    second: Zastavka_25
+  - first:
+      213: 5141568535694372792
+    second: Zastavka_26
+  - first:
+      213: -2902996145792462698
+    second: Zastavka_27
+  - first:
+      213: 7548561743543760043
+    second: Zastavka_28
+  - first:
+      213: -5986687097841918155
+    second: Zastavka_29
+  - first:
+      213: -6652759053095016178
+    second: Zastavka_30
+  - first:
+      213: 5945326901687355989
+    second: Zastavka_31
+  - first:
+      213: -6700835344021117320
+    second: Zastavka_32
+  - first:
+      213: -5404652305559271874
+    second: Zastavka_33
+  - first:
+      213: -602456795059826090
+    second: Zastavka_34
+  - first:
+      213: -2851387436676926551
+    second: Zastavka_35
+  - first:
+      213: 7855898417783792623
+    second: Zastavka_36
+  - first:
+      213: 2930716439816741929
+    second: Zastavka_37
+  - first:
+      213: 1981206207074965481
+    second: Zastavka_38
+  - first:
+      213: 3181211893565078772
+    second: Zastavka_39
+  - first:
+      213: 2581389934850564910
+    second: Zastavka_40
+  - first:
+      213: 6418889560034393300
+    second: Zastavka_41
+  - first:
+      213: -4383714541315758006
+    second: Zastavka_42
+  - first:
+      213: -4318598043125705893
+    second: Zastavka_43
+  - first:
+      213: -8086756842788457945
+    second: Zastavka_44
+  - first:
+      213: -7745268784507015520
+    second: Zastavka_45
+  - first:
+      213: -6650078694694003585
+    second: Zastavka_46
+  - first:
+      213: 7284123222754304614
+    second: Zastavka_47
+  - first:
+      213: 3375727839962211391
+    second: Zastavka_48
+  - first:
+      213: 5445076826166138650
+    second: Zastavka_49
+  - first:
+      213: 6779945990660531593
+    second: Zastavka_50
+  - first:
+      213: 91975419783762454
+    second: Zastavka_51
+  - first:
+      213: 5616827615295341383
+    second: Zastavka_52
+  - first:
+      213: 1083999285093866131
+    second: Zastavka_53
+  - first:
+      213: 5592705023191529161
+    second: Zastavka_54
+  - first:
+      213: 2108010270050314470
+    second: Zastavka_55
+  - first:
+      213: 4089822498337775005
+    second: Zastavka_56
+  - first:
+      213: 6003888528319347475
+    second: Zastavka_57
+  - first:
+      213: 6917635280082246508
+    second: Zastavka_58
+  - first:
+      213: 7515776191246913530
+    second: Zastavka_59
+  - first:
+      213: 2997357562104780439
+    second: Zastavka_60
+  - first:
+      213: -2228026100576856065
+    second: Zastavka_61
+  - first:
+      213: -3586278275267508489
+    second: Zastavka_62
+  - first:
+      213: 29416250851064192
+    second: Zastavka_63
+  - first:
+      213: 6987035239305011679
+    second: Zastavka_64
+  - first:
+      213: 663321040505179859
+    second: Zastavka_65
+  - first:
+      213: 5740475687454293150
+    second: Zastavka_66
+  - first:
+      213: 8214728093312483045
+    second: Zastavka_67
+  - first:
+      213: 75271583247581731
+    second: Zastavka_68
+  - first:
+      213: -7072567353228659019
+    second: Zastavka_69
+  - first:
+      213: 645681440478611498
+    second: Zastavka_70
+  - first:
+      213: 7612927147918936832
+    second: Zastavka_71
+  - first:
+      213: -3270035152932217732
+    second: Zastavka_72
+  - first:
+      213: 2300950439123068698
+    second: Zastavka_73
+  - first:
+      213: -8691251758190139992
+    second: Zastavka_74
+  - first:
+      213: -1422391469403059341
+    second: Zastavka_75
+  - first:
+      213: -3123363742289685774
+    second: Zastavka_76
+  - first:
+      213: 6396200956743046590
+    second: Zastavka_77
+  - first:
+      213: 3482860452774451948
+    second: Zastavka_78
+  - first:
+      213: 3849362816934308445
+    second: Zastavka_79
+  - first:
+      213: 1331856245525460628
+    second: Zastavka_80
+  - first:
+      213: 3334143641555934085
+    second: Zastavka_81
+  - first:
+      213: -1377526066940878768
+    second: Zastavka_82
+  - first:
+      213: -8448572402440497567
+    second: Zastavka_83
+  - first:
+      213: -2967537981956198207
+    second: Zastavka_84
+  - first:
+      213: 7089672187634586299
+    second: Zastavka_48
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Zastavka_0
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 7226
+        width: 1254
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4761d9b9d205240800000000000000
+      internalID: 4778369351018771649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_2
+      rect:
+        serializedVersion: 2
+        x: 1877
+        y: 7226
+        width: 1254
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66a792acb1b082df0800000000000000
+      internalID: -204901569061619098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_3
+      rect:
+        serializedVersion: 2
+        x: 3303
+        y: 7226
+        width: 1254
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 111677ecf1bd5a9e0800000000000000
+      internalID: -1610640362060685039
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_5
+      rect:
+        serializedVersion: 2
+        x: 4733
+        y: 7226
+        width: 1254
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d1c1eff33b0fc5c0800000000000000
+      internalID: -4193120410094419500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_7
+      rect:
+        serializedVersion: 2
+        x: 6063
+        y: 7226
+        width: 1254
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23450615cd8281c90800000000000000
+      internalID: -7198959077628554190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_9
+      rect:
+        serializedVersion: 2
+        x: 7383
+        y: 7226
+        width: 1254
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbfc11bd098a61df0800000000000000
+      internalID: -209794992522014789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_11
+      rect:
+        serializedVersion: 2
+        x: 8768
+        y: 7226
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90d2cb9bba79b5fe0800000000000000
+      internalID: -1199198111952786167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_12
+      rect:
+        serializedVersion: 2
+        x: 10101
+        y: 7224
+        width: 1253
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b9a0531f11cf8140800000000000000
+      internalID: 4724206873347140022
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_13
+      rect:
+        serializedVersion: 2
+        x: 11490
+        y: 7226
+        width: 1253
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d916d61f4e6d8b80800000000000000
+      internalID: -8390929244756764203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_14
+      rect:
+        serializedVersion: 2
+        x: 12899
+        y: 7226
+        width: 1249
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3be16992469270240800000000000000
+      internalID: 4757817041511390899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_16
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 5810
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 008ffab6776dc2da0800000000000000
+      internalID: -5968159597776603136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_17
+      rect:
+        serializedVersion: 2
+        x: 1717
+        y: 5810
+        width: 1252
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2da6de3847b7bff0800000000000000
+      internalID: -20346152380093140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_18
+      rect:
+        serializedVersion: 2
+        x: 3166
+        y: 5810
+        width: 1250
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0cdcb7b66b0244d0800000000000000
+      internalID: -3151944253408748530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_19
+      rect:
+        serializedVersion: 2
+        x: 4594
+        y: 5810
+        width: 1253
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 703100853d923fdb0800000000000000
+      internalID: -4759414393509244153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_21
+      rect:
+        serializedVersion: 2
+        x: 6041
+        y: 5810
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7384a34fabda87590800000000000000
+      internalID: -7676194546380027849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_23
+      rect:
+        serializedVersion: 2
+        x: 7373
+        y: 5810
+        width: 1244
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b49a096de682c7830800000000000000
+      internalID: 4070172619747404107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_24
+      rect:
+        serializedVersion: 2
+        x: 8689
+        y: 5813
+        width: 1254
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cf37b7a8d510dee0800000000000000
+      internalID: -1238465877255962681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_25
+      rect:
+        serializedVersion: 2
+        x: 10066
+        y: 5813
+        width: 1253
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53232d25d84bd54d0800000000000000
+      internalID: -3144158445761842635
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_27
+      rect:
+        serializedVersion: 2
+        x: 11473
+        y: 5813
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69056b9d26c76b7d0800000000000000
+      internalID: -2902996145792462698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_29
+      rect:
+        serializedVersion: 2
+        x: 12833
+        y: 5810
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53fd7b7adc30beca0800000000000000
+      internalID: -5986687097841918155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_30
+      rect:
+        serializedVersion: 2
+        x: 348
+        y: 4152
+        width: 1250
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e09e10893e6aca3a0800000000000000
+      internalID: -6652759053095016178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_31
+      rect:
+        serializedVersion: 2
+        x: 1695
+        y: 4159
+        width: 1253
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55a06a0415b028250800000000000000
+      internalID: 5945326901687355989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_33
+      rect:
+        serializedVersion: 2
+        x: 3176
+        y: 4159
+        width: 1243
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e36c4a8fc51def4b0800000000000000
+      internalID: -5404652305559271874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_35
+      rect:
+        serializedVersion: 2
+        x: 4604
+        y: 4160
+        width: 1242
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a33cdfcb36dd68d0800000000000000
+      internalID: -2851387436676926551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_37
+      rect:
+        serializedVersion: 2
+        x: 6041
+        y: 4159
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 924acac031ffba820800000000000000
+      internalID: 2930716439816741929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_39
+      rect:
+        serializedVersion: 2
+        x: 7376
+        y: 4160
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4fcb137cc5fe52c20800000000000000
+      internalID: 3181211893565078772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_41
+      rect:
+        serializedVersion: 2
+        x: 8702
+        y: 4159
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dc305ecb0a741950800000000000000
+      internalID: 6418889560034393300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_43
+      rect:
+        serializedVersion: 2
+        x: 10075
+        y: 4159
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b539bcfe5f14114c0800000000000000
+      internalID: -4318598043125705893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_45
+      rect:
+        serializedVersion: 2
+        x: 11473
+        y: 4159
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0aea981a317438490800000000000000
+      internalID: -7745268784507015520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_47
+      rect:
+        serializedVersion: 2
+        x: 12834
+        y: 4159
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662a1786a77661560800000000000000
+      internalID: 7284123222754304614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_49
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 2498
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17185e268cc09b40800000000000000
+      internalID: 5445076826166138650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_51
+      rect:
+        serializedVersion: 2
+        x: 1922
+        y: 2498
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61257403823c64100800000000000000
+      internalID: 91975419783762454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_53
+      rect:
+        serializedVersion: 2
+        x: 3354
+        y: 2498
+        width: 1240
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a1cc44b932b0f00800000000000000
+      internalID: 1083999285093866131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_55
+      rect:
+        serializedVersion: 2
+        x: 4789
+        y: 2498
+        width: 1240
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e869310c28214d10800000000000000
+      internalID: 2108010270050314470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_57
+      rect:
+        serializedVersion: 2
+        x: 6120
+        y: 2498
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31b74897ec8125350800000000000000
+      internalID: 6003888528319347475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_59
+      rect:
+        serializedVersion: 2
+        x: 7448
+        y: 2498
+        width: 1242
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aff4c9a20a66d4860800000000000000
+      internalID: 7515776191246913530
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_61
+      rect:
+        serializedVersion: 2
+        x: 8825
+        y: 2498
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff751dce0167411e0800000000000000
+      internalID: -2228026100576856065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_63
+      rect:
+        serializedVersion: 2
+        x: 10221
+        y: 2498
+        width: 1243
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 089f99e9ce1886000800000000000000
+      internalID: 29416250851064192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_65
+      rect:
+        serializedVersion: 2
+        x: 11584
+        y: 2498
+        width: 1242
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3de8a5fc8f6943900800000000000000
+      internalID: 663321040505179859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_67
+      rect:
+        serializedVersion: 2
+        x: 13112
+        y: 2498
+        width: 1240
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eeff486da3900270800000000000000
+      internalID: 8214728093312483045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_69
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 943
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b6f7ccd67139dd90800000000000000
+      internalID: -7072567353228659019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_71
+      rect:
+        serializedVersion: 2
+        x: 1707
+        y: 943
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00bc2a0f7ec86a960800000000000000
+      internalID: 7612927147918936832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_73
+      rect:
+        serializedVersion: 2
+        x: 3176
+        y: 943
+        width: 1240
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a17a5b1cb3e9eef10800000000000000
+      internalID: 2300950439123068698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_75
+      rect:
+        serializedVersion: 2
+        x: 4605
+        y: 943
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37b4fa6ae76a24ce0800000000000000
+      internalID: -1422391469403059341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_77
+      rect:
+        serializedVersion: 2
+        x: 6045
+        y: 943
+        width: 1240
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb5dea2b1eed3c850800000000000000
+      internalID: 6396200956743046590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_78
+      rect:
+        serializedVersion: 2
+        x: 7365
+        y: 943
+        width: 1253
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cea90e9f02b955030800000000000000
+      internalID: 3482860452774451948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_79
+      rect:
+        serializedVersion: 2
+        x: 8693
+        y: 943
+        width: 1253
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5a67f2561fab6530800000000000000
+      internalID: 3849362816934308445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_81
+      rect:
+        serializedVersion: 2
+        x: 10078
+        y: 943
+        width: 1241
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58b91191af1454e20800000000000000
+      internalID: 3334143641555934085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_82
+      rect:
+        serializedVersion: 2
+        x: 11460
+        y: 943
+        width: 1254
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 050e52f275b02ece0800000000000000
+      internalID: -1377526066940878768
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zastavka_84
+      rect:
+        serializedVersion: 2
+        x: 12835
+        y: 943
+        width: 1240
+        height: 1057
+      alignment: 8
+      pivot: {x: 1, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c075089def21d6d0800000000000000
+      internalID: -2967537981956198207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 1d2ab7fafed6a97428457b2d0b8632de
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

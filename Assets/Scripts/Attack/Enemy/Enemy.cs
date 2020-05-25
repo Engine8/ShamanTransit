@@ -1,40 +1,35 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public enum EnemyType
 {
     Wolf = 0,
     Bear = 1,
+    Boss = 2,
 }
 
 
 public class Enemy : MonoBehaviour
 {
     public EnemyType Type;
-    public int startingHealth;
-    public float attackDistanceThreshold;//дистанция атаки
-    public int Damage; //урон
-
+    public float AttackDistanceThreshold;//дистанция атаки
+    public int Damage;
+    public int Health;
     public Sprite SpecialSprite;
 
-    private Transform targetPlayer;
-    private int Health;
-    private bool dead=false;
-    private PlayerController HealsPlayer;
+    public UnityEvent OnDie = new UnityEvent();
+
+    private bool _dead = false;
+    private PlayerController _targetCharacter;
     private Animator _animator;
-
-    float timeBetweenAttacks = 1; //скорость атаки
-    float nextAttackTime;
-    Vector3 _oldPosition;
-
-
+    private Vector3 _oldPosition;
+    
     void Start()
     {
-        targetPlayer = FindObjectOfType<PlayerController>().transform;
-        HealsPlayer = targetPlayer.GetComponent<PlayerController>();
+        _targetCharacter = GameController.Instance.PlayerCharacter;
         _animator = GetComponent<Animator>();
-        Health = startingHealth;
 
         if (Type == EnemyType.Bear && PlayerDataController.Instance.HasItem(3) != 0)
         {
@@ -46,24 +41,26 @@ public class Enemy : MonoBehaviour
 
     public bool GetDead()
     {
-        return dead;
+        return _dead;
     }
+
     public void StartAttack(Vector3 oldPosition)
     {
         _oldPosition = oldPosition;
         StartCoroutine(Attack());
     }
-    IEnumerator Attack() //интерфейс перебора колекций
+
+    IEnumerator Attack()
     {
         Vector3 originalPosition = _oldPosition!=Vector3.zero? _oldPosition : transform.localPosition;
-        Vector3 dirToTarget = (new Vector3(targetPlayer.position.x-0.5f, targetPlayer.position.y+0.5f, targetPlayer.position.z) - transform.position).normalized;
+        Vector3 dirToTarget = (new Vector3(_targetCharacter.transform.position.x-0.5f, _targetCharacter.transform.position.y+0.5f, _targetCharacter.transform.position.z) - transform.position).normalized;
         Vector3 attackPosition = transform.localPosition + dirToTarget * 3;
 
         float attackSpeed = 3;
         float percent = 0;
 
         bool hasAppLiedDamage = false;
-        float JumpDistance = targetPlayer.position.x - transform.position.x;
+        float JumpDistance = _targetCharacter.transform.position.x - transform.position.x;
 
         while (percent <= 1)
         {
@@ -71,14 +68,11 @@ public class Enemy : MonoBehaviour
             {
                 hasAppLiedDamage = true;
 
-                HealsPlayer.TakeDamage(Damage);
+                _targetCharacter.TakeDamage(Damage);
             }
             percent += Time.deltaTime * attackSpeed;
-            //float interpolation = (-Mathf.Pow(percent, 2) + percent) * 3.5f;
           
-
             float interpolation = (-Mathf.Pow(percent, 2) + percent) * Mathf.Abs(JumpDistance);
-           // transform.localPosition = Vector3.Lerp(originalPosition, attackPosition, interpolation);
             transform.localPosition = Vector3.Lerp(originalPosition, attackPosition, interpolation);
 
             yield return null;
@@ -88,28 +82,31 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damage)
     {
         Health -= damage;
-        if (Health <= 0 && !dead)
+        if (Health <= 0 && !_dead)
         {
             Die();
         }
     }
+    public void Kill()
+    {
+        Die();
+    }
     void Die()
     {
-        dead = true;
+        _dead = true;
         if (Type != EnemyType.Bear || PlayerDataController.Instance.HasItem(3) == 0)
             _animator.SetBool("IsDead", true);
-        if (FindObjectOfType<WolfController>())
+        if (Type == EnemyType.Wolf)
         {
             /*release wolf from controller gameobject
              * WolfController has reference to this object in Wolf array and will delete it in OnDestoy
              */
-           // Vector3 savePosirion = transform.localPosition;
             transform.SetParent(null, true);
-          //  transform.position = new Vector3(transform.position.x, savePosirion.y - 1.81f, savePosirion.z - 1.81f);
-            //gameObject.SetActive(false);
-            // FindObjectOfType<WolfController>().ChendePosition();
         }
-        // GameObject.Destroy(gameObject, 5f);
+        OnDie.Invoke();
+
+        //debug
+        //OnDeadAnimationEnd();
     }
 
     public void OnDeadAnimationEnd()

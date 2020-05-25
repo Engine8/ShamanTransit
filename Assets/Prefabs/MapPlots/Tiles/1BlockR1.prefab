@@ -40,7 +40,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3956767907207928703}
   - component: {fileID: 7817274325158881388}
-  - component: {fileID: 4786866881178629504}
   m_Layer: 10
   m_Name: Land2
   m_TagString: Untagged
@@ -112,22 +111,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4786866881178629504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1597859877279767109}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: debf59e478d89004eb263a85af78afb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnedBlocks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &3055571842142638485
 GameObject:
   m_ObjectHideFlags: 0
@@ -138,7 +121,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4673670841244113253}
   - component: {fileID: 2816589867787956545}
-  - component: {fileID: 8231602890915239908}
   m_Layer: 12
   m_Name: Land3
   m_TagString: Untagged
@@ -212,22 +194,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8231602890915239908
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3055571842142638485}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: debf59e478d89004eb263a85af78afb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnedBlocks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &3149761512937913195
 GameObject:
   m_ObjectHideFlags: 0
@@ -238,7 +204,6 @@ GameObject:
   m_Component:
   - component: {fileID: 7195678542083077901}
   - component: {fileID: 6986321411085782552}
-  - component: {fileID: 7519829308408587699}
   m_Layer: 0
   m_Name: 1BlockR1
   m_TagString: Untagged
@@ -286,25 +251,6 @@ MonoBehaviour:
   End: {fileID: 9141380143784247838}
   SpriteTile: {fileID: 3522007953518975833}
   SpriteCliff: {fileID: 0}
-  EnemyPrefabs: {fileID: 0}
-  Lands:
-  - {fileID: 5766540618596655096}
-  - {fileID: 4786866881178629504}
-  - {fileID: 8231602890915239908}
---- !u!114 &7519829308408587699
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3149761512937913195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc348c70f2d3c6640abceeb4a5bebabd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  beginChunk: {fileID: 5418167637617678594}
-  endChunk: {fileID: 9141380143784247838}
 --- !u!1 &3521779681373587507
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,8 +357,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3522007953518975833}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.6, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.0087, y: -2.6, z: 0}
+  m_LocalScale: {x: 1.0713216, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7195678542083077901}
   m_RootOrder: 5
@@ -456,7 +402,7 @@ SpriteRenderer:
   m_SortingLayerID: 902459011
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0329721911d540048be01acf54322521, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0ac492aca3041c9428f92670deeb6886, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -507,7 +453,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6837897337338007412}
   - component: {fileID: 3712312479941829543}
-  - component: {fileID: 5766540618596655096}
   m_Layer: 8
   m_Name: Land1
   m_TagString: Untagged
@@ -580,22 +525,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &5766540618596655096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5207907760245549597}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: debf59e478d89004eb263a85af78afb3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SpawnedBlocks:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &6586715539633365814
 GameObject:
   m_ObjectHideFlags: 0

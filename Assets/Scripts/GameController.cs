@@ -1,13 +1,17 @@
-﻿using System.Collections;
+﻿using Cinemachine;
 using System;
-using System.Collections.Generic;
-using TMPro;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Rendering;
 using UnityEngine.Events;
 using UnityEngine.Experimental.Rendering.Universal;
-using Cinemachine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
+
+public enum GameMode
+{
+    Default = 0,
+    BossFight = 1,
+}
 
 public class GameController : MonoBehaviour
 {
@@ -17,17 +21,32 @@ public class GameController : MonoBehaviour
     public GameObject IngameUI;
 
     public GameObject WinScreen;
+    public Button ContinueButton;
     public Text WinText;
     public Text WinMoneyText;
 
     public GameObject LoseScreen;
     public Text LoseText;
     public GameObject AttackUI;
+    public HitArea HitAreaRef;
 
     public AudioClip WinSound;
     public AudioClip DefeatSound;
 
+    //-------------Player--------------------
+    [Space(20, order = 0)]
+    [Header("Player", order = 1)]
     public PlayerController PlayerCharacter;
+
+    public float DieTime = 2f;
+    public float EndgameTime = 2f;
+    private bool _secondChanceRequested = false;
+    private bool _secondChanceUsed = false;
+    private Coroutine _secondChanceCoroutine = null;
+    public Color PlayerDeadColor;
+
+    //------------end player-----------------
+
 
     //Note: is needed to find better solution
     public Camera MainCamera;
@@ -35,6 +54,7 @@ public class GameController : MonoBehaviour
     public Volume MainCameraVolume;
     public VolumeProfile volumeProfile;
     public ParallaxBackground Moon;
+
 
     //-----------Camera status------------
     [Serializable]
@@ -66,6 +86,8 @@ public class GameController : MonoBehaviour
         Death = 2,
     }
 
+    [Space(20, order = 0)]
+    [Header("Camera", order = 1)]
     //This variable stores settings
     public CameraStatusSettings CameraSettings;
     //These variables stores settings that should be set up
@@ -83,13 +105,26 @@ public class GameController : MonoBehaviour
     private float _currentRefreshTime = 0f;
     //----------- End Camera status------------
 
+
+    //--------------Game status----------------
+    public enum GameStatus
+    {
+        Run = 0,
+        BossRun = 1,
+        Attack = 2,
+    }
+
+    public GameStatus CurrentGameStatus;
+    public GameMode CurrentGameMode;
+
+    //-----------End game status---------------
+
     public GameObject StartPoint;
     public GameObject EndPoint;
 
     private float _lastPlayerCharacterXPosition;
     private float _unitsPassed;
 
-    public bool IsAttackMode;
     public bool IsGameEnded;
 
     public UnityEvent OnGameModeChanged;
@@ -103,12 +138,7 @@ public class GameController : MonoBehaviour
      */
     public Light2D GlobalLight;
     private Color _defaultColor;
-    public Color PlayerDeadColor;
-    //Time for player to enable second life
-    public float DieTime = 2f;
-    public float EndgameTime = 2f;
-    private bool _secondChance = false;
-    private Coroutine _secondChanceCoroutine = null;
+
 
     delegate void VoidFunc();
 
@@ -121,7 +151,7 @@ public class GameController : MonoBehaviour
         IsGameEnded = false;
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
-        StartCoroutine(CameraShaking(0));
+        //StartCoroutine(CameraShaking(0));
 #if UNITY_EDITOR
         SoundManager.Initialize();
         GameData.Initialize();
@@ -136,6 +166,7 @@ public class GameController : MonoBehaviour
         bool isSnowy = false;
         WindStatus windStatus;
         ChunksPlacer.Instance.GetSnowInfo(out isSnowy, out windStatus);
+        CurrentGameMode = ChunksPlacer.Instance.GetMapGameMode();
         if (isSnowy)
         {
             GameObject newSnowObject = Instantiate(SnowPrefab, VirtCamera.transform);
@@ -155,11 +186,16 @@ public class GameController : MonoBehaviour
 
         _defaultColor = GlobalLight.color;
 
-        //set initial camera settings
-        _currentCameraStatus = CameraStatusE.Run;
-        _currentLookaheadTime = CameraSettings.LookaheadTimeRun;
-        _currentRefreshCameraTime = CameraSettings.RefreshTimeRun;
-        _currentScreenXPos = CameraSettings.ScreenXPosRun;
+        //set default camera settings on level start
+        SetTargetCameraSettings(CameraStatusE.Run);
+        CinemachineFramingTransposer framTransposer = VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+        _currentLookaheadTime = framTransposer.m_LookaheadTime;
+        _currentScreenXPos = framTransposer.m_ScreenX;
+
+        _currentRefreshTime = 0f;
+        _isNeedToRefreshCamera = true;
+
+        SoundManager.Instance.PlayMusicClip(ChunksPlacer.Instance.GetAudio(), true);
     }
 
     // Update is called once per frame
@@ -208,7 +244,7 @@ public class GameController : MonoBehaviour
                 _currentRefreshTime = 0f;
                 _isNeedToRefreshCamera = false;
 
-                if (_secondChance)
+                if (_secondChanceRequested)
                     ActivateSecondChance();
             }
         }
@@ -232,7 +268,7 @@ public class GameController : MonoBehaviour
         vignette.intensity.Override(0f);
     }
 
-    private void BattleGameWin()
+    private void EndBattle()
     {
         UnityEngine.Rendering.Universal.Vignette vignette;
         volumeProfile.TryGet(out vignette);
@@ -250,6 +286,7 @@ public class GameController : MonoBehaviour
 
     private void ShowEndgameUI(bool isGameWin, string addText)
     {
+        SoundManager.Instance.StopMusic();
         IngameUI.SetActive(false);
         AttackUI.SetActive(false);
         //SoundManager.Instance.StopAllSounds();
@@ -258,6 +295,8 @@ public class GameController : MonoBehaviour
             WinScreen.SetActive(true);
             WinText.text = addText;
             SoundManager.Instance.PlaySoundClip(WinSound, false);
+            if (GameData.Instance.CurrentLevel == 4)
+                ContinueButton.gameObject.SetActive(false);
             StartCoroutine(MoneyAnimationStart());
             UpdatePlayerDataOnLevelPass();
         }
@@ -272,7 +311,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator MoneyAnimationStart()
     {
-        int moneySum = ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount;
+        int moneySum = ChunksPlacer.Instance.GetBasicReward() + ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount;
         int curMoney = 0;
         if (moneySum == 0)
         {
@@ -294,13 +333,13 @@ public class GameController : MonoBehaviour
         SetTargetCameraSettings(CameraStatusE.Death);
 
         //check second chance availability
-        if (PlayerDataController.Instance.HasItem(1) == 0)
+        if (PlayerDataController.Instance.HasItem(1) == 0 || _secondChanceUsed)
         {
             StartCoroutine(ChangeGlobalLight(EndgameTime, _defaultColor, PlayerDeadColor, LevelEnded));
         }
         else
             //second chance will be activated on LateUpdate
-            _secondChance = true;
+            _secondChanceRequested = true;
 
     }
 
@@ -312,7 +351,7 @@ public class GameController : MonoBehaviour
             PlayerCharacter.EnableSecondChance();
             SecondChanceStartAnimate();
         }
-        _secondChance = false;
+        _secondChanceRequested = false;
     }
 
     //Update global light each frame for DieTime seconds or until player's click
@@ -350,7 +389,14 @@ public class GameController : MonoBehaviour
 
     private void RevivePlayerCharacter()
     {
-        SetTargetCameraSettings(CameraStatusE.Run);
+        if (CurrentGameStatus == GameStatus.Attack)
+        {
+            SetTargetCameraSettings(CameraStatusE.Attack);
+            ((Boss)HitAreaRef.BossRef).ContinueBattle();
+            AttackUI.SetActive(true);
+        }
+        else if (CurrentGameStatus == GameStatus.Run)
+            SetTargetCameraSettings(CameraStatusE.Run);
 
         //Stop SecondChanceAnimation coroutine
         if (_secondChanceCoroutine != null)
@@ -359,6 +405,8 @@ public class GameController : MonoBehaviour
             _secondChanceCoroutine = null;
             //Debug.Log("Second chance activated");
         }
+        _secondChanceUsed = true;
+
         PlayerDataController.Instance.UseItem(1);
         StartCoroutine(RestoreColors());
     }
@@ -391,7 +439,7 @@ public class GameController : MonoBehaviour
         IsGameEnded = true;
         if (PlayerCharacter.GetDead())
             ShowEndgameUI(false, "Тебя съели");
-        else if (PlayerCharacter.SoulCount > 0)
+        else if (PlayerCharacter.SoulCount > 0 || CurrentGameMode == GameMode.BossFight)
             ShowEndgameUI(true, "Ты сделал это!");
         else
             ShowEndgameUI(false, "Не было собрано ни одной души");
@@ -428,30 +476,35 @@ public class GameController : MonoBehaviour
         loadingComponent.StartLoadLevel("LevelScene");
     }
 
-    public void SetGameMode(int gameMode, bool isNeedToChangeCamera)
-    {
-        if (gameMode == 1)
+    public void SetGameStatus(GameStatus gameStatus, bool isNeedToChangeCamera)
+    { 
+        if (gameStatus == GameStatus.Attack)
         {
-            IsAttackMode = true;
+            CurrentGameStatus = GameStatus.Attack;
             AttackUI.SetActive(true);
-            //AttackUI.GetComponentInChildren<SightScale>().SpeedRotate = 2f;
-
             if (isNeedToChangeCamera)
             {
                 SetTargetCameraSettings(CameraStatusE.Attack);
             }
         }
-        else if (gameMode == 0)
+        else if (gameStatus == GameStatus.BossRun)
         {
-            BattleGameWin();
-            IsAttackMode = false;
-
+            CurrentGameStatus = GameStatus.BossRun;
+            //EndBattle();
+            if (isNeedToChangeCamera)
+            {
+                SetTargetCameraSettings(CameraStatusE.Death);
+            }
+        }
+        else if (gameStatus == GameStatus.Run)
+        {
+            CurrentGameStatus = GameStatus.Run;
+            EndBattle();
             if (isNeedToChangeCamera)
             {
                 SetTargetCameraSettings(CameraStatusE.Run);
             }
         }
-
         OnGameModeChanged.Invoke();
     }
 
@@ -459,25 +512,6 @@ public class GameController : MonoBehaviour
     {
         GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel < 4 ? GameData.Instance.CurrentLevel + 1:0) ;
         loadingComponent.StartLoadLevel("LevelScene");
-    }
-
-    public void ShakeCamera(float time)
-    {        
-        if (!IsGameEnded)
-        {
-            StartCoroutine(CameraShaking(time));
-        }
-    }
-
-    private IEnumerator CameraShaking(float time)
-    {
-        CinemachineBasicMultiChannelPerlin shakeSettings = VirtCamera.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
-
-        shakeSettings.m_FrequencyGain = 2f;
-        shakeSettings.m_AmplitudeGain = 1f;
-        yield return new WaitForSeconds(time);
-        shakeSettings.m_FrequencyGain = 0;
-        shakeSettings.m_AmplitudeGain = 0;
     }
 
     public void SetTargetCameraSettings(CameraStatusE targetStatus)
@@ -492,7 +526,9 @@ public class GameController : MonoBehaviour
         }
         else if (_targetCameraStatus == CameraStatusE.Attack)
         {
+            Debug.Log(_targetLookaheadTime);
             _targetLookaheadTime = CameraSettings.LookaheadTimeAttack;
+            Debug.Log(_targetLookaheadTime);
             _targetRefreshCameraTime = CameraSettings.RefreshTimeAttack;
             _targetScreenXPos = CameraSettings.ScreenXPosAttack;
         }
@@ -503,5 +539,20 @@ public class GameController : MonoBehaviour
             _targetScreenXPos = CameraSettings.ScreenXPosDeath;
         }
         _isNeedToRefreshCamera = true;
+    }
+
+    public int DefinePhysicsLayerByString(string layerName)
+    {
+        if (layerName == "Line1")
+            return 8;
+        else if (layerName == "Line12")
+            return 9;
+        else if (layerName == "Line2")
+            return 10;
+        else if (layerName == "Line23")
+            return 11;
+        else if (layerName == "Line3")
+            return 12;
+        return -1;
     }
 }

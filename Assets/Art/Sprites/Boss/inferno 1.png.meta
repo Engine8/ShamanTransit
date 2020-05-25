@@ -1,0 +1,7771 @@
+fileFormatVersion: 2
+guid: 07daa193839306a4dad8c4d9b8213ec4
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2226885780623384908
+    second: inferno 1_0
+  - first:
+      213: 6141237689779300855
+    second: inferno 1_1
+  - first:
+      213: 6568525469818963131
+    second: inferno 1_2
+  - first:
+      213: -2738094517307346740
+    second: inferno 1_3
+  - first:
+      213: 2620022041039415353
+    second: inferno 1_4
+  - first:
+      213: 6782926976534149321
+    second: inferno 1_5
+  - first:
+      213: -6098673316914137786
+    second: inferno 1_6
+  - first:
+      213: -6448576191063809314
+    second: inferno 1_7
+  - first:
+      213: -6121188140501980196
+    second: inferno 1_8
+  - first:
+      213: 6092957919522503634
+    second: inferno 1_9
+  - first:
+      213: -2462678452426626573
+    second: inferno 1_10
+  - first:
+      213: -4584012416638172671
+    second: inferno 1_11
+  - first:
+      213: 5556822908777678336
+    second: inferno 1_12
+  - first:
+      213: -9074383975941786852
+    second: inferno 1_13
+  - first:
+      213: -3793375870046813614
+    second: inferno 1_14
+  - first:
+      213: -6595854316457845381
+    second: inferno 1_15
+  - first:
+      213: 9101555898531270376
+    second: inferno 1_16
+  - first:
+      213: 2513255884567282713
+    second: inferno 1_17
+  - first:
+      213: -8249134935466762542
+    second: inferno 1_18
+  - first:
+      213: 9001603880196313565
+    second: inferno 1_19
+  - first:
+      213: 551802555439726716
+    second: inferno 1_20
+  - first:
+      213: -8719848437245161203
+    second: inferno 1_21
+  - first:
+      213: -6567263884497560217
+    second: inferno 1_22
+  - first:
+      213: 6491425264365065873
+    second: inferno 1_23
+  - first:
+      213: 2290619281324742057
+    second: inferno 1_24
+  - first:
+      213: -8120351359861806402
+    second: inferno 1_25
+  - first:
+      213: 2356115499393745468
+    second: inferno 1_26
+  - first:
+      213: -3076526582031991718
+    second: inferno 1_27
+  - first:
+      213: 5312363918595276243
+    second: inferno 1_28
+  - first:
+      213: 4384841360189045903
+    second: inferno 1_29
+  - first:
+      213: 2148966038217190376
+    second: inferno 1_30
+  - first:
+      213: -2130228217039941816
+    second: inferno 1_31
+  - first:
+      213: -6229182042837074864
+    second: inferno 1_32
+  - first:
+      213: -4056671540079985908
+    second: inferno 1_33
+  - first:
+      213: -565621159104117499
+    second: inferno 1_34
+  - first:
+      213: 3897320113834307150
+    second: inferno 1_35
+  - first:
+      213: 5658435695755943808
+    second: inferno 1_36
+  - first:
+      213: 434200341262948179
+    second: inferno 1_37
+  - first:
+      213: 3150555747958454405
+    second: inferno 1_38
+  - first:
+      213: -8374489361557773893
+    second: inferno 1_39
+  - first:
+      213: 9157282810738067182
+    second: inferno 1_40
+  - first:
+      213: -4672341621015805805
+    second: inferno 1_41
+  - first:
+      213: -6110469213644621912
+    second: inferno 1_42
+  - first:
+      213: -7815936307902503066
+    second: inferno 1_43
+  - first:
+      213: 1604395313861645604
+    second: inferno 1_44
+  - first:
+      213: -4451876185085406036
+    second: inferno 1_45
+  - first:
+      213: 7047686728627853104
+    second: inferno 1_46
+  - first:
+      213: 8486884961641968072
+    second: inferno 1_47
+  - first:
+      213: -7793142529466892441
+    second: inferno 1_48
+  - first:
+      213: 8066933887505512900
+    second: inferno 1_49
+  - first:
+      213: 2498082869681247149
+    second: inferno 1_50
+  - first:
+      213: 3260182469418563757
+    second: inferno 1_51
+  - first:
+      213: 7677205280424622288
+    second: inferno 1_52
+  - first:
+      213: -8827217421297769158
+    second: inferno 1_53
+  - first:
+      213: 846025134712891936
+    second: inferno 1_54
+  - first:
+      213: 265297612269764824
+    second: inferno 1_55
+  - first:
+      213: 5663826926852987560
+    second: inferno 1_56
+  - first:
+      213: 8486381554956206942
+    second: inferno 1_57
+  - first:
+      213: -7630910177119380712
+    second: inferno 1_58
+  - first:
+      213: 98515587182192941
+    second: inferno 1_59
+  - first:
+      213: 6996125412078052145
+    second: inferno 1_60
+  - first:
+      213: 2121264691475163515
+    second: inferno 1_61
+  - first:
+      213: -5280109586940245098
+    second: inferno 1_62
+  - first:
+      213: -1731712346636586052
+    second: inferno 1_63
+  - first:
+      213: -2361718944520207431
+    second: inferno 1_64
+  - first:
+      213: -6353369677225413295
+    second: inferno 1_65
+  - first:
+      213: 8718908390319889122
+    second: inferno 1_66
+  - first:
+      213: 2726593142743564123
+    second: inferno 1_67
+  - first:
+      213: 8411476204494729992
+    second: inferno 1_68
+  - first:
+      213: -1164689243277984053
+    second: inferno 1_69
+  - first:
+      213: -9143459865465164933
+    second: inferno 1_70
+  - first:
+      213: 4413201744682664777
+    second: inferno 1_71
+  - first:
+      213: -8574488509221206802
+    second: inferno 1_72
+  - first:
+      213: 3286001968464521470
+    second: inferno 1_73
+  - first:
+      213: 6423926203796508434
+    second: inferno 1_74
+  - first:
+      213: 1851692520125147022
+    second: inferno 1_75
+  - first:
+      213: 5421009375187471364
+    second: inferno 1_76
+  - first:
+      213: 6737346719507022367
+    second: inferno 1_77
+  - first:
+      213: -7869990221232524255
+    second: inferno 1_78
+  - first:
+      213: 9145505403039246093
+    second: inferno 1_79
+  - first:
+      213: 1179946015792896448
+    second: inferno 1_80
+  - first:
+      213: -2926513421342705167
+    second: inferno 1_81
+  - first:
+      213: 7838794219640469124
+    second: inferno 1_82
+  - first:
+      213: 7306815264639821300
+    second: inferno 1_83
+  - first:
+      213: -7486692259407460035
+    second: inferno 1_84
+  - first:
+      213: 2204969704828340510
+    second: inferno 1_85
+  - first:
+      213: 5157318689560357962
+    second: inferno 1_86
+  - first:
+      213: -11618764811265736
+    second: inferno 1_87
+  - first:
+      213: -2209815919608574300
+    second: inferno 1_88
+  - first:
+      213: 7282114882280417402
+    second: inferno 1_89
+  - first:
+      213: -4165320933716975720
+    second: inferno 1_90
+  - first:
+      213: -2672111924595399423
+    second: inferno 1_91
+  - first:
+      213: -3532810435051059421
+    second: inferno 1_92
+  - first:
+      213: -2663216887739822935
+    second: inferno 1_93
+  - first:
+      213: 7652164704431613013
+    second: inferno 1_94
+  - first:
+      213: -5395729279662543858
+    second: inferno 1_95
+  - first:
+      213: 1766922977194749658
+    second: inferno 1_96
+  - first:
+      213: 3262527822852088186
+    second: inferno 1_97
+  - first:
+      213: 7238088696959888592
+    second: inferno 1_98
+  - first:
+      213: -2727502226022022578
+    second: inferno 1_99
+  - first:
+      213: -4904257039765487377
+    second: inferno 1_100
+  - first:
+      213: 5188352125718617600
+    second: inferno 1_101
+  - first:
+      213: -322521835195112670
+    second: inferno 1_102
+  - first:
+      213: -2389453632916919136
+    second: inferno 1_103
+  - first:
+      213: -4649901644067346089
+    second: inferno 1_104
+  - first:
+      213: -4166631068177862096
+    second: inferno 1_105
+  - first:
+      213: -7110761828356362957
+    second: inferno 1_106
+  - first:
+      213: -1293962809731346213
+    second: inferno 1_107
+  - first:
+      213: -382074231033687824
+    second: inferno 1_108
+  - first:
+      213: -348060582419410008
+    second: inferno 1_109
+  - first:
+      213: 1085603590434554420
+    second: inferno 1_110
+  - first:
+      213: -6565303986512563942
+    second: inferno 1_111
+  - first:
+      213: -5732216504149317326
+    second: inferno 1_112
+  - first:
+      213: 432124193718325984
+    second: inferno 1_113
+  - first:
+      213: -458982900343999136
+    second: inferno 1_114
+  - first:
+      213: -7758818605059287782
+    second: inferno 1_115
+  - first:
+      213: 7354937394079224350
+    second: inferno 1_116
+  - first:
+      213: -800990334686445460
+    second: inferno 1_117
+  - first:
+      213: -4813865464941450951
+    second: inferno 1_118
+  - first:
+      213: -6020403921395024620
+    second: inferno 1_119
+  - first:
+      213: 8829991197885863560
+    second: inferno 1_120
+  - first:
+      213: 4975944249237845879
+    second: inferno 1_121
+  - first:
+      213: 3849081684917262392
+    second: inferno 1_122
+  - first:
+      213: 4431340225877762687
+    second: inferno 1_123
+  - first:
+      213: 8660051285341311533
+    second: inferno 1_124
+  - first:
+      213: 4618387797528697149
+    second: inferno 1_125
+  - first:
+      213: -64014146118180522
+    second: inferno 1_126
+  - first:
+      213: 2392246882707215490
+    second: inferno 1_127
+  - first:
+      213: -5722454587967822507
+    second: inferno 1_128
+  - first:
+      213: 7932333882790075591
+    second: inferno 1_129
+  - first:
+      213: 3148519377777226898
+    second: inferno 1_130
+  - first:
+      213: -2069333488110594128
+    second: inferno 1_131
+  - first:
+      213: 6737398824644101519
+    second: inferno 1_132
+  - first:
+      213: 8208575407011540617
+    second: inferno 1_133
+  - first:
+      213: -6880789808789675831
+    second: inferno 1_134
+  - first:
+      213: -7912872059004183540
+    second: inferno 1_135
+  - first:
+      213: -1453418435977694129
+    second: inferno 1_136
+  - first:
+      213: -95683802933754470
+    second: inferno 1_137
+  - first:
+      213: -2758508186795173863
+    second: inferno 1_138
+  - first:
+      213: 6655845698573406164
+    second: inferno 1_139
+  - first:
+      213: -3598533710358210429
+    second: inferno 1_140
+  - first:
+      213: -498310126438896126
+    second: inferno 1_141
+  - first:
+      213: 3815325225621591810
+    second: inferno 1_142
+  - first:
+      213: 8061689695089561025
+    second: inferno 1_143
+  - first:
+      213: 1314215140580434823
+    second: inferno 1_144
+  - first:
+      213: 1910822619567650145
+    second: inferno 1_145
+  - first:
+      213: -4831320978813877839
+    second: inferno 1_146
+  - first:
+      213: -3860004477807206020
+    second: inferno 1_147
+  - first:
+      213: -5465224583423501152
+    second: inferno 1_148
+  - first:
+      213: -8372576989284129878
+    second: inferno 1_149
+  - first:
+      213: -5973538664934139788
+    second: inferno 1_150
+  - first:
+      213: 681494387308781336
+    second: inferno 1_151
+  - first:
+      213: -5940999569741008386
+    second: inferno 1_152
+  - first:
+      213: 6544065280558449286
+    second: inferno 1_153
+  - first:
+      213: 6203585433263539437
+    second: inferno 1_154
+  - first:
+      213: 5486404556908702431
+    second: inferno 1_155
+  - first:
+      213: -7746776410116711710
+    second: inferno 1_156
+  - first:
+      213: -7854207576500795334
+    second: inferno 1_157
+  - first:
+      213: 2439959394512880936
+    second: inferno 1_158
+  - first:
+      213: 7100224916366779452
+    second: inferno 1_159
+  - first:
+      213: 5603281062886454487
+    second: inferno 1_160
+  - first:
+      213: -873563911876168749
+    second: inferno 1_161
+  - first:
+      213: 4734722834110209636
+    second: inferno 1_162
+  - first:
+      213: -1152517000475016067
+    second: inferno 1_163
+  - first:
+      213: 6475668507728794739
+    second: inferno 1_164
+  - first:
+      213: -2604082351820021416
+    second: inferno 1_165
+  - first:
+      213: -8441816947556929193
+    second: inferno 1_166
+  - first:
+      213: -4403307575751378434
+    second: inferno 1_167
+  - first:
+      213: -8560766907485572822
+    second: inferno 1_168
+  - first:
+      213: -6454076043511887766
+    second: inferno 1_169
+  - first:
+      213: -6645474192360010825
+    second: inferno 1_170
+  - first:
+      213: 1838883074188438425
+    second: inferno 1_171
+  - first:
+      213: 480921696461368622
+    second: inferno 1_172
+  - first:
+      213: 3533454201117199615
+    second: inferno 1_173
+  - first:
+      213: -7789246103562098267
+    second: inferno 1_174
+  - first:
+      213: 179615972784818071
+    second: inferno 1_175
+  - first:
+      213: -1032056645306855482
+    second: inferno 1_176
+  - first:
+      213: -1817477551231319925
+    second: inferno 1_177
+  - first:
+      213: -5065013920650062143
+    second: inferno 1_178
+  - first:
+      213: -3342786308667902521
+    second: inferno 1_179
+  - first:
+      213: -6891605211359814318
+    second: inferno 1_180
+  - first:
+      213: 515258478553042861
+    second: inferno 1_181
+  - first:
+      213: 3170862397448560920
+    second: inferno 1_182
+  - first:
+      213: -4129409893226060759
+    second: inferno 1_183
+  - first:
+      213: 8108972095811106585
+    second: inferno 1_184
+  - first:
+      213: -2285411013153936765
+    second: inferno 1_185
+  - first:
+      213: -5323775312207299112
+    second: inferno 1_186
+  - first:
+      213: 1158740325595429717
+    second: inferno 1_187
+  - first:
+      213: 8988663475514597378
+    second: inferno 1_188
+  - first:
+      213: 4184054532961679189
+    second: inferno 1_189
+  - first:
+      213: -75009963475143193
+    second: inferno 1_190
+  - first:
+      213: -7438190250313458690
+    second: inferno 1_191
+  - first:
+      213: -3905503694781931519
+    second: inferno 1_192
+  - first:
+      213: 2070270903007372287
+    second: inferno 1_193
+  - first:
+      213: -395365659985294688
+    second: inferno 1_194
+  - first:
+      213: -9130013143355507199
+    second: inferno 1_195
+  - first:
+      213: 8009658288867802088
+    second: inferno 1_196
+  - first:
+      213: -8818676622737093841
+    second: inferno 1_197
+  - first:
+      213: 5359290511919180355
+    second: inferno 1_198
+  - first:
+      213: 8648495996676807845
+    second: inferno 1_199
+  - first:
+      213: 7832360211978798346
+    second: inferno 1_200
+  - first:
+      213: -5630567512024056659
+    second: inferno 1_201
+  - first:
+      213: -3645265589065893210
+    second: inferno 1_202
+  - first:
+      213: -6206363079003956792
+    second: inferno 1_203
+  - first:
+      213: 8947728022812171132
+    second: inferno 1_204
+  - first:
+      213: 1374720911918150685
+    second: inferno 1_205
+  - first:
+      213: -7374104085156442499
+    second: inferno 1_206
+  - first:
+      213: -7532075152196464406
+    second: inferno 1_207
+  - first:
+      213: -1441618114539949453
+    second: inferno 1_208
+  - first:
+      213: 8683118969147532190
+    second: inferno 1_209
+  - first:
+      213: 5198893923451797647
+    second: inferno 1_210
+  - first:
+      213: 4464024461742183050
+    second: inferno 1_211
+  - first:
+      213: 2362706335804097987
+    second: inferno 1_212
+  - first:
+      213: -7641824562239353531
+    second: inferno 1_213
+  - first:
+      213: -2991692985632904238
+    second: inferno 1_214
+  - first:
+      213: -275294084549325659
+    second: inferno 1_215
+  - first:
+      213: -4930627391874650683
+    second: inferno 1_216
+  - first:
+      213: 2493599003820316050
+    second: inferno 1_217
+  - first:
+      213: -8950598529195898936
+    second: inferno 1_218
+  - first:
+      213: 7305071356910243622
+    second: inferno 1_219
+  - first:
+      213: -7509041154057384020
+    second: inferno 1_220
+  - first:
+      213: 2029914141339863387
+    second: inferno 1_221
+  - first:
+      213: 8801795237327554426
+    second: inferno 1_222
+  - first:
+      213: 7812276000645408550
+    second: inferno 1_223
+  - first:
+      213: -329578283835129356
+    second: inferno 1_224
+  - first:
+      213: -5866880236979882437
+    second: inferno 1_225
+  - first:
+      213: 2147009101524277651
+    second: inferno 1_226
+  - first:
+      213: -9141590693843676010
+    second: inferno 1_227
+  - first:
+      213: 5365800016500863053
+    second: inferno 1_228
+  - first:
+      213: 763445243856773559
+    second: inferno 1_229
+  - first:
+      213: 1315600245853996856
+    second: inferno 1_230
+  - first:
+      213: -3376259584030085342
+    second: inferno 1_231
+  - first:
+      213: -8192727373038561459
+    second: inferno 1_232
+  - first:
+      213: 2850135828249421559
+    second: inferno 1_233
+  - first:
+      213: -4878400922148609921
+    second: inferno 1_234
+  - first:
+      213: 9047703291981167717
+    second: inferno 1_235
+  - first:
+      213: 7759975892257043020
+    second: inferno 1_236
+  - first:
+      213: 8739258730684430536
+    second: inferno 1_237
+  - first:
+      213: -2853623501393763462
+    second: inferno 1_238
+  - first:
+      213: -6447794636107397835
+    second: inferno 1_239
+  - first:
+      213: 4626199391921536951
+    second: inferno 1_240
+  - first:
+      213: -4278470256725810145
+    second: inferno 1_241
+  - first:
+      213: -5068771209716863333
+    second: inferno 1_242
+  - first:
+      213: -2467097887525814060
+    second: inferno 1_243
+  - first:
+      213: 8298846046333163958
+    second: inferno 1_244
+  - first:
+      213: -5453329144781495786
+    second: inferno 1_245
+  - first:
+      213: 8856143008587411713
+    second: inferno 1_246
+  - first:
+      213: -3615878189381185993
+    second: inferno 1_247
+  - first:
+      213: -1629038666788628185
+    second: inferno 1_248
+  - first:
+      213: 3740085632449242091
+    second: inferno 1_249
+  - first:
+      213: 5364710458785134727
+    second: inferno 1_250
+  - first:
+      213: -6224396497094420887
+    second: inferno 1_251
+  - first:
+      213: -131754239470237378
+    second: inferno 1_252
+  - first:
+      213: 7970347811612692070
+    second: inferno 1_253
+  - first:
+      213: 798350240225486809
+    second: inferno 1_254
+  - first:
+      213: 1034940549408367667
+    second: inferno 1_255
+  - first:
+      213: 3672444958594680321
+    second: inferno 1_256
+  - first:
+      213: -3442611230164058000
+    second: inferno 1_257
+  - first:
+      213: -4786099501887863812
+    second: inferno 1_258
+  - first:
+      213: -170482989379832128
+    second: inferno 1_259
+  - first:
+      213: 5859528897087932074
+    second: inferno 1_260
+  - first:
+      213: -4532828308983436703
+    second: inferno 1_261
+  - first:
+      213: 1957160443102529613
+    second: inferno 1_262
+  - first:
+      213: -3868558341438096655
+    second: inferno 1_263
+  - first:
+      213: 5151869888093103885
+    second: inferno 1_264
+  - first:
+      213: -3657881921290786487
+    second: inferno 1_265
+  - first:
+      213: 2458958257562390608
+    second: inferno 1_266
+  - first:
+      213: -6968827713219807903
+    second: inferno 1_267
+  - first:
+      213: -3694985521376996825
+    second: inferno 1_268
+  - first:
+      213: 976534290886497344
+    second: inferno 1_269
+  - first:
+      213: -2629108515015494352
+    second: inferno 1_270
+  - first:
+      213: 3847229206373100440
+    second: inferno 1_271
+  - first:
+      213: -2654093960458744634
+    second: inferno 1_272
+  - first:
+      213: -5139907419765509957
+    second: inferno 1_273
+  - first:
+      213: -7457597443624432294
+    second: inferno 1_274
+  - first:
+      213: 981042856043503303
+    second: inferno 1_275
+  - first:
+      213: 6754904572399366995
+    second: inferno 1_276
+  - first:
+      213: -559731125385725073
+    second: inferno 1_277
+  - first:
+      213: -3336863287651264736
+    second: inferno 1_278
+  - first:
+      213: 3549113061975123562
+    second: inferno 1_279
+  - first:
+      213: -645259735338658410
+    second: inferno 1_280
+  - first:
+      213: -3704282004090998012
+    second: inferno 1_281
+  - first:
+      213: 3341179146332775146
+    second: inferno 1_282
+  - first:
+      213: -2641189117938511432
+    second: inferno 1_283
+  - first:
+      213: 3431693835918819814
+    second: inferno 1_284
+  - first:
+      213: -4295615313543634314
+    second: inferno 1_285
+  - first:
+      213: 1954780937695730690
+    second: inferno 1_286
+  - first:
+      213: -2091760725396660550
+    second: inferno 1_287
+  - first:
+      213: 1135826858138240725
+    second: inferno 1_288
+  - first:
+      213: 7092373544273122907
+    second: inferno 1_289
+  - first:
+      213: -8464363789309057589
+    second: inferno 1_290
+  - first:
+      213: -1950902759797537638
+    second: inferno 1_291
+  - first:
+      213: 2876584908238194884
+    second: inferno 1_292
+  - first:
+      213: -7934121070278242252
+    second: inferno 1_293
+  - first:
+      213: -2178804296337733216
+    second: inferno 1_294
+  - first:
+      213: 6812098272295902389
+    second: inferno 1_295
+  - first:
+      213: 4228202374435256580
+    second: inferno 1_296
+  - first:
+      213: 8592385754768616486
+    second: inferno 1_297
+  - first:
+      213: 3105536942470065579
+    second: inferno 1_298
+  - first:
+      213: 2572375258467181329
+    second: inferno 1_299
+  - first:
+      213: -4094385930670053848
+    second: inferno 1_300
+  - first:
+      213: 3420001912177826064
+    second: inferno 1_301
+  - first:
+      213: 2448039393314688743
+    second: inferno 1_302
+  - first:
+      213: 5258441548947708968
+    second: inferno 1_303
+  - first:
+      213: 5549568641653764020
+    second: inferno 1_304
+  - first:
+      213: 6092742361425899653
+    second: inferno 1_305
+  - first:
+      213: 4714772008416489729
+    second: inferno 1_306
+  - first:
+      213: 8101768957054470807
+    second: inferno 1_307
+  - first:
+      213: -8891093945887918266
+    second: inferno 1_308
+  - first:
+      213: -2049540188090467240
+    second: inferno 1_309
+  - first:
+      213: 4808599230282931030
+    second: inferno 1_310
+  - first:
+      213: -2525486825280442392
+    second: inferno 1_311
+  - first:
+      213: -7342151065875217714
+    second: inferno 1_312
+  - first:
+      213: -7519792289057009075
+    second: inferno 1_313
+  - first:
+      213: -452284615083192070
+    second: inferno 1_314
+  - first:
+      213: 738532590811892089
+    second: inferno 1_315
+  - first:
+      213: -3085745745961491863
+    second: inferno 1_316
+  - first:
+      213: -1736946825426124518
+    second: inferno 1_317
+  - first:
+      213: -1254511772573556068
+    second: inferno 1_318
+  - first:
+      213: 7188638519046438694
+    second: inferno 1_319
+  - first:
+      213: -4379738803082273161
+    second: inferno 1_320
+  - first:
+      213: -7557951623319158301
+    second: inferno 1_321
+  - first:
+      213: -8932054102660428932
+    second: inferno 1_322
+  - first:
+      213: 4415917680602081080
+    second: inferno 1_323
+  - first:
+      213: 7877780813158194126
+    second: inferno 1_324
+  - first:
+      213: 4771370582504539879
+    second: inferno 1_325
+  - first:
+      213: 6125188208864123558
+    second: inferno 1_326
+  - first:
+      213: -2720463726631377210
+    second: inferno 1_327
+  - first:
+      213: -2998428903522848357
+    second: inferno 1_328
+  - first:
+      213: -5823631484302101375
+    second: inferno 1_329
+  - first:
+      213: 5942238418114907965
+    second: inferno 1_330
+  - first:
+      213: 4282176750580612442
+    second: inferno 1_331
+  - first:
+      213: -2142778699784663759
+    second: inferno 1_332
+  - first:
+      213: -6061096025018833756
+    second: inferno 1_333
+  - first:
+      213: -3214017568027867283
+    second: inferno 1_334
+  - first:
+      213: 7326250870143854109
+    second: inferno 1_335
+  - first:
+      213: -1707750779393023464
+    second: inferno 1_336
+  - first:
+      213: -6458097632966883550
+    second: inferno 1_337
+  - first:
+      213: 4718628568208871666
+    second: inferno 1_338
+  - first:
+      213: 6859367869292307003
+    second: inferno 1_339
+  - first:
+      213: -2072871172192367350
+    second: inferno 1_340
+  - first:
+      213: -9053866112470446698
+    second: inferno 1_341
+  - first:
+      213: -2347269696449851556
+    second: inferno 1_342
+  - first:
+      213: 1490489310428050586
+    second: inferno 1_343
+  - first:
+      213: -8096849719617154242
+    second: inferno 1_344
+  - first:
+      213: -1824394930390080632
+    second: inferno 1_345
+  - first:
+      213: 5647516451759540002
+    second: inferno 1_346
+  - first:
+      213: -7043353804862722539
+    second: inferno 1_347
+  - first:
+      213: 2724440813661664044
+    second: inferno 1_348
+  - first:
+      213: -5685282795611402055
+    second: inferno 1_349
+  - first:
+      213: -3442812130517124488
+    second: inferno 1_350
+  - first:
+      213: 3649892370733482245
+    second: inferno 1_351
+  - first:
+      213: -4433859312654054835
+    second: inferno 1_352
+  - first:
+      213: -2001866717402799157
+    second: inferno 1_353
+  - first:
+      213: -7056901004162178837
+    second: inferno 1_354
+  - first:
+      213: -3079972871026188778
+    second: inferno 1_355
+  - first:
+      213: 91759730232607433
+    second: inferno 1_356
+  - first:
+      213: 462807999926390063
+    second: inferno 1_357
+  - first:
+      213: 22397508492659831
+    second: inferno 1_358
+  - first:
+      213: -607509404784589979
+    second: inferno 1_359
+  - first:
+      213: 3722722827210910151
+    second: inferno 1_360
+  - first:
+      213: 4157845765420004207
+    second: inferno 1_361
+  - first:
+      213: 7190815613379967842
+    second: inferno 1_362
+  - first:
+      213: 1277705497551731557
+    second: inferno 1_363
+  - first:
+      213: -6026882648759302327
+    second: inferno 1_364
+  - first:
+      213: 6876810012164401553
+    second: inferno 1_365
+  - first:
+      213: 5706442051413293728
+    second: inferno 1_366
+  - first:
+      213: 3729999562468601750
+    second: inferno 1_367
+  - first:
+      213: -3623892174160478860
+    second: inferno 1_368
+  - first:
+      213: -4386671488366090504
+    second: inferno 1_369
+  - first:
+      213: -2153305113360997954
+    second: inferno 1_370
+  - first:
+      213: 6844765378913281863
+    second: inferno 1_371
+  - first:
+      213: -2706968165844286806
+    second: inferno 1_372
+  - first:
+      213: 2579820796714987476
+    second: inferno 1_373
+  - first:
+      213: 4017289832330723906
+    second: inferno 1_374
+  - first:
+      213: -9034593390396798228
+    second: inferno 1_375
+  - first:
+      213: -9193655565036024257
+    second: inferno 1_376
+  - first:
+      213: 3270070386466620317
+    second: inferno 1_377
+  - first:
+      213: 9099289497674357561
+    second: inferno 1_378
+  - first:
+      213: -562962736877505874
+    second: inferno 1_379
+  - first:
+      213: 8327699819266457794
+    second: inferno 1_380
+  - first:
+      213: 5397959399044930121
+    second: inferno 1_381
+  - first:
+      213: 1125035680003311804
+    second: inferno 1_382
+  - first:
+      213: 9064844076746912177
+    second: inferno 1_383
+  - first:
+      213: 2860710596450336576
+    second: inferno 1_384
+  - first:
+      213: 4365301155381233472
+    second: inferno 1_385
+  - first:
+      213: 3306932312617543414
+    second: inferno 1_386
+  - first:
+      213: -7395044098643328422
+    second: inferno 1_387
+  - first:
+      213: 716105185670125571
+    second: inferno 1_388
+  - first:
+      213: -2931104791004060109
+    second: inferno 1_389
+  - first:
+      213: 7102268326905462587
+    second: inferno 1_390
+  - first:
+      213: 3237902237745413505
+    second: inferno 1_391
+  - first:
+      213: -5675393532325577983
+    second: inferno 1_392
+  - first:
+      213: -1241358057131175879
+    second: inferno 1_393
+  - first:
+      213: 1848761239596892919
+    second: inferno 1_394
+  - first:
+      213: -2365730145233787421
+    second: inferno 1_395
+  - first:
+      213: 3938251505445671435
+    second: inferno 1_396
+  - first:
+      213: 6987467340303748441
+    second: inferno 1_397
+  - first:
+      213: -5298424523985533752
+    second: inferno 1_398
+  - first:
+      213: -7671858285008356577
+    second: inferno 1_399
+  - first:
+      213: 5542358324302583804
+    second: inferno 1_400
+  - first:
+      213: -3322097155180770055
+    second: inferno 1_401
+  - first:
+      213: 7149445370034232698
+    second: inferno 1_402
+  - first:
+      213: -7330084907420539325
+    second: inferno 1_403
+  - first:
+      213: 6530278146126411912
+    second: inferno 1_404
+  - first:
+      213: -5814991171464795440
+    second: inferno 1_405
+  - first:
+      213: 4552755372711354638
+    second: inferno 1_406
+  - first:
+      213: -4249952241913254671
+    second: inferno 1_407
+  - first:
+      213: -3225754499916517122
+    second: inferno 1_408
+  - first:
+      213: -5945619957142424644
+    second: inferno 1_409
+  - first:
+      213: -4758090218206579654
+    second: inferno 1_410
+  - first:
+      213: 3075077735381901320
+    second: inferno 1_411
+  - first:
+      213: -947377478771690091
+    second: inferno 1_412
+  - first:
+      213: -6579858213438182725
+    second: inferno 1_413
+  - first:
+      213: -3445908862585813751
+    second: inferno 1_414
+  - first:
+      213: 2038899921414884448
+    second: inferno 1_415
+  - first:
+      213: -262975025285261871
+    second: inferno 1_416
+  - first:
+      213: 7096251220532229565
+    second: inferno 1_417
+  - first:
+      213: 4787200611857868724
+    second: inferno 1_418
+  - first:
+      213: -8258629083621324090
+    second: inferno 1_419
+  - first:
+      213: 8675548496769494840
+    second: inferno 1_420
+  - first:
+      213: 1624062486704466908
+    second: inferno 1_421
+  - first:
+      213: 3748195197718472428
+    second: inferno 1_422
+  - first:
+      213: -5723219702518447413
+    second: inferno 1_423
+  - first:
+      213: 562527783581296879
+    second: inferno 1_424
+  - first:
+      213: 7211344912648857196
+    second: inferno 1_425
+  - first:
+      213: -3614371011997120779
+    second: inferno 1_426
+  - first:
+      213: 2703464905330525414
+    second: inferno 1_427
+  - first:
+      213: -5414713427404757812
+    second: inferno 1_428
+  - first:
+      213: 1060093775741500504
+    second: inferno 1_429
+  - first:
+      213: -648420387751183535
+    second: inferno 1_430
+  - first:
+      213: 4002302334784260326
+    second: inferno 1_431
+  - first:
+      213: 2967791635813726971
+    second: inferno 1_432
+  - first:
+      213: 6410987117125175564
+    second: inferno 1_433
+  - first:
+      213: 6810085165108194566
+    second: inferno 1_434
+  - first:
+      213: -7896805713950223009
+    second: inferno 1_435
+  - first:
+      213: -5656149544667720207
+    second: inferno 1_436
+  - first:
+      213: -5571923919907772607
+    second: inferno 1_437
+  - first:
+      213: -4817277030813000661
+    second: inferno 1_438
+  - first:
+      213: -1516538340593844972
+    second: inferno 1_439
+  - first:
+      213: 8275598987410496174
+    second: inferno 1_440
+  - first:
+      213: -4178183815968236346
+    second: inferno 1_441
+  - first:
+      213: -1194090611920181493
+    second: inferno 1_442
+  - first:
+      213: -6653389149668540399
+    second: inferno 1_443
+  - first:
+      213: 9126204439792438745
+    second: inferno 1_444
+  - first:
+      213: 2701413205998103210
+    second: inferno 1_445
+  - first:
+      213: 7440034624025813860
+    second: inferno 1_446
+  - first:
+      213: 6958512998839472595
+    second: inferno 1_447
+  - first:
+      213: 8685650275165830895
+    second: inferno 1_448
+  - first:
+      213: 2593695071807153494
+    second: inferno 1_449
+  - first:
+      213: 5148815792844055627
+    second: inferno 1_450
+  - first:
+      213: 4771156489706158544
+    second: inferno 1_451
+  - first:
+      213: 2308253075578151236
+    second: inferno 1_452
+  - first:
+      213: 260370891165876793
+    second: inferno 1_453
+  - first:
+      213: -4770453953251871207
+    second: inferno 1_454
+  - first:
+      213: -4001740470006271526
+    second: inferno 1_455
+  - first:
+      213: 2274235586123661488
+    second: inferno 1_456
+  - first:
+      213: -8142955053286352926
+    second: inferno 1_457
+  - first:
+      213: 7835004883581928410
+    second: inferno 1_458
+  - first:
+      213: 7348901959365536513
+    second: inferno 1_459
+  - first:
+      213: -7495616908611056480
+    second: inferno 1_460
+  - first:
+      213: 2262298619963074548
+    second: inferno 1_461
+  - first:
+      213: -5196499162139009757
+    second: inferno 1_462
+  - first:
+      213: 6904676718276074673
+    second: inferno 1_463
+  - first:
+      213: -3445049667730942656
+    second: inferno 1_464
+  - first:
+      213: 3862344647881860120
+    second: inferno 1_465
+  - first:
+      213: -5139870363933577665
+    second: inferno 1_466
+  - first:
+      213: 2387235780823187013
+    second: inferno 1_467
+  - first:
+      213: -6658947221471929556
+    second: inferno 1_468
+  - first:
+      213: -1367185523873317586
+    second: inferno 1_469
+  - first:
+      213: -3562675562104346807
+    second: inferno 1_470
+  - first:
+      213: -4009443904706269687
+    second: inferno 1_471
+  - first:
+      213: 2245707581579011573
+    second: inferno 1_472
+  - first:
+      213: 3032022700455575838
+    second: inferno 1_473
+  - first:
+      213: 8535151322207227685
+    second: inferno 1_474
+  - first:
+      213: 2786935819967482785
+    second: inferno 1_475
+  - first:
+      213: -3596932707792366366
+    second: inferno 1_476
+  - first:
+      213: -7983442623134026699
+    second: inferno 1_477
+  - first:
+      213: -1580514493245758213
+    second: inferno 1_478
+  - first:
+      213: -176101422153212272
+    second: inferno 1_479
+  - first:
+      213: 1611845270172845206
+    second: inferno 1_480
+  - first:
+      213: -3991420983139154572
+    second: inferno 1_481
+  - first:
+      213: 5837462285655330673
+    second: inferno 1_482
+  - first:
+      213: -2053325705220260046
+    second: inferno 1_483
+  - first:
+      213: 6339300796018663830
+    second: inferno 1_484
+  - first:
+      213: 3716480353135257654
+    second: inferno 1_485
+  - first:
+      213: 521169947066411777
+    second: inferno 1_486
+  - first:
+      213: 394426619023841158
+    second: inferno 1_487
+  - first:
+      213: 5159741144950194544
+    second: inferno 1_488
+  - first:
+      213: -6695793903938569747
+    second: inferno 1_489
+  - first:
+      213: 4240815048448747826
+    second: inferno 1_490
+  - first:
+      213: 1598817524591025241
+    second: inferno 1_491
+  - first:
+      213: 3926199716104226769
+    second: inferno 1_492
+  - first:
+      213: 1335838593599177075
+    second: inferno 1_493
+  - first:
+      213: 4571416253271051777
+    second: inferno 1_494
+  - first:
+      213: -4658623546988956815
+    second: inferno 1_495
+  - first:
+      213: -7917652459200963317
+    second: inferno 1_496
+  - first:
+      213: -2662206861939597275
+    second: inferno 1_497
+  - first:
+      213: 7496605901671208154
+    second: inferno 1_498
+  - first:
+      213: -2656059264177813034
+    second: inferno 1_499
+  - first:
+      213: 5318336436847639586
+    second: inferno 1_500
+  - first:
+      213: 8522399404202568667
+    second: inferno 1_501
+  - first:
+      213: -4237846754135543722
+    second: inferno 1_502
+  - first:
+      213: 8829155234684041959
+    second: inferno 1_503
+  - first:
+      213: 6657724858583766671
+    second: inferno 1_504
+  - first:
+      213: -4534399822228934804
+    second: inferno 1_505
+  - first:
+      213: -2400225040033105086
+    second: inferno 1_506
+  - first:
+      213: -6562200454981114557
+    second: inferno 1_507
+  - first:
+      213: 7942376710575765667
+    second: inferno 1_508
+  - first:
+      213: -3457692445777934540
+    second: inferno 1_509
+  - first:
+      213: 5311353239818608039
+    second: inferno 1_510
+  - first:
+      213: -4360140467326332337
+    second: inferno 1_511
+  - first:
+      213: 3894507577953282642
+    second: inferno 1_512
+  - first:
+      213: -4515445376265927897
+    second: inferno 1_513
+  - first:
+      213: -6745300554905048252
+    second: inferno 1_514
+  - first:
+      213: -4761051760121938521
+    second: inferno 1_515
+  - first:
+      213: 8244788561207216264
+    second: inferno 1_516
+  - first:
+      213: 8712666290911252492
+    second: inferno 1_517
+  - first:
+      213: 769526435432184676
+    second: inferno 1_518
+  - first:
+      213: -428342391124784310
+    second: inferno 1_519
+  - first:
+      213: -2823224540885496900
+    second: inferno 1_520
+  - first:
+      213: 5728755580179030603
+    second: inferno 1_521
+  - first:
+      213: -8093102753683185207
+    second: inferno 1_522
+  - first:
+      213: -1062991672379937344
+    second: inferno 1_523
+  - first:
+      213: -2334458164736497602
+    second: inferno 1_524
+  - first:
+      213: -9161716549193362974
+    second: inferno 1_525
+  - first:
+      213: -8382881557577002489
+    second: inferno 1_526
+  - first:
+      213: 3414341517817309309
+    second: inferno 1_527
+  - first:
+      213: 8194726791823296016
+    second: inferno 1_528
+  - first:
+      213: -5176725123884899775
+    second: inferno 1_529
+  - first:
+      213: -6446477192201980027
+    second: inferno 1_530
+  - first:
+      213: -5579098875003826379
+    second: inferno 1_531
+  - first:
+      213: 5043373042011025896
+    second: inferno 1_532
+  - first:
+      213: 3268966602488008935
+    second: inferno 1_533
+  - first:
+      213: 7455053151435142094
+    second: inferno 1_534
+  - first:
+      213: 5613771271604626453
+    second: inferno 1_535
+  - first:
+      213: 2911617383166442668
+    second: inferno 1_536
+  - first:
+      213: 6214932020180388263
+    second: inferno 1_537
+  - first:
+      213: 4423267841926147192
+    second: inferno 1_538
+  - first:
+      213: -6660441413830075976
+    second: inferno 1_539
+  - first:
+      213: 6827878679678354299
+    second: inferno 1_540
+  - first:
+      213: 5525954074216670245
+    second: inferno 1_541
+  - first:
+      213: 8931475849443822445
+    second: inferno 1_542
+  - first:
+      213: -7661564876340753572
+    second: inferno 1_543
+  - first:
+      213: -167154483837862372
+    second: inferno 1_544
+  - first:
+      213: -4595187872925481004
+    second: inferno 1_545
+  - first:
+      213: -2754817450205465205
+    second: inferno 1_546
+  - first:
+      213: 6650510093108696649
+    second: inferno 1_547
+  - first:
+      213: -4491529527813683937
+    second: inferno 1_548
+  - first:
+      213: 640081691643049392
+    second: inferno 1_549
+  - first:
+      213: -7145907309323136474
+    second: inferno 1_550
+  - first:
+      213: -6060610545389427553
+    second: inferno 1_551
+  - first:
+      213: 5537770586292589797
+    second: inferno 1_552
+  - first:
+      213: -2905673946387772464
+    second: inferno 1_553
+  - first:
+      213: 1506927182665547210
+    second: inferno 1_554
+  - first:
+      213: -293469420852696935
+    second: inferno 1_555
+  - first:
+      213: -8546450496782395103
+    second: inferno 1_556
+  - first:
+      213: -5863063695226891133
+    second: inferno 1_557
+  - first:
+      213: -5577550065402526471
+    second: inferno 1_558
+  - first:
+      213: 8251005900641212902
+    second: inferno 1_559
+  - first:
+      213: -6461314586174344463
+    second: inferno 1_560
+  - first:
+      213: -6308871712250266230
+    second: inferno 1_561
+  - first:
+      213: 5346227632077701978
+    second: inferno 1_562
+  - first:
+      213: -2217926625717920884
+    second: inferno 1_563
+  - first:
+      213: 6241802081499181187
+    second: inferno 1_564
+  - first:
+      213: -2012700740243472213
+    second: inferno 1_565
+  - first:
+      213: 7400482335696214863
+    second: inferno 1_566
+  - first:
+      213: -2898388633907664201
+    second: inferno 1_567
+  - first:
+      213: -5477601891959265731
+    second: inferno 1_568
+  - first:
+      213: -7686380148477824386
+    second: inferno 1_569
+  - first:
+      213: 8618994120837052050
+    second: inferno 1_570
+  - first:
+      213: 7159611778345438762
+    second: inferno 1_571
+  - first:
+      213: 3512624149706670859
+    second: inferno 1_572
+  - first:
+      213: 4533819345736998583
+    second: inferno 1_573
+  - first:
+      213: 8097170832258418352
+    second: inferno 1_574
+  - first:
+      213: -5440429997044415904
+    second: inferno 1_575
+  - first:
+      213: 6056436074445743892
+    second: inferno 1_576
+  - first:
+      213: 9203364708085070171
+    second: inferno 1_577
+  - first:
+      213: -1278846896975692401
+    second: inferno 1_578
+  - first:
+      213: 3794958441891885021
+    second: inferno 1_579
+  - first:
+      213: 7619143786525410468
+    second: inferno 1_580
+  - first:
+      213: -4228241191303755782
+    second: inferno 1_581
+  - first:
+      213: 7637491524533737171
+    second: inferno 1_582
+  - first:
+      213: -4678322483229504019
+    second: inferno 1_583
+  - first:
+      213: -8247451386884158412
+    second: inferno 1_584
+  - first:
+      213: 3373519834882674103
+    second: inferno 1_585
+  - first:
+      213: -6312084824901834037
+    second: inferno 1_586
+  - first:
+      213: -4967826784410965265
+    second: inferno 1_587
+  - first:
+      213: -6008473622829675941
+    second: inferno 1_588
+  - first:
+      213: 6138451634567014875
+    second: inferno 1_589
+  - first:
+      213: 949739015911442306
+    second: inferno 1_590
+  - first:
+      213: -4486573003748765323
+    second: inferno 1_591
+  - first:
+      213: 7501666069901712269
+    second: inferno 1_592
+  - first:
+      213: 3067219440224360743
+    second: inferno 1_593
+  - first:
+      213: -2837558705327946380
+    second: inferno 1_594
+  - first:
+      213: 3267382979701213667
+    second: inferno 1_595
+  - first:
+      213: -299089268504635727
+    second: inferno 1_596
+  - first:
+      213: -8311545114891802707
+    second: inferno 1_597
+  - first:
+      213: -706335347982163723
+    second: inferno 1_598
+  - first:
+      213: 7891421225599003915
+    second: inferno 1_599
+  - first:
+      213: -6422910983654196721
+    second: inferno 1_600
+  - first:
+      213: -7689111967514625655
+    second: inferno 1_601
+  - first:
+      213: 4501796780305538882
+    second: inferno 1_602
+  - first:
+      213: -9146242414854078716
+    second: inferno 1_603
+  - first:
+      213: 6766398071914192667
+    second: inferno 1_604
+  - first:
+      213: -8311416224609117093
+    second: inferno 1_605
+  - first:
+      213: 1030844117259129453
+    second: inferno 1_606
+  - first:
+      213: 8348960424727647222
+    second: inferno 1_607
+  - first:
+      213: 9195102510936878559
+    second: inferno 1_608
+  - first:
+      213: -8636257970243482215
+    second: inferno 1_609
+  - first:
+      213: 115806714588979205
+    second: inferno 1_610
+  - first:
+      213: 6579094218498920792
+    second: inferno 1_611
+  - first:
+      213: 8257760899589738173
+    second: inferno 1_612
+  - first:
+      213: 467581646203261215
+    second: inferno 1_613
+  - first:
+      213: -9101407831283820167
+    second: inferno 1_614
+  - first:
+      213: -4989349147495741722
+    second: inferno 1_615
+  - first:
+      213: -8887669882990061205
+    second: inferno 1_616
+  - first:
+      213: 6057100131428762388
+    second: inferno 1_617
+  - first:
+      213: 2625803821204659579
+    second: inferno 1_618
+  - first:
+      213: 7486518493357489550
+    second: inferno 1_619
+  - first:
+      213: -5074732983123698439
+    second: inferno 1_620
+  - first:
+      213: 1283234526067323309
+    second: inferno 1_621
+  - first:
+      213: -1257733949961330777
+    second: inferno 1_622
+  - first:
+      213: 7806668686026348050
+    second: inferno 1_623
+  - first:
+      213: 3396228116632683888
+    second: inferno 1_624
+  - first:
+      213: -7206203320382298456
+    second: inferno 1_625
+  - first:
+      213: -6580916946323334115
+    second: inferno 1_626
+  - first:
+      213: -9009724045121894442
+    second: inferno 1_627
+  - first:
+      213: -2195584125078313526
+    second: inferno 1_628
+  - first:
+      213: -8229150473772157804
+    second: inferno 1_629
+  - first:
+      213: -5906070106697817677
+    second: inferno 1_630
+  - first:
+      213: 5700803407762319303
+    second: inferno 1_631
+  - first:
+      213: -1651721728868483633
+    second: inferno 1_632
+  - first:
+      213: -5071332882689749683
+    second: inferno 1_633
+  - first:
+      213: 3116346221975238009
+    second: inferno 1_634
+  - first:
+      213: -1006427236897211144
+    second: inferno 1_635
+  - first:
+      213: 8033830633061972830
+    second: inferno 1_636
+  - first:
+      213: 2472273881438264180
+    second: inferno 1_637
+  - first:
+      213: 5771568027624950162
+    second: inferno 1_638
+  - first:
+      213: -6692228543797150287
+    second: inferno 1_639
+  - first:
+      213: -606594634998983230
+    second: inferno 1_640
+  - first:
+      213: 6988817772149091011
+    second: inferno 1_641
+  - first:
+      213: 2276268416795746755
+    second: inferno 1_642
+  - first:
+      213: 8801938258182313100
+    second: inferno 1_643
+  - first:
+      213: 4828667278578852451
+    second: inferno 1_644
+  - first:
+      213: -769428747931652731
+    second: inferno 1_645
+  - first:
+      213: 1381314641356484778
+    second: inferno 1_646
+  - first:
+      213: -7430819110667178715
+    second: inferno 1_647
+  - first:
+      213: 7241789517930635155
+    second: inferno 1_648
+  - first:
+      213: -4690982229452929114
+    second: inferno 1_649
+  - first:
+      213: -4463360810237113960
+    second: inferno 1_650
+  - first:
+      213: -2966814367664781670
+    second: inferno 1_651
+  - first:
+      213: -3791755543009484105
+    second: inferno 1_652
+  - first:
+      213: -6645422188142997846
+    second: inferno 1_653
+  - first:
+      213: 8289945959919533528
+    second: inferno 1_654
+  - first:
+      213: 4966750868973163209
+    second: inferno 1_655
+  - first:
+      213: 6772592159419134752
+    second: inferno 1_656
+  - first:
+      213: -8070927969043826555
+    second: inferno 1_657
+  - first:
+      213: -2818150713725651326
+    second: inferno 1_658
+  - first:
+      213: -2697566722220574561
+    second: inferno 1_659
+  - first:
+      213: -3666243932457703331
+    second: inferno 1_660
+  - first:
+      213: -7769699309797342477
+    second: inferno 1_661
+  - first:
+      213: -5115418676496575147
+    second: inferno 1_662
+  - first:
+      213: -5830010214845264854
+    second: inferno 1_663
+  - first:
+      213: 3137933693430414878
+    second: inferno 1_664
+  - first:
+      213: -9166656234149296881
+    second: inferno 1_665
+  - first:
+      213: 6331927677750331911
+    second: inferno 1_666
+  - first:
+      213: -5123895771262985860
+    second: inferno 1_667
+  - first:
+      213: -6180634365831967625
+    second: inferno 1_668
+  - first:
+      213: 7608279633585122251
+    second: inferno 1_669
+  - first:
+      213: 1619842339587761892
+    second: inferno 1_670
+  - first:
+      213: -7886561953041076808
+    second: inferno 1_671
+  - first:
+      213: -3300141849255372935
+    second: inferno 1_672
+  - first:
+      213: 3924545872616885876
+    second: inferno 1_673
+  - first:
+      213: 2591663017859707588
+    second: inferno 1_674
+  - first:
+      213: 6947643786744118831
+    second: inferno 1_675
+  - first:
+      213: 7307145023086683821
+    second: inferno 1_676
+  - first:
+      213: -705672827354277606
+    second: inferno 1_677
+  - first:
+      213: -5319360790345737269
+    second: inferno 1_678
+  - first:
+      213: 6336552418761389408
+    second: inferno 1_679
+  - first:
+      213: 4835810255458489083
+    second: inferno 1_680
+  - first:
+      213: 3107820009535410650
+    second: inferno 1_681
+  - first:
+      213: 1907661163062840104
+    second: inferno 1_682
+  - first:
+      213: 2717868935550370521
+    second: inferno 1_683
+  - first:
+      213: -8180614052543445870
+    second: inferno 1_684
+  - first:
+      213: -5757793599507815805
+    second: inferno 1_685
+  - first:
+      213: -3130289737443530061
+    second: inferno 1_686
+  - first:
+      213: 727873322836347885
+    second: inferno 1_687
+  - first:
+      213: 688985474904545127
+    second: inferno 1_688
+  - first:
+      213: 1235276079649512802
+    second: inferno 1_689
+  - first:
+      213: 3905990065520106818
+    second: inferno 1_690
+  - first:
+      213: 7853517636989331474
+    second: inferno 1_691
+  - first:
+      213: -6057976139589259376
+    second: inferno 1_692
+  - first:
+      213: 9019286716293076075
+    second: inferno 1_693
+  - first:
+      213: 8249820608614095284
+    second: inferno 1_694
+  - first:
+      213: -7260062986553564440
+    second: inferno 1_695
+  - first:
+      213: -8366901815764617044
+    second: inferno 1_696
+  - first:
+      213: -1079271633855847510
+    second: inferno 1_697
+  - first:
+      213: -7609046316274353989
+    second: inferno 1_698
+  - first:
+      213: 8505902367724172612
+    second: inferno 1_699
+  - first:
+      213: -7704718464642850633
+    second: inferno 1_700
+  - first:
+      213: 8775601733268871635
+    second: inferno 1_701
+  - first:
+      213: -1295304064672804688
+    second: inferno 1_702
+  - first:
+      213: -5345183159120021510
+    second: inferno 1_703
+  - first:
+      213: 429297327353453582
+    second: inferno 1_704
+  - first:
+      213: 817635658540084067
+    second: inferno 1_705
+  - first:
+      213: -5935419955363525560
+    second: inferno 1_706
+  - first:
+      213: -5419330715000494363
+    second: inferno 1_707
+  - first:
+      213: -516826516846730154
+    second: inferno 1_708
+  - first:
+      213: -8071182300600830090
+    second: inferno 1_709
+  - first:
+      213: -8621896531769928338
+    second: inferno 1_710
+  - first:
+      213: 2030503678616407206
+    second: inferno 1_711
+  - first:
+      213: 2653500103121474605
+    second: inferno 1_712
+  - first:
+      213: 6406828539115331724
+    second: inferno 1_713
+  - first:
+      213: -7206565326732186440
+    second: inferno 1_714
+  - first:
+      213: 2882491674604045023
+    second: inferno 1_715
+  - first:
+      213: -5894881231694542180
+    second: inferno 1_716
+  - first:
+      213: 5171532291747592308
+    second: inferno 1_717
+  - first:
+      213: -4132854143453211373
+    second: inferno 1_718
+  - first:
+      213: -1102024358099706854
+    second: inferno 1_719
+  - first:
+      213: -280416198925696425
+    second: inferno 1_720
+  - first:
+      213: -3680266970426958998
+    second: inferno 1_721
+  - first:
+      213: 702554513666878039
+    second: inferno 1_722
+  - first:
+      213: -7463307887601846888
+    second: inferno 1_723
+  - first:
+      213: -7146092617994156586
+    second: inferno 1_724
+  - first:
+      213: 2378019987658934308
+    second: inferno 1_725
+  - first:
+      213: 1720033695754801144
+    second: inferno 1_726
+  - first:
+      213: -7505413300478832957
+    second: inferno 1_727
+  - first:
+      213: -7269361803136341982
+    second: inferno 1_728
+  - first:
+      213: 6675538081373946313
+    second: inferno 1_729
+  - first:
+      213: 2891459299269209922
+    second: inferno 1_730
+  - first:
+      213: -4692544502122519695
+    second: inferno 1_731
+  - first:
+      213: -6474507655264188052
+    second: inferno 1_732
+  - first:
+      213: 3544649727673408070
+    second: inferno 1_733
+  - first:
+      213: 2617507096423058078
+    second: inferno 1_734
+  - first:
+      213: -3649693693515403952
+    second: inferno 1_735
+  - first:
+      213: 3993332662811780678
+    second: inferno 1_736
+  - first:
+      213: -3675857675861110299
+    second: inferno 1_737
+  - first:
+      213: -3604985729302475084
+    second: inferno 1_738
+  - first:
+      213: -8806150843339131429
+    second: inferno 1_739
+  - first:
+      213: -7429164353396408068
+    second: inferno 1_740
+  - first:
+      213: 8707047459683037374
+    second: inferno 1_741
+  - first:
+      213: 8216707441472301164
+    second: inferno 1_742
+  - first:
+      213: 408109168001715251
+    second: inferno 1_743
+  - first:
+      213: -3444707932458668891
+    second: inferno 1_744
+  - first:
+      213: -4934474446553229491
+    second: inferno 1_745
+  - first:
+      213: -7780600461530355300
+    second: inferno 1_746
+  - first:
+      213: 3541372594641433397
+    second: inferno 1_747
+  - first:
+      213: 3681141020060160645
+    second: inferno 1_748
+  - first:
+      213: -902410120193793893
+    second: inferno 1_749
+  - first:
+      213: -4124241101020876178
+    second: inferno 1_750
+  - first:
+      213: 2802760523513626705
+    second: inferno 1_751
+  - first:
+      213: 8593020193474001283
+    second: inferno 1_752
+  - first:
+      213: 9161412389323475783
+    second: inferno 1_753
+  - first:
+      213: 8185590546071279218
+    second: inferno 1_754
+  - first:
+      213: -8908837289501953249
+    second: inferno 1_755
+  - first:
+      213: 2361210072526360103
+    second: inferno 1_756
+  - first:
+      213: 9156265079617051095
+    second: inferno 1_757
+  - first:
+      213: 6255308982914524123
+    second: inferno 1_758
+  - first:
+      213: 4740154118737285851
+    second: inferno 1_759
+  - first:
+      213: -5137021256448443204
+    second: inferno 1_760
+  - first:
+      213: -8262048309455224367
+    second: inferno 1_761
+  - first:
+      213: -791310203022215319
+    second: inferno 1_762
+  - first:
+      213: 1746188636924036666
+    second: inferno 1_763
+  - first:
+      213: -6811985152201002254
+    second: inferno 1_764
+  - first:
+      213: 8356854178018080106
+    second: inferno 1_765
+  - first:
+      213: 5459003825679388248
+    second: inferno 1_766
+  - first:
+      213: 3013530942131724471
+    second: inferno 1_767
+  - first:
+      213: -8474043477333790213
+    second: inferno 1_768
+  - first:
+      213: -7084249812055559372
+    second: inferno 1_769
+  - first:
+      213: -1361018835919677399
+    second: inferno 1_770
+  - first:
+      213: -2471388030514439025
+    second: inferno 1_771
+  - first:
+      213: 1314457623404247010
+    second: inferno 1_772
+  - first:
+      213: -346536662625787280
+    second: inferno 1_773
+  - first:
+      213: 4610052685550965571
+    second: inferno 1_774
+  - first:
+      213: -3470327350109851795
+    second: inferno 1_775
+  - first:
+      213: -8354039292595346632
+    second: inferno 1_776
+  - first:
+      213: 5688217539178805460
+    second: inferno 1_777
+  - first:
+      213: 3725396414386239547
+    second: inferno 1_778
+  - first:
+      213: -5613191317416171648
+    second: inferno 1_779
+  - first:
+      213: 379884473356594976
+    second: inferno 1_780
+  - first:
+      213: 2094535869212006763
+    second: inferno 1_781
+  - first:
+      213: -5816768258205409910
+    second: inferno 1_782
+  - first:
+      213: 6697009624310885425
+    second: inferno 1_783
+  - first:
+      213: -488293022024764714
+    second: inferno 1_784
+  - first:
+      213: -5591232114631124195
+    second: inferno 1_785
+  - first:
+      213: 438139281772786734
+    second: inferno 1_786
+  - first:
+      213: -7898496203009825530
+    second: inferno 1_787
+  - first:
+      213: -683196397408670445
+    second: inferno 1_788
+  - first:
+      213: 1192159812312118639
+    second: inferno 1_789
+  - first:
+      213: -5125646225179989316
+    second: inferno 1_790
+  - first:
+      213: -516689893993862846
+    second: inferno 1_791
+  - first:
+      213: -1720515816530574470
+    second: inferno 1_792
+  - first:
+      213: 2610824824081759651
+    second: inferno 1_793
+  - first:
+      213: 7293605307492616031
+    second: inferno 1_794
+  - first:
+      213: 4017429898246520971
+    second: inferno 1_795
+  - first:
+      213: -3872871020411976938
+    second: inferno 1_796
+  - first:
+      213: 4781083649723650899
+    second: inferno 1_797
+  - first:
+      213: -1418215917489164877
+    second: inferno 1_798
+  - first:
+      213: 7841580930425936885
+    second: inferno 1_799
+  - first:
+      213: 757996048113730224
+    second: inferno 1_800
+  - first:
+      213: 7259203894742546966
+    second: inferno 1_801
+  - first:
+      213: 576922312434976314
+    second: inferno 1_802
+  - first:
+      213: 4685264800700091216
+    second: inferno 1_803
+  - first:
+      213: 3561702506302648811
+    second: inferno 1_804
+  - first:
+      213: -2691440802930370228
+    second: inferno 1_805
+  - first:
+      213: -2531290313296889328
+    second: inferno 1_806
+  - first:
+      213: 443335774884195677
+    second: inferno 1_807
+  - first:
+      213: -136197068517025970
+    second: inferno 1_808
+  - first:
+      213: 9067140141839885413
+    second: inferno 1_809
+  - first:
+      213: -6467680248192914195
+    second: inferno 1_810
+  - first:
+      213: 4045375141056222829
+    second: inferno 1_811
+  - first:
+      213: 7599173307733153339
+    second: inferno 1_812
+  - first:
+      213: -3265366356082389116
+    second: inferno 1_813
+  - first:
+      213: 4033272544590453851
+    second: inferno 1_814
+  - first:
+      213: -965260395424728781
+    second: inferno 1_815
+  - first:
+      213: 935632653691427237
+    second: inferno 1_816
+  - first:
+      213: -282093400891747448
+    second: inferno 1_817
+  - first:
+      213: 1017508356080785160
+    second: inferno 1_818
+  - first:
+      213: 5978950538117566843
+    second: inferno 1_819
+  - first:
+      213: -4049466306078410465
+    second: inferno 1_820
+  - first:
+      213: 2922994781766555644
+    second: inferno 1_821
+  - first:
+      213: -2737194957086657802
+    second: inferno 1_822
+  - first:
+      213: -3796778361185089063
+    second: inferno 1_823
+  - first:
+      213: -7424272355350260660
+    second: inferno 1_824
+  - first:
+      213: 4269259407031234659
+    second: inferno 1_825
+  - first:
+      213: 901319726541754459
+    second: inferno 1_826
+  - first:
+      213: -7173507144733159203
+    second: inferno 1_827
+  - first:
+      213: -3056086782511160391
+    second: inferno 1_828
+  - first:
+      213: -7798024336466618111
+    second: inferno 1_829
+  - first:
+      213: -4117996373155846854
+    second: inferno 1_830
+  - first:
+      213: 8126314450367547190
+    second: inferno 1_831
+  - first:
+      213: 8504882021672043666
+    second: inferno 1_832
+  - first:
+      213: 358926534227805596
+    second: inferno 1_833
+  - first:
+      213: 9024045029966738402
+    second: inferno 1_834
+  - first:
+      213: -2676903313628549928
+    second: inferno 1_835
+  - first:
+      213: -173775189811788458
+    second: inferno 1_836
+  - first:
+      213: -7036301659041828290
+    second: inferno 1_837
+  - first:
+      213: -4814555202547092723
+    second: inferno 1_838
+  - first:
+      213: -2387999826132490459
+    second: inferno 1_839
+  - first:
+      213: 5589212227029115246
+    second: inferno 1_840
+  - first:
+      213: -8744819412842811807
+    second: inferno 1_841
+  - first:
+      213: 8377666650896780027
+    second: inferno 1_842
+  - first:
+      213: 8036731449022082544
+    second: inferno 1_843
+  - first:
+      213: 5855314742716668329
+    second: inferno 1_844
+  - first:
+      213: 8257494799915199134
+    second: inferno 1_845
+  - first:
+      213: -9089602195537173801
+    second: inferno 1_846
+  - first:
+      213: -2588132563676940014
+    second: inferno 1_847
+  - first:
+      213: 382852072377524833
+    second: inferno 1_848
+  - first:
+      213: -606907750154759939
+    second: inferno 1_849
+  - first:
+      213: 6098553443628574845
+    second: inferno 1_850
+  - first:
+      213: 3252436084604667026
+    second: inferno 1_851
+  - first:
+      213: 2766179929777534371
+    second: inferno 1_852
+  - first:
+      213: 816507744944095499
+    second: inferno 1_853
+  - first:
+      213: -6592782693621529145
+    second: inferno 1_854
+  - first:
+      213: 7377795387729945305
+    second: inferno 1_855
+  - first:
+      213: -9218670962105789558
+    second: inferno 1_856
+  - first:
+      213: 3974379667697105464
+    second: inferno 1_857
+  - first:
+      213: 7872156876015684039
+    second: inferno 1_858
+  - first:
+      213: -4896239701057991919
+    second: inferno 1_859
+  - first:
+      213: 2367185141914904180
+    second: inferno 1_860
+  - first:
+      213: 7438464648867171047
+    second: inferno 1_861
+  - first:
+      213: -4000328849353195029
+    second: inferno 1_862
+  - first:
+      213: -8591198108418080175
+    second: inferno 1_863
+  - first:
+      213: 7359473704214623516
+    second: inferno 1_864
+  - first:
+      213: -3531575556882752957
+    second: inferno 1_865
+  - first:
+      213: 4143642508229312230
+    second: inferno 1_866
+  - first:
+      213: 8331116025401813733
+    second: inferno 1_867
+  - first:
+      213: -3636127912425670182
+    second: inferno 1_868
+  - first:
+      213: -5309698931209616446
+    second: inferno 1_869
+  - first:
+      213: -7920026120195156813
+    second: inferno 1_870
+  - first:
+      213: 4150321957785290379
+    second: inferno 1_871
+  - first:
+      213: 519055206281745761
+    second: inferno 1_872
+  - first:
+      213: 1680787001496390109
+    second: inferno 1_873
+  - first:
+      213: 5864042308063038217
+    second: inferno 1_874
+  - first:
+      213: -7960176876853013650
+    second: inferno 1_875
+  - first:
+      213: 4830813116565986741
+    second: inferno 1_876
+  - first:
+      213: 3485455434457242395
+    second: inferno 1_877
+  - first:
+      213: 8917150059026695801
+    second: inferno 1_878
+  - first:
+      213: 6983565176228451005
+    second: inferno 1_879
+  - first:
+      213: -2621403792755456482
+    second: inferno 1_880
+  - first:
+      213: 4381928643050235323
+    second: inferno 1_881
+  - first:
+      213: -9030392911194761193
+    second: inferno 1_882
+  - first:
+      213: 6263715315544111064
+    second: inferno 1_883
+  - first:
+      213: -8841422412408362641
+    second: inferno 1_884
+  - first:
+      213: -629552701702926651
+    second: inferno 1_885
+  - first:
+      213: 8165750624938725781
+    second: inferno 1_886
+  - first:
+      213: 2458041188220076036
+    second: inferno 1_887
+  - first:
+      213: -5846110772536776887
+    second: inferno 1_888
+  - first:
+      213: -6531380173566154116
+    second: inferno 1_889
+  - first:
+      213: -1052772904564928042
+    second: inferno 1_890
+  - first:
+      213: -8951569740588932289
+    second: inferno 1_891
+  - first:
+      213: 4481115515652518652
+    second: inferno 1_892
+  - first:
+      213: 1445550339490536656
+    second: inferno 1_893
+  - first:
+      213: 3160650923037889469
+    second: inferno 1_894
+  - first:
+      213: -8214192826555190701
+    second: inferno 1_895
+  - first:
+      213: 102761504140675807
+    second: inferno 1_896
+  - first:
+      213: 3151722252553251221
+    second: inferno 1_897
+  - first:
+      213: -2013990237917738817
+    second: inferno 1_898
+  - first:
+      213: 27228698256772035
+    second: inferno 1_899
+  - first:
+      213: -1699839891018303601
+    second: inferno 1_900
+  - first:
+      213: 8705836121711966423
+    second: inferno 1_901
+  - first:
+      213: -767652404204084701
+    second: inferno 1_902
+  - first:
+      213: -246541239869404580
+    second: inferno 1_903
+  - first:
+      213: -6693013489622796563
+    second: inferno 1_904
+  - first:
+      213: -5563047837084604897
+    second: inferno 1_905
+  - first:
+      213: -2602763930892208919
+    second: inferno 1_906
+  - first:
+      213: 4031496686492971713
+    second: inferno 1_907
+  - first:
+      213: 3405454871521895976
+    second: inferno 1_908
+  - first:
+      213: 5033602798317771965
+    second: inferno 1_909
+  - first:
+      213: -2525146960813624617
+    second: inferno 1_910
+  - first:
+      213: -4025123102294210
+    second: inferno 1_911
+  - first:
+      213: 3775156947114428103
+    second: inferno 1_912
+  - first:
+      213: 3474249360292167881
+    second: inferno 1_913
+  - first:
+      213: -3560550238164189574
+    second: inferno 1_914
+  - first:
+      213: -4898392278535689669
+    second: inferno 1_915
+  - first:
+      213: -8098187883545629665
+    second: inferno 1_916
+  - first:
+      213: -5776598054650518089
+    second: inferno 1_917
+  - first:
+      213: 192049797021446431
+    second: inferno 1_918
+  - first:
+      213: 6025040221591151310
+    second: inferno 1_919
+  - first:
+      213: 1522109141348429230
+    second: inferno 1_920
+  - first:
+      213: 5206020355812326419
+    second: inferno 1_921
+  - first:
+      213: -6547061973685110365
+    second: inferno 1_922
+  - first:
+      213: -8236668986926942552
+    second: inferno 1_923
+  - first:
+      213: 4906020021444639772
+    second: inferno 1_924
+  - first:
+      213: -1400468255038554761
+    second: inferno 1_925
+  - first:
+      213: 9071815571765237093
+    second: inferno 1_926
+  - first:
+      213: 9166022833263137588
+    second: inferno 1_927
+  - first:
+      213: -6341841113961505911
+    second: inferno 1_928
+  - first:
+      213: 2065153043851286068
+    second: inferno 1_929
+  - first:
+      213: -8553745858392818936
+    second: inferno 1_930
+  - first:
+      213: 4184835070753538264
+    second: inferno 1_931
+  - first:
+      213: -7115662260565754736
+    second: inferno 1_932
+  - first:
+      213: -6683808339932554448
+    second: inferno 1_933
+  - first:
+      213: -1788521998923721402
+    second: inferno 1_934
+  - first:
+      213: 7400103509760578665
+    second: inferno 1_935
+  - first:
+      213: -356668010598405926
+    second: inferno 1_936
+  - first:
+      213: 7019852649316513902
+    second: inferno 1_937
+  - first:
+      213: -5939421520744984154
+    second: inferno 1_938
+  - first:
+      213: 3792085882205248905
+    second: inferno 1_939
+  - first:
+      213: 4837631846121384541
+    second: inferno 1_940
+  - first:
+      213: 1511310282205906371
+    second: inferno 1_941
+  - first:
+      213: 2093193348923108205
+    second: inferno 1_942
+  - first:
+      213: 1583729062121279339
+    second: inferno 1_943
+  - first:
+      213: 3073545569445189991
+    second: inferno 1_944
+  - first:
+      213: -8587343692070675768
+    second: inferno 1_945
+  - first:
+      213: -6710360634621271157
+    second: inferno 1_946
+  - first:
+      213: -1208055617593053284
+    second: inferno 1_947
+  - first:
+      213: 5543607867304185100
+    second: inferno 1_948
+  - first:
+      213: -8014368252328736397
+    second: inferno 1_949
+  - first:
+      213: -6202512224553800485
+    second: inferno 1_950
+  - first:
+      213: -7916986728407208874
+    second: inferno 1_951
+  - first:
+      213: -521548463291800211
+    second: inferno 1_952
+  - first:
+      213: 2688554737325522575
+    second: inferno 1_953
+  - first:
+      213: 9085538626942593130
+    second: inferno 1_954
+  - first:
+      213: 7758264451133724111
+    second: inferno 1_955
+  - first:
+      213: 8842906869645852528
+    second: inferno 1_956
+  - first:
+      213: -378186018291561565
+    second: inferno 1_957
+  - first:
+      213: 3249193904186536250
+    second: inferno 1_958
+  - first:
+      213: -4732302651419373925
+    second: inferno 1_959
+  - first:
+      213: 4362427210028186234
+    second: inferno 1_960
+  - first:
+      213: 7451788965751660721
+    second: inferno 1_961
+  - first:
+      213: 268282488226457615
+    second: inferno 1_962
+  - first:
+      213: 3773022831744427885
+    second: inferno 1_963
+  - first:
+      213: 5237211593690904754
+    second: inferno 1_964
+  - first:
+      213: 6197334994824605271
+    second: inferno 1_965
+  - first:
+      213: -2799760860981843627
+    second: inferno 1_966
+  - first:
+      213: 9187373490422953660
+    second: inferno 1_967
+  - first:
+      213: -413662618826280801
+    second: inferno 1_968
+  - first:
+      213: 1817497683451057443
+    second: inferno 1_969
+  - first:
+      213: -3795075185060604159
+    second: inferno 1_970
+  - first:
+      213: 3586697003818424368
+    second: inferno 1_971
+  - first:
+      213: -6261362352909261224
+    second: inferno 1_972
+  - first:
+      213: -1100046878629356959
+    second: inferno 1_973
+  - first:
+      213: -3907664958456129025
+    second: inferno 1_974
+  - first:
+      213: 8945812876687135976
+    second: inferno 1_975
+  - first:
+      213: 555714893383645161
+    second: inferno 1_976
+  - first:
+      213: -1132889342576256207
+    second: inferno 1_977
+  - first:
+      213: 4922220424916492180
+    second: inferno 1_978
+  - first:
+      213: -8986704871138901599
+    second: inferno 1_979
+  - first:
+      213: 568225878543593427
+    second: inferno 1_980
+  - first:
+      213: -3751048649745417656
+    second: inferno 1_981
+  - first:
+      213: -4102297570601547303
+    second: inferno 1_982
+  - first:
+      213: -8930557978603059250
+    second: inferno 1_983
+  - first:
+      213: -6234011509839093351
+    second: inferno 1_984
+  - first:
+      213: 5360690239591215257
+    second: inferno 1_985
+  - first:
+      213: -2841951974874701202
+    second: inferno 1_986
+  - first:
+      213: -5012541029365629629
+    second: inferno 1_987
+  - first:
+      213: -7389509323462724480
+    second: inferno 1_988
+  - first:
+      213: -4924858570175534009
+    second: inferno 1_989
+  - first:
+      213: -4574460549522081786
+    second: inferno 1_990
+  - first:
+      213: 8569069122461766029
+    second: inferno 1_991
+  - first:
+      213: -7247227225272210993
+    second: inferno 1_992
+  - first:
+      213: -8659208466925947955
+    second: inferno 1_993
+  - first:
+      213: -4398777177228914632
+    second: inferno 1_994
+  - first:
+      213: -273776640097254285
+    second: inferno 1_995
+  - first:
+      213: 1840854300246005383
+    second: inferno 1_996
+  - first:
+      213: -2157259731591342374
+    second: inferno 1_997
+  - first:
+      213: -650107187183033251
+    second: inferno 1_998
+  - first:
+      213: -1275972211293211392
+    second: inferno 1_999
+  - first:
+      213: -6726050515735880487
+    second: inferno 1_1000
+  - first:
+      213: -2228238516282559466
+    second: inferno 1_1001
+  - first:
+      213: -3216307809333829718
+    second: inferno 1_1002
+  - first:
+      213: -4258074326476179430
+    second: inferno 1_1003
+  - first:
+      213: 1735163311362426625
+    second: inferno 1_1004
+  - first:
+      213: -7934450854094431494
+    second: inferno 1_1005
+  - first:
+      213: -761326233509809921
+    second: inferno 1_1006
+  - first:
+      213: 3012927892373446914
+    second: inferno 1_1007
+  - first:
+      213: 6658339000575436441
+    second: inferno 1_1008
+  - first:
+      213: 9024784531985899161
+    second: inferno 1_1009
+  - first:
+      213: 7145050127460612329
+    second: inferno 1_1010
+  - first:
+      213: -314954204753105062
+    second: inferno 1_1011
+  - first:
+      213: 7386213370800982225
+    second: inferno 1_1012
+  - first:
+      213: -3341131262974255832
+    second: inferno 1_1013
+  - first:
+      213: 1918329007612974509
+    second: inferno 1_1014
+  - first:
+      213: 1595762573260888057
+    second: inferno 1_1015
+  - first:
+      213: 1319283506854338484
+    second: inferno 1_1016
+  - first:
+      213: -2148868677723021929
+    second: inferno 1_1017
+  - first:
+      213: -1785591187461292018
+    second: inferno 1_1018
+  - first:
+      213: -113745572456268061
+    second: inferno 1_1019
+  - first:
+      213: 776450676253838706
+    second: inferno 1_1020
+  - first:
+      213: 4627428452128651594
+    second: inferno 1_1021
+  - first:
+      213: -6718885275935404757
+    second: inferno 1_1022
+  - first:
+      213: -6388851879735526310
+    second: inferno 1_1023
+  - first:
+      213: 4167178233794759973
+    second: inferno 1_1024
+  - first:
+      213: -8407905340707487954
+    second: inferno 1_1025
+  - first:
+      213: 6576930711926665945
+    second: inferno 1_1026
+  - first:
+      213: -8176758580377694239
+    second: inferno 1_1027
+  - first:
+      213: 9043572272056125540
+    second: inferno 1_1028
+  - first:
+      213: 9088885840110470495
+    second: inferno 1_1029
+  - first:
+      213: -3787534981146562223
+    second: inferno 1_1030
+  - first:
+      213: -2231853839686665986
+    second: inferno 1_1031
+  - first:
+      213: 2814113183865810013
+    second: inferno 1_1032
+  - first:
+      213: 9036738645912966456
+    second: inferno 1_1033
+  - first:
+      213: -4105192080637385259
+    second: inferno 1_1034
+  - first:
+      213: -8598453385421286385
+    second: inferno 1_1035
+  - first:
+      213: -5735806669502642071
+    second: inferno 1_1036
+  - first:
+      213: 699041044677204437
+    second: inferno 1_1037
+  - first:
+      213: -1772954064674309578
+    second: inferno 1_1038
+  - first:
+      213: -1490668052650927885
+    second: inferno 1_1039
+  - first:
+      213: 336870619558676065
+    second: inferno 1_1040
+  - first:
+      213: 317948096901382237
+    second: inferno 1_1041
+  - first:
+      213: 6860381940334397399
+    second: inferno 1_1042
+  - first:
+      213: 6529718955170901104
+    second: inferno 1_1043
+  - first:
+      213: 279266998719964466
+    second: inferno 1_1044
+  - first:
+      213: -7094428357839441393
+    second: inferno 1_1045
+  - first:
+      213: 1422491867640253853
+    second: inferno 1_1046
+  - first:
+      213: 5339495205040692717
+    second: inferno 1_1047
+  - first:
+      213: 540320796625845575
+    second: inferno 1_1048
+  - first:
+      213: 5440268846645908075
+    second: inferno 1_1049
+  - first:
+      213: 5756287571385007496
+    second: inferno 1_1050
+  - first:
+      213: -30180909015392606
+    second: inferno 1_1051
+  - first:
+      213: 2235096399798292340
+    second: inferno 1_1052
+  - first:
+      213: -5174829694997909871
+    second: inferno 1_1053
+  - first:
+      213: 8187374758419994466
+    second: inferno 1_1054
+  - first:
+      213: -4969671574646512156
+    second: inferno 1_1055
+  - first:
+      213: 7326690680767546605
+    second: inferno 1_1056
+  - first:
+      213: -9157549859741149330
+    second: inferno 1_1057
+  - first:
+      213: 6239276315647091032
+    second: inferno 1_1058
+  - first:
+      213: 4465448944858988418
+    second: inferno 1_1059
+  - first:
+      213: 3661650365603458989
+    second: inferno 1_1060
+  - first:
+      213: -1138261231811127621
+    second: inferno 1_1061
+  - first:
+      213: 1993044557791014338
+    second: inferno 1_1062
+  - first:
+      213: 4283813125890259853
+    second: inferno 1_1063
+  - first:
+      213: -864878235021056148
+    second: inferno 1_1064
+  - first:
+      213: 2845272452182459561
+    second: inferno 1_1065
+  - first:
+      213: 7565150549712548802
+    second: inferno 1_1066
+  - first:
+      213: -4587559311406954901
+    second: inferno 1_1067
+  - first:
+      213: 1753482347360720336
+    second: inferno 1_1068
+  - first:
+      213: -3461785717248512548
+    second: inferno 1_1069
+  - first:
+      213: 6053201242022335338
+    second: inferno 1_1070
+  - first:
+      213: 7317535965082668292
+    second: inferno 1_1071
+  - first:
+      213: 408415651450751043
+    second: inferno 1_1072
+  - first:
+      213: -6823099949150375771
+    second: inferno 1_1073
+  - first:
+      213: 6691534627733592705
+    second: inferno 1_1074
+  - first:
+      213: -2225244267226010921
+    second: inferno 1_1075
+  - first:
+      213: 3487471109335395088
+    second: inferno 1_1076
+  - first:
+      213: -4289002715567946545
+    second: inferno 1_1077
+  - first:
+      213: -3475548813448721093
+    second: inferno 1_1078
+  - first:
+      213: 7748513658426968925
+    second: inferno 1_1079
+  - first:
+      213: 621669246527834489
+    second: inferno 1_1080
+  - first:
+      213: -7265295307396586545
+    second: inferno 1_1081
+  - first:
+      213: 3431857024928538101
+    second: inferno 1_1082
+  - first:
+      213: -7952720017515755890
+    second: inferno 1_1083
+  - first:
+      213: 2293096318657971644
+    second: inferno 1_1084
+  - first:
+      213: -1184554477019254168
+    second: inferno 1_1085
+  - first:
+      213: 6236658158942347978
+    second: inferno 1_1086
+  - first:
+      213: 8113971282321673763
+    second: inferno 1_1087
+  - first:
+      213: 4863053315386149675
+    second: inferno 1_1088
+  - first:
+      213: -856497831224011262
+    second: inferno 1_1089
+  - first:
+      213: 8046386468498707436
+    second: inferno 1_1090
+  - first:
+      213: -3307933817432146367
+    second: inferno 1_1091
+  - first:
+      213: -1908684831176170985
+    second: inferno 1_1092
+  - first:
+      213: -3103945423381104818
+    second: inferno 1_1093
+  - first:
+      213: -6720632642214131218
+    second: inferno 1_1094
+  - first:
+      213: 368109457929765220
+    second: inferno 1_1095
+  - first:
+      213: 1106986399148744219
+    second: inferno 1_1096
+  - first:
+      213: 5550074267849680460
+    second: inferno 1_1097
+  - first:
+      213: -8320656656210048392
+    second: inferno 1_1098
+  - first:
+      213: 481749276568952839
+    second: inferno 1_1099
+  - first:
+      213: -6800613687463718516
+    second: inferno 1_1100
+  - first:
+      213: 8148810236537443398
+    second: inferno 1_1101
+  - first:
+      213: -3587406077898106040
+    second: inferno 1_1102
+  - first:
+      213: 6185180206299320157
+    second: inferno 1_1103
+  - first:
+      213: 3316106803269806954
+    second: inferno 1_1104
+  - first:
+      213: -8634868626384273028
+    second: inferno 1_1105
+  - first:
+      213: 7553455905705014650
+    second: inferno 1_1106
+  - first:
+      213: -476096873510347657
+    second: inferno 1_1107
+  - first:
+      213: -1101413845362338859
+    second: inferno 1_1108
+  - first:
+      213: 1332938482183987319
+    second: inferno 1_1109
+  - first:
+      213: -407690595622338200
+    second: inferno 1_1110
+  - first:
+      213: 663368022939977117
+    second: inferno 1_1111
+  - first:
+      213: 5133607077306494065
+    second: inferno 1_1112
+  - first:
+      213: 456000620326369564
+    second: inferno 1_1113
+  - first:
+      213: -1624912751112810817
+    second: inferno 1_1114
+  - first:
+      213: -6274685320903974995
+    second: inferno 1_1115
+  - first:
+      213: 5895401220228961632
+    second: inferno 1_1116
+  - first:
+      213: 4124505595546506247
+    second: inferno 1_1117
+  - first:
+      213: -1147168877901306903
+    second: inferno 1_1118
+  - first:
+      213: -6964108222987023505
+    second: inferno 1_1119
+  - first:
+      213: 3507754006736465519
+    second: inferno 1_1120
+  - first:
+      213: 3685986028515535741
+    second: inferno 1_1121
+  - first:
+      213: -6123004974463633898
+    second: inferno 1_1122
+  - first:
+      213: 5372248744197200653
+    second: inferno 1_1123
+  - first:
+      213: 2187410301809593266
+    second: inferno 1_1124
+  - first:
+      213: 468679358068510625
+    second: inferno 1_1125
+  - first:
+      213: 1307250327394941327
+    second: inferno 1_1126
+  - first:
+      213: -5385246389636159366
+    second: inferno 1_1127
+  - first:
+      213: 6553500487344342676
+    second: inferno 1_1128
+  - first:
+      213: 3466155749317049317
+    second: inferno 1_1129
+  - first:
+      213: -467455515597858274
+    second: inferno 1_1130
+  - first:
+      213: 888285827479380747
+    second: inferno 1_1131
+  - first:
+      213: 4658983175604457759
+    second: inferno 1_1132
+  - first:
+      213: -5613070897649232602
+    second: inferno 1_1133
+  - first:
+      213: -5377555899324687670
+    second: inferno 1_1134
+  - first:
+      213: 7664658142814329258
+    second: inferno 1_1135
+  - first:
+      213: -441602872125558040
+    second: inferno 1_1136
+  - first:
+      213: -3624737428314151836
+    second: inferno 1_1137
+  - first:
+      213: 3023800942884423336
+    second: inferno 1_1138
+  - first:
+      213: 4962659423183512717
+    second: inferno 1_1139
+  - first:
+      213: 830907917353404485
+    second: inferno 1_1140
+  - first:
+      213: -7874008527310685824
+    second: inferno 1_1141
+  - first:
+      213: 7869213084684287176
+    second: inferno 1_1142
+  - first:
+      213: 8653437115298356635
+    second: inferno 1_1143
+  - first:
+      213: 7631223129948124347
+    second: inferno 1_1144
+  - first:
+      213: 983943532280171970
+    second: inferno 1_1145
+  - first:
+      213: 1275815854503387005
+    second: inferno 1_1146
+  - first:
+      213: -7711231551746157490
+    second: inferno 1_1147
+  - first:
+      213: 8065913956090560590
+    second: inferno 1_1148
+  - first:
+      213: -6751601434429925706
+    second: inferno 1_1149
+  - first:
+      213: -1004231800550740130
+    second: inferno 1_1150
+  - first:
+      213: 3142377376074419223
+    second: inferno 1_1151
+  - first:
+      213: -4172099475125842040
+    second: inferno 1_1152
+  - first:
+      213: 7760247183319212276
+    second: inferno 1_1153
+  - first:
+      213: 8335477336933428785
+    second: inferno 1_1154
+  - first:
+      213: -3391260037911905211
+    second: inferno 1_1155
+  - first:
+      213: -4339060717731608416
+    second: inferno 1_1156
+  - first:
+      213: 7676258277857502625
+    second: inferno 1_1157
+  - first:
+      213: -8708966051903024103
+    second: inferno 1_1158
+  - first:
+      213: -5883614763030777387
+    second: inferno 1_1159
+  - first:
+      213: -968524346679499716
+    second: inferno 1_1160
+  - first:
+      213: -8011138259539177061
+    second: inferno 1_1161
+  - first:
+      213: 6517962927672182041
+    second: inferno 1_1162
+  - first:
+      213: -6314541804532755560
+    second: inferno 1_1163
+  - first:
+      213: 4383893944431855858
+    second: inferno 1_1164
+  - first:
+      213: -5573646979148921841
+    second: inferno 1_1165
+  - first:
+      213: -4168815324773362681
+    second: inferno 1_1166
+  - first:
+      213: 7531506062313647427
+    second: inferno 1_1167
+  - first:
+      213: -2720016337314302610
+    second: inferno 1_1168
+  - first:
+      213: -2527090317453546850
+    second: inferno 1_1169
+  - first:
+      213: 3612224006886752576
+    second: inferno 1_1170
+  - first:
+      213: -363417580960980814
+    second: inferno 1_1171
+  - first:
+      213: 9170100998501319118
+    second: inferno 1_1172
+  - first:
+      213: 8094916972283953129
+    second: inferno 1_1173
+  - first:
+      213: -6203366739890983915
+    second: inferno 1_1174
+  - first:
+      213: 6836118834914051980
+    second: inferno 1_1175
+  - first:
+      213: 1706240081060090617
+    second: inferno 1_1176
+  - first:
+      213: -1588159228043887711
+    second: inferno 1_1177
+  - first:
+      213: 1622382599984155351
+    second: inferno 1_1178
+  - first:
+      213: -9090673838923155671
+    second: inferno 1_1179
+  - first:
+      213: -1428928675320835033
+    second: inferno 1_1180
+  - first:
+      213: -1440740660673354212
+    second: inferno 1_1181
+  - first:
+      213: 6048656496541475841
+    second: inferno 1_1182
+  - first:
+      213: 2092317388717084857
+    second: inferno 1_1183
+  - first:
+      213: 8508096158945246115
+    second: inferno 1_1184
+  - first:
+      213: -6329692103548183926
+    second: inferno 1_1185
+  - first:
+      213: 1938620154022671284
+    second: inferno 1_1186
+  - first:
+      213: 5625974938439935706
+    second: inferno 1_1187
+  - first:
+      213: 2710935374196620729
+    second: inferno 1_1188
+  - first:
+      213: 2633743819427171720
+    second: inferno 1_1189
+  - first:
+      213: 6155521720895017587
+    second: inferno 1_1190
+  - first:
+      213: -825390673774498506
+    second: inferno 1_1191
+  - first:
+      213: -7334982048754685924
+    second: inferno 1_1192
+  - first:
+      213: 457362711600160092
+    second: inferno 1_1193
+  - first:
+      213: -2395101638139474424
+    second: inferno 1_1194
+  - first:
+      213: 1084187408990361820
+    second: inferno 1_1195
+  - first:
+      213: -6775349544295461565
+    second: inferno 1_1196
+  - first:
+      213: -818045438443397677
+    second: inferno 1_1197
+  - first:
+      213: 8165245913051568694
+    second: inferno 1_1198
+  - first:
+      213: -9168330662876892707
+    second: inferno 1_1199
+  - first:
+      213: -1529876086660479872
+    second: inferno 1_1200
+  - first:
+      213: 4026421610751381874
+    second: inferno 1_1201
+  - first:
+      213: -6638509972621529908
+    second: inferno 1_1202
+  - first:
+      213: 7910912017046522217
+    second: inferno 1_1203
+  - first:
+      213: 8193156637567738871
+    second: inferno 1_1204
+  - first:
+      213: 8348809097696399163
+    second: inferno 1_1205
+  - first:
+      213: 7753359736771285872
+    second: inferno 1_1206
+  - first:
+      213: 8381809239029472535
+    second: inferno 1_1207
+  - first:
+      213: -2741403468981594684
+    second: inferno 1_1208
+  - first:
+      213: -1252584304061381540
+    second: inferno 1_1209
+  - first:
+      213: 7479579277327561900
+    second: inferno 1_1210
+  - first:
+      213: -7936850715579670272
+    second: inferno 1_1211
+  - first:
+      213: -4255810630455958337
+    second: inferno 1_1212
+  - first:
+      213: -8862696842155051182
+    second: inferno 1_1213
+  - first:
+      213: 3376250254656068675
+    second: inferno 1_1214
+  - first:
+      213: -3443448837710011473
+    second: inferno 1_1215
+  - first:
+      213: 7344738419542641932
+    second: inferno 1_1216
+  - first:
+      213: 2546411449111109001
+    second: inferno 1_1217
+  - first:
+      213: 2558911340198855755
+    second: inferno 1_1218
+  - first:
+      213: -6889864111030319602
+    second: inferno 1_1219
+  - first:
+      213: -3244628833363647371
+    second: inferno 1_1220
+  - first:
+      213: -425578800803560160
+    second: inferno 1_1221
+  - first:
+      213: 6464135682255822883
+    second: inferno 1_1222
+  - first:
+      213: 5768898999317696478
+    second: inferno 1_1223
+  - first:
+      213: 3515717757234710303
+    second: inferno 1_1224
+  - first:
+      213: -3105344450910863196
+    second: inferno 1_1225
+  - first:
+      213: -81356359191294499
+    second: inferno 1_1226
+  - first:
+      213: 6485870753741140951
+    second: inferno 1_1227
+  - first:
+      213: 7035280647345979818
+    second: inferno 1_1228
+  - first:
+      213: 6060011543636467011
+    second: inferno 1_1229
+  - first:
+      213: 6383235552220327763
+    second: inferno 1_1230
+  - first:
+      213: 1379297713318944971
+    second: inferno 1_1231
+  - first:
+      213: 6285137423228234124
+    second: inferno 1_1232
+  - first:
+      213: -6597883450997665747
+    second: inferno 1_1233
+  - first:
+      213: -3244438881713189877
+    second: inferno 1_1234
+  - first:
+      213: 4197411348412814276
+    second: inferno 1_1235
+  - first:
+      213: -3878071752806289398
+    second: inferno 1_1236
+  - first:
+      213: 1843655707677041414
+    second: inferno 1_1237
+  - first:
+      213: 5136980344609317134
+    second: inferno 1_1238
+  - first:
+      213: 5764399485773702238
+    second: inferno 1_1239
+  - first:
+      213: 3603173917397397615
+    second: inferno 1_1240
+  - first:
+      213: 6122745503335073226
+    second: inferno 1_1241
+  - first:
+      213: -2195790618346316400
+    second: inferno 1_1242
+  - first:
+      213: 7068277230948963300
+    second: inferno 1_1243
+  - first:
+      213: -6598052150451174034
+    second: inferno 1_1244
+  - first:
+      213: 7034307954158857881
+    second: inferno 1_1245
+  - first:
+      213: -7395416187594659955
+    second: inferno 1_1246
+  - first:
+      213: 1242195695795503710
+    second: inferno 1_1247
+  - first:
+      213: 3464132408438813019
+    second: inferno 1_1248
+  - first:
+      213: 5425935691013025665
+    second: inferno 1_1249
+  - first:
+      213: -7156909967761816912
+    second: inferno 1_1250
+  - first:
+      213: -2895976414399419995
+    second: inferno 1_1251
+  - first:
+      213: -8494766150976156733
+    second: inferno 1_1252
+  - first:
+      213: -5694220271964086529
+    second: inferno 1_1253
+  - first:
+      213: 6848901258445274086
+    second: inferno 1_1254
+  - first:
+      213: 5392484955364017426
+    second: inferno 1_1255
+  - first:
+      213: -8028287386214866367
+    second: inferno 1_1256
+  - first:
+      213: -6420221842179175976
+    second: inferno 1_1257
+  - first:
+      213: 5365466267926877061
+    second: inferno 1_1258
+  - first:
+      213: 8089355480300406701
+    second: inferno 1_1259
+  - first:
+      213: -8363549566992784601
+    second: inferno 1_1260
+  - first:
+      213: 3327811174170312602
+    second: inferno 1_1261
+  - first:
+      213: -3576123634384513225
+    second: inferno 1_1262
+  - first:
+      213: -9121303785678684022
+    second: inferno 1_1263
+  - first:
+      213: -5923969867234524030
+    second: inferno 1_1264
+  - first:
+      213: -7702010766285714240
+    second: inferno 1_1265
+  - first:
+      213: 1353060764575764276
+    second: inferno 1_1266
+  - first:
+      213: 811046120531932192
+    second: inferno 1_1267
+  - first:
+      213: -158513199024480335
+    second: inferno 1_1268
+  - first:
+      213: 6780496240904452409
+    second: inferno 1_1269
+  - first:
+      213: -59768469332088759
+    second: inferno 1_1270
+  - first:
+      213: 7013284470811390081
+    second: inferno 1_1271
+  - first:
+      213: 6609128107348106246
+    second: inferno 1_1272
+  - first:
+      213: -5887935341515453323
+    second: inferno 1_1273
+  - first:
+      213: 3703212099806631993
+    second: inferno 1_1274
+  - first:
+      213: 871564553268251697
+    second: inferno 1_1275
+  - first:
+      213: -3589280541005804192
+    second: inferno 1_1276
+  - first:
+      213: -4859217896754698406
+    second: inferno 1_1277
+  - first:
+      213: 1540874233788556453
+    second: inferno 1_1278
+  - first:
+      213: 8509131491860027665
+    second: inferno 1_1279
+  - first:
+      213: -3664185248803531999
+    second: inferno 1_1280
+  - first:
+      213: 1547303798636760970
+    second: inferno 1_1281
+  - first:
+      213: 6362106234283223367
+    second: inferno 1_1282
+  - first:
+      213: -1768077091585668470
+    second: inferno 1_1283
+  - first:
+      213: -2589532418721490963
+    second: inferno 1_1284
+  - first:
+      213: 3932062410108002392
+    second: inferno 1_1285
+  - first:
+      213: -7301487391003133117
+    second: inferno 1_1286
+  - first:
+      213: -1423533087001666823
+    second: inferno 1_1287
+  - first:
+      213: -8322025539441357701
+    second: inferno 1_1288
+  - first:
+      213: 6784815631640321147
+    second: inferno 1_1289
+  - first:
+      213: -2314043745863577950
+    second: inferno 1_1290
+  - first:
+      213: -7467512996594972558
+    second: inferno 1_1291
+  - first:
+      213: 330144206807628801
+    second: inferno 1_1292
+  - first:
+      213: 1195667662349075306
+    second: inferno 1_1293
+  - first:
+      213: -2165720527125047761
+    second: inferno 1_1294
+  - first:
+      213: 4687339914785641020
+    second: inferno 1_1295
+  - first:
+      213: -1923432612987136529
+    second: inferno 1_1296
+  - first:
+      213: -155117219148438890
+    second: inferno 1_1297
+  - first:
+      213: 2279016609278767194
+    second: inferno 1_1298
+  - first:
+      213: -9136887739784275963
+    second: inferno 1_1299
+  - first:
+      213: 5466259208577674930
+    second: inferno 1_1300
+  - first:
+      213: -6098521812254058093
+    second: inferno 1_1301
+  - first:
+      213: -2169788746909721386
+    second: inferno 1_1302
+  - first:
+      213: -5023652537389196908
+    second: inferno 1_1303
+  - first:
+      213: -750902127042043053
+    second: inferno 1_1304
+  - first:
+      213: -3910102560183023640
+    second: inferno 1_1305
+  - first:
+      213: 4124600626175059572
+    second: inferno 1_1306
+  - first:
+      213: 2557947139414534995
+    second: inferno 1_1307
+  - first:
+      213: 8277643208536247791
+    second: inferno 1_1308
+  - first:
+      213: -7626335678873166045
+    second: inferno 1_1309
+  - first:
+      213: 551917831068898749
+    second: inferno 1_1310
+  - first:
+      213: 8087648629906325141
+    second: inferno 1_1311
+  - first:
+      213: 1559643827033796191
+    second: inferno 1_1312
+  - first:
+      213: -7900748454442021544
+    second: inferno 1_1313
+  - first:
+      213: -4918251256396945579
+    second: inferno 1_1314
+  - first:
+      213: 7955831895970419830
+    second: inferno 1_1315
+  - first:
+      213: -7980415277982009992
+    second: inferno 1_1316
+  - first:
+      213: -4764057285215597076
+    second: inferno 1_1317
+  - first:
+      213: 7329577128453952662
+    second: inferno 1_1318
+  - first:
+      213: 6005555236097095664
+    second: inferno 1_1319
+  - first:
+      213: -4352842787835142977
+    second: inferno 1_1320
+  - first:
+      213: -2271208661376453002
+    second: inferno 1_1321
+  - first:
+      213: -4676420398654866729
+    second: inferno 1_1322
+  - first:
+      213: -7758202295250130743
+    second: inferno 1_1323
+  - first:
+      213: -2535322744683677418
+    second: inferno 1_1324
+  - first:
+      213: 8844705078973301563
+    second: inferno 1_1325
+  - first:
+      213: -1794710466798817118
+    second: inferno 1_1326
+  - first:
+      213: 5397107571750861810
+    second: inferno 1_1327
+  - first:
+      213: -2360509079385802622
+    second: inferno 1_1328
+  - first:
+      213: 8016368441011525487
+    second: inferno 1_1329
+  - first:
+      213: -3607117397371043236
+    second: inferno 1_1330
+  - first:
+      213: -3277943439758180177
+    second: inferno 1_1331
+  - first:
+      213: -571148186212843081
+    second: inferno 1_1332
+  - first:
+      213: -5690705231475829964
+    second: inferno 1_1333
+  - first:
+      213: -2391350944712203400
+    second: inferno 1_1334
+  - first:
+      213: 3140332664547705039
+    second: inferno 1_1335
+  - first:
+      213: 6601456406755423352
+    second: inferno 1_1336
+  - first:
+      213: -4347338672417639121
+    second: inferno 1_1337
+  - first:
+      213: -8476586171668673859
+    second: inferno 1_1338
+  - first:
+      213: 8014031879263133815
+    second: inferno 1_1339
+  - first:
+      213: 5886354635832567318
+    second: inferno 1_1340
+  - first:
+      213: 5563141234897800965
+    second: inferno 1_1341
+  - first:
+      213: 5305944409245725109
+    second: inferno 1_1342
+  - first:
+      213: 2859894716304371123
+    second: inferno 1_1343
+  - first:
+      213: 1588003691107523640
+    second: inferno 1_1344
+  - first:
+      213: -2792280020617870164
+    second: inferno 1_1345
+  - first:
+      213: -6444542158863542734
+    second: inferno 1_1346
+  - first:
+      213: 1594644629107430628
+    second: inferno 1_1347
+  - first:
+      213: -2568512785758000753
+    second: inferno 1_1348
+  - first:
+      213: -3205389186318628383
+    second: inferno 1_1349
+  - first:
+      213: -3020279275088292182
+    second: inferno 1_1350
+  - first:
+      213: -3854633794010235339
+    second: inferno 1_1351
+  - first:
+      213: 974442358705472694
+    second: inferno 1_1352
+  - first:
+      213: -4500068990632673070
+    second: inferno 1_1353
+  - first:
+      213: 1694761848975319150
+    second: inferno 1_1354
+  - first:
+      213: -6785626287284274067
+    second: inferno 1_1355
+  - first:
+      213: 1939486738982106108
+    second: inferno 1_1356
+  - first:
+      213: 784681915072073056
+    second: inferno 1_1357
+  - first:
+      213: -4110793946330134533
+    second: inferno 1_1358
+  - first:
+      213: 9094747033127827499
+    second: inferno 1_1359
+  - first:
+      213: -6454245057338543660
+    second: inferno 1_1360
+  - first:
+      213: 4735903458155848343
+    second: inferno 1_1361
+  - first:
+      213: -8103567854387278333
+    second: inferno 1_1362
+  - first:
+      213: -2120193352244288944
+    second: inferno 1_1363
+  - first:
+      213: -4653834603855512416
+    second: inferno 1_1364
+  - first:
+      213: -5177926188393550285
+    second: inferno 1_1365
+  - first:
+      213: 6816626762395475603
+    second: inferno 1_1366
+  - first:
+      213: 5297828201064562683
+    second: inferno 1_1367
+  - first:
+      213: -4729401681415999686
+    second: inferno 1_1368
+  - first:
+      213: 1811072434964320301
+    second: inferno 1_1369
+  - first:
+      213: 4701448138986305939
+    second: inferno 1_1370
+  - first:
+      213: 7936704078207926680
+    second: inferno 1_1371
+  - first:
+      213: 5001870282824549291
+    second: inferno 1_1372
+  - first:
+      213: -2269662230723952523
+    second: inferno 1_1373
+  - first:
+      213: 8813058365814149392
+    second: inferno 1_1374
+  - first:
+      213: -303393541630007176
+    second: inferno 1_1375
+  - first:
+      213: 1085871203536163584
+    second: inferno 1_1376
+  - first:
+      213: 5730919278469458908
+    second: inferno 1_1377
+  - first:
+      213: 2021620570677111016
+    second: inferno 1_1378
+  - first:
+      213: -1305171720451075653
+    second: inferno 1_1379
+  - first:
+      213: 7273420450918008399
+    second: inferno 1_1380
+  - first:
+      213: -460105727431655898
+    second: inferno 1_1381
+  - first:
+      213: -7876190153784729641
+    second: inferno 1_1382
+  - first:
+      213: -6050170802864826621
+    second: inferno 1_1383
+  - first:
+      213: -4059286250759722784
+    second: inferno 1_1384
+  - first:
+      213: -3015819277962720237
+    second: inferno 1_1385
+  - first:
+      213: 245761026291347521
+    second: inferno 1_1386
+  - first:
+      213: -6127159064924298278
+    second: inferno 1_1387
+  - first:
+      213: 8917462536235245780
+    second: inferno 1_1388
+  - first:
+      213: -5712111198019995774
+    second: inferno 1_1389
+  - first:
+      213: 6396475544346827434
+    second: inferno 1_1390
+  - first:
+      213: 8095936195386510152
+    second: inferno 1_1391
+  - first:
+      213: 1297127107503491507
+    second: inferno 1_1392
+  - first:
+      213: -794076626072703768
+    second: inferno 1_1393
+  - first:
+      213: -5219999216399180105
+    second: inferno 1_1394
+  - first:
+      213: 9036371149521428615
+    second: inferno 1_1395
+  - first:
+      213: -2770227541446225193
+    second: inferno 1_1396
+  - first:
+      213: 6400824661219759074
+    second: inferno 1_1397
+  - first:
+      213: 6962494793665151908
+    second: inferno 1_1398
+  - first:
+      213: 909709827797433926
+    second: inferno 1_1399
+  - first:
+      213: -3622131110633153299
+    second: inferno 1_1400
+  - first:
+      213: -7864070692093589030
+    second: inferno 1_1401
+  - first:
+      213: -4082247102345989448
+    second: inferno 1_1402
+  - first:
+      213: -6178942514646736729
+    second: inferno 1_1403
+  - first:
+      213: -4373972586100816482
+    second: inferno 1_1404
+  - first:
+      213: 55599732426572368
+    second: inferno 1_1405
+  - first:
+      213: -8393645874788354403
+    second: inferno 1_1406
+  - first:
+      213: -2843169906124227452
+    second: inferno 1_1407
+  - first:
+      213: 1443579417529116408
+    second: inferno 1_1408
+  - first:
+      213: 5148316899134365957
+    second: inferno 1_1409
+  - first:
+      213: -5271099775098653046
+    second: inferno 1_1410
+  - first:
+      213: -230571581090533169
+    second: inferno 1_1411
+  - first:
+      213: -9210406545343003631
+    second: inferno 1_1412
+  - first:
+      213: -8854768563535685331
+    second: inferno 1_1413
+  - first:
+      213: -5306378172818237223
+    second: inferno 1_1414
+  - first:
+      213: -8515421621495934976
+    second: inferno 1_1415
+  - first:
+      213: -6493375876105945907
+    second: inferno 1_1416
+  - first:
+      213: -6225788793334969952
+    second: inferno 1_1417
+  - first:
+      213: -1767426365152043294
+    second: inferno 1_1418
+  - first:
+      213: 8333828301044805259
+    second: inferno 1_1419
+  - first:
+      213: 8256842271295835829
+    second: inferno 1_1420
+  - first:
+      213: 3800160099038725685
+    second: inferno 1_1421
+  - first:
+      213: 418530865405354824
+    second: inferno 1_1422
+  - first:
+      213: -1995019006545144967
+    second: inferno 1_1423
+  - first:
+      213: -861596125215139020
+    second: inferno 1_1424
+  - first:
+      213: 1388868963314972768
+    second: inferno 1_1425
+  - first:
+      213: -7684288598241004080
+    second: inferno 1_1426
+  - first:
+      213: -3180559923582388743
+    second: inferno 1_1427
+  - first:
+      213: -1243935177808879188
+    second: inferno 1_1428
+  - first:
+      213: 2189546298327793956
+    second: inferno 1_1429
+  - first:
+      213: 1084977300559716725
+    second: inferno 1_1430
+  - first:
+      213: -2675459343485037138
+    second: inferno 1_1431
+  - first:
+      213: -5214418233167103841
+    second: inferno 1_1432
+  - first:
+      213: 8262456847344332941
+    second: inferno 1_1433
+  - first:
+      213: -1241506862341359869
+    second: inferno 1_1434
+  - first:
+      213: 8648059348984335246
+    second: inferno 1_1435
+  - first:
+      213: -7508700034572523076
+    second: inferno 1_1436
+  - first:
+      213: -8034901624944066458
+    second: inferno 1_1437
+  - first:
+      213: 4327835885059440174
+    second: inferno 1_1438
+  - first:
+      213: 5786046236263352750
+    second: inferno 1_1439
+  - first:
+      213: -4730831510341612580
+    second: inferno 1_1440
+  - first:
+      213: -7607256616321316468
+    second: inferno 1_1441
+  - first:
+      213: 7992699568761270772
+    second: inferno 1_1442
+  - first:
+      213: 5091350824924576247
+    second: inferno 1_1443
+  - first:
+      213: -89423425921764055
+    second: inferno 1_1444
+  - first:
+      213: -5378105153656757040
+    second: inferno 1_1445
+  - first:
+      213: -1032740756447469293
+    second: inferno 1_1446
+  - first:
+      213: 2121249336634537156
+    second: inferno 1_1447
+  - first:
+      213: -1840321878044027440
+    second: inferno 1_1448
+  - first:
+      213: 1301740294781180527
+    second: inferno 1_1449
+  - first:
+      213: 2016092522964111653
+    second: inferno 1_1450
+  - first:
+      213: 6424187990652996772
+    second: inferno 1_1451
+  - first:
+      213: -7149411817850916648
+    second: inferno 1_1452
+  - first:
+      213: -1252848380611663752
+    second: inferno 1_1453
+  - first:
+      213: -7025997781081944090
+    second: inferno 1_1454
+  - first:
+      213: -1454093503157683283
+    second: inferno 1_1455
+  - first:
+      213: -7710248924309449201
+    second: inferno 1_1456
+  - first:
+      213: 5486472418499120623
+    second: inferno 1_1457
+  - first:
+      213: -4483138259352933798
+    second: inferno 1_1458
+  - first:
+      213: 2383564339795164077
+    second: inferno 1_1459
+  - first:
+      213: -7219829107799650395
+    second: inferno 1_1460
+  - first:
+      213: 8882903634931115641
+    second: inferno 1_1461
+  - first:
+      213: -5241724052243868814
+    second: inferno 1_1462
+  - first:
+      213: 7328875516636566870
+    second: inferno 1_1463
+  - first:
+      213: -1263436687505490633
+    second: inferno 1_1464
+  - first:
+      213: -7431984197213606617
+    second: inferno 1_1465
+  - first:
+      213: 8191409615716518136
+    second: inferno 1_1466
+  - first:
+      213: -1117055156778021347
+    second: inferno 1_1467
+  - first:
+      213: -820080197243922374
+    second: inferno 1_1468
+  - first:
+      213: -216442449844631487
+    second: inferno 1_1469
+  - first:
+      213: -4699602758230449825
+    second: inferno 1_1470
+  - first:
+      213: 6609821212552132917
+    second: inferno 1_1471
+  - first:
+      213: 5916740219432971418
+    second: inferno 1_1472
+  - first:
+      213: 4160633917118797025
+    second: inferno 1_1473
+  - first:
+      213: -6120630410947281108
+    second: inferno 1_1474
+  - first:
+      213: -7962026824653591968
+    second: inferno 1_1475
+  - first:
+      213: -5689201993851851802
+    second: inferno 1_1476
+  - first:
+      213: -6946950396463191726
+    second: inferno 1_1477
+  - first:
+      213: 2048125461348856357
+    second: inferno 1_1478
+  - first:
+      213: 226069933945157587
+    second: inferno 1_1479
+  - first:
+      213: -7963439354505428775
+    second: inferno 1_1480
+  - first:
+      213: -301830388526739414
+    second: inferno 1_1481
+  - first:
+      213: 7898203458637828426
+    second: inferno 1_1482
+  - first:
+      213: -3427915508791934866
+    second: inferno 1_1483
+  - first:
+      213: 5199552197386849849
+    second: inferno 1_1484
+  - first:
+      213: -4160852658536468989
+    second: inferno 1_1485
+  - first:
+      213: 4824680443358120173
+    second: inferno 1_1486
+  - first:
+      213: -5692444332342915794
+    second: inferno 1_1487
+  - first:
+      213: -8180605338912717911
+    second: inferno 1_1488
+  - first:
+      213: 1109529061069481652
+    second: inferno 1_1489
+  - first:
+      213: -8677140307809556421
+    second: inferno 1_1490
+  - first:
+      213: -7836642668186281253
+    second: inferno 1_1491
+  - first:
+      213: -1297752015398005184
+    second: inferno 1_1492
+  - first:
+      213: 2374425299194531792
+    second: inferno 1_1493
+  - first:
+      213: 4005085655314627893
+    second: inferno 1_1494
+  - first:
+      213: -3920807970532878446
+    second: inferno 1_1495
+  - first:
+      213: -5690277245734237587
+    second: inferno 1_1496
+  - first:
+      213: 5041486672232680653
+    second: inferno 1_1497
+  - first:
+      213: -6011802706919929396
+    second: inferno 1_1498
+  - first:
+      213: 4709269012049646964
+    second: inferno 1_1499
+  - first:
+      213: 2690231805049274395
+    second: inferno 1_1500
+  - first:
+      213: -1769986512571083219
+    second: inferno 1_1501
+  - first:
+      213: 6045005287436527936
+    second: inferno 1_1502
+  - first:
+      213: -2243154170329028830
+    second: inferno 1_1503
+  - first:
+      213: -2789424497314547719
+    second: inferno 1_1504
+  - first:
+      213: 8945138314939906731
+    second: inferno 1_1505
+  - first:
+      213: 6075879236616836724
+    second: inferno 1_1506
+  - first:
+      213: -6452975384262680117
+    second: inferno 1_1507
+  - first:
+      213: 6290529946302643153
+    second: inferno 1_1508
+  - first:
+      213: 3046185391611612273
+    second: inferno 1_1509
+  - first:
+      213: -1374025438092242906
+    second: inferno 1_1510
+  - first:
+      213: 7023097336583277905
+    second: inferno 1_1511
+  - first:
+      213: -5651070597477387143
+    second: inferno 1_1512
+  - first:
+      213: 3423682021914731469
+    second: inferno 1_1513
+  - first:
+      213: -4275615749923295340
+    second: inferno 1_1514
+  - first:
+      213: -1555337353891660023
+    second: inferno 1_1515
+  - first:
+      213: 1814440452006863506
+    second: inferno 1_1516
+  - first:
+      213: -8585677450439122330
+    second: inferno 1_1517
+  - first:
+      213: -2162669788509861147
+    second: inferno 1_1518
+  - first:
+      213: -9114228836890666540
+    second: inferno 1_1519
+  - first:
+      213: -3009613686244109599
+    second: inferno 1_1520
+  - first:
+      213: -7058563333218329936
+    second: inferno 1_1521
+  - first:
+      213: 3709933498791703869
+    second: inferno 1_1522
+  - first:
+      213: 8168548182773262123
+    second: inferno 1_1523
+  - first:
+      213: -2640876803302641735
+    second: inferno 1_1524
+  - first:
+      213: 1999053867156687663
+    second: inferno 1_1525
+  - first:
+      213: 6594256982819734542
+    second: inferno 1_1526
+  - first:
+      213: -2241866320160892173
+    second: inferno 1_1527
+  - first:
+      213: -1536059569534251912
+    second: inferno 1_1528
+  - first:
+      213: 671626838672815493
+    second: inferno 1_1529
+  - first:
+      213: 3503659700156044093
+    second: inferno 1_1530
+  - first:
+      213: 4684218531325136977
+    second: inferno 1_1531
+  - first:
+      213: -409795548823437789
+    second: inferno 1_1532
+  - first:
+      213: -4941577382352881322
+    second: inferno 1_1533
+  - first:
+      213: -4965902958921125717
+    second: inferno 1_1534
+  - first:
+      213: -5731891349907681530
+    second: inferno 1_1535
+  - first:
+      213: -3057383142120653477
+    second: inferno 1_1536
+  - first:
+      213: 2370801386201935712
+    second: inferno 1_1537
+  - first:
+      213: 3457122152618651199
+    second: inferno 1_1538
+  - first:
+      213: 5019099047940461327
+    second: inferno 1_1539
+  - first:
+      213: 6979416853966820594
+    second: inferno 1_1540
+  - first:
+      213: 7681195510761821809
+    second: inferno 1_1541
+  - first:
+      213: 6893692877471981629
+    second: inferno 1_1542
+  - first:
+      213: -2692580668763197445
+    second: inferno 1_1543
+  - first:
+      213: 2702084588692145328
+    second: inferno 1_1544
+  - first:
+      213: -3141631739428225041
+    second: inferno 1_1545
+  - first:
+      213: -2805462928029433013
+    second: inferno 1_1546
+  - first:
+      213: -3710892847888367013
+    second: inferno 1_1547
+  - first:
+      213: 1308307335055707113
+    second: inferno 1_1548
+  - first:
+      213: 3155404923301293333
+    second: inferno 1_1549
+  - first:
+      213: 4041987130821946070
+    second: inferno 1_1550
+  - first:
+      213: 8529192208454797945
+    second: inferno 1_1551
+  - first:
+      213: 3655582437789778868
+    second: inferno 1_1552
+  - first:
+      213: 2663653186790800667
+    second: inferno 1_1553
+  - first:
+      213: 4924061133946767423
+    second: inferno 1_1554
+  - first:
+      213: 1254571775794285543
+    second: inferno 1_1555
+  - first:
+      213: -2207340967716868822
+    second: inferno 1_1556
+  - first:
+      213: -653384780728605339
+    second: inferno 1_1557
+  - first:
+      213: 6409746462666141771
+    second: inferno 1_1558
+  - first:
+      213: 2109160223181284356
+    second: inferno 1_1559
+  - first:
+      213: 1706837700518068021
+    second: inferno 1_1560
+  - first:
+      213: 3999963835654125048
+    second: inferno 1_1561
+  - first:
+      213: -5722039247069765988
+    second: inferno 1_1562
+  - first:
+      213: 6809956027046385066
+    second: inferno 1_1563
+  - first:
+      213: -3167876721976092245
+    second: inferno 1_1564
+  - first:
+      213: -4897996813383458246
+    second: inferno 1_1565
+  - first:
+      213: 7009360609670282399
+    second: inferno 1_1566
+  - first:
+      213: 6874475098415206432
+    second: inferno 1_1567
+  - first:
+      213: 5368578278575190594
+    second: inferno 1_1568
+  - first:
+      213: 95074121139879451
+    second: inferno 1_1569
+  - first:
+      213: 3242886820373340523
+    second: inferno 1_1570
+  - first:
+      213: -2119004876673018238
+    second: inferno 1_1571
+  - first:
+      213: 2457220622171894893
+    second: inferno 1_1572
+  - first:
+      213: 1090220399561034569
+    second: inferno 1_1573
+  - first:
+      213: 3726245445781812067
+    second: inferno 1_1574
+  - first:
+      213: 7386979559546027456
+    second: inferno 1_1575
+  - first:
+      213: 7507027524240801845
+    second: inferno 1_1576
+  - first:
+      213: 4244268263776515226
+    second: inferno 1_1577
+  - first:
+      213: -3008085997339305605
+    second: inferno 1_1578
+  - first:
+      213: -3412136204077797329
+    second: inferno 1_1579
+  - first:
+      213: 285176131528817560
+    second: inferno 1_1580
+  - first:
+      213: 5454084026472244171
+    second: inferno 1_1581
+  - first:
+      213: -6413876576624105511
+    second: inferno 1_1582
+  - first:
+      213: -1012653807881445777
+    second: inferno 1_1583
+  - first:
+      213: -7060430147914320939
+    second: inferno 1_1584
+  - first:
+      213: 737420332227756679
+    second: inferno 1_1585
+  - first:
+      213: 2154282155613511627
+    second: inferno 1_1586
+  - first:
+      213: -2274842120701516517
+    second: inferno 1_1587
+  - first:
+      213: -2614194074968929656
+    second: inferno 1_1588
+  - first:
+      213: -8298328309388729941
+    second: inferno 1_1589
+  - first:
+      213: 2215458205315265861
+    second: inferno 1_1590
+  - first:
+      213: -796629286682430641
+    second: inferno 1_1591
+  - first:
+      213: -5197653093816866522
+    second: inferno 1_1592
+  - first:
+      213: 6866048226631241987
+    second: inferno 1_1593
+  - first:
+      213: -344789894453114731
+    second: inferno 1_1594
+  - first:
+      213: -6245241121527280390
+    second: inferno 1_1595
+  - first:
+      213: 8787287103252936414
+    second: inferno 1_1596
+  - first:
+      213: 5890935792089489722
+    second: inferno 1_1597
+  - first:
+      213: -5527900853622832615
+    second: inferno 1_1598
+  - first:
+      213: 6601384242879843234
+    second: inferno 1_1599
+  - first:
+      213: 603281295965670620
+    second: inferno 1_1600
+  - first:
+      213: 6325891390018322531
+    second: inferno 1_1601
+  - first:
+      213: -4653582199885964130
+    second: inferno 1_1602
+  - first:
+      213: -4975286491969306342
+    second: inferno 1_1603
+  - first:
+      213: -5385562858128630476
+    second: inferno 1_1604
+  - first:
+      213: 3564720305660379158
+    second: inferno 1_1605
+  - first:
+      213: -772203169968818872
+    second: inferno 1_1606
+  - first:
+      213: -3044874556080649027
+    second: inferno 1_1607
+  - first:
+      213: -5885054523048560015
+    second: inferno 1_1608
+  - first:
+      213: 9142822090042921257
+    second: inferno 1_1609
+  - first:
+      213: 1335463070458587406
+    second: inferno 1_1610
+  - first:
+      213: -7964977539077408586
+    second: inferno 1_1611
+  - first:
+      213: 8613235486293922219
+    second: inferno 1_1612
+  - first:
+      213: 3403040706826686444
+    second: inferno 1_1613
+  - first:
+      213: 241152064934163032
+    second: inferno 1_1614
+  - first:
+      213: 6722130624531625450
+    second: inferno 1_1615
+  - first:
+      213: 137510573200875020
+    second: inferno 1_1616
+  - first:
+      213: 6868507916882904837
+    second: inferno 1_1617
+  - first:
+      213: 2502462102978780665
+    second: inferno 1_1618
+  - first:
+      213: -3470403126378793098
+    second: inferno 1_1619
+  - first:
+      213: -431646802204783971
+    second: inferno 1_1620
+  - first:
+      213: 7588315907116945144
+    second: inferno 1_1621
+  - first:
+      213: -3120529616516945516
+    second: inferno 1_1622
+  - first:
+      213: 3162310724121193600
+    second: inferno 1_1623
+  - first:
+      213: -8318478921009611513
+    second: inferno 1_1624
+  - first:
+      213: 6139028798568102294
+    second: inferno 1_1625
+  - first:
+      213: 7961452303456133034
+    second: inferno 1_1626
+  - first:
+      213: 4344989681400176660
+    second: inferno 1_1627
+  - first:
+      213: 3313551835752308051
+    second: inferno 1_1628
+  - first:
+      213: -3701077314086543163
+    second: inferno 1_1629
+  - first:
+      213: -4617174145596316505
+    second: inferno 1_1630
+  - first:
+      213: -885545952887543771
+    second: inferno 1_1631
+  - first:
+      213: -8123711007127572153
+    second: inferno 1_1632
+  - first:
+      213: 7476369621524050559
+    second: inferno 1_1633
+  - first:
+      213: -7692144872593608443
+    second: inferno 1_1634
+  - first:
+      213: -901139163251254142
+    second: inferno 1_1635
+  - first:
+      213: 648792631866466267
+    second: inferno 1_1636
+  - first:
+      213: -6755008728600841055
+    second: inferno 1_1637
+  - first:
+      213: 1599755911348002273
+    second: inferno 1_1638
+  - first:
+      213: -1546007314310295831
+    second: inferno 1_1639
+  - first:
+      213: -1134495733147825662
+    second: inferno 1_1640
+  - first:
+      213: -8931095875205625437
+    second: inferno 1_1641
+  - first:
+      213: -6525377259757267837
+    second: inferno 1_1642
+  - first:
+      213: 3462970322021990998
+    second: inferno 1_1643
+  - first:
+      213: 1872385929712238798
+    second: inferno 1_1644
+  - first:
+      213: -5920162458133402941
+    second: inferno 1_1645
+  - first:
+      213: 4951894572965158925
+    second: inferno 1_1646
+  - first:
+      213: -2790574297682091787
+    second: inferno 1_1647
+  - first:
+      213: -7513481602950606699
+    second: inferno 1_1648
+  - first:
+      213: -7214098565415643889
+    second: inferno 1_1649
+  - first:
+      213: -5512063980145848600
+    second: inferno 1_1650
+  - first:
+      213: 5038269214135280879
+    second: inferno 1_1651
+  - first:
+      213: -4475406982052294719
+    second: inferno 1_1652
+  - first:
+      213: -4013406091865979132
+    second: inferno 1_1653
+  - first:
+      213: 7714706282488152255
+    second: inferno 1_1654
+  - first:
+      213: 3496311505539104239
+    second: inferno 1_1655
+  - first:
+      213: -5557370741464757995
+    second: inferno 1_1656
+  - first:
+      213: -5758469460336125834
+    second: inferno 1_1657
+  - first:
+      213: -2944067642097406390
+    second: inferno 1_1658
+  - first:
+      213: 1920781248871928721
+    second: inferno 1_1659
+  - first:
+      213: 2720911811468973958
+    second: inferno 1_1660
+  - first:
+      213: 2627547778125195422
+    second: inferno 1_1661
+  - first:
+      213: -8870517056893065640
+    second: inferno 1_1662
+  - first:
+      213: 5308458830876677374
+    second: inferno 1_1663
+  - first:
+      213: -4071902492185356406
+    second: inferno 1_1664
+  - first:
+      213: -994676194731203724
+    second: inferno 1_1665
+  - first:
+      213: -1861334570805467824
+    second: inferno 1_1666
+  - first:
+      213: 6950916829227718631
+    second: inferno 1_1667
+  - first:
+      213: 4336836485436343583
+    second: inferno 1_1668
+  - first:
+      213: -4629190275656215625
+    second: inferno 1_1669
+  - first:
+      213: -8195439913415568621
+    second: inferno 1_1670
+  - first:
+      213: -6904849232515945342
+    second: inferno 1_1671
+  - first:
+      213: 4005800122599404416
+    second: inferno 1_1672
+  - first:
+      213: -5809374724344817093
+    second: inferno 1_1673
+  - first:
+      213: 424931505482165660
+    second: inferno 1_1674
+  - first:
+      213: -4610107269386153839
+    second: inferno 1_1675
+  - first:
+      213: 6788606036681483017
+    second: inferno 1_1676
+  - first:
+      213: -7356844170128885113
+    second: inferno 1_1677
+  - first:
+      213: -7080578918537135589
+    second: inferno 1_1678
+  - first:
+      213: -3033116772029377882
+    second: inferno 1_1679
+  - first:
+      213: 6123678713441629318
+    second: inferno 1_1680
+  - first:
+      213: -347106318431364848
+    second: inferno 1_1681
+  - first:
+      213: 6774430445972491960
+    second: inferno 1_1682
+  - first:
+      213: 4677712118385671072
+    second: inferno 1_1683
+  - first:
+      213: -9159616669249108274
+    second: inferno 1_1684
+  - first:
+      213: 1621985438631219824
+    second: inferno 1_1685
+  - first:
+      213: 7390495858151633668
+    second: inferno 1_1686
+  - first:
+      213: 2484723039246931410
+    second: inferno 1_1687
+  - first:
+      213: -2717649406384477397
+    second: inferno 1_1688
+  - first:
+      213: -5502627317114058185
+    second: inferno 1_1689
+  - first:
+      213: 6565488042128020821
+    second: inferno 1_1690
+  - first:
+      213: -8185009830574974660
+    second: inferno 1_1691
+  - first:
+      213: -3757812164295634221
+    second: inferno 1_1692
+  - first:
+      213: -3566838813914977907
+    second: inferno 1_1693
+  - first:
+      213: 9014324403912862739
+    second: inferno 1_1694
+  - first:
+      213: 5373778002829908452
+    second: inferno 1_1695
+  - first:
+      213: 6124764376620033841
+    second: inferno 1_1696
+  - first:
+      213: -7884850620092881316
+    second: inferno 1_1697
+  - first:
+      213: 7321394757623187830
+    second: inferno 1_1698
+  - first:
+      213: -5594316655259280996
+    second: inferno 1_1699
+  - first:
+      213: 968069197418538907
+    second: inferno 1_1700
+  - first:
+      213: 4887600325271383707
+    second: inferno 1_1701
+  - first:
+      213: 2963809101989265239
+    second: inferno 1_1702
+  - first:
+      213: -6199003268660360636
+    second: inferno 1_1703
+  - first:
+      213: 7907228476741247227
+    second: inferno 1_1704
+  - first:
+      213: 8967342683503253885
+    second: inferno 1_1705
+  - first:
+      213: -5121858301436048302
+    second: inferno 1_1706
+  - first:
+      213: -6662105780637022731
+    second: inferno 1_1707
+  - first:
+      213: -3701466217301145816
+    second: inferno 1_1708
+  - first:
+      213: 5650289815559631604
+    second: inferno 1_1709
+  - first:
+      213: -4296629110921811450
+    second: inferno 1_1710
+  - first:
+      213: -1349599412804761334
+    second: inferno 1_1711
+  - first:
+      213: 5838615700270668396
+    second: inferno 1_1712
+  - first:
+      213: 2172574947492506058
+    second: inferno 1_1713
+  - first:
+      213: -8275122372066793694
+    second: inferno 1_1714
+  - first:
+      213: 4538060429083362552
+    second: inferno 1_1715
+  - first:
+      213: -7574825654042372819
+    second: inferno 1_1716
+  - first:
+      213: -8392720580260271681
+    second: inferno 1_1717
+  - first:
+      213: -6978115062018481572
+    second: inferno 1_1718
+  - first:
+      213: 1942909645649589607
+    second: inferno 1_1719
+  - first:
+      213: -2001327456140956080
+    second: inferno 1_1720
+  - first:
+      213: -4121091537543887834
+    second: inferno 1_1721
+  - first:
+      213: -857677963762900378
+    second: inferno 1_1722
+  - first:
+      213: 8311702076926779572
+    second: inferno 1_1723
+  - first:
+      213: -6435498841890698457
+    second: inferno 1_1724
+  - first:
+      213: -388894620609913589
+    second: inferno 1_1725
+  - first:
+      213: -7934164561709388271
+    second: inferno 1_1726
+  - first:
+      213: 3551269176209646086
+    second: inferno 1_1727
+  - first:
+      213: -305935368753879808
+    second: inferno 1_1728
+  - first:
+      213: -1308186100401500240
+    second: inferno 1_1729
+  - first:
+      213: -8972048934695057795
+    second: inferno 1_1730
+  - first:
+      213: -7269724480230842298
+    second: inferno 1_1731
+  - first:
+      213: -2817900538006495194
+    second: inferno 1_1732
+  - first:
+      213: -2218827260761524958
+    second: inferno 1_1733
+  - first:
+      213: -6637388482271011856
+    second: inferno 1_1734
+  - first:
+      213: -4645204083932514450
+    second: inferno 1_1735
+  - first:
+      213: -5933721036627241273
+    second: inferno 1_1736
+  - first:
+      213: -1273662961014225706
+    second: inferno 1_1737
+  - first:
+      213: 2102794295839355456
+    second: inferno 1_1738
+  - first:
+      213: 473489825892806084
+    second: inferno 1_1739
+  - first:
+      213: -1764014396400549102
+    second: inferno 1_1740
+  - first:
+      213: -354589337010955258
+    second: inferno 1_1741
+  - first:
+      213: 8442675335786717026
+    second: inferno 1_1742
+  - first:
+      213: -6616753865391057358
+    second: inferno 1_1743
+  - first:
+      213: 5462090284184754455
+    second: inferno 1_1744
+  - first:
+      213: -5318065939797253667
+    second: inferno 1_1745
+  - first:
+      213: -5129559454699734542
+    second: inferno 1_1746
+  - first:
+      213: 4183227713057919300
+    second: inferno 1_1747
+  - first:
+      213: 7885967012944414438
+    second: inferno 1_1748
+  - first:
+      213: 8868898448550608453
+    second: inferno 1_1749
+  - first:
+      213: 5377065177544993718
+    second: inferno 1_1750
+  - first:
+      213: 5374473730145059996
+    second: inferno 1_1751
+  - first:
+      213: 3242590664318817550
+    second: inferno 1_1752
+  - first:
+      213: 4775816910672491064
+    second: inferno 1_1753
+  - first:
+      213: -9118138704512375689
+    second: inferno 1_1754
+  - first:
+      213: 2502745495671322611
+    second: inferno 1_1755
+  - first:
+      213: -5338502244164118579
+    second: inferno 1_1756
+  - first:
+      213: -5676154964638774266
+    second: inferno 1_1757
+  - first:
+      213: -4110278831231721982
+    second: inferno 1_1758
+  - first:
+      213: -3734648160908076525
+    second: inferno 1_1759
+  - first:
+      213: -577688525975337581
+    second: inferno 1_1760
+  - first:
+      213: 1164788464567544163
+    second: inferno 1_1761
+  - first:
+      213: 8469953885096659421
+    second: inferno 1_1762
+  - first:
+      213: 4308545393210306426
+    second: inferno 1_1763
+  - first:
+      213: 7671745526078753777
+    second: inferno 1_1764
+  - first:
+      213: -1507508293893129728
+    second: inferno 1_1765
+  - first:
+      213: -8665989421572781500
+    second: inferno 1_1766
+  - first:
+      213: -659760040661630739
+    second: inferno 1_1767
+  - first:
+      213: 8910362056696822247
+    second: inferno 1_1768
+  - first:
+      213: -1109202033051451556
+    second: inferno 1_1769
+  - first:
+      213: 2420210099187957254
+    second: inferno 1_1770
+  - first:
+      213: 5364303070613411013
+    second: inferno 1_1771
+  - first:
+      213: 3629230370383777076
+    second: inferno 1_1772
+  - first:
+      213: -298278741985319268
+    second: inferno 1_1773
+  - first:
+      213: 6936623841168489310
+    second: inferno 1_1774
+  - first:
+      213: 6765000790150485231
+    second: inferno 1_1775
+  - first:
+      213: -885919022731863126
+    second: inferno 1_1776
+  - first:
+      213: 4480028051665375644
+    second: inferno 1_1777
+  - first:
+      213: -7245910497018219039
+    second: inferno 1_1778
+  - first:
+      213: 1522925032983258626
+    second: inferno 1_1779
+  - first:
+      213: -2033724231738878598
+    second: inferno 1_1780
+  - first:
+      213: -1820608860379142711
+    second: inferno 1_1781
+  - first:
+      213: -4707248028537835889
+    second: inferno 1_1782
+  - first:
+      213: -1088700881241333179
+    second: inferno 1_1783
+  - first:
+      213: -6303967822986599588
+    second: inferno 1_1784
+  - first:
+      213: -968739395612728854
+    second: inferno 1_1785
+  - first:
+      213: -8331673172629053244
+    second: inferno 1_1786
+  - first:
+      213: 6716902709864114638
+    second: inferno 1_1787
+  - first:
+      213: 8279837784619900590
+    second: inferno 1_1788
+  - first:
+      213: -5479602210857173076
+    second: inferno 1_1789
+  - first:
+      213: 6932934269592482916
+    second: inferno 1_1790
+  - first:
+      213: 608447870143200540
+    second: inferno 1_1791
+  - first:
+      213: -5814498797097725640
+    second: inferno 1_1792
+  - first:
+      213: 3692210030233823280
+    second: inferno 1_1793
+  - first:
+      213: -6893452686473280661
+    second: inferno 1_1794
+  - first:
+      213: 5963029069661080177
+    second: inferno 1_1795
+  - first:
+      213: -1184618891315830443
+    second: inferno 1_1796
+  - first:
+      213: -5891004631586644169
+    second: inferno 1_1797
+  - first:
+      213: 2614680275417225636
+    second: inferno 1_1798
+  - first:
+      213: -2658048886810514257
+    second: inferno 1_1799
+  - first:
+      213: 7157202792177538778
+    second: inferno 1_1800
+  - first:
+      213: -8191439823549840842
+    second: inferno 1_1801
+  - first:
+      213: -5024575181953393808
+    second: inferno 1_1802
+  - first:
+      213: -1556953898623642660
+    second: inferno 1_1803
+  - first:
+      213: -5389222577655781144
+    second: inferno 1_1804
+  - first:
+      213: -5105217054721585483
+    second: inferno 1_1805
+  - first:
+      213: -6945249512318860008
+    second: inferno 1_1806
+  - first:
+      213: 2956475379721280735
+    second: inferno 1_1807
+  - first:
+      213: 5398958267982730845
+    second: inferno 1_1808
+  - first:
+      213: -1160111974680347738
+    second: inferno 1_1809
+  - first:
+      213: 119011075220852329
+    second: inferno 1_1810
+  - first:
+      213: 9131612588648873896
+    second: inferno 1_1811
+  - first:
+      213: -82141473088744096
+    second: inferno 1_1812
+  - first:
+      213: 5380227986409135377
+    second: inferno 1_1813
+  - first:
+      213: -7115983857784198926
+    second: inferno 1_1814
+  - first:
+      213: -2225703171104293060
+    second: inferno 1_1815
+  - first:
+      213: -8075674008101697991
+    second: inferno 1_1816
+  - first:
+      213: -855361029608199421
+    second: inferno 1_1817
+  - first:
+      213: 729799472349024101
+    second: inferno 1_1818
+  - first:
+      213: 5898775567394654045
+    second: inferno 1_1819
+  - first:
+      213: -4162576877427869692
+    second: inferno 1_1820
+  - first:
+      213: -6960955940522287119
+    second: inferno 1_1821
+  - first:
+      213: -7781086409789479933
+    second: inferno 1_1822
+  - first:
+      213: 1771071743560463318
+    second: inferno 1_1823
+  - first:
+      213: -1800474692663247286
+    second: inferno 1_1824
+  - first:
+      213: -1795093068998704515
+    second: inferno 1_1825
+  - first:
+      213: 6170972655397823677
+    second: inferno 1_1826
+  - first:
+      213: 922577838169481176
+    second: inferno 1_1827
+  - first:
+      213: -3668240167678778029
+    second: inferno 1_1828
+  - first:
+      213: 2694753828895827720
+    second: inferno 1_1829
+  - first:
+      213: 8158373028387816468
+    second: inferno 1_1830
+  - first:
+      213: -2489351938622726149
+    second: inferno 1_1831
+  - first:
+      213: 1703539790471302658
+    second: inferno 1_1832
+  - first:
+      213: -3844843885198741294
+    second: inferno 1_1833
+  - first:
+      213: -5001604524008294855
+    second: inferno 1_1834
+  - first:
+      213: 3880925137999644500
+    second: inferno 1_1835
+  - first:
+      213: -7986685540504058498
+    second: inferno 1_1836
+  - first:
+      213: -8300114070216681393
+    second: inferno 1_1837
+  - first:
+      213: 1876182301315856114
+    second: inferno 1_1838
+  - first:
+      213: -5248526989511928273
+    second: inferno 1_1839
+  - first:
+      213: 1059652192302171516
+    second: inferno 1_1840
+  - first:
+      213: -8552117636013542659
+    second: inferno 1_1841
+  - first:
+      213: -8400583316768916092
+    second: inferno 1_1842
+  - first:
+      213: 5909150750425035045
+    second: inferno 1_1843
+  - first:
+      213: 1482388699193129454
+    second: inferno 1_1844
+  - first:
+      213: 4020705941908261436
+    second: inferno 1_1845
+  - first:
+      213: -5663716301125860397
+    second: inferno 1_1846
+  - first:
+      213: 820815510695723100
+    second: inferno 1_1847
+  - first:
+      213: -1775570075588948314
+    second: inferno 1_1848
+  - first:
+      213: -7436809901401757526
+    second: inferno 1_1849
+  - first:
+      213: 7354280690519414360
+    second: inferno 1_1850
+  - first:
+      213: -577835621479889255
+    second: inferno 1_1851
+  - first:
+      213: -4832340289170909277
+    second: inferno 1_1852
+  - first:
+      213: -5076273707064884494
+    second: inferno 1_1853
+  - first:
+      213: 4517429615438161633
+    second: inferno 1_1854
+  - first:
+      213: 8807698763914238521
+    second: inferno 1_1855
+  - first:
+      213: -750064614463195128
+    second: inferno 1_1856
+  - first:
+      213: -1127137271239837052
+    second: inferno 1_1857
+  - first:
+      213: 869032600706858739
+    second: inferno 1_1858
+  - first:
+      213: -437972317961999880
+    second: inferno 1_1859
+  - first:
+      213: -468462829505586870
+    second: inferno 1_1860
+  - first:
+      213: -880238251022445541
+    second: inferno 1_1861
+  - first:
+      213: -2755138973365078449
+    second: inferno 1_1862
+  - first:
+      213: -8141915590656031150
+    second: inferno 1_1863
+  - first:
+      213: 6855249369707274011
+    second: inferno 1_1864
+  - first:
+      213: 255604363731437973
+    second: inferno 1_1865
+  - first:
+      213: 5229708889266247774
+    second: inferno 1_1866
+  - first:
+      213: -3102718025178112664
+    second: inferno 1_1867
+  - first:
+      213: -945553446089770170
+    second: inferno 1_1868
+  - first:
+      213: -4013581385211184034
+    second: inferno 1_1869
+  - first:
+      213: 6781076064314619943
+    second: inferno 1_1870
+  - first:
+      213: 7066320131825116268
+    second: inferno 1_1871
+  - first:
+      213: 8519197696895381932
+    second: inferno 1_1872
+  - first:
+      213: -8524681460491351117
+    second: inferno 1_1873
+  - first:
+      213: -6833164098306061990
+    second: inferno 1_1874
+  - first:
+      213: -3966366898106652639
+    second: inferno 1_1875
+  - first:
+      213: -5314560564722945562
+    second: inferno 1_1876
+  - first:
+      213: -3157953274377757174
+    second: inferno 1_1877
+  - first:
+      213: -7228569655395085719
+    second: inferno 1_1878
+  - first:
+      213: 4072866248072089061
+    second: inferno 1_1879
+  - first:
+      213: 5543300368677956176
+    second: inferno 1_1880
+  - first:
+      213: -5138872361665468763
+    second: inferno 1_1881
+  - first:
+      213: 5357700822859018137
+    second: inferno 1_1882
+  - first:
+      213: 2563500400644555970
+    second: inferno 1_1883
+  - first:
+      213: 7508166251427389996
+    second: inferno 1_1884
+  - first:
+      213: -4811136311602227387
+    second: inferno 1_1885
+  - first:
+      213: 8826769345937806079
+    second: inferno 1_1886
+  - first:
+      213: 6564090307569557241
+    second: inferno 1_1887
+  - first:
+      213: 2691173999336058353
+    second: inferno 1_1888
+  - first:
+      213: 7381756572230809902
+    second: inferno 1_1889
+  - first:
+      213: 4178337888334159230
+    second: inferno 1_1890
+  - first:
+      213: -1222167309977142565
+    second: inferno 1_1891
+  - first:
+      213: 7193278221329321543
+    second: inferno 1_1892
+  - first:
+      213: 2585497419728560393
+    second: inferno 1_1893
+  - first:
+      213: -7764028450160015580
+    second: inferno 1_1894
+  - first:
+      213: 5026445581143789749
+    second: inferno 1_1895
+  - first:
+      213: -8778919399568220161
+    second: inferno 1_1896
+  - first:
+      213: 2587895183377378022
+    second: inferno 1_1897
+  - first:
+      213: -4828606660919041492
+    second: inferno 1_1898
+  - first:
+      213: -9076354571081184094
+    second: inferno 1_1899
+  - first:
+      213: 3834384672487381612
+    second: inferno 1_1900
+  - first:
+      213: 6618855963680962188
+    second: inferno 1_1901
+  - first:
+      213: -8996854069439300004
+    second: inferno 1_1902
+  - first:
+      213: -5469444460007854756
+    second: inferno 1_1903
+  - first:
+      213: -7003530662725540343
+    second: inferno 1_1904
+  - first:
+      213: -7287805616985967215
+    second: inferno 1_1905
+  - first:
+      213: 3860176610861666047
+    second: inferno 1_1906
+  - first:
+      213: -1717700056464951364
+    second: inferno 1_1907
+  - first:
+      213: 2825532661887102132
+    second: inferno 1_1908
+  - first:
+      213: 5627045113383347225
+    second: inferno 1_1909
+  - first:
+      213: 5892969418125369952
+    second: inferno 1_1910
+  - first:
+      213: -3791497032483333868
+    second: inferno 1_1911
+  - first:
+      213: -8698923380989027322
+    second: inferno 1_1912
+  - first:
+      213: 1987253221112514557
+    second: inferno 1_1913
+  - first:
+      213: 2777286540817015217
+    second: inferno 1_1914
+  - first:
+      213: 9196613380481723503
+    second: inferno 1_1915
+  - first:
+      213: -824699710163065429
+    second: inferno 1_1916
+  - first:
+      213: 107021082318852828
+    second: inferno 1_1917
+  - first:
+      213: 3878635688876486299
+    second: inferno 1_1918
+  - first:
+      213: -2097930403483422640
+    second: inferno 1_1919
+  - first:
+      213: 7631799689975356663
+    second: inferno 1_1920
+  - first:
+      213: -2516447210645377712
+    second: inferno 1_1921
+  - first:
+      213: 6538335083248440250
+    second: inferno 1_1922
+  - first:
+      213: 5087344490739123651
+    second: inferno 1_1923
+  - first:
+      213: 8921517776430481457
+    second: inferno 1_1924
+  - first:
+      213: -2416390901164171917
+    second: inferno 1_1925
+  - first:
+      213: -8426143191150545457
+    second: inferno 1_1926
+  - first:
+      213: -4207904500070570313
+    second: inferno 1_1927
+  - first:
+      213: 6623624013641546856
+    second: inferno 1_1928
+  - first:
+      213: 4333850050101377139
+    second: inferno 1_1929
+  - first:
+      213: 2310516775012732812
+    second: inferno 1_1930
+  - first:
+      213: 1678758156296201454
+    second: inferno 1_1931
+  - first:
+      213: -6459319419676583838
+    second: inferno 1_1932
+  - first:
+      213: 6846733520011457316
+    second: inferno 1_1933
+  - first:
+      213: 9207388736962347780
+    second: inferno 1_1934
+  - first:
+      213: -8921520592329154873
+    second: inferno 1_1935
+  - first:
+      213: -6769482854923021969
+    second: inferno 1_1936
+  - first:
+      213: -4468755562509479985
+    second: inferno 1_1937
+  - first:
+      213: 1507516553931373196
+    second: inferno 1_1938
+  - first:
+      213: -5048324676475034
+    second: inferno 1_1939
+  - first:
+      213: -4258742615342285773
+    second: inferno 1_1940
+  - first:
+      213: -7400140053229563239
+    second: inferno 1_1941
+  - first:
+      213: -7136101255230984657
+    second: inferno 1_1942
+  - first:
+      213: -831135395404295380
+    second: inferno 1_1943
+  - first:
+      213: 6212727490283398032
+    second: inferno 1_1944
+  - first:
+      213: 8174336858763952727
+    second: inferno 1_1945
+  - first:
+      213: 4838152164531424205
+    second: inferno 1_1946
+  - first:
+      213: -4255368728755985892
+    second: inferno 1_1947
+  - first:
+      213: 6901971061745729179
+    second: inferno 1_1948
+  - first:
+      213: -4428998101344503569
+    second: inferno 1_1949
+  - first:
+      213: 226848062318717235
+    second: inferno 1_1950
+  - first:
+      213: -479172763881498647
+    second: inferno 1_1951
+  - first:
+      213: -406405148543099145
+    second: inferno 1_1952
+  - first:
+      213: 6368478618553644285
+    second: inferno 1_1953
+  - first:
+      213: 7876526026426828942
+    second: inferno 1_1954
+  - first:
+      213: 6971089335416611656
+    second: inferno 1_1955
+  - first:
+      213: 3877259763881757655
+    second: inferno 1_1956
+  - first:
+      213: 6188015150564633378
+    second: inferno 1_1957
+  - first:
+      213: 6427439887066232112
+    second: inferno 1_1958
+  - first:
+      213: -6434082390809950413
+    second: inferno 1_1959
+  - first:
+      213: -4679796921905801613
+    second: inferno 1_1960
+  - first:
+      213: 3099468656691152948
+    second: inferno 1_1961
+  - first:
+      213: -1221285107687657074
+    second: inferno 1_1962
+  - first:
+      213: 8919034370452626317
+    second: inferno 1_1963
+  - first:
+      213: -1826780374656860377
+    second: inferno 1_1964
+  - first:
+      213: -5315762803444851285
+    second: inferno 1_1965
+  - first:
+      213: -4189065497670098184
+    second: inferno 1_1966
+  - first:
+      213: 7590099085357085085
+    second: inferno 1_1967
+  - first:
+      213: 6821857393094326989
+    second: inferno 1_1968
+  - first:
+      213: 3764101014948933436
+    second: inferno 1_1969
+  - first:
+      213: -8377636234539821303
+    second: inferno 1_1970
+  - first:
+      213: -8140608560846656299
+    second: inferno 1_1971
+  - first:
+      213: 6500018144637979994
+    second: inferno 1_1972
+  - first:
+      213: 9090468050028711440
+    second: inferno 1_1973
+  - first:
+      213: 6726930004313768376
+    second: inferno 1_1974
+  - first:
+      213: -7436636303016401351
+    second: inferno 1_1975
+  - first:
+      213: -332143482603198146
+    second: inferno 1_1976
+  - first:
+      213: 2477763822736702363
+    second: inferno 1_1977
+  - first:
+      213: -8997495313584514638
+    second: inferno 1_1978
+  - first:
+      213: -5172813873724372549
+    second: inferno 1_1979
+  - first:
+      213: 4123067855295490165
+    second: inferno 1_1980
+  - first:
+      213: -3068261207247019401
+    second: inferno 1_1981
+  - first:
+      213: 8519585923190556490
+    second: inferno 1_1982
+  - first:
+      213: -6432446377117814957
+    second: inferno 1_1983
+  - first:
+      213: -4712774926223174429
+    second: inferno 1_1984
+  - first:
+      213: 8249103357092005967
+    second: inferno 1_1985
+  - first:
+      213: 3900261086810862771
+    second: inferno 1_1986
+  - first:
+      213: 7335307876455517236
+    second: inferno 1_1987
+  - first:
+      213: -7734957866026658771
+    second: inferno 1_1988
+  - first:
+      213: -4917656892728031441
+    second: inferno 1_1989
+  - first:
+      213: 2694105574189253130
+    second: inferno 1_1990
+  - first:
+      213: 4747273688152134945
+    second: inferno 1_1991
+  - first:
+      213: -4317127556837303896
+    second: inferno 1_1992
+  - first:
+      213: -8374182487618136000
+    second: inferno 1_1993
+  - first:
+      213: 1878532475896171311
+    second: inferno 1_1994
+  - first:
+      213: -6898475810122336248
+    second: inferno 1_1995
+  - first:
+      213: -6499077176317288897
+    second: inferno 1_1996
+  - first:
+      213: -9149875735052436221
+    second: inferno 1_1997
+  - first:
+      213: 599771614018696568
+    second: inferno 1_1998
+  - first:
+      213: -100107501532430721
+    second: inferno 1_1999
+  - first:
+      213: 3466369368204416365
+    second: inferno 1_2000
+  - first:
+      213: -6451911557112206061
+    second: inferno 1_2001
+  - first:
+      213: 2706379854887799719
+    second: inferno 1_2002
+  - first:
+      213: 3832885798753824988
+    second: inferno 1_2003
+  - first:
+      213: -1257644414007618592
+    second: inferno 1_2004
+  - first:
+      213: -6290130292685109299
+    second: inferno 1_2005
+  - first:
+      213: -8469967772368181766
+    second: inferno 1_2006
+  - first:
+      213: -3559326414995848825
+    second: inferno 1_2007
+  - first:
+      213: -440680512937439602
+    second: inferno 1_2008
+  - first:
+      213: 6645588571119785385
+    second: inferno 1_2009
+  - first:
+      213: 2901229333928792980
+    second: inferno 1_2010
+  - first:
+      213: -2972676928450858048
+    second: inferno 1_2011
+  - first:
+      213: 3751362691115241693
+    second: inferno 1_2012
+  - first:
+      213: 6730453166109294219
+    second: inferno 1_2013
+  - first:
+      213: -8566435851641743991
+    second: inferno 1_2014
+  - first:
+      213: 7630138571820041346
+    second: inferno 1_2015
+  - first:
+      213: -417434923511150582
+    second: inferno 1_2016
+  - first:
+      213: 7404980560362229076
+    second: inferno 1_2017
+  - first:
+      213: -4727259201066596047
+    second: inferno 1_2018
+  - first:
+      213: -4469642749228819193
+    second: inferno 1_2019
+  - first:
+      213: -4846503523329433016
+    second: inferno 1_2020
+  - first:
+      213: -3852016161983838741
+    second: inferno 1_2021
+  - first:
+      213: 7329044517296206942
+    second: inferno 1_2022
+  - first:
+      213: 832506751601402718
+    second: inferno 1_2023
+  - first:
+      213: 3195751411354671544
+    second: inferno 1_2024
+  - first:
+      213: 1447023943531531463
+    second: inferno 1_2025
+  - first:
+      213: -409418718696672614
+    second: inferno 1_2026
+  - first:
+      213: 7069556279881020203
+    second: inferno 1_2027
+  - first:
+      213: 6028445671904528775
+    second: inferno 1_2028
+  - first:
+      213: -6631588516271234638
+    second: inferno 1_2029
+  - first:
+      213: 7210102323494876240
+    second: inferno 1_2030
+  - first:
+      213: -5075797059097263051
+    second: inferno 1_2031
+  - first:
+      213: -8057012957421089513
+    second: inferno 1_2032
+  - first:
+      213: -6873727138998279813
+    second: inferno 1_2033
+  - first:
+      213: 1596635923332508696
+    second: inferno 1_2034
+  - first:
+      213: -4699868275960715255
+    second: inferno 1_2035
+  - first:
+      213: 5809869254907270998
+    second: inferno 1_2036
+  - first:
+      213: -5054545377007613023
+    second: inferno 1_2037
+  - first:
+      213: 6730075600878511925
+    second: inferno 1_2038
+  - first:
+      213: -2068050778117179750
+    second: inferno 1_2039
+  - first:
+      213: -1561768226461535257
+    second: inferno 1_2040
+  - first:
+      213: 7283550703890287500
+    second: inferno 1_2041
+  - first:
+      213: 8713700023470321516
+    second: inferno 1_2042
+  - first:
+      213: 1980015573084866601
+    second: inferno 1_2043
+  - first:
+      213: 5298773763894923132
+    second: inferno 1_2044
+  - first:
+      213: -6837751287774150131
+    second: inferno 1_2045
+  - first:
+      213: -2671028271265762811
+    second: inferno 1_2046
+  - first:
+      213: -2404222973922253920
+    second: inferno 1_2047
+  - first:
+      213: 638344112270131715
+    second: inferno 1_2048
+  - first:
+      213: -5635920623926430748
+    second: inferno 1_2049
+  - first:
+      213: 28979310554133084
+    second: inferno 1_2050
+  - first:
+      213: 2603074731375865765
+    second: inferno 1_2051
+  - first:
+      213: 8372732808345123098
+    second: inferno 1_2052
+  - first:
+      213: 5413058404848440185
+    second: inferno 1_2053
+  - first:
+      213: 1589843100510870835
+    second: inferno 1_2054
+  - first:
+      213: 8532298243106283355
+    second: inferno 1_2055
+  - first:
+      213: 7785725144733428684
+    second: inferno 1_2056
+  - first:
+      213: -2299324267414216625
+    second: inferno 1_2057
+  - first:
+      213: -2653355183890501314
+    second: inferno 1_2058
+  - first:
+      213: -6041000140723755667
+    second: inferno 1_2059
+  - first:
+      213: 899181059066050212
+    second: inferno 1_2060
+  - first:
+      213: -8036960396294241933
+    second: inferno 1_2061
+  - first:
+      213: 7649606136356097152
+    second: inferno 1_2062
+  - first:
+      213: 4200968435991526458
+    second: inferno 1_2063
+  - first:
+      213: 1678647037299533367
+    second: inferno 1_2064
+  - first:
+      213: -1338871508225706372
+    second: inferno 1_2065
+  - first:
+      213: -5709794648977967141
+    second: inferno 1_2066
+  - first:
+      213: 3955920848873187469
+    second: inferno 1_2067
+  - first:
+      213: 443156221870039280
+    second: inferno 1_2068
+  - first:
+      213: -1222166425580543140
+    second: inferno 1_2069
+  - first:
+      213: 7191886106885410347
+    second: inferno 1_2070
+  - first:
+      213: 1689309460091371000
+    second: inferno 1_2071
+  - first:
+      213: -5249318248699167557
+    second: inferno 1_2072
+  - first:
+      213: -2347419065584090911
+    second: inferno 1_2073
+  - first:
+      213: 3557516822156541497
+    second: inferno 1_2074
+  - first:
+      213: -1161196763526727094
+    second: inferno 1_2075
+  - first:
+      213: 2936408394003493973
+    second: inferno 1_2076
+  - first:
+      213: -1773213999089245565
+    second: inferno 1_2077
+  - first:
+      213: 1752828391078669883
+    second: inferno 1_2078
+  - first:
+      213: 7602905512454186684
+    second: inferno 1_2079
+  - first:
+      213: 7279931575218217802
+    second: inferno 1_2080
+  - first:
+      213: 1800566893154022280
+    second: inferno 1_2081
+  - first:
+      213: -4096521038202690237
+    second: inferno 1_2082
+  - first:
+      213: -4052961935245182039
+    second: inferno 1_2083
+  - first:
+      213: 5799205552143837273
+    second: inferno 1_2084
+  - first:
+      213: -5995828632067166156
+    second: inferno 1_2085
+  - first:
+      213: 7047051739594794537
+    second: inferno 1_2086
+  - first:
+      213: -4648458888361972893
+    second: inferno 1_2087
+  - first:
+      213: 2241685714700803417
+    second: inferno 1_2088
+  - first:
+      213: -1144935001445866350
+    second: inferno 1_2089
+  - first:
+      213: 9100276532895275893
+    second: inferno 1_2090
+  - first:
+      213: -8220348116776183208
+    second: inferno 1_2091
+  - first:
+      213: 8239713834867249933
+    second: inferno 1_2092
+  - first:
+      213: 8159694832306558711
+    second: inferno 1_2093
+  - first:
+      213: -6816926729926876441
+    second: inferno 1_2094
+  - first:
+      213: -7908907878777648950
+    second: inferno 1_2095
+  - first:
+      213: -3141738831043911128
+    second: inferno 1_2096
+  - first:
+      213: -8809677050743030318
+    second: inferno 1_2097
+  - first:
+      213: -7822564972634528654
+    second: inferno 1_2098
+  - first:
+      213: -466356922789271537
+    second: inferno 1_2099
+  - first:
+      213: -6278142548228153493
+    second: inferno 1_2100
+  - first:
+      213: 5301746849754463785
+    second: inferno 1_2101
+  - first:
+      213: -1662345407460045737
+    second: inferno 1_2102
+  - first:
+      213: -593402147186695804
+    second: inferno 1_2103
+  - first:
+      213: 1211752193761290918
+    second: inferno 1_2104
+  - first:
+      213: -163146207286560220
+    second: inferno 1_2105
+  - first:
+      213: 5567823416529324988
+    second: inferno 1_2106
+  - first:
+      213: -6554874520057216727
+    second: inferno 1_2107
+  - first:
+      213: 1764315460962185190
+    second: inferno 1_2108
+  - first:
+      213: 6737809644089420179
+    second: inferno 1_2109
+  - first:
+      213: -626126075359468478
+    second: inferno 1_2110
+  - first:
+      213: 1966069004346741891
+    second: inferno 1_2111
+  - first:
+      213: 8993093015947140041
+    second: inferno 1_2112
+  - first:
+      213: -2669369827862969736
+    second: inferno 1_2113
+  - first:
+      213: 1979734497360479016
+    second: inferno 1_2114
+  - first:
+      213: 8064588688016461104
+    second: inferno 1_2115
+  - first:
+      213: 8257797040306827213
+    second: inferno 1_2116
+  - first:
+      213: 5923186915515528931
+    second: inferno 1_2117
+  - first:
+      213: 841708005085794442
+    second: inferno 1_2118
+  - first:
+      213: -6568671720717852934
+    second: inferno 1_2119
+  - first:
+      213: -224979034953963493
+    second: inferno 1_2120
+  - first:
+      213: 5739687055504241511
+    second: inferno 1_2121
+  - first:
+      213: 525743046256925439
+    second: inferno 1_2122
+  - first:
+      213: -8927984599042677529
+    second: inferno 1_2123
+  - first:
+      213: -8556832268189399599
+    second: inferno 1_2124
+  - first:
+      213: 848113392374550362
+    second: inferno 1_2125
+  - first:
+      213: -572991611214207096
+    second: inferno 1_2126
+  - first:
+      213: -6074803078889951425
+    second: inferno 1_2127
+  - first:
+      213: 595402279565743981
+    second: inferno 1_2128
+  - first:
+      213: -2516983926209095609
+    second: inferno 1_2129
+  - first:
+      213: 6560590938582333475
+    second: inferno 1_2130
+  - first:
+      213: 4470978738409754807
+    second: inferno 1_2131
+  - first:
+      213: 1249773274930375357
+    second: inferno 1_2132
+  - first:
+      213: -5509543361679258132
+    second: inferno 1_2133
+  - first:
+      213: 4830770983585273017
+    second: inferno 1_2134
+  - first:
+      213: 4539761960846971591
+    second: inferno 1_2135
+  - first:
+      213: -4516418555414878635
+    second: inferno 1_2136
+  - first:
+      213: -11422948199441295
+    second: inferno 1_2137
+  - first:
+      213: 9012134487425067058
+    second: inferno 1_2138
+  - first:
+      213: -6591617050070799983
+    second: inferno 1_2139
+  - first:
+      213: -855142421889080974
+    second: inferno 1_2140
+  - first:
+      213: -2477701839230143028
+    second: inferno 1_2141
+  - first:
+      213: 2303216486123319957
+    second: inferno 1_2142
+  - first:
+      213: 1854727589917692915
+    second: inferno 1_2143
+  - first:
+      213: 9081332681760468502
+    second: inferno 1_2144
+  - first:
+      213: -2322900268563837233
+    second: inferno 1_2145
+  - first:
+      213: 537598014738191631
+    second: inferno 1_2146
+  - first:
+      213: 8334140721894606981
+    second: inferno 1_2147
+  - first:
+      213: -4773865414706197864
+    second: inferno 1_2148
+  - first:
+      213: -7223869179841247474
+    second: inferno 1_2149
+  - first:
+      213: 4531436217457690718
+    second: inferno 1_2150
+  - first:
+      213: -8758755314941941499
+    second: inferno 1_2151
+  - first:
+      213: 2920615753731850301
+    second: inferno 1_2152
+  - first:
+      213: -2817569210731633610
+    second: inferno 1_2153
+  - first:
+      213: -3049442747279986593
+    second: inferno 1_2154
+  - first:
+      213: 4151234752717678633
+    second: inferno 1_2155
+  - first:
+      213: 6174885722522224561
+    second: inferno 1_2156
+  - first:
+      213: -1849147873893164141
+    second: inferno 1_2157
+  - first:
+      213: -812179429569995787
+    second: inferno 1_2158
+  - first:
+      213: 6500444407318516314
+    second: inferno 1_2159
+  - first:
+      213: -6791911724405857831
+    second: inferno 1_2160
+  - first:
+      213: 6666183533956013805
+    second: inferno 1_2161
+  - first:
+      213: -1998339659403263511
+    second: inferno 1_2162
+  - first:
+      213: -5206762871950427750
+    second: inferno 1_2163
+  - first:
+      213: 7301463316850896259
+    second: inferno 1_2164
+  - first:
+      213: -1834046838442075314
+    second: inferno 1_2165
+  - first:
+      213: -4653908903708506811
+    second: inferno 1_2166
+  - first:
+      213: 6405799718833503151
+    second: inferno 1_2167
+  - first:
+      213: -6916221043293820846
+    second: inferno 1_2168
+  - first:
+      213: 1561931762552188054
+    second: inferno 1_2169
+  - first:
+      213: -1336607896429775489
+    second: inferno 1_2170
+  - first:
+      213: 2892760063933017273
+    second: inferno 1_2171
+  - first:
+      213: 3959874645156032467
+    second: inferno 1_2172
+  - first:
+      213: -1170744598104488572
+    second: inferno 1_2173
+  - first:
+      213: -4312188963003457868
+    second: inferno 1_2174
+  - first:
+      213: -7593267515080413306
+    second: inferno 1_2175
+  - first:
+      213: 1934902106415408092
+    second: inferno 1_2176
+  - first:
+      213: -961233044946118434
+    second: inferno 1_2177
+  - first:
+      213: 570383595431484517
+    second: inferno 1_2178
+  - first:
+      213: -1740496584252811979
+    second: inferno 1_2179
+  - first:
+      213: -9195143608330284910
+    second: inferno 1_2180
+  - first:
+      213: 6239891429007151789
+    second: inferno 1_2181
+  - first:
+      213: 908026140694010864
+    second: inferno 1_2182
+  - first:
+      213: 6654145124539943712
+    second: inferno 1_2183
+  - first:
+      213: -2376307205929018988
+    second: inferno 1_2184
+  - first:
+      213: 324102464820366378
+    second: inferno 1_2185
+  - first:
+      213: 2095462563595883125
+    second: inferno 1_2186
+  - first:
+      213: 8606701438453958449
+    second: inferno 1_2187
+  - first:
+      213: 704675444084436043
+    second: inferno 1_2188
+  - first:
+      213: 6018802178895867674
+    second: inferno 1_2189
+  - first:
+      213: -5933983078025611328
+    second: inferno 1_2190
+  - first:
+      213: -3715406325843065400
+    second: inferno 1_2191
+  - first:
+      213: -5437523024097777653
+    second: inferno 1_2192
+  - first:
+      213: 7981580677944084747
+    second: inferno 1_2193
+  - first:
+      213: 7074915206410409895
+    second: inferno 1_2194
+  - first:
+      213: 799418857536971883
+    second: inferno 1_2195
+  - first:
+      213: -8810839011007732450
+    second: inferno 1_2196
+  - first:
+      213: 2973884820448437421
+    second: inferno 1_2197
+  - first:
+      213: -1402675849669169852
+    second: inferno 1_2198
+  - first:
+      213: 8399180900187068150
+    second: inferno 1_2199
+  - first:
+      213: -5908873013569830192
+    second: inferno 1_2200
+  - first:
+      213: -7225371894429594320
+    second: inferno 1_2201
+  - first:
+      213: -1129442499836751405
+    second: inferno 1_2202
+  - first:
+      213: -4528573258147367200
+    second: inferno 1_2203
+  - first:
+      213: -4188269007569389483
+    second: inferno 1_2204
+  - first:
+      213: 4816331030743438958
+    second: inferno 1_2205
+  - first:
+      213: -7177898623320005708
+    second: inferno 1_2206
+  - first:
+      213: -5789602346588612031
+    second: inferno 1_2207
+  - first:
+      213: -5573252996608690616
+    second: inferno 1_2208
+  - first:
+      213: -2639189285725276251
+    second: inferno 1_2209
+  - first:
+      213: 4616565817798495313
+    second: inferno 1_2210
+  - first:
+      213: 2078727671350488776
+    second: inferno 1_2211
+  - first:
+      213: 3871935774382489062
+    second: inferno 1_2212
+  - first:
+      213: 6622028170411954135
+    second: inferno 1_2213
+  - first:
+      213: -2642692770251572475
+    second: inferno 1_2214
+  - first:
+      213: -5813089733692414755
+    second: inferno 1_2215
+  - first:
+      213: -6917217048572959256
+    second: inferno 1_2216
+  - first:
+      213: -1719950115427603048
+    second: inferno 1_2217
+  - first:
+      213: 7663251415399636185
+    second: inferno 1_2218
+  - first:
+      213: -1669859471545974502
+    second: inferno 1_2219
+  - first:
+      213: 5582451317347585989
+    second: inferno 1_2220
+  - first:
+      213: 175432949645863058
+    second: inferno 1_2221
+  - first:
+      213: 5544192544829562879
+    second: inferno 1_2222
+  - first:
+      213: 8914837307729777343
+    second: inferno 1_2223
+  - first:
+      213: -3834968190767245376
+    second: inferno 1_2224
+  - first:
+      213: -6204611772478992759
+    second: inferno 1_2225
+  - first:
+      213: 766050340916025141
+    second: inferno 1_2226
+  - first:
+      213: 2101861627353113374
+    second: inferno 1_2227
+  - first:
+      213: -6883972101340708015
+    second: inferno 1_2228
+  - first:
+      213: -2581444579296628237
+    second: inferno 1_2229
+  - first:
+      213: 1641960659950224281
+    second: inferno 1_2230
+  - first:
+      213: 303828098636023162
+    second: inferno 1_2231
+  - first:
+      213: 3011758329153741070
+    second: inferno 1_2232
+  - first:
+      213: 9150853445682458199
+    second: inferno 1_2233
+  - first:
+      213: 3478213821331219960
+    second: inferno 1_2234
+  - first:
+      213: -2612550761117571759
+    second: inferno 1_2235
+  - first:
+      213: -1605305658195731115
+    second: inferno 1_2236
+  - first:
+      213: 6992303156819915016
+    second: inferno 1_2237
+  - first:
+      213: 1995703973559257750
+    second: inferno 1_2238
+  - first:
+      213: 1902642054993084745
+    second: inferno 1_2239
+  - first:
+      213: 827402427777129170
+    second: inferno 1_2240
+  - first:
+      213: 2614842531376728250
+    second: inferno 1_2241
+  - first:
+      213: 5890764363252674650
+    second: inferno 1_2242
+  - first:
+      213: -8428645975179690922
+    second: inferno 1_2243
+  - first:
+      213: -1167234845292114029
+    second: inferno 1_2244
+  - first:
+      213: 4043922353226286247
+    second: inferno 1_2245
+  - first:
+      213: 4960472745005100928
+    second: inferno 1_2246
+  - first:
+      213: 2411374928898345477
+    second: inferno 1_2247
+  - first:
+      213: 7355249139048294751
+    second: inferno 1_2248
+  - first:
+      213: 3045933212313266213
+    second: inferno 1_2249
+  - first:
+      213: -2534004224509561950
+    second: inferno 1_2250
+  - first:
+      213: -5126755957906854695
+    second: inferno 1_2251
+  - first:
+      213: -8376872338744045513
+    second: inferno 1_2252
+  - first:
+      213: 8471660068535258050
+    second: inferno 1_2253
+  - first:
+      213: -3741814510160911816
+    second: inferno 1_2254
+  - first:
+      213: 6340707223988293121
+    second: inferno 1_2255
+  - first:
+      213: 7964656968537843072
+    second: inferno 1_2256
+  - first:
+      213: -5742877256546387687
+    second: inferno 1_2257
+  - first:
+      213: -1028384014535155706
+    second: inferno 1_2258
+  - first:
+      213: -4769081326738720025
+    second: inferno 1_2259
+  - first:
+      213: 5645655742369097462
+    second: inferno 1_2260
+  - first:
+      213: -2275203373969137997
+    second: inferno 1_2261
+  - first:
+      213: -338193882336425605
+    second: inferno 1_2262
+  - first:
+      213: -4804266304867424249
+    second: inferno 1_2263
+  - first:
+      213: -6318919306224706012
+    second: inferno 1_2264
+  - first:
+      213: -4314813674773689229
+    second: inferno 1_2265
+  - first:
+      213: -466679383556794557
+    second: inferno 1_2266
+  - first:
+      213: -8656615833506718897
+    second: inferno 1_2267
+  - first:
+      213: 464465032562518007
+    second: inferno 1_2268
+  - first:
+      213: 2740356809272475018
+    second: inferno 1_2269
+  - first:
+      213: 271088095678940136
+    second: inferno 1_2270
+  - first:
+      213: 4534925909696558514
+    second: inferno 1_2271
+  - first:
+      213: 2970744438243197080
+    second: inferno 1_2272
+  - first:
+      213: 1822944345700903315
+    second: inferno 1_2273
+  - first:
+      213: -5118518006501084592
+    second: inferno 1_2274
+  - first:
+      213: -3077439840352065125
+    second: inferno 1_2275
+  - first:
+      213: 1031955109941280662
+    second: inferno 1_2276
+  - first:
+      213: -4533856318482798749
+    second: inferno 1_2277
+  - first:
+      213: 3351151147059606887
+    second: inferno 1_2278
+  - first:
+      213: -3981227988621655554
+    second: inferno 1_2279
+  - first:
+      213: -3479819727159346048
+    second: inferno 1_2280
+  - first:
+      213: -8914156394332806314
+    second: inferno 1_2281
+  - first:
+      213: -392903160136107611
+    second: inferno 1_2282
+  - first:
+      213: 503249208123529376
+    second: inferno 1_2283
+  - first:
+      213: 4774583098046681579
+    second: inferno 1_2284
+  - first:
+      213: -8525420569169446678
+    second: inferno 1_2285
+  - first:
+      213: -1928959979302847782
+    second: inferno 1_2286
+  - first:
+      213: -6735095170390617923
+    second: inferno 1_2287
+  - first:
+      213: -891621792196883942
+    second: inferno 1_2288
+  - first:
+      213: -3899687909321027750
+    second: inferno 1_2289
+  - first:
+      213: 7139562722233452781
+    second: inferno 1_2290
+  - first:
+      213: 386288074553982820
+    second: inferno 1_2291
+  - first:
+      213: 4722939948371962546
+    second: inferno 1_2292
+  - first:
+      213: -4208687163569572997
+    second: inferno 1_2293
+  - first:
+      213: -7122333612666742317
+    second: inferno 1_2294
+  - first:
+      213: 1731187872875062892
+    second: inferno 1_2295
+  - first:
+      213: 5939386964792448929
+    second: inferno 1_2296
+  - first:
+      213: 1475297083430029299
+    second: inferno 1_2297
+  - first:
+      213: 6358890079803824839
+    second: inferno 1_2298
+  - first:
+      213: -2623610580144087521
+    second: inferno 1_2299
+  - first:
+      213: 7210025792694636491
+    second: inferno 1_2300
+  - first:
+      213: -3204973430024451161
+    second: inferno 1_2301
+  - first:
+      213: -3725934941966287794
+    second: inferno 1_2302
+  - first:
+      213: 7163267631104433412
+    second: inferno 1_2303
+  - first:
+      213: -2286851886168660577
+    second: inferno 1_2304
+  - first:
+      213: 191567993137257539
+    second: inferno 1_2305
+  - first:
+      213: -2476917139893431752
+    second: inferno 1_2306
+  - first:
+      213: 4394115805695258245
+    second: inferno 1_2307
+  - first:
+      213: -97130578841669163
+    second: inferno 1_2308
+  - first:
+      213: 1788703630926056953
+    second: inferno 1_2309
+  - first:
+      213: 787774318727814415
+    second: inferno 1_2310
+  - first:
+      213: -7166184377657202718
+    second: inferno 1_2311
+  - first:
+      213: -5932077949279109876
+    second: inferno 1_2312
+  - first:
+      213: 1126807462994549438
+    second: inferno 1_2313
+  - first:
+      213: -804998803807892791
+    second: inferno 1_2314
+  - first:
+      213: -8063268897839673832
+    second: inferno 1_2315
+  - first:
+      213: -7325809540797742750
+    second: inferno 1_2316
+  - first:
+      213: -5154752614306305577
+    second: inferno 1_2317
+  - first:
+      213: 2536477953760173427
+    second: inferno 1_2318
+  - first:
+      213: -2681775493612861651
+    second: inferno 1_2319
+  - first:
+      213: -8992555146525366284
+    second: inferno 1_2320
+  - first:
+      213: 8836570299361612392
+    second: inferno 1_2321
+  - first:
+      213: -819472459824610392
+    second: inferno 1_2322
+  - first:
+      213: 295926477176165998
+    second: inferno 1_2323
+  - first:
+      213: 6759780220601837290
+    second: inferno 1_2324
+  - first:
+      213: -2865907714009618140
+    second: inferno 1_2325
+  - first:
+      213: -2526705221589637557
+    second: inferno 1_2326
+  - first:
+      213: -4705706458159697922
+    second: inferno 1_2327
+  - first:
+      213: -4001905879345111159
+    second: inferno 1_2328
+  - first:
+      213: -4531908523282060565
+    second: inferno 1_2329
+  - first:
+      213: -6750589121299270900
+    second: inferno 1_2330
+  - first:
+      213: -2420780002759582680
+    second: inferno 1_2331
+  - first:
+      213: -2753351641052612179
+    second: inferno 1_2332
+  - first:
+      213: -3267641788428765600
+    second: inferno 1_2333
+  - first:
+      213: 1252448491581188398
+    second: inferno 1_2334
+  - first:
+      213: -1581506703100760939
+    second: inferno 1_2335
+  - first:
+      213: -5429702892491725326
+    second: inferno 1_2336
+  - first:
+      213: -705982509048724280
+    second: inferno 1_2337
+  - first:
+      213: -7757371963952972177
+    second: inferno 1_2338
+  - first:
+      213: -6210219655784372822
+    second: inferno 1_2339
+  - first:
+      213: -7730821134867055985
+    second: inferno 1_2340
+  - first:
+      213: -2146893459383702762
+    second: inferno 1_2341
+  - first:
+      213: -2608944377422856097
+    second: inferno 1_2342
+  - first:
+      213: -5059882414321871273
+    second: inferno 1_2343
+  - first:
+      213: -9040809882304404046
+    second: inferno 1_2344
+  - first:
+      213: 2922895819776250953
+    second: inferno 1_2345
+  - first:
+      213: 6772046049381795205
+    second: inferno 1_2346
+  - first:
+      213: 4327900343811300028
+    second: inferno 1_2347
+  - first:
+      213: 6600694242152923272
+    second: inferno 1_2348
+  - first:
+      213: -8843701826266512327
+    second: inferno 1_2349
+  - first:
+      213: 3480086482192786247
+    second: inferno 1_2350
+  - first:
+      213: 3563309688585343535
+    second: inferno 1_2351
+  - first:
+      213: 8360287199318196918
+    second: inferno 1_2352
+  - first:
+      213: 7839121584170167651
+    second: inferno 1_2353
+  - first:
+      213: -8788111027574435147
+    second: inferno 1_2354
+  - first:
+      213: -8501582125191964416
+    second: inferno 1_2355
+  - first:
+      213: 6750134469832207716
+    second: inferno 1_2356
+  - first:
+      213: 9104907069389181904
+    second: inferno 1_2357
+  - first:
+      213: 354553484826355962
+    second: inferno 1_2358
+  - first:
+      213: -6304000077319626006
+    second: inferno 1_2359
+  - first:
+      213: -8023191541785115757
+    second: inferno 1_2360
+  - first:
+      213: 4782888818886014585
+    second: inferno 1_2361
+  - first:
+      213: 8682224430072558615
+    second: inferno 1_2362
+  - first:
+      213: -7685035686679760940
+    second: inferno 1_2363
+  - first:
+      213: 1199291626717546534
+    second: inferno 1_2364
+  - first:
+      213: 1844599596520958690
+    second: inferno 1_2365
+  - first:
+      213: -5668848799579371460
+    second: inferno 1_2366
+  - first:
+      213: -1275324716937933374
+    second: inferno 1_2367
+  - first:
+      213: -7132951992402735279
+    second: inferno 1_2368
+  - first:
+      213: 5652119635458261922
+    second: inferno 1_2369
+  - first:
+      213: -564142936169335881
+    second: inferno 1_2370
+  - first:
+      213: 5442566516194297597
+    second: inferno 1_2371
+  - first:
+      213: -3680044383802129817
+    second: inferno 1_2372
+  - first:
+      213: 1633825785631924188
+    second: inferno 1_2373
+  - first:
+      213: -7907880837097852547
+    second: inferno 1_2374
+  - first:
+      213: 6649758249053229138
+    second: inferno 1_2375
+  - first:
+      213: 1728441018529756729
+    second: inferno 1_2376
+  - first:
+      213: 1675165268147979096
+    second: inferno 1_2377
+  - first:
+      213: 3870297153201019144
+    second: inferno 1_2378
+  - first:
+      213: -6468408615214990717
+    second: inferno 1_2379
+  - first:
+      213: 8730012786789663720
+    second: inferno 1_2380
+  - first:
+      213: 7660246212049908640
+    second: inferno 1_2381
+  - first:
+      213: -8952191909430791508
+    second: inferno 1_2382
+  - first:
+      213: -7737710515385616523
+    second: inferno 1_2383
+  - first:
+      213: 804675376026220976
+    second: inferno 1_2384
+  - first:
+      213: 2793452895494058418
+    second: inferno 1_2385
+  - first:
+      213: 6038816062676262461
+    second: inferno 1_2386
+  - first:
+      213: -381287628150497371
+    second: inferno 1_2387
+  - first:
+      213: -8719013482056337161
+    second: inferno 1_2388
+  - first:
+      213: 1923650046125812243
+    second: inferno 1_2389
+  - first:
+      213: 7660675812907974832
+    second: inferno 1_2390
+  - first:
+      213: -5236575950891624871
+    second: inferno 1_2391
+  - first:
+      213: -5379454642641803834
+    second: inferno 1_2392
+  - first:
+      213: 5607710785489451344
+    second: inferno 1_2393
+  - first:
+      213: 1289353923339177381
+    second: inferno 1_2394
+  - first:
+      213: -6837757244179245061
+    second: inferno 1_2395
+  - first:
+      213: -3535401410619660762
+    second: inferno 1_2396
+  - first:
+      213: 2046179601884001211
+    second: inferno 1_2397
+  - first:
+      213: 6009191442514152794
+    second: inferno 1_2398
+  - first:
+      213: 1016081282692297017
+    second: inferno 1_2399
+  - first:
+      213: 339835228322252521
+    second: inferno 1_2400
+  - first:
+      213: 5861821650394931187
+    second: inferno 1_2401
+  - first:
+      213: -4187591795408184931
+    second: inferno 1_2402
+  - first:
+      213: 2178431853794103586
+    second: inferno 1_2403
+  - first:
+      213: -2713045583483974147
+    second: inferno 1_2404
+  - first:
+      213: 5260695917721923578
+    second: inferno 1_2405
+  - first:
+      213: -327488295030318017
+    second: inferno 1_2406
+  - first:
+      213: 9002794533949987807
+    second: inferno 1_2407
+  - first:
+      213: 7604375095461153445
+    second: inferno 1_2408
+  - first:
+      213: -4327472024630871100
+    second: inferno 1_2409
+  - first:
+      213: 8981640610524291364
+    second: inferno 1_2410
+  - first:
+      213: 8135325976206694089
+    second: inferno 1_2411
+  - first:
+      213: 4985559611475330939
+    second: inferno 1_2412
+  - first:
+      213: 1785157735401146082
+    second: inferno 1_2413
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: 1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 500
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: inferno 1_1
+      rect:
+        serializedVersion: 2
+        x: 6812
+        y: 2558
+        width: 1381
+        height: 1853
+      alignment: 9
+      pivot: {x: 0.54634607, y: 0.26649866}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f92984242f0a3550800000000000000
+      internalID: 6141237689779300855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_2
+      rect:
+        serializedVersion: 2
+        x: 8224
+        y: 2581
+        width: 1382
+        height: 1838
+      alignment: 9
+      pivot: {x: 0.55288416, y: 0.26575065}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb44aaefc17182b50800000000000000
+      internalID: 6568525469818963131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_4
+      rect:
+        serializedVersion: 2
+        x: 9629
+        y: 2566
+        width: 1382
+        height: 1792
+      alignment: 9
+      pivot: {x: 0.557396, y: 0.2713608}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93829d33a203c5420800000000000000
+      internalID: 2620022041039415353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_5
+      rect:
+        serializedVersion: 2
+        x: 11277
+        y: 2558
+        width: 1381
+        height: 1800
+      alignment: 9
+      pivot: {x: 0.5559236, y: 0.26308635}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c87bbdc52cc12e50800000000000000
+      internalID: 6782926976534149321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_7
+      rect:
+        serializedVersion: 2
+        x: 1293
+        y: 2583
+        width: 1382
+        height: 1403
+      alignment: 9
+      pivot: {x: 0.54378295, y: 0.3354266}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed2a998ce1e0286a0800000000000000
+      internalID: -6448576191063809314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_8
+      rect:
+        serializedVersion: 2
+        x: 12682
+        y: 2550
+        width: 1381
+        height: 1789
+      alignment: 9
+      pivot: {x: 0.53575027, y: 0.2818884}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdbab0251db2d0ba0800000000000000
+      internalID: -6121188140501980196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_10
+      rect:
+        serializedVersion: 2
+        x: 5198
+        y: 477
+        width: 1381
+        height: 1729
+      alignment: 9
+      pivot: {x: 0.5283836, y: 0.26013088}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f92a1fcefec2ddd0800000000000000
+      internalID: -2462678452426626573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_11
+      rect:
+        serializedVersion: 2
+        x: 6653
+        y: 449
+        width: 1381
+        height: 1808
+      alignment: 9
+      pivot: {x: 0.5242447, y: 0.26034322}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1024d448ef05260c0800000000000000
+      internalID: -4584012416638172671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_12
+      rect:
+        serializedVersion: 2
+        x: 8126
+        y: 472
+        width: 1381
+        height: 1807
+      alignment: 9
+      pivot: {x: 0.521512, y: 0.26591933}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00642758efccd1d40800000000000000
+      internalID: 5556822908777678336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_13
+      rect:
+        serializedVersion: 2
+        x: 9607
+        y: 463
+        width: 1381
+        height: 1760
+      alignment: 9
+      pivot: {x: 0.52684736, y: 0.26646864}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c133e7e1adf411280800000000000000
+      internalID: -9074383975941786852
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_14
+      rect:
+        serializedVersion: 2
+        x: 11224
+        y: 486
+        width: 1381
+        height: 1768
+      alignment: 9
+      pivot: {x: 0.52411425, y: 0.26062334}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 252425e8eb83b5bc0800000000000000
+      internalID: -3793375870046813614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_15
+      rect:
+        serializedVersion: 2
+        x: 12672
+        y: 468
+        width: 1381
+        height: 1694
+      alignment: 9
+      pivot: {x: 0.5100725, y: 0.2700698}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7d9d4d0271d674a0800000000000000
+      internalID: -6595854316457845381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_0
+      rect:
+        serializedVersion: 2
+        x: 2866
+        y: 2538
+        width: 1203
+        height: 1767
+      alignment: 9
+      pivot: {x: 0.5346903, y: 0.2795689}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c41ec65a1dc77ee10800000000000000
+      internalID: 2226885780623384908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_3
+      rect:
+        serializedVersion: 2
+        x: 4185
+        y: 2470
+        width: 1099
+        height: 1934
+      alignment: 9
+      pivot: {x: 0.5474828, y: 0.3021408}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc073762b85500ad0800000000000000
+      internalID: -2738094517307346740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_6
+      rect:
+        serializedVersion: 2
+        x: 5476
+        y: 2448
+        width: 1329
+        height: 1891
+      alignment: 9
+      pivot: {x: 0.41940862, y: 0.316776}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 645fd203ee82d5ba0800000000000000
+      internalID: -6098673316914137786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_9
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 484
+        width: 1001
+        height: 1676
+      alignment: 9
+      pivot: {x: 0.49852782, y: 0.27579352}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dbba8822f88e8450800000000000000
+      internalID: 6092957919522503634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_16
+      rect:
+        serializedVersion: 2
+        x: 2590
+        y: 386
+        width: 1162
+        height: 1989
+      alignment: 9
+      pivot: {x: 0.5125873, y: 0.26878762}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ee415b1ed83f4e70800000000000000
+      internalID: 9101555898531270376
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: inferno 1_17
+      rect:
+        serializedVersion: 2
+        x: 3845
+        y: 354
+        width: 981
+        height: 2024
+      alignment: 9
+      pivot: {x: 0.514306, y: 0.28204706}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9140b4549e0e0e220800000000000000
+      internalID: 2513255884567282713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

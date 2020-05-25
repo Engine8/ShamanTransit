@@ -1,0 +1,553 @@
+fileFormatVersion: 2
+guid: 53ed1a446216a5c4d808c4bc4b7192b5
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 545585459066812068
+    second: ataka boss_0
+  - first:
+      213: 3710264122062628786
+    second: ataka boss_1
+  - first:
+      213: -3854820194987115005
+    second: ataka boss_2
+  - first:
+      213: -5135651301348709841
+    second: ataka boss_3
+  - first:
+      213: -9101958921044878873
+    second: ataka boss_4
+  - first:
+      213: 8631092241911636956
+    second: ataka boss_5
+  - first:
+      213: -2010185910842230336
+    second: ataka boss_6
+  - first:
+      213: -8287741844452343010
+    second: ataka boss_7
+  - first:
+      213: -7888622261621240524
+    second: ataka boss_8
+  - first:
+      213: -5047513699835482690
+    second: ataka boss_9
+  - first:
+      213: -3091689062027997400
+    second: ataka boss_10
+  - first:
+      213: -1395810372435891137
+    second: ataka boss_11
+  - first:
+      213: -2295710472969411733
+    second: ataka boss_12
+  - first:
+      213: -3220353780170640114
+    second: ataka boss_13
+  - first:
+      213: -7249610346490990667
+    second: ataka boss_14
+  - first:
+      213: 6920382714143093717
+    second: ataka boss_15
+  - first:
+      213: 585734268604248131
+    second: ataka boss_16
+  - first:
+      213: 637984096933615793
+    second: ataka boss_17
+  - first:
+      213: 5345164412258068861
+    second: ataka boss_18
+  - first:
+      213: -8721541195681873394
+    second: ataka boss_19
+  - first:
+      213: 9011334499678244330
+    second: ataka boss_20
+  - first:
+      213: 4131876895647753306
+    second: ataka boss_21
+  - first:
+      213: 5888633141272611727
+    second: ataka boss_22
+  - first:
+      213: 4521246889863612176
+    second: ataka boss_23
+  - first:
+      213: 9174384474344586719
+    second: ataka boss_24
+  - first:
+      213: -7644705912115146284
+    second: ataka boss_25
+  - first:
+      213: -5777364674089279850
+    second: ataka boss_26
+  - first:
+      213: -4895200887312896283
+    second: ataka boss_27
+  - first:
+      213: 4211403320145344645
+    second: ataka boss_28
+  - first:
+      213: 275024663013800212
+    second: ataka boss_29
+  - first:
+      213: -5274900403029289560
+    second: ataka boss_30
+  - first:
+      213: -1648696539262776848
+    second: ataka boss_31
+  - first:
+      213: 2189325378515394183
+    second: ataka boss_32
+  - first:
+      213: 6519723136800331514
+    second: ataka boss_33
+  - first:
+      213: -3435042595117361178
+    second: ataka boss_34
+  - first:
+      213: 3101068444941593294
+    second: ataka boss_35
+  - first:
+      213: -1292194312382624405
+    second: ataka boss_36
+  - first:
+      213: -4069562716529563779
+    second: ataka boss_37
+  - first:
+      213: 6790272690196768769
+    second: ataka boss_38
+  - first:
+      213: -3557625719014361276
+    second: ataka boss_39
+  - first:
+      213: -6271617342185097659
+    second: ataka boss_40
+  - first:
+      213: 1061109047511009326
+    second: ataka boss_41
+  - first:
+      213: 912927310783832582
+    second: ataka boss_42
+  - first:
+      213: 7436492545342211549
+    second: ataka boss_43
+  - first:
+      213: 3661317720787299104
+    second: ataka boss_44
+  - first:
+      213: -7882722722334375275
+    second: ataka boss_45
+  - first:
+      213: 2729052852812799451
+    second: ataka boss_46
+  - first:
+      213: -891825049075952577
+    second: ataka boss_47
+  - first:
+      213: -2911259921027901846
+    second: ataka boss_48
+  - first:
+      213: 3852074023751108892
+    second: ataka boss_49
+  - first:
+      213: 5044374678618354566
+    second: ataka boss_50
+  - first:
+      213: -3284077224995951618
+    second: ataka boss_51
+  - first:
+      213: -6751879932658154297
+    second: ataka boss_52
+  - first:
+      213: 6469356184345573507
+    second: ataka boss_53
+  - first:
+      213: -1816922655083196579
+    second: ataka boss_54
+  - first:
+      213: -2357561106279443957
+    second: ataka boss_55
+  - first:
+      213: -6987380085660747546
+    second: ataka boss_56
+  - first:
+      213: -5114308298830224998
+    second: ataka boss_57
+  - first:
+      213: -6785528313918743744
+    second: ataka boss_58
+  - first:
+      213: 6867640132963770521
+    second: ataka boss_59
+  - first:
+      213: -3102841914801428422
+    second: ataka boss_60
+  - first:
+      213: 8100248493895004250
+    second: ataka boss_61
+  - first:
+      213: 2496183784702179508
+    second: ataka boss_62
+  - first:
+      213: -189353945783567301
+    second: ataka boss_63
+  - first:
+      213: 8516681739490244750
+    second: ataka boss_64
+  - first:
+      213: 4406392639362055782
+    second: ataka boss_65
+  - first:
+      213: 4321720247138904441
+    second: ataka boss_66
+  - first:
+      213: 1672344204309003135
+    second: ataka boss_67
+  - first:
+      213: -1403713055190073132
+    second: ataka boss_68
+  - first:
+      213: -6203957724963825331
+    second: ataka boss_69
+  - first:
+      213: -6304507399690311104
+    second: ataka boss_70
+  - first:
+      213: -2050222827722889497
+    second: ataka boss_71
+  - first:
+      213: 1482141686717782549
+    second: ataka boss_72
+  - first:
+      213: -3567702549897776038
+    second: ataka boss_73
+  - first:
+      213: -1676545996106679471
+    second: ataka boss_74
+  - first:
+      213: 1094564303874678705
+    second: ataka boss_75
+  - first:
+      213: -3578862270232821421
+    second: ataka boss_76
+  - first:
+      213: 7192303955173075043
+    second: ataka boss_77
+  - first:
+      213: 2235325232607465805
+    second: ataka boss_78
+  - first:
+      213: 6856887383811142698
+    second: ataka boss_79
+  - first:
+      213: -7569023896343650495
+    second: ataka boss_80
+  - first:
+      213: 4897291483547610350
+    second: ataka boss_81
+  - first:
+      213: 2739280149003235178
+    second: ataka boss_82
+  - first:
+      213: -1157191440185538804
+    second: ataka boss_83
+  - first:
+      213: -8343635725463174127
+    second: ataka boss_84
+  - first:
+      213: 6775494460261825632
+    second: ataka boss_85
+  - first:
+      213: 9216328550101236840
+    second: ataka boss_86
+  - first:
+      213: -6367914289486219268
+    second: ataka boss_87
+  - first:
+      213: -8851642539023904497
+    second: ataka boss_88
+  - first:
+      213: 7844038271115260740
+    second: ataka boss_89
+  - first:
+      213: -2148653432915207840
+    second: ataka boss_90
+  - first:
+      213: 165050734235922027
+    second: ataka boss_91
+  - first:
+      213: -1031324887733199902
+    second: ataka boss_92
+  - first:
+      213: 4450908865541252955
+    second: ataka boss_93
+  - first:
+      213: 5201262236461809468
+    second: ataka boss_94
+  - first:
+      213: -2740152947258402189
+    second: ataka boss_95
+  - first:
+      213: -1257543508452138571
+    second: ataka boss_96
+  - first:
+      213: -8336658322349395465
+    second: ataka boss_97
+  - first:
+      213: 1506728879207219470
+    second: ataka boss_98
+  - first:
+      213: 8128928242827279475
+    second: ataka boss_99
+  - first:
+      213: -1054002012509738035
+    second: ataka boss_100
+  - first:
+      213: -7892335868829802315
+    second: ataka boss_101
+  - first:
+      213: -8787015320579552465
+    second: ataka boss_102
+  - first:
+      213: -747838245238404468
+    second: ataka boss_103
+  - first:
+      213: 3642844798383746183
+    second: ataka boss_104
+  - first:
+      213: 1332621290954792588
+    second: ataka boss_105
+  - first:
+      213: 4905685562457636992
+    second: ataka boss_106
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: -1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 400
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: ataka boss_0
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 3538
+        width: 4680
+        height: 1310
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a6bb4a951f429700800000000000000
+      internalID: 545585459066812068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataka boss_1
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 2393
+        width: 4680
+        height: 1142
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b76b6aaf818d7330800000000000000
+      internalID: 3710264122062628786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataka boss_2
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1342
+        width: 4680
+        height: 1051
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30e7ac4d47de08ac0800000000000000
+      internalID: -3854820194987115005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataka boss_3
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 645
+        width: 4680
+        height: 691
+      alignment: 9
+      pivot: {x: 0.5, y: 0.2}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2a66dce9508ab8b0800000000000000
+      internalID: -5135651301348709841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: ataka boss_4
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 1
+        width: 4680
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e91ce6e5985fa180800000000000000
+      internalID: -9101958921044878873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: a1f84cbd53bab874ca1ca553d9a42d2f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

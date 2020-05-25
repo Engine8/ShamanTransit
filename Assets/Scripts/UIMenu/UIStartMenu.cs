@@ -15,7 +15,8 @@ public class UIStartMenu : MonoBehaviour
     public GameObject VibrationOff;
     public LoadingComponent loadingComponent;
 
-    public AudioClip Music;
+    public AudioClip MenuMusic;
+    public AudioClip GameMusic;
 
     private void Awake()
     {
@@ -33,7 +34,8 @@ public class UIStartMenu : MonoBehaviour
         SoundOff.SetActive(SoundManager.Instance.GetSoundMuted());
         VibrationOff.SetActive(!GameData.Instance.VibrationStatus);
 
-        SoundManager.Instance.PlayMusicClip(Music);
+
+        SoundManager.Instance.PlayMusicClip(MenuMusic);
     }
 
     public void StartGame()
