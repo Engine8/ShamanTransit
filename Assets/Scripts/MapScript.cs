@@ -13,6 +13,7 @@ public class MapScript : MonoBehaviour
     public Color InactiveLevelColor;
     public GameObject LevelHandler;
 
+    public AudioClip MenuMusic;
     public LoadingComponent loadingComponent;  
     // Start is called before the first frame update
     void Awake()
@@ -55,6 +56,8 @@ public class MapScript : MonoBehaviour
             levelButtonPrefabTransform.GetChild(1).GetComponent<Button>().interactable = isActiveSelf;
             //set color of image on the button
             levelButtonPrefabTransform.GetChild(1).GetComponent<Image>().color = targetColor;
+
+            SoundManager.Instance.PlayMusicClip(MenuMusic);
         }
     }
 
@@ -67,7 +70,10 @@ public class MapScript : MonoBehaviour
     public void LoadLevel(string levelName)
     {
         string[] data = levelName.Split('-');
-        GameData.Instance.SetCurrentLevel(Convert.ToInt32(data[0]), Convert.ToInt32(data[1]));
+        int[] level = new int[2];
+        level[0] = Convert.ToInt32(data[0]);
+        level[1] = Convert.ToInt32(data[1]);
+        GameData.Instance.SetCurrentLevel(level[0], level[1]);
         loadingComponent.StartLoadLevel("LevelScene");
     }
 

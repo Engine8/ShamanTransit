@@ -194,6 +194,8 @@ public class GameController : MonoBehaviour
 
         _currentRefreshTime = 0f;
         _isNeedToRefreshCamera = true;
+
+        SoundManager.Instance.PlayMusicClip(ChunksPlacer.Instance.GetAudio(), true);
     }
 
     // Update is called once per frame
@@ -284,6 +286,7 @@ public class GameController : MonoBehaviour
 
     private void ShowEndgameUI(bool isGameWin, string addText)
     {
+        SoundManager.Instance.StopMusic();
         IngameUI.SetActive(false);
         AttackUI.SetActive(false);
         //SoundManager.Instance.StopAllSounds();

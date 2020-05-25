@@ -3,7 +3,17 @@ guid: a83c9b99b014f2148a5ef43683926bef
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - ShopMenu: {instanceID: 0}
+  - SettingsMenu: {instanceID: 0}
+  - SettingsMenuButton: {instanceID: 0}
+  - StartMenu: {instanceID: 0}
+  - InfoMenu: {instanceID: 0}
+  - MusicOff: {instanceID: 0}
+  - SoundOff: {instanceID: 0}
+  - VibrationOff: {instanceID: 0}
+  - loadingComponent: {instanceID: 0}
+  - Music: {fileID: 8300000, guid: c7502abc5f608c84fb0efdc21d4466f9, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

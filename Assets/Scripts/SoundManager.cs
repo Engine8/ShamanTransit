@@ -101,6 +101,7 @@ public class SoundManager : MonoBehaviour
 
     private void Awake()
     {
+        _currentMusic = null;
     }
 
     private void Start()
@@ -230,9 +231,9 @@ public class SoundManager : MonoBehaviour
 
 
 
-    public void PlayMusicClip(AudioClip musicClip)
+    public void PlayMusicClip(AudioClip musicClip, bool force = false)
     {
-        if (_currentMusic != null && _currentMusic.Name == musicClip.name)
+        if (_currentMusic != null && _currentMusic.Name == musicClip.name && force == false)
         {
             return;
         }
@@ -259,7 +260,7 @@ public class SoundManager : MonoBehaviour
         _currentMusic.FadingTime = GameData.Instance.GameSoundSettings.MusicFadeTime;
     }
 
-    void StopMusic()
+    public void StopMusic()
     {
         if (_currentMusic != null)
         {

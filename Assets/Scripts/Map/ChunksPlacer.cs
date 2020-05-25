@@ -132,6 +132,11 @@ public class ChunksPlacer : MonoBehaviour
         return _currentMap.MapMode;
     }
 
+    public AudioClip GetAudio()
+    {
+        return _currentMap.LevelMusic;
+    }
+
     [System.Serializable]
     public class Map
     {
@@ -144,6 +149,7 @@ public class ChunksPlacer : MonoBehaviour
         public List<Tile> spawnedChunks = new List<Tile>();
         public GameMode MapMode;
         public List<Tile> AttackTiles;
+        public AudioClip LevelMusic;
     }
  }
 
