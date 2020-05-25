@@ -66,24 +66,39 @@ public class GameController : MonoBehaviour
         public float LookaheadTimeRun;
         [Range(0, 1)]
         public float ScreenXPosRun;
+        [Range(0, 1)]
+        public float ScreenYRun;
         //Attack status
         [Header("Attack status")]
         public float RefreshTimeAttack;
         public float LookaheadTimeAttack;
         [Range(0, 1)]
         public float ScreenXPosAttack;
+        [Range(0, 1)]
+        public float ScreenYAttack;
         //death status
         [Header("Death status")]
         public float RefreshTimeDeath;
         public float LookaheadTimeDeath;
         [Range(0, 1)]
         public float ScreenXPosDeath;
+        [Range(0, 1)]
+        public float ScreenYDeath;
+        //death status
+        [Header("Center status")]
+        public float RefreshTimeCenter;
+        public float LookaheadTimeCenter;
+        [Range(0, 1)]
+        public float ScreenXPosCenter;
+        [Range(0, 1)]
+        public float ScreenYCenter;
     }
     public enum CameraStatusE
     {
         Run = 0,
         Attack = 1,
         Death = 2,
+        Center = 3,
     }
 
     [Space(20, order = 0)]
@@ -94,10 +109,12 @@ public class GameController : MonoBehaviour
     private float _targetRefreshCameraTime;
     private float _targetLookaheadTime;
     private float _targetScreenXPos;
+    private float _targetScreenY;
     //These variable stores settings that was set up in current status
     private float _currentRefreshCameraTime;
     private float _currentLookaheadTime;
     private float _currentScreenXPos;
+    private float _currentScreenY;
 
     private CameraStatusE _currentCameraStatus;
     private CameraStatusE _targetCameraStatus;
@@ -191,6 +208,7 @@ public class GameController : MonoBehaviour
         CinemachineFramingTransposer framTransposer = VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
         _currentLookaheadTime = framTransposer.m_LookaheadTime;
         _currentScreenXPos = framTransposer.m_ScreenX;
+        _currentScreenY = framTransposer.m_ScreenY;
 
         _currentRefreshTime = 0f;
         _isNeedToRefreshCamera = true;
@@ -235,6 +253,9 @@ public class GameController : MonoBehaviour
 
             if (isEnded)
             {
+                framTransposer.m_ScreenY = _targetScreenY;
+                _currentScreenY = _targetScreenY;
+
                 _currentCameraStatus = _targetCameraStatus;
 
                 _currentLookaheadTime = _targetLookaheadTime;
@@ -440,11 +461,28 @@ public class GameController : MonoBehaviour
         if (PlayerCharacter.GetDead())
             ShowEndgameUI(false, "Тебя съели");
         else if (PlayerCharacter.SoulCount > 0 || CurrentGameMode == GameMode.BossFight)
-            ShowEndgameUI(true, "Ты сделал это!");
+            ProcessWinLevelEnd();
         else
             ShowEndgameUI(false, "Не было собрано ни одной души");
     }
     
+    private void ProcessWinLevelEnd()
+    {
+        EndgameAnimator endgameAnimator = ChunksPlacer.Instance.GetEndgameAnimator();
+        if (endgameAnimator == null)
+            ShowEndgameUI(true, "Ты сделал это!");
+        else
+        {
+            endgameAnimator.OnAnimationEnd.AddListener(EndEndgameAnimation);
+            endgameAnimator.StartAnimation();
+        }
+    }
+
+    private void EndEndgameAnimation()
+    {
+        ShowEndgameUI(true, "Ты сделал это!");
+    }
+
     //updates player data (not write it)
     private void UpdatePlayerDataOnLevelPass()
     {
@@ -523,6 +561,7 @@ public class GameController : MonoBehaviour
             _targetLookaheadTime = CameraSettings.LookaheadTimeRun;
             _targetRefreshCameraTime = CameraSettings.RefreshTimeRun;
             _targetScreenXPos = CameraSettings.ScreenXPosRun;
+            _targetScreenY = CameraSettings.ScreenYRun;
         }
         else if (_targetCameraStatus == CameraStatusE.Attack)
         {
@@ -531,12 +570,21 @@ public class GameController : MonoBehaviour
             Debug.Log(_targetLookaheadTime);
             _targetRefreshCameraTime = CameraSettings.RefreshTimeAttack;
             _targetScreenXPos = CameraSettings.ScreenXPosAttack;
+            _targetScreenY = CameraSettings.ScreenYAttack;
         }
         else if (_targetCameraStatus == CameraStatusE.Death)
         {
             _targetLookaheadTime = CameraSettings.LookaheadTimeDeath;
             _targetRefreshCameraTime = CameraSettings.RefreshTimeDeath;
             _targetScreenXPos = CameraSettings.ScreenXPosDeath;
+            _targetScreenY = CameraSettings.ScreenYDeath;
+        }
+        else if (_targetCameraStatus == CameraStatusE.Center)
+        {
+            _targetLookaheadTime = CameraSettings.LookaheadTimeCenter;
+            _targetRefreshCameraTime = CameraSettings.RefreshTimeCenter;
+            _targetScreenXPos = CameraSettings.ScreenXPosCenter;
+            _targetScreenY = CameraSettings.ScreenYCenter;
         }
         _isNeedToRefreshCamera = true;
     }

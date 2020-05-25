@@ -8,4 +8,5 @@ public class Tile : MonoBehaviour
     public Transform End;
     public GameObject SpriteTile;
     public GameObject SpriteCliff;
+    public EndgameAnimator endgameAnimator;
 }

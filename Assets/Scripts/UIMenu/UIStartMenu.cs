@@ -15,11 +15,17 @@ public class UIStartMenu : MonoBehaviour
     public GameObject VibrationOff;
     public LoadingComponent loadingComponent;
 
+    public GameObject PlayButton;
+    public GameObject MapButton;
+    public GameObject InfoButton;
+    public GameObject SettingsButton;
+    public GameObject ShopButton;
+
     public AudioClip MenuMusic;
-    public AudioClip GameMusic;
 
     private void Awake()
     {
+
         //load playerData or set default values
         PlayerDataController.Initialize();
         PlayerDataController.Instance.LoadData();
@@ -36,6 +42,14 @@ public class UIStartMenu : MonoBehaviour
 
 
         SoundManager.Instance.PlayMusicClip(MenuMusic);
+        
+        //first game entry
+        if (PlayerDataController.Instance.Data.CurrentLevel == 0)
+        {
+            ShopButton.SetActive(false);
+            MapButton.SetActive(false);
+            InfoButton.SetActive(false);
+        }
     }
 
     public void StartGame()
