@@ -118,7 +118,8 @@ public class HitArea : MonoBehaviour
     //Delete enemies objects when player character dies
     public void OnPlayerCharacterDie()
     {
-        _sightScale.Stop();
+        if (GameController.Instance.CurrentGameStatus == GameController.GameStatus.Attack)
+            _sightScale.Stop();
         if (BossRef == null)
             GameController.Instance.SetGameStatus(GameController.GameStatus.Run, false);
         else

@@ -301,8 +301,14 @@ public class GameController : MonoBehaviour
     {
         UnityEngine.Rendering.Universal.Vignette vignette;
         volumeProfile.TryGet(out vignette);
-
         vignette.intensity.Override(0.25f + 0.30f / PlayerCharacter.MaxHPBattle * (PlayerCharacter.MaxHPBattle - PlayerCharacter.CurrentHPBattle));
+    }
+
+    private void UpdateVignette()
+    {
+        UnityEngine.Rendering.Universal.Vignette vignette;
+        volumeProfile.TryGet(out vignette);
+        vignette.intensity.Override(0);
     }
 
     private void ShowEndgameUI(bool isGameWin, string addText)
@@ -352,6 +358,8 @@ public class GameController : MonoBehaviour
     {
         //set camera target settings
         SetTargetCameraSettings(CameraStatusE.Death);
+
+        UpdateVignette();
 
         //check second chance availability
         if (PlayerDataController.Instance.HasItem(1) == 0 || _secondChanceUsed)
@@ -413,11 +421,13 @@ public class GameController : MonoBehaviour
         if (CurrentGameStatus == GameStatus.Attack)
         {
             SetTargetCameraSettings(CameraStatusE.Attack);
-            ((Boss)HitAreaRef.BossRef).ContinueBattle();
             AttackUI.SetActive(true);
         }
         else if (CurrentGameStatus == GameStatus.Run)
             SetTargetCameraSettings(CameraStatusE.Run);
+
+        if (CurrentGameMode == GameMode.BossFight)
+            ((Boss)HitAreaRef.BossRef).ContinueBattle();
 
         //Stop SecondChanceAnimation coroutine
         if (_secondChanceCoroutine != null)

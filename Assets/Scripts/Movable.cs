@@ -254,18 +254,23 @@ public class Movable : MonoBehaviour
         {
             //Debug.Log("Collision with obstacle");
 
-            CurrentHP -= obstacle.Damage;
-            if (CurrentHP < 0)
+            CurrentHPBattle -= obstacle.Damage;
+            if (CurrentHPBattle < 0)
             {
-                CurrentHP = 0;
+                CurrentHPBattle = 0;
             }
 
-            if (OnHit != null)
+            if (OnHit != null && obstacle.Damage == 0)
             {
                 OnHit.Invoke();
             }
+            else if (obstacle.Damage != 0)
+            {
+                OnAttackHit.Invoke();
+            }
 
-            if (CurrentHP == 0 || obstacle.Type == Obstacle.ObstacleType.Deadly)
+
+            if (CurrentHPBattle == 0 || obstacle.Type == Obstacle.ObstacleType.Deadly)
             {
                 if (OnDieEnd != null)
                 {
