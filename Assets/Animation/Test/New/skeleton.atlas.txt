@@ -1,0 +1,146 @@
+
+skeleton.png
+size: 2014,2013
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+arrow
+  rotate: false
+  xy: 761, 666
+  size: 1036, 54
+  orig: 1123, 124
+  offset: 58, 39
+  index: -1
+bird
+  rotate: false
+  xy: 1554, 1044
+  size: 116, 132
+  orig: 151, 149
+  offset: 20, 9
+  index: -1
+body
+  rotate: false
+  xy: 331, 1063
+  size: 527, 948
+  orig: 538, 970
+  offset: 6, 5
+  index: -1
+bow
+  rotate: false
+  xy: 2, 429
+  size: 327, 1582
+  orig: 419, 1640
+  offset: 32, 14
+  index: -1
+bow1
+  rotate: true
+  xy: 223, 73
+  size: 311, 736
+  orig: 419, 820
+  offset: 35, 36
+  index: -1
+bow2
+  rotate: true
+  xy: 761, 386
+  size: 278, 745
+  orig: 419, 820
+  offset: 81, 11
+  index: -1
+hat
+  rotate: false
+  xy: 331, 465
+  size: 428, 596
+  orig: 437, 606
+  offset: 5, 5
+  index: -1
+head
+  rotate: true
+  xy: 1508, 393
+  size: 271, 359
+  orig: 331, 374
+  offset: 40, 10
+  index: -1
+hend1
+  rotate: false
+  xy: 860, 1036
+  size: 692, 595
+  orig: 699, 606
+  offset: 3, 2
+  index: -1
+kolchan
+  rotate: true
+  xy: 961, 184
+  size: 200, 677
+  orig: 247, 726
+  offset: 27, 17
+  index: -1
+leg1
+  rotate: true
+  xy: 761, 722
+  size: 312, 947
+  orig: 391, 1000
+  offset: 52, 25
+  index: -1
+leg2
+  rotate: true
+  xy: 860, 1633
+  size: 378, 1062
+  orig: 391, 1100
+  offset: 6, 5
+  index: -1
+plecho1
+  rotate: false
+  xy: 1640, 220
+  size: 372, 171
+  orig: 421, 184
+  offset: 24, 8
+  index: -1
+plecho3
+  rotate: true
+  xy: 2, 4
+  size: 423, 219
+  orig: 442, 223
+  offset: 14, 1
+  index: -1
+remen
+  rotate: false
+  xy: 1554, 1178
+  size: 350, 453
+  orig: 387, 461
+  offset: 3, 5
+  index: -1
+ruka
+  rotate: false
+  xy: 961, 23
+  size: 508, 159
+  orig: 526, 184
+  offset: 6, 13
+  index: -1
+ruka1
+  rotate: true
+  xy: 1710, 736
+  size: 440, 178
+  orig: 442, 184
+  offset: 2, 5
+  index: -1
+ruka2
+  rotate: false
+  xy: 1471, 3
+  size: 472, 179
+  orig: 500, 184
+  offset: 12, 2
+  index: -1
+teteva1
+  rotate: true
+  xy: 223, 2
+  size: 37, 685
+  orig: 161, 812
+  offset: 46, 70
+  index: -1
+teteva2
+  rotate: true
+  xy: 223, 41
+  size: 30, 734
+  orig: 161, 812
+  offset: 60, 34
+  index: -1
