@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1240,6 +1240,7 @@ MonoBehaviour:
   ActiveLevelColor: {r: 1, g: 1, b: 1, a: 1}
   InactiveLevelColor: {r: 0.509434, g: 0.509434, b: 0.509434, a: 1}
   LevelHandler: {fileID: 69439643}
+  MenuMusic: {fileID: 8300000, guid: c7502abc5f608c84fb0efdc21d4466f9, type: 3}
   loadingComponent: {fileID: 1243776045}
 --- !u!1001 &1745293501
 PrefabInstance:

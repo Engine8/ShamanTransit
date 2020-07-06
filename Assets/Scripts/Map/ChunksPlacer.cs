@@ -111,6 +111,11 @@ public class ChunksPlacer : MonoBehaviour
         }
     }
 
+    public EndgameAnimator GetEndgameAnimator()
+    {
+        return _currentMap.spawnedChunks[_currentMap.spawnedChunks.Count - 1].endgameAnimator;
+    }
+
     public int GetMoneyMultiplier()
     {
         return _currentMap.MoneyMultiplier;
@@ -132,6 +137,11 @@ public class ChunksPlacer : MonoBehaviour
         return _currentMap.MapMode;
     }
 
+    public AudioClip GetAudio()
+    {
+        return _currentMap.LevelMusic;
+    }
+
     [System.Serializable]
     public class Map
     {
@@ -144,6 +154,7 @@ public class ChunksPlacer : MonoBehaviour
         public List<Tile> spawnedChunks = new List<Tile>();
         public GameMode MapMode;
         public List<Tile> AttackTiles;
+        public AudioClip LevelMusic;
     }
  }
 
