@@ -104,4 +104,8 @@ public class UIStartMenu : MonoBehaviour
         VibrationOff.SetActive(!VibrationOff.activeSelf);
         GameData.Instance.SetVibtationStatus(!VibrationOff.activeSelf);
     }
+    public void EzitButton()
+    {
+        Application.Quit();
+    }
 }
