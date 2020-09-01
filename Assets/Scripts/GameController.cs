@@ -182,7 +182,6 @@ public class GameController : MonoBehaviour
         PlayerCharacter.OnHit.AddListener(OnPlayerHit);
         PlayerCharacter.OnAttackHit.AddListener(OnAttackPlayerHit);
         PlayerCharacter.OnLevelEnd.AddListener(LevelEnded);
-        PlayerCharacter.OnSecondChanceClick.AddListener(RevivePlayerCharacter);
 
         _defaultColor = GlobalLight.color;
 
@@ -243,9 +242,6 @@ public class GameController : MonoBehaviour
 
                 _currentRefreshTime = 0f;
                 _isNeedToRefreshCamera = false;
-
-                if (_secondChanceRequested)
-                    ActivateSecondChance();
             }
         }
     } 
@@ -342,29 +338,6 @@ public class GameController : MonoBehaviour
 
     }
 
-    public void ActivateSecondChance()
-    {
-        //check if the second life item purchased
-        if (PlayerDataController.Instance.HasItem(1) != 0)
-        {
-            PlayerCharacter.EnableSecondChance();
-            SecondChanceStartAnimate();
-        }
-        _secondChanceRequested = false;
-    }
-
-    //Update global light each frame for DieTime seconds or until player's click
-    private void SecondChanceStartAnimate()
-    {
-        _secondChanceCoroutine = StartCoroutine(ChangeGlobalLight(DieTime, _defaultColor, PlayerDeadColor, SecondChanceFailed));
-    }
-
-    private void SecondChanceFailed()
-    {
-        PlayerCharacter.DisableSecondChance();
-        LevelEnded();
-    }
-
     IEnumerator RestoreColors()
     {
         Color startColor = GlobalLight.color;
@@ -384,30 +357,6 @@ public class GameController : MonoBehaviour
             GlobalLight.color = curGlobalLightColor;
             yield return null;
         }
-    }
-
-    private void RevivePlayerCharacter()
-    {
-        if (CurrentGameStatus == GameStatus.Attack)
-        {
-            SetTargetCameraSettings(CameraStatusE.Attack);
-            ((Boss)HitAreaRef.BossRef).ContinueBattle();
-            AttackUI.SetActive(true);
-        }
-        else if (CurrentGameStatus == GameStatus.Run)
-            SetTargetCameraSettings(CameraStatusE.Run);
-
-        //Stop SecondChanceAnimation coroutine
-        if (_secondChanceCoroutine != null)
-        {
-            StopCoroutine(_secondChanceCoroutine);
-            _secondChanceCoroutine = null;
-            //Debug.Log("Second chance activated");
-        }
-        _secondChanceUsed = true;
-
-        PlayerDataController.Instance.UseItem(1);
-        StartCoroutine(RestoreColors());
     }
 
     private IEnumerator ChangeGlobalLight(float time, Color startColor, Color endColor, VoidFunc func)

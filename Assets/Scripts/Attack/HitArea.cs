@@ -74,7 +74,6 @@ public class HitArea : MonoBehaviour
         //Debug.Log(sightScale);
         if (!_sightScale.GetVictory())
         {
-            PlayerController.Instance.PlayAnimAttack();
 
             if (Arrow.localEulerAngles.z <= (transform.localEulerAngles.z + 3) && Arrow.localEulerAngles.z >= (_sightScale.SpeedRotate > 0? transform.localEulerAngles.z - 32 : transform.localEulerAngles.z - 34))
             {

@@ -153,19 +153,16 @@ public class PlayerController : Movable
         {
             _spriteRenderer.sortingLayerName = "Line1";
             _soulKeeper.SetSoulsSortingLayer("Line1");
-            _stepParticleRenderer.sortingLayerName = "Line1";
         }
         else if (_targetLine == 1)
         {
             _spriteRenderer.sortingLayerName = "Line2";
             _soulKeeper.SetSoulsSortingLayer("Line2");
-            _stepParticleRenderer.sortingLayerName = "Line1";
         }
         else
         {
             _spriteRenderer.sortingLayerName = "Line3";
             _soulKeeper.SetSoulsSortingLayer("Line3");
-            _stepParticleRenderer.sortingLayerName = "Line1";
         }
     }
 
