@@ -1576,8 +1576,12 @@ MonoBehaviour:
   SoundOff: {fileID: 706190022}
   VibrationOff: {fileID: 1708551910}
   loadingComponent: {fileID: 1610767853}
+  PlayButton: {fileID: 997140334}
+  MapButton: {fileID: 920582610}
+  InfoButton: {fileID: 2078462848}
+  SettingsButton: {fileID: 1449588718}
+  ShopButton: {fileID: 76995473}
   MenuMusic: {fileID: 8300000, guid: c7502abc5f608c84fb0efdc21d4466f9, type: 3}
-  GameMusic: {fileID: 0}
 --- !u!1001 &479269130
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4624,7 +4628,7 @@ GameObject:
   - component: {fileID: 1449588721}
   - component: {fileID: 1449588720}
   m_Layer: 5
-  m_Name: OpenMenu
+  m_Name: SettingsBut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

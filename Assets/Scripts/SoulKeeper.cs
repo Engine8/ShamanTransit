@@ -25,7 +25,9 @@ public class SoulKeeper : MonoBehaviour
     public void AddSoul()
     {
         GameObject newSoul = Instantiate(SoulPrefab, transform.position, transform.rotation, transform);
-        SoulList.Add(newSoul.GetComponent<Soul>());
+        Soul soul = newSoul.GetComponent<Soul>();
+        soul.Status = Soul.SoulStatus.Net;
+        SoulList.Add(soul);
         SoulList[SoulList.Count - 1].spriteRenderer.sortingLayerName = _sortingLayerName;
     }
 

@@ -111,6 +111,11 @@ public class ChunksPlacer : MonoBehaviour
         }
     }
 
+    public EndgameAnimator GetEndgameAnimator()
+    {
+        return _currentMap.spawnedChunks[_currentMap.spawnedChunks.Count - 1].endgameAnimator;
+    }
+
     public int GetMoneyMultiplier()
     {
         return _currentMap.MoneyMultiplier;

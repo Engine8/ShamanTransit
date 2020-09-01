@@ -7,6 +7,15 @@ public class Soul : MonoBehaviour
     public float Speed = 1f;
     public float FlyAwaySpeed = 5f;
 
+    public enum SoulStatus
+    {
+        Free = 0,
+        Net = 1,
+        Animation = 2,
+    }
+
+    public SoulStatus Status;
+
     [SerializeField]
     private Vector3 _flyAwayDir;
     private bool _needToFlyAway;
@@ -25,7 +34,7 @@ public class Soul : MonoBehaviour
         bool isOk = false;
         int searchStatus = 0;
         //float wrongAngle = 0; 
-        while (!isOk && !_needToFlyAway)
+        while (!isOk && !_needToFlyAway && Status == SoulStatus.Net)
         {
             float angle;
             Vector3 newPos = new Vector3(); ;
@@ -52,7 +61,7 @@ public class Soul : MonoBehaviour
             }
         }
 
-        if (_needToFlyAway)
+        if (_needToFlyAway && Status == SoulStatus.Net)
         {
             Vector3 newPos;
             //main direction movement

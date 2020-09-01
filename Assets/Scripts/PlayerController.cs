@@ -249,6 +249,11 @@ public class PlayerController : Movable
         }
     }
 
+    public List<Soul> GetSouls()
+    {
+        return _soulKeeper.SoulList;
+    }
+
     public void AddSoul()
     {
         _soulKeeper.AddSoul();
@@ -263,6 +268,11 @@ public class PlayerController : Movable
     {
         //StartCoroutine("AttackAnimation");
         _animator.Play("Player_Attack");
+    }
+
+    public void SetAnimationBool(string name, bool value)
+    {
+        _animator.SetBool(name, value);
     }
 
     public override void DieStart()
