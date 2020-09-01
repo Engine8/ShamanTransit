@@ -15,36 +15,33 @@ public class UIStartMenu : MonoBehaviour
     public GameObject VibrationOff;
     public LoadingComponent loadingComponent;
 
-    public AudioClip MenuMusic;
-    public AudioClip GameMusic;
+    //public AudioClip MenuMusic;
 
     private void Awake()
     {
         //load playerData or set default values
-        PlayerDataController.Initialize();
-        PlayerDataController.Instance.LoadData();
+        //PlayerDataController.Initialize();
+        //PlayerDataController.Instance.LoadData();
 
-        GameData.Initialize();
-        SoundManager.Initialize();
+        //GameData.Initialize();
+        //SoundManager.Initialize();
     }
 
     private void Start()
     {
-        MusicOff.SetActive(SoundManager.Instance.GetMusicMuted());
-        SoundOff.SetActive(SoundManager.Instance.GetSoundMuted());
-        VibrationOff.SetActive(!GameData.Instance.VibrationStatus);
-
-
-        SoundManager.Instance.PlayMusicClip(MenuMusic);
+        //MusicOff.SetActive(SoundManager.Instance.GetMusicMuted());
+        //SoundOff.SetActive(SoundManager.Instance.GetSoundMuted());
+        //VibrationOff.SetActive(!GameData.Instance.VibrationStatus);
+        //SoundManager.Instance.PlayMusicClip(MenuMusic);
     }
 
     public void StartGame()
     {
-        Debug.Log("LoadScene('LevelScene')");
+        //Debug.Log("LoadScene('LevelScene')");
         //SceneManager.LoadScene("LevelScene");
 
         //set current level to next available level
-        GameData.Instance.SetCurrentLevel(PlayerDataController.Instance.Data.CurrentStage, PlayerDataController.Instance.Data.CurrentLevel);
+        //GameData.Instance.SetCurrentLevel(PlayerDataController.Instance.Data.CurrentStage, PlayerDataController.Instance.Data.CurrentLevel);
         loadingComponent.StartLoadLevel("LevelScene");
     }
 
@@ -60,13 +57,13 @@ public class UIStartMenu : MonoBehaviour
         InfoMenu.SetActive(true);
     }
 
-    public void ClouseInfo()
+    public void CloseInfo()
     {
         StartMenu.SetActive(true);
         InfoMenu.SetActive(false);
     }
 
-    public void ClouseShop()
+    public void CloseShop()
     {
         StartMenu.SetActive(true);
         ShopMenu.SetActive(false);
@@ -77,16 +74,19 @@ public class UIStartMenu : MonoBehaviour
         StartMenu.SetActive(false);
         ShopMenu.SetActive(true);
     }
+
     public void OpenSettings()
     {
         StartMenu.SetActive(false);
         SettingsMenu.SetActive(true);
     }
+
     public void SettingsOff()
     {
         StartMenu.SetActive(true);
         SettingsMenu.SetActive(false);
     }
+
     public void MusicOffOn()
     {
         MusicOff.SetActive(!MusicOff.activeSelf);
@@ -104,7 +104,8 @@ public class UIStartMenu : MonoBehaviour
         VibrationOff.SetActive(!VibrationOff.activeSelf);
         GameData.Instance.SetVibtationStatus(!VibrationOff.activeSelf);
     }
-    public void EzitButton()
+
+    public void ExitButton()
     {
         Application.Quit();
     }

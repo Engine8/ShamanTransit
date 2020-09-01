@@ -331,7 +331,6 @@ public class GameController : MonoBehaviour
     {
         //set camera target settings
         SetTargetCameraSettings(CameraStatusE.Death);
-
         //check second chance availability
         if (PlayerDataController.Instance.HasItem(1) == 0 || _secondChanceUsed)
         {
