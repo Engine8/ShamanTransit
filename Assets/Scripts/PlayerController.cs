@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerController : Movable
+public class PlayerController : Character
 {   
     private static PlayerController _instance;
 
@@ -16,6 +16,7 @@ public class PlayerController : Movable
     }
 
     private SpriteRenderer _spriteRenderer;
+    /*
     private SoulKeeper _soulKeeper;
     public int SoulCount
     {
@@ -24,7 +25,7 @@ public class PlayerController : Movable
             return _soulKeeper.GetSoulCount();
         }
     }
-
+    */
     public UnityEvent OnLevelEnd;
 
     public Cinemachine.CinemachineVirtualCamera Camera;
@@ -44,12 +45,12 @@ public class PlayerController : Movable
 
         _instance = this;
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
+        //_soulKeeper = transform.Find("SoulKeeper").GetComponent<SoulKeeper>();
     }
 
     // Start is called before the first frame update
     new void Start()
-    {
+    {/*
         #if UNITY_ANDROID
         OnAttackHit.AddListener(() => 
         {
@@ -57,6 +58,7 @@ public class PlayerController : Movable
                 Handheld.Vibrate();
         });
         #endif
+        */
         base.Start();
         //_animator.SetBool("IsIdle", false);
     }
@@ -76,13 +78,14 @@ public class PlayerController : Movable
             if (_targetLine > 2)
                 _targetLine = 2;
         }
-        else if (Input.GetButtonDown("Jump") && !_isLineSwapBlocked /*&& !GameController.Instance.IsAttackMode*/ && _jumpStatus == 0)
+        /*
+        else if (Input.GetButtonDown("Jump") && !_isLineSwapBlocked && !GameController.Instance.IsAttackMode && _jumpStatus == 0)
         {
             _jumpStatus = 1;
         }
-
+        */
         //mobile controls
-        if (Input.touchCount > 0 && !_isLineSwapBlocked && GameController.Instance.CurrentGameStatus != GameController.GameStatus.Attack)
+        if (Input.touchCount > 0 && !_isLineSwapBlocked)
         {
             Touch touch = Input.GetTouch(0);
             //deadzone with continious swipes
@@ -113,18 +116,14 @@ public class PlayerController : Movable
             else if (touch.phase == TouchPhase.Ended)
             {
                 _sumDeltaPositionOnY = 0;
-                if (!_isSwipe)
-                {
-                    _jumpStatus = 1;
-                }
                 _isSwipe = false;
             }
         }
     }
 
-    new protected void OnTriggerEnter2D(Collider2D other)
+    /*
+    protected void OnTriggerEnter2D(Collider2D other)
     {
-        base.OnTriggerEnter2D(other);
         if (other.gameObject.CompareTag("Obstacle"))
         {
             DeleteSoul();
@@ -135,37 +134,37 @@ public class PlayerController : Movable
         }
         else if (other.gameObject.CompareTag("TriggerEnd"))
         {
-            AccelerationModif = 0;
             Speed = 0;
             _animator.SetBool("IsIdle", true);
             OnLevelEnd.Invoke();
         }
         else if (other.gameObject.CompareTag("Soul"))
         {
-            AddSoul();
+            //AddSoul();
             other.gameObject.SetActive(false);
         }
     }
-
+    */
     override public void ChangeSortingLayer()
     {
         if (_targetLine == 0)
         {
             _spriteRenderer.sortingLayerName = "Line1";
-            _soulKeeper.SetSoulsSortingLayer("Line1");
+            //_soulKeeper.SetSoulsSortingLayer("Line1");
         }
         else if (_targetLine == 1)
         {
             _spriteRenderer.sortingLayerName = "Line2";
-            _soulKeeper.SetSoulsSortingLayer("Line2");
+            //_soulKeeper.SetSoulsSortingLayer("Line2");
         }
         else
         {
             _spriteRenderer.sortingLayerName = "Line3";
-            _soulKeeper.SetSoulsSortingLayer("Line3");
+            //_soulKeeper.SetSoulsSortingLayer("Line3");
         }
     }
 
+    /*
     public void AddSoul()
     {
         _soulKeeper.AddSoul();
@@ -175,13 +174,13 @@ public class PlayerController : Movable
     {
         _soulKeeper.DeleteSoul();
     }
-
+    */
     public override void DieStart()
     {
         _isDead = true;
 
-        _animator.SetBool("IsDead", true);
-        _soulKeeper.ReleaseSouls();
+        //_animator.SetBool("IsDead", true);
+        //_soulKeeper.ReleaseSouls();
         OnDieStart.Invoke();
     }
 

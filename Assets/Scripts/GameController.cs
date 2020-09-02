@@ -152,12 +152,14 @@ public class GameController : MonoBehaviour
         WinScreen.SetActive(false);
         LoseScreen.SetActive(false);
         //StartCoroutine(CameraShaking(0));
-#if UNITY_EDITOR
+        /*
+        #if UNITY_EDITOR
         SoundManager.Initialize();
         GameData.Initialize();
         if (PlayerDataController.Instance == null)
             PlayerDataController.Initialize();
-#endif
+        #endif
+        */
     }
 
     // Start is called before the first frame update
@@ -200,24 +202,6 @@ public class GameController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-            //Moon and sun movement
-            /*
-            //calculate moon or sun position
-            _unitsPassed += PlayerCharacter.transform.position.x - _lastPlayerCharacterXPosition;
-            _lastPlayerCharacterXPosition = PlayerCharacter.transform.position.x;
-            //AddScore(Mathf.FloorToInt(_unitsPassed / 4));
-            _unitsPassed %= 4;
-
-            float routeLength = EndPoint.transform.position.x - StartPoint.transform.position.x;
-            float routeDoneInPercents = (PlayerCharacter.transform.position.x - StartPoint.transform.position.x) / routeLength * 100;
-            //TextMeshRoute.SetText($"{routeDoneInPercents} %");
-
-            //Note: find better solution
-            float cameraWidth = MainCamera.ViewportToWorldPoint(new Vector3(1f, 1f, MainCamera.transform.position.z)).x 
-                              - MainCamera.ViewportToWorldPoint(new Vector3(0f, 1f, MainCamera.transform.position.z)).x;
-            //Debug.Log($"CameraWidth = {cameraWidth}");
-            Moon.Offset = new Vector2( cameraWidth * routeDoneInPercents / 100, 0);
-            */
         if (_isNeedToRefreshCamera)
         {
             _currentRefreshTime += Time.deltaTime;
@@ -264,20 +248,12 @@ public class GameController : MonoBehaviour
         vignette.intensity.Override(0f);
     }
 
-    private void EndBattle()
-    {
-        UnityEngine.Rendering.Universal.Vignette vignette;
-        volumeProfile.TryGet(out vignette);
-        vignette.intensity.Override(0f);
-        PlayerCharacter.CurrentHPBattle = PlayerCharacter.MaxHPBattle;
-    }
-
     private void OnAttackPlayerHit()
     {
         UnityEngine.Rendering.Universal.Vignette vignette;
         volumeProfile.TryGet(out vignette);
 
-        vignette.intensity.Override(0.25f + 0.30f / PlayerCharacter.MaxHPBattle * (PlayerCharacter.MaxHPBattle - PlayerCharacter.CurrentHPBattle));
+        vignette.intensity.Override(0.25f + 0.30f / PlayerCharacter.MaxHP * (PlayerCharacter.MaxHP - PlayerCharacter.CurrentHP));
     }
 
     private void ShowEndgameUI(bool isGameWin, string addText)
@@ -307,7 +283,7 @@ public class GameController : MonoBehaviour
 
     private IEnumerator MoneyAnimationStart()
     {
-        int moneySum = ChunksPlacer.Instance.GetBasicReward() + ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount;
+        int moneySum = ChunksPlacer.Instance.GetBasicReward() + ChunksPlacer.Instance.GetMoneyMultiplier();
         int curMoney = 0;
         if (moneySum == 0)
         {
@@ -387,16 +363,16 @@ public class GameController : MonoBehaviour
         IsGameEnded = true;
         if (PlayerCharacter.GetDead())
             ShowEndgameUI(false, "Тебя съели");
-        else if (PlayerCharacter.SoulCount > 0 || CurrentGameMode == GameMode.BossFight)
+        else //if (PlayerCharacter.SoulCount > 0 || CurrentGameMode == GameMode.BossFight)
             ShowEndgameUI(true, "Ты сделал это!");
-        else
-            ShowEndgameUI(false, "Не было собрано ни одной души");
+        //else
+            //ShowEndgameUI(false, "Не было собрано ни одной души");
     }
     
     //updates player data (not write it)
     private void UpdatePlayerDataOnLevelPass()
     {
-        PlayerDataController.Instance.AddMoney(ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount);
+        //PlayerDataController.Instance.AddMoney(ChunksPlacer.Instance.GetMoneyMultiplier() * PlayerCharacter.SoulCount);
         
         //check what passed last available level
         if (GameData.Instance.CurrentLevel == PlayerDataController.Instance.Data.CurrentLevel)
@@ -438,7 +414,6 @@ public class GameController : MonoBehaviour
         else if (gameStatus == GameStatus.BossRun)
         {
             CurrentGameStatus = GameStatus.BossRun;
-            //EndBattle();
             if (isNeedToChangeCamera)
             {
                 SetTargetCameraSettings(CameraStatusE.Death);
@@ -447,7 +422,6 @@ public class GameController : MonoBehaviour
         else if (gameStatus == GameStatus.Run)
         {
             CurrentGameStatus = GameStatus.Run;
-            EndBattle();
             if (isNeedToChangeCamera)
             {
                 SetTargetCameraSettings(CameraStatusE.Run);

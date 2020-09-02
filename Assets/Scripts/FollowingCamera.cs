@@ -7,7 +7,7 @@ public class FollowingCamera : MonoBehaviour
     public float CameraSpeed = 2f;
     public Vector3 TargetViewOffset = Vector3.zero;
     public Transform TargetObject;
-    public Movable MovableComponentTarget;
+    public Character MovableComponentTarget;
     public float DistanceCoefficient = 10f;
 
     private Vector3 PrevTargetPositon = Vector3.zero;

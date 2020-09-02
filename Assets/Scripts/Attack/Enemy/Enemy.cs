@@ -68,7 +68,7 @@ public class Enemy : MonoBehaviour
             {
                 hasAppLiedDamage = true;
 
-                _targetCharacter.TakeDamage(Damage);
+                //_targetCharacter.TakeDamage(Damage);
             }
             percent += Time.deltaTime * attackSpeed;
           
