@@ -105,6 +105,7 @@ public class Character : MonoBehaviour
         _rb2d = GetComponent<Rigidbody2D>();
         _animator = GetComponent<Animator>();
         _speed = _startSpeed;
+        _currentMaxSpeed = _basicMaxSpeed;
 
         if (gameObject.layer == 8)
         {
@@ -127,7 +128,7 @@ public class Character : MonoBehaviour
         {
             //update speed
             _accelerationCounter = Mathf.Clamp(_accelerationCounter + Time.fixedDeltaTime, 0, _accelerationTime);
-            _speed = AccelerationCurve.Evaluate(_accelerationCounter / _accelerationTime);
+            _speed = AccelerationCurve.Evaluate(_accelerationCounter / _accelerationTime) * _currentMaxSpeed;
             //calculate dX
             float dX = Vector2.right.x * _speed * Time.fixedDeltaTime;
 
@@ -151,6 +152,7 @@ public class Character : MonoBehaviour
                 _lineSwapCounter = 0f;
                 _lineSwapCurveModif = 0f;
                 OnChangeLineEnd.Invoke();
+                _isLineSwapBlocked = false;
             }
         }
     }

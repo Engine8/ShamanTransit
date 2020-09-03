@@ -6,7 +6,6 @@ public class ChunksPlacer : MonoBehaviour
 {
     public static ChunksPlacer Instance;
     public PlayerController player;
-    public HitArea HitAreaRef;
     public Map[] map;
     public int mapIndex;
     public GameObject UIAttack;
@@ -54,32 +53,7 @@ public class ChunksPlacer : MonoBehaviour
 
     public void EnterTrigger(MapTrigger mapTrigger)
     {   
-        if (mapTrigger.Type == MapTrigger.TriggerType.Enemy || mapTrigger.Type == MapTrigger.TriggerType.BossStart)
-        {
-            GameObject newEnemy = Instantiate(mapTrigger.EnemyPrefab);
-            newEnemy.transform.position = new Vector2(player.transform.position.x - 18, -1.81f);
 
-            EnemyController enemyController = newEnemy.GetComponent<EnemyController>();
-            SoundManager.Instance.PlaySoundClip(enemyController.EnterSound, true);
-            if (enemyController.IsCameraShaking)
-            {
-                enemyController.ImpulseSource.GenerateImpulse();
-            }
-                
-            HitAreaRef.SetEnemy(enemyController);
-            if (mapTrigger.Type == MapTrigger.TriggerType.Enemy)
-            {
-                GameController.Instance.SetGameStatus(GameController.GameStatus.Attack, true);
-            }
-            else
-            {
-                GameController.Instance.SetGameStatus(GameController.GameStatus.BossRun, true);
-            }
-        }
-        else if (mapTrigger.Type == MapTrigger.TriggerType.BossEndSection) //start the attack phase
-        {
-            HitAreaRef.BossBattleSectionStart();
-        }
     }
 
     private void SpawnChunk()

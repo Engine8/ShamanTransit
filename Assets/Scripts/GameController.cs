@@ -28,7 +28,6 @@ public class GameController : MonoBehaviour
     public GameObject LoseScreen;
     public Text LoseText;
     public GameObject AttackUI;
-    public HitArea HitAreaRef;
 
     public AudioClip WinSound;
     public AudioClip DefeatSound;
@@ -169,6 +168,7 @@ public class GameController : MonoBehaviour
         WindStatus windStatus;
         ChunksPlacer.Instance.GetSnowInfo(out isSnowy, out windStatus);
         CurrentGameMode = ChunksPlacer.Instance.GetMapGameMode();
+        /*
         if (isSnowy)
         {
             GameObject newSnowObject = Instantiate(SnowPrefab, VirtCamera.transform);
@@ -176,7 +176,7 @@ public class GameController : MonoBehaviour
             snowController.IsSnowy = true;
             snowController.WindStatusVar = windStatus;
         }
-            
+        */
         volumeProfile = MainCameraVolume.profile;
 
         _lastPlayerCharacterXPosition = PlayerCharacter.transform.position.x;
@@ -196,7 +196,7 @@ public class GameController : MonoBehaviour
         _currentRefreshTime = 0f;
         _isNeedToRefreshCamera = true;
 
-        SoundManager.Instance.PlayMusicClip(ChunksPlacer.Instance.GetAudio(), true);
+        //SoundManager.Instance.PlayMusicClip(ChunksPlacer.Instance.GetAudio(), true);
     }
 
     // Update is called once per frame
