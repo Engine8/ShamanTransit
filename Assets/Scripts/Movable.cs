@@ -23,12 +23,15 @@ public class Character : MonoBehaviour
     protected bool _isDead;
 
     //movement variables
-    public AnimationCurve AccelerationCurve;
+    [SerializeField]
+    protected AnimationCurve _accelerationCurve;
+    [SerializeField]
+    protected AnimationCurve _invertedAccelerationCurve;
 
     [SerializeField]
     [Tooltip("Time it takes for an object to accelerate from its initial speed to maximum speed")]
     protected float _accelerationTime;
-    protected float _accelerationCounter = 0f;
+    protected float _accelerationTimer = 0f;
 
     [SerializeField]
     protected float _startSpeed = 0f;
@@ -65,7 +68,6 @@ public class Character : MonoBehaviour
     public UnityEvent OnHit;
     public UnityEvent OnDieStart;
     public UnityEvent OnDieEnd;
-    public UnityEvent OnAttackHit;
     public UnityEvent OnChangeLineEnd;
 
     //variables for swapping lines
@@ -85,7 +87,7 @@ public class Character : MonoBehaviour
     [SerializeField]
     [Range(0, 1)]
     [Tooltip("Moment of change from middle layer to target line (in percents of LineSwapTime)")]
-    protected float PhysicsLayerChangeTime2 = 0.7f;
+    protected float PhysicsLayerChangeTimeToTarget = 0.7f;
 
     protected int _curLine;
     protected int _targetLine;
@@ -120,6 +122,30 @@ public class Character : MonoBehaviour
             _curLine = 2;
         }
         _targetLine = _curLine;
+
+
+        //invert acceleration curve
+        _invertedAccelerationCurve = new AnimationCurve();
+
+        float totalTime = _accelerationCurve.keys[_accelerationCurve.length - 1].time;
+        float sampleX = 0; //The "sample-point"
+        float deltaX = 0.01f; //The "sample-delta"
+        float lastY = _accelerationCurve.Evaluate(sampleX);
+        while (sampleX < totalTime)
+        {
+            float y = _accelerationCurve.Evaluate(sampleX); //The "value"
+            float deltaY = y - lastY; //The "value-delta"
+            float tangent = deltaX / deltaY;
+            Keyframe invertedKey = new Keyframe(y, sampleX, tangent, tangent);
+            _invertedAccelerationCurve.AddKey(invertedKey);
+
+            sampleX += deltaX;
+            lastY = y;
+        }
+        for (int i = 0; i < _invertedAccelerationCurve.length; i++)
+        {
+            _invertedAccelerationCurve.SmoothTangents(i, 0.1f);
+        }
     }
 
     protected void FixedUpdate()
@@ -127,8 +153,8 @@ public class Character : MonoBehaviour
         if (!_isDead && !GameController.Instance.IsGameEnded)
         {
             //update speed
-            _accelerationCounter = Mathf.Clamp(_accelerationCounter + Time.fixedDeltaTime, 0, _accelerationTime);
-            _speed = AccelerationCurve.Evaluate(_accelerationCounter / _accelerationTime) * _currentMaxSpeed;
+            _accelerationTimer = Mathf.Clamp(_accelerationTimer + Time.fixedDeltaTime, 0, _accelerationTime);
+            _speed = _accelerationCurve.Evaluate(_accelerationTimer / _accelerationTime) * _currentMaxSpeed;
             //calculate dX
             float dX = Vector2.right.x * _speed * Time.fixedDeltaTime;
 
@@ -156,7 +182,20 @@ public class Character : MonoBehaviour
             }
         }
     }
-    
+
+    virtual protected void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Obstacle obstacle = collision.gameObject.GetComponent<Obstacle>();
+            _speed -= obstacle.SpeedReduce;
+            if (_speed < 0)
+                _speed = 0;
+            _accelerationTimer = _invertedAccelerationCurve.Evaluate(_speed);
+            OnHit?.Invoke();
+        }
+    }
+
     private bool CalculateSwitchLine(out float dY, out float newXYScale)
     {
         bool isLineChangeEnded = false;
@@ -178,7 +217,7 @@ public class Character : MonoBehaviour
     {
         //based on swap status value define physics layer
         //enter in "middle" layer (1-2 or 2-3)
-        if (_lineSwapCurveModif > PhysicsLayerChangeTimeToMiddle && _lineSwapCurveModif < PhysicsLayerChangeTime2 && _swapLineStatus == 0)
+        if (_lineSwapCurveModif > PhysicsLayerChangeTimeToMiddle && _lineSwapCurveModif < PhysicsLayerChangeTimeToTarget && _swapLineStatus == 0)
         {
             _swapLineStatus = 1;
 
@@ -194,7 +233,7 @@ public class Character : MonoBehaviour
             }
         }
         //enter in target line
-        else if (_lineSwapCurveModif > PhysicsLayerChangeTime2 && _swapLineStatus == 1)
+        else if (_lineSwapCurveModif > PhysicsLayerChangeTimeToTarget && _swapLineStatus == 1)
         {
             _swapLineStatus = 2;
             if (_targetLine < _curLine)

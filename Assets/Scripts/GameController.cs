@@ -17,9 +17,8 @@ public class GameController : MonoBehaviour
 {
     public static GameController Instance;
 
-    //UI
-    public GameObject IngameUI;
-
+    [Space(20, order = 0)]
+    [Header("UI", order = 1)]
     public GameObject WinScreen;
     public Button ContinueButton;
     public Text WinText;
@@ -39,70 +38,9 @@ public class GameController : MonoBehaviour
 
     public float DieTime = 2f;
     public float EndgameTime = 2f;
-    private bool _secondChanceRequested = false;
-    private bool _secondChanceUsed = false;
-    private Coroutine _secondChanceCoroutine = null;
     public Color PlayerDeadColor;
 
     //------------end player-----------------
-
-
-    //Note: is needed to find better solution
-    public Camera MainCamera;
-    public CinemachineVirtualCamera VirtCamera;
-    public Volume MainCameraVolume;
-    public VolumeProfile volumeProfile;
-    public ParallaxBackground Moon;
-
-
-    //-----------Camera status------------
-    [Serializable]
-    public struct CameraStatusSettings
-    {
-        //Run status
-        [Header("Run status")]
-        public float RefreshTimeRun;
-        public float LookaheadTimeRun;
-        [Range(0, 1)]
-        public float ScreenXPosRun;
-        //Attack status
-        [Header("Attack status")]
-        public float RefreshTimeAttack;
-        public float LookaheadTimeAttack;
-        [Range(0, 1)]
-        public float ScreenXPosAttack;
-        //death status
-        [Header("Death status")]
-        public float RefreshTimeDeath;
-        public float LookaheadTimeDeath;
-        [Range(0, 1)]
-        public float ScreenXPosDeath;
-    }
-    public enum CameraStatusE
-    {
-        Run = 0,
-        Attack = 1,
-        Death = 2,
-    }
-
-    [Space(20, order = 0)]
-    [Header("Camera", order = 1)]
-    //This variable stores settings
-    public CameraStatusSettings CameraSettings;
-    //These variables stores settings that should be set up
-    private float _targetRefreshCameraTime;
-    private float _targetLookaheadTime;
-    private float _targetScreenXPos;
-    //These variable stores settings that was set up in current status
-    private float _currentRefreshCameraTime;
-    private float _currentLookaheadTime;
-    private float _currentScreenXPos;
-
-    private CameraStatusE _currentCameraStatus;
-    private CameraStatusE _targetCameraStatus;
-    private bool _isNeedToRefreshCamera = false;
-    private float _currentRefreshTime = 0f;
-    //----------- End Camera status------------
 
 
     //--------------Game status----------------
@@ -118,8 +56,6 @@ public class GameController : MonoBehaviour
 
     //-----------End game status---------------
 
-    public GameObject StartPoint;
-    public GameObject EndPoint;
 
     private float _lastPlayerCharacterXPosition;
     private float _unitsPassed;
@@ -127,14 +63,11 @@ public class GameController : MonoBehaviour
     public bool IsGameEnded;
 
     public UnityEvent OnGameModeChanged;
+    public UnityEvent OnGameStatusChanged;
 
     public LoadingComponent loadingComponent;
 
     public GameObject SnowPrefab;
-
-    /*
-     * Player die variables
-     */
     public Light2D GlobalLight;
     private Color _defaultColor;
 
@@ -159,126 +92,44 @@ public class GameController : MonoBehaviour
             PlayerDataController.Initialize();
         #endif
         */
+        OnGameModeChanged = new UnityEvent();
+        OnGameStatusChanged = new UnityEvent();
     }
 
-    // Start is called before the first frame update
     void Start()
     {
         bool isSnowy = false;
         WindStatus windStatus;
         ChunksPlacer.Instance.GetSnowInfo(out isSnowy, out windStatus);
         CurrentGameMode = ChunksPlacer.Instance.GetMapGameMode();
-        /*
-        if (isSnowy)
-        {
-            GameObject newSnowObject = Instantiate(SnowPrefab, VirtCamera.transform);
-            SnowController snowController = newSnowObject.GetComponent<SnowController>();
-            snowController.IsSnowy = true;
-            snowController.WindStatusVar = windStatus;
-        }
-        */
-        volumeProfile = MainCameraVolume.profile;
 
         _lastPlayerCharacterXPosition = PlayerCharacter.transform.position.x;
-        PlayerCharacter.OnDieEnd.AddListener(OnPlayerDie);
-        PlayerCharacter.OnHit.AddListener(OnPlayerHit);
-        PlayerCharacter.OnAttackHit.AddListener(OnAttackPlayerHit);
         PlayerCharacter.OnLevelEnd.AddListener(LevelEnded);
 
         _defaultColor = GlobalLight.color;
-
-        //set default camera settings on level start
-        SetTargetCameraSettings(CameraStatusE.Run);
-        CinemachineFramingTransposer framTransposer = VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-        _currentLookaheadTime = framTransposer.m_LookaheadTime;
-        _currentScreenXPos = framTransposer.m_ScreenX;
-
-        _currentRefreshTime = 0f;
-        _isNeedToRefreshCamera = true;
-
-        //SoundManager.Instance.PlayMusicClip(ChunksPlacer.Instance.GetAudio(), true);
-    }
-
-    // Update is called once per frame
-    void LateUpdate()
-    {
-        if (_isNeedToRefreshCamera)
-        {
-            _currentRefreshTime += Time.deltaTime;
-            bool isEnded = false;
-            if (_currentRefreshTime >= _targetRefreshCameraTime)
-            {
-                _currentRefreshTime = _targetRefreshCameraTime;
-                isEnded = true;
-            }
-            float refreshValue = _currentRefreshTime / _targetRefreshCameraTime;
-            CinemachineFramingTransposer framTransposer = VirtCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
-            framTransposer.m_ScreenX = Mathf.Lerp(_currentScreenXPos, _targetScreenXPos, refreshValue);
-            framTransposer.m_LookaheadTime = Mathf.Lerp(_currentLookaheadTime, _targetLookaheadTime, refreshValue);
-
-            if (isEnded)
-            {
-                _currentCameraStatus = _targetCameraStatus;
-
-                _currentLookaheadTime = _targetLookaheadTime;
-                _currentRefreshCameraTime = _targetRefreshCameraTime;
-                _currentScreenXPos = _targetScreenXPos;
-
-                _currentRefreshTime = 0f;
-                _isNeedToRefreshCamera = false;
-            }
-        }
-    } 
-
-    private void OnPlayerHit()
-    {
-        if (!IsGameEnded)
-        {
-            StartCoroutine("Damage");
-        }
-    }
-
-    IEnumerator Damage()
-    {
-        UnityEngine.Rendering.Universal.Vignette vignette;
-        volumeProfile.TryGet(out vignette);
-
-        vignette.intensity.Override(0.35f);
-        yield return new WaitForSeconds(0.5f);
-        vignette.intensity.Override(0f);
-    }
-
-    private void OnAttackPlayerHit()
-    {
-        UnityEngine.Rendering.Universal.Vignette vignette;
-        volumeProfile.TryGet(out vignette);
-
-        vignette.intensity.Override(0.25f + 0.30f / PlayerCharacter.MaxHP * (PlayerCharacter.MaxHP - PlayerCharacter.CurrentHP));
     }
 
     private void ShowEndgameUI(bool isGameWin, string addText)
     {
-        SoundManager.Instance.StopMusic();
-        IngameUI.SetActive(false);
-        AttackUI.SetActive(false);
+        //SoundManager.Instance.StopMusic();
         //SoundManager.Instance.StopAllSounds();
         if (isGameWin)
         {
             WinScreen.SetActive(true);
             WinText.text = addText;
-            SoundManager.Instance.PlaySoundClip(WinSound, false);
-            if (GameData.Instance.CurrentLevel == 4)
-                ContinueButton.gameObject.SetActive(false);
-            StartCoroutine(MoneyAnimationStart());
-            UpdatePlayerDataOnLevelPass();
+            //SoundManager.Instance.PlaySoundClip(WinSound, false);
+            //if (GameData.Instance.CurrentLevel == 4)
+            //    ContinueButton.gameObject.SetActive(false);
+            //StartCoroutine(MoneyAnimationStart());
+            //UpdatePlayerDataOnLevelPass();
         }
         else
         {
             LoseText.text = addText;
             LoseScreen.SetActive(true);
-            SoundManager.Instance.PlaySoundClip(DefeatSound, false);
+            //SoundManager.Instance.PlaySoundClip(DefeatSound, false);
         }
-        PlayerDataController.Instance.WriteData();
+        //PlayerDataController.Instance.WriteData();
     }
 
     private IEnumerator MoneyAnimationStart()
@@ -297,21 +148,6 @@ public class GameController : MonoBehaviour
             WinMoneyText.text = curMoney.ToString();
             yield return new WaitForSeconds(0.1f);
         }
-    }
-
-    private void OnPlayerDie()
-    {
-        //set camera target settings
-        SetTargetCameraSettings(CameraStatusE.Death);
-        //check second chance availability
-        if (PlayerDataController.Instance.HasItem(1) == 0 || _secondChanceUsed)
-        {
-            StartCoroutine(ChangeGlobalLight(EndgameTime, _defaultColor, PlayerDeadColor, LevelEnded));
-        }
-        else
-            //second chance will be activated on LateUpdate
-            _secondChanceRequested = true;
-
     }
 
     IEnumerator RestoreColors()
@@ -390,16 +226,6 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public void OnContinueButtonClick()
-    {
-        loadingComponent.StartLoadLevel("Map");
-    }
-
-    public void OnReloadButtonClick()
-    {
-        loadingComponent.StartLoadLevel("LevelScene");
-    }
-
     public void SetGameStatus(GameStatus gameStatus, bool isNeedToChangeCamera)
     { 
         if (gameStatus == GameStatus.Attack)
@@ -408,7 +234,7 @@ public class GameController : MonoBehaviour
             AttackUI.SetActive(true);
             if (isNeedToChangeCamera)
             {
-                SetTargetCameraSettings(CameraStatusE.Attack);
+                OnGameStatusChanged.Invoke();
             }
         }
         else if (gameStatus == GameStatus.BossRun)
@@ -416,7 +242,7 @@ public class GameController : MonoBehaviour
             CurrentGameStatus = GameStatus.BossRun;
             if (isNeedToChangeCamera)
             {
-                SetTargetCameraSettings(CameraStatusE.Death);
+                OnGameStatusChanged.Invoke();
             }
         }
         else if (gameStatus == GameStatus.Run)
@@ -424,7 +250,7 @@ public class GameController : MonoBehaviour
             CurrentGameStatus = GameStatus.Run;
             if (isNeedToChangeCamera)
             {
-                SetTargetCameraSettings(CameraStatusE.Run);
+                OnGameStatusChanged.Invoke();
             }
         }
         OnGameModeChanged.Invoke();
@@ -434,33 +260,6 @@ public class GameController : MonoBehaviour
     {
         GameData.Instance.SetCurrentLevel(0, GameData.Instance.CurrentLevel < 4 ? GameData.Instance.CurrentLevel + 1:0) ;
         loadingComponent.StartLoadLevel("LevelScene");
-    }
-
-    public void SetTargetCameraSettings(CameraStatusE targetStatus)
-    {
-        //set camera run status settings
-        _targetCameraStatus = targetStatus;
-        if (_targetCameraStatus == CameraStatusE.Run)
-        {
-            _targetLookaheadTime = CameraSettings.LookaheadTimeRun;
-            _targetRefreshCameraTime = CameraSettings.RefreshTimeRun;
-            _targetScreenXPos = CameraSettings.ScreenXPosRun;
-        }
-        else if (_targetCameraStatus == CameraStatusE.Attack)
-        {
-            Debug.Log(_targetLookaheadTime);
-            _targetLookaheadTime = CameraSettings.LookaheadTimeAttack;
-            Debug.Log(_targetLookaheadTime);
-            _targetRefreshCameraTime = CameraSettings.RefreshTimeAttack;
-            _targetScreenXPos = CameraSettings.ScreenXPosAttack;
-        }
-        else if (_targetCameraStatus == CameraStatusE.Death)
-        {
-            _targetLookaheadTime = CameraSettings.LookaheadTimeDeath;
-            _targetRefreshCameraTime = CameraSettings.RefreshTimeDeath;
-            _targetScreenXPos = CameraSettings.ScreenXPosDeath;
-        }
-        _isNeedToRefreshCamera = true;
     }
 
     public int DefinePhysicsLayerByString(string layerName)

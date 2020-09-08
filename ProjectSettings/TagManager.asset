@@ -6,8 +6,9 @@ TagManager:
   tags:
   - Obstacle
   - TriggerAttack
-  - TriggerEnd
   - Soul
+  - Block
+  - LevelEndTrigger
   layers:
   - Default
   - TransparentFX

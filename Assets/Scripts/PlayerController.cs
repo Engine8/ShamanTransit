@@ -121,18 +121,17 @@ public class PlayerController : Character
         }
     }
 
-    /*
-    protected void OnTriggerEnter2D(Collider2D other)
+    new protected void OnTriggerEnter2D(Collider2D other)
     {
+        base.OnTriggerEnter2D(other);
         if (other.gameObject.CompareTag("Obstacle"))
         {
-            DeleteSoul();
             #if UNITY_ANDROID
                         if (GameData.Instance.VibrationStatus)
                             Handheld.Vibrate();
             #endif
         }
-        else if (other.gameObject.CompareTag("TriggerEnd"))
+        else if (other.gameObject.CompareTag("LevelEndTrigger"))
         {
             Speed = 0;
             _animator.SetBool("IsIdle", true);
@@ -140,47 +139,31 @@ public class PlayerController : Character
         }
         else if (other.gameObject.CompareTag("Soul"))
         {
-            //AddSoul();
             other.gameObject.SetActive(false);
         }
     }
-    */
+
     override public void ChangeSortingLayer()
     {
         if (_targetLine == 0)
         {
             _spriteRenderer.sortingLayerName = "Line1";
-            //_soulKeeper.SetSoulsSortingLayer("Line1");
         }
         else if (_targetLine == 1)
         {
             _spriteRenderer.sortingLayerName = "Line2";
-            //_soulKeeper.SetSoulsSortingLayer("Line2");
         }
         else
         {
             _spriteRenderer.sortingLayerName = "Line3";
-            //_soulKeeper.SetSoulsSortingLayer("Line3");
         }
     }
 
-    /*
-    public void AddSoul()
-    {
-        _soulKeeper.AddSoul();
-    }
-
-    public void DeleteSoul()
-    {
-        _soulKeeper.DeleteSoul();
-    }
-    */
     public override void DieStart()
     {
         _isDead = true;
 
         //_animator.SetBool("IsDead", true);
-        //_soulKeeper.ReleaseSouls();
         OnDieStart.Invoke();
     }
 

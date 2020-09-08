@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e512525f4b6945746a443f27149b453e, type: 3}
   m_Name: SoundSettings
   m_EditorClassIdentifier: 
+  AutoPause: 1
+  MusicFadeTime: 2
   PreloadedClips: []
