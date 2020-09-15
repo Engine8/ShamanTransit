@@ -2,31 +2,41 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
 public class Obstacle : MonoBehaviour
 {
-    public enum ObstacleType
+    public enum EObstacleType
     {
         Slower,
-        Deadly
+        Deadly,
+        Damage
     }
-    public ObstacleType Type = ObstacleType.Slower;
+    public List<ObstacleType> Types;
 
-    [Tooltip("The value by which the speed of the colliding object will be reduced")]
-    public float SpeedReduce = 2f;
+    public bool IsDestructible = false;
 
-    public int Damage = 0;
+    public int DestructionSteps = 0;
+    protected int _currentDestructionStep = -1;
 
-    // Start is called before the first frame update
-    void Start()
+    private void OnMouseDown()
     {
-        
+        if (IsDestructible)
+        {
+            ++_currentDestructionStep;
+
+            if (_currentDestructionStep == DestructionSteps - 1)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
+                spriteRenderer.color = Colors[_currentDestructionStep];
+            }
+        }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
+    [Header("Debug")]
+    public List<Color> Colors;
+
 }

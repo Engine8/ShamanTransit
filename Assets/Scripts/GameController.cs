@@ -104,7 +104,8 @@ public class GameController : MonoBehaviour
         CurrentGameMode = ChunksPlacer.Instance.GetMapGameMode();
 
         _lastPlayerCharacterXPosition = PlayerCharacter.transform.position.x;
-        PlayerCharacter.OnLevelEnd.AddListener(LevelEnded);
+        PlayerCharacter.OnLevelEnd.AddListener(ProcessLevelEnd);
+        PlayerCharacter.OnDieEnd.AddListener(ProcessLevelEnd);
 
         _defaultColor = GlobalLight.color;
     }
@@ -194,11 +195,11 @@ public class GameController : MonoBehaviour
             func();
     }
 
-    private void LevelEnded()
+    private void ProcessLevelEnd()
     {
         IsGameEnded = true;
         if (PlayerCharacter.GetDead())
-            ShowEndgameUI(false, "Тебя съели");
+            ShowEndgameUI(false, "Ты не справился");
         else //if (PlayerCharacter.SoulCount > 0 || CurrentGameMode == GameMode.BossFight)
             ShowEndgameUI(true, "Ты сделал это!");
         //else

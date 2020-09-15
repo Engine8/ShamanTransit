@@ -83,6 +83,9 @@ public class CameraController : MonoBehaviour
         _isNeedToRefreshCamera = true;
 
         GameController.Instance.OnGameStatusChanged.AddListener(ProcessGameStatusChange);
+        PlayerController.Instance.OnHit.AddListener(UpdateHPIndication);
+
+        UpdateHPIndication();
     }
 
     // Update is called once per frame
@@ -143,27 +146,14 @@ public class CameraController : MonoBehaviour
         _isNeedToRefreshCamera = true;
     }
 
-    private void OnPlayerHit()
-    {
-        StartCoroutine(Damage());
-    }
-
-    IEnumerator Damage()
+    private void UpdateHPIndication()
     {
         UnityEngine.Rendering.Universal.Vignette vignette;
         VolumeProfile.TryGet(out vignette);
-
-        vignette.intensity.Override(0.35f);
-        yield return new WaitForSeconds(0.5f);
-        vignette.intensity.Override(0f);
-    }
-
-    private void OnAttackPlayerHit()
-    {
-        UnityEngine.Rendering.Universal.Vignette vignette;
-        VolumeProfile.TryGet(out vignette);
-
-        vignette.intensity.Override(0.25f + 0.30f / PlayerController.Instance.MaxHP * (PlayerController.Instance.MaxHP - PlayerController.Instance.CurrentHP));
+        if (PlayerController.Instance.MaxHP == PlayerController.Instance.CurrentHP)
+            vignette.intensity.Override(0f);
+        else
+            vignette.intensity.Override(0.25f + 0.30f / PlayerController.Instance.MaxHP * (PlayerController.Instance.MaxHP - PlayerController.Instance.CurrentHP));
     }
 
     private void ProcessGameStatusChange()

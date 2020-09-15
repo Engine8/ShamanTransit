@@ -15,11 +15,23 @@ public class Character : MonoBehaviour
     //health variables
     [SerializeField]
     protected int _maxHP;
-    public int MaxHP{ get; }
+    public int MaxHP
+    {
+        get
+        {
+            return _maxHP;
+        }
+    }
     [SerializeField]
     [Tooltip("Debug, changes are restricted")]
     protected int _currentHP;
-    public int CurrentHP { get; }
+    public int CurrentHP
+    {
+        get
+        {
+            return _currentHP;
+        }
+    }
     protected bool _isDead;
 
     //movement variables
@@ -188,10 +200,32 @@ public class Character : MonoBehaviour
         if (collision.gameObject.CompareTag("Obstacle"))
         {
             Obstacle obstacle = collision.gameObject.GetComponent<Obstacle>();
-            _speed -= obstacle.SpeedReduce;
-            if (_speed < 0)
-                _speed = 0;
-            _accelerationTimer = _invertedAccelerationCurve.Evaluate(_speed);
+            foreach (var obstacleType in obstacle.Types)
+            {
+                if (obstacleType.Type == Obstacle.EObstacleType.Slower)
+                {
+                    _speed -= obstacleType.Value;
+                    if (_speed < 0)
+                        _speed = 0;
+                    _accelerationTimer = _invertedAccelerationCurve.Evaluate(_speed);
+                }
+                else if (obstacleType.Type == Obstacle.EObstacleType.Deadly)
+                {
+                    Debug.Log("Deadly obstacle triggered");
+                    _isDead = true;
+                    OnDieEnd?.Invoke();
+                }
+                else if (obstacleType.Type == Obstacle.EObstacleType.Damage)
+                {
+                    _currentHP -= (int)obstacleType.Value;
+                    if (_currentHP <= 0)
+                    {
+                        _currentHP = 0;
+                        _isDead = true;
+                        OnDieEnd?.Invoke();
+                    }
+                }
+            }
             OnHit?.Invoke();
         }
     }

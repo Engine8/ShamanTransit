@@ -143,6 +143,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1090e79a9b1861a4094b3b31a4701ea5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Type: 0
-  SpeedReduce: 2
-  Damage: 0
+  Types:
+  - Type: 0
+    Value: 2
+  - Type: 2
+    Value: 1
+  IsDestructible: 0
+  DestructionSteps: 0
+  Colors: []
